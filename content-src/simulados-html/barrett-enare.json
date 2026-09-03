@@ -1,0 +1,970 @@
+[
+ {
+  "id": 1,
+  "bloco": "Definição e diagnóstico",
+  "enunciado": "Anselmo, 55 anos, motorista de carreta na BR-163, tem pirose e regurgitação há mais de 10 anos e refere disfagia ocasional. Nega emagrecimento e sangramento. A EDA mostra mucosa cor de salmão estendendo-se 3 cm acima da junção esofagogástrica, sem lesão elevada ou deprimida. As biópsias revelam metaplasia intestinal com células caliciformes, sem displasia. Está estável, com função hepática e renal preservadas. A conduta mais apropriada é:",
+  "alts": {
+   "A": "Inibidor de bomba de prótons e vigilância endoscópica periódica com biópsias.",
+   "B": "Esofagectomia subtotal, pelo risco de adenocarcinoma.",
+   "C": "Repetir a endoscopia com biópsias em 3 meses para confirmar o diagnóstico antes de qualquer tratamento.",
+   "D": "Ablação endoscópica por radiofrequência imediatamente, mesmo na ausência de displasia.",
+   "E": "Fundoplicatura laparoscópica como primeira medida curativa."
+  },
+  "gab": "A",
+  "gatilho": "Mucosa salmão ≥1 cm + metaplasia intestinal com células caliciformes + ausência de displasia. Esses três dados fecham esôfago de Barrett sem displasia (NDBE) e travam a conduta.",
+  "correta": "Barrett sem displasia progride para adenocarcinoma a uma taxa de 0,2–0,5% ao ano — risco real, porém baixo demais para justificar terapia ablativa ou ressectiva. O IBP cumpre dois papéis: controla o sintoma e reduz o estímulo proliferativo do ácido sobre o epitélio metaplásico (quimioprevenção de baixo grau, recomendação da ACG mesmo em assintomáticos). A vigilância existe porque a única variável que muda a conduta é o aparecimento de displasia — e displasia é diagnóstico histológico, não endoscópico. Daí a EDA seriada com protocolo de Seattle.",
+  "distratores": {
+   "B": "Esofagectomia tem mortalidade de 2–5% em centros de alto volume e morbidade que ultrapassa 50%. Oferecer isso para um risco anual de 0,3% é trocar uma ameaça remota por um dano imediato.",
+   "C": "O diagnóstico já está feito. Mucosa colunar ≥1 cm + metaplasia intestinal é critério diagnóstico, não achado suspeito. Repetir em 3 meses não acrescenta informação e atrasa o IBP.",
+   "D": "Ablação por radiofrequência não é indicada na ausência de displasia. O número necessário para tratar é proibitivo e a taxa de estenose (≈5%) não se paga contra 0,3%/ano.",
+   "E": "Fundoplicatura controla refluxo, mas não é 'curativa' do Barrett: não faz regredir a metaplasia de forma confiável nem reduz comprovadamente a incidência de adenocarcinoma, e não dispensa a vigilância."
+  },
+  "perola": "Barrett sem displasia = IBP + vigilância. Qualquer alternativa que ofereça bisturi ou ablação nesse cenário está errada por definição."
+ },
+ {
+  "id": 2,
+  "bloco": "Definição e diagnóstico",
+  "enunciado": "Durante EDA de rotina em Nilza, 61 anos, o endoscopista descreve 'linha Z irregular, com pequenas línguas de mucosa colunar de até 0,6 cm acima do topo das pregas gástricas'. Foram feitas biópsias dessa área, que mostraram metaplasia intestinal com células caliciformes. A conduta correta é:",
+  "alts": {
+   "A": "Diagnosticar Barrett e indicar ablação por radiofrequência pelo risco de progressão acelerada em segmentos curtos.",
+   "B": "Não caracterizar esôfago de Barrett e não indicar vigilância endoscópica.",
+   "C": "Repetir a endoscopia em 1 ano com biópsias em quatro quadrantes a cada 1 cm.",
+   "D": "Solicitar pHmetria de 24 horas para definir se há indicação de vigilância.",
+   "E": "Diagnosticar esôfago de Barrett de segmento ultracurto e iniciar vigilância a cada 5 anos."
+  },
+  "gab": "B",
+  "gatilho": "Extensão < 1 cm acima da JEG. O comprimento é o filtro que vem antes da histologia.",
+  "correta": "O critério exige mucosa colunar de pelo menos 1 cm acima da junção esofagogástrica. Abaixo disso o achado se chama irregularidade da linha Z, e a razão é dupla: a variabilidade interobservador na medida de segmentos milimétricos é enorme, e a metaplasia intestinal da cárdia não tem risco de progressão demonstrado. Por isso as diretrizes recomendam explicitamente NÃO biopsiar linha Z irregular — a biópsia só cria um rótulo que gerará vigilância desnecessária, ansiedade e custo por décadas.",
+  "distratores": {
+   "A": "Ablação em segmento que sequer preenche critério diagnóstico, sem displasia, é dano puro.",
+   "C": "Biópsias a cada 1 cm são o protocolo para displasia conhecida; aqui não há nem doença.",
+   "D": "pHmetria mede exposição ácida e orienta tratamento do refluxo — não define critério anatômico de Barrett.",
+   "E": "Rotular como 'Barrett ultracurto' e vigiar é exatamente o erro que a regra do 1 cm foi criada para evitar."
+  },
+  "perola": "< 1 cm = linha Z irregular, não biopsiar, não vigiar. A régua vem antes do microscópio."
+ },
+ {
+  "id": 3,
+  "bloco": "Definição e diagnóstico",
+  "enunciado": "Homem de 58 anos com DRGE de longa data apresenta EDA com segmento de mucosa colunar de 4 cm acima da JEG. A histologia descreve epitélio colunar do tipo cárdico/fúndico, sem células caliciformes e sem displasia. Considerando os critérios diagnósticos adotados pela literatura norte-americana (ACG), a interpretação correta é:",
+  "alts": {
+   "A": "Deve-se indicar fundoplicatura para induzir regressão do epitélio colunar.",
+   "B": "Deve-se realizar esofagectomia pela extensão do segmento.",
+   "C": "Trata-se de metaplasia colunar sem metaplasia intestinal; não preenche critério de Barrett, devendo-se tratar a DRGE e considerar nova avaliação endoscópica.",
+   "D": "O diagnóstico de esôfago de Barrett está confirmado, pois a extensão é maior que 3 cm.",
+   "E": "O diagnóstico está confirmado e o paciente deve receber ablação por radiofrequência."
+  },
+  "gab": "C",
+  "gatilho": "Mucosa salmão longa PORÉM sem células caliciformes. O enunciado pede explicitamente o critério ACG.",
+  "correta": "Para a escola americana, o esôfago de Barrett é definido pela presença de metaplasia INTESTINAL — a célula caliciforme é a assinatura do epitélio que sofreu reprogramação em direção ao fenótipo intestinal, e é esse fenótipo que carrega risco de progressão neoplásica. Epitélio colunar cárdico ou fúndico no esôfago distal representa adaptação ao ácido sem o passo intestinal. Como a amostragem pode ter sido insuficiente em segmento longo, o caminho é otimizar o IBP e repetir a endoscopia com biópsias adequadas antes de descartar em definitivo.",
+  "distratores": {
+   "A": "Fundoplicatura não é ferramenta de indução de regressão epitelial.",
+   "B": "Esofagectomia em doença benigna sem displasia é resposta-armadilha clássica.",
+   "D": "Extensão não substitui histologia no critério americano.",
+   "E": "Ablação sem diagnóstico e sem displasia não tem qualquer respaldo."
+  },
+  "perola": "Divergência de banca: a British Society of Gastroenterology aceita metaplasia colunar sem células caliciformes como Barrett; a ACG exige metaplasia intestinal. Se o enunciado citar 'células caliciformes' ou 'critério americano', a exigência é da metaplasia intestinal. Se descrever apenas 'epitélio colunar' e a alternativa correta oferecer o diagnóstico, a banca está seguindo a escola britânica."
+ },
+ {
+  "id": 4,
+  "bloco": "Definição e diagnóstico",
+  "enunciado": "O laudo endoscópico de Divino, 63 anos, descreve o esôfago de Barrett como C2M5. Essa classificação significa que:",
+  "alts": {
+   "A": "Há 2 cm de hérnia hiatal associada a 5 cm de mucosa colunar.",
+   "B": "Há 2 ilhas de mucosa colunar e 5 cm de extensão total.",
+   "C": "Há 2 cm de extensão máxima e 5 cm de extensão circunferencial.",
+   "D": "Há 2 cm de extensão circunferencial e 5 cm de extensão máxima (língua mais alta) acima da JEG.",
+   "E": "Trata-se de displasia de grau 2 em segmento de 5 cm."
+  },
+  "gab": "D",
+  "gatilho": "Nomenclatura de Praga (C&M).",
+  "correta": "A classificação de Praga padroniza a descrição do segmento a partir de dois pontos de referência: a JEG, definida endoscopicamente pelo topo das pregas gástricas, e a extensão proximal da mucosa colunar. C é o limite superior do componente circunferencial; M é o ponto mais alto atingido por qualquer língua. Por construção, M é sempre ≥ C. A padronização importa porque o comprimento define intervalo de vigilância e correlaciona-se com risco de progressão.",
+  "distratores": {
+   "A": "Hérnia hiatal é medida à parte, entre a JEG e o pinçamento diafragmático.",
+   "B": "A classificação de Praga não pontua ilhas — elas devem ser descritas separadamente e é uma limitação reconhecida do sistema.",
+   "C": "Inverte os eixos; M nunca pode ser menor que C.",
+   "E": "Displasia não entra na nomenclatura de Praga, que é puramente morfométrica."
+  },
+  "perola": "C = circunferencial, M = máximo. Segmento longo (M ≥ 3 cm) encurta o intervalo de vigilância de 5 para 3 anos."
+ },
+ {
+  "id": 5,
+  "bloco": "Definição e diagnóstico",
+  "enunciado": "Paciente de 49 anos submetido a EDA por pirose intensa apresenta esofagite erosiva grau D de Los Angeles, com áreas de mucosa avermelhada de aspecto colunar no esôfago distal, de difícil delimitação. A conduta correta em relação ao diagnóstico de esôfago de Barrett é:",
+  "alts": {
+   "A": "Realizar biópsias imediatamente nas áreas de aspecto colunar e definir o diagnóstico.",
+   "B": "Indicar ablação por radiofrequência das áreas suspeitas no mesmo tempo endoscópico.",
+   "C": "Solicitar esofagografia baritada para delimitar a extensão do segmento colunar.",
+   "D": "Encaminhar diretamente para fundoplicatura, dispensando a reavaliação endoscópica.",
+   "E": "Iniciar IBP em dose plena por 8 a 12 semanas e repetir a endoscopia para reavaliar e estadiar o segmento."
+  },
+  "gab": "E",
+  "gatilho": "Esofagite erosiva grave (LA C ou D) coexistindo com suspeita de Barrett.",
+  "correta": "A inflamação aguda faz duas coisas ruins ao mesmo tempo: mascara a real extensão do segmento colunar, impedindo classificação de Praga confiável, e produz atipia regenerativa que o patologista pode ler como displasia. Cicatrizar a mucosa com IBP em dose plena por 8 a 12 semanas e reendoscopar resolve os dois problemas — permite delimitar o segmento e biopsiar epitélio livre de inflamação ativa. É a mesma lógica que impede diagnosticar displasia em vigência de esofagite.",
+  "distratores": {
+   "A": "Biopsiar mucosa inflamada gera laudos 'indefinidos para displasia' e estadiamento errado.",
+   "B": "Ablação sobre esofagite grave, sem diagnóstico definido, é indefensável.",
+   "C": "O baritado não tem resolução para mucosa e foi abandonado nesse contexto.",
+   "D": "Cirurgia antes de estadiar a doença inverte a ordem lógica."
+  },
+  "perola": "Esofagite LA C/D: trate primeiro, estadie depois. Vale também para excluir neoplasia subjacente — a taxa de Barrett revelado após cicatrização chega a 12%."
+ },
+ {
+  "id": 6,
+  "bloco": "Definição e diagnóstico",
+  "enunciado": "Na avaliação endoscópica de um possível esôfago de Barrett, a junção esofagogástrica deve ser identificada por qual referência?",
+  "alts": {
+   "A": "O topo das pregas gástricas longitudinais.",
+   "B": "O pinçamento diafragmático.",
+   "C": "O ponto de menor calibre do esôfago distal.",
+   "D": "A impressão extrínseca do brônquio-fonte esquerdo.",
+   "E": "A linha Z (transição escamocolunar)."
+  },
+  "gab": "A",
+  "gatilho": "Pergunta pura de referência anatômica endoscópica — e é a base de toda a medição.",
+  "correta": "A JEG é marcada pelo limite proximal das pregas gástricas, avaliado com insuflação mínima (a hiperinsuflação apaga as pregas e desloca artificialmente a referência para baixo, superestimando o segmento). Barrett existe justamente quando a linha Z está deslocada acima da JEG; se as duas coincidem, não há mucosa colunar esofágica. Confundir as referências é a origem mais comum de falso diagnóstico.",
+  "distratores": {
+   "B": "O pinçamento diafragmático define o tamanho da hérnia hiatal, não a JEG.",
+   "C": "Descreve anel de Schatzki ou estenose, não a JEG.",
+   "D": "É referência de terço médio, a cerca de 25 cm da arcada dentária.",
+   "E": "A linha Z é o outro extremo da medida — o deslocamento entre ela e a JEG é o que se mede."
+  },
+  "perola": "Distância entre pinçamento diafragmático e JEG = hérnia hiatal. Distância entre JEG e linha Z = segmento de Barrett. São duas medidas diferentes no mesmo laudo."
+ },
+ {
+  "id": 7,
+  "bloco": "Definição e diagnóstico",
+  "enunciado": "Em um paciente com esôfago de Barrett de 5 cm, sem displasia prévia e sem lesões visíveis, o protocolo de biópsias recomendado durante a vigilância é:",
+  "alts": {
+   "A": "Biópsias em quatro quadrantes a cada 1 cm em todo o segmento.",
+   "B": "Biópsias em quatro quadrantes a cada 2 cm, associadas a biópsias dirigidas de qualquer irregularidade.",
+   "C": "Apenas biópsias dirigidas por cromoendoscopia, dispensando as aleatórias.",
+   "D": "Biópsias aleatórias em dois quadrantes a cada 3 cm.",
+   "E": "Biópsia única do ponto mais proximal do segmento."
+  },
+  "gab": "B",
+  "gatilho": "Vigilância de Barrett SEM displasia. O intervalo entre os níveis de biópsia é o detalhe cobrado.",
+  "correta": "O protocolo de Seattle nasceu da constatação de que displasia e neoplasia precoce são frequentemente invisíveis à luz branca convencional e distribuem-se de forma heterogênea no segmento. A amostragem sistemática em quatro quadrantes a cada 2 cm cobre a superfície; as biópsias dirigidas capturam o que é visível. Lesões visíveis vão em frasco separado, porque uma lesão focal com displasia muda completamente a conduta e não pode ser diluída no pool do segmento. Recomenda-se ainda inspeção cuidadosa, com pelo menos 1 minuto por centímetro de segmento, em endoscópio de alta definição.",
+  "distratores": {
+   "A": "A cada 1 cm é o protocolo quando há displasia conhecida ou suspeita — mais amostras, mais custo, sem ganho comprovado no NDBE.",
+   "C": "Cromoendoscopia virtual (NBI) e ácido acético são adjuvantes que aumentam o rendimento das biópsias dirigidas, mas ainda não substituem a amostragem sistemática.",
+   "D": "Subamostragem grosseira; perde displasia focal.",
+   "E": "Amostra pontual não representa segmento heterogêneo."
+  },
+  "perola": "Sem displasia: 4 quadrantes a cada 2 cm. Com displasia: 4 quadrantes a cada 1 cm. Lesão visível: frasco separado, sempre."
+ },
+ {
+  "id": 8,
+  "bloco": "Rastreamento",
+  "enunciado": "Segundo as diretrizes atuais, qual paciente tem indicação de rastreamento endoscópico único para esôfago de Barrett?",
+  "alts": {
+   "A": "Homem de 45 anos assintomático, com história familiar de câncer gástrico.",
+   "B": "Mulher de 42 anos com pirose ocasional, sem outros fatores de risco.",
+   "C": "Homem de 58 anos, branco, tabagista, com obesidade central, DRGE sintomática há 12 anos e pai com adenocarcinoma de esôfago.",
+   "D": "Homem de 30 anos com pirose há 6 meses, sem fatores de risco.",
+   "E": "Mulher de 55 anos com dispepsia funcional e sem sintomas de refluxo."
+  },
+  "gab": "C",
+  "gatilho": "Sintomas crônicos de DRGE (> 5 anos) somados a três ou mais fatores de risco adicionais.",
+  "correta": "O rastreamento é seletivo porque a prevalência de Barrett na população geral é baixa e o custo-efetividade só se sustenta em subgrupos enriquecidos. Os fatores que compõem esse enriquecimento são idade acima de 50 anos, sexo masculino, etnia branca, tabagismo atual ou pregresso, obesidade central e história familiar de Barrett ou adenocarcinoma esofágico em parente de primeiro grau. O paciente do gabarito acumula praticamente todos esses fatores sobre um substrato de DRGE crônica. O rastreamento é único: se a endoscopia for negativa, não se repete.",
+  "distratores": {
+   "A": "História familiar de câncer gástrico não é fator de risco para Barrett; a relevante é de adenocarcinoma de esôfago/Barrett.",
+   "B": "Mulheres têm incidência de adenocarcinoma esofágico muito menor; não há recomendação de rastreamento de rotina.",
+   "D": "Idade jovem e sintomas recentes; risco pré-teste desprezível.",
+   "E": "Sem sintomas de refluxo, falta a condição de entrada."
+  },
+  "perola": "Rastreamento negativo = não repetir. A vigilância existe para quem TEM Barrett; o rastreamento é procura, e é feito uma vez."
+ },
+ {
+  "id": 9,
+  "bloco": "Rastreamento",
+  "enunciado": "Qual dos fatores abaixo NÃO se associa a aumento de risco de esôfago de Barrett e adenocarcinoma esofágico?",
+  "alts": {
+   "A": "Obesidade de distribuição central.",
+   "B": "Tabagismo.",
+   "C": "Sexo masculino.",
+   "D": "Infecção por Helicobacter pylori.",
+   "E": "Hérnia hiatal volumosa."
+  },
+  "gab": "D",
+  "gatilho": "Pergunta de exceção. O H. pylori é o único item da lista com efeito protetor.",
+  "correta": "A colonização gástrica pelo H. pylori, sobretudo por cepas CagA-positivas que induzem gastrite corporal e atrofia, reduz a produção ácida. Menos ácido no estômago significa refluxato menos agressivo e menor estímulo à metaplasia intestinal esofágica. Essa é uma das explicações propostas para o fenômeno epidemiológico inverso das últimas décadas no Ocidente: queda da prevalência do H. pylori e do câncer gástrico distal acompanhada de aumento do adenocarcinoma de esôfago e da cárdia.",
+  "distratores": {
+   "A": "A gordura visceral aumenta o gradiente pressórico gastroesofágico e produz adipocinas pró-inflamatórias; é fator de risco independente do IMC total.",
+   "B": "Tabagismo aumenta risco de Barrett e de progressão, com efeito dose-dependente e persistente após a cessação.",
+   "C": "A razão homem:mulher no adenocarcinoma esofágico chega a 8:1.",
+   "E": "A hérnia hiatal desloca o esfíncter, elimina o segmento intra-abdominal e aumenta a exposição ácida; o risco cresce com o tamanho."
+  },
+  "perola": "H. pylori protege contra Barrett e adenocarcinoma esofágico — mas essa constatação epidemiológica jamais justifica não erradicar quando há indicação (úlcera, MALT, atrofia, história familiar de câncer gástrico)."
+ },
+ {
+  "id": 10,
+  "bloco": "Vigilância sem displasia",
+  "enunciado": "Paciente com esôfago de Barrett C1M2, biópsias sem displasia, em uso regular de IBP. O intervalo recomendado para a próxima endoscopia de vigilância é de:",
+  "alts": {
+   "A": "6 meses.",
+   "B": "1 ano.",
+   "C": "3 anos.",
+   "D": "5 anos.",
+   "E": "Não há indicação de vigilância."
+  },
+  "gab": "D",
+  "gatilho": "Segmento curto (< 3 cm) sem displasia.",
+  "correta": "O comprimento do segmento é preditor independente de progressão — quanto mais epitélio metaplásico, maior a área sob risco de acumular alterações genéticas. Por isso a estratificação: segmentos menores que 3 cm são reavaliados a cada 5 anos; segmentos de 3 cm ou mais, a cada 3 anos. Esse refinamento substituiu a antiga recomendação única de 3 a 5 anos para todos.",
+  "distratores": {
+   "A": "6 meses é intervalo de displasia de baixo grau em vigilância.",
+   "B": "1 ano é o intervalo do laudo persistentemente indefinido para displasia.",
+   "C": "3 anos aplica-se ao segmento longo (≥ 3 cm).",
+   "E": "Barrett confirmado sem displasia tem indicação de vigilância, exceto quando comorbidade ou expectativa de vida limitada tornariam a terapia inaplicável."
+  },
+  "perola": "Curto (<3 cm) → 5 anos. Longo (≥3 cm) → 3 anos. Se a banca oferecer '3 a 5 anos' como única opção temporal, é a resposta clássica antiga e ainda aceita."
+ },
+ {
+  "id": 11,
+  "bloco": "Vigilância sem displasia",
+  "enunciado": "Paciente com esôfago de Barrett C4M6, sem displasia em duas endoscopias consecutivas. O intervalo de vigilância recomendado é:",
+  "alts": {
+   "A": "Anual.",
+   "B": "A cada 2 anos.",
+   "C": "A cada 3 anos.",
+   "D": "A cada 5 anos.",
+   "E": "A cada 10 anos."
+  },
+  "gab": "C",
+  "gatilho": "Segmento longo (M ≥ 3 cm) sem displasia.",
+  "correta": "Seis centímetros de epitélio metaplásico representam área de risco substancialmente maior que dois. A relação entre comprimento e progressão é aproximadamente linear em coortes populacionais, e cada centímetro adicional acrescenta risco mensurável. Daí o encurtamento do intervalo para 3 anos. Note que dois exames sem displasia não permitem espaçar mais o seguimento no segmento longo — a estratificação é pelo comprimento, não pelo número de exames negativos.",
+  "distratores": {
+   "A": "Vigilância anual não é indicada no Barrett sem displasia; aumenta custo e complicações sem ganho.",
+   "B": "Intervalo sem respaldo em diretriz.",
+   "D": "5 anos é para segmento curto.",
+   "E": "Intervalo de rastreamento de câncer colorretal em população de risco médio, não de Barrett."
+  },
+  "perola": "O número 3 aparece duas vezes e é fácil confundir: 3 cm é o ponto de corte do comprimento; 3 anos é o intervalo do segmento longo."
+ },
+ {
+  "id": 12,
+  "bloco": "Vigilância sem displasia",
+  "enunciado": "Paciente com Barrett sem displasia, assintomático há 2 anos em uso de omeprazol 20 mg/dia, questiona se pode suspender a medicação já que 'não sente mais nada'. A orientação correta é:",
+  "alts": {
+   "A": "Aumentar o IBP para dose dobrada, pois toda a série de Barrett exige supressão máxima.",
+   "B": "Manter o IBP em dose única diária, mesmo assintomático, e manter a vigilância.",
+   "C": "Suspender o IBP, pois a indicação é apenas sintomática.",
+   "D": "Substituir o IBP por bloqueador H2 em dose noturna.",
+   "E": "Suspender o IBP e encaminhar para fundoplicatura."
+  },
+  "gab": "B",
+  "gatilho": "Barrett sem displasia + paciente assintomático. Testa se o candidato entende o IBP como quimioprevenção, não só como analgésico.",
+  "correta": "A ausência de pirose não significa ausência de exposição ácida — parcela relevante dos portadores de Barrett tem sensibilidade esofágica reduzida justamente porque o epitélio colunar é menos sensível ao ácido que o escamoso. O ácido mantém sinalização proliferativa e inflamatória sobre a metaplasia, e estudos observacionais mostram associação entre uso regular de IBP e menor progressão neoplásica. Recomenda-se dose única diária de forma contínua. Dose dobrada fica reservada a situações específicas, como controle de sintomas refratários ou período de cicatrização pós-ablação.",
+  "distratores": {
+   "A": "Dose dobrada rotineira não demonstrou benefício adicional consistente na prevenção de progressão.",
+   "C": "Confunde tratamento sintomático da DRGE com quimioprevenção no Barrett.",
+   "D": "Bloqueadores H2 sofrem taquifilaxia e não atingem o mesmo controle de pH; papel limitado a sintoma noturno adjuvante.",
+   "E": "Cirurgia não substitui vigilância nem tem indicação em paciente assintomático controlado."
+  },
+  "perola": "No Barrett, o IBP não é analgésico: é a única intervenção medicamentosa com sinal de redução de progressão. Assintomático continua tomando."
+ },
+ {
+  "id": 13,
+  "bloco": "Vigilância sem displasia",
+  "enunciado": "Dona Ercília, 86 anos, portadora de Barrett C2M3 sem displasia, tem insuficiência cardíaca classe funcional IV, DPOC oxigênio-dependente e Karnofsky 40%. Sobre a vigilância endoscópica, a conduta mais apropriada é:",
+  "alts": {
+   "A": "Manter vigilância a cada 3 anos, independentemente das comorbidades.",
+   "B": "Intensificar para vigilância anual pela idade avançada.",
+   "C": "Suspender a vigilância, pois ela não modificaria a conduta diante da expectativa de vida limitada.",
+   "D": "Substituir a vigilância endoscópica por tomografia de tórax anual.",
+   "E": "Indicar ablação por radiofrequência profilática para dispensar futuras endoscopias."
+  },
+  "gab": "C",
+  "gatilho": "Comorbidade grave e expectativa de vida limitada em paciente com doença de progressão lenta.",
+  "correta": "Vigilância só faz sentido quando o achado de displasia levaria a uma intervenção que a paciente poderia tolerar e da qual se beneficiaria. Com sobrevida estimada em poucos anos e risco proibitivo para terapia endoscópica sob sedação, a endoscopia deixa de ser rastreio e vira apenas risco — sedação, aspiração, descompensação cardiorrespiratória. As diretrizes recomendam explicitamente individualizar e suspender a vigilância nesses casos, mantendo o IBP para conforto sintomático.",
+  "distratores": {
+   "A": "Aplicar protocolo sem considerar expectativa de vida é erro conceitual de rastreamento.",
+   "B": "Idade avançada com comorbidade grave é motivo para suspender, não intensificar.",
+   "D": "TC não detecta displasia nem neoplasia intramucosa.",
+   "E": "RFA sem displasia não tem indicação e submeteria a paciente a múltiplas sessões sob sedação."
+  },
+  "perola": "A pergunta que precede qualquer vigilância: 'o que eu faria se achasse displasia?'. Se a resposta é 'nada', o exame não deve ser pedido."
+ },
+ {
+  "id": 14,
+  "bloco": "Displasia indefinida e de baixo grau",
+  "enunciado": "Biópsias de vigilância em paciente com Barrett de 4 cm retornam com o laudo 'indefinido para displasia'. A conduta recomendada é:",
+  "alts": {
+   "A": "Manter o intervalo habitual de vigilância de 3 anos.",
+   "B": "Indicar esofagectomia pelo risco de subestadiamento.",
+   "C": "Considerar como ausência de displasia e suspender a vigilância.",
+   "D": "Otimizar a supressão ácida com IBP por 3 a 6 meses e repetir a endoscopia com biópsias.",
+   "E": "Considerar como displasia de baixo grau e indicar ablação por radiofrequência."
+  },
+  "gab": "D",
+  "gatilho": "Laudo 'indefinido para displasia' — categoria intermediária que quase sempre reflete atipia regenerativa por inflamação.",
+  "correta": "Indefinido para displasia significa que o patologista viu alterações nucleares que não consegue separar com segurança entre displasia verdadeira e regeneração reativa. A causa mais comum é inflamação ativa. Suprimir o ácido de forma agressiva por 3 a 6 meses e reendoscopar permite reavaliar o epitélio já cicatrizado: boa parte dos casos volta como negativo. Se o laudo persistir indefinido após otimização, a vigilância passa a ser em 12 meses. O risco de progressão dessa categoria é intermediário, maior que o do NDBE.",
+  "distratores": {
+   "A": "Manter o intervalo longo ignora que essa categoria tem risco intermediário de progressão.",
+   "B": "Esofagectomia diante de atipia indeterminada é desproporcional em qualquer cenário.",
+   "C": "Indefinido não é sinônimo de negativo e não autoriza alta.",
+   "E": "Tratar indefinido como se fosse displasia confirmada expõe a ablação sem indicação estabelecida."
+  },
+  "perola": "Indefinido para displasia = otimize IBP, repita em 3–6 meses. Se persistir indefinido, vigilância em 12 meses."
+ },
+ {
+  "id": 15,
+  "bloco": "Displasia indefinida e de baixo grau",
+  "enunciado": "Um patologista geral de hospital do interior emite laudo de displasia de baixo grau em biópsias de Barrett. Antes de definir a conduta terapêutica, o passo obrigatório é:",
+  "alts": {
+   "A": "Solicitar ecoendoscopia para avaliar profundidade.",
+   "B": "Indicar esofagectomia.",
+   "C": "Realizar ablação por radiofrequência imediatamente.",
+   "D": "Solicitar PET-CT para estadiamento.",
+   "E": "Confirmar o diagnóstico com um segundo patologista experiente em patologia gastrointestinal."
+  },
+  "gab": "E",
+  "gatilho": "Displasia de baixo grau diagnosticada por patologista único e não especializado.",
+  "correta": "A concordância interobservador para displasia de baixo grau é notoriamente ruim. Séries de revisão por painéis de especialistas rebaixam para 'negativo' ou 'indefinido' algo em torno de 70 a 85% dos casos originalmente rotulados como LGD. Como o diagnóstico dispara uma decisão terapêutica com risco real — ablação com estenose em cerca de 5% —, a confirmação por segundo patologista com expertise em trato gastrointestinal virou exigência formal. Essa mesma lógica vale, com menos peso, para a displasia de alto grau.",
+  "distratores": {
+   "A": "Ecoendoscopia não estadia displasia e tem acurácia limitada em T1a versus T1b; não é rotina nesse cenário.",
+   "B": "Esofagectomia jamais é a conduta inicial na displasia de baixo grau.",
+   "C": "Tratar sobre laudo não confirmado expõe a maioria dos pacientes a terapia desnecessária.",
+   "D": "PET-CT não tem resolução para displasia ou neoplasia intramucosa."
+  },
+  "perola": "Displasia de baixo grau só existe depois de dois patologistas. Um deles precisa ser especialista em TGI."
+ },
+ {
+  "id": 16,
+  "bloco": "Displasia indefinida e de baixo grau",
+  "enunciado": "Displasia de baixo grau confirmada por dois patologistas em Barrett C3M4, sem lesão visível à endoscopia de alta definição com NBI. A conduta preferencial atual é:",
+  "alts": {
+   "A": "Terapia endoscópica de erradicação, preferencialmente ablação por radiofrequência.",
+   "B": "Mucosectomia endoscópica de todo o segmento em sessão única.",
+   "C": "Esofagectomia transhiatal.",
+   "D": "Fundoplicatura de Nissen, que promove regressão da displasia.",
+   "E": "Apenas manter IBP, com nova endoscopia em 3 anos."
+  },
+  "gab": "A",
+  "gatilho": "LGD CONFIRMADA e ausência de lesão visível.",
+  "correta": "A mudança de paradigma veio do ensaio SURF, que randomizou portadores de displasia de baixo grau confirmada entre ablação por radiofrequência e vigilância: a progressão para displasia de alto grau ou adenocarcinoma caiu de 26,5% para 1,5% em três anos. Com esse tamanho de efeito, a ablação passou a ser a conduta preferencial. A vigilância endoscópica a cada 6 a 12 meses permanece como alternativa aceitável para pacientes que recusam ou não toleram a terapia, mas não é mais a primeira escolha.",
+  "distratores": {
+   "B": "Mucosectomia circunferencial extensa gera estenose em taxa proibitiva; a ressecção endoscópica é reservada a lesões visíveis.",
+   "C": "Esofagectomia para displasia de baixo grau é desproporcional; morbimortalidade muito acima do risco da doença.",
+   "D": "Fundoplicatura não trata displasia — controla refluxo.",
+   "E": "Intervalo de 3 anos é do Barrett sem displasia; aqui o risco é uma ordem de grandeza maior."
+  },
+  "perola": "SURF: 26,5% → 1,5%. É o número que transformou LGD de 'observar' em 'ablacionar'."
+ },
+ {
+  "id": 17,
+  "bloco": "Displasia indefinida e de baixo grau",
+  "enunciado": "Paciente com Barrett de 5 cm apresenta, na endoscopia de vigilância, lesão levemente elevada de 12 mm (Paris 0-IIa) no segmento, cuja biópsia revelou displasia de baixo grau. A conduta inicial mais adequada é:",
+  "alts": {
+   "A": "Ablação por radiofrequência de todo o segmento, incluindo a lesão.",
+   "B": "Ressecção endoscópica da lesão visível, para estadiamento histológico, seguida de ablação do segmento remanescente.",
+   "C": "Vigilância endoscópica em 6 meses.",
+   "D": "Esofagectomia com linfadenectomia.",
+   "E": "Biópsias em quatro quadrantes a cada 1 cm e reavaliação em 12 meses."
+  },
+  "gab": "B",
+  "gatilho": "Presença de LESÃO VISÍVEL dentro do segmento. Isso muda a sequência, independentemente do grau de displasia na biópsia.",
+  "correta": "Toda lesão visível em Barrett deve ser ressecada, não ablacionada. A razão é de estadiamento: a biópsia superficial subestadia com frequência, e séries mostram que lesões visíveis com laudo de displasia de baixo grau ou alto grau abrigam adenocarcinoma em parcela relevante dos casos. A mucosectomia ou dissecção submucosa fornece uma peça com muscular da mucosa e submucosa superficial, permitindo determinar profundidade de invasão, grau de diferenciação, invasão linfovascular e margem profunda — as variáveis que decidem entre seguir por via endoscópica ou operar. Ablação destrói o tecido e apaga essa informação para sempre.",
+  "distratores": {
+   "A": "Ablacionar a lesão elimina a possibilidade de estadiamento histológico.",
+   "C": "Vigiar lesão visível displásica é postergar o diagnóstico de uma possível neoplasia precoce.",
+   "D": "Esofagectomia antes de estadiar é inversão de sequência; a maioria será tratável endoscopicamente.",
+   "E": "Amostragem adicional não substitui a peça de ressecção."
+  },
+  "perola": "Regra de ouro: ressecar o visível, ablacionar o resto. Nessa ordem, sempre."
+ },
+ {
+  "id": 18,
+  "bloco": "Displasia de alto grau e neoplasia precoce",
+  "enunciado": "Paciente de 62 anos com Barrett C3M5 e displasia de alto grau confirmada por dois patologistas, sem lesão visível em endoscopia de alta definição com cromoendoscopia virtual. A conduta indicada é:",
+  "alts": {
+   "A": "Esofagectomia subtotal com linfadenectomia em dois campos.",
+   "B": "Quimiorradioterapia definitiva.",
+   "C": "Terapia endoscópica de erradicação, com ablação por radiofrequência do segmento.",
+   "D": "Fundoplicatura associada a IBP em dose dobrada.",
+   "E": "Vigilância endoscópica a cada 3 meses."
+  },
+  "gab": "C",
+  "gatilho": "Displasia de alto grau SEM lesão visível.",
+  "correta": "A displasia de alto grau progride para adenocarcinoma a cerca de 6 a 7% ao ano — risco que exige tratamento, não observação. Mas o tratamento migrou da esofagectomia para a via endoscópica ao longo dos anos 2000, quando ficou demonstrado que a ablação por radiofrequência erradica a metaplasia intestinal em mais de 80% dos casos com morbidade muito menor. Como não há lesão visível, não há o que ressecar: a ablação do segmento inteiro é o tratamento. Sessões sequenciais a cada 8 a 12 semanas até a erradicação completa da metaplasia intestinal.",
+  "distratores": {
+   "A": "Esofagectomia ficou restrita a falha da terapia endoscópica ou a doença submucosa com risco linfonodal.",
+   "B": "Quimiorradioterapia definitiva é tratamento de carcinoma localmente avançado, sobretudo escamoso; não trata displasia.",
+   "D": "Fundoplicatura não erradica displasia.",
+   "E": "Vigilância trimestral era conduta aceita antes da era da ablação; hoje só se justifica quando o paciente recusa ou não tolera terapia."
+  },
+  "perola": "Displasia de alto grau em 2026 é doença endoscópica. Esofagectomia entra quando a endoscopia falha ou quando a submucosa está invadida com fator de risco."
+ },
+ {
+  "id": 19,
+  "bloco": "Displasia de alto grau e neoplasia precoce",
+  "enunciado": "Peça de mucosectomia endoscópica de lesão em Barrett revela adenocarcinoma bem diferenciado limitado à mucosa (T1a), sem invasão linfovascular, com margens laterais e profunda livres. A conduta é:",
+  "alts": {
+   "A": "Nova mucosectomia ampliada em 30 dias, independentemente das margens.",
+   "B": "Apenas vigilância endoscópica anual, sem tratar o segmento remanescente.",
+   "C": "Esofagectomia subtotal com linfadenectomia.",
+   "D": "Considerar o tratamento curativo e proceder à ablação do segmento de Barrett remanescente, com vigilância subsequente.",
+   "E": "Quimiorradioterapia adjuvante."
+  },
+  "gab": "D",
+  "gatilho": "Adenocarcinoma INTRAMUCOSO (T1a) com todos os critérios de baixo risco: bem diferenciado, sem invasão linfovascular, margens livres.",
+  "correta": "A mucosa esofágica tem drenagem linfática escassa acima da muscular da mucosa; por isso o risco de metástase linfonodal no T1a de baixo risco fica em torno de 1 a 2% — comparável ou inferior à mortalidade da esofagectomia. A ressecção endoscópica com margens livres é, portanto, curativa. O passo que os candidatos esquecem é o segundo: erradicar o restante do Barrett com ablação. Deixar o campo metaplásico intacto significa aceitar neoplasia metacrônica em até 20% em alguns anos. Ressecar e ablacionar é um único tratamento em duas etapas.",
+  "distratores": {
+   "A": "Margens livres não exigem ampliação.",
+   "B": "Vigiar sem tratar o segmento remanescente ignora o risco metacrônico.",
+   "C": "Esofagectomia oferece mortalidade de 2 a 5% para prevenir risco linfonodal de 1 a 2% — a conta não fecha.",
+   "E": "Não há papel para quimiorradioterapia adjuvante em T1a R0."
+  },
+  "perola": "T1a de baixo risco = doença endoscópica curável. Mas o tratamento só termina quando o Barrett residual foi ablacionado."
+ },
+ {
+  "id": 20,
+  "bloco": "Displasia de alto grau e neoplasia precoce",
+  "enunciado": "Peça de ressecção endoscópica em paciente com Barrett mostra adenocarcinoma pouco diferenciado com invasão da submucosa profunda (sm2) e invasão linfovascular presente. O paciente tem 60 anos, ECOG 0 e estadiamento sem metástases. A conduta é:",
+  "alts": {
+   "A": "Quimioterapia paliativa exclusiva.",
+   "B": "Ablação por radiofrequência do leito e do segmento remanescente.",
+   "C": "Vigilância endoscópica a cada 3 meses.",
+   "D": "Nova mucosectomia ampliada.",
+   "E": "Esofagectomia com linfadenectomia, considerando terapia perioperatória conforme estadiamento."
+  },
+  "gab": "E",
+  "gatilho": "T1b sm2 + pouco diferenciado + invasão linfovascular. Três critérios de alto risco simultâneos.",
+  "correta": "A submucosa é rica em linfáticos. Quando o tumor a atinge em profundidade, o risco de metástase linfonodal salta para a faixa de 20 a 30%, e cresce ainda mais com pouca diferenciação e invasão linfovascular. Nesse território, a ressecção local — por mais perfeita que seja a peça — não trata o compartimento linfonodal. A esofagectomia com linfadenectomia formal passa a ser o tratamento oncológico adequado, com terapia perioperatória definida pelo estadiamento final. A ressecção endoscópica prévia não foi inútil: foi o estadiamento que permitiu tomar essa decisão.",
+  "distratores": {
+   "A": "Não há doença metastática; tratamento paliativo é subtratamento.",
+   "B": "Ablação não trata linfonodos nem doença submucosa profunda.",
+   "C": "Vigiar carcinoma submucoso de alto risco é abandonar o paciente.",
+   "D": "Ampliar a mucosectomia não altera o risco linfonodal."
+  },
+  "perola": "T1a → endoscópico. T1b de alto risco (sm2/sm3, G3, invasão linfovascular) → esofagectomia. T1b sm1 de baixo risco, bem diferenciado e sem invasão linfovascular, é a zona cinzenta em que centros especializados aceitam manejo endoscópico."
+ },
+ {
+  "id": 21,
+  "bloco": "Displasia de alto grau e neoplasia precoce",
+  "enunciado": "Sobre o risco de metástase linfonodal no adenocarcinoma precoce sobre esôfago de Barrett, é correto afirmar que:",
+  "alts": {
+   "A": "É de aproximadamente 1 a 2% no T1a e sobe para cerca de 20% ou mais no T1b.",
+   "B": "É semelhante entre T1a e T1b, em torno de 10% para ambos.",
+   "C": "É nulo em qualquer tumor T1, o que justifica manejo endoscópico universal.",
+   "D": "Depende exclusivamente do tamanho da lesão, e não da profundidade.",
+   "E": "É maior no T1a por causa da densidade linfática da lâmina própria."
+  },
+  "gab": "A",
+  "gatilho": "Pergunta direta de números — é o fundamento numérico que separa endoscopia de esofagectomia.",
+  "correta": "A anatomia explica os números. A rede linfática da mucosa esofágica é escassa, o que mantém o risco linfonodal do T1a em 1 a 2%. Ao cruzar a muscular da mucosa e entrar na submucosa, o tumor encontra um plexo linfático denso e longitudinal — o mesmo que explica as metástases 'em salto' do esôfago — e o risco salta para a faixa de 20%, estratificando-se ainda por profundidade (sm1, sm2, sm3), grau de diferenciação e invasão linfovascular.",
+  "distratores": {
+   "B": "Equiparar T1a e T1b elimina exatamente o critério que decide a conduta.",
+   "C": "T1b tem risco linfonodal alto; manejo endoscópico universal seria subtratamento.",
+   "D": "Tamanho importa para técnica de ressecção, mas profundidade é o preditor dominante de acometimento linfonodal.",
+   "E": "Inverte a anatomia: a densidade linfática relevante é submucosa."
+  },
+  "perola": "A muscular da mucosa é a fronteira oncológica do esôfago. Acima dela, 2%. Abaixo, 20%."
+ },
+ {
+  "id": 22,
+  "bloco": "Displasia de alto grau e neoplasia precoce",
+  "enunciado": "Por que a ressecção endoscópica deve preceder a ablação por radiofrequência quando existe lesão visível no segmento de Barrett?",
+  "alts": {
+   "A": "Porque a ablação prévia aumenta o risco de perfuração na ressecção subsequente.",
+   "B": "Porque a ressecção fornece peça para determinar profundidade de invasão, grau e invasão linfovascular, informação que a ablação destruiria.",
+   "C": "Porque a ressecção reduz o número de sessões de ablação necessárias.",
+   "D": "Porque a ablação está contraindicada em segmentos maiores que 3 cm.",
+   "E": "Porque a radiofrequência não atinge lesões elevadas."
+  },
+  "gab": "B",
+  "gatilho": "Pergunta de fundamento — testa se o candidato entende ressecção endoscópica como procedimento diagnóstico-terapêutico, não apenas terapêutico.",
+  "correta": "A ablação por radiofrequência coagula a mucosa até profundidade controlada e não gera espécime. Se a lesão for ablacionada, perde-se para sempre a possibilidade de saber se havia carcinoma, quão fundo ele ia e se invadiu linfáticos — exatamente as três variáveis que decidem entre continuar por via endoscópica e indicar esofagectomia. Além disso, a concordância entre biópsia com pinça e peça de ressecção é limitada: o subestadiamento é regra, não exceção. A ressecção é, antes de tudo, o estadiamento definitivo.",
+  "distratores": {
+   "A": "A sequência inversa gera fibrose que dificulta a ressecção, mas essa não é a razão principal.",
+   "C": "Redução de sessões é efeito colateral, não a justificativa.",
+   "D": "Não existe limite de 3 cm para ablação; segmentos longos são tratados em sessões sequenciais.",
+   "E": "Tecnicamente a radiofrequência pode ser aplicada sobre relevo discreto; o problema é conceitual, não mecânico."
+  },
+  "perola": "Ressecção endoscópica em Barrett é estadiamento com intenção curativa. A peça vale tanto quanto o tratamento."
+ },
+ {
+  "id": 23,
+  "bloco": "Pós-ablação e complicações",
+  "enunciado": "Paciente tratado por displasia de alto grau com mucosectomia e sessões de radiofrequência atingiu erradicação completa da metaplasia intestinal, confirmada por endoscopia com biópsias da neoescamosa e da cárdia. O seguimento recomendado é:",
+  "alts": {
+   "A": "Endoscopia a cada 5 anos.",
+   "B": "Tomografia de tórax e abdome anual, dispensando endoscopia.",
+   "C": "Endoscopias aos 3, 6 e 12 meses e, a seguir, anualmente.",
+   "D": "Alta do seguimento endoscópico, pois a metaplasia foi erradicada.",
+   "E": "Endoscopia a cada 3 anos, como no Barrett sem displasia."
+  },
+  "gab": "C",
+  "gatilho": "Erradicação completa da metaplasia intestinal (CEIM) em paciente cuja indicação foi displasia de ALTO grau ou neoplasia intramucosa.",
+  "correta": "Erradicar não é curar em definitivo. A recorrência de metaplasia intestinal após CEIM ocorre em cerca de 8 a 10% ao ano nos primeiros anos, concentrando-se na cárdia e na região da neojunção, e a maioria dos casos é retratável endoscopicamente se detectada cedo. Por isso o seguimento é denso no início e depois se espaça: 3, 6 e 12 meses no primeiro ano, depois anual, para quem foi tratado por displasia de alto grau ou adenocarcinoma intramucoso. Para quem foi tratado por displasia de baixo grau, o esquema é mais frouxo: 1 e 3 anos e, depois, a cada 2 anos.",
+  "distratores": {
+   "A": "5 anos é intervalo de segmento curto sem displasia.",
+   "B": "TC não avalia mucosa nem detecta recorrência de metaplasia.",
+   "D": "Alta é a resposta mais atraente e mais perigosa: ignora a taxa de recorrência.",
+   "E": "Intervalo do NDBE não se aplica a paciente com história de displasia de alto grau tratada."
+  },
+  "perola": "Pós-ablação de displasia de alto grau/T1a: 3, 6, 12 meses e depois anual. Biopsiar sempre a neojunção/cárdia, sítio preferencial da recorrência."
+ },
+ {
+  "id": 24,
+  "bloco": "Pós-ablação e complicações",
+  "enunciado": "Qual é a complicação mais frequente da ablação por radiofrequência no tratamento do esôfago de Barrett?",
+  "alts": {
+   "A": "Hemorragia digestiva alta maciça.",
+   "B": "Perfuração esofágica.",
+   "C": "Fístula traqueoesofágica.",
+   "D": "Estenose esofágica.",
+   "E": "Mediastinite."
+  },
+  "gab": "D",
+  "gatilho": "Perfil de segurança da radiofrequência — a complicação de maior incidência, não a mais grave.",
+  "correta": "A estenose ocorre em torno de 5 a 6% dos tratados e decorre da cicatrização circunferencial da área ablacionada. Manifesta-se como disfagia semanas após a sessão e responde bem a dilatação endoscópica, em geral com poucas sessões. O risco cresce quando a radiofrequência é combinada a mucosectomia extensa: ressecções que comprometem mais de metade da circunferência elevam substancialmente a taxa de estenose. Perfuração é rara, abaixo de 1%, e é justamente essa margem de segurança que permitiu a radiofrequência substituir a esofagectomia na displasia de alto grau.",
+  "distratores": {
+   "A": "Sangramento pode ocorrer, sobretudo após mucosectomia, mas raramente é maciço e é menos frequente que a estenose.",
+   "B": "Rara; a energia é aplicada com profundidade controlada até a muscular da mucosa.",
+   "C": "Complicação de tumores avançados ou de terapias térmicas profundas, não da radiofrequência controlada.",
+   "E": "Consequência de perfuração; incidência muito baixa."
+  },
+  "perola": "Disfagia semanas após radiofrequência = estenose até prova em contrário. Dilatação resolve."
+ },
+ {
+  "id": 25,
+  "bloco": "Pós-ablação e complicações",
+  "enunciado": "O termo 'Barrett enterrado' (buried Barrett) refere-se a:",
+  "alts": {
+   "A": "Segmento de Barrett situado abaixo de hérnia hiatal volumosa.",
+   "B": "Metaplasia intestinal da cárdia gástrica.",
+   "C": "Adenocarcinoma submucoso não detectado por biópsia.",
+   "D": "Ilha de mucosa colunar separada do segmento principal.",
+   "E": "Metaplasia intestinal residual localizada sob o neoepitélio escamoso após terapia ablativa."
+  },
+  "gab": "E",
+  "gatilho": "Terminologia específica da era pós-ablação.",
+  "correta": "Após a ablação, a superfície reepiteliza com escamoso — mas glândulas metaplásicas podem sobreviver na profundidade e ficar recobertas por esse novo epitélio. Como a pinça de biópsia amostra sobretudo a superfície, essas glândulas escapam da detecção e, ao menos teoricamente, podem progredir sem serem vistas. A frequência real é baixa, sobretudo após radiofrequência (menor que após terapia fotodinâmica), mas o conceito justifica duas práticas: biópsias que incluam lâmina própria durante o seguimento e supressão ácida vigorosa no período de cicatrização, que favorece a reepitelização com escamoso em vez de colunar.",
+  "distratores": {
+   "A": "Descrição anatômica, não o conceito.",
+   "B": "Metaplasia intestinal da cárdia é entidade distinta, sem risco estabelecido.",
+   "C": "Refere-se a glândulas metaplásicas, não necessariamente neoplásicas.",
+   "D": "Ilhas são visíveis; a definição de 'enterrado' exige recobrimento por escamoso."
+  },
+  "perola": "Buried Barrett é o argumento de peso para a supressão ácida agressiva durante e após a ablação — o pH baixo favorece reepitelização escamosa."
+ },
+ {
+  "id": 26,
+  "bloco": "Pós-ablação e complicações",
+  "enunciado": "Durante o programa de ablação por radiofrequência, a supressão ácida deve ser:",
+  "alts": {
+   "A": "Intensificada, habitualmente com IBP em dose dobrada, para favorecer a reepitelização escamosa.",
+   "B": "Mantida em dose única diária, igual à do Barrett sem displasia.",
+   "C": "Substituída por bloqueador H2 em dose noturna.",
+   "D": "Substituída por sucralfato isolado.",
+   "E": "Suspensa, para permitir cicatrização fisiológica."
+  },
+  "gab": "A",
+  "gatilho": "Fase de cicatrização pós-ablação — objetivo terapêutico diferente do da manutenção crônica.",
+  "correta": "Depois da ablação, o esôfago tem uma úlcera extensa que vai reepitelizar. Qual epitélio vai crescer ali depende do ambiente: em pH baixo persistente, as células progenitoras tendem a repetir a diferenciação colunar; com supressão ácida potente, favorece-se a neoescamosa. Por isso a dose é dobrada durante o programa de ablação e no período de cicatrização, muitas vezes com adição de dose noturna. Não é excesso de zelo: é a variável que define o resultado do tratamento e a chance de metaplasia enterrada.",
+  "distratores": {
+   "B": "Dose de manutenção é insuficiente na fase de cicatrização.",
+   "C": "Bloqueadores H2 sofrem taquifilaxia e não sustentam o pH necessário.",
+   "D": "Sucralfato é adjuvante sintomático, sem efeito sobre o tipo de epitélio que regenera.",
+   "E": "Suspender garantiria recidiva colunar sobre o leito ablacionado."
+  },
+  "perola": "O IBP dobrado pós-ablação não é para a dor: é para escolher qual epitélio vai crescer."
+ },
+ {
+  "id": 27,
+  "bloco": "Pós-ablação e complicações",
+  "enunciado": "O desfecho considerado alvo do tratamento endoscópico do esôfago de Barrett com displasia é:",
+  "alts": {
+   "A": "Negativação da pHmetria de 24 horas.",
+   "B": "Erradicação completa da metaplasia intestinal, incluindo a displasia.",
+   "C": "Ausência de sintomas de refluxo após o tratamento.",
+   "D": "Erradicação completa da displasia, sendo aceitável a persistência da metaplasia intestinal.",
+   "E": "Redução da extensão do segmento em pelo menos 50%."
+  },
+  "gab": "B",
+  "gatilho": "Definição de sucesso terapêutico — a banca testa se o candidato sabe que erradicar displasia é insuficiente.",
+  "correta": "Deixar metaplasia intestinal no lugar é deixar o campo de onde a displasia surgiu. A erradicação completa da metaplasia intestinal (CEIM) é o alvo porque a persistência de epitélio colunar residual associa-se a recorrência de displasia. Operacionalmente, o tratamento segue em sessões a cada 8 a 12 semanas até que a endoscopia não mostre mucosa colunar e as biópsias da neoescamosa e da neojunção sejam negativas para metaplasia intestinal. Só então o paciente entra no calendário de vigilância pós-erradicação.",
+  "distratores": {
+   "A": "pHmetria não é parâmetro de sucesso da ablação.",
+   "C": "Sintoma não guarda relação com erradicação histológica — muitos são assintomáticos desde o início.",
+   "D": "Erradicar só a displasia (CED) é desfecho intermediário, associado a maior recorrência.",
+   "E": "Redução parcial não é objetivo terapêutico definido."
+  },
+  "perola": "CEIM, não CED. Se sobrou metaplasia, o tratamento não acabou."
+ },
+ {
+  "id": 28,
+  "bloco": "Cirurgia antirrefluxo",
+  "enunciado": "Paciente com esôfago de Barrett C2M3 sem displasia foi submetido a fundoplicatura de Nissen laparoscópica por sintomas refratários, com excelente resultado clínico e ausência de pirose há 2 anos. Sobre a vigilância endoscópica, é correto afirmar que:",
+  "alts": {
+   "A": "Deve ser mantida apenas se houver recidiva de sintomas.",
+   "B": "Pode ser suspensa, pois a cirurgia elimina o refluxo e o risco de progressão.",
+   "C": "Deve ser mantida nos mesmos intervalos recomendados para pacientes tratados clinicamente.",
+   "D": "Deve ser intensificada para anual, pelo risco de recidiva da válvula.",
+   "E": "Pode ser substituída por pHmetria seriada."
+  },
+  "gab": "C",
+  "gatilho": "Barrett + cirurgia antirrefluxo bem-sucedida. A armadilha é acreditar que a cirurgia 'zera' o risco oncológico.",
+  "correta": "A fundoplicatura é excelente para sintoma e para controle do refluxo, mas nunca demonstrou, em ensaios randomizados ou coortes de qualidade, reduzir a incidência de adenocarcinoma em relação ao tratamento com IBP. A regressão do segmento metaplásico é parcial e imprevisível — pode haver redução da extensão, raramente desaparecimento. Como o epitélio metaplásico persiste, o risco persiste, e a vigilância segue exatamente o mesmo calendário: 5 anos no segmento curto, 3 anos no longo. O mesmo vale para a ausência de sintomas: já era ruim como marcador antes da cirurgia, e continua ruim depois.",
+  "distratores": {
+   "A": "Ausência de sintomas nunca autorizou suspender vigilância no Barrett.",
+   "B": "É o erro clássico. Cirurgia controla refluxo, não desfaz metaplasia.",
+   "D": "Não há indicação de encurtar o intervalo apenas por ter operado.",
+   "E": "pHmetria não detecta displasia."
+  },
+  "perola": "Nem IBP nem fundoplicatura dispensam a vigilância. Só a erradicação endoscópica muda o calendário — e ainda assim para um calendário, não para alta."
+ },
+ {
+  "id": 29,
+  "bloco": "Cirurgia antirrefluxo",
+  "enunciado": "Qual é a indicação apropriada de fundoplicatura em paciente portador de esôfago de Barrett?",
+  "alts": {
+   "A": "Todo portador de Barrett, para prevenir progressão para adenocarcinoma.",
+   "B": "Presença de displasia de baixo grau, como alternativa à ablação.",
+   "C": "Segmento maior que 3 cm, independentemente dos sintomas.",
+   "D": "Sintomas de refluxo refratários ou intolerância ao IBP, regurgitação volumosa, hérnia hiatal volumosa ou preferência do paciente adequadamente informado.",
+   "E": "Presença de metaplasia intestinal sem displasia em paciente assintomático."
+  },
+  "gab": "D",
+  "gatilho": "Indicação de cirurgia antirrefluxo — as mesmas da DRGE, sem indicação oncológica adicional pelo Barrett.",
+  "correta": "A existência de Barrett não cria, por si, indicação cirúrgica. As indicações continuam sendo as da doença do refluxo: falha de controle sintomático com IBP otimizado, intolerância ou efeitos adversos da medicação, regurgitação volumosa (o sintoma que menos responde ao IBP, porque é volume e não acidez), hérnia hiatal volumosa ou paraesofágica sintomática, e a escolha informada de paciente jovem que não deseja terapia medicamentosa por décadas. O que o Barrett acrescenta é a obrigação de manter vigilância depois.",
+  "distratores": {
+   "A": "Indicação profilática universal não tem respaldo em evidência.",
+   "B": "Displasia de baixo grau é tratada por via endoscópica, não cirúrgica.",
+   "C": "Comprimento define intervalo de vigilância, não indicação operatória.",
+   "E": "Assintomático controlado não tem indicação cirúrgica."
+  },
+  "perola": "Regurgitação volumosa é o sintoma que mais empurra para a cirurgia — o IBP muda o pH, não o volume."
+ },
+ {
+  "id": 30,
+  "bloco": "Cirurgia antirrefluxo",
+  "enunciado": "Na avaliação pré-operatória de fundoplicatura, qual exame é considerado obrigatório para todos os candidatos?",
+  "alts": {
+   "A": "Cintilografia de esvaziamento gástrico.",
+   "B": "Tomografia de tórax.",
+   "C": "Impedanciometria isolada.",
+   "D": "Ecoendoscopia.",
+   "E": "Manometria esofágica."
+  },
+  "gab": "E",
+  "gatilho": "Exame obrigatório antes de qualquer fundoplicatura.",
+  "correta": "A manometria existe para responder uma pergunta que, se ignorada, transforma a cirurgia em desastre: esse paciente tem acalasia ou distúrbio motor maior travestido de refluxo? Fundoplicatura em acalasia produz disfagia incapacitante. Além disso, a manometria localiza com precisão o esfíncter inferior para posicionar o sensor da pHmetria e caracteriza a motilidade do corpo, dado que alguns cirurgiões usam para escolher entre válvula total e parcial. A pHmetria de 24 horas é obrigatória quando não há esofagite erosiva comprovada ou Barrett — nesses casos o refluxo patológico já está documentado objetivamente. A EDA e o esofagograma completam a avaliação.",
+  "distratores": {
+   "A": "Reservada à suspeita de gastroparesia, sobretudo em diabéticos com sintomas sugestivos.",
+   "B": "Sem papel na avaliação funcional do refluxo.",
+   "C": "A impedâncio-pHmetria é útil no refluxo não ácido e nos sintomas refratários, mas não substitui a manometria.",
+   "D": "Ecoendoscopia não faz parte da avaliação de rotina do refluxo."
+  },
+  "perola": "Antes de fazer uma válvula, exclua acalasia. É por isso que a manometria é inegociável."
+ },
+ {
+  "id": 31,
+  "bloco": "Cirurgia antirrefluxo",
+  "enunciado": "Paciente com DRGE e Barrett, com manometria evidenciando motilidade esofágica ineficaz importante, será submetido a cirurgia antirrefluxo. A técnica classicamente preferida nessa situação é:",
+  "alts": {
+   "A": "Fundoplicatura parcial posterior de Toupet (270°).",
+   "B": "Gastrectomia vertical.",
+   "C": "Derivação gastrojejunal em Y de Roux.",
+   "D": "Fundoplicatura total de Nissen (360°).",
+   "E": "Fundoplicatura anterior de Dor (180°) associada a miotomia."
+  },
+  "gab": "A",
+  "gatilho": "Dismotilidade esofágica importante documentada na manometria.",
+  "correta": "O raciocínio é de equilíbrio de pressões. A válvula gera uma resistência na transição que o corpo esofágico precisa vencer para esvaziar. Se a bomba está fraca, uma válvula de 360° pode ser resistência demais, e o resultado é disfagia persistente. A fundoplicatura parcial posterior de 270° oferece controle de refluxo próximo ao do Nissen com menor resistência ao trânsito. Vale registrar que ensaios randomizados mostram menor diferença do que a lógica sugere, e há escolas que fazem Nissen mesmo com dismotilidade — mas em prova a resposta esperada é Toupet.",
+  "distratores": {
+   "B": "A gastrectomia vertical piora refluxo e é contraindicada em Barrett.",
+   "C": "O Y de Roux é opção de resgate em obesos com falha de fundoplicatura, não a primeira escolha nesse cenário.",
+   "D": "Válvula total em bomba fraca é a receita clássica para disfagia pós-operatória.",
+   "E": "Dor é a válvula parcial anterior clássica após miotomia de Heller na acalasia; aqui não há miotomia."
+  },
+  "perola": "Obeso com DRGE e Barrett: o bypass gástrico em Y de Roux é a operação antirrefluxo mais eficaz, porque trata refluxo e obesidade. A gastrectomia vertical é o oposto — piora o refluxo."
+ },
+ {
+  "id": 32,
+  "bloco": "Cirurgia antirrefluxo",
+  "enunciado": "Durante fundoplicatura laparoscópica em paciente com Barrett longo e hérnia hiatal, após ampla dissecção mediastinal não se consegue obter mais que 1,5 cm de esôfago intra-abdominal sem tensão. A conduta indicada é:",
+  "alts": {
+   "A": "Realizar apenas hiatoplastia, sem válvula.",
+   "B": "Realizar gastroplastia de Collis para alongamento esofágico, seguida da fundoplicatura.",
+   "C": "Confeccionar a válvula sob tensão e fixá-la ao pilar diafragmático.",
+   "D": "Converter para esofagectomia.",
+   "E": "Abortar o procedimento e manter tratamento clínico."
+  },
+  "gab": "B",
+  "gatilho": "Esôfago curto — menos de 2,5 a 3 cm de esôfago intra-abdominal após mobilização mediastinal completa.",
+  "correta": "O esôfago encurtado é consequência da fibrose crônica induzida por décadas de refluxo, e é mais prevalente justamente em quem tem Barrett longo e hérnia volumosa. Se a válvula for construída sob tensão, ela migra para o tórax e a operação falha — é uma das principais causas de recidiva pós-fundoplicatura. A gastroplastia de Collis cria um neoesôfago a partir da pequena curvatura com grampeador, ganhando comprimento suficiente para posicionar a válvula sem tensão abaixo do diafragma.",
+  "distratores": {
+   "A": "Hiatoplastia isolada não controla refluxo.",
+   "C": "Tensão é o mecanismo da migração e da recidiva; fixar não resolve.",
+   "D": "Esofagectomia por doença benigna é desproporcional.",
+   "E": "Abortar sem tentar a solução técnica disponível é subtratamento."
+  },
+  "perola": "Menos de 2,5–3 cm de esôfago intra-abdominal após mobilização ampla = esôfago curto = Collis. E o neoesôfago de Collis é mucosa gástrica: o paciente pode manter refluxo e precisa continuar em vigilância."
+ },
+ {
+  "id": 33,
+  "bloco": "Cirurgia antirrefluxo",
+  "enunciado": "Paciente operado de fundoplicatura de Nissen há 3 semanas apresenta disfagia para sólidos, sem impactação e com boa aceitação de líquidos e pastosos, perdendo 2 kg. A conduta inicial mais adequada é:",
+  "alts": {
+   "A": "Reoperar imediatamente para desfazer a válvula.",
+   "B": "Realizar dilatação endoscópica no mesmo dia.",
+   "C": "Manter orientação dietética e observação, pois a disfagia precoce costuma ser autolimitada, reservando dilatação para persistência além de 8 a 12 semanas.",
+   "D": "Solicitar pHmetria de urgência.",
+   "E": "Indicar gastrostomia para suporte nutricional."
+  },
+  "gab": "C",
+  "gatilho": "Disfagia PRECOCE (primeiras semanas) após fundoplicatura, sem sinais de obstrução completa.",
+  "correta": "Edema da válvula e da hiatoplastia explica a maior parte da disfagia nas primeiras semanas, e o quadro regride espontaneamente na maioria dos casos. A conduta é dieta progressiva, orientação de mastigação e tempo. Dilatação endoscópica precoce, além de raramente necessária, carrega risco de perfuração sobre suturas recentes. Se a disfagia persistir além de 8 a 12 semanas, aí sim investiga-se com esofagograma e endoscopia para diferenciar válvula muito apertada, hiatoplastia estreita, migração torácica ou válvula torcida — e a dilatação entra como primeira medida, com reoperação reservada a falha.",
+  "distratores": {
+   "A": "Reoperação precoce em quadro que tende a resolver espontaneamente é agressiva demais.",
+   "B": "Dilatação sobre sutura de três semanas aumenta risco de perfuração.",
+   "D": "pHmetria não avalia disfagia.",
+   "E": "A paciente aceita líquidos e pastosos; não há indicação de via alternativa."
+  },
+  "perola": "Disfagia precoce = edema = tempo. Disfagia que passa de 3 meses ou que aparece depois de um intervalo livre = problema anatômico = investigar."
+ },
+ {
+  "id": 34,
+  "bloco": "Armadilhas e diferenciais",
+  "enunciado": "Paciente com Barrett de 6 cm em vigilância há 8 anos retorna referindo disfagia progressiva para sólidos há 2 meses, perda de 7 kg e odinofagia. A conduta imediata é:",
+  "alts": {
+   "A": "Antecipar a vigilância programada para daqui a 6 meses.",
+   "B": "Solicitar esofagografia baritada e aguardar o resultado antes de qualquer endoscopia.",
+   "C": "Indicar dilatação endoscópica empírica para alívio sintomático.",
+   "D": "Endoscopia digestiva alta com biópsias dirigidas, pela alta suspeita de adenocarcinoma.",
+   "E": "Aumentar a dose do IBP e reavaliar em 3 meses."
+  },
+  "gab": "D",
+  "gatilho": "Disfagia PROGRESSIVA + perda ponderal + odinofagia em portador de Barrett longo. Sinais de alarme rompem qualquer calendário de vigilância.",
+  "correta": "Vigilância é para o assintomático. Quando surgem sinais de alarme, o paciente sai do protocolo de rastreamento e entra em investigação diagnóstica imediata. Disfagia progressiva de sólidos com emagrecimento em portador de Barrett é adenocarcinoma até prova em contrário, e a endoscopia com biópsias dirigidas é o exame que confirma e permite iniciar o estadiamento. Nenhum outro achado justifica adiar. Os diferenciais — estenose péptica, úlcera de Barrett, anel — também se resolvem no mesmo exame.",
+  "distratores": {
+   "A": "Seis meses é tempo demais para quem perdeu 7 kg.",
+   "B": "O baritado pode preceder a endoscopia em suspeita de divertículo ou fístula, mas aqui só atrasa.",
+   "C": "Dilatar sem diagnóstico pode perfurar um tumor e não trata a causa.",
+   "E": "Tratar empiricamente sinal de alarme atrasa o diagnóstico de neoplasia."
+  },
+  "perola": "Sinal de alarme cancela o cronograma. Em Barrett, disfagia progressiva com perda de peso é câncer até que a biópsia diga o contrário."
+ },
+ {
+  "id": 35,
+  "bloco": "Armadilhas e diferenciais",
+  "enunciado": "Homem de 66 anos com DRGE de longa data apresenta disfagia lentamente progressiva. A EDA mostra estenose lisa, curta e concêntrica no esôfago distal, com mucosa adjacente sem irregularidades; biópsias da estenose e da mucosa foram negativas para malignidade. A conduta é:",
+  "alts": {
+   "A": "Quimiorradioterapia.",
+   "B": "Prótese esofágica metálica autoexpansível.",
+   "C": "Esofagectomia distal.",
+   "D": "Fundoplicatura imediata, sem dilatação.",
+   "E": "Dilatação endoscópica associada a IBP em dose otimizada e mantida a longo prazo."
+  },
+  "gab": "E",
+  "gatilho": "Estenose PÉPTICA — curta, lisa, concêntrica, distal, com biópsias negativas.",
+  "correta": "A estenose péptica é o resultado fibrótico de anos de esofagite. O tratamento tem dois componentes obrigatórios: dilatação para restaurar o calibre e supressão ácida contínua para impedir que a estenose se refaça. O IBP mantido reduz de forma significativa a necessidade de dilatações repetidas — sem ele, a recidiva é a regra. Biópsias são obrigatórias em toda estenose para excluir neoplasia, e vale procurar Barrett na mucosa acima, já que ambos compartilham a mesma etiologia. Se houver recidiva frequente apesar do IBP otimizado, a fundoplicatura entra como opção.",
+  "distratores": {
+   "A": "Não há neoplasia.",
+   "B": "Próteses em estenose benigna cursam com migração e hiperplasia; uso restrito a refratariedade e perfuração.",
+   "C": "Esofagectomia em estenose benigna é reservada a casos refratários extremos e mal nutridos.",
+   "D": "Operar sem restaurar o calibre não trata a disfagia."
+  },
+  "perola": "Toda estenose esofágica precisa de biópsia. E toda estenose péptica dilatada precisa sair do procedimento com IBP prescrito para sempre."
+ },
+ {
+  "id": 36,
+  "bloco": "Armadilhas e diferenciais",
+  "enunciado": "Sobre a quimioprevenção no esôfago de Barrett, é correto afirmar que:",
+  "alts": {
+   "A": "O IBP em dose única diária é a medida recomendada; o AAS não deve ser prescrito apenas com finalidade quimiopreventiva, ficando reservado a quem tem indicação cardiovascular.",
+   "B": "Os anti-inflamatórios não esteroidais em dose plena são recomendados de rotina.",
+   "C": "O ácido acetilsalicílico está formalmente indicado para todos os portadores de Barrett.",
+   "D": "As estatinas substituem o IBP na prevenção da progressão neoplásica.",
+   "E": "Não há qualquer medida farmacológica com sinal de benefício."
+  },
+  "gab": "A",
+  "gatilho": "Quimioprevenção — diferenciar o que é recomendado do que é apenas plausível.",
+  "correta": "O esteio farmacológico é o IBP em dose única diária, mantido de forma contínua. Sobre o AAS, o estudo AspECT randomizou mais de 2.500 portadores de Barrett para esomeprazol em dose alta ou baixa, com ou sem aspirina, e encontrou benefício no desfecho composto que foi modesto e concentrado no efeito do IBP em alta dose, sem magnitude que justificasse recomendar antiagregação a toda a população de Barrett — que inclui muitos idosos com risco de sangramento. A leitura prática: se o paciente já usa AAS por indicação cardiovascular, ótimo; não se prescreve só pelo Barrett.",
+  "distratores": {
+   "B": "AINEs de rotina não são recomendados; o risco gastrointestinal e renal supera o benefício incerto.",
+   "C": "Não há indicação universal de AAS.",
+   "D": "Estatinas têm sinal em estudos observacionais, mas não substituem o IBP nem têm recomendação formal.",
+   "E": "Ignora o papel estabelecido do IBP."
+  },
+  "perola": "AspECT é o nome que a banca cobra quando quer falar de aspirina no Barrett. Resposta segura: IBP sim, AAS só se houver outra indicação."
+ },
+ {
+  "id": 37,
+  "bloco": "Armadilhas e diferenciais",
+  "enunciado": "Na pHmetria esofágica de 24 horas realizada para investigação de DRGE, qual achado caracteriza exposição ácida patológica?",
+  "alts": {
+   "A": "Tempo de exposição ácida superior a 1% do período de registro.",
+   "B": "Tempo de exposição ácida (pH < 4) superior a 6% do período de registro.",
+   "C": "Presença de qualquer episódio de refluxo ácido no decúbito.",
+   "D": "Pressão do esfíncter inferior do esôfago abaixo de 10 mmHg.",
+   "E": "Índice de sintomas positivo, independentemente do tempo de exposição ácida."
+  },
+  "gab": "B",
+  "gatilho": "Ponto de corte objetivo do refluxo patológico.",
+  "correta": "O consenso de Lyon estabeleceu que exposição ácida abaixo de 4% do tempo é normal, acima de 6% é patológica, e a faixa entre 4 e 6% é indeterminada, exigindo evidências adicionais como impedanciometria, número de episódios de refluxo ou impedância basal noturna. O escore composto de DeMeester, mais antigo e ainda muito cobrado, considera anormal valor acima de 14,72. Vale lembrar que a pHmetria é dispensável quando já existe evidência objetiva de doença: esofagite erosiva graus C ou D, estenose péptica ou esôfago de Barrett.",
+  "distratores": {
+   "A": "1% está dentro da faixa normal.",
+   "C": "Episódios isolados de refluxo ocorrem em indivíduos normais.",
+   "D": "Pressão do esfíncter é dado manométrico, não phmétrico, e isoladamente não define doença.",
+   "E": "A correlação sintomática é complementar; sozinha caracteriza hipersensibilidade esofágica, entidade distinta."
+  },
+  "perola": "Se o paciente já tem Barrett ou esofagite LA C/D, a pHmetria pré-operatória é dispensável — a doença já está objetivamente documentada."
+ },
+ {
+  "id": 38,
+  "bloco": "Armadilhas e diferenciais",
+  "enunciado": "Adenocarcinoma cujo epicentro se localiza 2 cm acima da junção esofagogástrica, em paciente com esôfago de Barrett, corresponde a qual classificação de Siewert?",
+  "alts": {
+   "A": "Siewert I.",
+   "B": "Siewert II.",
+   "C": "Siewert III.",
+   "D": "Siewert IV.",
+   "E": "Não se aplica a classificação de Siewert."
+  },
+  "gab": "A",
+  "gatilho": "Localização do epicentro em relação à JEG.",
+  "correta": "Siewert I abrange tumores com epicentro de 1 a 5 cm acima da junção — o típico adenocarcinoma originado em Barrett, cuja abordagem cirúrgica é a esofagectomia. Siewert II ocupa a faixa de 1 cm acima a 2 cm abaixo, o verdadeiro carcinoma da cárdia. Siewert III situa-se de 2 a 5 cm abaixo da junção, comporta-se como câncer gástrico proximal e é tratado com gastrectomia total com esofagectomia distal. A classificação existe justamente porque define via de acesso, extensão da ressecção e territórios de linfadenectomia.",
+  "distratores": {
+   "B": "Siewert II é a faixa de 1 cm acima a 2 cm abaixo da JEG.",
+   "C": "Siewert III é 2 a 5 cm abaixo da JEG.",
+   "D": "Não existe Siewert IV.",
+   "E": "A classificação se aplica precisamente a esse cenário."
+  },
+  "perola": "Siewert I é o filho do Barrett e é tratado como esôfago. Siewert III é tratado como estômago. Siewert II é o campo de batalha."
+ },
+ {
+  "id": 39,
+  "bloco": "Armadilhas e diferenciais",
+  "enunciado": "Paciente de 64 anos com adenocarcinoma de esôfago distal sobre Barrett, estadiado como cT3N1M0, com bom estado geral. A estratégia terapêutica recomendada é:",
+  "alts": {
+   "A": "Ablação por radiofrequência.",
+   "B": "Quimioterapia paliativa exclusiva.",
+   "C": "Esofagectomia isolada, sem terapia perioperatória.",
+   "D": "Terapia neoadjuvante (quimiorradioterapia ou quimioterapia perioperatória) seguida de esofagectomia com linfadenectomia.",
+   "E": "Ressecção endoscópica submucosa."
+  },
+  "gab": "D",
+  "gatilho": "Doença localmente avançada (cT3 e/ou N+) ressecável — sai do território endoscópico e entra no da terapia multimodal.",
+  "correta": "A partir de T2 com fatores de risco, e certamente em T3 ou N positivo, cirurgia isolada oferece resultados inferiores. O ensaio CROSS demonstrou ganho expressivo de sobrevida com quimiorradioterapia neoadjuvante seguida de cirurgia em tumores de esôfago e junção, com aumento da taxa de ressecção R0. Para adenocarcinomas da junção, a quimioterapia perioperatória em esquema FLOT é alternativa consagrada. A escolha entre as duas estratégias depende da localização, do volume nodal e da prática institucional; o que a prova cobra é que cirurgia isolada não é a resposta.",
+  "distratores": {
+   "A": "Ablação não trata neoplasia invasiva.",
+   "B": "A doença é ressecável e sem metástases; paliação exclusiva é subtratamento.",
+   "C": "Cirurgia isolada em T3N1 subtrata.",
+   "E": "Ressecção endoscópica é para T1a e T1b sm1 selecionado."
+  },
+  "perola": "CROSS para esôfago (inclui escamoso e adenocarcinoma), FLOT para junção e estômago. Em T3N1 sobre Barrett, ambas defendem a mesma tese: não opere sem tratamento neoadjuvante."
+ },
+ {
+  "id": 40,
+  "bloco": "Armadilhas e diferenciais",
+  "enunciado": "Homem de 28 anos com impactação alimentar recorrente e disfagia intermitente para sólidos. EDA mostra esôfago com anéis concêntricos, sulcos longitudinais e exsudatos puntiformes esbranquiçados, sem mucosa salmão. A hipótese diagnóstica principal é:",
+  "alts": {
+   "A": "Anel de Schatzki isolado.",
+   "B": "Esôfago de Barrett de segmento curto.",
+   "C": "Acalasia.",
+   "D": "Candidíase esofágica.",
+   "E": "Esofagite eosinofílica."
+  },
+  "gab": "E",
+  "gatilho": "Paciente jovem, impactação alimentar recorrente e o tripé endoscópico: traqueização, sulcos longitudinais e exsudatos puntiformes.",
+  "correta": "A esofagite eosinofílica é doença imunomediada, mais comum em homens jovens com atopia, e sua manifestação mais característica é a impactação alimentar. O diagnóstico exige biópsias — pelo menos seis fragmentos, do esôfago proximal e distal, mesmo que a mucosa pareça normal — demonstrando 15 ou mais eosinófilos por campo de grande aumento. O tratamento se apoia em IBP, corticoide tópico deglutido e dieta de eliminação, com dilatação para estenoses fibróticas. Entra aqui como o principal diferencial de disfagia que não é péptica.",
+  "distratores": {
+   "A": "O anel de Schatzki é uma estrutura única na JEG, sem os anéis múltiplos e sulcos descritos.",
+   "B": "Não há mucosa colunar; a idade e o padrão endoscópico não são de Barrett.",
+   "C": "Acalasia dá disfagia para sólidos e líquidos com regurgitação, e a EDA mostra esôfago dilatado com resistência à transposição da cárdia.",
+   "D": "As placas da candidíase são aderentes e ocorrem em imunossuprimidos ou usuários de corticoide inalatório."
+  },
+  "perola": "Jovem + impactação alimentar = biopsie o esôfago em dois níveis, mesmo que pareça normal. Quinze eosinófilos por campo fecham o diagnóstico."
+ },
+ {
+  "id": 41,
+  "bloco": "Armadilhas e diferenciais",
+  "enunciado": "Sobre a epidemiologia do câncer de esôfago, é correto afirmar que:",
+  "alts": {
+   "A": "O adenocarcinoma associa-se ao Barrett, predomina no terço distal e tem incidência crescente nos países ocidentais.",
+   "B": "O carcinoma epidermoide predomina no terço distal e associa-se ao Barrett.",
+   "C": "O adenocarcinoma associa-se principalmente ao tabagismo e etilismo, com predomínio no terço médio.",
+   "D": "O carcinoma epidermoide tem incidência crescente no Ocidente por causa da obesidade.",
+   "E": "Ambos os tipos histológicos têm a mesma distribuição topográfica e os mesmos fatores de risco."
+  },
+  "gab": "A",
+  "gatilho": "Correlação histologia–topografia–fator de risco.",
+  "correta": "São duas doenças diferentes que compartilham apenas o órgão. O adenocarcinoma nasce do epitélio metaplásico do Barrett, ocupa o terço distal e a junção, e seus fatores de risco são refluxo crônico, obesidade central, sexo masculino e etnia branca — exatamente o perfil que vem se expandindo no Ocidente, o que explica a curva ascendente das últimas décadas. O carcinoma epidermoide ocupa os terços médio e superior, associa-se a tabagismo, etilismo, bebidas muito quentes, acalasia de longa data, estenose cáustica e tilose, e é o tipo predominante no cinturão asiático e ainda majoritário em várias regiões do Brasil.",
+  "distratores": {
+   "B": "Inverte histologia e topografia.",
+   "C": "Descreve os fatores de risco do epidermoide atribuindo-os ao adenocarcinoma.",
+   "D": "A obesidade é fator do adenocarcinoma; o epidermoide tem incidência estável ou em queda no Ocidente.",
+   "E": "Topografia e fatores de risco são justamente o que os separa."
+  },
+  "perola": "No Brasil, o epidermoide ainda predomina em números absolutos — mas a curva do adenocarcinoma sobe. Prova costuma pedir a associação Barrett → adenocarcinoma → terço distal."
+ },
+ {
+  "id": 42,
+  "bloco": "Armadilhas e diferenciais",
+  "enunciado": "Paciente com Barrett C1M2 e displasia de baixo grau confirmada por dois patologistas recusa formalmente a terapia endoscópica de erradicação, após esclarecimento adequado. A conduta alternativa aceitável é:",
+  "alts": {
+   "A": "Vigilância a cada 3 anos, como no Barrett sem displasia.",
+   "B": "Vigilância endoscópica a cada 6 a 12 meses, com biópsias em quatro quadrantes a cada 1 cm.",
+   "C": "Fundoplicatura, como tratamento substitutivo da displasia.",
+   "D": "Esofagectomia, por ser a única alternativa à ablação.",
+   "E": "Alta do seguimento, respeitando a autonomia do paciente."
+  },
+  "gab": "B",
+  "gatilho": "Displasia de baixo grau confirmada, mas com recusa à ablação — a banca testa se o candidato conhece a alternativa e o protocolo de biópsias correspondente.",
+  "correta": "A ablação é preferencial, não obrigatória: a diretriz mantém a vigilância intensiva como alternativa aceitável, com intervalos de 6 a 12 meses. E, uma vez que existe displasia conhecida, o protocolo de biópsias muda: quatro quadrantes a cada 1 cm, e não a cada 2 cm, porque a densidade de amostragem precisa acompanhar o risco. Registrar a recusa esclarecida e manter o paciente sob vigilância é conduta legítima; abandoná-lo, não.",
+  "distratores": {
+   "A": "Intervalo do NDBE subestima o risco da displasia de baixo grau.",
+   "C": "Fundoplicatura não trata displasia.",
+   "D": "Esofagectomia jamais é alternativa de primeira linha na displasia de baixo grau.",
+   "E": "Recusar um tratamento não é recusar o seguimento; a alta é abandono."
+  },
+  "perola": "Displasia conhecida muda dois parâmetros de uma vez: o intervalo (6–12 meses) e a densidade de biópsias (a cada 1 cm)."
+ },
+ {
+  "id": 43,
+  "bloco": "Armadilhas e diferenciais",
+  "enunciado": "Paciente com Barrett de 4 cm faz endoscopia de vigilância com aparelho de alta definição. Além das biópsias sistemáticas, qual recurso é recomendado para aumentar a detecção de displasia?",
+  "alts": {
+   "A": "Tomografia com contraste oral.",
+   "B": "Manometria de alta resolução.",
+   "C": "Cromoendoscopia, convencional com ácido acético ou virtual com NBI, para orientar biópsias dirigidas.",
+   "D": "Ecoendoscopia radial de rotina em todos os exames de vigilância.",
+   "E": "PET-CT anual associado à endoscopia."
+  },
+  "gab": "C",
+  "gatilho": "Recurso adjuvante para aumentar rendimento diagnóstico na vigilância.",
+  "correta": "Displasia raramente é evidente à luz branca convencional. Realçar o padrão de superfície e o padrão vascular aumenta a chance de identificar as áreas que merecem biópsia dirigida: o ácido acético provoca esbranquiçamento transitório cuja perda precoce marca área suspeita, e a cromoendoscopia virtual por NBI evidencia padrões mucosos e vasculares irregulares. Os dois são adjuvantes das biópsias sistemáticas, não substitutos. Some-se a isso o tempo de inspeção — pelo menos 1 minuto por centímetro de segmento — que é, por si só, um preditor de detecção.",
+  "distratores": {
+   "A": "TC não avalia mucosa esofágica com essa finalidade.",
+   "B": "Manometria avalia motilidade, não displasia.",
+   "D": "A ecoendoscopia não estadia displasia e não é recomendada de rotina na vigilância.",
+   "E": "PET-CT não tem resolução para lesão mucosa; gera falsos positivos por inflamação."
+  },
+  "perola": "Tempo de inspeção é 'tecnologia' de graça: 1 minuto por centímetro de Barrett aumenta detecção de displasia."
+ },
+ {
+  "id": 44,
+  "bloco": "Armadilhas e diferenciais",
+  "enunciado": "Reveja o caso inicial: homem de 55 anos, Barrett de 3 cm sem displasia, em IBP e vigilância. Cinco anos depois, mantém-se assintomático, e a endoscopia mostra segmento estável, com biópsias novamente sem displasia. Ele pergunta se pode considerar-se curado. A resposta correta, do ponto de vista clínico, é:",
+  "alts": {
+   "A": "Não, e deve-se indicar fundoplicatura para induzir regressão do segmento.",
+   "B": "Sim — dois exames consecutivos sem displasia permitem alta definitiva.",
+   "C": "Sim, desde que ele mantenha o IBP indefinidamente.",
+   "D": "Não — o segmento metaplásico persiste, o risco de progressão permanece e a vigilância deve ser mantida no intervalo correspondente ao comprimento do segmento.",
+   "E": "Não, e deve-se indicar ablação por radiofrequência a partir do quinto ano de doença."
+  },
+  "gab": "D",
+  "gatilho": "Fechamento do raciocínio — estabilidade endoscópica não é cura, e a estabilidade não muda o calendário.",
+  "correta": "A metaplasia intestinal é uma alteração fenotípica estável do epitélio; ela não regride com IBP nem com cirurgia antirrefluxo de forma confiável. Enquanto o epitélio de risco estiver presente, o risco anual de 0,2 a 0,5% continua correndo. O que a vigilância faz é converter esse risco em detecção precoce, quando a doença ainda é curável por via endoscópica. O intervalo continua ditado pelo comprimento — segmento de 3 cm cai na faixa longa, portanto 3 anos. E o momento em que a conduta muda não é uma data no calendário: é o dia em que o patologista escrever a palavra displasia.",
+  "distratores": {
+   "A": "Fundoplicatura não induz regressão confiável nem dispensa vigilância.",
+   "B": "Exames negativos não retiram o epitélio de risco.",
+   "C": "IBP reduz estímulo, não elimina o campo metaplásico.",
+   "E": "Não existe indicação de ablação por tempo de doença na ausência de displasia."
+  },
+  "perola": "O ponto de inflexão do Barrett nunca é endoscópico nem temporal — é histológico. Tudo muda quando aparece displasia."
+ }
+]

@@ -324,3 +324,8 @@ mark{background:var(--tint-2);color:var(--ink-strong);border-radius:2px;padding:
   .split,.split-b{grid-template-columns:1fr;gap:var(--s5)}
   .split-aside{border-left:0;border-top:1px solid var(--rule);padding-left:0;padding-top:var(--s4)}
 }
+
+/* ── aula interativa embutida ────────────────────────────────────────── */
+.embed{border:1px solid var(--rule);border-radius:var(--radius-lg);overflow:hidden;background:var(--surface-2);margin:var(--s4) 0}
+.embed iframe{display:block;width:100%;height:min(78vh,900px);border:0;background:#fff}
+@media (max-width:900px){.embed iframe{height:72vh}}

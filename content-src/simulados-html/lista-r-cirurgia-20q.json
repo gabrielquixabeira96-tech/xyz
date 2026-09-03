@@ -1,0 +1,262 @@
+[
+ {
+  "n": 1,
+  "meta": "ENARE 2025 · Cirurgia Vascular · Doença Arterial Periférica",
+  "gab": "E",
+  "stem": "Um paciente de 34 anos apresenta-se na consulta com histórico de obesidade grave há mais de 10 anos. Ele tem um índice de massa corporal (IMC) de 44 kg/m² e sofre de várias comorbidades relacionadas à obesidade, incluindo diabetes tipo 2, hipertensão arterial e apneia do sono. Ele já tentou vários tratamentos, incluindo dietas supervisionadas, programas de exercícios e medicações para perda de peso, sem sucesso. Relata que essas condições estão afetando seriamente sua qualidade de vida e capacidade de trabalho. Após uma avaliação completa, ele é considerado um bom candidato para cirurgia bariátrica. A técnica considerada o \"padrão ouro\" para esse paciente é:",
+  "alts": [
+   "Gastrectomia vertical (sleeve gastrectomy).",
+   "Banda gástrica ajustável.",
+   "Duodenal switch (DS).",
+   "Balão intragástrico.",
+   "Bypass gástrico em Y de Roux (RYGB)."
+  ]
+ },
+ {
+  "n": 2,
+  "meta": "ENARE 2025 · Fundamentos Cirúrgicos · Antibioticoprofilaxia",
+  "gab": "B",
+  "stem": "A profilaxia e o controle da infecção em cirurgia são de fundamental importância para a prática cirúrgica. Por isso, o conhecimento dos métodos e substâncias usados para a esterilização de materiais, equipamentos e do ambiente cirúrgico é obrigatório. Nesse contexto, os processos de assepsia e antissepsia são corretamente definidos, respectivamente, como:",
+  "alts": [
+   "Esterilização de instrumentos cirúrgicos e uso de antibióticos no pós-operatório.",
+   "Processo de remoção de todas as formas de vida microbiana de uma superfície e aplicação de substâncias químicas para eliminar ou inibir microrganismos em tecidos vivos.",
+   "Técnica utilizada para remover detritos visíveis de uma superfície e uso de calor para esterilizar instrumentos.",
+   "O uso de soluções salinas para limpar feridas e utilização de radiação para desinfetar superfícies.",
+   "Prática de usar luvas estéreis durante procedimentos cirúrgicos e prática de usar campos cirúrgicos estéreis."
+  ]
+ },
+ {
+  "n": 3,
+  "meta": "ENARE 2025 · Cirurgia Digestiva Baixa · Câncer Colorretal",
+  "gab": "E",
+  "stem": "O conhecimento sobre os anestésicos locais é de fundamental importância, dado que eles são usados constantemente em pequenas cirurgias e procedimentos que necessitam de anestesia. Nesse contexto, é correto afirmar que:",
+  "alts": [
+   "A mepivacaína é indicada como anestésico local em pacientes com insuficiência hepática.",
+   "A bupivacaína é indicada para procedimentos de pequena duração devido à sua curta meia-vida.",
+   "A lidocaína tem um início de ação lento e é frequentemente usada em bloqueios nervosos de longa duração.",
+   "A prilocaína é contraindicada em pacientes com histórico de doenças hepáticas devido ao risco elevado de toxicidade.",
+   "A ropivacaína tem menor cardiotoxicidade em comparação com a bupivacaína e é adequada para bloqueios nervosos periféricos de longa duração."
+  ]
+ },
+ {
+  "n": 4,
+  "meta": "ENARE 2025 · Trauma e Urgência · Trauma Abdominal",
+  "gab": "B",
+  "stem": "Um homem de 28 anos, admitido no pronto-socorro após um acidente automobilístico, apresenta ectoscopicamente sinais evidentes de trauma abdominal. Na avaliação neurológica inicial, está consciente, mas confuso. Seus sinais vitais são: pressão arterial de 85/60 mmHg, frequência cardíaca de 130 bpm, frequência respiratória de 28 ipm, saturação de oxigênio de 94% em ar ambiente. Sua pele está fria e pegajosa, com enchimento capilar prolongado. Refere dor intensa no abdômen. O abdômen está tenso e distendido, com dor à palpação e sem peristaltismo audível. Os exames complementares mostram hemoglobina 8 g/dL com hematócrito de 24%. Foi realizado um FAST (Focused Assessment with Sonography for Trauma), que mostrou líquido livre na cavidade peritoneal. Radiografia de tórax e pelve não mostrou fraturas. Nesse momento, seu diagnóstico e de choque hipovolêmico grau III por hemorragia intra-abdominal. A conduta adotada deverá ser:",
+  "alts": [
+   "Administração de solução salina isotônica e monitoramento em observação.",
+   "Transfusão sanguínea de hemoderivados na relação 1/1/1 e intervenção cirúrgica imediata.",
+   "Administração de medicamentos vasopressores para F aumentar a pressão arterial.",
+   "Administração de diuréticos para reduzir a pressão intra-abdominal.",
+   "Realização de tomografia computadorizada (TC) de abdômen para avaliação adicional antes de qualquer intervenção."
+  ]
+ },
+ {
+  "n": 5,
+  "meta": "ENARE 2025 · Endocrinologia Cirúrgica · Feocromocitoma e Paraganglioma",
+  "gab": "D",
+  "stem": "No ambulatório, dá entrada uma mulher de 26 anos que se apresenta com sinais de masculinização, incluindo aumento de pelos faciais, voz mais grave e aumento da massa muscular. Exames laboratoriais revelam níveis elevados de testosterona e DHEA-S (dehidroepiandrosterona). Diante desse quadro clínico, a hipótese diagnóstica principal é:",
+  "alts": [
+   "Síndrome de Cushing;",
+   "Hiperplasia adrenal congênita;",
+   "Adenoma adrenal não funcionante;",
+   "Carcinoma adrenocortical;",
+   "Feocromocitoma."
+  ]
+ },
+ {
+  "n": 6,
+  "meta": "ENARE 2025 · Cirurgia Torácica · Pneumotórax",
+  "gab": "A",
+  "stem": "Um homem de 26 anos foi admitido na emergência após um acidente de motocicleta. Ao exame físico, apresenta dor torácica intensa e dificuldade respiratória com saturação de 84%. Observa-se tórax flácido, com segmento da parede torácica que se move paradoxalmente. Há crepitação quando da palpação do gradil costal. Diante desse quadro, a melhor abordagem inicial para o manejo do paciente é:",
+  "alts": [
+   "Intubação orotraqueal e ventilação mecânica.",
+   "Colocação de dreno torácico em selo d'água no lado afetado.",
+   "Administração imediata de analgésicos potentes para controle da dor.",
+   "Observação e monitoramento em unidade de terapia intensiva (UTI).",
+   "Realização de toracocentese de emergência, no quinto espaço intercostal."
+  ]
+ },
+ {
+  "n": 7,
+  "meta": "ENARE 2025 · Trauma e Urgência · Trauma Abdominal",
+  "gab": "C",
+  "stem": "Um jovem de 15 anos sofreu um trauma abdominal contuso em acidente automobilístico. Ao exame físico, apresenta dor abdominal epigástrica e tem os seguintes resultados de exames: hemograma com leucocitose de 10.200, níveis elevados de amilase sérica e uma tomografia computadorizada que mostra uma lesão no pâncreas com envolvimento do ducto pancreático principal. Diante desse quadro clínico, a abordagem mais apropriada para o diagnóstico e tratamento do paciente é:",
+  "alts": [
+   "Realização de ultrassonografia abdominal seguida de observação clínica.",
+   "Repetição da tomografia computadorizada em 24 horas para avaliar a progressão da lesão.",
+   "Laparotomia exploratória com possível pancreatectomia parcial.",
+   "Tratamento conservador com monitoramento em unidade de terapia intensiva (UTI) e analgesia.",
+   "Colangiopancreatografia retrógrada endoscópica (CPRE) com colocação de stent pancreático."
+  ]
+ },
+ {
+  "n": 8,
+  "meta": "ENARE 2025 · Cirurgia Digestiva Baixa · Câncer Colorretal",
+  "gab": "E",
+  "stem": "Uma paciente de 72 anos apresenta dor abdominal localizada e uma massa palpável na região inguinal direita. Durante a exploração cirúrgica, observa-se uma hérnia de Richter. Na descrição cirúrgica, a característica anatômica dessa hérnia e o tratamento realizado devem ser descritos do seguinte modo:",
+  "alts": [
+   "Protrusão do saco herniário contendo omento; tratamento com omentectomia e reparo da hérnia.",
+   "Protrusão do saco herniário contendo o intestino grosso; tratamento com redução e hernioplastia.",
+   "Protrusão do saco herniário contendo 40 cm do intestino delgado; tratamento com redução manual e reparo cirúrgico.",
+   "Protrusão do saco herniário contendo o intestino delgado com encarceramento; tratamento com descompressão e reparo laparoscópico.",
+   "Protrusão do saco herniário contendo apenas uma parte da parede do intestino delgado; tratamento com ressecção do segmento comprometido com anastomose e reparo da hérnia."
+  ]
+ },
+ {
+  "n": 9,
+  "meta": "ENARE 2025 · Cirurgia Digestiva Baixa · Obstrução Intestinal",
+  "gab": "A",
+  "stem": "Um paciente de 81 anos, com diagnóstico de doença pulmonar obstrutiva crônica e insuficiência cardíaca congestiva, é internado para tratamento de pneumonia. Após alguns dias de tratamento com antibióticos e repouso no leito, ele começa a apresentar distensão abdominal significativa, dor leve e náuseas, mas sem vômitos. Não apresenta sinais clínicos de peritonite aos exames físico e laboratorial. Radiografias do abdômen mostram dilatação importante dos cólons, principalmente no ceco e cólon ascendente, porém sem evidência de obstrução mecânica. Diante desse quadro clínico, o diagnóstico mais provável e a melhor abordagem inicial para o manejo desse paciente são, respectivamente:",
+  "alts": [
+   "Síndrome de Ogilvie e tratamento com neostigmina.",
+   "Colite pseudomembranosa e tratamento com metronidazol.",
+   "Obstrução intestinal por brida e tratamento com cirurgia exploratória.",
+   "Volvo de sigmoide e tratamento com sigmoidoscopia descompressiva.",
+   "Íleo paralítico e tratamento com reposição de eletrólitos e mobilização precoce."
+  ]
+ },
+ {
+  "n": 10,
+  "meta": "ENARE 2025 · Cirurgia Digestiva Baixa · Apendicite Aguda",
+  "gab": "C",
+  "stem": "No hospital, dá entrada um homem de 58 anos, hígido, que se queixa de dor abdominal no quadrante inferior esquerdo e refere náuseas há dois dias e febre de mais de 38 °C. O exame físico revela dor à palpação e sinal de Blumberg no quadrante inferior esquerdo. Uma tomografia computadorizada do abdômen mostra um abscesso pericólico com mais de 6 cm, pneumoperitônio e sinais de peritonite. Diante desse quadro clínico, o diagnóstico e o tratamento mais apropriados são, respectivamente:",
+  "alts": [
+   "Diverticulite não complicada e tratamento com antibióticos orais e alta hospitalar.",
+   "Diverticulite não complicada, tratamento com nutrição parenteral, antibióticos e observação.",
+   "Diverticulite complicada com abscesso e tratamento com ressecção cirúrgica de emergência à Hartmann.",
+   "Diverticulite complicada com abscesso e tratamento com drenagem percutânea guiada por TC e antibióticos intravenosos.",
+   "Diverticulite complicada com perfuração; tratamento com cirurgia laparoscópica de emergência com anastomose primária."
+  ]
+ },
+ {
+  "n": 11,
+  "meta": "ENARE 2025 · Trauma e Urgência · Trauma Abdominal",
+  "gab": "D",
+  "stem": "Um paciente de 47 anos chega ao serviço de emergência após ter sido baleado no abdômen. Ele está consciente, mas apresenta sinais de choque hipovolêmico com pressão arterial de 85/50 mmHg e frequência cardíaca de 130 bpm. Está taquipneico, com 20 ipm, apresenta pulsos finos e confusão mental. O exame físico revela uma ferida de entrada no quadrante inferior direito do abdômen, sem orifício de saída visível. O paciente tem dor abdominal generalizada com rigidez muscular e sinais de peritonite. A conduta cirúrgica mais apropriada para esse paciente é:",
+  "alts": [
+   "Reposição volêmica e lavagem peritoneal diagnóstica seguida de observação se negativa.",
+   "Administração de fluidos intravenosos e transfusão sanguínea com posterior reavaliação.",
+   "Tomografia computadorizada do abdômen para avaliar a trajetória do projétil e determinação da necessidade de cirurgia.",
+   "Exploração cirúrgica imediata por laparotomia para controle de hemorragia e reparo de lesões intra-abdominais.",
+   "Realização de ultrassonografia abdominal focada no trauma (FAST) e observação na unidade de terapia intensiva."
+  ]
+ },
+ {
+  "n": 12,
+  "meta": "ENARE 2025 · Cirurgia Digestiva Alta · GIST",
+  "gab": "B",
+  "stem": "Uma paciente de 54 anos se queixa de dor abdominal crônica e sensação de plenitude gástrica após as refeições. Uma endoscopia digestiva alta revela massa submucosa no corpo do estômago, e a biópsia confirma a presença de um tumor estromal gastrointestinal (GIST). A respeito do diagnóstico, prognóstico e tratamento dos tumores GIST, é correto afirmar que:",
+  "alts": [
+   "Os tumores GIST são frequentemente benignos e de baixo potencial metastático.",
+   "A mutação no gene KIT é um marcador prognóstico negativo em pacientes com tumores GIST.",
+   "A imuno-histoquímica positiva para CD117 (c-KIT) é uma característica comum dos tumores GIST.",
+   "Os tumores GIST produzem metástases para linfonodos com muita frequência.",
+   "A ressecção cirúrgica radical é o único tratamento eficaz para os tumores GIST, independentemente do tamanho ou localização."
+  ]
+ },
+ {
+  "n": 13,
+  "meta": "ENARE 2025 · Cabeça e Pescoço · Câncer de Laringe",
+  "gab": "E",
+  "stem": "Uma mulher de 38 anos queixa-se da presença de um nódulo tireoidiano, detectado em uma ultrassonografia de rotina. Quando da anamnese e exame físico, não apresenta sintomas relacionados à hiperfunção ou hipofunção da tireoide. Não há dor, dificuldade para engolir ou alterações na voz. A palpação da tireoide não revela nenhuma anormalidade. A ultrassonografia confirma a presença de um nódulo tireoidiano solitário de 2 cm de diâmetro, com classificação TI-RADS IV. Diante desse quadro, a conduta propedêutica mais apropriada é:",
+  "alts": [
+   "Solicitar cintilografia da tireóide com iodo 131.",
+   "Encaminhar para tireoidectomia total devido ao risco de malignidade do nódulo.",
+   "Monitorar com ultrassonografia seriada a cada 6 meses para avaliar o crescimento do nódulo.",
+   "Realizar tratamento com levotiroxina para suprimir o crescimento do nódulo e reduzir o risco de malignidade.",
+   "Realizar biópsia por punção aspirativa com agulha fina (PAAF) para avaliar a citologia do nódulo e orientar o tratamento subsequente."
+  ]
+ },
+ {
+  "n": 14,
+  "meta": "ENARE 2025 · Cirurgia Torácica · Câncer de Pulmão",
+  "gab": "E",
+  "stem": "Uma paciente de 27 anos queixa-se de sudorese noturna, perda de peso não intencional, febre baixa e prurido generalizado há cerca de três meses. Quando do exame físico, são palpáveis linfonodos cervicais aumentados nos níveis II, IV Va e VI bilaterais. Uma radiografia do tórax mostra massas no mediastino. O material de uma biópsia excisional, de um linfonodo cervical, mostra células de Reed-Sternberg LINE característicos. Esses dados confirmam que o diagnóstico para esse paciente é:",
+  "alts": [
+   "Linfoma de Burkitt.",
+   "Linfoma de células do manto.",
+   "Doença pelo vírus Epstein-Barr.",
+   "Linfoma difuso de grandes células B.",
+   "Linfoma de Hodgkin esclerose nodular."
+  ]
+ },
+ {
+  "n": 15,
+  "meta": "ENARE 2025 · Cabeça e Pescoço · Câncer de Laringe",
+  "gab": "D",
+  "stem": "Uma paciente se queixa de boca seca por diminuição da saliva e olhos secos devido à diminuição da produção de lágrimas. Esse quadro clínico é característico da:",
+  "alts": [
+   "Síndrome de Williams.",
+   "Síndrome de Peutz-Jeghers.",
+   "Síndrome de Kleine-Levin.",
+   "Síndrome Sjögren.",
+   "Síndrome de Down."
+  ]
+ },
+ {
+  "n": 16,
+  "meta": "ENARE 2025 · Cirurgia Digestiva Alta · DRGE e Hérnia de Hiato",
+  "gab": "C",
+  "stem": "Um paciente de 58 anos, com histórico de uso contínuo de anti-inflamatórios não esteroidais (AINEs), queixa-se de dor abdominal intensa, principalmente após as refeições, e episódios de vômito com sangue. Relata, também, fezes escuras e pastosas, como piche, nas últimas 48 horas. Ao exame físico, o paciente está hipotenso, taquicárdico e apresenta abdômen distendido e sensível à palpação. A endoscopia digestiva alta revela úlcera gástrica com classificação de Forrest IB, que foi tratada adequadamente. O tratamento concomitante é:",
+  "alts": [
+   "Realizar angiografia para localizar o vaso sangrante.",
+   "Realizar teste respiratório para detecção de Helicobacter pylori.",
+   "Iniciar infusão de proton pump inhibitor (PPI) e transfusão de sangue.",
+   "Iniciar antibioticoterapia empírica para erradicação de Helicobacter pylori.",
+   "Encaminhar o paciente para cirurgia de emergência para ressecção do segmento gástrico afetado."
+  ]
+ },
+ {
+  "n": 17,
+  "meta": "ENARE 2025 · Parede Abdominal e Hérnias · Hernioplastia Inguinal",
+  "gab": "B",
+  "stem": "A técnica Lichtenstein tem sido associada a baixas taxas de recorrência e é considerada uma abordagem padrão para o tratamento das hérnias. Em relação a essa técnica, é correto afirmar que:",
+  "alts": [
+   "É utilizada para o tratamento de hérnias lombares.",
+   "Envolve o uso de uma malha sintética para reforçar a parede abdominal, sem tensão, após a correção da hérnia inguinal.",
+   "Utilizar suturas com fio inabsorvível para fechar o defeito (herniário sem o uso de uma malha).",
+   "É mais comumente utilizada para reparo de hérnias umbilicais.",
+   "Requer a remoção da hérnia e a reconstrução da parede abdominal utilizando tecido do próprio paciente."
+  ]
+ },
+ {
+  "n": 18,
+  "meta": "ENARE 2025 · Cirurgia Digestiva Baixa · Apendicite Aguda",
+  "gab": "D",
+  "stem": "Um paciente de 20 anos chega ao serviço de emergência de um grande hospital com história de anorexia e náuseas que se iniciaram há 24 horas. Agora apresenta dor abdominal intensa no quadrante inferior direito, febre e vômitos. O exame físico revela rigidez abdominal localizada no quadrante inferior direito e dor à palpação profunda na fossa ilíaca direita. Os exames laboratoriais mostram leucocitose de 15.400/mm³ com desvio à esquerda. A tomografia computadorizada de abdômen confirma o diagnóstico de abscesso apendicular. A próxima etapa no manejo desse paciente será:",
+  "alts": [
+   "Realização de ultrassonografia abdominal para confirmar o diagnóstico.",
+   "Tratamento conservador com analgésicos e observação clínica.",
+   "Antibioticoterapia intravenosa empírica e observação clínica.",
+   "Cirurgia laparoscópica de urgência para apendicectomia.",
+   "Drenagem percutânea do abscesso apendicular."
+  ]
+ },
+ {
+  "n": 19,
+  "meta": "ENARE 2025 · Cirurgia Hepatobiliar · Colelitíase e Colecistite",
+  "gab": "B",
+  "stem": "Um homem de 36 anos chega ao pronto-socorro após atropelamento. Ele se queixa de dor abdominal intensa no lado direito do abdômen. Quando do exame físico, está hipotenso e taquicárdico, com dor à palpação no quadrante superior direito do abdômen. Os exames laboratoriais revelam queda da hemoglobina e elevação das enzimas hepáticas. Uma tomografia computadorizada mostra uma lesão no lobo hepático direito com hematoma subcapsular com 30% da superfície e uma laceração estimada em 4 cm de profundidade com 8 cm de comprimento. MV A classificação mais provável dessa lesão hepática e a conduta inicial correta de tratamento são, respectivamente:",
+  "alts": [
+   "Classificação I e tratamento conservador com monitoramento clínico e radiológico.",
+   "Classificação II e intervenção cirúrgica para controle do sangramento com reparo hepático.",
+   "Classificação III e esplenectomia para controle do sangramento com reparo hepático.",
+   "Classificação IV e tratamento com terapia endovascular para embolização da lesão hepática.",
+   "Classificação V e tratamento com transfusão sanguínea e monitoramento clínico."
+  ]
+ },
+ {
+  "n": 20,
+  "meta": "ENARE 2025 · Trauma e Urgência · Avaliação Primária ATLS",
+  "gab": "A",
+  "stem": "Durante endoscopia realizada em um paciente com sangramento gastrointestinal agudo, uma úlcera é identificada. O sistema de classificação comumente utilizado para descrever essa úlcera de acordo com a gravidade do sangramento é a classificação de:",
+  "alts": [
+   "Forrest.",
+   "Rockall.",
+   "Blatchford.",
+   "Glasgow-Blatchford.",
+   "Johnson-Lapidus."
+  ]
+ }
+]

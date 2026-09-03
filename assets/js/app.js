@@ -10,12 +10,12 @@
   if (!D) { document.body.innerHTML = "<p style='padding:2rem'>Conteúdo não carregado.</p>"; return; }
 
   /* ── índices ─────────────────────────────────────────────────────────── */
-  var porArea = {}, porTema = {}, aulaPorId = {}, cardPorId = {}, qPorN = {};
+  var porArea = {}, porTema = {}, aulaPorId = {}, cardPorId = {}, qPorId = {};
   D.areas.forEach(function (a) { porArea[a.slug] = a; });
   D.temas.forEach(function (t) { porTema[t.id] = t; });
   D.aulas.forEach(function (a) { aulaPorId[a.id] = a; });
   D.cards.forEach(function (c) { cardPorId[c.id] = c; });
-  D.questoes.forEach(function (q) { qPorN[q.n] = q; });
+  D.questoes.forEach(function (q) { qPorId[q.id] = q; });
 
   var TOTAL = {
     aulas: D.aulas.length, questoes: D.questoes.length,
@@ -74,8 +74,8 @@
     var agora = Date.now();
     return D.cards.filter(function (c) { var e = P.cards[c.id]; return !e || (e.prox || 0) <= agora; });
   }
-  function registrarQuestao(n, letra, correta) {
-    P.questoes[n] = { r: letra, ok: letra === correta, t: Date.now() };
+  function registrarQuestao(id, letra, correta) {
+    P.questoes[id] = { r: letra, ok: letra === correta, t: Date.now() };
     marcarDia(); salvar();
   }
 
@@ -83,7 +83,7 @@
   function progressoTema(t) {
     var total = t.aulas.length + t.questoes.length + t.cards.length, feito = 0;
     t.aulas.forEach(function (id) { if (P.aulas[id]) feito++; });
-    t.questoes.forEach(function (n) { if (P.questoes[n]) feito++; });
+    t.questoes.forEach(function (id) { if (P.questoes[id]) feito++; });
     t.cards.forEach(function (id) { if (P.cards[id]) feito++; });
     return total ? feito / total : 0;
   }
@@ -161,6 +161,22 @@
     if (t.questoes.length) return plural(t.questoes.length, "questão", "questões");
     if (t.cards.length) return plural(t.cards.length, "cartão", "cartões");
     return "";
+  }
+
+  var FORMATOS = {
+    ebook: "Aula do ebook", slides: "Apresentação", interativa: "Aula interativa"
+  };
+
+  function rotuloFormato(au) {
+    var base = FORMATOS[au.formato || "ebook"] || "Aula";
+    if ((au.formato || "ebook") === "ebook" && au.modulo) return base + " · Módulo " + au.modulo;
+    if (au.formato === "slides" && au.nSlides) return base + " · " + plural(au.nSlides, "slide", "slides");
+    return base;
+  }
+
+  /* de onde a questão veio, na linguagem do arquivo de origem */
+  function rotuloQuestao(q) {
+    return q.areaTexto || q.subtema || q.metaOriginal || (porArea[q.areaSlug] || {}).nome || "";
   }
 
   function contagemTema(t) {
@@ -284,9 +300,10 @@
       '<section class="split">' +
       "<div>" +
       '<h1 class="display">' + saudacao() + ", Gabriel.</h1>" +
-      '<p class="prose narrow" style="margin-top:var(--s4)">Todo o material que você produziu para o R+ de Cirurgia Geral está reunido aqui: ' +
-      TOTAL.aulas + " aulas do ebook, " + TOTAL.questoes + " questões com gabarito comentado e rastreio bibliográfico, " +
-      TOTAL.cards + " cartões de repetição espaçada, distribuídos em " + TOTAL.areas + " matérias e " + TOTAL.temas +
+      '<p class="prose narrow" style="margin-top:var(--s4)">Todo o material que você produziu está reunido aqui: ' +
+      TOTAL.aulas + " aulas — do ebook, das suas apresentações e das aulas-atlas interativas —, " +
+      TOTAL.questoes + " questões comentadas e " + TOTAL.cards + " cartões de repetição espaçada, " +
+      "distribuídos em " + TOTAL.areas + " matérias e " + TOTAL.temas +
       " temas. A ordem das matérias segue o peso previsto para a prova de 2027 pela sua própria análise de padrões 2021–2026.</p>" +
       '<div style="display:flex;gap:var(--s3);margin-top:var(--s5);flex-wrap:wrap">' +
       '<button class="btn btn-primary" data-ir="#/pratica">Iniciar sessão de prática</button>' +
@@ -392,16 +409,17 @@
     if (naoLida) {
       var ta = porTema[naoLida.temaId];
       out.push({
-        href: "#/aula/" + naoLida.id, img: ta ? ta.img : D.areas[0].img, kicker: "Ebook Rumo aos 100%",
-        titulo: naoLida.titulo, corpo: "Módulo " + naoLida.modulo + " — " + (porArea[naoLida.areaSlug] || {}).nome
+        href: "#/aula/" + naoLida.id, img: ta ? ta.img : D.areas[0].img, kicker: "Continuar a leitura",
+        titulo: naoLida.titulo, corpo: rotuloFormato(naoLida) + " — " + (porArea[naoLida.areaSlug] || {}).nome
       });
     }
-    var naoResp = D.questoes.filter(function (q) { return !P.questoes[q.n]; })[0];
+    var naoResp = D.questoes.filter(function (q) { return !P.questoes[q.id]; })[0];
     if (naoResp) {
       var t2 = porTema[naoResp.temaId];
       out.push({
-        href: "#/pratica?q=" + naoResp.n, img: t2 ? t2.img : D.areas[0].img, kicker: "Simulado inédito",
-        titulo: "Questão " + naoResp.n + " — " + naoResp.areaTexto,
+        href: "#/pratica?q=" + encodeURIComponent(naoResp.id), img: t2 ? t2.img : D.areas[0].img,
+        kicker: naoResp.colecao || "Questões comentadas",
+        titulo: "Questão " + naoResp.n + " — " + rotuloQuestao(naoResp),
         corpo: "Gabarito comentado, análise dos distratores e a lacuna que a questão testa."
       });
     }
@@ -490,9 +508,9 @@
         t.aulas.map(function (aid) {
           var au = aulaPorId[aid];
           return '<button class="card" style="text-align:left;cursor:pointer" data-ir="#/aula/' + esc(au.id) + '">' +
-            '<span class="kicker kicker-gold">Módulo ' + esc(au.modulo) + "</span>" +
+            '<span class="kicker kicker-gold">' + esc(rotuloFormato(au)) + "</span>" +
             '<span style="display:block;font-family:var(--font-heading);font-size:21px;color:var(--ink-strong);margin:4px 0 6px">' + esc(au.titulo) + "</span>" +
-            '<span class="meta italic">' + (P.aulas[au.id] ? "lida" : "não lida") + " · " + au.blocos.length + " blocos</span></button>";
+            '<span class="meta italic">' + (P.aulas[au.id] ? "lida" : "não lida") + "</span></button>";
         }).join("") + "</div>";
     }
     if (t.cards.length) {
@@ -510,10 +528,10 @@
     if (t.questoes.length) {
       html += '<h3 style="font-size:20px;margin:var(--s6) 0 var(--s3)">Questões comentadas ' +
         '<span class="meta">(' + t.questoes.length + ")</span></h3>" +
-        t.questoes.map(function (n) {
-          var q = qPorN[n], r = P.questoes[n];
-          return '<button class="hit" data-ir="#/pratica?q=' + n + '">' +
-            '<span class="kicker kicker-gold">Questão ' + n + " · " + esc(q.areaTexto) + "</span>" +
+        t.questoes.map(function (id) {
+          var q = qPorId[id], r = P.questoes[id];
+          return '<button class="hit" data-ir="#/pratica?q=' + encodeURIComponent(id) + '">' +
+            '<span class="kicker kicker-gold">Questão ' + q.n + " · " + esc(rotuloQuestao(q)) + "</span>" +
             '<span class="hit-t" style="font-size:16px;font-family:var(--font-body);margin-top:3px">' + esc(q.enunciado.slice(0, 190)) + "…</span>" +
             '<span class="meta italic">' + (r ? (r.ok ? "respondida — acerto" : "respondida — erro") : "não respondida") + "</span></button>";
         }).join("");
@@ -548,14 +566,23 @@
       return "<p>" + b.html + "</p>";
     }).join("");
 
+    if (au.formato === "interativa") corpo =
+      '<p class="meta italic">' + esc(au.secoes.join(" · ")) + "</p>" +
+      '<div class="embed"><iframe src="' + esc(au.src) + '" title="' + esc(au.titulo) +
+      '" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe></div>' +
+      '<div style="display:flex;gap:var(--s3);flex-wrap:wrap;margin-top:var(--s3)">' +
+      '<a class="btn btn-sm" href="' + esc(au.src) + '" target="_blank" rel="noopener">Abrir em tela cheia</a></div>';
+
     var idx = D.aulas.indexOf(au);
     var prox = D.aulas[idx + 1];
 
     return voltar(t ? "#/tema/" + t.id : "#/materia/" + a.slug, t ? t.nome : a.nome) +
       '<article class="reader" style="margin-top:var(--s4)">' +
-      '<span class="kicker">' + esc(a.nome) + " · Ebook Rumo aos 100% · Módulo " + esc(au.modulo) + "</span>" +
+      '<span class="kicker">' + esc(a.nome) + " · " + esc(rotuloFormato(au)) + "</span>" +
       '<h1 class="display" style="font-size:44px;margin:var(--s2) 0 var(--s2)">' + esc(au.titulo) + "</h1>" +
-      (au.origem ? '<p class="meta italic">Origem na sua prova: ' + esc(au.origem) + "</p>" : "") +
+      (au.origem ? '<p class="meta italic">' + esc(au.origem) + "</p>" : "") +
+      (au.autor ? '<p class="meta italic">' + esc(au.autor) + "</p>" : "") +
+      (au.parteDe ? '<p class="meta italic">Parte de: ' + esc(au.parteDe) + "</p>" : "") +
       '<hr class="hairline">' + corpo +
       '<hr class="hairline">' +
       '<div style="display:flex;gap:var(--s3);flex-wrap:wrap">' +
@@ -569,25 +596,28 @@
   var S = null; /* sessão corrente */
   function iniciarSessao(par) {
     var lista;
-    if (par.q) lista = [parseInt(par.q, 10)];
+    if (par.q) lista = [par.q];
     else if (par.tema) lista = (porTema[par.tema] || { questoes: [] }).questoes.slice();
     else if (par.area) {
       lista = [];
       (porArea[par.area] || { temas: [] }).temas.forEach(function (id) {
         lista = lista.concat(porTema[id].questoes);
       });
+    } else if (par.colecao) {
+      lista = D.questoes.filter(function (q) { return q.colecao === par.colecao; }).map(function (q) { return q.id; });
     } else if (par.modo === "erradas") {
-      lista = D.questoes.filter(function (q) { return P.questoes[q.n] && !P.questoes[q.n].ok; }).map(function (q) { return q.n; });
+      lista = D.questoes.filter(function (q) { return P.questoes[q.id] && !P.questoes[q.id].ok; }).map(function (q) { return q.id; });
     } else if (par.modo === "novas") {
-      lista = D.questoes.filter(function (q) { return !P.questoes[q.n]; }).map(function (q) { return q.n; });
+      lista = D.questoes.filter(function (q) { return !P.questoes[q.id]; }).map(function (q) { return q.id; });
     } else {
-      lista = D.questoes.map(function (q) { return q.n; });
+      lista = D.questoes.map(function (q) { return q.id; });
     }
-    lista = lista.filter(function (n) { return qPorN[n]; });
+    lista = lista.filter(function (id) { return qPorId[id]; });
     if (par.embaralhar) lista = embaralhar(lista);
     var rotulo = "Banco completo";
     if (par.tema && porTema[par.tema]) rotulo = porTema[par.tema].nome;
     else if (par.area && porArea[par.area]) rotulo = porArea[par.area].nome;
+    else if (par.colecao) rotulo = par.colecao;
     else if (par.q) rotulo = "Questão avulsa";
     else if (par.modo === "erradas") rotulo = "Só as que errei";
     else if (par.modo === "novas") rotulo = "Campo cego";
@@ -601,9 +631,10 @@
     if (!S.lista.length) return telaConfigPratica("Nenhuma questão corresponde a esse recorte. Escolha outro conjunto — nada de devolver questão aleatória.");
     if (S.i >= S.lista.length) return telaFimSessao();
 
-    var q = qPorN[S.lista[S.i]];
+    var q = qPorId[S.lista[S.i]];
     var t = porTema[q.temaId], a = porArea[q.areaSlug];
-    lembrar("#/pratica?q=" + q.n, "Questão " + q.n + " — " + q.areaTexto, "Simulado inédito ENARE R+", t ? t.img : a.img);
+    lembrar("#/pratica?q=" + encodeURIComponent(q.id), "Questão " + q.n + " — " + rotuloQuestao(q),
+      q.colecao || "Questões comentadas", t ? t.img : a.img);
 
     var opcoes = q.alternativas.map(function (o) {
       var st = "";
@@ -620,8 +651,11 @@
       revelacao = '<hr class="hairline">' +
         '<h3 style="font-size:26px;color:' + (certo ? "var(--accent-300)" : "var(--ink-strong)") + '">' +
         (certo ? "Correto." : "Vamos rever.") + ' <span class="meta num" style="font-family:var(--font-body)">Gabarito: ' + q.correta + "</span></h3>" +
+        campo("O gatilho da questão", q.gatilho) +
         campo("Comentário", q.comentario) +
         campo("Por que as demais erram", q.distratores) +
+        campo("A fisiologia por trás", q.fisio) +
+        campo("Pérola", q.perola) +
         campo("O que foi alterado em relação à questão-fonte", q.alterado) +
         campo("Lacuna testada", q.lacuna, true) +
         campo("Questão-fonte", q.fonte, true) +
@@ -640,10 +674,13 @@
     return '<div class="pratica">' +
       "<div>" +
       '<div style="display:flex;justify-content:space-between;gap:var(--s3);align-items:baseline;flex-wrap:wrap">' +
-      '<span class="kicker">Simulado inédito ENARE R+ · ' + esc(S.rotulo) + "</span>" +
+      '<span class="kicker">' + esc(q.colecao || "Questões comentadas") +
+      (S.lista.length > 1 ? " · " + esc(S.rotulo) : "") + "</span>" +
       '<span class="meta num">Questão ' + (S.i + 1) + " de " + S.lista.length + "</span></div>" +
       '<div style="margin-top:var(--s4)"><span class="kicker kicker-gold" style="cursor:pointer" data-ir="#/tema/' + esc(q.temaId) + '">' +
-      esc(q.areaTexto) + (t ? " · " + esc(t.nome) : "") + "</span></div>" +
+      esc(rotuloQuestao(q)) + (t ? " · " + esc(t.nome) : "") + "</span>" +
+      (q.subtema ? '<span class="meta italic" style="display:block;margin-top:2px">' + esc(q.subtema) + "</span>" : "") +
+      "</div>" +
       '<p class="prose" style="font-size:17px;max-width:66ch;margin:var(--s3) 0 var(--s5)">' + esc(q.enunciado) + "</p>" +
       opcoes + revelacao +
       "</div>" +
@@ -653,8 +690,8 @@
       '<div><span class="kicker">Erros</span><b class="num">' + S.erros + "</b></div>" +
       '<div><span class="kicker">Média</span><b class="num">' + media + "%</b></div></div>" +
       '<div><span class="kicker">Mapa da sessão</span><div class="qmap" style="margin-top:var(--s2)">' +
-      S.lista.map(function (n, i) {
-        var r = P.questoes[n], s = i === S.i ? "now" : r ? (r.ok ? "ok" : "x") : "";
+      S.lista.map(function (id, i) {
+        var r = P.questoes[id], s = i === S.i ? "now" : r ? (r.ok ? "ok" : "x") : "";
         return '<button data-q="' + i + '"' + (s ? ' data-s="' + s + '"' : "") + ">" + (i + 1) + "</button>";
       }).join("") + "</div></div>" +
       '<div><span class="kicker">Nota de recall</span>' +
@@ -689,12 +726,12 @@
 
   function telaConfigPratica(aviso) {
     secaoAtual = "pratica";
-    var erradas = D.questoes.filter(function (q) { return P.questoes[q.n] && !P.questoes[q.n].ok; }).length;
-    var novas = D.questoes.filter(function (q) { return !P.questoes[q.n]; }).length;
+    var erradas = D.questoes.filter(function (q) { return P.questoes[q.id] && !P.questoes[q.id].ok; }).length;
+    var novas = D.questoes.filter(function (q) { return !P.questoes[q.id]; }).length;
     return '<span class="kicker">Prática</span><h1 class="display" style="margin-top:4px">Como você quer estudar?</h1>' +
       (aviso ? '<p class="prose" style="color:var(--accent-300);margin-top:var(--s3)">' + esc(aviso) + "</p>" : "") +
-      '<p class="prose" style="margin-top:var(--s4)">As ' + TOTAL.questoes + " questões vêm do seu simulado inédito, e cada uma abre o gabarito comentado completo: " +
-      "questão-fonte nas edições 2023–2026, bibliografia identificada, o dado que foi alterado, a análise dos distratores e a lacuna testada.</p>" +
+      '<p class="prose" style="margin-top:var(--s4)">As ' + TOTAL.questoes + " questões vêm das suas cinco coleções, e cada uma abre o comentário completo do arquivo de origem: " +
+      "o gatilho da vinheta, a análise dos distratores, a fisiologia por trás, a pérola, a questão-fonte, a bibliografia identificada e a lacuna testada — conforme o que a fonte traz.</p>" +
       '<div class="grid-cards" style="margin-top:var(--s5)">' +
       [
         { h: "#/pratica?modo=novas&embaralhar=1", t: "Campo cego", m: novas + " questões ainda não vistas", d: "Sorteio entre todos os temas, sem saber de qual matéria a questão veio." },
@@ -706,10 +743,22 @@
           '<span style="display:block;font-family:var(--font-heading);font-size:23px;color:var(--ink-strong);margin:4px 0 6px">' + esc(o.t) + "</span>" +
           '<span style="display:block;font-size:13.5px;color:var(--ink-soft)">' + esc(o.d) + "</span></button>";
       }).join("") + "</div>" +
+      '<h3 style="font-size:20px;margin:var(--s6) 0 var(--s3)">Por coleção</h3>' +
+      '<div class="chips" style="flex-wrap:wrap;margin-bottom:var(--s5)">' + colecoes().map(function (c) {
+        return '<button class="chip" data-ir="#/pratica?colecao=' + encodeURIComponent(c.nome) + '">' +
+          esc(c.nome) + ' <span class="num" style="color:var(--ink-meta)">' + c.n + "</span></button>";
+      }).join("") + "</div>" +
       '<h3 style="font-size:20px;margin:var(--s6) 0 var(--s3)">Por matéria</h3>' +
       '<div class="chips" style="flex-wrap:wrap">' + D.areas.filter(function (a) { return a.nQuestoes; }).map(function (a) {
         return '<button class="chip" data-ir="#/pratica?area=' + a.slug + '">' + esc(a.nome) + ' <span class="num" style="color:var(--ink-meta)">' + a.nQuestoes + "</span></button>";
       }).join("") + "</div>";
+  }
+
+  function colecoes() {
+    var m = {};
+    D.questoes.forEach(function (q) { if (q.colecao) m[q.colecao] = (m[q.colecao] || 0) + 1; });
+    return Object.keys(m).map(function (k) { return { nome: k, n: m[k] }; })
+      .sort(function (a, b) { return b.n - a.n; });
   }
 
   /* ── cartões ─────────────────────────────────────────────────────────── */
@@ -782,8 +831,10 @@
     });
     D.questoes.forEach(function (q) {
       INDICE.push({
-        t: "Questão " + q.n + " — " + q.areaTexto, s: "Questão comentada", h: "#/pratica?q=" + q.n,
-        k: norm(q.enunciado + " " + q.comentario + " " + q.lacuna + " " + q.bibliografia), trecho: q.lacuna || q.enunciado
+        t: "Questão " + q.n + " — " + rotuloQuestao(q), s: q.colecao || "Questão comentada",
+        h: "#/pratica?q=" + encodeURIComponent(q.id),
+        k: norm([q.enunciado, q.comentario, q.lacuna, q.bibliografia, q.gatilho, q.perola, q.fisio].join(" ")),
+        trecho: q.lacuna || q.perola || q.gatilho || q.enunciado
       });
     });
     return INDICE;
@@ -826,9 +877,11 @@
     secaoAtual = "acervo";
     return '<span class="kicker">Procedência do material</span>' +
       '<h1 class="display" style="margin-top:4px">O acervo</h1>' +
-      '<p class="prose" style="margin-top:var(--s4)">Tudo nesta plataforma foi extraído do material que você já produziu. Nada foi reescrito, resumido, ' +
-      "corrigido ou completado na importação: enunciados, comentários, cartões e aulas entram literalmente como estão nos arquivos de origem. " +
-      "A organização em matérias e temas é o único acréscimo — e ela é apenas um índice.</p>" +
+      '<p class="prose" style="margin-top:var(--s4)">Tudo nesta plataforma foi extraído do material que você já produziu: o ebook, as apresentações e reuniões científicas, ' +
+      "as aulas-atlas interativas em HTML, os simulados e o deck de repetição espaçada. Nada foi reescrito, resumido, " +
+      "corrigido ou completado na importação — enunciados, comentários, cartões e slides entram literalmente como estão nos arquivos de origem. " +
+      "A organização em matérias e temas é o único acréscimo, e ela é apenas um índice: quando o assunto do enunciado diverge do rótulo do arquivo, " +
+      "vale o enunciado, e o rótulo original continua visível na questão.</p>" +
       '<div class="statstrip" style="margin:var(--s6) 0">' +
       stat("Matérias", TOTAL.areas, "ordenadas pelo peso na prova", false) +
       stat("Temas", TOTAL.temas, "cada um com o material vinculado", false) +
@@ -904,10 +957,10 @@
       if ((el = ev.target.closest("[data-filtro]"))) { filtroMateria = el.getAttribute("data-filtro"); render(); return; }
       if ((el = ev.target.closest("[data-op]")) && S && !S.revelado) { S.sel = el.getAttribute("data-op"); render(); return; }
       if (ev.target.closest("#confirmar") && S && S.sel && !S.revelado) {
-        var q = qPorN[S.lista[S.i]];
+        var q = qPorId[S.lista[S.i]];
         S.revelado = true;
         if (S.sel === q.correta) S.acertos++; else S.erros++;
-        registrarQuestao(q.n, S.sel, q.correta);
+        registrarQuestao(q.id, S.sel, q.correta);
         render(); return;
       }
       if ((el = ev.target.closest("[data-srs]")) && S) {
@@ -934,14 +987,14 @@
     document.body.addEventListener("input", function (ev) {
       if (ev.target.id === "q") { termo = ev.target.value; render(); }
       if (ev.target.id === "nota" && S) {
-        P.notas[qPorN[S.lista[S.i]].temaId] = ev.target.value; salvar();
+        P.notas[qPorId[S.lista[S.i]].temaId] = ev.target.value; salvar();
       }
     });
 
     document.addEventListener("keydown", function (ev) {
       if (/^(INPUT|TEXTAREA)$/.test(ev.target.tagName)) return;
       if (!S || location.hash.indexOf("#/pratica") !== 0) return;
-      var q = qPorN[S.lista[S.i]];
+      var q = qPorId[S.lista[S.i]];
       if (!q) return;
       if (/^[1-5]$/.test(ev.key) && !S.revelado) {
         var o = q.alternativas[parseInt(ev.key, 10) - 1];
@@ -949,7 +1002,7 @@
       } else if (ev.key === "Enter" && S.sel && !S.revelado) {
         S.revelado = true;
         if (S.sel === q.correta) S.acertos++; else S.erros++;
-        registrarQuestao(q.n, S.sel, q.correta); render();
+        registrarQuestao(q.id, S.sel, q.correta); render();
       } else if (ev.key === "ArrowRight" && S.revelado) {
         S.i++; S.sel = null; S.revelado = false; render();
       }

@@ -281,6 +281,202 @@ def parse_flashcards(path):
     return cards
 
 
+
+# ── 5. Apresentações (slides) ───────────────────────────────────────────
+def parse_apresentacoes(pasta):
+    """Cada arquivo é uma apresentação; cada `## ` é um slide.
+
+    Um `> area:` no cabeçalho define a área padrão; um `> area:` logo abaixo
+    de um slide o reatribui. Com `> dividir: true`, cada slide vira uma aula
+    própria — usado no guia de referência, que atravessa várias matérias.
+    """
+    aulas = []
+    if not os.path.isdir(pasta):
+        return aulas
+    for nome in sorted(os.listdir(pasta)):
+        if not nome.endswith(".md"):
+            continue
+        caminho = os.path.join(pasta, nome)
+        bruto = open(caminho, encoding="utf-8").read()
+        mt = re.match(r"# (.+)", bruto)
+        if not mt:
+            qtn(caminho, bruto[:120], "apresentação sem título de primeiro nível")
+            continue
+        titulo_geral = limpar(mt.group(1))
+        cab = {}
+        for k, v in re.findall(r"^> (\w+):\s*(.+)$", bruto[:bruto.find("\n## ")], re.M):
+            cab[k] = v.strip()
+        area_padrao = cab.get("area", "transversais")
+        dividir = cab.get("dividir", "").lower() == "true"
+
+        partes = re.split(r"^## (.+)$", bruto, flags=re.M)[1:]
+        slides = []
+        for i in range(0, len(partes) - 1, 2):
+            titulo = limpar(partes[i])
+            corpo = partes[i + 1]
+            marea = re.match(r"\s*> area:\s*(\S+)", corpo)
+            area = area_padrao
+            if marea:
+                area = marea.group(1)
+                corpo = corpo[marea.end():]
+            linhas = [inline_html(l) for l in corpo.split("\n") if limpar(l)]
+            if not linhas:
+                qtn(caminho, titulo, "slide sem conteúdo")
+                continue
+            slides.append({"titulo": titulo, "area": area, "linhas": linhas})
+        if not slides:
+            qtn(caminho, titulo_geral, "apresentação sem slides legíveis")
+            continue
+
+        base = nome[:-3]
+        if dividir:
+            for i, sl in enumerate(slides, 1):
+                aulas.append(_aula_slides(
+                    f"slides-{base}-{i:02d}", sl["titulo"], sl["area"],
+                    [sl], cab, titulo_geral))
+        else:
+            aulas.append(_aula_slides(
+                "slides-" + base, titulo_geral, area_padrao, slides, cab, None))
+    return aulas
+
+
+def _aula_slides(ident, titulo, area_padrao, slides, cab, parte_de):
+    blocos = []
+    for sl in slides:
+        if len(slides) > 1:
+            blocos.append({"tipo": "subtitulo", "html": inline_html(sl["titulo"])})
+        for l in sl["linhas"]:
+            blocos.append({"tipo": "paragrafo", "html": l})
+    area, tema = classificar(titulo, area_padrao)
+    if not tema:
+        area, tema = area_padrao, None
+    return {"id": ident, "formato": "slides", "modulo": "", "titulo": titulo,
+            "origem": cab.get("origem", ""), "autor": cab.get("autor", ""),
+            "parteDe": parte_de, "areaSlug": area_padrao, "tema": tema,
+            "blocos": blocos, "nSlides": len(slides)}
+
+
+# ── 6. Aulas interativas (HTML autocontido do autor) ────────────────────
+INTERATIVAS = [
+    {"id": "int-cancer-mama", "arquivo": "cancer-mama.html",
+     "titulo": "Câncer de Mama — aula completa ENARE R+ Cirurgia",
+     "area": "mama", "tema": "Câncer de mama — aula completa",
+     "origem": "Aula-atlas interativa, com pranchas anatômicas em SVG",
+     "secoes": ["Anatomia da mama e origem histológica", "Estratificação de risco",
+                "Fluxograma de rastreio por categoria de risco", "Apresentações clínicas",
+                "Subtipos moleculares", "Algoritmo de tratamento cirúrgico",
+                "Anatomia cirúrgica da axila", "Armadilhas clássicas da FGV/ENARE"]},
+    {"id": "int-tumores-testiculo", "arquivo": "tumores-testiculo.html",
+     "titulo": "Tumores de Testículo — guia high-yield",
+     "area": "urologia", "tema": "Tumores de testículo",
+     "origem": "Guia interativo de uro-oncologia",
+     "secoes": ["Introdução e epidemiologia", "Classificação histopatológica",
+                "Marcadores tumorais", "Estadiamento — TNM 8ª edição",
+                "Algoritmo de conduta", "Pegadinhas de prova"]},
+]
+
+
+def montar_interativas(raiz):
+    aulas = []
+    for it in INTERATIVAS:
+        caminho = os.path.join(raiz, "assets", "interativas", it["arquivo"])
+        if not os.path.exists(caminho):
+            qtn(caminho, it["titulo"], "aula interativa não encontrada em assets/interativas")
+            continue
+        aulas.append({
+            "id": it["id"], "formato": "interativa", "modulo": "",
+            "titulo": it["titulo"], "origem": it["origem"], "autor": "",
+            "areaSlug": it["area"], "tema": it["tema"], "parteDe": None,
+            "src": "assets/interativas/" + it["arquivo"],
+            "secoes": it["secoes"], "blocos": [],
+            "peso": os.path.getsize(caminho),
+        })
+    return aulas
+
+
+# ── 7. Questões dos HTMLs interativos do autor ──────────────────────────
+def _q(ident, n, enunciado, alts, correta, **extra):
+    d = {"id": ident, "n": n, "enunciado": enunciado, "alternativas": alts,
+         "correta": correta, "revisar": False}
+    d.update({k: v for k, v in extra.items() if v})
+    return d
+
+
+def parse_simulados_html(pasta):
+    """Cada arquivo traz o array de questões extraído do HTML original."""
+    questoes = []
+    if not os.path.isdir(pasta):
+        return questoes
+
+    def carregar(nome):
+        caminho = os.path.join(pasta, nome)
+        if not os.path.exists(caminho):
+            qtn(caminho, nome, "arquivo de questões não encontrado")
+            return None
+        return json.load(open(caminho, encoding="utf-8"))
+
+    # Barrett — 44 questões (alts como dicionário, distratores por letra)
+    dados = carregar("barrett-enare.json")
+    for q in dados or []:
+        alts = [{"k": k, "texto": limpar(v)} for k, v in sorted(q["alts"].items())]
+        dist = q.get("distratores") or {}
+        texto_dist = " ".join(f"({k}) {limpar(v)}" for k, v in sorted(dist.items())) if isinstance(dist, dict) else limpar(dist)
+        questoes.append(_q(
+            f"barrett-{q['id']}", q["id"], limpar(q["enunciado"]), alts, q["gab"],
+            areaSlug="esofago", subtema=limpar(q.get("bloco", "")),
+            comentario=limpar(q.get("correta", "")), distratores=texto_dist,
+            gatilho=limpar(q.get("gatilho", "")), perola=limpar(q.get("perola", "")),
+            colecao="Simulado Esôfago de Barrett — ENARE R+"))
+
+    # Tumores neuroendócrinos do pâncreas — 42 questões (alts como lista com ok/nota)
+    dados = carregar("tne-pancreas.json")
+    for q in dados or []:
+        alts, correta, notas = [], None, []
+        for a in q.get("alts", []):
+            alts.append({"k": a["letra"], "texto": limpar(a.get("txt", ""))})
+            if a.get("ok"):
+                correta = a["letra"]
+            elif a.get("nota"):
+                notas.append(f"({a['letra']}) {limpar(a['nota'])}")
+        if not correta or len(alts) < 4:
+            qtn("tne-pancreas.json", str(q.get("id")), "questão sem alternativa correta marcada")
+            continue
+        certa = next((a for a in q["alts"] if a.get("ok")), {})
+        questoes.append(_q(
+            f"tne-{q['id']}", q["id"], limpar(q.get("stem", "")), alts, correta,
+            areaSlug="pancreas", subtema=limpar(q.get("bloco", "")),
+            comentario=limpar(certa.get("nota", "")), distratores=" ".join(notas),
+            gatilho=limpar(q.get("gatilho", "")), fisio=limpar(q.get("fisio", "")),
+            perola=limpar(q.get("perola", "")),
+            tags=", ".join(q.get("tags", [])),
+            colecao="Simulado Tumores neuroendócrinos do pâncreas — ENARE R+"))
+
+    # Tumores de testículo — 8 questões (índice da correta)
+    dados = carregar("tumores-testiculo.json")
+    for i, q in enumerate(dados or [], 1):
+        letras = "ABCDE"
+        alts = [{"k": letras[j], "texto": limpar(t)} for j, t in enumerate(q.get("opts", []))]
+        idx = q.get("correct")
+        if not alts or idx is None or idx >= len(alts):
+            qtn("tumores-testiculo.json", str(q.get("q"))[:80], "questão sem gabarito utilizável")
+            continue
+        questoes.append(_q(
+            f"testiculo-{i}", i, limpar(q.get("q", "")), alts, letras[idx],
+            areaSlug="urologia", comentario=limpar(q.get("feedback", "")),
+            colecao="Tumores de testículo — guia high-yield"))
+
+    # Lista ENARE 2025 — 20 questões reais, com o rótulo de origem preservado
+    dados = carregar("lista-r-cirurgia-20q.json")
+    for q in dados or []:
+        letras = "ABCDE"
+        alts = [{"k": letras[j], "texto": limpar(t)} for j, t in enumerate(q["alts"])]
+        questoes.append(_q(
+            f"e25-{q['n']}", q["n"], limpar(q["stem"]), alts, q["gab"],
+            metaOriginal=q.get("meta", ""),
+            colecao="Lista ENARE 2025 · R+ Cirurgia (20 questões)"))
+    return questoes
+
+
 # ── montagem ────────────────────────────────────────────────────────────
 IMAGENS = sorted(f for f in os.listdir(os.path.join(RAIZ, "assets", "img")) if f.endswith(".png"))
 
@@ -306,44 +502,65 @@ def main():
     simulado = parse_simulado(os.path.join(SRC, "simulado80.md"))
     gabarito = parse_gabarito(os.path.join(SRC, "gabarito80.md"))
     aulas = parse_ebook(os.path.join(SRC, "ebook.md"))
+    aulas += parse_apresentacoes(os.path.join(SRC, "apresentacoes"))
+    aulas += montar_interativas(RAIZ)
     cards = parse_flashcards(os.path.join(SRC, "flashcards.tsv"))
 
-    # questões = simulado ∪ gabarito
+    # questões do simulado inédito = enunciado ∪ gabarito comentado
     questoes = []
     for n in sorted(set(simulado) | set(gabarito)):
-        s, g = simulado.get(n), gabarito.get(n)
-        if not s or not g:
+        s_, g = simulado.get(n), gabarito.get(n)
+        if not s_ or not g:
             qtn("simulado80/gabarito80", f"questão {n}",
-                "enunciado sem gabarito" if s else "gabarito sem enunciado")
+                "enunciado sem gabarito" if s_ else "gabarito sem enunciado")
             continue
         area = TX.AREA_DO_SIMULADO.get(chave(g["areaTexto"]))
         if not area:
             area, _ = classificar(g["areaTexto"])
-        area = area or "transversais"
-        _, tema = classificar(g["comentario"] + " " + s["enunciado"], area)
-        if not tema:
-            _, tema = classificar(g["areaTexto"], area)
-        q = dict(s)
+        q = dict(s_)
         q.update({k: g[k] for k in ("correta", "textoCorreto", "areaTexto",
                                     "fonte", "bibliografia", "alterado",
                                     "comentario", "distratores", "lacuna")})
-        q["areaSlug"] = area
-        q["tema"] = tema
+        q["id"] = f"sim80-{n}"
+        q["areaSlug"] = area or "transversais"
+        q["colecao"] = "Simulado inédito ENARE R+ Cirurgia (80 questões)"
         questoes.append(q)
+
+    questoes += parse_simulados_html(os.path.join(SRC, "simulados-html"))
+
+    # classificação em tema de tudo que ainda não tem
+    for q in questoes:
+        # O conteúdo manda; o rótulo de origem é só desempate. Alguns rótulos
+        # da lista ENARE 2025 não correspondem ao assunto do enunciado, e
+        # corrigi-los no arquivo seria reescrever a fonte.
+        conteudo = " ".join(str(q.get(k, "")) for k in
+                            ("comentario", "gatilho", "perola", "fisio",
+                             "subtema", "enunciado", "textoCorreto"))
+        # Só a alternativa correta entra: os distratores são construídos sobre
+        # temas vizinhos de propósito e puxariam a classificação para o lado errado.
+        certa = next((a["texto"] for a in q.get("alternativas", [])
+                      if a["k"] == q.get("correta")), "")
+        conteudo += " " + certa
+        rotulo = " ".join(str(q.get(k, "")) for k in ("areaTexto", "metaOriginal"))
+        area = q.get("areaSlug")
+        if not area:
+            area, _ = classificar(conteudo)
+            if not area:
+                area, _ = classificar(rotulo)
+            q["areaSlug"] = area = area or "transversais"
+        _, tema = classificar(conteudo, area)
+        if not tema:
+            _, tema = classificar(rotulo, area)
+        q["tema"] = tema
 
     # índice de temas
     temas = {}
-    ordem_tema = {}
-    for pos, (a, t, _) in enumerate(TX.TEMAS):
-        ordem_tema[(a, t)] = pos
-
-    def tema_id(area, nome):
-        return f"{area}--{slug(nome)}"
+    ordem_tema = {(a, t): pos for pos, (a, t, _) in enumerate(TX.TEMAS)}
 
     def garantir(area, nome):
         if not nome:
             nome = "Outros conceitos"
-        tid = tema_id(area, nome)
+        tid = f"{area}--{slug(nome)}"
         if tid not in temas:
             temas[tid] = {"id": tid, "areaSlug": area, "nome": nome,
                           "img": imagem_para(tid), "aulas": [], "questoes": [],
@@ -357,7 +574,7 @@ def main():
     for q in questoes:
         t = garantir(q["areaSlug"], q["tema"])
         q["temaId"] = t["id"]
-        t["questoes"].append(q["n"])
+        t["questoes"].append(q["id"])
     for c in cards:
         t = garantir(c["areaSlug"], c["tema"])
         c["temaId"] = t["id"]
@@ -378,6 +595,13 @@ def main():
             "nCards": sum(len(t["cards"]) for t in seus),
         })
 
+    por_formato = {}
+    for a in aulas:
+        por_formato[a.get("formato", "ebook")] = por_formato.get(a.get("formato", "ebook"), 0) + 1
+    colecoes = {}
+    for q in questoes:
+        colecoes[q.get("colecao", "—")] = colecoes.get(q.get("colecao", "—"), 0) + 1
+
     dados = {
         "gerado": True,
         "areas": areas,
@@ -386,13 +610,19 @@ def main():
         "questoes": questoes,
         "cards": cards,
         "quarentena": quarentena,
-        "fontes": [
-            {"titulo": "Ebook Rumo aos 100% — R+ Cirurgia Geral", "tipo": "Aulas", "itens": len(aulas)},
-            {"titulo": "Simulado inédito ENARE R+ Cirurgia (80 questões)", "tipo": "Questões", "itens": len(questoes)},
-            {"titulo": "Gabarito comentado e rastreio bibliográfico", "tipo": "Comentários", "itens": sum(1 for q in questoes if q["comentario"])},
-            {"titulo": "Deck ENARE de repetição espaçada", "tipo": "Cartões", "itens": len(cards)},
-            {"titulo": "Análise de padrões ENARE 2021-2026 e previsão 2027", "tipo": "Blueprint", "itens": len(areas)},
-        ],
+        "fontes": (
+            [{"titulo": "Ebook Rumo aos 100% — R+ Cirurgia Geral", "tipo": "Aulas do ebook",
+              "itens": por_formato.get("ebook", 0)},
+             {"titulo": "Apresentações e reuniões científicas", "tipo": "Aulas de slides",
+              "itens": por_formato.get("slides", 0)},
+             {"titulo": "Aulas-atlas interativas em HTML", "tipo": "Aulas interativas",
+              "itens": por_formato.get("interativa", 0)}]
+            + [{"titulo": k, "tipo": "Questões", "itens": v}
+               for k, v in sorted(colecoes.items(), key=lambda kv: -kv[1])]
+            + [{"titulo": "Deck ENARE de repetição espaçada", "tipo": "Cartões", "itens": len(cards)},
+               {"titulo": "Análise de padrões ENARE 2021-2026 e previsão 2027",
+                "tipo": "Blueprint", "itens": len(areas)}]
+        ),
     }
 
     os.makedirs(OUT, exist_ok=True)
@@ -405,8 +635,12 @@ def main():
 
     print(f"áreas .......... {len(areas)}")
     print(f"temas .......... {len(temas)}")
-    print(f"aulas .......... {len(aulas)}")
-    print(f"questões ....... {len(questoes)} (com comentário: {sum(1 for q in questoes if q['comentario'])})")
+    print(f"aulas .......... {len(aulas)}  " +
+          " · ".join(f"{k}: {v}" for k, v in sorted(por_formato.items())))
+    com = sum(1 for q in questoes if q.get("comentario"))
+    print(f"questões ....... {len(questoes)} (com comentário: {com})")
+    for k, v in sorted(colecoes.items(), key=lambda kv: -kv[1]):
+        print(f"   · {v:>3}  {k}")
     print(f"cartões ........ {len(cards)}")
     print(f"quarentena ..... {len(quarentena)}")
     for q in quarentena:

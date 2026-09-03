@@ -1,0 +1,90 @@
+[
+ {
+  "q": "Paciente com massa testicular. Histologia revela seminoma puro, porém AFP sérica está elevada em 450 ng/mL. Qual a conduta correta?",
+  "opts": [
+   "Tratar como seminoma — a histologia é soberana",
+   "Tratar como Não-Seminoma (NSGCT)",
+   "Repetir a biópsia por via escrotal para confirmar",
+   "Iniciar radioterapia paraórtica 20 Gy"
+  ],
+  "correct": 1,
+  "feedback": "AFP elevada NUNCA ocorre no seminoma puro. Sua elevação indica componente de saco vitelino não amostrado — o tumor deve ser tratado como NSGCT, independentemente da histologia. (Pegadinha 02)"
+ },
+ {
+  "q": "Paciente com tumor de testículo direito suspeito ao USG. A conduta cirúrgica inicial correta é:",
+  "opts": [
+   "Biópsia por punção ecoguiada transescrotal",
+   "Orquiectomia radical por via escrotal",
+   "Orquiectomia radical por via inguinal com controle proximal do cordão",
+   "RPLND primária sem orquiectomia"
+  ],
+  "correct": 2,
+  "feedback": "Via inguinal é obrigatória. A via escrotal altera a drenagem linfática do retroperitônio para a cadeia inguinal, muda o estadiamento e pode exigir inclusão do escroto no campo de radioterapia. (Pegadinha 01)"
+ },
+ {
+  "q": "NSGCT Estágio I com ILV ausente. Qual a conduta preferencial segundo as diretrizes EAU 2024?",
+  "opts": [
+   "BEP × 1 ciclo profilático",
+   "RPLND primária",
+   "Vigilância ativa com seguimento intensivo",
+   "Radioterapia paraórtica 20 Gy"
+  ],
+  "correct": 2,
+  "feedback": "No NSGCT Estágio I com ILV ausente (baixo risco, ~15% de recidiva), a vigilância ativa é a 1ª opção pela EAU. BEP × 1 é preferido quando ILV está presente (~48% recidiva → reduz para ~3%)."
+ },
+ {
+  "q": "Qual estrutura histológica é patognomônica do tumor do saco vitelino (yolk sac)?",
+  "opts": [
+   "Células de Reed-Sternberg",
+   "Corpos de Schiller-Duval",
+   "Células de Langerhans",
+   "Rosetas de Homer Wright"
+  ],
+  "correct": 1,
+  "feedback": "Os corpos de Schiller-Duval são glomerulóides e patognomônicos do tumor do saco vitelino. O marcador principal é AFP. (Pegadinha 07)"
+ },
+ {
+  "q": "Seminoma Estágio III com massa residual de 4 cm após 3 ciclos de BEP. O PET-CT é negativo. Qual a conduta?",
+  "opts": [
+   "RPLND imediata — massa >3 cm sempre opera",
+   "Observação — PET negativo em seminoma indica necrose/fibrose",
+   "2 ciclos adicionais de BEP",
+   "Radioterapia de salvamento 36 Gy"
+  ],
+  "correct": 1,
+  "feedback": "No SEMINOMA, massa >3 cm pós-QT → PET-CT obrigatório. Se PET NEGATIVO = observação (alta chance de fibrose/necrose). Diferente do não-seminoma, onde massa ≥1cm sempre vai para RPLND, independente do PET."
+ },
+ {
+  "q": "Qual é o tumor testicular primário mais comum em homens acima de 60 anos?",
+  "opts": [
+   "Seminoma clássico",
+   "Carcinoma embrionário",
+   "Linfoma difuso de grandes células B (LDGCB)",
+   "Tumor do saco vitelino"
+  ],
+  "correct": 2,
+  "feedback": "Embora GCTs sejam os mais frequentes em geral, em homens >60 anos o LDGCB é o tumor testicular primário mais comum. Pode ser bilateral em até 30% dos casos. (Pegadinha 09)"
+ },
+ {
+  "q": "Na RPLND sem técnica nerve-sparing, qual é a principal complicação funcional esperada?",
+  "opts": [
+   "Disfunção erétil em 80% dos casos",
+   "Ejaculação retrógrada em quase 100% dos casos",
+   "Incontinência urinária de esforço",
+   "Hipogonadismo hipergonadotrófico"
+  ],
+  "correct": 1,
+  "feedback": "A lesão dos nervos simpáticos (gânglios L1-L3 e plexo hipogástrico superior) causa ejaculação retrógrada em quase 100% sem nerve-sparing. A técnica nerve-sparing preserva em >95% das RPLNDs primárias. (Pegadinha 10)"
+ },
+ {
+  "q": "Qual o marcador citogenético clássico dos tumores de células germinativas testiculares?",
+  "opts": [
+   "Deleção 17p (TP53)",
+   "Translocação t(9;22) — Philadelphia",
+   "Isocromossomo 12p — i(12p)",
+   "Amplificação 8q — MYC"
+  ],
+  "correct": 2,
+  "feedback": "O i(12p) está presente em ~80% dos GCTs testiculares. Útil no diagnóstico diferencial com linfoma testicular, que não apresenta i(12p). (Pegadinha 08)"
+ }
+]

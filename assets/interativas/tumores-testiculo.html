@@ -1,0 +1,1913 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tumores de Testículo — Guia High-Yield · Uro-Oncologia</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:          #0e1117;
+    --surface:     #161b27;
+    --surface-2:   #1e2535;
+    --border:      #2a3349;
+    --accent:      #4f8ef7;
+    --accent-soft: rgba(79,142,247,0.12);
+    --gold:        #f0b429;
+    --gold-soft:   rgba(240,180,41,0.12);
+    --red:         #e05c5c;
+    --red-soft:    rgba(224,92,92,0.12);
+    --green:       #3ecf8e;
+    --green-soft:  rgba(62,207,142,0.12);
+    --purple:      #a78bfa;
+    --purple-soft: rgba(167,139,250,0.12);
+    --text:        #d8e0f0;
+    --text-muted:  #6e7f9a;
+    --text-dim:    #9aaac4;
+    --heading:     #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.35;
+  }
+
+  /* ── PROGRESS BAR ── */
+  #progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--purple));
+    width: 0%;
+    z-index: 1000;
+    transition: width 0.1s linear;
+  }
+
+  /* ── STICKY NAV ── */
+  #sticky-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 900;
+    background: rgba(14,17,23,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0.6rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+  }
+  #sticky-nav.visible { transform: translateY(0); }
+
+  .sticky-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    white-space: nowrap;
+  }
+
+  .sticky-links {
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+
+  .sticky-links a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .sticky-links a:hover, .sticky-links a.active {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+
+  .sticky-mode-btn {
+    margin-left: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.25rem 0.6rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .sticky-mode-btn:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ── LAYOUT ── */
+  .wrapper {
+    position: relative; z-index: 1;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 2rem 5rem;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: relative;
+    padding: 4.5rem 0 3rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 3rem;
+  }
+
+  .header-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.1rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .header-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+    opacity: 0.4;
+  }
+
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 900;
+    color: var(--heading);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  header h1 span { color: var(--accent); }
+
+  .header-meta {
+    margin-top: 1.2rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    font-style: italic;
+    display: flex; flex-wrap: wrap; gap: 1.5rem;
+  }
+  .header-meta span { display: flex; align-items: center; gap: 0.4rem; }
+
+  /* ── STATS ROW ── */
+  .stats-row {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+  }
+  .stat-chip {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    flex: 1;
+    min-width: 120px;
+  }
+  .stat-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--accent);
+    font-weight: 700;
+    line-height: 1;
+  }
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── NAVIGATION BAR ── */
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.4rem 1.8rem;
+    margin-bottom: 3.5rem;
+    display: flex; flex-wrap: wrap; gap: 0.5rem 1.2rem;
+  }
+  .toc-title {
+    width: 100%;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+  }
+  .toc a {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 0.25rem 0.7rem;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    transition: all 0.18s;
+  }
+  .toc a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    margin-bottom: 3.8rem;
+    scroll-margin-top: 5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.1rem;
+    margin-bottom: 1.8rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    user-select: none;
+  }
+  .section-header:hover .section-collapse-btn { opacity: 1; }
+
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid rgba(79,142,247,0.3);
+    padding: 0.25rem 0.55rem;
+    border-radius: 5px;
+    margin-top: 0.35rem;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+  }
+
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--heading);
+    line-height: 1.25;
+    font-weight: 700;
+    flex: 1;
+  }
+
+  .section-collapse-btn {
+    margin-top: 0.4rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    opacity: 0;
+    transition: all 0.2s;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .section-collapse-btn.open { color: var(--accent); opacity: 1; border-color: var(--accent); }
+
+  .section-body {
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    max-height: 9999px;
+    opacity: 1;
+  }
+  .section-body.collapsed {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  /* ── PROSE ── */
+  p { margin-bottom: 1rem; color: var(--text); }
+  p:last-child { margin-bottom: 0; }
+  strong { color: var(--heading); font-weight: 600; }
+  em { color: var(--gold); font-style: italic; }
+
+  /* ── CALLOUT BOXES ── */
+  .callout {
+    border-radius: 10px;
+    padding: 1.1rem 1.4rem;
+    margin: 1.6rem 0;
+    border-left: 3px solid;
+    font-size: 0.94rem;
+  }
+  .callout-blue   { background: var(--accent-soft); border-color: var(--accent); }
+  .callout-gold   { background: var(--gold-soft);   border-color: var(--gold);   }
+  .callout-red    { background: var(--red-soft);    border-color: var(--red);    }
+  .callout-green  { background: var(--green-soft);  border-color: var(--green);  }
+  .callout-purple { background: var(--purple-soft); border-color: var(--purple); }
+
+  .callout-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+  }
+  .callout-blue   .callout-title { color: var(--accent);  }
+  .callout-gold   .callout-title { color: var(--gold);    }
+  .callout-red    .callout-title { color: var(--red);     }
+  .callout-green  .callout-title { color: var(--green);   }
+  .callout-purple .callout-title { color: var(--purple);  }
+
+  /* ── TABLES ── */
+  .table-wrap {
+    overflow-x: auto;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    margin: 1.8rem 0;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  thead tr { background: var(--surface-2); }
+  th {
+    padding: 0.85rem 1.1rem;
+    text-align: left;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  td {
+    padding: 0.8rem 1.1rem;
+    border-bottom: 1px solid rgba(42,51,73,0.6);
+    vertical-align: top;
+    line-height: 1.55;
+  }
+  tr:last-child td { border-bottom: none; }
+  tbody tr { transition: background 0.15s; }
+  tbody tr:hover { background: rgba(79,142,247,0.04); }
+
+  .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.15rem 0.55rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    margin: 0.1rem 0;
+  }
+  .tag-pos  { background: var(--red-soft);    color: var(--red);    border: 1px solid rgba(224,92,92,0.3);   }
+  .tag-var  { background: var(--gold-soft);   color: var(--gold);   border: 1px solid rgba(240,180,41,0.3);  }
+  .tag-neg  { background: var(--surface-2);   color: var(--text-muted); border: 1px solid var(--border);     }
+  .tag-blue { background: var(--accent-soft); color: var(--accent); border: 1px solid rgba(79,142,247,0.3);  }
+
+  /* ── GRID CARDS ── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem;
+    margin: 1.6rem 0;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.4rem;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(79,142,247,0.1);
+  }
+  .card-icon { font-size: 1.4rem; margin-bottom: 0.7rem; }
+  .card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--heading);
+    margin-bottom: 0.6rem;
+  }
+  .card p { font-size: 0.88rem; color: var(--text-dim); margin-bottom: 0.4rem; }
+
+  /* ── ALGORITHM STEPS ── */
+  .algo-step {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 1.2rem;
+    align-items: flex-start;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  section.visible .algo-step { opacity: 1; transform: translateX(0); }
+  section.visible .algo-step:nth-child(1) { transition-delay: 0.05s; }
+  section.visible .algo-step:nth-child(2) { transition-delay: 0.15s; }
+  section.visible .algo-step:nth-child(3) { transition-delay: 0.25s; }
+  section.visible .algo-step:nth-child(4) { transition-delay: 0.35s; }
+
+  .algo-num {
+    flex-shrink: 0;
+    width: 2rem; height: 2rem;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 600;
+    border-radius: 50%;
+  }
+  .algo-body h4 { font-size: 0.96rem; color: var(--heading); font-weight: 600; margin-bottom: 0.3rem; }
+  .algo-body p  { font-size: 0.88rem; color: var(--text-dim); margin: 0; }
+
+  /* ── STAGE BADGES ── */
+  .stage {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.2rem 0.65rem;
+    border-radius: 5px;
+    margin-right: 0.4rem;
+  }
+  .stage-I   { background: var(--green-soft);  color: var(--green);  border: 1px solid rgba(62,207,142,0.3); }
+  .stage-II  { background: var(--gold-soft);   color: var(--gold);   border: 1px solid rgba(240,180,41,0.3); }
+  .stage-III { background: var(--red-soft);    color: var(--red);    border: 1px solid rgba(224,92,92,0.3);  }
+
+  /* ── PEGADINHAS INTERATIVAS ── */
+  .trap-list { list-style: none; }
+  .trap-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 10px 10px 0;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .trap-item:hover { box-shadow: 0 4px 16px rgba(240,180,41,0.1); }
+
+  .trap-header {
+    padding: 1rem 3rem 1rem 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .trap-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    flex: 1;
+  }
+  .trap-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    transition: transform 0.3s, color 0.2s;
+    pointer-events: none;
+  }
+  .trap-item.open .trap-toggle {
+    transform: translateY(-50%) rotate(180deg);
+    color: var(--gold);
+  }
+  .trap-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.2s;
+    padding: 0 1.3rem;
+  }
+  .trap-item.open .trap-body {
+    max-height: 400px;
+    padding: 0 1.3rem 1.1rem;
+  }
+  .trap-item p { font-size: 0.92rem; color: var(--text); margin: 0; }
+  .trap-item strong { color: var(--gold); }
+
+  /* ── QUIZ SECTION ── */
+  .quiz-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.6rem;
+    margin: 2rem 0;
+  }
+  .quiz-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--purple);
+    margin-bottom: 1rem;
+  }
+  .quiz-q {
+    font-size: 0.95rem;
+    color: var(--heading);
+    margin-bottom: 1.1rem;
+    line-height: 1.6;
+    font-family: 'Source Serif 4', serif;
+  }
+  .quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .quiz-opt {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    font-size: 0.88rem;
+    color: var(--text);
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Source Serif 4', serif;
+    transition: all 0.15s;
+  }
+  .quiz-opt:hover:not(:disabled) { border-color: var(--accent); color: var(--heading); background: var(--accent-soft); }
+  .quiz-opt.correct { border-color: var(--green); background: var(--green-soft); color: var(--green); }
+  .quiz-opt.wrong   { border-color: var(--red);   background: var(--red-soft);   color: var(--red);   }
+  .quiz-opt:disabled { cursor: default; }
+
+  .quiz-feedback {
+    font-size: 0.86rem;
+    color: var(--text-dim);
+    display: none;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+  }
+  .quiz-feedback.show { display: block; }
+  .quiz-nav {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .quiz-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+    transition: opacity 0.15s;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .quiz-btn:hover { opacity: 0.85; }
+  .quiz-btn.secondary {
+    background: var(--surface-2);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+  }
+  .quiz-score {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-left: auto;
+  }
+
+  /* ── INTERACTIVE FLOWCHART ── */
+  .flowchart-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.4rem;
+    margin: 1.8rem 0;
+    overflow-x: auto;
+  }
+  .flowchart-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .flowchart-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .flowchart-wrap svg { display: block; margin: 0 auto; max-width: 100%; }
+
+  /* ── TNM TABLE COLORING ── */
+  .tnm-T { color: var(--accent); font-weight: 600; }
+  .tnm-N { color: var(--gold); font-weight: 600; }
+  .tnm-M { color: var(--red); font-weight: 600; }
+
+  /* ── LIST STYLES ── */
+  ul.bullet { list-style: none; padding: 0; }
+  ul.bullet li {
+    padding-left: 1.4rem;
+    position: relative;
+    margin-bottom: 0.45rem;
+    font-size: 0.93rem;
+    color: var(--text);
+  }
+  ul.bullet li::before {
+    content: '→';
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-size: 0.78rem;
+    top: 0.2rem;
+  }
+
+  /* ── DIVIDER ── */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+
+  /* ── INLINE MONO ── */
+  code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82em;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    padding: 0.1em 0.45em;
+    border-radius: 4px;
+    color: var(--accent);
+  }
+
+  /* ── FOOTNOTES ── */
+  .footnote {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    padding-top: 0.6rem;
+    margin-top: 1rem;
+    font-style: italic;
+  }
+
+  /* ── FOCUS MODE ── */
+  body.focus-mode .wrapper { max-width: 680px; }
+  body.focus-mode section:not(.focused) { opacity: 0.25; }
+  body.focus-mode section.focused { opacity: 1; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.08em;
+  }
+
+  /* ── TOOLTIP ── */
+  [data-tip] { position: relative; cursor: help; border-bottom: 1px dashed var(--text-muted); }
+  [data-tip]::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a2035;
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    padding: 0.4rem 0.7rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 100;
+    max-width: 260px;
+    white-space: normal;
+    text-align: center;
+    font-style: normal;
+  }
+  [data-tip]:hover::after { opacity: 1; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .wrapper { padding: 0 1rem 4rem; }
+    .card-grid { grid-template-columns: 1fr; }
+    th, td { padding: 0.65rem 0.8rem; }
+    .toc { flex-direction: column; }
+    #sticky-nav { padding: 0.5rem 1rem; }
+    .sticky-links a { font-size: 0.6rem; padding: 0.15rem 0.35rem; }
+    .stats-row { gap: 0.5rem; }
+    .stat-chip { min-width: 90px; }
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: #fff; color: #111; }
+    .wrapper { max-width: 100%; padding: 1rem; }
+    .card { border: 1px solid #ccc; }
+    #sticky-nav, #progress-bar { display: none; }
+    .trap-body { max-height: none !important; padding: 0 1.3rem 1.1rem !important; }
+    section { opacity: 1 !important; transform: none !important; }
+  }
+
+  /* ── ANIMATE IN ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  header { animation: fadeUp 0.6s ease forwards; }
+  .toc   { animation: fadeUp 0.6s ease 0.2s both; }
+</style>
+</head>
+<body>
+
+<!-- Progress bar -->
+<div id="progress-bar"></div>
+
+<!-- Sticky nav -->
+<nav id="sticky-nav">
+  <span class="sticky-title">Tumores de Testículo</span>
+  <div class="sticky-links">
+    <a href="#epidemiologia">01 · Epidemiologia</a>
+    <a href="#classificacao">02 · Classificação</a>
+    <a href="#marcadores">03 · Marcadores</a>
+    <a href="#estadiamento">04 · Estadiamento</a>
+    <a href="#conduta">05 · Conduta</a>
+    <a href="#pegadinhas">06 · Pegadinhas</a>
+  </div>
+  <button class="sticky-mode-btn" id="focusBtn" title="Alternar modo foco">⊙ Foco</button>
+</nav>
+
+<div class="wrapper">
+
+  <!-- ══════════ HEADER ══════════ -->
+  <header>
+    <div class="header-label">Uro-Oncologia · Residência &amp; Título · High-Yield</div>
+    <h1>Tumores de <span>Testículo</span><br>Guia Definitivo de Estudo</h1>
+    <div class="header-meta">
+      <span>📋 Baseado em EAU Guidelines 2024 / AUA 2023</span>
+      <span>🏛 TNM 8ª Edição (AJCC/UICC)</span>
+      <span>🎯 Foco em questões de prova</span>
+    </div>
+
+    <!-- Stats chips -->
+    <div class="stats-row">
+      <div class="stat-chip">
+        <span class="stat-value">&gt;95%</span>
+        <span class="stat-label">Taxa de cura geral</span>
+      </div>
+      <div class="stat-chip">
+        <span class="stat-value">15–35</span>
+        <span class="stat-label">Faixa etária (anos)</span>
+      </div>
+      <div class="stat-chip">
+        <span class="stat-value">10</span>
+        <span class="stat-label">Pegadinhas de prova</span>
+      </div>
+      <div class="stat-chip">
+        <span class="stat-value">4–8×</span>
+        <span class="stat-label">RR na criptorquidia</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════ SUMÁRIO ══════════ -->
+  <nav class="toc" aria-label="Índice">
+    <div class="toc-title">Sumário — clique para navegar</div>
+    <a href="#epidemiologia">01 · Epidemiologia</a>
+    <a href="#classificacao">02 · Classificação Histopatológica</a>
+    <a href="#marcadores">03 · Marcadores Tumorais</a>
+    <a href="#estadiamento">04 · Estadiamento TNM</a>
+    <a href="#conduta">05 · Algoritmo de Conduta</a>
+    <a href="#pegadinhas">06 · Pegadinhas de Prova</a>
+  </nav>
+
+  <!-- ══════════ SEÇÃO 1 — EPIDEMIOLOGIA ══════════ -->
+  <section id="epidemiologia">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num">01</span>
+      <h2>Introdução e Epidemiologia</h2>
+      <span class="section-collapse-btn open">▲ recolher</span>
+    </div>
+    <div class="section-body">
+
+    <p>Os tumores de testículo correspondem a <strong>1–2% de todas as neoplasias masculinas</strong>, porém são a <strong>neoplasia sólida mais comum em homens entre 15 e 35 anos</strong>. Apesar da incidência crescente (especialmente em países ocidentais), a mortalidade é baixa graças à alta quimiossensibilidade e à detecção precoce.</p>
+
+    <div class="callout callout-blue">
+      <div class="callout-title">📊 Dados Chave</div>
+      <p>Incidência: ~10/100.000 homens/ano em países desenvolvidos. Taxa de cura geral: <strong>&gt;95%</strong> quando tratado adequadamente, mesmo em estágios avançados.</p>
+    </div>
+
+    <h3 style="color:var(--heading);font-family:'Playfair Display',serif;font-size:1.2rem;margin:1.8rem 0 1rem;">Fatores de Risco</h3>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">⚠️</div>
+        <h3>Criptorquidia</h3>
+        <p><strong>Principal fator de risco</strong>. Risco relativo 4–8× maior. O risco persiste <em>mesmo após orquipexia</em> (embora reduzido se realizada antes dos 2 anos).</p>
+        <p style="color:var(--red);font-size:0.82rem;">Testículo contralateral também tem risco aumentado (2×) — ponto frequente em prova.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🧬</div>
+        <h3>Histórico Familiar</h3>
+        <p>RR 8–10× em irmãos de pacientes afetados. RR 4–6× em filhos. Associação com alterações no cromossomo 12p (<em>isocromossomo i12p</em> — marcador citogenético clássico).</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔬</div>
+        <h3>Neoplasia In Situ (GCNIS)</h3>
+        <p>Germ Cell Neoplasia In Situ: precursora de ~90% dos tumores de células germinativas. Risco de progressão para tumor invasivo: <strong>50% em 5 anos</strong>.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🩺</div>
+        <h3>Outros Fatores</h3>
+        <ul class="bullet">
+          <li>Atrofia testicular</li>
+          <li>Síndrome de <span data-tip="Cariótipo 47,XXY. Aumenta risco de tumor mediastinal de células germinativas.">Klinefelter (XXY)</span> — aumenta risco de tumor mediastinal</li>
+          <li>Tumor contralateral prévio (RR 25×)</li>
+          <li>Disgenesia gonadal / transtornos do desenvolvimento sexual</li>
+          <li>Infertilidade masculina</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout callout-gold">
+      <div class="callout-title">⚡ High-Yield — Pico Etário</div>
+      <p><strong>Seminoma:</strong> 30–45 anos &nbsp;|&nbsp; <strong>Não-seminoma:</strong> 15–35 anos &nbsp;|&nbsp; <strong>Linfoma testicular:</strong> &gt;60 anos (tumor testicular mais comum em idosos).</p>
+    </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════ SEÇÃO 2 — CLASSIFICAÇÃO ══════════ -->
+  <section id="classificacao">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num">02</span>
+      <h2>Classificação Histopatológica</h2>
+      <span class="section-collapse-btn open">▲ recolher</span>
+    </div>
+    <div class="section-body">
+
+    <p>A distinção entre <strong>Seminoma</strong> e <strong>Não-Seminoma</strong> é a decisão diagnóstica mais crítica, pois determina toda a conduta terapêutica. Ambos derivam de células germinativas e são denominados <em>Germ Cell Tumors (GCTs)</em>.</p>
+
+    <!-- Fluxograma interativo SVG — Classificação -->
+    <div class="flowchart-wrap">
+      <div class="flowchart-title">🌳 Árvore Classificatória — Tumores Testiculares</div>
+      <svg viewBox="0 0 860 320" xmlns="http://www.w3.org/2000/svg" style="min-width:600px;font-family:'JetBrains Mono',monospace;">
+        <defs>
+          <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#4f8ef7" opacity="0.6"/>
+          </marker>
+        </defs>
+        <!-- Root -->
+        <rect x="300" y="12" width="260" height="44" rx="8" fill="#1e2535" stroke="#4f8ef7" stroke-width="1.5"/>
+        <text x="430" y="32" fill="#d8e0f0" text-anchor="middle" font-size="11" font-weight="600">Tumores Testiculares</text>
+        <text x="430" y="48" fill="#6e7f9a" text-anchor="middle" font-size="10">Massa intratesticular detectada</text>
+
+        <!-- Branches from root -->
+        <line x1="430" y1="56" x2="240" y2="96" stroke="#4f8ef7" stroke-width="1" stroke-opacity="0.5" marker-end="url(#arrow)"/>
+        <line x1="430" y1="56" x2="620" y2="96" stroke="#4f8ef7" stroke-width="1" stroke-opacity="0.5" marker-end="url(#arrow)"/>
+
+        <!-- GCT box -->
+        <rect x="100" y="96" width="280" height="44" rx="8" fill="#1e2535" stroke="#4f8ef7" stroke-width="1.5"/>
+        <text x="240" y="116" fill="#4f8ef7" text-anchor="middle" font-size="11" font-weight="600">Células Germinativas (GCT)</text>
+        <text x="240" y="131" fill="#6e7f9a" text-anchor="middle" font-size="10">~95% dos tumores testiculares</text>
+
+        <!-- Non-GCT box -->
+        <rect x="480" y="96" width="280" height="44" rx="8" fill="#1e2535" stroke="#6e7f9a" stroke-width="1.5"/>
+        <text x="620" y="116" fill="#9aaac4" text-anchor="middle" font-size="11" font-weight="600">Células Não-Germinativas</text>
+        <text x="620" y="131" fill="#6e7f9a" text-anchor="middle" font-size="10">~5% — Leydig, Sertoli, Linfoma</text>
+
+        <!-- GCT branches -->
+        <line x1="240" y1="140" x2="150" y2="180" stroke="#4f8ef7" stroke-width="1" stroke-opacity="0.5" marker-end="url(#arrow)"/>
+        <line x1="240" y1="140" x2="330" y2="180" stroke="#f0b429" stroke-width="1" stroke-opacity="0.5" marker-end="url(#arrow)"/>
+
+        <!-- Seminoma box -->
+        <rect x="50" y="180" width="200" height="56" rx="8" fill="rgba(79,142,247,0.1)" stroke="#4f8ef7" stroke-width="1.5"/>
+        <text x="150" y="200" fill="#4f8ef7" text-anchor="middle" font-size="12" font-weight="600">SEMINOMA</text>
+        <text x="150" y="216" fill="#9aaac4" text-anchor="middle" font-size="9.5">Clássico (~85%)</text>
+        <text x="150" y="228" fill="#9aaac4" text-anchor="middle" font-size="9.5">Espermatocítico (&lt;5%)</text>
+
+        <!-- NSGCT box -->
+        <rect x="260" y="180" width="200" height="56" rx="8" fill="rgba(240,180,41,0.1)" stroke="#f0b429" stroke-width="1.5"/>
+        <text x="360" y="200" fill="#f0b429" text-anchor="middle" font-size="12" font-weight="600">NÃO-SEMINOMA</text>
+        <text x="360" y="216" fill="#9aaac4" text-anchor="middle" font-size="9.5">Embrionário · Saco Vitelino</text>
+        <text x="360" y="228" fill="#9aaac4" text-anchor="middle" font-size="9.5">Coriocarcinoma · Teratoma · Misto</text>
+
+        <!-- Non-GCT sub -->
+        <line x1="620" y1="140" x2="620" y2="180" stroke="#6e7f9a" stroke-width="1" stroke-opacity="0.4" marker-end="url(#arrow)"/>
+        <rect x="490" y="180" width="260" height="56" rx="8" fill="rgba(110,127,154,0.08)" stroke="#6e7f9a" stroke-width="1"/>
+        <text x="620" y="200" fill="#9aaac4" text-anchor="middle" font-size="11">Linfoma (1º em &gt;60 anos)</text>
+        <text x="620" y="216" fill="#6e7f9a" text-anchor="middle" font-size="9.5">Leydig · Sertoli · Granulosa</text>
+        <text x="620" y="228" fill="#6e7f9a" text-anchor="middle" font-size="9.5">Metástase (pulmão, melanoma)</text>
+
+        <!-- Key rule box -->
+        <rect x="50" y="264" width="410" height="40" rx="8" fill="rgba(224,92,92,0.08)" stroke="#e05c5c" stroke-width="1"/>
+        <text x="255" y="282" fill="#e05c5c" text-anchor="middle" font-size="10" font-weight="600">⚠ QUALQUER componente não-seminomatoso → tratar como NSGCT</text>
+        <text x="255" y="296" fill="#9aaac4" text-anchor="middle" font-size="9.5">AFP elevada = NSGCT (mesmo com histologia de seminoma)</text>
+      </svg>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Frequência</th>
+            <th>Subtipos / Características</th>
+            <th>Comportamento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:rgba(79,142,247,0.06)">
+            <td colspan="4" style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--accent);font-weight:600;letter-spacing:0.1em;">SEMINOMA (GCNIS-derivado)</td>
+          </tr>
+          <tr>
+            <td><strong>Seminoma Clássico</strong></td>
+            <td>~85% dos seminomas</td>
+            <td>Células grandes, citoplasma claro, núcleo central. Resposta inflamatória linfocítica. <em>Sinciciotrofoblastos</em> podem elevar β-HCG em ~15%.</td>
+            <td>Radiosensível. Quimiossensível. Pior prognóstico apenas em estágio III.</td>
+          </tr>
+          <tr>
+            <td><strong>Seminoma Espermatocítico</strong></td>
+            <td>&lt;5% dos seminomas</td>
+            <td>Exclusivo de homens &gt;50 anos. 3 populações celulares. <em>Não associado a GCNIS.</em></td>
+            <td>Excelente prognóstico. Raramente metastatiza. Conduta: orquiectomia.</td>
+          </tr>
+          <tr style="background:rgba(240,180,41,0.06)">
+            <td colspan="4" style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--gold);font-weight:600;letter-spacing:0.1em;">NÃO-SEMINOMA (NSGCT)</td>
+          </tr>
+          <tr>
+            <td><strong>Carcinoma Embrionário</strong></td>
+            <td>~40% dos NSGCTs</td>
+            <td>Componente mais comum nos tumores mistos. Células indiferenciadas, alto grau. AFP e β-HCG podem elevar.</td>
+            <td>Agressivo. Invasão linfovascular frequente.</td>
+          </tr>
+          <tr>
+            <td><strong>Tumor do Saco Vitelino</strong> (Yolk Sac)</td>
+            <td>Infantil puro (&lt;4 anos); misto em adultos</td>
+            <td>Padrão microcístico/reticular. <em><span data-tip="Estrutura glomerulóide patognomônica do tumor do saco vitelino. Pergunta frequente de histopatologia.">Corpos de Schiller-Duval</span></em> (patognomônico).</td>
+            <td><span class="tag tag-pos">AFP ↑↑↑</span> — marcador ideal. Bom prognóstico em crianças.</td>
+          </tr>
+          <tr>
+            <td><strong>Coriocarcinoma</strong></td>
+            <td>&lt;1% puro; misto comum</td>
+            <td>Células trofoblásticas (cito + sinciciotrofoblastos). Hemorragia intratumoral.</td>
+            <td><span class="tag tag-pos">β-HCG ↑↑↑↑</span> Metástase hematogênica precoce (pulmão, SNC). Pior prognóstico.</td>
+          </tr>
+          <tr>
+            <td><strong>Teratoma</strong></td>
+            <td>~50% dos NSGCTs (misto)</td>
+            <td>Elementos das 3 camadas germinativas. <em>Maduro, Imaturo, com Transformação Somática Maligna.</em></td>
+            <td>Em adultos: <em>NUNCA é benigno</em>. <span data-tip="Por isso RPLND é obrigatória em massa residual ≥1cm, mesmo PET-CT negativo.">Resistente à quimioterapia.</span> AFP leve em alguns casos.</td>
+          </tr>
+          <tr>
+            <td><strong>Tumor Misto</strong></td>
+            <td>~60% dos NSGCTs</td>
+            <td>Combinação dos subtipos acima. O mais frequente: carcinoma embrionário + teratoma (<em>teratocarcinoma</em>).</td>
+            <td>Conduta pelo componente mais agressivo.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-red">
+      <div class="callout-title">🚨 Regra Crítica — Tumores Mistos</div>
+      <p>Se <em>qualquer</em> componente não-seminomatoso estiver presente (mesmo uma pequena área), o tumor <strong>deve ser tratado como Não-Seminoma</strong>. Um "seminoma com AFP elevada" — na prática — é um <strong>Não-Seminoma</strong>.</p>
+    </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════ SEÇÃO 3 — MARCADORES ══════════ -->
+  <section id="marcadores">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num">03</span>
+      <h2>Marcadores Tumorais</h2>
+      <span class="section-collapse-btn open">▲ recolher</span>
+    </div>
+    <div class="section-body">
+
+    <p>Os marcadores séricos são <strong>obrigatórios</strong> no estadiamento, monitoramento e diagnóstico diferencial. Devem ser coletados <em>pré e pós-orquiectomia</em> (normalização esperada confirma ressecção completa; persistência = doença residual).</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Marcador</th>
+            <th>Produzido por</th>
+            <th>Seminoma</th>
+            <th>Carcinoma Embrionário</th>
+            <th>Saco Vitelino</th>
+            <th>Coriocarcinoma</th>
+            <th>Teratoma</th>
+            <th>Meia-vida</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>AFP</strong><br><small style="color:var(--text-muted)">α-fetoproteína</small></td>
+            <td>Células saco vitelino, hepatócitos fetais</td>
+            <td><span class="tag tag-neg">NUNCA eleva</span></td>
+            <td><span class="tag tag-var">Variável ↑</span></td>
+            <td><span class="tag tag-pos">↑↑↑ (marcador principal)</span></td>
+            <td><span class="tag tag-neg">Negativo</span></td>
+            <td><span class="tag tag-var">Leve ↑ (possível)</span></td>
+            <td><code>5–7 dias</code></td>
+          </tr>
+          <tr>
+            <td><strong>β-HCG</strong><br><small style="color:var(--text-muted)">Gonadotrofina Coriônica</small></td>
+            <td>Sinciciotrofoblastos</td>
+            <td><span class="tag tag-var">↑ leve (≤15% dos casos, sinciciotrofoblastos)</span></td>
+            <td><span class="tag tag-var">↑ variável</span></td>
+            <td><span class="tag tag-neg">Raro</span></td>
+            <td><span class="tag tag-pos">↑↑↑↑ (marcador principal)</span></td>
+            <td><span class="tag tag-neg">Negativo</span></td>
+            <td><code>24–36 h</code></td>
+          </tr>
+          <tr>
+            <td><strong>LDH</strong><br><small style="color:var(--text-muted)">Lactato Desidrogenase</small></td>
+            <td>Lise celular / carga tumoral</td>
+            <td><span class="tag tag-var">↑ proporcional à carga</span></td>
+            <td><span class="tag tag-var">↑ variável</span></td>
+            <td><span class="tag tag-var">↑ variável</span></td>
+            <td><span class="tag tag-var">↑ variável</span></td>
+            <td><span class="tag tag-var">↑ variável</span></td>
+            <td><code>Inespecífica</code></td>
+          </tr>
+          <tr>
+            <td><strong>PLAP</strong><br><small style="color:var(--text-muted)">Fosfatase Alcalina Placentária</small></td>
+            <td>Células germinativas</td>
+            <td><span class="tag tag-pos">↑ em ~50%</span></td>
+            <td><span class="tag tag-neg">Inespecífico</span></td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td><code>Variável</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="color:var(--heading);font-family:'Playfair Display',serif;font-size:1.15rem;margin:1.8rem 0 1rem;">Interpretação Clínica dos Marcadores</h3>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">📈</div>
+        <h3>AFP elevada = Não-Seminoma</h3>
+        <p>Seminoma <strong>puro NUNCA eleva AFP</strong>. Se AFP elevada com histologia de seminoma → componente de saco vitelino não identificado → tratar como NSGCT.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⏱</div>
+        <h3>Cinética pós-orquiectomia</h3>
+        <p>Monitora-se a <em>meia-vida</em>. Queda mais lenta que o esperado sugere doença residual. AFP deve normalizar em ~25 dias; β-HCG em ~7 dias.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Marcadores no Estadiamento (S)</h3>
+        <p>O critério <strong>S</strong> (marcadores séricos pós-orquiectomia) integra o estadiamento TNM: S0=normal, S1=leve elevação, S2=moderada, S3=alta. Influencia o grupo prognóstico IGCCCG.</p>
+      </div>
+    </div>
+
+    <div class="callout callout-purple">
+      <div class="callout-title">💡 Regra Mnemônica</div>
+      <p><strong>"AFS = AFP Fora do Seminoma"</strong> — AFP elevada <em>sempre</em> classifica como não-seminoma, independentemente da histologia. β-HCG pode elevar levemente no seminoma (sinciciotrofoblastos), mas <em>nunca</em> em valores de coriocarcinoma.</p>
+    </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════ SEÇÃO 4 — ESTADIAMENTO ══════════ -->
+  <section id="estadiamento">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num">04</span>
+      <h2>Estadiamento — TNM 8ª Edição</h2>
+      <span class="section-collapse-btn open">▲ recolher</span>
+    </div>
+    <div class="section-body">
+
+    <!-- Tumor primário T -->
+    <h3 style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;margin:0 0 1rem;">Tumor Primário (pT)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>pT</th><th>Critério</th><th>Implicação Clínica</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="tnm-T">pT1</span></td><td>Confinado ao testículo (incluindo rete testis) sem ILV</td><td>Bom prognóstico no estágio I</td></tr>
+          <tr><td><span class="tnm-T">pT2</span></td><td>Invasão de rete testis, epidídimo, ou <span data-tip="Invasão Linfovascular — principal fator de risco para micrometástases ocultas no NSGCT Estágio I">ILV</span> presente</td><td><strong>Fator de risco para micrometástase</strong> — influencia conduta no estágio I NSGCT</td></tr>
+          <tr><td><span class="tnm-T">pT3</span></td><td>Invasão do cordão espermático</td><td>Risco ↑ de metástase retroperitoneal</td></tr>
+          <tr><td><span class="tnm-T">pT4</span></td><td>Invasão de escroto</td><td>Altera drenagem linfática → gânglios inguinais! Cuidado com biópsia escrotal prévia.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Linfonodos N -->
+    <h3 style="color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;margin:1.8rem 0 1rem;">Linfonodos Regionais (N — Clínico/Patológico)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>cN / pN</th><th>Critério</th><th>Implicação</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="tnm-N">N0/pN0</span></td><td>Sem linfonodos acometidos</td><td>Estágio I</td></tr>
+          <tr><td><span class="tnm-N">N1/pN1</span></td><td>Massa ≤2 cm ou ≤5 linfonodos, nenhum &gt;2 cm</td><td>Estágio IIA</td></tr>
+          <tr><td><span class="tnm-N">N2/pN2</span></td><td>Massa 2–5 cm ou &gt;5 linfonodos, ou extensão extranodal</td><td>Estágio IIB</td></tr>
+          <tr><td><span class="tnm-N">N3/pN3</span></td><td>Massa &gt;5 cm</td><td>Estágio IIC</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Metástases M -->
+    <h3 style="color:var(--red);font-family:'JetBrains Mono',monospace;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;margin:1.8rem 0 1rem;">Metástases à Distância (M)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>M</th><th>Definição</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="tnm-M">M0</span></td><td>Sem metástases à distância</td></tr>
+          <tr><td><span class="tnm-M">M1a</span></td><td>Linfonodos não-regionais ou pulmão (lesões pulmonares são M1a, não M1b)</td></tr>
+          <tr><td><span class="tnm-M">M1b</span></td><td>Sítios viscerais não-pulmonares (fígado, SNC, osso)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Marcadores S -->
+    <h3 style="color:var(--purple);font-family:'JetBrains Mono',monospace;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;margin:1.8rem 0 1rem;">Marcadores Séricos Pós-Orquiectomia (S)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>S</th><th>LDH</th><th>β-HCG (mUI/mL)</th><th>AFP (ng/mL)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>S0</strong></td><td>Normal</td><td>Normal</td><td>Normal</td></tr>
+          <tr><td><strong>S1</strong></td><td>&lt;1,5× LSN</td><td>&lt;5.000</td><td>&lt;1.000</td></tr>
+          <tr><td><strong>S2</strong></td><td>1,5–10× LSN</td><td>5.000–50.000</td><td>1.000–10.000</td></tr>
+          <tr><td><strong>S3</strong></td><td>&gt;10× LSN</td><td>&gt;50.000</td><td>&gt;10.000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Grupos clínicos -->
+    <h3 style="color:var(--heading);font-family:'Playfair Display',serif;font-size:1.15rem;margin:1.8rem 0 1rem;">Grupamento por Estágio Clínico</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Estágio Clínico</th><th>pT</th><th>N</th><th>M</th><th>S</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="stage stage-I">Estágio I</span></td><td>Qualquer pT</td><td>N0</td><td>M0</td><td>S0–S1</td></tr>
+          <tr><td><span class="stage stage-II">Estágio IIA</span></td><td>Qualquer</td><td>N1</td><td>M0</td><td>S0–S1</td></tr>
+          <tr><td><span class="stage stage-II">Estágio IIB</span></td><td>Qualquer</td><td>N2</td><td>M0</td><td>S0–S1</td></tr>
+          <tr><td><span class="stage stage-II">Estágio IIC</span></td><td>Qualquer</td><td>N3</td><td>M0</td><td>S0–S1</td></tr>
+          <tr><td><span class="stage stage-III">Estágio IIIA</span></td><td>Qualquer</td><td>Qualquer</td><td>M1a</td><td>S0–S1</td></tr>
+          <tr><td><span class="stage stage-III">Estágio IIIB</span></td><td>Qualquer</td><td>N1-3</td><td>M0-1a</td><td>S2</td></tr>
+          <tr><td><span class="stage stage-III">Estágio IIIC</span></td><td>Qualquer</td><td>Qualquer</td><td>M1b ou S3</td><td>Qualquer</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-gold">
+      <div class="callout-title">⚡ IGCCCG — Grupos Prognósticos (Estágio III)</div>
+      <p>Para doença metastática, o grupo prognóstico do IGCCCG (Bom / Intermediário / Ruim) é determinado por: <strong>histologia, sítios metastáticos e nível dos marcadores pós-orquiectomia</strong>. Coriocarcinoma puro = sempre <em>Ruim</em>. Seminoma com M1b = sempre <em>Intermediário</em> (não existe "Ruim" no seminoma pelo IGCCCG).</p>
+    </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════ SEÇÃO 5 — CONDUTA ══════════ -->
+  <section id="conduta">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num">05</span>
+      <h2>Algoritmo de Conduta</h2>
+      <span class="section-collapse-btn open">▲ recolher</span>
+    </div>
+    <div class="section-body">
+
+    <!-- TUMOR PRIMÁRIO -->
+    <h3 style="color:var(--heading);font-family:'Playfair Display',serif;font-size:1.2rem;margin:0 0 1rem;">5.1 · Tumor Primário — Orquiectomia Radical Inguinal</h3>
+
+    <div class="callout callout-red">
+      <div class="callout-title">🚨 Princípio Fundamental</div>
+      <p><strong>Orquiectomia Radical por Via INGUINAL</strong> é o padrão-ouro e passo inicial obrigatório em TODOS os casos. Via escrotal é <em>formalmente contraindicada</em> (altera drenagem linfática, risco de recidiva local e em cadeia inguinal).</p>
+    </div>
+
+    <div class="algo-step"><div class="algo-num">1</div><div class="algo-body"><h4>Pré-operatório</h4><p>Coleta de AFP, β-HCG, LDH. TC de abdome/pelve e tórax. Espermograma e banco de sêmen (oferecer antes da cirurgia). USG testicular confirmatória.</p></div></div>
+    <div class="algo-step"><div class="algo-num">2</div><div class="algo-body"><h4>Incisão inguinal</h4><p>Controle proximal do cordão espermático com clampe antes de manipular o testículo. Ligadura alta do cordão no anel inguinal interno.</p></div></div>
+    <div class="algo-step"><div class="algo-num">3</div><div class="algo-body"><h4>Pós-operatório imediato</h4><p>Repetir marcadores tumorais 7–10 dias após cirurgia para avaliar cinética de queda.</p></div></div>
+    <div class="algo-step"><div class="algo-num">4</div><div class="algo-body"><h4>Estadiamento completo</h4><p>TC tórax/abdome/pelve com contraste. PET-CT: indicado apenas em casos selecionados de seminoma pós-quimioterapia (massa residual ≥3 cm).</p></div></div>
+
+    <hr class="divider">
+
+    <!-- SEMINOMA -->
+    <h3 style="color:var(--accent);font-family:'Playfair Display',serif;font-size:1.2rem;margin:0 0 1.2rem;">5.2 · Seminoma — Conduta por Estágio</h3>
+
+    <!-- Fluxograma Seminoma -->
+    <div class="flowchart-wrap">
+      <div class="flowchart-title">📊 Fluxograma — Seminoma Puro Confirmado</div>
+      <svg viewBox="0 0 820 260" xmlns="http://www.w3.org/2000/svg" style="min-width:640px;font-family:'JetBrains Mono',monospace;">
+        <defs>
+          <marker id="arrowB" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#4f8ef7" opacity="0.7"/>
+          </marker>
+        </defs>
+        <!-- Confirmado -->
+        <rect x="300" y="10" width="220" height="40" rx="8" fill="rgba(79,142,247,0.12)" stroke="#4f8ef7" stroke-width="1.5"/>
+        <text x="410" y="27" fill="#4f8ef7" text-anchor="middle" font-size="11" font-weight="600">SEMINOMA PURO</text>
+        <text x="410" y="41" fill="#9aaac4" text-anchor="middle" font-size="9.5">AFP normal • histologia confirmada</text>
+
+        <!-- Arrow down -->
+        <line x1="410" y1="50" x2="410" y2="74" stroke="#4f8ef7" stroke-width="1.2" marker-end="url(#arrowB)"/>
+
+        <!-- Estadiamento -->
+        <rect x="310" y="74" width="200" height="32" rx="6" fill="#1e2535" stroke="#2a3349" stroke-width="1"/>
+        <text x="410" y="88" fill="#d8e0f0" text-anchor="middle" font-size="10" font-weight="600">Estadiamento completo</text>
+        <text x="410" y="100" fill="#6e7f9a" text-anchor="middle" font-size="9">TC tórax/abd/pelve · marcadores</text>
+
+        <!-- 3 branches -->
+        <line x1="410" y1="106" x2="120" y2="140" stroke="#3ecf8e" stroke-width="1.2" stroke-opacity="0.7" marker-end="url(#arrowB)"/>
+        <line x1="410" y1="106" x2="410" y2="140" stroke="#f0b429" stroke-width="1.2" stroke-opacity="0.7" marker-end="url(#arrowB)"/>
+        <line x1="410" y1="106" x2="700" y2="140" stroke="#e05c5c" stroke-width="1.2" stroke-opacity="0.7" marker-end="url(#arrowB)"/>
+
+        <!-- Stage I -->
+        <rect x="20" y="140" width="200" height="36" rx="7" fill="rgba(62,207,142,0.08)" stroke="#3ecf8e" stroke-width="1.5"/>
+        <text x="120" y="156" fill="#3ecf8e" text-anchor="middle" font-size="11" font-weight="600">Estágio I (~80%)</text>
+        <text x="120" y="169" fill="#9aaac4" text-anchor="middle" font-size="9">T qualquer · N0 · M0</text>
+
+        <!-- Stage II -->
+        <rect x="310" y="140" width="200" height="36" rx="7" fill="rgba(240,180,41,0.08)" stroke="#f0b429" stroke-width="1.5"/>
+        <text x="410" y="156" fill="#f0b429" text-anchor="middle" font-size="11" font-weight="600">Estágio II</text>
+        <text x="410" y="169" fill="#9aaac4" text-anchor="middle" font-size="9">N1–N3 · M0</text>
+
+        <!-- Stage III -->
+        <rect x="600" y="140" width="200" height="36" rx="7" fill="rgba(224,92,92,0.08)" stroke="#e05c5c" stroke-width="1.5"/>
+        <text x="700" y="156" fill="#e05c5c" text-anchor="middle" font-size="11" font-weight="600">Estágio III</text>
+        <text x="700" y="169" fill="#9aaac4" text-anchor="middle" font-size="9">M1a / M1b</text>
+
+        <!-- Conduta arrows -->
+        <line x1="120" y1="176" x2="120" y2="200" stroke="#3ecf8e" stroke-width="1" stroke-opacity="0.6" marker-end="url(#arrowB)"/>
+        <line x1="410" y1="176" x2="410" y2="200" stroke="#f0b429" stroke-width="1" stroke-opacity="0.6" marker-end="url(#arrowB)"/>
+        <line x1="700" y1="176" x2="700" y2="200" stroke="#e05c5c" stroke-width="1" stroke-opacity="0.6" marker-end="url(#arrowB)"/>
+
+        <!-- Conduta boxes -->
+        <rect x="20" y="200" width="200" height="50" rx="6" fill="#161b27" stroke="#2a3349"/>
+        <text x="120" y="216" fill="#d8e0f0" text-anchor="middle" font-size="9.5" font-weight="600">Vigilância ativa (1ª opção)</text>
+        <text x="120" y="229" fill="#6e7f9a" text-anchor="middle" font-size="8.5">Carboplatina AUC7 × 1</text>
+        <text x="120" y="241" fill="#6e7f9a" text-anchor="middle" font-size="8.5">RT paraórtica 20 Gy (menos usada)</text>
+
+        <rect x="310" y="200" width="200" height="50" rx="6" fill="#161b27" stroke="#2a3349"/>
+        <text x="410" y="216" fill="#d8e0f0" text-anchor="middle" font-size="9.5" font-weight="600">IIA/IIB: RT 30–36 Gy ou</text>
+        <text x="410" y="229" fill="#6e7f9a" text-anchor="middle" font-size="8.5">BEP × 3 ciclos</text>
+        <text x="410" y="241" fill="#6e7f9a" text-anchor="middle" font-size="8.5">IIC: QT sistêmica</text>
+
+        <rect x="600" y="200" width="200" height="50" rx="6" fill="#161b27" stroke="#2a3349"/>
+        <text x="700" y="216" fill="#d8e0f0" text-anchor="middle" font-size="9.5" font-weight="600">BEP × 3–4 ciclos</text>
+        <text x="700" y="229" fill="#6e7f9a" text-anchor="middle" font-size="8.5">Massa &gt;3cm pós-QT → PET-CT</text>
+        <text x="700" y="241" fill="#6e7f9a" text-anchor="middle" font-size="8.5">PET+ → cirurgia/salvamento</text>
+      </svg>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Estágio</th><th>Conduta Preferencial</th><th>Alternativas</th><th>Sobrevida</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="stage stage-I">Estágio I</span></td>
+            <td><strong>Vigilância ativa</strong> — 1ª opção preferencial (EAU 2024). Seguimento com TC e marcadores por 5 anos.</td>
+            <td>Carboplatina AUC7 (1 ciclo) — alternativa a pacientes selecionados. Radioterapia paraórtica (20 Gy): cada vez menos usada.</td>
+            <td>&gt;99%</td>
+          </tr>
+          <tr>
+            <td><span class="stage stage-II">Estágio IIA/IIB</span></td>
+            <td><strong>Radioterapia</strong> paraórtica + ilíaca ipsilateral (30/36 Gy para IIA/IIB) <em>ou</em> Quimioterapia (3× BEP ou 4× EP) para IIB volumoso.</td>
+            <td>BEP × 3 ciclos é equivalente em IIB. RT para IIA tem recidiva de ~3–4%.</td>
+            <td>&gt;95%</td>
+          </tr>
+          <tr>
+            <td><span class="stage stage-II">Estágio IIC</span></td>
+            <td><strong>Quimioterapia sistêmica</strong>: BEP × 3 ciclos (bom prognóstico) ou BEP × 4 ciclos.</td>
+            <td>—</td>
+            <td>~90%</td>
+          </tr>
+          <tr>
+            <td><span class="stage stage-III">Estágio III</span></td>
+            <td><strong>BEP × 3–4 ciclos</strong> conforme grupo prognóstico IGCCCG. Massa residual &gt;3 cm pós-QT → <strong>PET-CT</strong>: positivo = cirurgia ou salvamento; negativo = observação.</td>
+            <td>VeIP ou TIP em doença refratária.</td>
+            <td>70–90% (bom/interm.)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr class="divider">
+
+    <!-- NÃO-SEMINOMA -->
+    <h3 style="color:var(--gold);font-family:'Playfair Display',serif;font-size:1.2rem;margin:0 0 1.2rem;">5.3 · Não-Seminoma (NSGCT) — Conduta por Estágio</h3>
+
+    <!-- Fluxograma NSGCT -->
+    <div class="flowchart-wrap">
+      <div class="flowchart-title">📊 Fluxograma — NSGCT (após orquiectomia)</div>
+      <svg viewBox="0 0 820 280" xmlns="http://www.w3.org/2000/svg" style="min-width:640px;font-family:'JetBrains Mono',monospace;">
+        <defs>
+          <marker id="arrowC" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#f0b429" opacity="0.7"/>
+          </marker>
+        </defs>
+        <rect x="300" y="10" width="220" height="40" rx="8" fill="rgba(240,180,41,0.12)" stroke="#f0b429" stroke-width="1.5"/>
+        <text x="410" y="27" fill="#f0b429" text-anchor="middle" font-size="11" font-weight="600">NSGCT CONFIRMADO</text>
+        <text x="410" y="41" fill="#9aaac4" text-anchor="middle" font-size="9.5">pós-orquiectomia · marcadores seriados</text>
+
+        <line x1="410" y1="50" x2="410" y2="74" stroke="#f0b429" stroke-width="1.2" marker-end="url(#arrowC)"/>
+
+        <!-- Marcadores normalizando? -->
+        <rect x="290" y="74" width="240" height="36" rx="6" fill="#1e2535" stroke="#2a3349"/>
+        <text x="410" y="89" fill="#d8e0f0" text-anchor="middle" font-size="10" font-weight="600">Marcadores normalizando?</text>
+        <text x="410" y="103" fill="#6e7f9a" text-anchor="middle" font-size="9">Cinética AFP/β-HCG pós-orquiectomia</text>
+
+        <line x1="290" y1="92" x2="160" y2="116" stroke="#f0b429" stroke-width="1" stroke-opacity="0.6" marker-end="url(#arrowC)"/>
+        <line x1="530" y1="92" x2="660" y2="116" stroke="#e05c5c" stroke-width="1" stroke-opacity="0.6" marker-end="url(#arrowC)"/>
+        <text x="195" y="108" fill="#3ecf8e" font-size="9" text-anchor="middle">SIM</text>
+        <text x="625" y="108" fill="#e05c5c" font-size="9" text-anchor="middle">NÃO ↑</text>
+
+        <!-- Stage I -->
+        <rect x="60" y="116" width="200" height="36" rx="7" fill="rgba(62,207,142,0.08)" stroke="#3ecf8e" stroke-width="1.5"/>
+        <text x="160" y="132" fill="#3ecf8e" text-anchor="middle" font-size="10.5" font-weight="600">Estágio I</text>
+        <text x="160" y="145" fill="#9aaac4" text-anchor="middle" font-size="9">N0 · M0</text>
+
+        <!-- Marcadores elevados -->
+        <rect x="560" y="116" width="200" height="36" rx="7" fill="rgba(224,92,92,0.08)" stroke="#e05c5c" stroke-width="1.5"/>
+        <text x="660" y="130" fill="#e05c5c" text-anchor="middle" font-size="10" font-weight="600">Marcadores persistentes ↑</text>
+        <text x="660" y="145" fill="#9aaac4" text-anchor="middle" font-size="9">Doença residual / disseminada</text>
+
+        <!-- Stage I branches -->
+        <line x1="100" y1="152" x2="80" y2="176" stroke="#3ecf8e" stroke-width="1" stroke-opacity="0.6" marker-end="url(#arrowC)"/>
+        <line x1="220" y1="152" x2="240" y2="176" stroke="#3ecf8e" stroke-width="1" stroke-opacity="0.6" marker-end="url(#arrowC)"/>
+        <text x="60" y="170" fill="#9aaac4" font-size="8.5">ILV–</text>
+        <text x="225" y="170" fill="#9aaac4" font-size="8.5">ILV+</text>
+
+        <rect x="16" y="176" width="130" height="46" rx="6" fill="#161b27" stroke="#2a3349"/>
+        <text x="81" y="193" fill="#d8e0f0" text-anchor="middle" font-size="9" font-weight="600">Vigilância ativa</text>
+        <text x="81" y="206" fill="#6e7f9a" text-anchor="middle" font-size="8">~15% recidiva</text>
+        <text x="81" y="218" fill="#6e7f9a" text-anchor="middle" font-size="8">EAU: 1ª opção</text>
+
+        <rect x="156" y="176" width="130" height="46" rx="6" fill="#161b27" stroke="#2a3349"/>
+        <text x="221" y="193" fill="#d8e0f0" text-anchor="middle" font-size="9" font-weight="600">BEP × 1 ciclo</text>
+        <text x="221" y="206" fill="#6e7f9a" text-anchor="middle" font-size="8">~48% recidiva → 3%</text>
+        <text x="221" y="218" fill="#6e7f9a" text-anchor="middle" font-size="8">Ou RPLND</text>
+
+        <!-- Elevated markers conduta -->
+        <line x1="660" y1="152" x2="660" y2="176" stroke="#e05c5c" stroke-width="1" stroke-opacity="0.6" marker-end="url(#arrowC)"/>
+        <rect x="560" y="176" width="200" height="46" rx="6" fill="#161b27" stroke="#2a3349"/>
+        <text x="660" y="194" fill="#d8e0f0" text-anchor="middle" font-size="9.5" font-weight="600">QT indução: BEP × 3–4</text>
+        <text x="660" y="207" fill="#6e7f9a" text-anchor="middle" font-size="8.5">Bom prog: BEP×3 / Interm: BEP×4</text>
+        <text x="660" y="220" fill="#6e7f9a" text-anchor="middle" font-size="8.5">Ruim: BEP×4 / ensaio clínico</text>
+
+        <!-- RPLND note -->
+        <rect x="290" y="180" width="240" height="40" rx="6" fill="rgba(62,207,142,0.06)" stroke="#3ecf8e" stroke-width="1"/>
+        <text x="410" y="197" fill="#3ecf8e" text-anchor="middle" font-size="9.5" font-weight="600">Massa residual ≥1cm pós-QT</text>
+        <text x="410" y="210" fill="#9aaac4" text-anchor="middle" font-size="8.5">→ RPLND obrigatória (PET-CT irrelevante)</text>
+
+        <line x1="410" y1="116" x2="410" y2="180" stroke="#3ecf8e" stroke-width="0.8" stroke-dasharray="4,3" stroke-opacity="0.4"/>
+      </svg>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Estágio</th><th>Fator de Risco</th><th>Conduta Preferencial</th><th>Alternativas</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2"><span class="stage stage-I">Estágio I</span></td>
+            <td>ILV <strong>ausente</strong> (baixo risco, ~15% recidiva)</td>
+            <td><strong>Vigilância ativa</strong> — preferencial (EAU). Seguimento intensivo por 5 anos.</td>
+            <td>RPLND laparoscópica/robótica nervesparing (nervos simpáticos preservados).</td>
+          </tr>
+          <tr>
+            <td>ILV <strong>presente</strong> (alto risco, ~48% recidiva)</td>
+            <td><strong>BEP × 1 ciclo</strong> — reduz recidiva para ~3%. Alternativa: RPLND ou vigilância informada.</td>
+            <td>Vigilância é opção se o paciente aceitar seguimento intensivo.</td>
+          </tr>
+          <tr>
+            <td><span class="stage stage-II">Estágio IIA/IIB</span></td>
+            <td>Marcadores normais ou normalizando</td>
+            <td><strong>RPLND primária</strong> (N1 pequeno, marcadores normais). OU BEP × 3 ciclos se preferência/contraindicação cirúrgica.</td>
+            <td>BEP × 3 para IIB. RPLND após QT se massa residual.</td>
+          </tr>
+          <tr>
+            <td><span class="stage stage-II">Estágio IIB/IIC + marcadores ↑</span></td>
+            <td>Marcadores elevados pós-orquiectomia</td>
+            <td><strong>QT de indução: BEP × 3</strong> (bom prognóstico) ou BEP × 4. Reavaliar após QT.</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><span class="stage stage-III">Estágio III</span></td>
+            <td>Prognóstico IGCCCG</td>
+            <td><strong>Bom prognóstico:</strong> BEP × 3. <strong>Intermediário:</strong> BEP × 4. <strong>Ruim:</strong> BEP × 4 (ou ensaio clínico com dose-intensificada).</td>
+            <td>RPLND pós-QT se massa residual ≥1 cm (independente de marcadores).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr class="divider">
+
+    <!-- RPLND -->
+    <h3 style="color:var(--green);font-family:'Playfair Display',serif;font-size:1.2rem;margin:0 0 1.2rem;">5.4 · Linfadenectomia Retroperitoneal (RPLND)</h3>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Quando indicar</h3>
+        <ul class="bullet">
+          <li>NSGCT Estágio I — alternativa à vigilância/QT</li>
+          <li>NSGCT Estágio IIA com marcadores normais</li>
+          <li>Massa residual pós-QT ≥1 cm em NSGCT</li>
+          <li>Teratoma residual (resistente à QT)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚕️</div>
+        <h3>Templates de Dissecção</h3>
+        <ul class="bullet">
+          <li><strong>Testículo D:</strong> Paracaval, intercavoaórtico, pré-caval</li>
+          <li><strong>Testículo E:</strong> Paraaórtico, pré-aórtico, intercavoaórtico</li>
+          <li>Template bilateral para doença volumosa pós-QT</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚠️</div>
+        <h3>Complicações &amp; Nerve-Sparing</h3>
+        <ul class="bullet">
+          <li><strong>Ejaculação retrógrada:</strong> principal sequela se não nerve-sparing (fibras simpáticas L1-L3 e plexo hipogástrico)</li>
+          <li>Nerve-sparing: preserva ejaculação em &gt;95% dos casos primários</li>
+          <li>Não aplicar nerve-sparing em RPLND pós-QT volumosa</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔬</div>
+        <h3>Achados na RPLND Pós-QT</h3>
+        <ul class="bullet">
+          <li><strong>40%</strong> → necrose / fibrose (sem tumor)</li>
+          <li><strong>40%</strong> → teratoma maduro</li>
+          <li><strong>20%</strong> → carcinoma viável → 2 ciclos adicionais de QT</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout callout-green">
+      <div class="callout-title">✅ Massa Residual Pós-QT — Seminoma vs Não-Seminoma</div>
+      <p><strong>Seminoma:</strong> massa &gt;3 cm → PET-CT obrigatório. Negativo = vigiar. Positivo = QT salvamento ou ressecção.<br>
+      <strong>Não-Seminoma:</strong> massa ≥1 cm → <em>RPLND obrigatória</em> independente do PET-CT (teratoma é PET-negativo mas deve ser ressecado).</p>
+    </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════ SEÇÃO 6 — PEGADINHAS ══════════ -->
+  <section id="pegadinhas">
+    <div class="section-header" onclick="toggleSection(this)">
+      <span class="section-num">06</span>
+      <h2>Pegadinhas de Prova</h2>
+      <span class="section-collapse-btn open">▲ recolher</span>
+    </div>
+    <div class="section-body">
+
+    <p style="margin-bottom:1rem;color:var(--text-dim);font-size:0.92rem;">Os erros mais comuns em questões de residência e provas de título em Uro-Oncologia. <strong style="color:var(--gold)">Clique em cada item para expandir</strong> a explicação.</p>
+
+    <ul class="trap-list">
+
+      <li class="trap-item" onclick="toggleTrap(this)">
+        <div class="trap-header">
+          <div class="trap-num">PEGADINHA 01 · Via de Acesso Cirúrgica</div>
+        </div>
+        <span class="trap-toggle">▼</span>
+        <div class="trap-body">
+          <p>A <strong>biópsia ou orquiectomia por via escrotal é uma grave contraindicação</strong>. Ela transforma a drenagem linfática do testicular (retroperitoneal) para a inguinal superficial, mudando o estadiamento e a abordagem de toda a cadeia ganglionar. Se feita erroneamente, o campo cirúrgico do escroto pode precisar ser incluído na RT.</p>
+        </div>
+      </li>
+
+      <li class="trap-item" onclick="toggleTrap(this)">
+        <div class="trap-header">
+          <div class="trap-num">PEGADINHA 02 · AFP Elevada = Nunca Seminoma Puro</div>
+        </div>
+        <span class="trap-toggle">▼</span>
+        <div class="trap-body">
+          <p>Lauda histológica diz "seminoma puro" mas a AFP está elevada? <strong>Trate como Não-Seminoma</strong>. A AFP é produzida pelo saco vitelino — se está elevada, há componente não-seminomatoso não amostrado. Esta é umas das questões mais repetidas em concursos.</p>
+        </div>
+      </li>
+
+      <li class="trap-item" onclick="toggleTrap(this)">
+        <div class="trap-header">
+          <div class="trap-num">PEGADINHA 03 · Criptorquidia e Risco Bilateral</div>
+        </div>
+        <span class="trap-toggle">▼</span>
+        <div class="trap-body">
+          <p>O risco aumentado pela criptorquidia <strong>não se limita ao testículo criptorquídico</strong> — o testículo contralateral também apresenta risco elevado (~2×). A orquipexia precoce (&lt;2 anos) reduz, mas não elimina o risco. Em crianças, o tumor de saco vitelino pode existir na ausência de GCNIS.</p>
+        </div>
+      </li>
+
+      <li class="trap-item" onclick="toggleTrap(this)">
+        <div class="trap-header">
+          <div class="trap-num">PEGADINHA 04 · Seminoma Espermatocítico — Exceção à Regra</div>
+        </div>
+        <span class="trap-toggle">▼</span>
+        <div class="trap-body">
+          <p>É o único tumor de células germinativas que <strong>ocorre em idosos</strong> (acima de 50–60 anos), <strong>não está associado a GCNIS</strong>, raramente metastatiza e a conduta é apenas orquiectomia. Não confundir com seminoma clássico, que tem conduta completamente diferente e tratamento adjuvante.</p>
+        </div>
+      </li>
+
+      <li class="trap-item" onclick="toggleTrap(this)">
+        <div class="trap-header">
+          <div class="trap-num">PEGADINHA 05 · Teratoma em Adulto Não é Benigno</div>
+        </div>
+        <span class="trap-toggle">▼</span>
+        <div class="trap-body">
+          <p>Ao contrário do teratoma em crianças (habitualmente benigno), o <strong>teratoma em adultos deve sempre ser tratado como maligno</strong>. Além disso, é <strong>resistente à quimioterapia</strong> — portanto, massa residual contendo teratoma após QT requer ressecção cirúrgica (RPLND), mesmo com marcadores normais e PET-CT negativo.</p>
+        </div>
+      </li>
+
+      <li class="trap-item" onclick="toggleTrap(this)">
+        <div class="trap-header">
+          <div class="trap-num">PEGADINHA 06 · PET-CT: Indicado no Seminoma, Não no NSGCT</div>
+        </div>
+        <span class="trap-toggle">▼</span>
+        <div class="trap-body">
+          <p>O PET-CT é usado no <strong>seminoma</strong> para avaliar massa residual pós-QT (&gt;3 cm). No <strong>não-seminoma</strong>, o PET-CT <strong>não é indicado</strong> para esta finalidade, pois teratoma é PET-negativo — a decisão de RPLND é baseada no tamanho da massa (&gt;1 cm = cirurgia), não no PET.</p>
+        </div>
+      </li>
+
+      <li class="trap-item" onclick="toggleTrap(this)">
+        <div class="trap-header">
+          <div class="trap-num">PEGADINHA 07 · Corpos de Schiller-Duval = Saco Vitelino</div>
+        </div>
+        <span class="trap-toggle">▼</span>
+        <div class="trap-body">
+          <p>Estrutura histológica <strong>patognomônica</strong> do tumor do saco vitelino (yolk sac). Se a questão menciona "corpos de Schiller-Duval", o diagnóstico é saco vitelino e o marcador principal é <strong>AFP elevada</strong>. Frequente em questões de patologia cirúrgica.</p>
+        </div>
+      </li>
+
+      <li class="trap-item" onclick="toggleTrap(this)">
+        <div class="trap-header">
+          <div class="trap-num">PEGADINHA 08 · Isocromossomo 12p — Marcador Citogenético</div>
+        </div>
+        <span class="trap-toggle">▼</span>
+        <div class="trap-body">
+          <p>O <strong>i(12p)</strong> (isocromossomo do braço curto do cromossomo 12) está presente em ~80% dos tumores de células germinativas do testículo e é considerado o <strong>marcador citogenético clássico</strong> dessas neoplasias. Pode aparecer em questões de biologia molecular e diagnóstico diferencial com linfoma (que não apresenta i12p).</p>
+        </div>
+      </li>
+
+      <li class="trap-item" onclick="toggleTrap(this)">
+        <div class="trap-header">
+          <div class="trap-num">PEGADINHA 09 · Linfoma = Tumor Testicular Mais Comum em Idosos</div>
+        </div>
+        <span class="trap-toggle">▼</span>
+        <div class="trap-body">
+          <p>Embora os GCTs sejam os tumores testiculares mais frequentes em geral, em homens <strong>acima de 60 anos</strong> o <strong>linfoma difuso de grandes células B (LDGCB)</strong> é o tumor testicular primário mais comum. Pode ser bilateral em até 30% dos casos. Não confundir com o "tumor testicular mais comum em geral" (que são os GCTs).</p>
+        </div>
+      </li>
+
+      <li class="trap-item" onclick="toggleTrap(this)">
+        <div class="trap-header">
+          <div class="trap-num">PEGADINHA 10 · Ejaculação Retrógrada Pós-RPLND</div>
+        </div>
+        <span class="trap-toggle">▼</span>
+        <div class="trap-body">
+          <p>A RPLND sem preservação nervosa (nerve-sparing) causa <strong>ejaculação retrógrada em quase 100% dos casos</strong> por lesão dos nervos simpáticos (gânglios L1–L3 e plexo hipogástrico superior). A técnica nerve-sparing preserva a ejaculação em &gt;95% das RPLNDs primárias. <strong>Atenção:</strong> a RPLND pós-QT volumosa pode não permitir nerve-sparing — infertilidade deve ser discutida com o paciente previamente.</p>
+        </div>
+      </li>
+
+    </ul>
+
+    <!-- ── QUIZ INTERATIVO ── -->
+    <div class="quiz-wrap" id="quizWrap">
+      <div class="quiz-title">🧠 Quiz Rápido — Teste seu Conhecimento</div>
+      <div id="quizContent"></div>
+    </div>
+
+    <div class="callout callout-blue">
+      <div class="callout-title">📚 Referências para Estudo Aprofundado</div>
+      <p>
+        <strong>EAU Guidelines on Testicular Cancer 2024</strong> · uroweb.org<br>
+        <strong>AUA Guidelines: Testicular Cancer Evaluation &amp; Staging 2023</strong> · auanet.org<br>
+        <strong>AJCC Cancer Staging Manual, 8ª Ed</strong> — Capítulo Testis (pág. 727–740)<br>
+        <strong>IGCCCG Classification</strong> — J Clin Oncol 1997;15(2):594–603<br>
+        <strong>Campbell-Walsh-Wein Urology, 12ª Ed</strong> — Capítulo Testicular Tumors
+      </p>
+    </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Guia High-Yield · Tumores de Testículo · Uro-Oncologia · Material para uso educacional</p>
+    <p style="margin-top:0.4rem;font-size:0.68rem;opacity:0.6">Baseado em EAU 2024 · AUA 2023 · TNM 8ª Ed · IGCCCG · Campbell-Walsh-Wein 12ª Ed</p>
+  </footer>
+
+</div>
+
+<script>
+/* ══════════════════════════════════════════
+   PROGRESS BAR
+══════════════════════════════════════════ */
+const bar = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  const st = window.scrollY;
+  const total = document.body.scrollHeight - window.innerHeight;
+  bar.style.width = (st / total * 100) + '%';
+}, { passive: true });
+
+/* ══════════════════════════════════════════
+   STICKY NAV
+══════════════════════════════════════════ */
+const stickyNav = document.getElementById('sticky-nav');
+const headerEl = document.querySelector('header');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > headerEl.offsetHeight + 80) {
+    stickyNav.classList.add('visible');
+  } else {
+    stickyNav.classList.remove('visible');
+  }
+}, { passive: true });
+
+/* Active link highlight */
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('#sticky-nav .sticky-links a');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(a => a.classList.remove('active'));
+      const active = document.querySelector(`#sticky-nav a[href="#${e.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, { threshold: 0.3, rootMargin: '-60px 0px 0px 0px' });
+sections.forEach(s => obs.observe(s));
+
+/* ══════════════════════════════════════════
+   SECTION SCROLL REVEAL
+══════════════════════════════════════════ */
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08 });
+sections.forEach(s => revealObs.observe(s));
+
+/* ══════════════════════════════════════════
+   SECTION COLLAPSE
+══════════════════════════════════════════ */
+function toggleSection(header) {
+  const body = header.nextElementSibling;
+  const btn = header.querySelector('.section-collapse-btn');
+  const isCollapsed = body.classList.contains('collapsed');
+  body.classList.toggle('collapsed');
+  btn.textContent = isCollapsed ? '▲ recolher' : '▼ expandir';
+  btn.classList.toggle('open', isCollapsed);
+}
+
+/* ══════════════════════════════════════════
+   TRAP ITEMS TOGGLE
+══════════════════════════════════════════ */
+function toggleTrap(item) {
+  const isOpen = item.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.trap-item.open').forEach(el => el.classList.remove('open'));
+  // Open clicked if was closed
+  if (!isOpen) item.classList.add('open');
+}
+
+/* ══════════════════════════════════════════
+   FOCUS MODE
+══════════════════════════════════════════ */
+const focusBtn = document.getElementById('focusBtn');
+let focusMode = false;
+focusBtn.addEventListener('click', () => {
+  focusMode = !focusMode;
+  document.body.classList.toggle('focus-mode', focusMode);
+  focusBtn.textContent = focusMode ? '✕ Sair do Foco' : '⊙ Foco';
+  if (focusMode) {
+    const updateFocus = () => {
+      let current = null;
+      let minDist = Infinity;
+      sections.forEach(s => {
+        const dist = Math.abs(s.getBoundingClientRect().top - 120);
+        if (dist < minDist) { minDist = dist; current = s; }
+      });
+      sections.forEach(s => s.classList.toggle('focused', s === current));
+    };
+    window.addEventListener('scroll', updateFocus, { passive: true });
+    updateFocus();
+  }
+});
+
+/* ══════════════════════════════════════════
+   QUIZ
+══════════════════════════════════════════ */
+const questions = [
+  {
+    q: "Paciente com massa testicular. Histologia revela seminoma puro, porém AFP sérica está elevada em 450 ng/mL. Qual a conduta correta?",
+    opts: [
+      "Tratar como seminoma — a histologia é soberana",
+      "Tratar como Não-Seminoma (NSGCT)",
+      "Repetir a biópsia por via escrotal para confirmar",
+      "Iniciar radioterapia paraórtica 20 Gy"
+    ],
+    correct: 1,
+    feedback: "AFP elevada NUNCA ocorre no seminoma puro. Sua elevação indica componente de saco vitelino não amostrado — o tumor deve ser tratado como NSGCT, independentemente da histologia. (Pegadinha 02)"
+  },
+  {
+    q: "Paciente com tumor de testículo direito suspeito ao USG. A conduta cirúrgica inicial correta é:",
+    opts: [
+      "Biópsia por punção ecoguiada transescrotal",
+      "Orquiectomia radical por via escrotal",
+      "Orquiectomia radical por via inguinal com controle proximal do cordão",
+      "RPLND primária sem orquiectomia"
+    ],
+    correct: 2,
+    feedback: "Via inguinal é obrigatória. A via escrotal altera a drenagem linfática do retroperitônio para a cadeia inguinal, muda o estadiamento e pode exigir inclusão do escroto no campo de radioterapia. (Pegadinha 01)"
+  },
+  {
+    q: "NSGCT Estágio I com ILV ausente. Qual a conduta preferencial segundo as diretrizes EAU 2024?",
+    opts: [
+      "BEP × 1 ciclo profilático",
+      "RPLND primária",
+      "Vigilância ativa com seguimento intensivo",
+      "Radioterapia paraórtica 20 Gy"
+    ],
+    correct: 2,
+    feedback: "No NSGCT Estágio I com ILV ausente (baixo risco, ~15% de recidiva), a vigilância ativa é a 1ª opção pela EAU. BEP × 1 é preferido quando ILV está presente (~48% recidiva → reduz para ~3%)."
+  },
+  {
+    q: "Qual estrutura histológica é patognomônica do tumor do saco vitelino (yolk sac)?",
+    opts: [
+      "Células de Reed-Sternberg",
+      "Corpos de Schiller-Duval",
+      "Células de Langerhans",
+      "Rosetas de Homer Wright"
+    ],
+    correct: 1,
+    feedback: "Os corpos de Schiller-Duval são glomerulóides e patognomônicos do tumor do saco vitelino. O marcador principal é AFP. (Pegadinha 07)"
+  },
+  {
+    q: "Seminoma Estágio III com massa residual de 4 cm após 3 ciclos de BEP. O PET-CT é negativo. Qual a conduta?",
+    opts: [
+      "RPLND imediata — massa >3 cm sempre opera",
+      "Observação — PET negativo em seminoma indica necrose/fibrose",
+      "2 ciclos adicionais de BEP",
+      "Radioterapia de salvamento 36 Gy"
+    ],
+    correct: 1,
+    feedback: "No SEMINOMA, massa >3 cm pós-QT → PET-CT obrigatório. Se PET NEGATIVO = observação (alta chance de fibrose/necrose). Diferente do não-seminoma, onde massa ≥1cm sempre vai para RPLND, independente do PET."
+  },
+  {
+    q: "Qual é o tumor testicular primário mais comum em homens acima de 60 anos?",
+    opts: [
+      "Seminoma clássico",
+      "Carcinoma embrionário",
+      "Linfoma difuso de grandes células B (LDGCB)",
+      "Tumor do saco vitelino"
+    ],
+    correct: 2,
+    feedback: "Embora GCTs sejam os mais frequentes em geral, em homens >60 anos o LDGCB é o tumor testicular primário mais comum. Pode ser bilateral em até 30% dos casos. (Pegadinha 09)"
+  },
+  {
+    q: "Na RPLND sem técnica nerve-sparing, qual é a principal complicação funcional esperada?",
+    opts: [
+      "Disfunção erétil em 80% dos casos",
+      "Ejaculação retrógrada em quase 100% dos casos",
+      "Incontinência urinária de esforço",
+      "Hipogonadismo hipergonadotrófico"
+    ],
+    correct: 1,
+    feedback: "A lesão dos nervos simpáticos (gânglios L1-L3 e plexo hipogástrico superior) causa ejaculação retrógrada em quase 100% sem nerve-sparing. A técnica nerve-sparing preserva em >95% das RPLNDs primárias. (Pegadinha 10)"
+  },
+  {
+    q: "Qual o marcador citogenético clássico dos tumores de células germinativas testiculares?",
+    opts: [
+      "Deleção 17p (TP53)",
+      "Translocação t(9;22) — Philadelphia",
+      "Isocromossomo 12p — i(12p)",
+      "Amplificação 8q — MYC"
+    ],
+    correct: 2,
+    feedback: "O i(12p) está presente em ~80% dos GCTs testiculares. Útil no diagnóstico diferencial com linfoma testicular, que não apresenta i(12p). (Pegadinha 08)"
+  }
+];
+
+let current = 0, score = 0, answered = false;
+
+function renderQuiz() {
+  const q = questions[current];
+  const container = document.getElementById('quizContent');
+  container.innerHTML = `
+    <div class="quiz-q">${current + 1}/${questions.length} — ${q.q}</div>
+    <div class="quiz-options" id="qOpts">
+      ${q.opts.map((o,i) => `<button class="quiz-opt" onclick="answer(${i})">${o}</button>`).join('')}
+    </div>
+    <div class="quiz-feedback" id="qFb"></div>
+    <div class="quiz-nav">
+      <button class="quiz-btn secondary" onclick="prevQ()" ${current === 0 ? 'disabled style="opacity:0.4"' : ''}>← Anterior</button>
+      <button class="quiz-btn secondary" id="nextBtn" onclick="nextQ()" style="display:none">Próxima →</button>
+      <button class="quiz-btn secondary" id="restartBtn" onclick="restartQuiz()" style="display:none">↺ Reiniciar</button>
+      <span class="quiz-score">Acertos: ${score}/${current}</span>
+    </div>
+  `;
+  answered = false;
+}
+
+function answer(idx) {
+  if (answered) return;
+  answered = true;
+  const q = questions[current];
+  const opts = document.querySelectorAll('.quiz-opt');
+  opts.forEach((o,i) => {
+    o.disabled = true;
+    if (i === q.correct) o.classList.add('correct');
+    else if (i === idx) o.classList.add('wrong');
+  });
+  if (idx === q.correct) score++;
+  const fb = document.getElementById('qFb');
+  fb.textContent = q.feedback;
+  fb.classList.add('show');
+  const nextBtn = document.getElementById('nextBtn');
+  const restartBtn = document.getElementById('restartBtn');
+  if (current < questions.length - 1) {
+    nextBtn.style.display = 'inline-block';
+  } else {
+    restartBtn.style.display = 'inline-block';
+    // Show final score
+    fb.innerHTML = `<strong style="color:var(--green)">Quiz concluído! Você acertou ${score}/${questions.length}</strong><br>${fb.textContent}`;
+  }
+  // Update score display
+  document.querySelector('.quiz-score').textContent = `Acertos: ${score}/${current + 1}`;
+}
+
+function nextQ() {
+  current++;
+  renderQuiz();
+}
+
+function prevQ() {
+  if (current > 0) { current--; score = Math.max(0, score); renderQuiz(); }
+}
+
+function restartQuiz() {
+  current = 0; score = 0; renderQuiz();
+}
+
+renderQuiz();
+</script>
+
+</body>
+</html>

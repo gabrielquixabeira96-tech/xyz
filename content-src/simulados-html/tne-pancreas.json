@@ -1,0 +1,1926 @@
+[
+ {
+  "id": 1,
+  "bloco": "Reconhecimento sindrômico",
+  "peso": "alta",
+  "chip": "glucagon",
+  "tags": [
+   "eritema necrolítico",
+   "4 D"
+  ],
+  "stem": "Marlene, 55 anos, natural de Rondonópolis, é encaminhada da dermatologia após sete meses de tratamento para “intertrigo candidiásico refratário”. Descreve placas eritematosas anulares em períneo e região inguinal que formam bolhas flácidas, descamam e migram em ciclos de duas semanas. Refere perda de 11 kg, foi diagnosticada com diabetes há quatro meses e internou recentemente por trombose venosa profunda em membro inferior direito. A tomografia mostra lesão sólida hipervascular de 6 cm na cauda do pâncreas. O diagnóstico é:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "VIPoma",
+    "ok": false,
+    "nota": "Também nasce em corpo e cauda e cursa com emagrecimento, mas o sintoma dominante é diarreia aquosa secretora com hipocalemia e acloridria. Não há lesão cutânea na síndrome de Verner-Morrison."
+   },
+   {
+    "letra": "B",
+    "txt": "Glucagonoma",
+    "ok": true,
+    "nota": "O eritema necrolítico migratório é praticamente patognomônico e, somado a diabetes leve, emagrecimento e tromboembolismo, fecha os clássicos 4 D da síndrome."
+   },
+   {
+    "letra": "C",
+    "txt": "Somatostatinoma",
+    "ok": false,
+    "nota": "Compartilha diabetes e emagrecimento, mas a tríade é diabetes, colelitíase e esteatorreia, e a topografia é cabeça do pâncreas e duodeno periampular, não cauda. Não faz lesão cutânea."
+   },
+   {
+    "letra": "D",
+    "txt": "Gastrinoma",
+    "ok": false,
+    "nota": "Exigiria úlceras pépticas múltiplas ou distais ao bulbo e diarreia responsiva a inibidor de bomba. Além disso, mora no triângulo do gastrinoma, com predileção por cabeça e processo uncinado."
+   },
+   {
+    "letra": "E",
+    "txt": "Tumor neuroendócrino não funcionante",
+    "ok": false,
+    "nota": "É definido pela ausência de síndrome clínica. Quatro manifestações sistêmicas simultâneas afastam essa alternativa por definição."
+   }
+  ],
+  "gatilho": "Rash migratório bolhoso em áreas intertriginosas rotulado como micose ou eczema refratário. Sempre que a banca insere uma dermatose arrastada ao lado de uma lesão pancreática, o alvo é o glucagonoma.",
+  "fisio": "O glucagon mantém proteólise e gliconeogênese contínuas, consumindo aminoácidos em velocidade que a dieta não repõe. A hipoaminoacidemia grave, associada à carência de zinco e ácidos graxos essenciais, inviabiliza a renovação dos estratos espinhoso e granuloso: os queratinócitos vacuolizam, a epiderme superficial necrosa e se descola em bolha, enquanto a borda avança. O diabetes é leve porque as células beta permanecem íntegras.",
+  "perola": "Cauda de pâncreas mais dermatose migratória é glucagonoma até prova em contrário. A pergunta seguinte da banca costuma ser sobre profilaxia de tromboembolismo, não sobre técnica cirúrgica."
+ },
+ {
+  "id": 2,
+  "bloco": "Reconhecimento sindrômico",
+  "peso": "alta",
+  "chip": "VIP",
+  "tags": [
+   "WDHA",
+   "Verner-Morrison"
+  ],
+  "stem": "Homem de 48 anos apresenta há oito meses diarreia aquosa volumosa, entre quatro e seis litros por dia, sem sangue, muco ou esteatorreia. Foi internado três vezes por desidratação. Laboratório: potássio 2,4 mEq/L, bicarbonato 14 mEq/L, cálcio 11,2 mg/dL. Colonoscopia e biópsias normais. A diarreia <b>persiste durante 48 horas de jejum absoluto</b>. Tomografia com massa de 5 cm na cauda pancreática. A alternativa correta é:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Trata-se de diarreia osmótica por má absorção de carboidratos",
+    "ok": false,
+    "nota": "Diarreia osmótica cessa com o jejum, por definição. A persistência no jejum é o marcador de diarreia secretora e é o dado plantado no enunciado."
+   },
+   {
+    "letra": "B",
+    "txt": "O diagnóstico é VIPoma, e a acidose com hipocalemia decorre de perda entérica de potássio e bicarbonato",
+    "ok": true,
+    "nota": "O VIP abre canais de cloro no enterócito e gera secreção maciça de água e eletrólitos. A perda fecal de potássio e bicarbonato produz exatamente a hipocalemia com acidose metabólica descrita."
+   },
+   {
+    "letra": "C",
+    "txt": "O diagnóstico é gastrinoma, e a diarreia responde a inibidor de bomba de prótons",
+    "ok": false,
+    "nota": "A diarreia do Zollinger-Ellison decorre da hipersecreção ácida e cede com IBP em dose alta. Aqui há acloridria pela ação inibitória do VIP sobre a célula parietal, o oposto do gastrinoma."
+   },
+   {
+    "letra": "D",
+    "txt": "A hipercalcemia indica hiperparatireoidismo primário associado e deve ser tratada primeiro",
+    "ok": false,
+    "nota": "Hipercalcemia ocorre em cerca de metade dos VIPomas por mecanismo paraneoplásico e desidratação, sem exigir doença de paratireoide. Investigar MEN1 é razoável, mas não é o passo que explica o quadro."
+   },
+   {
+    "letra": "E",
+    "txt": "A conduta inicial é colectomia para controle da perda hidroeletrolítica",
+    "ok": false,
+    "nota": "O intestino é vítima, não fonte. O controle inicial é clínico, com análogo de somatostatina e reposição volêmica e de potássio, seguido de ressecção do tumor pancreático."
+   }
+  ],
+  "gatilho": "Diarreia que não para com o jejum, com hipocalemia e acidose. Esse trio é o cartão de visita da síndrome WDHA.",
+  "fisio": "O peptídeo intestinal vasoativo ativa adenilato ciclase no enterócito, elevando o AMP cíclico e abrindo canais de cloro. A secreção isotônica arrasta sódio, potássio, bicarbonato e água. O mesmo mecanismo inibe a secreção ácida gástrica, produzindo a acloridria que completa o acrônimo de diarreia aquosa, hipocalemia e acloridria.",
+  "perola": "Diarreia secretora é a que persiste no jejum. Se cede com jejum, pense osmótica e abandone o VIPoma."
+ },
+ {
+  "id": 3,
+  "bloco": "Reconhecimento sindrômico",
+  "peso": "alta",
+  "chip": "somatostatina",
+  "tags": [
+   "tríade inibitória",
+   "NF1"
+  ],
+  "stem": "Paciente de 52 anos com neurofibromatose tipo 1 investiga icterícia intermitente. Refere diabetes de difícil caracterização, fezes gordurosas e flatulentas e colecistectomia indicada por colelitíase sintomática há dois anos, não realizada. Ecoendoscopia identifica lesão de 3 cm na região periampular duodenal. A síndrome descrita decorre da inibição de quais eixos, respectivamente:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Insulina, colecistocinina e enzimas pancreáticas exócrinas",
+    "ok": true,
+    "nota": "Exatamente a tríade do somatostatinoma: inibição de insulina gera diabetes, inibição de colecistocinina impede a contração vesicular e favorece litíase, inibição da secreção exócrina causa esteatorreia."
+   },
+   {
+    "letra": "B",
+    "txt": "Glucagon, gastrina e motilina",
+    "ok": false,
+    "nota": "A somatostatina de fato inibe glucagon e gastrina, mas essas inibições não explicam a tríade clínica clássica cobrada — o eixo da colecistocinina é o que produz a colelitíase."
+   },
+   {
+    "letra": "C",
+    "txt": "Secretina, peptídeo YY e grelina",
+    "ok": false,
+    "nota": "Eixos sem correspondência com o quadro clínico apresentado; não geram diabetes nem litíase biliar."
+   },
+   {
+    "letra": "D",
+    "txt": "Insulina, hormônio do crescimento e prolactina",
+    "ok": false,
+    "nota": "A somatostatina inibe GH, e é por isso que análogos tratam acromegalia, mas nada disso explica a esteatorreia ou a colelitíase da vinheta."
+   },
+   {
+    "letra": "E",
+    "txt": "Peptídeo intestinal vasoativo, serotonina e histamina",
+    "ok": false,
+    "nota": "São mediadores de outras síndromes funcionantes. A vinheta descreve inibição generalizada, não excesso desses mediadores."
+   }
+  ],
+  "gatilho": "Neurofibromatose tipo 1 mais lesão periampular. Essa associação, em prova, aponta somatostatinoma duodenal.",
+  "fisio": "A somatostatina é o hormônio do desligamento: suprime praticamente toda secreção endócrina e exócrina do trato digestivo. A tríade nasce de três desligamentos simultâneos — célula beta, vesícula biliar e ácino pancreático.",
+  "perola": "Somatostatinoma pancreático mora na cabeça, e a variante duodenal periampular associa-se a NF1 e exibe corpos psamomatosos na histologia."
+ },
+ {
+  "id": 4,
+  "bloco": "Reconhecimento sindrômico",
+  "peso": "alta",
+  "chip": "insulina",
+  "tags": [
+   "tríade de Whipple"
+  ],
+  "stem": "Professora de 39 anos vem apresentando episódios matinais de confusão, sudorese e visão turva que melhoram após ingerir suco. Ganhou 7 kg em um ano, porque passou a comer de três em três horas para evitar as crises. Durante um episódio, glicemia capilar de 38 mg/dL. Qual conjunto de achados confirma o diagnóstico suspeitado?",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Insulina elevada, peptídeo C elevado, proinsulina elevada e rastreio negativo para sulfonilureias",
+    "ok": true,
+    "nota": "Hiperinsulinismo endógeno: o peptídeo C elevado prova produção pancreática e o rastreio negativo afasta hipoglicemia factícia por secretagogo."
+   },
+   {
+    "letra": "B",
+    "txt": "Insulina elevada com peptídeo C suprimido",
+    "ok": false,
+    "nota": "Esse é o padrão da administração exógena de insulina — hipoglicemia factícia. A insulina injetada não vem acompanhada de peptídeo C."
+   },
+   {
+    "letra": "C",
+    "txt": "Insulina suprimida com corpos cetônicos elevados",
+    "ok": false,
+    "nota": "É o padrão fisiológico do jejum prolongado. No insulinoma o beta-hidroxibutirato permanece baixo, porque a insulina bloqueia a cetogênese."
+   },
+   {
+    "letra": "D",
+    "txt": "Cortisol e ACTH baixos com glicemia baixa",
+    "ok": false,
+    "nota": "Sugere insuficiência adrenal, causa alternativa de hipoglicemia, que não explica o hiperinsulinismo nem a ganho de peso descrito."
+   },
+   {
+    "letra": "E",
+    "txt": "Glucagon elevado com hipoaminoacidemia",
+    "ok": false,
+    "nota": "É o perfil do glucagonoma, que cursa com hiperglicemia e não com neuroglicopenia."
+   }
+  ],
+  "gatilho": "Sintomas neuroglicopênicos em jejum que aliviam com glicose, com ganho de peso reativo. É a tríade de Whipple montada dentro da vinheta.",
+  "fisio": "O teste de jejum de 72 horas é o padrão. Consideram-se diagnósticos insulina de pelo menos 3 microU/mL, peptídeo C de pelo menos 0,6 ng/mL e proinsulina de pelo menos 5 pmol/L no momento da hipoglicemia, com beta-hidroxibutirato baixo e pesquisa de sulfonilureia e glinida negativa.",
+  "perola": "O insulinoma é a exceção da família: costuma ser único, menor que 2 cm e benigno em cerca de 90% dos casos, com distribuição uniforme pelo pâncreas."
+ },
+ {
+  "id": 5,
+  "bloco": "Reconhecimento sindrômico",
+  "peso": "alta",
+  "chip": "gastrina",
+  "tags": [
+   "Zollinger-Ellison"
+  ],
+  "stem": "Homem de 44 anos em uso de omeprazol há três anos por doença ulcerosa recorrente. Endoscopias seriadas mostram úlceras múltiplas, incluindo uma na segunda porção duodenal e outra em jejuno proximal, com pregas gástricas espessadas. Refere diarreia que melhora nitidamente quando aumenta a dose do inibidor de bomba. Testes para Helicobacter pylori negativos e sem uso de anti-inflamatórios. A hipótese principal é:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Doença de Crohn de delgado",
+    "ok": false,
+    "nota": "Não explica pregas gástricas espessadas nem a resposta da diarreia à supressão ácida, e as úlceras do Crohn não têm esse padrão péptico."
+   },
+   {
+    "letra": "B",
+    "txt": "Gastrinoma com síndrome de Zollinger-Ellison",
+    "ok": true,
+    "nota": "Úlceras múltiplas distais ao bulbo, refratárias, sem H. pylori e sem AINE, com pregas gástricas hipertrofiadas e diarreia ácido-dependente formam o quadro clássico."
+   },
+   {
+    "letra": "C",
+    "txt": "Úlcera péptica por Helicobacter pylori não erradicado",
+    "ok": false,
+    "nota": "O enunciado negou explicitamente a infecção. Sem H. pylori e sem AINE, úlcera recorrente obriga a dosar gastrina."
+   },
+   {
+    "letra": "D",
+    "txt": "Somatostatinoma",
+    "ok": false,
+    "nota": "Cursa com hipocloridria, o oposto do quadro. Somatostatinoma não gera doença ulcerosa."
+   },
+   {
+    "letra": "E",
+    "txt": "Linfoma MALT gástrico",
+    "ok": false,
+    "nota": "Associa-se justamente ao H. pylori, ausente aqui, e não produz úlceras jejunais nem diarreia responsiva a IBP."
+   }
+  ],
+  "gatilho": "Úlcera em localização atípica, distal ao bulbo ou jejunal, sem H. pylori e sem anti-inflamatório. É o gatilho universal do gastrinoma.",
+  "fisio": "A hipergastrinemia mantém a massa de células parietais hipertrofiada e a secreção ácida em níveis que ultrapassam a capacidade de neutralização duodenal. O ácido em excesso ulcera segmentos distais e inativa a lipase pancreática, o que explica a diarreia que cede sob bloqueio ácido pleno.",
+  "perola": "Pregas gástricas espessadas na endoscopia de um paciente ulceroso refratário é achado de alto valor: peça gastrina sérica antes de qualquer outra coisa."
+ },
+ {
+  "id": 6,
+  "bloco": "Reconhecimento sindrômico",
+  "peso": "média",
+  "chip": "não funcionante",
+  "tags": [
+   "incidentaloma",
+   "cromogranina"
+  ],
+  "stem": "Durante investigação de dor lombar, uma tomografia revela nódulo pancreático de 1,8 cm em corpo, hipervascular na fase arterial, em mulher de 61 anos assintomática. Sem diarreia, hipoglicemia, dermatose ou dispepsia. Sobre a lesão mais provável, é correto afirmar:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Corresponde ao subtipo mais frequente de tumor neuroendócrino pancreático nas séries atuais",
+    "ok": true,
+    "nota": "Os não funcionantes respondem pela maioria dos tumores neuroendócrinos pancreáticos diagnosticados hoje, e sua frequência subiu com a difusão da tomografia."
+   },
+   {
+    "letra": "B",
+    "txt": "A ausência de síndrome clínica indica benignidade e dispensa qualquer seguimento",
+    "ok": false,
+    "nota": "Não funcionante quer dizer sem síndrome hormonal, não sem potencial maligno. O comportamento depende do grau, do tamanho e do estádio."
+   },
+   {
+    "letra": "C",
+    "txt": "O padrão hipervascular sugere adenocarcinoma ductal",
+    "ok": false,
+    "nota": "O adenocarcinoma ductal é caracteristicamente hipovascular e mal definido. Lesão hipervascular em fase arterial fala a favor de tumor neuroendócrino."
+   },
+   {
+    "letra": "D",
+    "txt": "A cromogranina A normal exclui o diagnóstico",
+    "ok": false,
+    "nota": "A cromogranina pode ser normal em lesões pequenas e sofre falso-positivo com inibidor de bomba e insuficiência renal. Não serve como teste de exclusão."
+   },
+   {
+    "letra": "E",
+    "txt": "A ausência de sintomas indica que a lesão não produz peptídeos",
+    "ok": false,
+    "nota": "Muitos não funcionantes produzem peptídeos como polipeptídeo pancreático ou cromogranina, mas sem tradução clínica. O termo se refere à ausência de síndrome, não de secreção."
+   }
+  ],
+  "gatilho": "Nódulo pancreático hipervascular incidental em paciente sem síndrome. A banca quer que você reconheça o não funcionante e saiba que ele é o mais comum.",
+  "fisio": "A vascularização exuberante decorre da rica rede capilar dos tumores neuroendócrinos bem diferenciados, oposta à densa estroma desmoplásica e pobre em vasos do adenocarcinoma ductal.",
+  "perola": "Hipervascular na fase arterial afasta adenocarcinoma ductal e coloca tumor neuroendócrino no topo da lista, ao lado de metástase de carcinoma renal."
+ },
+ {
+  "id": 7,
+  "bloco": "Reconhecimento sindrômico",
+  "peso": "média",
+  "chip": "glucagon",
+  "tags": [
+   "dermatose",
+   "aminoácidos"
+  ],
+  "stem": "Na avaliação de uma paciente com eritema necrolítico migratório e lesão em cauda de pâncreas, qual alteração laboratorial explica diretamente a dermatose?",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Hiperglicemia sustentada acima de 300 mg/dL",
+    "ok": false,
+    "nota": "O diabetes do glucagonoma é tipicamente leve e não é a causa da lesão cutânea. Controlar a glicemia não resolve o eritema."
+   },
+   {
+    "letra": "B",
+    "txt": "Hipoaminoacidemia grave",
+    "ok": true,
+    "nota": "A depleção de aminoácidos priva a epiderme, tecido de altíssima renovação, do substrato para reconstrução, gerando necrólise da porção superior do epitélio."
+   },
+   {
+    "letra": "C",
+    "txt": "Hipercalcemia paraneoplásica",
+    "ok": false,
+    "nota": "Não faz parte da síndrome do glucagonoma nem produz lesão bolhosa migratória."
+   },
+   {
+    "letra": "D",
+    "txt": "Hipertrigliceridemia grave",
+    "ok": false,
+    "nota": "Pode causar xantomas eruptivos, lesões papulosas amareladas de aspecto completamente distinto, sem migração ou bolha."
+   },
+   {
+    "letra": "E",
+    "txt": "Elevação de fosfatase alcalina de origem hepática",
+    "ok": false,
+    "nota": "Pode acompanhar metástases hepáticas, mas não tem relação causal com a dermatose."
+   }
+  ],
+  "gatilho": "A pergunta troca o diagnóstico pelo mecanismo. Bancas gostam de testar se você entende a cadeia causal em vez de decorar a associação.",
+  "fisio": "Além da hipoaminoacidemia, contribuem a deficiência de zinco e de ácidos graxos essenciais. Por isso a reposição de aminoácidos, zinco e ácidos graxos melhora o eritema mesmo antes da ressecção, e os diagnósticos diferenciais da lesão são justamente acrodermatite enteropática, por zinco, e pelagra, por niacina.",
+  "perola": "Se a lesão cutânea melhora com aminoácidos endovenosos ou com octreotide antes de qualquer cirurgia, isso reforça o diagnóstico de glucagonoma."
+ },
+ {
+  "id": 8,
+  "bloco": "Reconhecimento sindrômico",
+  "peso": "média",
+  "chip": "glucagon",
+  "tags": [
+   "tromboembolismo",
+   "4 D"
+  ],
+  "stem": "Sobre a síndrome do glucagonoma, a complicação responsável pela maior parte da mortalidade perioperatória é:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Cetoacidose diabética",
+    "ok": false,
+    "nota": "Rara nesta síndrome, porque as células beta permanecem funcionantes e contrabalançam parcialmente o excesso de glucagon."
+   },
+   {
+    "letra": "B",
+    "txt": "Sepse de foco cutâneo",
+    "ok": false,
+    "nota": "A pele lesada pode infectar secundariamente, mas não é a causa de óbito clássica cobrada."
+   },
+   {
+    "letra": "C",
+    "txt": "Tromboembolismo pulmonar",
+    "ok": true,
+    "nota": "Cerca de um terço dos pacientes cursa com eventos tromboembólicos, e a embolia pulmonar é a principal causa evitável de morte perioperatória nessa síndrome."
+   },
+   {
+    "letra": "D",
+    "txt": "Fístula pancreática de alto débito",
+    "ok": false,
+    "nota": "É complicação relevante da pancreatectomia corpo-caudal, mas raramente fatal e não específica do glucagonoma."
+   },
+   {
+    "letra": "E",
+    "txt": "Encefalopatia hiperamonêmica",
+    "ok": false,
+    "nota": "Não compõe a síndrome; a depressão é a manifestação neuropsiquiátrica descrita entre os 4 D."
+   }
+  ],
+  "gatilho": "Presença de trombose venosa profunda na vinheta. Quando a banca cita TVP junto de lesão pancreática, ela quer testar a conduta profilática.",
+  "fisio": "Além da trombofilia paraneoplásica comum às neoplasias, acredita-se que o próprio tumor secrete fatores procoagulantes. O paciente é catabólico, frequentemente imobilizado e vai a uma cirurgia oncológica abdominal de grande porte — todos os vetores somados.",
+  "perola": "Glucagonoma exige profilaxia de tromboembolismo plena no pré-operatório e tromboprofilaxia estendida por 28 dias após cirurgia oncológica abdominal."
+ },
+ {
+  "id": 9,
+  "bloco": "Reconhecimento sindrômico",
+  "peso": "média",
+  "chip": "diferencial",
+  "tags": [
+   "diarreia",
+   "IBP"
+  ],
+  "stem": "Dois pacientes distintos chegam ao ambulatório com diarreia crônica e lesão pancreática. O primeiro tem melhora expressiva da diarreia com omeprazol em dose alta; o segundo mantém quatro litros de diarreia diários apesar da mesma medicação, com potássio de 2,3 mEq/L. Os diagnósticos mais prováveis são, respectivamente:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "VIPoma e gastrinoma",
+    "ok": false,
+    "nota": "Inverte a lógica. A diarreia do VIPoma é secretora e independente do ácido, portanto não responde ao inibidor de bomba."
+   },
+   {
+    "letra": "B",
+    "txt": "Gastrinoma e VIPoma",
+    "ok": true,
+    "nota": "A diarreia do Zollinger-Ellison é ácido-dependente e cede sob bloqueio pleno; a do VIPoma é secretora pura, com espoliação de potássio, e só responde a análogo de somatostatina."
+   },
+   {
+    "letra": "C",
+    "txt": "Somatostatinoma e glucagonoma",
+    "ok": false,
+    "nota": "A esteatorreia do somatostatinoma é por má digestão e não responde a IBP, e o glucagonoma não tem diarreia como sintoma dominante."
+   },
+   {
+    "letra": "D",
+    "txt": "Insulinoma e somatostatinoma",
+    "ok": false,
+    "nota": "O insulinoma não causa diarreia. Alternativa incompatível com ambos os cenários."
+   },
+   {
+    "letra": "E",
+    "txt": "Gastrinoma e síndrome carcinoide",
+    "ok": false,
+    "nota": "A síndrome carcinoide exigiria flushing e doença metastática hepática de primário intestinal, elementos ausentes, e a hipocalemia grave aponta VIPoma."
+   }
+  ],
+  "gatilho": "A resposta ao inibidor de bomba funciona como teste terapêutico discriminante entre as duas diarreias tumorais.",
+  "fisio": "No gastrinoma o volume fecal vem do ácido não neutralizado, que inativa enzimas pancreáticas e lesa a mucosa; suprimir a bomba de prótons corta o mecanismo. No VIPoma a secreção é mediada por AMP cíclico no enterócito e independe do pH gástrico.",
+  "perola": "Diarreia tumoral que melhora com IBP é gastrinoma; a que só melhora com octreotide é VIPoma."
+ },
+ {
+  "id": 10,
+  "bloco": "Topografia e localização",
+  "peso": "alta",
+  "chip": "gastrina",
+  "tags": [
+   "triângulo de Passaro"
+  ],
+  "stem": "Os limites do triângulo do gastrinoma, descrito por Stabile e Passaro, são:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Junção do ducto cístico com o colédoco, junção da segunda com a terceira porção duodenal e junção do colo com o corpo pancreático",
+    "ok": true,
+    "nota": "Definição clássica. Cerca de 80% a 90% dos gastrinomas estão contidos nessa área, sobretudo na parede duodenal e no processo uncinado."
+   },
+   {
+    "letra": "B",
+    "txt": "Hilo esplênico, cauda pancreática e ângulo esplênico do cólon",
+    "ok": false,
+    "nota": "Descreve a região de origem de glucagonomas e VIPomas, não do gastrinoma."
+   },
+   {
+    "letra": "C",
+    "txt": "Tronco celíaco, artéria mesentérica superior e veia porta",
+    "ok": false,
+    "nota": "São referências de ressecabilidade vascular do adenocarcinoma ductal, não os limites do triângulo."
+   },
+   {
+    "letra": "D",
+    "txt": "Ligamento de Treitz, veia mesentérica inferior e processo uncinado",
+    "ok": false,
+    "nota": "Combinação sem correspondência anatômica com a descrição original."
+   },
+   {
+    "letra": "E",
+    "txt": "Papila maior, papila menor e ducto de Santorini",
+    "ok": false,
+    "nota": "Referências ductais internas ao pâncreas, não os vértices do triângulo."
+   }
+  ],
+  "gatilho": "Pergunta anatômica direta, de altíssimo custo-benefício. Aparece com frequência em prova objetiva justamente por ser memorizável.",
+  "fisio": "O triângulo delimita a região onde se concentram as células G ectópicas e o tecido de origem embriológica compatível, o que explica a predileção topográfica.",
+  "perola": "A maioria dos gastrinomas é duodenal, não pancreática, e muitos medem poucos milímetros — por isso a duodenotomia é obrigatória na exploração cirúrgica."
+ },
+ {
+  "id": 11,
+  "bloco": "Topografia e localização",
+  "peso": "média",
+  "chip": "insulina",
+  "tags": [
+   "distribuição",
+   "enucleação"
+  ],
+  "stem": "Sobre a distribuição topográfica dos tumores neuroendócrinos pancreáticos funcionantes, assinale a correta:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "O insulinoma predomina na cauda, por concentração de ilhotas nessa região",
+    "ok": false,
+    "nota": "Embora a densidade de ilhotas seja maior no corpo e cauda, o insulinoma distribui-se de forma praticamente uniforme pelo órgão, o que é o dado cobrado em prova."
+   },
+   {
+    "letra": "B",
+    "txt": "O insulinoma tem distribuição uniforme pelo pâncreas, enquanto glucagonoma e VIPoma predominam em corpo e cauda",
+    "ok": true,
+    "nota": "Descreve corretamente as duas regras topográficas mais cobradas do tema."
+   },
+   {
+    "letra": "C",
+    "txt": "O glucagonoma predomina na cabeça e no processo uncinado",
+    "ok": false,
+    "nota": "Cabeça e uncinado são território do gastrinoma. O glucagonoma nasce em corpo e cauda."
+   },
+   {
+    "letra": "D",
+    "txt": "O VIPoma é tipicamente duodenal",
+    "ok": false,
+    "nota": "O VIPoma é pancreático, de corpo e cauda. Em crianças, o diagnóstico diferencial é o ganglioneuroblastoma extrapancreático."
+   },
+   {
+    "letra": "E",
+    "txt": "O somatostatinoma é mais comum na cauda pancreática",
+    "ok": false,
+    "nota": "Ocorre na cabeça do pâncreas e na região periampular duodenal, e esta é justamente a chave que o separa do glucagonoma na questão de reconhecimento."
+   }
+  ],
+  "gatilho": "A topografia é usada pelas bancas como discriminador silencioso: o enunciado diz cauda ou cabeça e espera que você elimine metade das alternativas antes de ler os sintomas.",
+  "fisio": "A distribuição reflete a origem embriológica: o broto ventral, que forma o uncinado e parte da cabeça, é rico em células produtoras de polipeptídeo pancreático e gastrina; o broto dorsal, que origina corpo e cauda, tem predomínio de células alfa e beta.",
+  "perola": "Cabeça e uncinado para gastrinoma, corpo e cauda para glucagonoma e VIPoma, duodeno periampular para somatostatinoma, e uniforme para insulinoma."
+ },
+ {
+  "id": 12,
+  "bloco": "Topografia e localização",
+  "peso": "média",
+  "chip": "embriologia",
+  "tags": [
+   "broto ventral",
+   "uncinado"
+  ],
+  "stem": "A concentração de células produtoras de gastrina e polipeptídeo pancreático no processo uncinado e na porção posterior da cabeça pancreática é explicada por:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Origem no broto pancreático ventral, que rota posteriormente junto ao colédoco",
+    "ok": true,
+    "nota": "O broto ventral origina o processo uncinado e a porção póstero-inferior da cabeça, e carrega a população celular rica em polipeptídeo pancreático e gastrina."
+   },
+   {
+    "letra": "B",
+    "txt": "Migração de células da crista neural para a cauda pancreática",
+    "ok": false,
+    "nota": "A hipótese de origem exclusiva em crista neural para as células das ilhotas foi abandonada; e a região citada não é a cauda."
+   },
+   {
+    "letra": "C",
+    "txt": "Persistência do ducto de Santorini como via principal de drenagem",
+    "ok": false,
+    "nota": "Trata de anatomia ductal e de pâncreas divisum, sem relação com a distribuição de células endócrinas."
+   },
+   {
+    "letra": "D",
+    "txt": "Fusão tardia do baço com a cauda pancreática",
+    "ok": false,
+    "nota": "A relação esplenopancreática explica a esplenectomia associada à pancreatectomia corpo-caudal, não a distribuição celular na cabeça."
+   },
+   {
+    "letra": "E",
+    "txt": "Vascularização preferencial pela artéria esplênica",
+    "ok": false,
+    "nota": "A artéria esplênica irriga corpo e cauda, o oposto da região descrita, e vascularização não determina fenótipo endócrino."
+   }
+  ],
+  "gatilho": "Questão de embriologia aplicada. Bancas de R+ gostam de cobrar o porquê da topografia, não apenas a topografia.",
+  "fisio": "O broto ventral surge junto ao divertículo hepático e roda 180 graus em torno do duodeno para se fundir posteriormente ao broto dorsal, arrastando consigo o perfil celular que explica a predileção do gastrinoma.",
+  "perola": "Broto ventral gera uncinado e cabeça posterior, território do gastrinoma; broto dorsal gera corpo e cauda, território de glucagonoma e VIPoma."
+ },
+ {
+  "id": 13,
+  "bloco": "Topografia e localização",
+  "peso": "média",
+  "chip": "gastrina",
+  "tags": [
+   "duodenotomia",
+   "exploração"
+  ],
+  "stem": "Durante exploração cirúrgica de gastrinoma esporádico, a tomografia e a ecoendoscopia pré-operatórias não localizaram a lesão. Após ultrassonografia intraoperatória e manobra de Kocher ampla, nada foi identificado no pâncreas. A conduta correta é:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Encerrar a exploração e reprogramar após novo estadiamento funcional",
+    "ok": false,
+    "nota": "Encerrar sem duodenotomia é o erro clássico: a maior parte dos gastrinomas esporádicos é duodenal e pode ser invisível em qualquer imagem por medir poucos milímetros."
+   },
+   {
+    "letra": "B",
+    "txt": "Realizar duodenotomia longitudinal com palpação e inspeção da mucosa duodenal",
+    "ok": true,
+    "nota": "A duodenotomia é obrigatória na exploração por gastrinoma não localizado e eleva significativamente a taxa de identificação e de cura bioquímica."
+   },
+   {
+    "letra": "C",
+    "txt": "Realizar pancreatectomia corpo-caudal empírica",
+    "ok": false,
+    "nota": "Ressecção empírica em território de baixa probabilidade, com morbidade desnecessária. O gastrinoma não mora na cauda."
+   },
+   {
+    "letra": "D",
+    "txt": "Realizar gastrectomia total para controle da hipersecreção ácida",
+    "ok": false,
+    "nota": "Era a conduta histórica antes dos inibidores de bomba. Hoje o controle clínico do ácido é excelente e a gastrectomia foi abandonada como estratégia primária."
+   },
+   {
+    "letra": "E",
+    "txt": "Realizar vagotomia troncular com piloroplastia",
+    "ok": false,
+    "nota": "Também pertence à era pré-IBP e não trata a doença de base, que é a neoplasia produtora de gastrina."
+   }
+  ],
+  "gatilho": "Exploração com imagem negativa. A banca quer saber se você lembra que o duodeno precisa ser aberto.",
+  "fisio": "Gastrinomas duodenais são frequentemente submucosos, múltiplos e milimétricos, escapando de tomografia, ecoendoscopia e até da palpação externa. A abertura longitudinal permite eversão da mucosa e palpação bidigital.",
+  "perola": "Exploração por gastrinoma sem duodenotomia é exploração incompleta."
+ },
+ {
+  "id": 14,
+  "bloco": "Diagnóstico bioquímico",
+  "peso": "alta",
+  "chip": "glucagon",
+  "tags": [
+   "ponto de corte"
+  ],
+  "stem": "Qual valor de glucagon plasmático é considerado diagnóstico de glucagonoma, em paciente com quadro clínico compatível?",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Acima de 50 pg/mL",
+    "ok": false,
+    "nota": "Está apenas no limite superior da normalidade e ocorre em jejum prolongado, diabetes descompensado, cirrose e sepse."
+   },
+   {
+    "letra": "B",
+    "txt": "Acima de 150 pg/mL",
+    "ok": false,
+    "nota": "Elevação inespecífica, compatível com causas reativas de hiperglucagonemia."
+   },
+   {
+    "letra": "C",
+    "txt": "Acima de 1000 pg/mL",
+    "ok": true,
+    "nota": "Valores acima de 1000 pg/mL são considerados diagnósticos; a faixa entre 500 e 1000 é fortemente sugestiva e exige correlação clínica e de imagem."
+   },
+   {
+    "letra": "D",
+    "txt": "Acima de 10000 pg/mL",
+    "ok": false,
+    "nota": "Valor acima do necessário para o diagnóstico; exigir esse patamar levaria a subdiagnóstico."
+   },
+   {
+    "letra": "E",
+    "txt": "Qualquer valor acima do normal, desde que haja lesão pancreática",
+    "ok": false,
+    "nota": "Hiperglucagonemia discreta é comum em condições catabólicas e não define a síndrome."
+   }
+  ],
+  "gatilho": "Pergunta de ponto de corte. Vale memorizar junto com o corte da gastrina, porque as bancas costumam cobrar os dois no mesmo bloco.",
+  "fisio": "O valor normal de glucagon fica abaixo de 50 pg/mL. Causas reativas raramente ultrapassam 500 pg/mL, o que torna o patamar de 1000 praticamente exclusivo de tumor produtor.",
+  "perola": "Glucagon acima de 1000 pg/mL fecha o diagnóstico; entre 500 e 1000, sugere fortemente e pede imagem."
+ },
+ {
+  "id": 15,
+  "bloco": "Diagnóstico bioquímico",
+  "peso": "alta",
+  "chip": "gastrina",
+  "tags": [
+   "IBP",
+   "pH gástrico"
+  ],
+  "stem": "Paciente com suspeita de gastrinoma tem gastrina sérica de 780 pg/mL. Está em uso de pantoprazol 40 mg duas vezes ao dia. A conduta correta antes de concluir o diagnóstico é:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Considerar o diagnóstico confirmado e solicitar imagem de localização",
+    "ok": false,
+    "nota": "Inibidor de bomba em uso é a causa mais frequente de hipergastrinemia falsamente sugestiva. Confirmar sem suspender é armadilha clássica."
+   },
+   {
+    "letra": "B",
+    "txt": "Suspender o inibidor de bomba por cerca de uma semana, repetir a gastrina e medir o pH gástrico",
+    "ok": true,
+    "nota": "A confirmação exige gastrina elevada na vigência de pH gástrico abaixo de 2. Hipergastrinemia com pH alto indica hipocloridria e resposta fisiológica, não tumor."
+   },
+   {
+    "letra": "C",
+    "txt": "Solicitar cromogranina A para confirmar o diagnóstico",
+    "ok": false,
+    "nota": "A cromogranina também se eleva falsamente com inibidor de bomba, além de insuficiência renal e gastrite atrófica. Não resolve a dúvida."
+   },
+   {
+    "letra": "D",
+    "txt": "Solicitar teste de estímulo com secretina imediatamente, sem suspender a medicação",
+    "ok": false,
+    "nota": "O teste da secretina tem papel nos casos duvidosos, mas a suspensão do IBP e a medição do pH vêm antes na sequência lógica."
+   },
+   {
+    "letra": "E",
+    "txt": "Iniciar octreotide e reavaliar a gastrina em 30 dias",
+    "ok": false,
+    "nota": "Tratar antes de diagnosticar mascara o quadro e não esclarece a etiologia da hipergastrinemia."
+   }
+  ],
+  "gatilho": "Hipergastrinemia moderada em paciente usando IBP. A banca testa se você conhece o principal confundidor do exame.",
+  "fisio": "A supressão ácida eleva o pH gástrico, o que retira o feedback negativo sobre a célula G antral e aumenta fisiologicamente a gastrina. O diagnóstico de Zollinger-Ellison exige justamente a combinação paradoxal de gastrina alta com ácido presente.",
+  "diverg": "A suspensão do inibidor de bomba deve ser feita com cautela e cobertura, pelo risco de sangramento e perfuração em paciente com úlceras ativas. Parte da literatura recomenda suspensão de 7 dias, outra de até 2 semanas; se a banca não especificar, a resposta esperada é sempre a de suspender e reavaliar com pH.",
+  "perola": "Gastrina alta só vale com pH gástrico abaixo de 2. Sem essa condição, o diagnóstico é hipocloridria, não gastrinoma."
+ },
+ {
+  "id": 16,
+  "bloco": "Diagnóstico bioquímico",
+  "peso": "média",
+  "chip": "secretina",
+  "tags": [
+   "teste provocativo"
+  ],
+  "stem": "No caso duvidoso de síndrome de Zollinger-Ellison, com gastrina entre 200 e 1000 pg/mL e pH gástrico baixo, o teste de estímulo com secretina é considerado positivo quando:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "A gastrina cai mais de 50% após a infusão",
+    "ok": false,
+    "nota": "É o comportamento fisiológico da célula G antral normal, que é inibida pela secretina. Queda afasta o diagnóstico."
+   },
+   {
+    "letra": "B",
+    "txt": "A gastrina se eleva acima de 120 pg/mL em relação ao valor basal",
+    "ok": true,
+    "nota": "Resposta paradoxal do tumor à secretina. Esse é o critério clássico de positividade cobrado em prova."
+   },
+   {
+    "letra": "C",
+    "txt": "O pH gástrico se eleva acima de 4",
+    "ok": false,
+    "nota": "O teste avalia a resposta da gastrina, não do pH, que é medido separadamente para caracterizar a hipersecreção."
+   },
+   {
+    "letra": "D",
+    "txt": "A insulina sérica dobra em relação ao basal",
+    "ok": false,
+    "nota": "Não faz parte do teste da secretina nem da avaliação do gastrinoma."
+   },
+   {
+    "letra": "E",
+    "txt": "A cromogranina A se eleva mais de 30%",
+    "ok": false,
+    "nota": "A cromogranina não é usada como marcador dinâmico em teste provocativo."
+   }
+  ],
+  "gatilho": "Vinheta de gastrina intermediária. Sempre que o valor não é francamente diagnóstico, a banca cobra o teste provocativo.",
+  "fisio": "A secretina inibe a célula G antral normal, mas estimula paradoxalmente as células tumorais do gastrinoma, provavelmente por expressão aberrante de receptores. Daí a elevação em vez da queda esperada.",
+  "perola": "Elevação de mais de 120 pg/mL após secretina é positiva; a célula G normal responde caindo."
+ },
+ {
+  "id": 17,
+  "bloco": "Diagnóstico bioquímico",
+  "peso": "alta",
+  "chip": "insulina",
+  "tags": [
+   "hipoglicemia factícia"
+  ],
+  "stem": "Técnica de enfermagem de 34 anos, com acesso a farmácia hospitalar, apresenta hipoglicemias recorrentes. No episódio documentado: glicemia 34 mg/dL, insulina 48 microU/mL, peptídeo C 0,2 ng/mL, proinsulina indetectável. A conclusão correta é:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Insulinoma, e deve ser solicitada ecoendoscopia",
+    "ok": false,
+    "nota": "No insulinoma a insulina é produzida no pâncreas e vem acompanhada de peptídeo C e proinsulina elevados. Aqui ambos estão suprimidos."
+   },
+   {
+    "letra": "B",
+    "txt": "Hipoglicemia factícia por administração exógena de insulina",
+    "ok": true,
+    "nota": "Insulina alta com peptídeo C suprimido é a assinatura da insulina exógena, que não contém peptídeo C. O contexto ocupacional reforça."
+   },
+   {
+    "letra": "C",
+    "txt": "Uso subreptício de sulfonilureia",
+    "ok": false,
+    "nota": "Sulfonilureia estimula a célula beta e elevaria o peptídeo C junto com a insulina. É por isso que o rastreio de secretagogos faz parte do protocolo."
+   },
+   {
+    "letra": "D",
+    "txt": "Insuficiência adrenal primária",
+    "ok": false,
+    "nota": "Causaria hipoglicemia com insulina suprimida, não elevada."
+   },
+   {
+    "letra": "E",
+    "txt": "Nesidioblastose do adulto",
+    "ok": false,
+    "nota": "Também é hiperinsulinismo endógeno e cursaria com peptídeo C elevado, além de hipoglicemia predominantemente pós-prandial."
+   }
+  ],
+  "gatilho": "Profissional de saúde com acesso a medicações e hipoglicemia recorrente. É o cenário armado para hipoglicemia factícia.",
+  "fisio": "A pró-insulina é clivada em insulina e peptídeo C em quantidades equimolares. Toda insulina endógena vem acompanhada de peptídeo C; a insulina farmacêutica, não.",
+  "perola": "Peptídeo C separa endógeno de exógeno; o rastreio de sulfonilureia separa tumor de secretagogo."
+ },
+ {
+  "id": 18,
+  "bloco": "Diagnóstico bioquímico",
+  "peso": "média",
+  "chip": "cromogranina",
+  "tags": [
+   "falso-positivo"
+  ],
+  "stem": "São causas de elevação falso-positiva da cromogranina A, exceto:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Uso de inibidor de bomba de prótons",
+    "ok": false,
+    "nota": "Causa clássica de falso-positivo, por hipergastrinemia reacional e hiperplasia de células enterocromafins-símile."
+   },
+   {
+    "letra": "B",
+    "txt": "Insuficiência renal crônica",
+    "ok": false,
+    "nota": "Reduz o clearance do marcador e eleva os níveis séricos independentemente de tumor."
+   },
+   {
+    "letra": "C",
+    "txt": "Gastrite atrófica",
+    "ok": false,
+    "nota": "Cursa com hipocloridria e hipergastrinemia compensatória, elevando a cromogranina."
+   },
+   {
+    "letra": "D",
+    "txt": "Doença hepática crônica e insuficiência cardíaca",
+    "ok": false,
+    "nota": "Ambas elevam a cromogranina por mecanismos de clearance e ativação neuroendócrina."
+   },
+   {
+    "letra": "E",
+    "txt": "Jejum prolongado de 12 horas antes da coleta",
+    "ok": true,
+    "nota": "O jejum é preparo adequado do exame e não causa falso-positivo. É a exceção pedida."
+   }
+  ],
+  "gatilho": "Questão de exceção sobre marcador geral. Vale ouro porque a cromogranina é usada em seguimento de todos os tumores neuroendócrinos.",
+  "fisio": "A cromogranina A é uma proteína de grânulo secretor comum a toda a linhagem neuroendócrina; por isso é sensível, mas pouco específica, e sofre com tudo que aumenta a massa de células enterocromafins-símile ou reduz sua depuração.",
+  "perola": "Antes de valorizar uma cromogranina alta, pergunte por inibidor de bomba e função renal."
+ },
+ {
+  "id": 19,
+  "bloco": "Diagnóstico bioquímico",
+  "peso": "média",
+  "chip": "VIP",
+  "tags": [
+   "confirmação",
+   "eletrólitos"
+  ],
+  "stem": "Em paciente com diarreia secretora volumosa e massa em cauda pancreática, o exame que confirma o diagnóstico de VIPoma é:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Dosagem de peptídeo intestinal vasoativo plasmático elevada, colhida durante episódio de diarreia",
+    "ok": true,
+    "nota": "A confirmação é bioquímica e deve ser feita em vigência de diarreia, já que a secreção pode ser episódica e um valor colhido em fase quiescente pode ser normal."
+   },
+   {
+    "letra": "B",
+    "txt": "Pesquisa de gordura fecal em 72 horas",
+    "ok": false,
+    "nota": "Avalia esteatorreia, que caracteriza má digestão, e não a diarreia secretora do VIPoma."
+   },
+   {
+    "letra": "C",
+    "txt": "Dosagem de ácido 5-hidroxi-indolacético urinário",
+    "ok": false,
+    "nota": "É o exame da síndrome carcinoide, ligada à serotonina e a primários intestinais com metástase hepática."
+   },
+   {
+    "letra": "D",
+    "txt": "Teste de estímulo com secretina",
+    "ok": false,
+    "nota": "Aplica-se ao gastrinoma, não ao VIPoma."
+   },
+   {
+    "letra": "E",
+    "txt": "Colonoscopia com biópsias seriadas",
+    "ok": false,
+    "nota": "Necessária para excluir colite microscópica na investigação inicial, mas normal no VIPoma e incapaz de confirmar o diagnóstico."
+   }
+  ],
+  "gatilho": "Depois de reconhecer a síndrome, a banca pede o exame confirmatório. A pegadinha é oferecer o 5-HIAA, que pertence a outra síndrome.",
+  "fisio": "A secreção tumoral de VIP pode ser intermitente. Coleta em período de remissão sintomática gera falso-negativo, o que explica a exigência de colher durante a diarreia.",
+  "perola": "5-HIAA urinário é carcinoide; VIP plasmático é Verner-Morrison. Não troque os marcadores."
+ },
+ {
+  "id": 20,
+  "bloco": "Imagem e estadiamento",
+  "peso": "alta",
+  "chip": "tomografia",
+  "tags": [
+   "fase arterial"
+  ],
+  "stem": "Na investigação por imagem de tumor neuroendócrino pancreático suspeito, o protocolo tomográfico adequado deve incluir obrigatoriamente:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Apenas fase portal, suficiente para caracterizar lesões pancreáticas",
+    "ok": false,
+    "nota": "A fase portal isolada é o erro que faz pequenos tumores neuroendócrinos desaparecerem, porque eles se tornam isodensos ao parênquima nessa fase."
+   },
+   {
+    "letra": "B",
+    "txt": "Fase arterial pancreática precoce, além das fases portal e tardia",
+    "ok": true,
+    "nota": "O realce máximo desses tumores ocorre na fase arterial. Sem ela, lesões pequenas podem passar despercebidas."
+   },
+   {
+    "letra": "C",
+    "txt": "Apenas aquisição sem contraste, para evitar mascarar calcificações",
+    "ok": false,
+    "nota": "Sem contraste a sensibilidade é muito baixa; calcificações não são o achado-alvo."
+   },
+   {
+    "letra": "D",
+    "txt": "Fase tardia de 10 minutos, para avaliar washout",
+    "ok": false,
+    "nota": "O padrão de washout tardio é o algoritmo do incidentaloma adrenal, não do pâncreas."
+   },
+   {
+    "letra": "E",
+    "txt": "Colangiorressonância isoladamente",
+    "ok": false,
+    "nota": "Excelente para a árvore biliar e ductal, mas não substitui o estudo dinâmico do parênquima na avaliação de lesão hipervascular."
+   }
+  ],
+  "gatilho": "Pergunta de protocolo. Bancas cobram o par lesão hipervascular e fase arterial como conceito único.",
+  "fisio": "A rede capilar densa desses tumores capta contraste precocemente e o esvazia rápido, tornando-os conspícuos na fase arterial e frequentemente invisíveis na portal.",
+  "perola": "Suspeita de tumor neuroendócrino pancreático exige tomografia trifásica com fase arterial dedicada."
+ },
+ {
+  "id": 21,
+  "bloco": "Imagem e estadiamento",
+  "peso": "alta",
+  "chip": "DOTATATE",
+  "tags": [
+   "PET",
+   "receptor"
+  ],
+  "stem": "Homem de 58 anos com tumor neuroendócrino pancreático bem diferenciado, Ki-67 de 6%, será estadiado. O exame funcional de escolha é:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "PET-CT com 18F-FDG",
+    "ok": false,
+    "nota": "Reservado para lesões de alto grau e pouco diferenciadas, que perdem receptores de somatostatina e ganham avidez glicolítica. Em G1 e G2 tem baixo rendimento."
+   },
+   {
+    "letra": "B",
+    "txt": "PET-CT com 68Ga-DOTATATE",
+    "ok": true,
+    "nota": "Mapeia receptores de somatostatina, é o exame funcional de maior sensibilidade em tumores bem diferenciados e ainda define elegibilidade para terapia com radionuclídeo."
+   },
+   {
+    "letra": "C",
+    "txt": "Cintilografia com MIBG",
+    "ok": false,
+    "nota": "É o exame de feocromocitoma, paraganglioma e neuroblastoma, não de tumor neuroendócrino pancreático."
+   },
+   {
+    "letra": "D",
+    "txt": "Cintilografia óssea com tecnécio",
+    "ok": false,
+    "nota": "Avalia apenas o esqueleto e é largamente superada pelo DOTATATE, que também detecta metástases ósseas."
+   },
+   {
+    "letra": "E",
+    "txt": "PET-CT com PSMA",
+    "ok": false,
+    "nota": "Marcador de câncer de próstata, sem papel neste cenário."
+   }
+  ],
+  "gatilho": "Grau histológico dado no enunciado. Ki-67 baixo ou intermediário aponta receptores preservados e, portanto, DOTATATE.",
+  "fisio": "Tumores bem diferenciados superexpressam receptores de somatostatina, sobretudo o subtipo 2, alvo do análogo marcado com gálio-68. À medida que o tumor desdiferencia, perde receptores e passa a consumir glicose avidamente, invertendo a lógica para o FDG.",
+  "perola": "Bem diferenciado capta DOTATATE; pouco diferenciado capta FDG. Em G3, os dois exames podem ser complementares."
+ },
+ {
+  "id": 22,
+  "bloco": "Imagem e estadiamento",
+  "peso": "média",
+  "chip": "ecoendoscopia",
+  "tags": [
+   "lesão pequena",
+   "punção"
+  ],
+  "stem": "Paciente com hiperinsulinismo endógeno comprovado e tomografia trifásica sem lesão identificada. O próximo passo mais adequado é:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Ecoendoscopia com eventual punção",
+    "ok": true,
+    "nota": "É o exame de maior sensibilidade para lesões pancreáticas pequenas, alcançando taxas altas de detecção mesmo em tumores milimétricos, e permite marcação e punção."
+   },
+   {
+    "letra": "B",
+    "txt": "Pancreatectomia distal cega",
+    "ok": false,
+    "nota": "Ressecção às cegas é inaceitável em lesão de distribuição uniforme pelo órgão; a chance de deixar o tumor no coto é alta."
+   },
+   {
+    "letra": "C",
+    "txt": "Cintilografia com octreotide",
+    "ok": false,
+    "nota": "O insulinoma expressa receptores de somatostatina de forma variável e frequentemente escapa dos exames receptor-dependentes, ao contrário dos demais tumores da família."
+   },
+   {
+    "letra": "D",
+    "txt": "Repetir a tomografia em seis meses",
+    "ok": false,
+    "nota": "Postergar o diagnóstico mantém o paciente sob risco de neuroglicopenia grave e acidentes."
+   },
+   {
+    "letra": "E",
+    "txt": "PET-CT com FDG",
+    "ok": false,
+    "nota": "Insulinoma é tipicamente bem diferenciado e de baixo grau, com baixa avidez glicolítica."
+   }
+  ],
+  "gatilho": "Diagnóstico bioquímico fechado e imagem convencional negativa. A sequência esperada é sempre ecoendoscopia.",
+  "fisio": "A proximidade do transdutor ao pâncreas elimina a interposição gasosa e permite resolução milimétrica, superando a tomografia em lesões pequenas.",
+  "perola": "O insulinoma é o tumor da família que menos confia em exames de receptor de somatostatina — a arma é a ecoendoscopia, e no intraoperatório, a ultrassonografia com palpação bidigital."
+ },
+ {
+  "id": 23,
+  "bloco": "Imagem e estadiamento",
+  "peso": "média",
+  "chip": "AJCC",
+  "tags": [
+   "estadiamento T"
+  ],
+  "stem": "Segundo a classificação TNM da AJCC para tumores neuroendócrinos pancreáticos bem diferenciados, um tumor de 3,2 cm restrito ao pâncreas é classificado como:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "T1",
+    "ok": false,
+    "nota": "T1 corresponde a lesão menor que 2 cm."
+   },
+   {
+    "letra": "B",
+    "txt": "T2",
+    "ok": true,
+    "nota": "T2 abrange tumores de 2 a 4 cm limitados ao pâncreas, faixa em que se enquadra a lesão descrita."
+   },
+   {
+    "letra": "C",
+    "txt": "T3",
+    "ok": false,
+    "nota": "T3 exige tumor maior que 4 cm ou invasão de duodeno ou colédoco."
+   },
+   {
+    "letra": "D",
+    "txt": "T4",
+    "ok": false,
+    "nota": "T4 requer invasão de estruturas adjacentes ou de grandes vasos, como tronco celíaco ou artéria mesentérica superior."
+   },
+   {
+    "letra": "E",
+    "txt": "Tis",
+    "ok": false,
+    "nota": "Não existe categoria in situ aplicável nessa classificação para tumores neuroendócrinos pancreáticos."
+   }
+  ],
+  "gatilho": "Número de tamanho no enunciado sem outros achados. É pergunta direta de tabela.",
+  "fisio": "O estadiamento anatômico soma-se ao grau histológico: dois tumores T2 com Ki-67 de 2% e de 18% têm prognósticos muito distintos, e é por isso que grau e estádio são reportados juntos.",
+  "perola": "T1 até 2 cm, T2 de 2 a 4 cm, T3 acima de 4 cm ou invadindo duodeno e colédoco, T4 invadindo vasos maiores ou órgãos adjacentes."
+ },
+ {
+  "id": 24,
+  "bloco": "Patologia e graduação",
+  "peso": "alta",
+  "chip": "Ki-67",
+  "tags": [
+   "WHO 2019"
+  ],
+  "stem": "Laudo anatomopatológico de lesão pancreática ressecada: tumor neuroendócrino bem diferenciado, índice de proliferação Ki-67 de 12%, dois mitoses por 2 mm². Segundo a classificação da Organização Mundial da Saúde vigente, trata-se de:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Tumor neuroendócrino G1",
+    "ok": false,
+    "nota": "G1 exige Ki-67 abaixo de 3% e menos de 2 mitoses por 2 mm²."
+   },
+   {
+    "letra": "B",
+    "txt": "Tumor neuroendócrino G2",
+    "ok": true,
+    "nota": "G2 corresponde a Ki-67 entre 3% e 20% em tumor bem diferenciado, exatamente o caso descrito."
+   },
+   {
+    "letra": "C",
+    "txt": "Tumor neuroendócrino G3",
+    "ok": false,
+    "nota": "G3 exige Ki-67 acima de 20%, mantendo a boa diferenciação morfológica."
+   },
+   {
+    "letra": "D",
+    "txt": "Carcinoma neuroendócrino de pequenas células",
+    "ok": false,
+    "nota": "É lesão pouco diferenciada, com morfologia de pequenas células e Ki-67 habitualmente muito acima de 20%, comportamento e tratamento completamente distintos."
+   },
+   {
+    "letra": "E",
+    "txt": "Neoplasia mista neuroendócrina e não neuroendócrina",
+    "ok": false,
+    "nota": "Exige pelo menos 30% de cada componente no mesmo tumor, o que não é descrito."
+   }
+  ],
+  "gatilho": "Número do Ki-67 no laudo. A banca cobra o corte exato da tabela.",
+  "fisio": "O Ki-67 é contado em área de maior atividade proliferativa, com pelo menos 500 células avaliadas. O grau prediz sobrevida melhor do que o tamanho e define a estratégia sistêmica.",
+  "perola": "G1 abaixo de 3%, G2 entre 3% e 20%, G3 acima de 20% mantendo boa diferenciação. Fora dessa lógica está o carcinoma neuroendócrino, pouco diferenciado por definição."
+ },
+ {
+  "id": 25,
+  "bloco": "Patologia e graduação",
+  "peso": "média",
+  "chip": "NEC",
+  "tags": [
+   "pouco diferenciado",
+   "platina"
+  ],
+  "stem": "A principal implicação prática de distinguir tumor neuroendócrino G3 de carcinoma neuroendócrino pouco diferenciado é:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Apenas prognóstica, sem impacto terapêutico",
+    "ok": false,
+    "nota": "O impacto terapêutico é justamente o ponto: as duas entidades recebem esquemas sistêmicos diferentes."
+   },
+   {
+    "letra": "B",
+    "txt": "O carcinoma pouco diferenciado é tratado com esquema baseado em platina e etoposídeo, enquanto o G3 bem diferenciado segue a lógica dos tumores neuroendócrinos",
+    "ok": true,
+    "nota": "Distinção central da classificação atual. O carcinoma pouco diferenciado comporta-se como doença de células pequenas e responde a platina; o G3 bem diferenciado mantém receptores e responde a estratégias da linha neuroendócrina."
+   },
+   {
+    "letra": "C",
+    "txt": "O G3 bem diferenciado deve sempre receber platina e etoposídeo",
+    "ok": false,
+    "nota": "Inverte a conduta. Platina e etoposídeo são a base do pouco diferenciado."
+   },
+   {
+    "letra": "D",
+    "txt": "Ambos são inelegíveis para terapia com radionuclídeo",
+    "ok": false,
+    "nota": "O G3 bem diferenciado frequentemente mantém expressão de receptores de somatostatina e pode ser candidato à terapia com radionuclídeo."
+   },
+   {
+    "letra": "E",
+    "txt": "A distinção depende exclusivamente do tamanho tumoral",
+    "ok": false,
+    "nota": "Depende da morfologia e da diferenciação, avaliadas na histologia, e não do tamanho."
+   }
+  ],
+  "gatilho": "Questão conceitual da classificação de 2019, que separou grau de diferenciação. É tema novo e por isso valorizado nas bancas.",
+  "fisio": "Tumores pouco diferenciados perdem arquitetura organoide, expressam menos receptores de somatostatina e apresentam alterações de TP53 e RB1, aproximando-se biologicamente do carcinoma de pequenas células pulmonar.",
+  "perola": "Grau alto não é sinônimo de pouco diferenciado. O patologista precisa informar as duas coisas."
+ },
+ {
+  "id": 26,
+  "bloco": "Patologia e graduação",
+  "peso": "média",
+  "chip": "imuno",
+  "tags": [
+   "marcadores",
+   "psamoma"
+  ],
+  "stem": "Sobre achados anatomopatológicos dos tumores neuroendócrinos, assinale a correta:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Sinaptofisina e cromogranina são os marcadores imuno-histoquímicos que confirmam a linhagem neuroendócrina",
+    "ok": true,
+    "nota": "São os marcadores clássicos de confirmação diagnóstica, hoje frequentemente acompanhados de INSM1."
+   },
+   {
+    "letra": "B",
+    "txt": "A positividade para citoqueratina 20 confirma a origem neuroendócrina pancreática",
+    "ok": false,
+    "nota": "CK20 é usada em outros contextos, notadamente no carcinoma de células de Merkel, e não confirma linhagem neuroendócrina pancreática."
+   },
+   {
+    "letra": "C",
+    "txt": "Corpos psamomatosos são típicos do glucagonoma",
+    "ok": false,
+    "nota": "São descritos no somatostatinoma duodenal, especialmente no associado à neurofibromatose tipo 1."
+   },
+   {
+    "letra": "D",
+    "txt": "A presença de estroma desmoplásico exuberante é típica desses tumores",
+    "ok": false,
+    "nota": "Estroma desmoplásico denso caracteriza o adenocarcinoma ductal; os neuroendócrinos são celulares e ricos em vasos."
+   },
+   {
+    "letra": "E",
+    "txt": "A imuno-histoquímica hormonal define a síndrome clínica do paciente",
+    "ok": false,
+    "nota": "A coloração para um hormônio não implica síndrome clínica: muitos tumores coram para peptídeos sem qualquer manifestação funcional. A síndrome é definição clínica, não imuno-histoquímica."
+   }
+  ],
+  "gatilho": "Questão de laudo. Bancas testam se o candidato sabe ler imuno-histoquímica sem transformá-la em diagnóstico sindrômico.",
+  "fisio": "A sinaptofisina marca vesículas sinápticas e a cromogranina marca grânulos de secreção densos; ambas são estruturas presentes em toda célula neuroendócrina, independentemente do peptídeo produzido.",
+  "perola": "Tumor que cora para insulina sem hipoglicemia é não funcionante. Funcionante é quem tem síndrome, não quem tem coloração."
+ },
+ {
+  "id": 27,
+  "bloco": "Conduta cirúrgica",
+  "peso": "alta",
+  "chip": "cauda",
+  "tags": [
+   "pancreatectomia",
+   "esplenectomia"
+  ],
+  "stem": "Confirmado glucagonoma de 6 cm em cauda pancreática, sem metástases à distância, em paciente com performance preservada. A operação indicada é:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Enucleação da lesão com preservação parenquimatosa máxima",
+    "ok": false,
+    "nota": "Enucleação não obtém margem nem linfonodos, e é inaceitável em lesão grande e potencialmente maligna. Reserva-se a tumores pequenos, benignos e superficiais, como o insulinoma."
+   },
+   {
+    "letra": "B",
+    "txt": "Pancreatectomia corpo-caudal com esplenectomia e linfadenectomia regional",
+    "ok": true,
+    "nota": "O glucagonoma é maligno na maioria dos casos, e a esplenectomia entrega os linfonodos do hilo esplênico, componente da linfadenectomia oncológica."
+   },
+   {
+    "letra": "C",
+    "txt": "Pancreatectomia corpo-caudal com preservação esplênica pela técnica de Warshaw",
+    "ok": false,
+    "nota": "A preservação do baço é elegante em lesões benignas e em trauma, mas compromete a linfadenectomia em doença maligna."
+   },
+   {
+    "letra": "D",
+    "txt": "Duodenopancreatectomia",
+    "ok": false,
+    "nota": "Ressecção do território errado. A lesão está na cauda."
+   },
+   {
+    "letra": "E",
+    "txt": "Biópsia e início de análogo de somatostatina, sem ressecção",
+    "ok": false,
+    "nota": "Doença localizada e ressecável em paciente apto tem indicação cirúrgica; o análogo é preparo e não substituto da operação."
+   }
+  ],
+  "gatilho": "Lesão maligna em cauda, sem metástase. A banca quer a operação oncológica completa, não a poupadora.",
+  "fisio": "Os linfonodos do hilo esplênico e da artéria esplênica drenam corpo e cauda; preservá-los por conveniência técnica compromete o estadiamento e o controle locorregional.",
+  "perola": "Preservação esplênica é decisão oncológica, não estética. Em tumor neuroendócrino maligno de corpo e cauda, o baço sai."
+ },
+ {
+  "id": 28,
+  "bloco": "Conduta cirúrgica",
+  "peso": "alta",
+  "chip": "enucleação",
+  "tags": [
+   "ducto principal",
+   "insulinoma"
+  ],
+  "stem": "Insulinoma de 1,4 cm no corpo pancreático, localizado por ecoendoscopia, situado a 6 mm do ducto pancreático principal. A conduta cirúrgica adequada é:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Enucleação, preferencialmente com ultrassonografia intraoperatória para confirmar a distância do ducto",
+    "ok": true,
+    "nota": "Lesão pequena, benigna na quase totalidade dos casos e distante mais de 2 a 3 mm do ducto principal é candidata ideal à enucleação, que preserva parênquima e função."
+   },
+   {
+    "letra": "B",
+    "txt": "Pancreatectomia corpo-caudal com esplenectomia",
+    "ok": false,
+    "nota": "Ressecção desproporcional para lesão benigna pequena, com custo funcional endócrino e exócrino e risco de sepse pós-esplenectomia."
+   },
+   {
+    "letra": "C",
+    "txt": "Pancreatectomia central com pancreatojejunostomia",
+    "ok": false,
+    "nota": "Alternativa razoável quando a lesão é justaductal e a enucleação é inviável, mas aqui a distância do ducto permite a operação menor."
+   },
+   {
+    "letra": "D",
+    "txt": "Duodenopancreatectomia",
+    "ok": false,
+    "nota": "Território errado e morbidade injustificável para lesão benigna de corpo."
+   },
+   {
+    "letra": "E",
+    "txt": "Seguimento clínico com diazóxido, sem cirurgia",
+    "ok": false,
+    "nota": "O diazóxido é ponte para controle sintomático; a ressecção é curativa e indicada em paciente operável."
+   }
+  ],
+  "gatilho": "Distância do ducto principal explicitada no enunciado. Esse número é a chave da decisão.",
+  "fisio": "A margem de 2 a 3 mm entre a lesão e o ducto principal é o limiar aceito para enucleação segura; abaixo disso o risco de fístula pancreática de alto débito por lesão ductal cresce e indica ressecção formal.",
+  "perola": "Enucleação exige três condições: lesão pequena, benigna e a mais de 2 a 3 mm do ducto principal. Sem alguma delas, a operação muda."
+ },
+ {
+  "id": 29,
+  "bloco": "Conduta cirúrgica",
+  "peso": "alta",
+  "chip": "não funcionante",
+  "tags": [
+   "observação",
+   "2 cm"
+  ],
+  "stem": "Mulher de 68 anos, hipertensa, com nódulo pancreático incidental de 1,2 cm em corpo, punção compatível com tumor neuroendócrino bem diferenciado G1, sem síndrome funcional, sem sinais de invasão e sem linfonodomegalia. A conduta aceita pelas principais diretrizes é:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Pancreatectomia corpo-caudal imediata",
+    "ok": false,
+    "nota": "Ressecção formal de rotina em lesão menor que 2 cm, G1, esporádica e assintomática expõe a paciente a morbidade desproporcional ao risco oncológico."
+   },
+   {
+    "letra": "B",
+    "txt": "Vigilância ativa com imagem seriada, discutida com a paciente",
+    "ok": true,
+    "nota": "Para lesões esporádicas menores que 2 cm, G1, não funcionantes e assintomáticas, o seguimento é conduta aceita, com ressecção se houver crescimento, sintomas ou mudança de grau."
+   },
+   {
+    "letra": "C",
+    "txt": "Enucleação obrigatória por risco de transformação maligna iminente",
+    "ok": false,
+    "nota": "Não há indicação de ressecção compulsória nesse perfil, e enucleação também tem risco de fístula."
+   },
+   {
+    "letra": "D",
+    "txt": "Início de análogo de somatostatina como terapia definitiva",
+    "ok": false,
+    "nota": "Análogos são usados em doença avançada ou para controle sindrômico, não como tratamento de nódulo pequeno localizado."
+   },
+   {
+    "letra": "E",
+    "txt": "Quimioterapia adjuvante com capecitabina e temozolomida",
+    "ok": false,
+    "nota": "Não há papel de quimioterapia em doença localizada de baixo grau."
+   }
+  ],
+  "gatilho": "Tamanho abaixo de 2 cm, grau 1, esporádico e assintomático. Quando essas quatro condições estão presentes, a banca costuma querer vigilância.",
+  "fisio": "Séries de seguimento mostram crescimento lento e baixíssima taxa de metástase nesse perfil, o que inverte a relação risco-benefício frente à morbidade de uma pancreatectomia.",
+  "diverg": "Parte da literatura cirúrgica ainda advoga ressecção para todo tumor neuroendócrino pancreático em paciente jovem e de baixo risco operatório. Se o enunciado destacar idade avançada, comorbidade, tamanho abaixo de 2 cm e G1, a resposta esperada é vigilância; se destacar paciente jovem com lesão em crescimento, a resposta vira ressecção.",
+  "perola": "Menor que 2 cm, G1, não funcionante e assintomático abre a porta da vigilância. Qualquer sintoma, crescimento ou grau maior fecha essa porta."
+ },
+ {
+  "id": 30,
+  "bloco": "Conduta cirúrgica",
+  "peso": "média",
+  "chip": "cabeça",
+  "tags": [
+   "Whipple",
+   "linfadenectomia"
+  ],
+  "stem": "Tumor neuroendócrino não funcionante de 3,8 cm na cabeça pancreática, bem diferenciado, sem metástases, com contato inferior a 90 graus com a veia porta e sem envolvimento arterial. A conduta é:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Duodenopancreatectomia com linfadenectomia regional",
+    "ok": true,
+    "nota": "Lesão maior que 2 cm na cabeça, ressecável, exige ressecção oncológica formal com linfadenectomia; a topografia define a operação."
+   },
+   {
+    "letra": "B",
+    "txt": "Enucleação transduodenal",
+    "ok": false,
+    "nota": "Não obtém margem nem linfonodos e é inadequada para lesão desse tamanho na cabeça."
+   },
+   {
+    "letra": "C",
+    "txt": "Derivação biliodigestiva paliativa",
+    "ok": false,
+    "nota": "Paliação em doença ressecável é subtratamento; não há obstrução descrita nem irressecabilidade."
+   },
+   {
+    "letra": "D",
+    "txt": "Quimioterapia neoadjuvante com platina e etoposídeo antes de qualquer ressecção",
+    "ok": false,
+    "nota": "Esse esquema pertence ao carcinoma pouco diferenciado, e a lesão descrita é bem diferenciada e ressecável de saída."
+   },
+   {
+    "letra": "E",
+    "txt": "Terapia com radionuclídeo como tratamento inicial",
+    "ok": false,
+    "nota": "A terapia com radionuclídeo é opção em doença avançada ou progressiva, não em doença localizada ressecável."
+   }
+  ],
+  "gatilho": "Tamanho acima de 2 cm com topografia cefálica e ausência de invasão vascular significativa. Isso define ressecção formal.",
+  "fisio": "O risco de linfonodo positivo cresce com o tamanho e o grau, e a linfadenectomia regional é parte do estadiamento que orienta o seguimento e a terapia adjuvante.",
+  "perola": "Acima de 2 cm ou sintomático, o tumor neuroendócrino pancreático é operado com a mesma disciplina oncológica de um adenocarcinoma ressecável — mas com prognóstico muito melhor."
+ },
+ {
+  "id": 31,
+  "bloco": "Conduta cirúrgica",
+  "peso": "alta",
+  "chip": "metástase",
+  "tags": [
+   "citorredução",
+   "debulking"
+  ],
+  "stem": "Paciente com glucagonoma de cauda e três metástases hepáticas no lobo direito, com dermatose extensa e desnutrição, bem diferenciado G2. Sobre a estratégia cirúrgica, é correto afirmar:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "A presença de metástase hepática contraindica formalmente qualquer ressecção",
+    "ok": false,
+    "nota": "Vale para o adenocarcinoma ductal, não para tumores neuroendócrinos. Aqui a doença metastática pode ser ressecada com ganho real."
+   },
+   {
+    "letra": "B",
+    "txt": "A citorredução de grande volume tumoral, incluindo metastasectomia hepática, controla a síndrome e prolonga a sobrevida",
+    "ok": true,
+    "nota": "Em tumores neuroendócrinos funcionantes, a citorredução ampla é indicada quando é possível remover a maior parte do volume tumoral, com melhora sindrômica e ganho de sobrevida."
+   },
+   {
+    "letra": "C",
+    "txt": "A ressecção do primário é proibida enquanto houver doença hepática",
+    "ok": false,
+    "nota": "A ressecção do primário faz parte da estratégia e pode ser combinada à hepatectomia, em tempo único ou estagiada."
+   },
+   {
+    "letra": "D",
+    "txt": "O transplante hepático é a primeira escolha em qualquer paciente com metástase",
+    "ok": false,
+    "nota": "O transplante tem indicação muito restrita, com critérios rigorosos de idade, grau, primário drenado pelo sistema porta e doença exclusivamente hepática após período de estabilidade."
+   },
+   {
+    "letra": "E",
+    "txt": "A embolização hepática substitui a cirurgia em todos os casos",
+    "ok": false,
+    "nota": "É ferramenta valiosa em doença difusa e irressecável ou para controle sindrômico, mas não substitui a ressecção quando esta é factível."
+   }
+  ],
+  "gatilho": "Doença metastática em tumor funcionante. A banca testa se o candidato aplica indevidamente a lógica do adenocarcinoma.",
+  "fisio": "A citorredução reduz a massa secretora, atenuando a síndrome hormonal, e a biologia indolente do tumor bem diferenciado permite ganho de sobrevida mesmo sem ressecção completa.",
+  "perola": "Metástase hepática em tumor neuroendócrino não é sentença de inoperabilidade. Cite o alvo de remoção da maior parte do volume tumoral, habitualmente acima de 70% a 90%."
+ },
+ {
+  "id": 32,
+  "bloco": "Conduta cirúrgica",
+  "peso": "média",
+  "chip": "vesícula",
+  "tags": [
+   "colecistectomia",
+   "análogo"
+  ],
+  "stem": "Ao programar uso prolongado de análogo de somatostatina em paciente que será submetido a pancreatectomia por tumor neuroendócrino, recomenda-se:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Colecistectomia no mesmo tempo cirúrgico",
+    "ok": true,
+    "nota": "O análogo inibe a contração vesicular e favorece litíase e colecistite, de manejo difícil no paciente já operado; a colecistectomia concomitante é recomendada."
+   },
+   {
+    "letra": "B",
+    "txt": "Colangiografia intraoperatória de rotina",
+    "ok": false,
+    "nota": "Não é recomendação padrão nesse contexto e não previne a litíase induzida pelo fármaco."
+   },
+   {
+    "letra": "C",
+    "txt": "Ácido ursodesoxicólico como profilaxia definitiva, dispensando a colecistectomia",
+    "ok": false,
+    "nota": "Pode ser usado, mas não substitui a colecistectomia quando o abdome já está aberto e o uso do análogo será prolongado."
+   },
+   {
+    "letra": "D",
+    "txt": "Esfincterotomia endoscópica prévia",
+    "ok": false,
+    "nota": "Procedimento sem indicação profilática aqui, com riscos próprios de pancreatite e sangramento."
+   },
+   {
+    "letra": "E",
+    "txt": "Nenhuma medida específica, pois o análogo não afeta a vesícula",
+    "ok": false,
+    "nota": "Afeta diretamente: a inibição da colecistocinina reproduz farmacologicamente o mecanismo litogênico do somatostatinoma."
+   }
+  ],
+  "gatilho": "Menção a uso prolongado de análogo de somatostatina. É gatilho para colecistectomia associada.",
+  "fisio": "O análogo bloqueia a liberação de colecistocinina e a contração vesicular, gerando estase e formação de lama e cálculos, exatamente como ocorre na síndrome do somatostatinoma.",
+  "perola": "Se o paciente vai usar octreotide ou lanreotide a longo prazo e será operado, tire a vesícula na mesma cirurgia."
+ },
+ {
+  "id": 33,
+  "bloco": "Conduta cirúrgica",
+  "peso": "média",
+  "chip": "ISGPS",
+  "tags": [
+   "fístula",
+   "complicação"
+  ],
+  "stem": "No sétimo dia após pancreatectomia corpo-caudal, o dreno mantém débito de 180 mL de líquido turvo, com amilase 12 vezes o valor sérico. O paciente está afebril, tolerando dieta, sem alteração hemodinâmica e sem necessidade de nova intervenção. Segundo a classificação do grupo internacional de estudo, trata-se de:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Fístula pancreática grau A, ou vazamento bioquímico",
+    "ok": true,
+    "nota": "Amilase acima de três vezes o valor sérico após o terceiro dia sem repercussão clínica caracteriza vazamento bioquímico, que não é considerado fístula verdadeira na classificação vigente."
+   },
+   {
+    "letra": "B",
+    "txt": "Fístula pancreática grau B",
+    "ok": false,
+    "nota": "Grau B exigiria mudança no manejo: manutenção prolongada do dreno, antibiótico, drenagem percutânea ou repercussão clínica."
+   },
+   {
+    "letra": "C",
+    "txt": "Fístula pancreática grau C",
+    "ok": false,
+    "nota": "Grau C implica falência orgânica, reoperação ou óbito relacionado à fístula."
+   },
+   {
+    "letra": "D",
+    "txt": "Coleção infectada com necessidade de drenagem percutânea",
+    "ok": false,
+    "nota": "Não há febre, leucocitose ou repercussão descrita que justifique tal conduta."
+   },
+   {
+    "letra": "E",
+    "txt": "Quilotórax abdominal",
+    "ok": false,
+    "nota": "Ascite quilosa cursa com líquido leitoso rico em triglicerídeos, e não com amilase elevada."
+   }
+  ],
+  "gatilho": "Amilase no dreno acima de três vezes o sérico após o terceiro dia, sem repercussão. A banca quer a distinção entre vazamento bioquímico e fístula clinicamente relevante.",
+  "fisio": "A revisão da classificação retirou o grau A da categoria de fístula justamente porque não altera desfecho nem manejo; ele passou a se chamar vazamento bioquímico.",
+  "perola": "O que separa grau A de grau B não é o débito, é a mudança de conduta. Se o manejo mudou, virou grau B."
+ },
+ {
+  "id": 34,
+  "bloco": "Conduta cirúrgica",
+  "peso": "média",
+  "chip": "gastrina",
+  "tags": [
+   "MEN1",
+   "paratireoide"
+  ],
+  "stem": "Paciente de 41 anos com síndrome de Zollinger-Ellison, hipercalcemia e paratormônio elevado, além de microadenoma hipofisário. Sobre a sequência terapêutica, é correto afirmar:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "A paratireoidectomia deve preceder a abordagem do gastrinoma",
+    "ok": true,
+    "nota": "A correção do hiperparatireoidismo reduz a hipercalcemia, que é estímulo direto à secreção de gastrina, e frequentemente melhora o controle da síndrome ulcerosa."
+   },
+   {
+    "letra": "B",
+    "txt": "A exploração pancreática para cura do gastrinoma deve ser o primeiro passo",
+    "ok": false,
+    "nota": "Em MEN1 os gastrinomas são múltiplos e predominantemente duodenais, e a cura bioquímica pela exploração é rara. Além disso, a ordem correta começa pela paratireoide."
+   },
+   {
+    "letra": "C",
+    "txt": "A paratireoidectomia deve ser subtotal apenas se houver falha do tratamento clínico da hipercalcemia",
+    "ok": false,
+    "nota": "Hiperparatireoidismo primário no MEN1 é doença multiglandular com indicação cirúrgica; postergar não é a conduta esperada."
+   },
+   {
+    "letra": "D",
+    "txt": "O microadenoma hipofisário deve ser ressecado antes de qualquer outra abordagem",
+    "ok": false,
+    "nota": "Microadenomas não funcionantes costumam ser acompanhados, e não determinam a ordem de tratamento."
+   },
+   {
+    "letra": "E",
+    "txt": "A gastrectomia total é a conduta definitiva nesse contexto",
+    "ok": false,
+    "nota": "Conduta histórica, abandonada com a disponibilidade de inibidores de bomba em dose alta."
+   }
+  ],
+  "gatilho": "Tríade de tumores de paratireoide, pâncreas e hipófise. Reconhecida a MEN1, a banca cobra a ordem de tratamento.",
+  "fisio": "O cálcio é secretagogo direto da célula G. Normalizar a calcemia reduz a gastrina e melhora a doença ulcerosa, além de tratar a manifestação mais precoce e prevalente da síndrome.",
+  "perola": "Em MEN1, a paratireoide vem primeiro. E o objetivo da cirurgia pancreática deixa de ser cura bioquímica e passa a ser prevenção de metástase."
+ },
+ {
+  "id": 35,
+  "bloco": "Perioperatório e crises",
+  "peso": "alta",
+  "chip": "preparo",
+  "tags": [
+   "glucagonoma",
+   "tromboprofilaxia"
+  ],
+  "stem": "No preparo pré-operatório da paciente com glucagonoma, dermatose extensa, perda de 11 kg e trombose venosa profunda recente, as três medidas essenciais são:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Anticoagulação, análogo de somatostatina e reposição de aminoácidos, zinco e ácidos graxos essenciais",
+    "ok": true,
+    "nota": "Reúne as três frentes: prevenção do evento que mais mata, controle sindrômico com resposta cutânea frequentemente dramática e recuperação do substrato para cicatrização."
+   },
+   {
+    "letra": "B",
+    "txt": "Corticoide sistêmico, antibiótico profilático prolongado e antifúngico tópico",
+    "ok": false,
+    "nota": "Trata a pele como dermatose primária infecciosa ou inflamatória, ignorando a causa metabólica e o risco trombótico."
+   },
+   {
+    "letra": "C",
+    "txt": "Insulinoterapia intensiva, dieta hipoglicídica e repouso absoluto",
+    "ok": false,
+    "nota": "O diabetes é leve e não é o problema principal; repouso absoluto ainda agrava o risco tromboembólico."
+   },
+   {
+    "letra": "D",
+    "txt": "Nutrição parenteral exclusiva por 30 dias e adiamento da cirurgia por seis meses",
+    "ok": false,
+    "nota": "Adiamento prolongado permite progressão tumoral, e a via enteral deve ser priorizada quando disponível."
+   },
+   {
+    "letra": "E",
+    "txt": "Quimioterapia neoadjuvante com estreptozocina e doxorrubicina",
+    "ok": false,
+    "nota": "Não há papel neoadjuvante estabelecido em doença localizada ressecável."
+   }
+  ],
+  "gatilho": "Vinheta que junta trombose, dermatose e desnutrição. Cada elemento aponta uma medida de preparo.",
+  "fisio": "A hipoaminoacidemia compromete cicatrização de anastomose e de parede; a hipercoagulabilidade se soma ao imobilismo e à cirurgia oncológica abdominal; o análogo reduz a secreção tumoral e a dermatose antes da incisão.",
+  "perola": "No glucagonoma, esquecer a tromboprofilaxia é o erro de maior letalidade — inclusive na prova."
+ },
+ {
+  "id": 36,
+  "bloco": "Perioperatório e crises",
+  "peso": "média",
+  "chip": "VIP",
+  "tags": [
+   "hipocalemia",
+   "octreotide"
+  ],
+  "stem": "Paciente com VIPoma chega com potássio de 2,1 mEq/L, bicarbonato de 12 mEq/L, creatinina de 2,1 mg/dL e cinco litros de diarreia por dia. A conduta imediata é:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Laparotomia de urgência para ressecção do tumor",
+    "ok": false,
+    "nota": "Operar em distúrbio hidroeletrolítico grave é receita para arritmia e mortalidade perioperatória. O tumor não é uma urgência cirúrgica."
+   },
+   {
+    "letra": "B",
+    "txt": "Reposição volêmica e de potássio associada a análogo de somatostatina, adiando a ressecção até a estabilização",
+    "ok": true,
+    "nota": "O octreotide corta a secreção tumoral e reduz drasticamente o débito diarreico, permitindo corrigir eletrólitos e função renal antes de uma cirurgia eletiva segura."
+   },
+   {
+    "letra": "C",
+    "txt": "Loperamida em dose alta como medida principal",
+    "ok": false,
+    "nota": "Antidiarreicos de ação motora têm efeito limitado sobre diarreia secretora mediada por AMP cíclico."
+   },
+   {
+    "letra": "D",
+    "txt": "Corticoterapia em pulso",
+    "ok": false,
+    "nota": "Pode ter efeito adjuvante anedótico, mas não é a medida principal e não substitui o análogo."
+   },
+   {
+    "letra": "E",
+    "txt": "Hemodiálise para correção da acidose",
+    "ok": false,
+    "nota": "A acidose é por perda entérica de bicarbonato e responde à reposição e ao controle da diarreia; a lesão renal é pré-renal."
+   }
+  ],
+  "gatilho": "Distúrbio hidroeletrolítico grave em síndrome funcionante. A prova quer estabilização antes da ressecção.",
+  "fisio": "O análogo de somatostatina inibe a liberação de VIP pelo tumor e reduz a secreção intestinal, revertendo a cascata de perda de potássio e bicarbonato.",
+  "perola": "Em síndrome funcionante grave, o análogo de somatostatina é ferramenta de ressuscitação, não apenas de tratamento oncológico."
+ },
+ {
+  "id": 37,
+  "bloco": "Síndromes hereditárias",
+  "peso": "alta",
+  "chip": "MEN1",
+  "tags": [
+   "menin",
+   "11q13"
+  ],
+  "stem": "Sobre a neoplasia endócrina múltipla tipo 1, assinale a correta:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Decorre de mutação no gene RET, no cromossomo 10",
+    "ok": false,
+    "nota": "RET no cromossomo 10 é a MEN2, associada a carcinoma medular de tireoide e feocromocitoma."
+   },
+   {
+    "letra": "B",
+    "txt": "Decorre de mutação no gene da menina, no cromossomo 11q13, com herança autossômica dominante",
+    "ok": true,
+    "nota": "Descrição correta. A menina é um gene supressor tumoral, e a síndrome segue o modelo de dois eventos de Knudson."
+   },
+   {
+    "letra": "C",
+    "txt": "O tumor pancreático funcionante mais comum na síndrome é o insulinoma",
+    "ok": false,
+    "nota": "O gastrinoma é o funcionante mais frequente na MEN1; o insulinoma é o segundo."
+   },
+   {
+    "letra": "D",
+    "txt": "O acometimento pancreático é tipicamente unifocal",
+    "ok": false,
+    "nota": "É caracteristicamente multifocal, o que explica a baixa taxa de cura cirúrgica e muda o objetivo da operação."
+   },
+   {
+    "letra": "E",
+    "txt": "A manifestação mais precoce e prevalente é o tumor de hipófise",
+    "ok": false,
+    "nota": "O hiperparatireoidismo primário é a manifestação mais precoce e prevalente, presente em quase todos os portadores com o avançar da idade."
+   }
+  ],
+  "gatilho": "Questão de genética direta. Aparece com regularidade e é ponto barato se você fixar gene, cromossomo e ordem de manifestação.",
+  "fisio": "A perda da menina remove o freio proliferativo em tecidos endócrinos, gerando doença multiglandular e multifocal — daí paratireoides hiperplásicas, tumores pancreáticos e duodenais múltiplos e adenoma hipofisário.",
+  "perola": "MEN1 é paratireoide, pâncreas e hipófise, com menina em 11q13. MEN2 é RET em 10, com medular, feocromocitoma e paratireoide."
+ },
+ {
+  "id": 38,
+  "bloco": "Síndromes hereditárias",
+  "peso": "alta",
+  "chip": "MEN1",
+  "tags": [
+   "limiar cirúrgico",
+   "multifocal"
+  ],
+  "stem": "Em portador de MEN1 com múltiplos tumores neuroendócrinos pancreáticos não funcionantes, o principal critério para indicar ressecção cirúrgica é:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Presença de qualquer lesão visível à tomografia",
+    "ok": false,
+    "nota": "Operar toda lesão visível levaria a pancreatectomias repetidas ou totais em doença multifocal por natureza."
+   },
+   {
+    "letra": "B",
+    "txt": "Lesão com 2 cm ou mais, ou crescimento significativo durante o seguimento",
+    "ok": true,
+    "nota": "O limiar de 2 cm, associado à velocidade de crescimento, é o critério que separa vigilância de ressecção nessa população."
+   },
+   {
+    "letra": "C",
+    "txt": "Elevação isolada da cromogranina A",
+    "ok": false,
+    "nota": "Marcador inespecífico e sujeito a falso-positivo, insuficiente como critério cirúrgico isolado."
+   },
+   {
+    "letra": "D",
+    "txt": "Idade superior a 60 anos",
+    "ok": false,
+    "nota": "Idade não é critério de indicação; se algo, pesa contra a ressecção agressiva."
+   },
+   {
+    "letra": "E",
+    "txt": "Presença de hiperparatireoidismo associado",
+    "ok": false,
+    "nota": "Indica tratamento da paratireoide, não do pâncreas."
+   }
+  ],
+  "gatilho": "Doença multifocal hereditária. A banca testa se você abandona a lógica de curar cada lesão.",
+  "fisio": "O risco de metástase cresce com o tamanho; abaixo de 2 cm, em doença hereditária, o risco de progressão é menor do que a morbidade acumulada de pancreatectomias sucessivas.",
+  "perola": "Em MEN1, o objetivo da cirurgia pancreática é prevenir metástase, não obter cura bioquímica."
+ },
+ {
+  "id": 39,
+  "bloco": "Síndromes hereditárias",
+  "peso": "média",
+  "chip": "VHL",
+  "tags": [
+   "3p",
+   "não funcionante"
+  ],
+  "stem": "Homem de 37 anos com hemangioblastomas cerebelares, carcinoma renal de células claras bilateral e cistos pancreáticos apresenta, ainda, três lesões sólidas pancreáticas não funcionantes, a maior com 1,6 cm. A síndrome e a conduta pancreática mais apropriadas são:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Von Hippel-Lindau, com vigilância das lesões pancreáticas nesse tamanho",
+    "ok": true,
+    "nota": "O quadro é típico de von Hippel-Lindau, por mutação no cromossomo 3p, e os tumores neuroendócrinos pancreáticos dessa síndrome são geralmente não funcionantes e indolentes, sendo acompanhados abaixo dos limiares de ressecção."
+   },
+   {
+    "letra": "B",
+    "txt": "MEN1, com pancreatectomia total",
+    "ok": false,
+    "nota": "Hemangioblastoma e carcinoma renal de células claras não fazem parte da MEN1, e pancreatectomia total é conduta desproporcional."
+   },
+   {
+    "letra": "C",
+    "txt": "Neurofibromatose tipo 1, com duodenopancreatectomia",
+    "ok": false,
+    "nota": "A NF1 associa-se a somatostatinoma duodenal periampular e a manchas café com leite e neurofibromas, não a hemangioblastoma."
+   },
+   {
+    "letra": "D",
+    "txt": "Esclerose tuberosa, com enucleação de todas as lesões",
+    "ok": false,
+    "nota": "Pode cursar com tumores neuroendócrinos pancreáticos, mas o quadro descrito é inequivocamente von Hippel-Lindau."
+   },
+   {
+    "letra": "E",
+    "txt": "Von Hippel-Lindau, com ressecção imediata de todas as lesões sólidas",
+    "ok": false,
+    "nota": "Reconhece a síndrome, mas erra a conduta: ressecar toda lesão sólida em doença multifocal indolente gera morbidade evitável."
+   }
+  ],
+  "gatilho": "Hemangioblastoma somado a carcinoma renal de células claras. Essa dupla é von Hippel-Lindau em qualquer prova.",
+  "fisio": "A perda do gene VHL desregula a via do fator induzível por hipóxia, gerando neoplasias hipervasculares em múltiplos órgãos — daí hemangioblastoma, carcinoma renal de células claras e tumores neuroendócrinos hipervasculares.",
+  "perola": "Em von Hippel-Lindau os tumores pancreáticos costumam ser não funcionantes; a decisão é por tamanho e velocidade de crescimento, não por presença."
+ },
+ {
+  "id": 40,
+  "bloco": "Síndromes hereditárias",
+  "peso": "média",
+  "chip": "NF1",
+  "tags": [
+   "somatostatinoma",
+   "periampular"
+  ],
+  "stem": "A associação sindrômica clássica do somatostatinoma duodenal periampular é com:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Neurofibromatose tipo 1",
+    "ok": true,
+    "nota": "Associação clássica, frequentemente com corpos psamomatosos na histologia e apresentação por icterícia ou sangramento, muitas vezes sem a tríade inibitória completa."
+   },
+   {
+    "letra": "B",
+    "txt": "MEN2B",
+    "ok": false,
+    "nota": "Cursa com carcinoma medular de tireoide, feocromocitoma, hábito marfanoide e ganglioneuromatose intestinal."
+   },
+   {
+    "letra": "C",
+    "txt": "Síndrome de Peutz-Jeghers",
+    "ok": false,
+    "nota": "Associa-se a pólipos hamartomatosos, manchas melanocíticas e risco aumentado de câncer gastrointestinal e pancreático ductal."
+   },
+   {
+    "letra": "D",
+    "txt": "Polipose adenomatosa familiar",
+    "ok": false,
+    "nota": "Relaciona-se a adenomas duodenais e ampulares, avaliados pela classificação de Spigelman, e não ao somatostatinoma."
+   },
+   {
+    "letra": "E",
+    "txt": "Síndrome de Lynch",
+    "ok": false,
+    "nota": "Ligada a instabilidade de microssatélites e a tumores colorretais, endometriais e urotelial, sem relação com somatostatinoma."
+   }
+  ],
+  "gatilho": "Palavra neurofibromatose ou menção a manchas café com leite ao lado de lesão periampular.",
+  "fisio": "A perda da neurofibromina ativa a via RAS-MAPK, favorecendo proliferação em tecidos de origem neural e neuroendócrina do duodeno.",
+  "perola": "Somatostatinoma duodenal em NF1 costuma se manifestar por efeito de massa e icterícia, e não pela tríade clássica de diabetes, colelitíase e esteatorreia."
+ },
+ {
+  "id": 41,
+  "bloco": "Doença avançada",
+  "peso": "média",
+  "chip": "análogo",
+  "tags": [
+   "CLARINET",
+   "primeira linha"
+  ],
+  "stem": "Paciente com tumor neuroendócrino pancreático metastático, bem diferenciado, Ki-67 de 5%, doença de baixo volume, assintomático do ponto de vista hormonal e com captação intensa ao 68Ga-DOTATATE. A terapia sistêmica de primeira linha habitual é:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "Análogo de somatostatina de ação prolongada",
+    "ok": true,
+    "nota": "Em doença bem diferenciada de baixo grau com receptores expressos, o análogo é primeira linha por controle de crescimento tumoral, além do controle sindrômico quando presente."
+   },
+   {
+    "letra": "B",
+    "txt": "Cisplatina com etoposídeo",
+    "ok": false,
+    "nota": "Esquema reservado ao carcinoma neuroendócrino pouco diferenciado."
+   },
+   {
+    "letra": "C",
+    "txt": "Imunoterapia com inibidor de checkpoint",
+    "ok": false,
+    "nota": "Sem papel estabelecido como primeira linha nesses tumores fora de contextos específicos de instabilidade de microssatélites."
+   },
+   {
+    "letra": "D",
+    "txt": "Radioterapia externa em campo hepático",
+    "ok": false,
+    "nota": "Sem papel sistêmico; a radiação dirigida aqui é a terapia com radionuclídeo ligada ao receptor."
+   },
+   {
+    "letra": "E",
+    "txt": "Observação sem qualquer terapia até surgimento de sintomas",
+    "ok": false,
+    "nota": "Pode ser considerada em doença muito indolente e volume mínimo, mas o análogo é a conduta habitual e tem benefício antiproliferativo demonstrado."
+   }
+  ],
+  "gatilho": "Grau baixo, receptores expressos e doença metastática de baixo volume. Esse conjunto aponta análogo de somatostatina.",
+  "fisio": "A ligação ao receptor de somatostatina do subtipo 2 inibe vias proliferativas e a secreção hormonal, com efeito antitumoral demonstrado em ensaios clínicos que incluíram primários pancreáticos.",
+  "perola": "Análogo de somatostatina não é só controle de sintoma; é terapia antiproliferativa de primeira linha em tumor bem diferenciado com receptores."
+ },
+ {
+  "id": 42,
+  "bloco": "Doença avançada",
+  "peso": "média",
+  "chip": "PRRT",
+  "tags": [
+   "radionuclídeo",
+   "progressão"
+  ],
+  "stem": "Paciente com tumor neuroendócrino pancreático metastático G2 apresenta progressão radiológica após um ano de análogo de somatostatina, mantendo captação intensa ao 68Ga-DOTATATE. Entre as opções abaixo, a alternativa correta é:",
+  "alts": [
+   {
+    "letra": "A",
+    "txt": "A terapia com radionuclídeo ligada a receptor de somatostatina é opção válida, e a captação preservada é pré-requisito",
+    "ok": true,
+    "nota": "A expressão de receptores documentada por DOTATATE é justamente o critério de elegibilidade para o tratamento com lutécio-177 ligado ao análogo."
+   },
+   {
+    "letra": "B",
+    "txt": "A progressão indica obrigatoriamente doença pouco diferenciada e impõe platina",
+    "ok": false,
+    "nota": "Progressão sob análogo não muda o grau nem a diferenciação, que são definidos pela histologia."
+   },
+   {
+    "letra": "C",
+    "txt": "Everolimo e sunitinibe estão contraindicados em primário pancreático",
+    "ok": false,
+    "nota": "Ao contrário: ambos têm indicação estabelecida justamente em tumores neuroendócrinos de origem pancreática."
+   },
+   {
+    "letra": "D",
+    "txt": "A ausência de sintomas hormonais contraindica qualquer terapia sistêmica",
+    "ok": false,
+    "nota": "O objetivo aqui é controle tumoral, independentemente de síndrome funcionante."
+   },
+   {
+    "letra": "E",
+    "txt": "A embolização hepática está contraindicada em doença bilobar",
+    "ok": false,
+    "nota": "Doença bilobar pode ser tratada por embolização setorial em sessões, sendo estratégia frequente no controle de carga hepática."
+   }
+  ],
+  "gatilho": "Progressão sob análogo com captação preservada. Esse é o cenário em que a terapia com radionuclídeo entra.",
+  "fisio": "O análogo marcado com lutécio-177 leva radiação beta diretamente à célula tumoral que expressa o receptor, poupando tecido sem receptores. Sem captação, não há alvo e o tratamento não se aplica.",
+  "perola": "Sem DOTATATE positivo não há terapia com radionuclídeo. E em primário pancreático, everolimo e sunitinibe são alternativas válidas na progressão."
+ }
+]

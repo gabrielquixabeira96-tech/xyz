@@ -27,11 +27,33 @@ Lora do Google Fonts; sem rede, o navegador cai nas serifadas do sistema.
 
 | Números | |
 | --- | --- |
-| Matérias | 25, ordenadas pelo peso previsto para a prova |
-| Temas | 123 |
-| Aulas | 26, do ebook *Rumo aos 100%* |
-| Questões comentadas | 80, com gabarito, distratores, bibliografia e lacuna |
+| Matérias | 26, ordenadas pelo peso previsto para a prova |
+| Temas | 131 |
+| Aulas | 45 — 26 do ebook, 17 de apresentações, 2 aulas-atlas interativas |
+| Questões comentadas | 194, em 5 coleções |
 | Cartões | 321, com as cinco caixas de Leitner |
+
+### As aulas vêm em três formatos
+
+- **Ebook** — as caixas *O que cai · A pegadinha · Macete · Fixação* e as tabelas
+  do *Rumo aos 100%*, preservadas.
+- **Apresentações** — as reuniões científicas e aulas em slides (hérnias
+  complexas, cólica reno-ureteral, TXA/POISE-3, doença renal crônica, bypass) e
+  o Guia de Referência Rápida, cujas seções foram distribuídas entre as
+  matérias que cada uma cobre.
+- **Interativas** — as aulas-atlas em HTML (câncer de mama, tumores de
+  testículo) abrem dentro da plataforma, sem alteração nenhuma no arquivo
+  original, e também em tela cheia.
+
+### As cinco coleções de questões
+
+| Coleção | Questões | O que cada uma traz |
+| --- | --- | --- |
+| Simulado inédito ENARE R+ Cirurgia | 80 | questão-fonte, bibliografia, o dado alterado, distratores, lacuna |
+| Simulado Esôfago de Barrett | 44 | gatilho, comentário, distrator por letra, pérola |
+| Simulado Tumores neuroendócrinos do pâncreas | 42 | gatilho, fisiologia, nota por alternativa, pérola |
+| Lista ENARE 2025 · R+ Cirurgia | 20 | questões reais, com o rótulo de origem preservado |
+| Tumores de testículo — guia high-yield | 8 | feedback da questão |
 
 ### Telas
 
@@ -43,9 +65,11 @@ Lora do Google Fonts; sem rede, o navegador cai nas serifadas do sistema.
 - **Tema** — as aulas, os cartões e as questões comentadas vinculadas ao tema.
 - **Aula** — o leitor do ebook, com as caixas *O que cai · A pegadinha · Macete ·
   Fixação* e as tabelas preservadas.
-- **Prática** — campo cego, só as que errei ou prova completa; revela gabarito,
-  comentário integral, análise dos distratores, questão-fonte, bibliografia e a
-  lacuna testada. Teclado: `1`–`5` marca, `Enter` confirma, `→` avança.
+- **Prática** — campo cego, só as que errei, prova completa, por matéria ou por
+  coleção; revela gabarito, gatilho, comentário integral, análise dos
+  distratores, fisiologia, pérola, questão-fonte, bibliografia e lacuna testada
+  — o que a fonte de cada questão trouxer. Teclado: `1`–`5` marca, `Enter`
+  confirma, `→` avança.
 - **Cartões** — fila de repetição espaçada (caixas de 1, 3, 7, 16 e 35 dias).
 - **Buscar** — busca única sobre matérias, temas, aulas, cartões e questões.
 - **Acervo** — a procedência de cada fonte importada e o relatório de quarentena.
@@ -62,6 +86,9 @@ assets/js/app.js           SPA: roteamento por hash, telas, progresso
 assets/data/conteudo.js    dataset gerado — não edite à mão
 assets/img/                44 placas de fundo dos ladrilhos
 content-src/               o material bruto, como veio das fontes
+  apresentacoes/           slides das aulas e reuniões científicas
+  simulados-html/          questões extraídas dos HTMLs interativos
+assets/interativas/        as aulas-atlas em HTML, intactas
 tools/taxonomia.py         matérias, temas e as palavras-chave de classificação
 tools/build_content.py     o pipeline de ingestão
 ```
@@ -99,3 +126,21 @@ origem. O que não puder ser lido vai para a quarentena e aparece na tela
 - Deck ENARE de repetição espaçada (321 cartões)
 - Análise de padrões ENARE 2021–2026 e previsão para 2027, que define a ordem
   das matérias e o peso exibido no painel
+- Reunião científica *Hérnias Complexas da Parede Abdominal* (HGMC, 41 slides)
+- *Guia de Referência Rápida em Condutas Cirúrgicas e de Emergência*
+- *Abordagem da Cólica Reno-Ureteral no Pronto Atendimento*
+- *Ácido Tranexâmico em Cirurgia Geral — subanálise do POISE-3*
+- *Doença Renal Crônica — Parte I* (capacitação multiprofissional SES/MT)
+- *Por que não consigo ganhar peso depois do bypass* (material para o paciente)
+- Aulas-atlas interativas de câncer de mama e tumores de testículo
+- Simulados de Esôfago de Barrett e de tumores neuroendócrinos do pâncreas
+- Lista de 20 questões do ENARE 2025
+
+### Uma nota sobre classificação
+
+Alguns rótulos dos arquivos de origem não batem com o assunto do enunciado — na
+lista do ENARE 2025, por exemplo, uma questão de bariátrica vem rotulada como
+"Cirurgia Vascular". O pipeline **não corrige o arquivo**: ele classifica pelo
+conteúdo (enunciado, comentário e a alternativa correta) e mantém o rótulo
+original visível na questão. Distratores ficam de fora da classificação, porque
+são construídos sobre temas vizinhos de propósito.
