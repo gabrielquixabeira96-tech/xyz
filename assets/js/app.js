@@ -187,8 +187,10 @@
   }
 
   /* ── shell ───────────────────────────────────────────────────────────── */
+  var raiz = document.getElementById("app") || document.body;
+
   function montarShell() {
-    document.body.innerHTML =
+    raiz.innerHTML =
       '<div class="shell">' +
       '<aside class="sidebar">' +
       '<div class="brand" data-ir="#/">' +
@@ -224,7 +226,7 @@
         icone(n.glifo, 21) + "<span>" + n.rotulo + "</span></button>";
     }).join("");
 
-    document.body.addEventListener("click", function (ev) {
+    raiz.addEventListener("click", function (ev) {
       var alvo = ev.target.closest("[data-ir]");
       if (alvo) { ev.preventDefault(); irPara(alvo.getAttribute("data-ir")); }
     });
