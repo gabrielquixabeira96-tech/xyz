@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Os Cadernos de Leonardo</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=La+Belle+Aurore&display=swap">
+<style>
+/* =====================================================================
+   OS CADERNOS DE LEONARDO — sala de códices à meia-luz (tema único)
+   papel + tinta ferrogálica + sanguínea; Cinzel / EB Garamond / La Belle Aurore
+   ===================================================================== */
+:root{
+  --notte:#191309;          /* a sala escura */
+  --notte-alta:#221a0e;     /* painéis elevados */
+  --linha:rgba(216,203,170,.14);
+  --linha-forte:rgba(216,203,170,.28);
+  --avorio:#d8cbaa;         /* texto sobre a sala */
+  --avorio-2:rgba(216,203,170,.68);
+  --avorio-3:rgba(216,203,170,.45);
+  --carta:#e6d7b2;          /* o papel dos fólios */
+  --carta-2:#dcc994;
+  --carta-borda:#c9b581;
+  --inchiostro:#40311c;     /* tinta ferrogálica */
+  --inchiostro-2:rgba(64,49,28,.72);
+  --inchiostro-3:rgba(64,49,28,.5);
+  --sanguigna:#c26749;      /* giz vermelho — único acento */
+  --sanguigna-viva:#d4795a;
+  --serif:"EB Garamond",Georgia,"Times New Roman",serif;
+  --caps:"Cinzel",Georgia,serif;
+  --mano:"La Belle Aurore","Segoe Script",cursive;
+}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;
+  background:
+    radial-gradient(1100px 520px at 50% -80px, rgba(230,215,178,.10), transparent 62%),
+    radial-gradient(900px 900px at 88% 32%, rgba(194,103,73,.05), transparent 60%),
+    var(--notte);
+  color:var(--avorio);
+  font-family:var(--serif);
+  font-size:19px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.coluna{max-width:1080px;margin-inline:auto;padding-inline:22px}
+[hidden]{display:none!important}
+::selection{background:rgba(194,103,73,.4)}
+a{color:var(--sanguigna-viva);text-decoration-color:rgba(212,121,90,.45);text-underline-offset:3px}
+a:hover{text-decoration-color:var(--sanguigna-viva)}
+:focus-visible{outline:2px solid var(--sanguigna-viva);outline-offset:3px;border-radius:2px}
+p{margin:0 0 1em}
+strong{color:#efe4c8;font-weight:600}
+
+/* ---------- navegação ---------- */
+.nav{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:40;
+  background:rgba(25,19,9,.9);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--linha);
+}
+.nav-fita{display:flex;gap:4px;overflow-x:auto;padding:10px 22px;max-width:1080px;margin-inline:auto;scrollbar-width:none}
+.nav-fita::-webkit-scrollbar{display:none}
+.nav a{
+  font-family:var(--caps);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--avorio-2);text-decoration:none;white-space:nowrap;
+  padding:6px 11px;border-radius:2px;border:1px solid transparent;
+}
+.nav a:hover{color:var(--avorio);border-color:var(--linha)}
+
+/* ---------- herói ---------- */
+.eroe{padding:84px 0 64px;text-align:center}
+.eroe-brasao{font-family:var(--caps);font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--avorio-3);margin-bottom:26px}
+.eroe-brasao b{color:var(--sanguigna-viva);font-weight:700}
+h1{
+  font-family:var(--caps);font-weight:900;color:#efe4c8;
+  font-size:clamp(38px,7.2vw,84px);line-height:1.04;letter-spacing:.04em;
+  margin:0 0 10px;text-wrap:balance;
+}
+h1 .fino{display:block;font-weight:400;font-size:.42em;letter-spacing:.42em;color:var(--avorio-2);margin-top:14px}
+.eroe-regua{width:120px;height:1px;background:var(--linha-forte);margin:34px auto 30px;position:relative}
+.eroe-regua::after{content:"";position:absolute;left:50%;top:-3px;width:7px;height:7px;transform:translateX(-50%) rotate(45deg);background:var(--sanguigna)}
+.specchio-palco{max-width:640px;margin:0 auto;perspective:900px}
+.specchio-texto{
+  font-family:var(--mano);font-size:clamp(26px,4.6vw,40px);line-height:1.5;color:var(--carta-2);
+  transform:scaleX(-1);transition:transform .9s cubic-bezier(.22,1,.36,1);
+  text-wrap:balance;
+}
+.specchio-palco.lido .specchio-texto{transform:scaleX(1)}
+.specchio-trad{font-style:italic;color:var(--avorio-3);font-size:16px;margin-top:10px;min-height:1.4em;opacity:0;transition:opacity .7s .5s}
+.specchio-palco.lido .specchio-trad{opacity:1}
+.botao{
+  font-family:var(--caps);font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+  background:none;color:var(--avorio);border:1px solid var(--linha-forte);
+  padding:12px 26px;border-radius:2px;cursor:pointer;margin-top:26px;
+  transition:border-color .25s,color .25s,background .25s;
+}
+.botao:hover{border-color:var(--sanguigna);color:var(--sanguigna-viva)}
+.botao.ativo{background:var(--sanguigna);border-color:var(--sanguigna);color:#1c0f08}
+.eroe-nota{font-size:15px;color:var(--avorio-3);margin-top:44px;font-style:italic}
+
+/* ---------- salas ---------- */
+.sala{padding:76px 0 30px;border-top:1px solid var(--linha)}
+.sala-rotulo{display:flex;align-items:baseline;gap:16px;margin-bottom:14px}
+.sala-rotulo .num{font-family:var(--caps);font-weight:700;font-size:13px;letter-spacing:.3em;color:var(--sanguigna-viva);text-transform:uppercase;white-space:nowrap}
+.sala-rotulo .fio{flex:1;height:1px;background:var(--linha);align-self:center}
+h2{font-family:var(--caps);font-weight:700;color:#efe4c8;font-size:clamp(26px,4vw,42px);letter-spacing:.05em;line-height:1.15;margin:0 0 18px;text-wrap:balance}
+.sala-lede{font-size:clamp(19px,2.2vw,23px);font-style:italic;color:var(--avorio-2);max-width:46em;margin-bottom:34px}
+.sala-lede em{color:var(--carta-2)}
+h3{font-family:var(--caps);font-weight:700;font-size:17px;letter-spacing:.12em;color:#efe4c8;margin:0 0 12px;text-transform:uppercase}
+.prosa{max-width:46em}
+.prosa-2col{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media(max-width:760px){.prosa-2col{grid-template-columns:1fr}}
+
+/* citação em destaque */
+.citacao{border-left:2px solid var(--sanguigna);padding:6px 0 6px 24px;margin:36px 0}
+.citacao .ita{font-style:italic;font-size:clamp(20px,2.6vw,26px);color:var(--carta-2);line-height:1.5}
+.citacao .quem{font-family:var(--caps);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--avorio-3);margin-top:10px}
+
+/* ---------- fólio de papel ---------- */
+.folio{
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='r'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .28 0 0 0 0 .21 0 0 0 0 .10 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23r)'/%3E%3C/svg%3E"),
+    linear-gradient(160deg,#ecdfc0 0%,var(--carta) 42%,var(--carta-2) 100%);
+  color:var(--inchiostro);
+  border:1px solid var(--carta-borda);
+  border-radius:2px;
+  box-shadow:0 2px 4px rgba(0,0,0,.5),0 18px 44px rgba(0,0,0,.55);
+  position:relative;
+}
+.folio strong{color:#2c2112}
+.folio a{color:#8c4128;text-decoration-color:rgba(140,65,40,.4)}
+.folio-canto{position:absolute;top:0;right:0;width:0;height:0;border-style:solid;border-width:0 26px 26px 0;border-color:transparent var(--notte) transparent transparent;filter:drop-shadow(-2px 2px 2px rgba(0,0,0,.18))}
+.folio-canto::after{content:"";position:absolute;top:1px;right:-25px;width:0;height:0;border-style:solid;border-width:0 0 24px 24px;border-color:transparent transparent rgba(64,49,28,.16) transparent}
+
+/* ---------- estatísticas da herança ---------- */
+.estante{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--linha);border:1px solid var(--linha);margin:40px 0}
+@media(max-width:760px){.estante{grid-template-columns:repeat(2,1fr)}}
+.estante>div{background:var(--notte-alta);padding:22px 20px}
+.estante .cifra{font-family:var(--caps);font-weight:700;font-size:clamp(28px,3.6vw,40px);color:#efe4c8;font-variant-numeric:tabular-nums}
+.estante .cifra i{font-style:normal;color:var(--sanguigna-viva)}
+.estante .desc{font-size:14px;color:var(--avorio-2);margin-top:6px;line-height:1.45}
+
+/* diagrama da diáspora */
+.diaspora{overflow-x:auto;margin:44px 0 10px;border:1px solid var(--linha);background:var(--notte-alta);border-radius:2px}
+.diaspora svg{display:block;min-width:820px;width:100%;height:auto}
+.diaspora-leg{font-size:14px;color:var(--avorio-3);font-style:italic;margin-bottom:8px}
+
+/* ---------- sala do espelho ---------- */
+.oficina-espelho{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;margin-top:10px}
+@media(max-width:860px){.oficina-espelho{grid-template-columns:1fr}}
+.maquina-espelho{padding:30px 28px 26px}
+.maquina-espelho label{display:block;font-family:var(--caps);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--inchiostro-2);margin-bottom:10px}
+.maquina-espelho input{
+  width:100%;box-sizing:border-box;background:rgba(255,252,240,.5);
+  border:1px solid var(--carta-borda);border-radius:2px;
+  font-family:var(--serif);font-style:italic;font-size:18px;color:var(--inchiostro);
+  padding:12px 14px;
+}
+.maquina-espelho input:focus{outline:2px solid var(--sanguigna);outline-offset:1px}
+.saida-espelho{
+  margin-top:22px;min-height:110px;display:flex;align-items:center;justify-content:flex-end;
+  border-top:1px dashed rgba(64,49,28,.3);padding-top:16px;overflow:hidden;
+}
+.saida-espelho .tinta{
+  font-family:var(--mano);font-size:clamp(24px,3.4vw,34px);line-height:1.45;color:#33230f;
+  transform:scaleX(-1);transform-origin:center;text-align:left;word-break:break-word;
+  transition:transform .7s cubic-bezier(.22,1,.36,1);max-width:100%;
+}
+.maquina-espelho.desfeita .saida-espelho .tinta{transform:scaleX(1)}
+.maquina-espelho .mini{font-size:14px;color:var(--inchiostro-3);font-style:italic;margin-top:14px}
+.botao-tinta{
+  font-family:var(--caps);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  background:none;border:1px solid rgba(64,49,28,.45);color:var(--inchiostro);
+  padding:9px 18px;border-radius:2px;cursor:pointer;margin-top:16px;
+}
+.botao-tinta:hover{border-color:var(--sanguigna);color:#8c4128}
+.mito{border:1px solid var(--linha);border-radius:2px;padding:20px 22px;margin-top:26px;background:var(--notte-alta)}
+.mito .tag{font-family:var(--caps);font-size:10px;letter-spacing:.24em;color:var(--sanguigna-viva);text-transform:uppercase}
+.mito p{margin:8px 0 0;font-size:16.5px;color:var(--avorio-2)}
+
+/* ---------- explorador de códices ---------- */
+.codici{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px;margin-top:12px}
+.codice{overflow:hidden}
+.codice summary{
+  list-style:none;cursor:pointer;padding:24px 26px 46px;position:relative;
+}
+.codice summary::-webkit-details-marker{display:none}
+.codice .sede{font-family:var(--caps);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8c4128;margin-bottom:8px}
+.codice h3{color:#241a0d;font-size:19px;letter-spacing:.06em;text-transform:none;font-family:var(--caps)}
+.codice .resumo{font-size:15.5px;font-style:italic;color:var(--inchiostro-2);line-height:1.5;margin:6px 0 0}
+.codice .abrir{
+  position:absolute;right:20px;bottom:14px;font-family:var(--caps);font-size:10px;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--inchiostro-3);
+}
+.codice[open] .abrir{display:none}
+.codice-corpo{padding:0 26px 24px;border-top:1px dashed rgba(64,49,28,.3);margin-top:0}
+.codice-corpo dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:18px 0;font-size:15.5px}
+.codice-corpo dt{font-family:var(--caps);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--inchiostro-3);padding-top:3px}
+.codice-corpo dd{margin:0;color:var(--inchiostro)}
+.codice-corpo p{font-size:16px;line-height:1.6}
+.curiosita{border-left:2px solid var(--sanguigna);padding-left:14px;margin:16px 0 6px}
+.curiosita .tag{font-family:var(--caps);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#8c4128}
+.curiosita p{margin:6px 0 0;font-size:16px}
+
+/* ---------- linha do tempo ---------- */
+.tempo-cinto{position:relative;margin-top:8px}
+.tempo-faixa{
+  display:flex;gap:18px;overflow-x:auto;padding:10px 4px 22px;
+  scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--sanguigna) transparent;
+}
+.tempo-item{
+  flex:0 0 272px;scroll-snap-align:start;border:1px solid var(--linha);border-radius:2px;
+  background:var(--notte-alta);padding:20px 20px 18px;display:flex;flex-direction:column;gap:10px;
+}
+.tempo-item .anno{font-family:var(--caps);font-weight:700;font-size:34px;color:#efe4c8;font-variant-numeric:tabular-nums;line-height:1}
+.tempo-item .anno span{font-size:13px;letter-spacing:.2em;color:var(--sanguigna-viva);margin-left:8px}
+.tempo-bloco .rotulo{font-family:var(--caps);font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--avorio-3)}
+.tempo-bloco.leo .rotulo{color:var(--sanguigna-viva)}
+.tempo-bloco p{font-size:15.5px;line-height:1.5;color:var(--avorio-2);margin:4px 0 0}
+.tempo-bloco.leo p{color:var(--avorio)}
+.tempo-nav{display:flex;gap:10px;justify-content:flex-end;margin-top:4px}
+.seta{font-family:var(--caps);background:none;border:1px solid var(--linha-forte);color:var(--avorio);width:44px;height:38px;border-radius:2px;cursor:pointer;font-size:16px}
+.seta:hover{border-color:var(--sanguigna);color:var(--sanguigna-viva)}
+
+/* ---------- oficina de máquinas ---------- */
+.abas{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 26px}
+.aba{
+  font-family:var(--caps);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+  background:none;border:1px solid var(--linha-forte);color:var(--avorio-2);
+  padding:10px 18px;border-radius:2px;cursor:pointer;transition:all .25s;
+}
+.aba:hover{color:var(--avorio);border-color:var(--avorio-3)}
+.aba[aria-selected="true"]{background:var(--sanguigna);border-color:var(--sanguigna);color:#1c0f08}
+.officina{display:grid;grid-template-columns:minmax(300px,460px) 1fr;gap:40px;align-items:start}
+@media(max-width:900px){.officina{grid-template-columns:1fr}}
+.prancheta{padding:26px;position:relative}
+.prancheta svg{display:block;width:100%;height:auto}
+.prancheta .legenda-svg{font-family:var(--mano);font-size:15px;color:rgba(64,49,28,.75);text-align:right;margin-top:8px}
+.ponto{
+  position:absolute;width:26px;height:26px;border-radius:50%;cursor:pointer;
+  background:rgba(194,103,73,.16);border:1.5px solid var(--sanguigna);
+  color:#8c4128;font-family:var(--caps);font-weight:700;font-size:12px;line-height:1;
+  display:flex;align-items:center;justify-content:center;
+  transform:translate(-50%,-50%);transition:background .2s;
+}
+.ponto:hover{background:rgba(194,103,73,.4)}
+.ponto[aria-pressed="true"]{background:var(--sanguigna);color:#f5ecd6}
+.maquina-info h3{color:#efe4c8}
+.maquina-info .fonte{font-family:var(--caps);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--sanguigna-viva);margin-bottom:14px}
+.maquina-info .detalhe{border:1px solid var(--linha);background:var(--notte-alta);border-radius:2px;padding:16px 18px;margin-top:18px;min-height:74px}
+.maquina-info .detalhe .t{font-family:var(--caps);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--sanguigna-viva)}
+.maquina-info .detalhe p{margin:6px 0 0;font-size:16px;color:var(--avorio-2)}
+.veredito{display:flex;gap:12px;align-items:baseline;margin-top:18px;font-size:15.5px;color:var(--avorio-2)}
+.veredito .selo{font-family:var(--caps);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--sanguigna-viva);white-space:nowrap;border:1px solid rgba(194,103,73,.5);padding:4px 9px;border-radius:2px}
+
+/* rotação sugerida da vite aerea */
+@keyframes girar-tracos{to{stroke-dashoffset:-34}}
+.helix-anima{stroke-dasharray:10 7;animation:girar-tracos 2.6s linear infinite}
+@media (prefers-reduced-motion:reduce){.helix-anima{animation:none}}
+
+/* ---------- água e antecipações ---------- */
+.tanque{border:1px solid var(--carta-borda);border-radius:2px;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,.55);margin:10px 0 12px}
+.tanque canvas{display:block;width:100%;height:auto;cursor:crosshair}
+.tanque-leg{font-size:14.5px;color:var(--avorio-3);font-style:italic;margin:10px 0 40px}
+.antecipa{border-top:1px solid var(--linha)}
+.antecipa-linha{
+  display:grid;grid-template-columns:1fr auto;gap:8px 30px;align-items:baseline;
+  padding:22px 0;border-bottom:1px solid var(--linha);
+}
+.antecipa-linha h3{margin:0;font-size:15px;color:#efe4c8}
+.antecipa-linha .como{grid-column:1;font-size:16px;color:var(--avorio-2);margin:6px 0 0;max-width:40em}
+.antecipa-linha .salto{
+  grid-column:2;grid-row:1 / span 2;text-align:right;font-family:var(--caps);
+  font-weight:700;font-size:clamp(26px,3.4vw,38px);color:var(--sanguigna-viva);
+  font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.antecipa-linha .salto small{display:block;font-size:11px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--avorio-3)}
+@media(max-width:640px){
+  .antecipa-linha{grid-template-columns:1fr}
+  .antecipa-linha .salto{grid-column:1;grid-row:auto;text-align:left;margin-top:8px}
+}
+
+/* ---------- o corpo ---------- */
+.teatro{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:start}
+@media(max-width:860px){.teatro{grid-template-columns:1fr}}
+.valvula-fig{padding:24px}
+.valvula-fig svg{display:block;width:100%;height:auto}
+.aside-cirurgia{border:1px solid rgba(194,103,73,.45);border-radius:2px;background:rgba(194,103,73,.07);padding:20px 22px;margin-top:26px}
+.aside-cirurgia .tag{font-family:var(--caps);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--sanguigna-viva)}
+.aside-cirurgia p{margin:8px 0 0;font-size:16.5px;color:var(--avorio)}
+
+/* ---------- a lista ---------- */
+.folha-lista{max-width:680px;margin:8px auto 0;padding:38px 40px 30px;transform:rotate(-.5deg)}
+@media(max-width:640px){.folha-lista{padding:28px 22px 24px}}
+.folha-lista h3{font-family:var(--mano);text-transform:none;letter-spacing:0;font-size:30px;color:#33230f;margin-bottom:4px}
+.folha-lista .sub{font-size:14px;font-style:italic;color:var(--inchiostro-3);margin-bottom:22px}
+.tarefa{display:flex;gap:14px;align-items:flex-start;padding:9px 0;border-bottom:1px dotted rgba(64,49,28,.25);cursor:pointer}
+.tarefa input{position:absolute;opacity:0;pointer-events:none}
+.tarefa .caixa{
+  flex:0 0 20px;height:20px;margin-top:4px;border:1.5px solid rgba(64,49,28,.55);border-radius:2px;
+  position:relative;transition:border-color .2s;
+}
+.tarefa input:focus-visible + .caixa{outline:2px solid var(--sanguigna);outline-offset:2px}
+.tarefa .caixa::after{
+  content:"";position:absolute;left:2px;top:-6px;width:22px;height:22px;
+  background:none;border-right:2.5px solid #8c4128;border-bottom:2.5px solid #8c4128;
+  transform:rotate(40deg) scale(0);transform-origin:60% 60%;transition:transform .25s cubic-bezier(.34,1.56,.64,1);
+}
+.tarefa input:checked ~ .caixa::after{transform:rotate(40deg) scale(1)}
+.tarefa .texto{font-family:var(--mano);font-size:22px;line-height:1.4;color:#33230f;transition:color .3s}
+.tarefa .texto small{display:block;font-family:var(--serif);font-style:italic;font-size:13.5px;color:var(--inchiostro-3);margin-top:2px}
+.tarefa input:checked ~ .texto{color:rgba(51,35,15,.45);text-decoration:line-through;text-decoration-color:#8c4128;text-decoration-thickness:2px}
+.lista-conta{font-family:var(--caps);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--inchiostro-3);text-align:right;margin-top:18px}
+
+/* ---------- profecias ---------- */
+.profezie-grade{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:10px}
+@media(max-width:820px){.profezie-grade{grid-template-columns:1fr}}
+.profezia{border:1px solid var(--linha);border-radius:2px;background:var(--notte-alta);padding:26px 26px 22px;display:flex;flex-direction:column;gap:16px}
+.profezia .tag{font-family:var(--caps);font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--sanguigna-viva)}
+.profezia .enigma{font-style:italic;font-size:clamp(18px,2.2vw,21px);color:var(--carta-2);line-height:1.55;margin:0}
+.profezia .opcoes{display:flex;flex-wrap:wrap;gap:8px}
+.opcao{
+  font-family:var(--serif);font-size:15.5px;background:none;border:1px solid var(--linha-forte);
+  color:var(--avorio);padding:8px 16px;border-radius:2px;cursor:pointer;transition:all .2s;
+}
+.opcao:hover:not(:disabled){border-color:var(--avorio-2)}
+.opcao.certa{background:var(--sanguigna);border-color:var(--sanguigna);color:#1c0f08}
+.opcao.errada{opacity:.4;text-decoration:line-through}
+.opcao:disabled{cursor:default}
+.profezia .solucao{font-size:15.5px;color:var(--avorio-2);border-top:1px dashed var(--linha-forte);padding-top:12px;margin:0;min-height:2.6em}
+.profezia .solucao b{color:var(--sanguigna-viva);font-family:var(--caps);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+
+/* ---------- fontes ---------- */
+.arquivos{border-top:1px solid var(--linha);margin-top:8px}
+.arquivo{display:grid;grid-template-columns:auto 1fr auto;gap:6px 24px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--linha)}
+.arquivo .cidade{font-family:var(--caps);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--avorio-3);min-width:88px}
+.arquivo .nome{font-size:18px;color:var(--avorio)}
+.arquivo .nome small{display:block;font-size:14.5px;font-style:italic;color:var(--avorio-3)}
+.arquivo .ir{font-family:var(--caps);font-size:11px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
+@media(max-width:640px){.arquivo{grid-template-columns:1fr}.arquivo .ir{justify-self:start}}
+.nota-imagens{border:1px dashed var(--linha-forte);border-radius:2px;padding:20px 24px;margin:38px 0 0;font-size:15.5px;color:var(--avorio-2);font-style:italic}
+.nota-imagens .tag{font-family:var(--caps);font-style:normal;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--sanguigna-viva);display:block;margin-bottom:8px}
+
+/* ---------- rodapé ---------- */
+.rodape{border-top:1px solid var(--linha);margin-top:80px;padding:56px 0 72px;text-align:center}
+.rodape .motto{font-family:var(--caps);font-weight:700;letter-spacing:.4em;font-size:clamp(16px,2.6vw,24px);color:#efe4c8;text-transform:uppercase}
+.rodape .motto-trad{font-style:italic;color:var(--avorio-3);margin-top:10px;font-size:16px}
+.rodape .fim{font-size:14px;color:var(--avorio-3);margin-top:38px;line-height:1.7}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Salas da exposição">
+  <div class="nav-fita">
+    <a href="#heranca">I · Herança</a>
+    <a href="#espelho">II · Espelho</a>
+    <a href="#codices">III · Códices</a>
+    <a href="#tempo">IV · Tempo</a>
+    <a href="#maquinas">V · Máquinas</a>
+    <a href="#agua">VI · Água</a>
+    <a href="#corpo">VII · Corpo</a>
+    <a href="#lista">VIII · Lista</a>
+    <a href="#profecias">IX · Profecias</a>
+    <a href="#fontes">X · Fontes</a>
+  </div>
+</nav>
+
+<header class="eroe coluna">
+  <p class="eroe-brasao">Uma exposição em dez salas · <b>c. 1478 – 1519</b> · a partir do corpus digital e-Leo</p>
+  <h1>Os Cadernos<br>de Leonardo<span class="fino">sette mila pagine contra il tempo</span></h1>
+  <div class="eroe-regua" role="presentation"></div>
+  <div class="specchio-palco" id="palco-espelho">
+    <p class="specchio-texto" lang="it">La sapienza è figliola della sperienza.</p>
+    <p class="specchio-trad">“A sabedoria é filha da experiência.” — Ms. Forster III, f. 14r</p>
+  </div>
+  <button class="botao" id="btn-espelho" aria-pressed="false">Segurar o espelho</button>
+  <p class="eroe-nota">Ele escreveu da direita para a esquerda, em letra invertida, por quase quarenta anos.<br>Para ler Leonardo, o mundo precisou primeiro aprender a virar o vidro.</p>
+</header>
+
+<!-- ============================ SALA I ============================ -->
+<section class="sala coluna" id="heranca">
+  <div class="sala-rotulo"><span class="num">Sala I</span><span class="fio"></span></div>
+  <h2>A herança de papel</h2>
+  <p class="sala-lede">Quando morreu em Amboise, a 2 de maio de 1519, Leonardo não deixou tratados publicados. Deixou <em>papel</em>: milhares de fólios soltos e cadernos de todos os tamanhos, do formato de parede ao caderninho pendurado no cinto — e uma única instrução no testamento: tudo para <em>Francesco Melzi</em>, o discípulo fiel.</p>
+
+  <div class="prosa-2col">
+    <div class="prosa">
+      <p>Sobrevivem hoje cerca de <strong>7.200 páginas</strong> — e os estudiosos estimam que isso seja apenas metade, talvez um quarto, do que ele escreveu. Não são rascunhos de um livro: são o próprio laboratório de uma mente. Na mesma página convivem uma turbina hidráulica, o perfil de um homem, uma conta de padaria, um verso e uma pergunta sem resposta.</p>
+      <p>Melzi guardou o tesouro por cinquenta anos na villa da família em Vaprio d’Adda. Depois da sua morte, por volta de 1570, começou o desastre: o filho <strong>Orazio</strong> amontoou os cadernos no sótão, tutores e visitantes levaram volumes como lembrança, e o escultor <strong>Pompeo Leoni</strong> fez o impensável — desmontou cadernos originais com tesoura e cola para montar dois grandes álbuns de colecionador.</p>
+    </div>
+    <div class="prosa">
+      <p>Um desses álbuns é hoje o <strong>Códice Atlântico</strong>; o outro alimentou a coleção real inglesa de <strong>Windsor</strong>. O resto espalhou-se por herança, venda, saque napoleônico e puro acaso por cinco países. Dois códices inteiros ficaram <strong>“perdidos” por dois séculos</strong> dentro da Biblioteca Nacional de Madri — vítimas de um erro de catalogação — até 1965. Outro atravessou o Atlântico e pertence hoje a Bill Gates.</p>
+      <p>É por isso que não existe “o caderno de Leonardo”, e sim uma <strong>diáspora</strong>: Milão, Paris, Londres, Windsor, Madri, Turim, Seattle. O arquivo <a href="https://www.leonardodigitale.com/en/" rel="noopener">e-Leo, da Biblioteca Leonardiana de Vinci</a>, foi criado justamente para reunir de novo, em forma digital, o que a história dispersou.</p>
+    </div>
+  </div>
+
+  <div class="estante" role="list" aria-label="Números da herança">
+    <div role="listitem"><div class="cifra">≈7.200</div><div class="desc">páginas sobreviventes, de um total estimado em duas a quatro vezes maior</div></div>
+    <div role="listitem"><div class="cifra">≈40</div><div class="desc">anos de escrita ininterrupta, de Florença a Amboise</div></div>
+    <div role="listitem"><div class="cifra"><i>7</i></div><div class="desc">cidades guardam hoje os códices, em cinco países</div></div>
+    <div role="listitem"><div class="cifra">0</div><div class="desc">tratados publicados em vida — tudo ficou nos cadernos</div></div>
+  </div>
+
+  <p class="diaspora-leg">O caminho dos cadernos — siga as linhas da esquerda para a direita:</p>
+  <div class="diaspora">
+    <svg viewBox="0 0 980 420" role="img" aria-label="Diagrama da dispersão dos cadernos de Leonardo: de Leonardo para Melzi, de Melzi para Pompeo Leoni e outros, e daí para Milão, Windsor, Paris, Londres, Madri, Turim e Seattle">
+      <style>
+        .d-caixa{fill:#221a0e;stroke:rgba(216,203,170,.28);stroke-width:1}
+        .d-caixa-leo{fill:#c26749;stroke:none}
+        .d-nome{font:700 13px Cinzel,serif;fill:#efe4c8;letter-spacing:.08em}
+        .d-nome-leo{fill:#1c0f08}
+        .d-sub{font:italic 11.5px 'EB Garamond',serif;fill:rgba(216,203,170,.62)}
+        .d-sub-leo{fill:rgba(28,15,8,.75)}
+        .d-fio{stroke:rgba(216,203,170,.32);stroke-width:1.2;fill:none}
+        .d-fio-quente{stroke:#c26749;stroke-width:1.4;fill:none}
+        .d-data{font:11px Cinzel,serif;fill:rgba(216,203,170,.45);letter-spacing:.1em}
+      </style>
+      <!-- nível 1: Leonardo -->
+      <rect class="d-caixa-leo" x="20" y="176" width="150" height="66" rx="2"/>
+      <text class="d-nome d-nome-leo" x="36" y="204">LEONARDO</text>
+      <text class="d-sub d-sub-leo" x="36" y="222">morre em Amboise, 1519</text>
+      <!-- nível 2: Melzi -->
+      <path class="d-fio-quente" d="M170 209 H 240"/>
+      <rect class="d-caixa" x="240" y="176" width="168" height="66" rx="2"/>
+      <text class="d-nome" x="256" y="200">F. MELZI</text>
+      <text class="d-sub" x="256" y="218">guarda tudo em Vaprio</text>
+      <text class="d-sub" x="256" y="233">d’Adda até c. 1570</text>
+      <!-- nível 3: dispersão -->
+      <path class="d-fio" d="M408 196 C 460 160, 470 120, 520 108"/>
+      <path class="d-fio" d="M408 209 H 520"/>
+      <path class="d-fio" d="M408 222 C 460 260, 470 306, 520 316"/>
+      <rect class="d-caixa" x="520" y="76" width="180" height="62" rx="2"/>
+      <text class="d-nome" x="536" y="100">POMPEO LEONI</text>
+      <text class="d-sub" x="536" y="118">recorta e cola os fólios</text>
+      <rect class="d-caixa" x="520" y="182" width="180" height="54" rx="2"/>
+      <text class="d-nome" x="536" y="204">HERDEIROS &amp; VENDAS</text>
+      <text class="d-sub" x="536" y="222">volumes saem um a um</text>
+      <rect class="d-caixa" x="520" y="288" width="180" height="54" rx="2"/>
+      <text class="d-nome" x="536" y="310">NAPOLEÃO, 1796</text>
+      <text class="d-sub" x="536" y="328">leva os cadernos a Paris</text>
+      <!-- nível 4: destinos -->
+      <path class="d-fio" d="M700 96 C 750 84, 760 56, 800 48"/>
+      <path class="d-fio" d="M700 112 C 750 116, 760 128, 800 132"/>
+      <path class="d-fio" d="M700 126 C 752 158, 762 188, 800 198"/>
+      <path class="d-fio" d="M700 220 C 750 234, 760 260, 800 266"/>
+      <path class="d-fio" d="M700 210 C 762 262, 762 340, 800 370"/>
+      <path class="d-fio-quente" d="M700 315 H 800"/>
+      <g>
+        <rect class="d-caixa" x="800" y="26" width="160" height="46" rx="2"/>
+        <text class="d-nome" x="814" y="45">MILÃO</text>
+        <text class="d-sub" x="814" y="62">Códice Atlântico, 1637</text>
+        <rect class="d-caixa" x="800" y="110" width="160" height="46" rx="2"/>
+        <text class="d-nome" x="814" y="129">WINDSOR</text>
+        <text class="d-sub" x="814" y="146">600 desenhos reais</text>
+        <rect class="d-caixa" x="800" y="178" width="160" height="46" rx="2"/>
+        <text class="d-nome" x="814" y="197">MADRI</text>
+        <text class="d-sub" x="814" y="214">“perdidos” até 1965</text>
+        <rect class="d-caixa" x="800" y="244" width="160" height="46" rx="2"/>
+        <text class="d-nome" x="814" y="263">LONDRES · TURIM</text>
+        <text class="d-sub" x="814" y="280">Arundel, Forster, Voo</text>
+        <rect class="d-caixa" x="800" y="292" width="160" height="46" rx="2"/>
+        <text class="d-nome" x="814" y="311">PARIS</text>
+        <text class="d-sub" x="814" y="328">Mss. A–M, nunca voltaram</text>
+        <rect class="d-caixa" x="800" y="350" width="160" height="46" rx="2"/>
+        <text class="d-nome" x="814" y="369">SEATTLE</text>
+        <text class="d-sub" x="814" y="386">Leicester → Bill Gates</text>
+      </g>
+      <text class="d-data" x="26" y="404">1519</text>
+      <text class="d-data" x="300" y="404">1570</text>
+      <text class="d-data" x="560" y="404">1590–1796</text>
+      <text class="d-data" x="880" y="404">hoje</text>
+    </svg>
+  </div>
+
+  <div class="citacao">
+    <p class="ita" lang="it">“Questo fia un racolto sanza ordine, tratto di molte carte… sperando poi di metterle per ordine.”</p>
+    <p class="quem">“Esta será uma coletânea sem ordem, tirada de muitas folhas… esperando depois pô-las em ordem.” — Códice Arundel, f. 1r, 22 de março de 1508</p>
+  </div>
+  <p class="prosa">Ele nunca pôs em ordem. E talvez seja essa a sorte da posteridade: os cadernos preservam o pensamento <strong>em movimento</strong>, não o resultado editado — a ciência como verbo, não como substantivo.</p>
+</section>
+
+<!-- ============================ SALA II ============================ -->
+<section class="sala coluna" id="espelho">
+  <div class="sala-rotulo"><span class="num">Sala II</span><span class="fio"></span></div>
+  <h2>A escrita ao espelho</h2>
+  <p class="sala-lede">Quase tudo o que Leonardo escreveu para si corre <em>da direita para a esquerda</em>, com cada letra invertida — legível apenas num espelho. Luca Pacioli, seu amigo matemático, registrou: ele escrevia <em>“alla mancina”</em>, com a esquerda.</p>
+
+  <div class="oficina-espelho">
+    <div class="prosa">
+      <p>A explicação mais aceita é desarmantemente prática: Leonardo era <strong>canhoto</strong>. Arrastar a mão esquerda sobre a tinta fresca, escrevendo da esquerda para a direita, borra a página; correndo no sentido contrário, a mão vai à frente da tinta. A escrita especular não era um código — <strong>qualquer espelho a quebra em um segundo</strong> — e quando o texto se destinava a outros olhos, como cartas e mapas, ele escrevia no sentido comum.</p>
+      <p>Ainda assim, o efeito prático foi o de um selo: por séculos, os cadernos foram folheados como álbuns de figuras, com o texto tratado como ornamento ilegível. Boa parte da ciência que você verá nas próximas salas ficou <strong>invisível dentro das bibliotecas</strong> — não por estar escondida, mas por estar ao contrário.</p>
+      <div class="mito">
+        <span class="tag">Mito, ao espelho</span>
+        <p>“Ele escrevia invertido para esconder segredos da Igreja.” Não há uma linha nos códices que sustente isso — até as listas de compras e as contas domésticas estão em escrita especular. O hábito era do corpo, não da conspiração.</p>
+      </div>
+    </div>
+
+    <div class="folio maquina-espelho" id="maquina-espelho">
+      <span class="folio-canto" role="presentation"></span>
+      <label for="entrada-espelho">Escreva como Leonardo</label>
+      <input id="entrada-espelho" type="text" maxlength="90" value="A sabedoria é filha da experiência" autocomplete="off" spellcheck="false">
+      <div class="saida-espelho"><p class="tinta" id="tinta-espelho" aria-live="polite">A sabedoria é filha da experiência</p></div>
+      <button class="botao-tinta" id="btn-desfazer-espelho" aria-pressed="false">Virar o espelho</button>
+      <p class="mini">A sua frase, na direção em que a pena canhota corre sem borrar a tinta. O botão faz o que os primeiros leitores dos códices faziam: encosta um espelho na página.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SALA III ============================ -->
+<section class="sala coluna" id="codices">
+  <div class="sala-rotulo"><span class="num">Sala III</span><span class="fio"></span></div>
+  <h2>Os códices, um a um</h2>
+  <p class="sala-lede">Dez conjuntos guardam quase tudo o que restou. Abra cada fólio — cada um traz o que contém, onde vive e uma história que quase ninguém conta.</p>
+
+  <div class="codici" id="codici"></div>
+</section>
+<!-- ============================ SALA IV ============================ -->
+<section class="sala coluna" id="tempo">
+  <div class="sala-rotulo"><span class="num">Sala IV</span><span class="fio"></span></div>
+  <h2>Um homem, dois mundos</h2>
+  <p class="sala-lede">Leonardo nasceu num mundo <em>manuscrito</em> e morreu num mundo <em>impresso e transatlântico</em>. Deslize a faixa: em cima, a vida dele; embaixo, o que o mundo fazia enquanto isso.</p>
+  <div class="tempo-cinto">
+    <div class="tempo-faixa" id="tempo-faixa" tabindex="0" aria-label="Linha do tempo de 1452 a 1519, rolável horizontalmente"></div>
+    <div class="tempo-nav">
+      <button class="seta" id="tempo-ant" aria-label="Retroceder na linha do tempo">‹</button>
+      <button class="seta" id="tempo-prox" aria-label="Avançar na linha do tempo">›</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SALA V ============================ -->
+<section class="sala coluna" id="maquinas">
+  <div class="sala-rotulo"><span class="num">Sala V</span><span class="fio"></span></div>
+  <h2>A oficina das máquinas</h2>
+  <p class="sala-lede">Ele se apresentou a Ludovico Sforza, num rascunho de carta do Códice Atlântico, como engenheiro militar em dez parágrafos — e só no último lembrou que <em>também pintava</em>. Toque os pontos numerados de cada prancha.</p>
+
+  <div class="abas" role="tablist" aria-label="Máquinas">
+    <button class="aba" role="tab" id="aba-vite" aria-selected="true" aria-controls="painel-vite">Parafuso aéreo</button>
+    <button class="aba" role="tab" id="aba-para" aria-selected="false" aria-controls="painel-para">Paraquedas</button>
+    <button class="aba" role="tab" id="aba-carro" aria-selected="false" aria-controls="painel-carro">Carro automotor</button>
+    <button class="aba" role="tab" id="aba-balestra" aria-selected="false" aria-controls="painel-balestra">Balestra gigante</button>
+  </div>
+
+  <!-- PAINEL 1 · vite aerea -->
+  <div class="officina" id="painel-vite" role="tabpanel" aria-labelledby="aba-vite">
+    <div class="folio prancheta" id="prancheta-vite">
+      <svg viewBox="0 0 440 430" role="img" aria-label="Recriação em traço de tinta do parafuso aéreo do Manuscrito B, fólio 83 verso: hélice helicoidal sobre mastro central e plataforma circular">
+        <g fill="none" stroke="#40311c" stroke-width="1.6" stroke-linecap="round">
+          <!-- mastro -->
+          <line x1="220" y1="40" x2="220" y2="330"/>
+          <line x1="226" y1="44" x2="226" y2="330" stroke-width="1" opacity=".55"/>
+          <!-- hélice: três voltas elípticas descendo -->
+          <path class="helix-anima" d="M220 60 C 320 66, 344 96, 220 104 C 96 112, 120 142, 220 148" stroke="#8c4128" stroke-width="2.2"/>
+          <path d="M220 104 C 344 96, 320 66, 220 60 C 150 57, 120 70, 116 82" opacity=".85"/>
+          <path d="M220 148 C 120 142, 96 112, 220 104 C 330 97, 352 122, 336 140" opacity=".85"/>
+          <path d="M220 148 C 340 154, 366 190, 220 198 C 74 206, 100 244, 220 250" stroke-width="2"/>
+          <path d="M220 250 C 356 258, 380 300, 220 308" stroke-width="2"/>
+          <!-- hachuras da vela de linho -->
+          <path d="M250 66 C 262 76, 268 88, 262 100 M282 72 C 292 80, 296 90, 290 98 M186 110 C 176 120, 172 132, 180 142 M158 116 C 150 124, 148 134, 154 142" opacity=".5" stroke-width="1"/>
+          <path d="M262 158 C 276 172, 282 186, 274 196 M300 166 C 312 178, 316 188, 308 196 M180 208 C 168 220, 164 234, 172 246 M144 214 C 134 226, 132 238, 140 248" opacity=".5" stroke-width="1"/>
+          <!-- plataforma -->
+          <ellipse cx="220" cy="330" rx="150" ry="30"/>
+          <ellipse cx="220" cy="342" rx="150" ry="30" opacity=".6"/>
+          <!-- barras radiais de empurrar -->
+          <line x1="220" y1="330" x2="94" y2="308"/>
+          <line x1="220" y1="330" x2="348" y2="310"/>
+          <line x1="220" y1="330" x2="150" y2="356"/>
+          <line x1="220" y1="330" x2="296" y2="354"/>
+          <!-- pequenas figuras humanas -->
+          <circle cx="88" cy="296" r="6"/><path d="M88 302 V 318 M88 306 L 78 312 M88 306 L 98 312 M88 318 L 80 330 M88 318 L 96 330"/>
+          <circle cx="354" cy="298" r="6"/><path d="M354 304 V 320 M354 308 L 344 314 M354 308 L 364 314 M354 320 L 346 332 M354 320 L 362 332"/>
+        </g>
+        <text x="428" y="420" text-anchor="end" font-family="'La Belle Aurore',cursive" font-size="15" fill="rgba(64,49,28,.7)">vite aerea · Ms B, f. 83v</text>
+      </svg>
+      <button class="ponto" style="left:64%;top:20%" data-alvo="vite-1" aria-pressed="true">1</button>
+      <button class="ponto" style="left:52%;top:44%" data-alvo="vite-2" aria-pressed="false">2</button>
+      <button class="ponto" style="left:26%;top:74%" data-alvo="vite-3" aria-pressed="false">3</button>
+    </div>
+    <div class="maquina-info" data-maquina="vite">
+      <h3>O parafuso que sobe no ar</h3>
+      <p class="fonte">Manuscrito B, f. 83v · Paris, c. 1489</p>
+      <p>“Se este instrumento em parafuso for bem feito”, anota ele, “o dito parafuso <strong>fará rosca no ar</strong> (<em>si farà la femmina nell’aria</em>) e subirá ao alto.” A intuição central — uma superfície helicoidal que se atarraxa no ar como num sólido — é a mesma que sustenta cada rotor de helicóptero e cada drone.</p>
+      <div class="detalhe" aria-live="polite"><span class="t" id="detalhe-vite-t">Ponto 1 · A vela helicoidal</span><p id="detalhe-vite-p">Linho engomado sobre armação de cana e arame, com raio de cerca de 4 braccia (≈ 2,4 m). Leonardo especifica que o pano deve ter os poros fechados com goma — ele já intuía que o ar escapa por tecido frouxo.</p></div>
+      <div class="veredito"><span class="selo">E funcionou?</span><span>Movida a força humana, jamais levantaria — falta potência e sobra o problema do torque de reação (a plataforma giraria ao contrário). Mas o princípio aerodinâmico está correto: modelos reduzidos e leves do desenho voam.</span></div>
+    </div>
+  </div>
+
+  <!-- PAINEL 2 · paraquedas -->
+  <div class="officina" id="painel-para" role="tabpanel" aria-labelledby="aba-para" hidden>
+    <div class="folio prancheta" id="prancheta-para">
+      <svg viewBox="0 0 440 430" role="img" aria-label="Recriação em traço de tinta do paraquedas piramidal do Códice Atlântico, fólio 1058 verso: pirâmide de linho com homem suspenso por cordas">
+        <g fill="none" stroke="#40311c" stroke-width="1.6" stroke-linecap="round">
+          <!-- pirâmide -->
+          <path d="M220 46 L 66 210 L 374 210 Z"/>
+          <path d="M220 46 L 160 210 M220 46 L 286 210" opacity=".7"/>
+          <path d="M66 210 C 130 196, 310 196, 374 210" opacity=".8"/>
+          <!-- hachuras do pano -->
+          <path d="M188 92 L 156 128 M212 88 L 172 136 M236 92 L 204 138 M256 108 L 226 148 M276 128 L 248 160" opacity=".45" stroke-width="1"/>
+          <!-- moldura quadrada da boca -->
+          <path d="M66 210 L 140 232 L 374 210 M140 232 L 300 232 L 374 210" opacity=".9"/>
+          <!-- cordas -->
+          <path d="M80 214 L 208 330 M370 214 L 232 330 M150 231 L 214 330 M292 230 L 226 330"/>
+          <!-- homem suspenso -->
+          <circle cx="220" cy="340" r="9"/>
+          <path d="M220 349 V 382 M220 356 L 196 344 M220 356 L 244 344 M220 382 L 204 412 M220 382 L 236 412"/>
+        </g>
+        <text x="428" y="420" text-anchor="end" font-family="'La Belle Aurore',cursive" font-size="15" fill="rgba(64,49,28,.7)">tenda di pannolino · CA, f. 1058v</text>
+      </svg>
+      <button class="ponto" style="left:50%;top:16%" data-alvo="para-1" aria-pressed="true">1</button>
+      <button class="ponto" style="left:24%;top:52%" data-alvo="para-2" aria-pressed="false">2</button>
+      <button class="ponto" style="left:50%;top:84%" data-alvo="para-3" aria-pressed="false">3</button>
+    </div>
+    <div class="maquina-info" data-maquina="para">
+      <h3>A tenda que desce devagar</h3>
+      <p class="fonte">Códice Atlântico, f. 1058v · c. 1485</p>
+      <p>“Se um homem tiver uma tenda de pano de linho com os poros tapados, de <strong>12 braccia de face por 12 de altura</strong>, poderá atirar-se de qualquer grande altura <em>sem dano de si</em>.” Duas linhas e um desenho: é o primeiro projeto conhecido de paraquedas com dimensões calculadas.</p>
+      <div class="detalhe" aria-live="polite"><span class="t" id="detalhe-para-t">Ponto 1 · A pirâmide</span><p id="detalhe-para-p">Forma piramidal, não hemisférica: 12 braccia (≈ 7 m) por face. A geometria dá área de arrasto suficiente para um adulto — Leonardo dimensionou sem ter o conceito formal de arrasto, apenas medindo a “resistência” do ar.</p></div>
+      <div class="veredito"><span class="selo">E funcionou?</span><span>Sim. Em 2000, o paraquedista Adrian Nicholas saltou de ≈ 3.000 m sobre a África do Sul com uma réplica fiel — lona e madeira, mais de 80 kg — e desceu estável, descrevendo o voo como mais suave que um paraquedas moderno. Em 2008, Olivier Vietti-Teppa repetiu a prova.</span></div>
+    </div>
+  </div>
+
+  <!-- PAINEL 3 · carro automotor -->
+  <div class="officina" id="painel-carro" role="tabpanel" aria-labelledby="aba-carro" hidden>
+    <div class="folio prancheta" id="prancheta-carro">
+      <svg viewBox="0 0 440 430" role="img" aria-label="Recriação em traço de tinta do carro automotor do Códice Atlântico, fólio 812 recto: chassi com molas espirais e engrenagens">
+        <g fill="none" stroke="#40311c" stroke-width="1.6" stroke-linecap="round">
+          <!-- chassi em perspectiva -->
+          <path d="M70 250 L 330 230 L 396 268 L 140 292 Z"/>
+          <path d="M70 250 L 70 282 L 140 322 L 140 292 M396 268 L 396 298 L 140 322 M330 230 L 330 258"/>
+          <!-- molas espirais (motores) -->
+          <path d="M170 262 a 34 12 0 1 1 68 -6 a 26 9 0 1 1 -52 5 a 18 6 0 1 1 36 -3 a 10 4 0 1 1 -20 2" stroke="#8c4128" stroke-width="2"/>
+          <path d="M262 252 a 30 11 0 1 1 60 -5 a 22 8 0 1 1 -44 4 a 14 5 0 1 1 28 -2" stroke="#8c4128" stroke-width="1.8" opacity=".9"/>
+          <!-- engrenagens -->
+          <circle cx="128" cy="268" r="26"/>
+          <g opacity=".9"><path d="M128 242 v-8 M128 294 v8 M102 268 h-8 M154 268 h8 M110 250 l-6 -6 M146 286 l6 6 M146 250 l6 -6 M110 286 l-6 6"/></g>
+          <circle cx="128" cy="268" r="9" opacity=".8"/>
+          <circle cx="318" cy="248" r="20"/>
+          <g opacity=".9"><path d="M318 228 v-7 M318 268 v7 M298 248 h-7 M338 248 h7"/></g>
+          <!-- rodas -->
+          <ellipse cx="96" cy="316" rx="14" ry="34"/>
+          <ellipse cx="362" cy="300" rx="13" ry="30"/>
+          <ellipse cx="228" cy="330" rx="14" ry="34" opacity=".85"/>
+          <path d="M96 282 L 96 350 M362 270 L 362 330" opacity=".4" stroke-width="1"/>
+          <!-- came programável -->
+          <path d="M210 214 l 18 -34 l 22 8 l -14 30" opacity=".85"/>
+          <circle cx="236" cy="196" r="5"/>
+        </g>
+        <text x="428" y="420" text-anchor="end" font-family="'La Belle Aurore',cursive" font-size="15" fill="rgba(64,49,28,.7)">automobile · CA, f. 812r</text>
+      </svg>
+      <button class="ponto" style="left:47%;top:58%" data-alvo="carro-1" aria-pressed="true">1</button>
+      <button class="ponto" style="left:28%;top:62%" data-alvo="carro-2" aria-pressed="false">2</button>
+      <button class="ponto" style="left:54%;top:44%" data-alvo="carro-3" aria-pressed="false">3</button>
+    </div>
+    <div class="maquina-info" data-maquina="carro">
+      <h3>O carro que anda sozinho</h3>
+      <p class="fonte">Códice Atlântico, f. 812r · c. 1478</p>
+      <p>Um chassi de três rodas movido por <strong>molas espirais de lâmina</strong>, com direção pré-programável: ajustando peças no mecanismo, define-se de antemão o trajeto. Provável cenografia para festas da corte — um carro que entra em cena sem cavalos nem cocheiro, para espanto do público.</p>
+      <div class="detalhe" aria-live="polite"><span class="t" id="detalhe-carro-t">Ponto 1 · As molas de lâmina</span><p id="detalhe-carro-p">A energia não vem de tração animal, mas de molas enroladas — como um brinquedo de corda gigante. É a mesma lógica de acumular energia elástica que moveria os relógios portáteis e os autômatos dos séculos seguintes.</p></div>
+      <div class="veredito"><span class="selo">E funcionou?</span><span>Em 2004, o Istituto e Museo di Storia della Scienza de Florença construiu a réplica em escala real seguindo o fólio: ela anda, freia e faz curva programada. A imprensa a batizou de “o automóvel de Leonardo” — e alguns historiadores a chamam de primeiro robô programável.</span></div>
+    </div>
+  </div>
+
+  <!-- PAINEL 4 · balestra -->
+  <div class="officina" id="painel-balestra" role="tabpanel" aria-labelledby="aba-balestra" hidden>
+    <div class="folio prancheta" id="prancheta-balestra">
+      <svg viewBox="0 0 440 430" role="img" aria-label="Recriação em traço de tinta da balestra gigante do Códice Atlântico, fólio 149 recto: arco colossal sobre carreta de seis rodas inclinadas">
+        <g fill="none" stroke="#40311c" stroke-width="1.6" stroke-linecap="round">
+          <!-- arco imenso (duas lâminas compostas) -->
+          <path d="M42 214 C 120 96, 320 96, 398 214" stroke-width="2.4"/>
+          <path d="M52 222 C 126 112, 314 112, 388 222" opacity=".7"/>
+          <path d="M42 214 C 90 190, 100 178, 108 160 M398 214 C 350 190, 340 178, 332 160" opacity=".5" stroke-width="1"/>
+          <!-- corda -->
+          <path d="M42 214 L 220 268 L 398 214" stroke="#8c4128" stroke-width="1.8"/>
+          <!-- carreta em perspectiva -->
+          <path d="M150 236 L 290 236 L 330 320 L 110 320 Z"/>
+          <path d="M180 236 L 176 320 M262 236 L 266 320" opacity=".5" stroke-width="1"/>
+          <!-- calha central e parafuso de armar -->
+          <path d="M212 200 L 228 200 L 232 322 L 208 322 Z" opacity=".9"/>
+          <path d="M212 286 h 20 M211 296 h 22 M210 306 h 24" opacity=".7" stroke-width="1.2"/>
+          <circle cx="220" cy="336" r="12"/>
+          <path d="M220 324 v-6 M232 336 h6 M220 348 v6 M208 336 h-6" opacity=".8"/>
+          <!-- seis rodas inclinadas -->
+          <ellipse cx="128" cy="332" rx="12" ry="26" transform="rotate(-14 128 332)"/>
+          <ellipse cx="176" cy="342" rx="12" ry="26" transform="rotate(-8 176 342)"/>
+          <ellipse cx="266" cy="342" rx="12" ry="26" transform="rotate(8 266 342)"/>
+          <ellipse cx="314" cy="332" rx="12" ry="26" transform="rotate(14 314 332)"/>
+          <!-- homem de escala -->
+          <circle cx="392" cy="330" r="6"/>
+          <path d="M392 336 V 362 M392 342 L 382 350 M392 342 L 402 350 M392 362 L 384 382 M392 362 L 400 382"/>
+        </g>
+        <text x="428" y="420" text-anchor="end" font-family="'La Belle Aurore',cursive" font-size="15" fill="rgba(64,49,28,.7)">balestra grande · CA, f. 149r</text>
+      </svg>
+      <button class="ponto" style="left:50%;top:30%" data-alvo="balestra-1" aria-pressed="true">1</button>
+      <button class="ponto" style="left:50%;top:78%" data-alvo="balestra-2" aria-pressed="false">2</button>
+      <button class="ponto" style="left:89%;top:80%" data-alvo="balestra-3" aria-pressed="false">3</button>
+    </div>
+    <div class="maquina-info" data-maquina="balestra">
+      <h3>A besta de assustar exércitos</h3>
+      <p class="fonte">Códice Atlântico, f. 149r · c. 1485–88</p>
+      <p>Um arco composto de lâminas flexíveis com envergadura na casa das <strong>dezenas de metros</strong> (as notas indicam 42 braccia, ≈ 24 m), montado sobre carreta de seis rodas inclinadas para absorver o coice. Dispararia pedras ou projéteis incendiários — mas o desenho, minucioso até o parafuso, é também propaganda: engenharia como teatro do poder.</p>
+      <div class="detalhe" aria-live="polite"><span class="t" id="detalhe-balestra-t">Ponto 1 · O arco laminado</span><p id="detalhe-balestra-p">Em vez de uma peça única de madeira — impossível nessa escala — Leonardo desenha lâminas sobrepostas e articuladas, distribuindo a tensão. É o mesmo princípio do feixe de molas de um caminhão.</p></div>
+      <div class="veredito"><span class="selo">E funcionou?</span><span>Reconstruções em escala (como as tentadas para documentários) mostram que armar o arco é viável, mas o alcance decepciona: a energia se perde na massa da própria estrutura. O valor do fólio é outro — é uma aula de desenho técnico com vistas múltiplas e detalhes destacados, séculos antes da norma.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SALA VI ============================ -->
+<section class="sala coluna" id="agua">
+  <div class="sala-rotulo"><span class="num">Sala VI</span><span class="fio"></span></div>
+  <h2>A água, o caos e o futuro</h2>
+  <p class="sala-lede">Nenhum assunto encheu tantas páginas quanto a água. Ele desenhou o que só a fotografia de alta velocidade voltaria a ver: tranças, espirais e <em>vórtices</em> — e usou para isso uma palavra que adotamos: <em>turbolenza</em>.</p>
+
+  <div class="folio tanque">
+    <canvas id="tanque-canvas" width="1036" height="420" aria-label="Simulação de partículas de água contornando um pilar e formando vórtices, no estilo dos estudos de Leonardo"></canvas>
+  </div>
+  <p class="tanque-leg">Um tanque de tinta viva: a corrente contorna o pilar e desprende redemoinhos alternados — o padrão que Leonardo desenhou observando rios e que a física batizaria, séculos depois, de esteira de vórtices. <strong>Arraste ou toque na água para perturbá-la.</strong></p>
+
+  <div class="citacao">
+    <p class="ita" lang="it">“Observa o movimento da superfície da água, que se assemelha ao dos cabelos: ora ao peso da madeixa, ora à direção dos caracóis. Assim a água tem seus vórtices…”</p>
+    <p class="quem">Estudos de água, Windsor RCIN 912579 (parafraseado do original)</p>
+  </div>
+
+  <h3 style="margin-top:44px">Quanto tempo o mundo levou para alcançá-lo</h3>
+  <p class="prosa" style="margin-bottom:6px">Porque nada disso foi publicado, cada achado teve de ser <strong>redescoberto do zero</strong>. A conta abaixo é o intervalo entre a anotação nos cadernos e o momento em que a ciência chegou lá de novo.</p>
+  <div class="antecipa" id="antecipa"></div>
+</section>
+<!-- ============================ SALA VII ============================ -->
+<section class="sala coluna" id="corpo">
+  <div class="sala-rotulo"><span class="num">Sala VII</span><span class="fio"></span></div>
+  <h2>O teatro do corpo</h2>
+  <p class="sala-lede">Cerca de trinta cadáveres dissecados “com a faca na mão direita e o giz na esquerda”, em noites de hospital. Os fólios anatômicos de Windsor são talvez a maior ciência engavetada da história.</p>
+
+  <div class="teatro">
+    <div class="prosa">
+      <p>Começa em 1489 com a série dos <strong>crânios</strong> — cortes sagitais e coronais de precisão inédita, feitos para procurar o <em>senso comune</em>, a sede da alma. Vinte anos depois, no inverno de 1510–11, trabalhando ao lado do jovem professor <strong>Marcantonio della Torre</strong>, de Pávia, ele disseca cerca de vinte corpos e produz os fólios que qualquer atlas moderno reconheceria: músculos em camadas, vistas explodidas, cortes seriados — convenções gráficas que a anatomia impressa só consagraria séculos depois.</p>
+      <p>Numa noite no hospital de Santa Maria Nuova, em Florença, conversa com um velho que dizia ter cem anos e que morre, sereno, diante dele. Leonardo o disseca “para ver a causa de tão doce morte” — e encontra artérias “retorcidas e endurecidas” com o canal estreitado: é a <strong>primeira descrição conhecida da aterosclerose</strong> e da doença coronariana, além de um quadro reconhecível de cirrose hepática.</p>
+      <p>Nada disso foi publicado. Della Torre morre de peste em 1511, o projeto do tratado morre com ele, e os fólios dormem em Windsor. Quando vieram à luz, no fim do século XIX, a medicina teve a sensação estranha de reencontrar um colega — <strong>um colega com 350 anos de adiantamento</strong>.</p>
+    </div>
+    <div>
+      <div class="folio valvula-fig">
+        <svg viewBox="0 0 420 340" role="img" aria-label="Recriação em traço de tinta do estudo da válvula aórtica: raiz da aorta com seios de Valsalva, cúspides e vórtices de sangue que fecham a válvula">
+          <g fill="none" stroke="#40311c" stroke-width="1.8" stroke-linecap="round">
+            <!-- paredes da aorta com seios de Valsalva -->
+            <path d="M150 320 C 150 250, 148 236, 116 210 C 84 184, 88 130, 130 118 C 142 114, 148 100, 150 60 L 150 24"/>
+            <path d="M270 320 C 270 250, 272 236, 304 210 C 336 184, 332 130, 290 118 C 278 114, 272 100, 270 60 L 270 24"/>
+            <!-- cúspides -->
+            <path d="M150 210 C 176 226, 196 228, 210 210 C 224 228, 244 226, 270 210" stroke-width="2.2"/>
+            <path d="M150 210 C 160 190, 168 176, 172 160 M270 210 C 260 190, 252 176, 248 160" opacity=".55" stroke-width="1.2"/>
+            <!-- vórtices nos seios -->
+            <path d="M124 176 a 26 24 0 1 1 30 22 a 17 16 0 1 0 22 -18" stroke="#8c4128" stroke-width="1.8"/>
+            <path d="M296 176 a 26 24 0 1 0 -30 22 a 17 16 0 1 1 -22 -18" stroke="#8c4128" stroke-width="1.8"/>
+            <!-- fluxo central ascendente -->
+            <path d="M210 320 V 250 M210 236 V 196" opacity=".8"/>
+            <path d="M203 258 L 210 244 L 217 258 M203 204 L 210 190 L 217 204" opacity=".8"/>
+            <!-- hachura externa -->
+            <path d="M96 160 C 90 168, 88 178, 92 188 M324 160 C 330 168, 332 178, 328 188" opacity=".4" stroke-width="1"/>
+          </g>
+          <text x="30" y="120" font-family="'La Belle Aurore',cursive" font-size="15" fill="rgba(64,49,28,.75)">o seio de Valsalva</text>
+          <text x="240" y="300" font-family="'La Belle Aurore',cursive" font-size="15" fill="rgba(64,49,28,.75)">o sangue sobe…</text>
+          <text x="252" y="150" font-family="'La Belle Aurore',cursive" font-size="15" fill="#8c4128">…e o redemoinho fecha a porta</text>
+        </svg>
+      </div>
+      <div class="aside-cirurgia">
+        <span class="tag">Do fólio ao centro cirúrgico</span>
+        <p>Leonardo moldou em <strong>vidro</strong> uma raiz de aorta de boi, encheu-a de água com sementes de capim e viu os <strong>vórtices</strong> girarem nos seios de Valsalva, fechando a válvula com simetria perfeita. O mecanismo só foi confirmado <em>in vitro</em> em 1968 (Bellhouse &amp; Bellhouse) e depois por ressonância cardíaca. O cirurgião <strong>Francis Wells</strong>, do Papworth Hospital, releu os fólios de Windsor e ajustou sua técnica de plástica da valva mitral a partir das medidas de Leonardo — operando pacientes reais com base num caderno de 1513.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="citacao">
+    <p class="ita" lang="it">“E tu, omo, che consideri in questa mia fatica le opere mirabili della natura… pensa che questa nostra è cosa divina.”</p>
+    <p class="quem">“E tu, homem, que contemplas neste meu trabalho as obras admiráveis da natureza… pensa que esta nossa máquina é coisa divina.” — Fólios anatômicos, Windsor</p>
+  </div>
+</section>
+
+<!-- ============================ SALA VIII ============================ -->
+<section class="sala coluna" id="lista">
+  <div class="sala-rotulo"><span class="num">Sala VIII</span><span class="fio"></span></div>
+  <h2>A lista de tarefas</h2>
+  <p class="sala-lede">Entre catapultas e teoremas, os cadernos guardam listas de afazeres — e nelas, inteiro, o método de Leonardo: <em>perguntar a quem sabe, medir o que existe, desenhar tudo</em>. Esta é uma lista real de Milão, c. 1495 (Códice Atlântico), com dois itens célebres vindos de outros fólios. Marque o que você já teria coragem de investigar.</p>
+
+  <div class="folio folha-lista">
+    <span class="folio-canto" role="presentation"></span>
+    <h3>ricordi — coisas a fazer</h3>
+    <p class="sub">tradução livre; a lista original está, claro, em escrita especular</p>
+    <div id="tarefas">
+      <label class="tarefa"><input type="checkbox" id="tarefa-1"><span class="caixa"></span><span class="texto">Medir Milão e seus subúrbios</span></label>
+      <label class="tarefa"><input type="checkbox" id="tarefa-2"><span class="caixa"></span><span class="texto">Achar um livro que trate de Milão e suas igrejas, que há no papeleiro a caminho de Cordusio</span></label>
+      <label class="tarefa"><input type="checkbox" id="tarefa-3"><span class="caixa"></span><span class="texto">Descobrir a medida da Corte Vecchia <small>o pátio onde ele montava o cavalo colossal dos Sforza</small></span></label>
+      <label class="tarefa"><input type="checkbox" id="tarefa-4"><span class="caixa"></span><span class="texto">Pedir ao mestre de aritmética que me mostre como se quadra um triângulo</span></label>
+      <label class="tarefa"><input type="checkbox" id="tarefa-5"><span class="caixa"></span><span class="texto">Perguntar a Benedetto Portinari por que meios se anda sobre o gelo na Flandres <small>Portinari era banqueiro dos Médici, com filial em Bruges — a testemunha certa</small></span></label>
+      <label class="tarefa"><input type="checkbox" id="tarefa-6"><span class="caixa"></span><span class="texto">Desenhar Milão</span></label>
+      <label class="tarefa"><input type="checkbox" id="tarefa-7"><span class="caixa"></span><span class="texto">Perguntar a maestro Antonio como se posicionam morteiros sobre bastiões, de dia e de noite</span></label>
+      <label class="tarefa"><input type="checkbox" id="tarefa-8"><span class="caixa"></span><span class="texto">Examinar a balestra de maestro Gianetto</span></label>
+      <label class="tarefa"><input type="checkbox" id="tarefa-9"><span class="caixa"></span><span class="texto">Achar um mestre de hidráulica e que me diga como se conserta uma eclusa, um canal e um moinho à moda lombarda</span></label>
+      <label class="tarefa"><input type="checkbox" id="tarefa-10"><span class="caixa"></span><span class="texto">Perguntar sobre a medida do sol prometida por maestro Giovanni, o francês</span></label>
+      <label class="tarefa"><input type="checkbox" id="tarefa-11"><span class="caixa"></span><span class="texto">Descrever a língua do pica-pau <small>de um fólio de Windsor — ela é tão longa que se enrola por trás do crânio; ele queria saber como</small></span></label>
+      <label class="tarefa"><input type="checkbox" id="tarefa-12"><span class="caixa"></span><span class="texto">Descrever a mandíbula do crocodilo</span></label>
+    </div>
+    <p class="lista-conta" id="lista-conta" aria-live="polite">0 de 12 investigadas — Leonardo também deixou quase todas em aberto</p>
+  </div>
+</section>
+
+<!-- ============================ SALA IX ============================ -->
+<section class="sala coluna" id="profecias">
+  <div class="sala-rotulo"><span class="num">Sala IX</span><span class="fio"></span></div>
+  <h2>As profecias</h2>
+  <p class="sala-lede">Nas noites da corte sforzesca, Leonardo lia suas <em>Profezie</em>: visões apocalípticas com solução doméstica — o stand-up filosófico do Renascimento. Tente adivinhar antes de revelar.</p>
+
+  <div class="profezie-grade">
+    <div class="profezia" data-certa="1">
+      <span class="tag">Profecia I</span>
+      <p class="enigma">“Os homens caminharão sem se mover; falarão com quem não está presente; ouvirão quem não fala.”</p>
+      <div class="opcoes">
+        <button class="opcao">A escrita</button>
+        <button class="opcao">O sonho</button>
+        <button class="opcao">O eco</button>
+      </div>
+      <p class="solucao" data-texto="É “Del sognare”, do sonhar. Séculos antes do rádio e do telefone tornarem a charada assustadoramente literal."></p>
+    </div>
+    <div class="profezia" data-certa="1">
+      <span class="tag">Profecia II</span>
+      <p class="enigma">“As florestas darão à luz filhos que serão a causa da sua morte.”</p>
+      <div class="opcoes">
+        <button class="opcao">O fogo</button>
+        <button class="opcao">O cabo do machado</button>
+        <button class="opcao">O carvão</button>
+      </div>
+      <p class="solucao" data-texto="O cabo do machado: madeira que derruba madeira. Leonardo adorava essas traições da natureza contra si mesma."></p>
+    </div>
+    <div class="profezia" data-certa="2">
+      <span class="tag">Profecia III</span>
+      <p class="enigma">“Quanto mais se lhe tira, maior ela fica.”</p>
+      <div class="opcoes">
+        <button class="opcao">A dívida</button>
+        <button class="opcao">A sombra</button>
+        <button class="opcao">A cova</button>
+      </div>
+      <p class="solucao" data-texto="A cova. Um enigma de coveiro contado na corte mais refinada da Itália — e todos riam."></p>
+    </div>
+    <div class="profezia" data-certa="0">
+      <span class="tag">Profecia IV</span>
+      <p class="enigma">“Ver-se-ão os ossos dos mortos decidir, com seu rápido movimento, a fortuna de quem os agita.”</p>
+      <div class="opcoes">
+        <button class="opcao">Os dados</button>
+        <button class="opcao">As relíquias</button>
+        <button class="opcao">Os sinos</button>
+      </div>
+      <p class="solucao" data-texto="Os dados, feitos de osso. O apocalipse vira mesa de taverna — é o mecanismo de todas as Profezie."></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SALA X ============================ -->
+<section class="sala coluna" id="fontes">
+  <div class="sala-rotulo"><span class="num">Sala X</span><span class="fio"></span></div>
+  <h2>Vá aos originais</h2>
+  <p class="sala-lede">Tudo o que esta exposição conta está, em alta resolução e de graça, nos arquivos abaixo. Comece pelo e-Leo — é lá que os códices dispersos voltam a ser uma biblioteca só.</p>
+
+  <div class="arquivos">
+    <div class="arquivo"><span class="cidade">Vinci</span><span class="nome">e-Leo · Biblioteca Leonardiana<small>o corpus digitalizado, transcrito e pesquisável — a fonte que inspirou esta exposição</small></span><a class="ir" href="https://www.leonardodigitale.com/en/" rel="noopener">visitar ↗</a></div>
+    <div class="arquivo"><span class="cidade">Milão</span><span class="nome">Veneranda Biblioteca Ambrosiana<small>Códice Atlântico — 1.119 fólios</small></span><a class="ir" href="https://www.ambrosiana.it" rel="noopener">visitar ↗</a></div>
+    <div class="arquivo"><span class="cidade">Paris</span><span class="nome">Institut de France<small>Manuscritos A–M, os doze cadernos</small></span><a class="ir" href="https://www.institutdefrance.fr" rel="noopener">visitar ↗</a></div>
+    <div class="arquivo"><span class="cidade">Londres</span><span class="nome">British Library · Victoria &amp; Albert<small>Códice Arundel · Códices Forster</small></span><a class="ir" href="https://www.bl.uk" rel="noopener">visitar ↗</a></div>
+    <div class="arquivo"><span class="cidade">Windsor</span><span class="nome">Royal Collection Trust<small>os ≈ 600 desenhos, incluindo toda a anatomia</small></span><a class="ir" href="https://www.rct.uk" rel="noopener">visitar ↗</a></div>
+    <div class="arquivo"><span class="cidade">Madri</span><span class="nome">Biblioteca Nacional de España<small>Códices de Madri I e II, os redescobertos de 1965</small></span><a class="ir" href="https://www.bne.es" rel="noopener">visitar ↗</a></div>
+    <div class="arquivo"><span class="cidade">Turim</span><span class="nome">Biblioteca Reale<small>Códice sobre o Voo dos Pássaros — também integral no e-Leo</small></span><a class="ir" href="https://www.leonardodigitale.com/en/" rel="noopener">no e-Leo ↗</a></div>
+    <div class="arquivo"><span class="cidade">Seattle</span><span class="nome">Coleção de Bill Gates<small>Códice Leicester — viaja o mundo em exposições; sem sede pública fixa</small></span><span class="ir" style="color:var(--avorio-3)">itinerante</span></div>
+  </div>
+
+  <div class="nota-imagens">
+    <span class="tag">Sobre as imagens desta página</span>
+    Todas as pranchas e diagramas daqui são <strong>recriações autorais em traço vetorial</strong>, desenhadas para esta exposição a partir dos fólios citados — não são reproduções fotográficas. O ambiente onde este documento foi construído não tinha acesso de rede aos arquivos de imagem originais; felizmente, os fólios verdadeiros — incomparavelmente mais belos — estão a um clique nos acervos acima.
+  </div>
+</section>
+
+<footer class="rodape coluna">
+  <p class="motto">Hostinato rigore</p>
+  <p class="motto-trad">“Rigor obstinado” — o lema que ele escreveu sob o emblema do arado que abre a terra.</p>
+  <div class="citacao" style="text-align:left;max-width:640px;margin:44px auto 0">
+    <p class="ita" lang="it">“Sì come una giornata bene spesa dà lieto dormire, così una vita bene usata dà lieto morire.”</p>
+    <p class="quem">“Assim como um dia bem vivido dá um sono feliz, uma vida bem usada dá uma morte feliz.” — Códice Trivulziano, f. 27v</p>
+  </div>
+  <p class="fim">Uma exposição digital sobre os cadernos de Leonardo da Vinci · dez salas, zero dependências, HTML + CSS + JavaScript puros<br>Fontes e acervos na Sala X · As citações em italiano seguem a grafia corrente das edições dos códices</p>
+</footer>
+
+<script>
+"use strict";
+/* ================= Sala de entrada: o espelho do herói ================= */
+const palco = document.getElementById("palco-espelho");
+const btnEspelho = document.getElementById("btn-espelho");
+btnEspelho.addEventListener("click", () => {
+  const lido = palco.classList.toggle("lido");
+  btnEspelho.setAttribute("aria-pressed", String(lido));
+  btnEspelho.classList.toggle("ativo", lido);
+  btnEspelho.textContent = lido ? "Soltar o espelho" : "Segurar o espelho";
+});
+
+/* ================= Sala II: a máquina de escrita especular ================= */
+const entradaEspelho = document.getElementById("entrada-espelho");
+const tintaEspelho = document.getElementById("tinta-espelho");
+const maquinaEspelho = document.getElementById("maquina-espelho");
+const btnDesfazer = document.getElementById("btn-desfazer-espelho");
+entradaEspelho.addEventListener("input", () => {
+  tintaEspelho.textContent = entradaEspelho.value || "…";
+});
+btnDesfazer.addEventListener("click", () => {
+  const desfeita = maquinaEspelho.classList.toggle("desfeita");
+  btnDesfazer.setAttribute("aria-pressed", String(desfeita));
+  btnDesfazer.textContent = desfeita ? "Espelhar de novo" : "Virar o espelho";
+});
+
+/* ================= Sala III: os códices ================= */
+const CODICES = [
+  { sede:"Milão · Biblioteca Ambrosiana", nome:"Códice Atlântico", resumo:"O oceano: máquinas, matemática, arquitetura, fábulas e cartas — uma vida inteira em 1.119 fólios.",
+    onde:"Milão", folios:"1.119 fólios em 12 volumes", quando:"c. 1478–1519",
+    texto:"É o maior conjunto e o mais variado: máquinas de guerra e de paz, estudos de voo, geometria, urbanismo, o paraquedas e o rascunho da carta-currículo a Ludovico Sforza. O nome não vem do oceano — vem do formato «de atlas» das folhas grandes em que Pompeo Leoni colou os fragmentos que recortava dos cadernos originais.",
+    curio:"Napoleão levou-o a Paris em 1796 como troféu. Em 1815 a restituição foi ordenada — mas o enviado austríaco não reconheceu os cadernos menores como parte do lote, e só o Atlântico voltou a Milão. Os outros seguem em Paris até hoje." },
+  { sede:"Paris · Institut de France", nome:"Manuscritos A–M", resumo:"Os doze cadernos de trabalho, quase intactos como Leonardo os deixou.",
+    onde:"Paris", folios:"12 cadernos, ≈ 1.000 fólios", quando:"c. 1487–1515",
+    texto:"Os cadernos «de uso», cada um com sua letra: luz e sombra no C, voo no B e no E, água no F, óptica no D. O parafuso aéreo da Sala V vive no B. São dos poucos volumes que escaparam da tesoura de Leoni — cadernos de verdade, na ordem original das páginas.",
+    curio:"Nos anos 1840 o conde Guglielmo Libri — inspetor oficial das bibliotecas da França e ladrão compulsivo — arrancou dezenas de fólios e os vendeu na Inglaterra. Parte voltou em 1890, e até hoje há fólios numerados «Ashburnham», sobrenome do lorde que os comprara de boa-fé." },
+  { sede:"Londres · British Library", nome:"Códice Arundel", resumo:"A «coletânea sem ordem» — palavra do próprio autor.",
+    onde:"Londres", folios:"283 fólios", quando:"c. 1480–1518",
+    texto:"Mecânica, óptica, geometria, arquitetura de festas e o aparato de mergulho com respirador de canas e máscara — reunidos por colecionadores a partir de folhas soltas. Abre com a nota de 22 de março de 1508, em que Leonardo confessa a desordem e pede que a culpa não lhe seja imputada.",
+    curio:"É a única desculpa pública que ele deixou por escrito: sabia que os assuntos se repetiriam, porque «são muitas as folhas e eu não quero reescrevê-las». A British Library digitalizou o volume por inteiro." },
+  { sede:"Windsor · Royal Collection", nome:"Desenhos de Windsor", resumo:"600 folhas: toda a anatomia, os mapas e a série final dos Dilúvios.",
+    onde:"Castelo de Windsor", folios:"≈ 600 folhas", quando:"c. 1478–1518",
+    texto:"O outro álbum montado por Leoni: os grandes fólios anatômicos, os mapas da Toscana feitos para César Bórgia e os Dilúvios — a natureza em fúria, desenhada por um homem de mais de sessenta anos como quem encara o próprio fim. Ficaram praticamente inéditos até o fim do século XIX.",
+    curio:"Historiadores da medicina repetem a conta triste: se os fólios anatômicos tivessem sido publicados junto com o Vesálio de 1543, a anatomia teria pulado décadas — muito daquilo Leonardo desenhara trinta anos antes, e melhor." },
+  { sede:"Seattle · Coleção Bill Gates", nome:"Códice Leicester", resumo:"Água, fósseis e o brilho da lua — o único grande códice em mãos privadas.",
+    onde:"Seattle (itinerante)", folios:"36 folhas · 72 páginas", quando:"c. 1504–1508",
+    texto:"O mais próximo de um tratado acabado: rios e erosão, a Terra como corpo vivo, os fósseis das montanhas e a explicação da luz cinérea da Lua. Bill Gates o comprou em leilão em 1994 por US$ 30,8 milhões — à época, o preço mais alto já pago por um livro.",
+    curio:"Gates mandou digitalizá-lo, e as páginas viraram protetor de tela do Windows 95 Plus! — o códice mais doméstico da história. Desde então, viaja o mundo em exposições, uma cidade por ano." },
+  { sede:"Madri · Biblioteca Nacional de España", nome:"Códices de Madri I–II", resumo:"Perdidos por dois séculos dentro da própria biblioteca — reencontrados em 1965.",
+    onde:"Madri", folios:"197 + 157 fólios", quando:"c. 1490–1505",
+    texto:"Madri I é o mais perto que Leonardo chegou de um tratado de engenharia: engrenagens, molas, escapos e até rolamentos de esferas, desenhados peça a peça como um catálogo de elementos de máquina. Madri II mistura a fundição do colossal cavalo dos Sforza, notas da Batalha de Anghiari e a lista da sua biblioteca pessoal.",
+    curio:"Um erro de catalogação os fez «desaparecer» na Biblioteca Real por dois séculos; reapareceram em 1965, na maior descoberta leonardiana do século XX. E a lista de livros de Madri II derruba um mito: o «omo sanza lettere» possuía quase 120 volumes — de Euclides a poesia." },
+  { sede:"Londres · Victoria & Albert Museum", nome:"Códices Forster I–III", resumo:"Cadernos de bolso, para pensar andando.",
+    onde:"Londres", folios:"5 caderninhos em 3 volumes", quando:"c. 1487–1505",
+    texto:"Pequenos o bastante para viajar presos ao cinto: geometria das transformações («de trasformatione» — sólidos que mudam de forma sem mudar de volume), hidráulica, nós e entrelaçados, medidas do cavalo. O pensamento em formato de passeio.",
+    curio:"Chegaram ao museu pela herança de John Forster, amigo e biógrafo de Charles Dickens. A frase que abre esta exposição — «a sabedoria é filha da experiência» — vem do Forster III." },
+  { sede:"Milão · Castello Sforzesco", nome:"Códice Trivulziano", resumo:"Um gênio de 35 anos decorando latim como um menino de escola.",
+    onde:"Milão", folios:"51 fólios (de 62)", quando:"c. 1487–1490",
+    texto:"Listas e listas de palavras latinas copiadas à mão — o autodidata montando seu próprio dicionário à força bruta — entremeadas de caricaturas grotescas e estudos para o zimbório da catedral de Milão.",
+    curio:"É o retrato mais humano de todos: o maior observador da Europa, sem o latim das universidades, decorando vocabulário à noite porque a ciência do seu tempo falava uma língua que ninguém lhe ensinou. Dele vem também a frase do rodapé desta página." },
+  { sede:"Turim · Biblioteca Reale", nome:"Códice sobre o Voo dos Pássaros", resumo:"Dezoito fólios que terminaram em outro planeta.",
+    onde:"Turim", folios:"18 fólios", quando:"c. 1505",
+    texto:"O pequeno tratado do voo planado: centro de gravidade contra centro de pressão, o vento tratado como um rio, o pássaro descrito como «instrumento que opera por lei matemática» — e que o homem pode reconstruir. Na capa, a profecia: o «grande pássaro» levantará voo do monte Ceceri, «enchendo o universo de estupor».",
+    curio:"Em 2012, uma reprodução microscópica do códice viajou gravada num chip a bordo do rover Curiosity, da NASA. O caderno sobre o voo pousou em Marte — a máquina que o levou voava por leis que ele começou a escrever." },
+  { sede:"Dispersos · Perdidos", nome:"Os fantasmas", resumo:"A metade (ou mais) que a história deixou cair.",
+    onde:"—", folios:"desconhecidos", quando:"1470–1519",
+    texto:"Tratados da água, do cavalo e da pintura citados por Leonardo e por testemunhas; cadernos inteiros vistos pela última vez em inventários do século XVII. O «Tratado da Pintura» que formou gerações de artistas é uma compilação póstuma de Melzi — o Códice Urbinas, no Vaticano — destilada de dezoito manuscritos, vários dos quais hoje perdidos.",
+    curio:"De tempos em tempos um fantasma volta para casa: os dois códices de Madri reapareceram em 1965. Os estudiosos seguem de olho em sótãos, cofres e catálogos malfeitos da Europa — a próxima sala desta exposição pode ainda não ter sido escrita." }
+];
+const codici = document.getElementById("codici");
+codici.innerHTML = CODICES.map(c => `
+  <details class="folio codice">
+    <summary>
+      <span class="folio-canto" role="presentation"></span>
+      <div class="sede">${c.sede}</div>
+      <h3>${c.nome}</h3>
+      <p class="resumo">${c.resumo}</p>
+      <span class="abrir">abrir fólio +</span>
+    </summary>
+    <div class="codice-corpo">
+      <dl>
+        <dt>Onde</dt><dd>${c.onde}</dd>
+        <dt>Extensão</dt><dd>${c.folios}</dd>
+        <dt>Quando</dt><dd>${c.quando}</dd>
+      </dl>
+      <p>${c.texto}</p>
+      <div class="curiosita"><span class="tag">Quase ninguém conta</span><p>${c.curio}</p></div>
+    </div>
+  </details>`).join("");
+
+/* ================= Sala IV: a linha do tempo ================= */
+const TEMPO = [
+  { anno:"1452", leo:"Nasce a 15 de abril, perto de Vinci — filho ilegítimo do notário ser Piero e de Caterina. Sem direito à carreira do pai; com todo o tempo do mundo para olhar.", mondo:"1453: Constantinopla cai. c. 1455: Gutenberg termina sua Bíblia — começa a era do livro impresso, que encherá as estantes de Leonardo." },
+  { anno:"1469", leo:"Aprendiz na oficina de Verrocchio, em Florença: pintura, escultura, fundição, mecânica — a formação politécnica que substituiu a universidade que não teve.", mondo:"Lorenzo, o Magnífico, assume Florença. A cidade-oficina vira a capital do Renascimento." },
+  { anno:"1482", leo:"Parte para Milão levando uma lira de prata em forma de crânio de cavalo. No rascunho da carta a Ludovico Sforza, vende-se como engenheiro em dez itens — e só no décimo lembra que também pinta.", mondo:"Portugal desce a costa africana; a Europa aprende a navegar para longe. Engenharia militar é o emprego mais disputado da Itália." },
+  { anno:"1489", leo:"A série dos crânios inaugura sua anatomia; os cadernos sistemáticos começam a engordar — é a década do Trivulziano, do Ms B e da Dama com Arminho.", mondo:"1492: Colombo cruza o Atlântico. O mundo dobra de tamanho no meio da vida de Leonardo." },
+  { anno:"1495", leo:"Começa A Última Ceia no refeitório de Santa Maria delle Grazie, experimentando técnica nova — que começará a se degradar ainda em vida dele.", mondo:"1494: a França invade a Itália; Savonarola prega o apocalipse em Florença e queima as vaidades." },
+  { anno:"1499", leo:"Milão cai. Os arqueiros gascões usam o modelo de argila do colossal Cavallo como alvo de tiro. Leonardo parte com os cadernos na bagagem.", mondo:"Começam as guerras italianas que farão da península um tabuleiro de potências por meio século." },
+  { anno:"1502", leo:"Engenheiro militar de César Bórgia. Desenha o mapa de Ímola visto de cima — precisão que o mundo só reveria com fotografia aérea.", mondo:"Seu companheiro de viagem, um diplomata florentino chamado Nicolau Maquiavel, toma notas sobre o patrão de ambos." },
+  { anno:"1503", leo:"De volta a Florença: começa a Mona Lisa e a Batalha de Anghiari — no mesmo salão em que Michelangelo pintaria a parede oposta. O duelo nunca se completa.", mondo:"1504: o Davi é erguido na praça. Florença tem, ao mesmo tempo, os dois maiores artistas vivos — e eles não se suportam." },
+  { anno:"1505", leo:"Observa aves de rapina e escreve o Códice sobre o Voo dos Pássaros; sonha o voo a partir do monte Ceceri, perto de Fiesole.", mondo:"1507: num mapa alemão, o novo continente ganha um nome — América. Medir o mundo virou a tarefa do século." },
+  { anno:"1510", leo:"O grande inverno da anatomia: ao lado de Marcantonio della Torre, em Pávia, disseca cerca de vinte corpos e produz os fólios que valeriam um tratado.", mondo:"1508–12: Michelangelo pinta a Sistina; Rafael, as Stanze. Roma toma de Florença o centro do palco." },
+  { anno:"1513", leo:"Roma, hóspede do Belvedere. Acusado por um assistente, vê o papa restringir suas dissecações; volta-se para espelhos, geometria e os Dilúvios.", mondo:"Maquiavel escreve O Príncipe. 1517: Lutero afixa as 95 teses — o mundo de Leonardo começa a acabar." },
+  { anno:"1516", leo:"Aceita o convite de Francisco I e cruza os Alpes no lombo de uma mula, com a Mona Lisa e os cadernos na bagagem. Em Clos Lucé, é «primeiro pintor, engenheiro e arquiteto do rei» — pago para pensar.", mondo:"A França importa o Renascimento inteiro na pessoa de um homem de 64 anos." },
+  { anno:"1519", leo:"Morre a 2 de maio, em Amboise. No testamento, os cadernos — «todos os livros que possui e os instrumentos de sua arte» — passam a Francesco Melzi. A Sala I desta exposição começa aqui.", mondo:"Magalhães parte para dar a volta ao mundo; Cortés entra no México. O mundo que ele passou a vida medindo não parava de crescer." }
+];
+const faixa = document.getElementById("tempo-faixa");
+faixa.innerHTML = TEMPO.map(t => `
+  <article class="tempo-item">
+    <div class="anno">${t.anno}</div>
+    <div class="tempo-bloco leo"><span class="rotulo">Leonardo</span><p>${t.leo}</p></div>
+    <div class="tempo-bloco"><span class="rotulo">O mundo</span><p>${t.mondo}</p></div>
+  </article>`).join("");
+document.getElementById("tempo-ant").addEventListener("click", () => faixa.scrollBy({left:-300, behavior:"smooth"}));
+document.getElementById("tempo-prox").addEventListener("click", () => faixa.scrollBy({left:300, behavior:"smooth"}));
+
+/* ================= Sala V: abas e pontos das máquinas ================= */
+const ABAS = ["vite","para","carro","balestra"];
+ABAS.forEach(m => {
+  document.getElementById("aba-" + m).addEventListener("click", () => {
+    ABAS.forEach(o => {
+      document.getElementById("aba-" + o).setAttribute("aria-selected", String(o === m));
+      document.getElementById("painel-" + o).hidden = (o !== m);
+    });
+  });
+});
+const PONTOS = {
+  "vite-1":["Ponto 1 · A vela helicoidal","Linho engomado sobre armação de cana e arame, com raio de cerca de 4 braccia (≈ 2,4 m). Leonardo especifica que o pano deve ter os poros fechados com goma — ele já intuía que o ar escapa por tecido frouxo."],
+  "vite-2":["Ponto 2 · O mastro e a rosca","O eixo central é a «rosca macho»; o ar, comprimido sob a vela, faz de porca. A metáfora vem direto da oficina: Leonardo pensava máquinas inéditas com o vocabulário das prensas e dos parafusos que conhecia."],
+  "vite-3":["Ponto 3 · A plataforma dos homens","Quatro homens empurrariam as barras radiais para girar o conjunto. Aqui mora o erro fecundo: sem apoio externo, plataforma e vela girariam em sentidos opostos — o problema do torque de reação que todo helicóptero real resolve com o rotor de cauda."],
+  "para-1":["Ponto 1 · A pirâmide","Forma piramidal, não hemisférica: 12 braccia (≈ 7 m) por face e de altura. A geometria dá área de arrasto suficiente para um adulto — dimensionada sem o conceito formal de arrasto, só medindo a «resistência» do ar."],
+  "para-2":["Ponto 2 · O pano sem poros","«Pannolino stopato»: linho com os poros vedados. A permeabilidade do tecido era a variável que ele controlava — o mesmo cuidado reaparece na vela do parafuso aéreo."],
+  "para-3":["Ponto 3 · O homem pendurado","O tripulante segura-se por cordas nos quatro cantos, sem arnês. No teste de 2000, Adrian Nicholas acrescentou apenas o arnês — e, perto do chão, separou-se da réplica de mais de 80 kg para pousar com um paraquedas moderno, sem que ela caísse sobre ele."],
+  "carro-1":["Ponto 1 · As molas de lâmina","A energia não vem de tração animal, mas de molas espirais enroladas — um brinquedo de corda em escala real. É a mesma lógica de acumular energia elástica dos relógios portáteis e dos autômatos dos séculos seguintes."],
+  "carro-2":["Ponto 2 · O escapo e as engrenagens","Engrenagens dentadas regulam a liberação da energia, como o escapo de um relógio. Sem elas, a mola descarregaria de uma vez: o carro saltaria um metro e pararia."],
+  "carro-3":["Ponto 3 · Os cames programáveis","Pinos e blocos reposicionáveis definem quando e quanto o carro vira. Programar comportamento com peças intercambiáveis é o que os teares e cartões perfurados fariam 300 anos depois — daí o apelido de «primeiro robô»."],
+  "balestra-1":["Ponto 1 · O arco laminado","Em vez de uma peça única de madeira — impossível nessa escala — lâminas sobrepostas e articuladas distribuem a tensão. O mesmo princípio do feixe de molas de um caminhão."],
+  "balestra-2":["Ponto 2 · O parafuso de armar","Um mecanismo de parafuso retesa a corda com força multiplicada: um homem sozinho arma uma besta de toneladas. O disparo se solta com um golpe de martelo no pino."],
+  "balestra-3":["Ponto 3 · O homem de escala","O soldado minúsculo ao lado da máquina não é enfeite: é a barra de escala do desenho técnico, posta ali para o príncipe leitor sentir o tamanho do monstro que estava comprando."]
+};
+document.querySelectorAll(".prancheta").forEach(pr => {
+  pr.addEventListener("click", ev => {
+    const b = ev.target.closest(".ponto");
+    if (!b) return;
+    const alvo = b.dataset.alvo, maq = alvo.split("-")[0], dado = PONTOS[alvo];
+    pr.querySelectorAll(".ponto").forEach(p => p.setAttribute("aria-pressed", String(p === b)));
+    document.getElementById("detalhe-" + maq + "-t").textContent = dado[0];
+    document.getElementById("detalhe-" + maq + "-p").textContent = dado[1];
+  });
+});
+
+/* ================= Sala VI: antecipações ================= */
+const ANTECIPA = [
+  { t:"As leis do atrito", c:"A resistência dobra quando o peso dobra e não depende da área de contato — medido com blocos, cordas e planos inclinados (Códice Arundel, Madri I, a partir de 1493). O mundo redescobre com Guillaume Amontons, 1699.", s:"≈ 200", u:"anos à frente" },
+  { t:"A turbulência", c:"Esteiras de redemoinhos desenhadas atrás de pilares e quedas d’água — e batizadas por ele de «turbolenza». O estudo sistemático começa com Osborne Reynolds, 1883.", s:"≈ 370", u:"anos à frente" },
+  { t:"A leitura das rochas", c:"Conchas fósseis em camadas, aos pares, no alto dos montes: fundo de mar antigo soerguido — não sobras do Dilúvio (Códice Leicester). Nicolau Steno funda a estratigrafia em 1669.", s:"≈ 160", u:"anos à frente" },
+  { t:"A luz cinérea da Lua", c:"O clarão pálido no lado escuro da lua nova é a luz do Sol devolvida pela Terra (Códice Leicester). A explicação só sai impressa com Kepler e Mästlin, 1604.", s:"≈ 100", u:"anos à frente" },
+  { t:"A regra das árvores", c:"«Todos os ramos, somados, conservam a grossura do tronco»: a área da seção se preserva a cada altura. A «regra de Leonardo» só ganhou explicação biomecânica em modelos publicados em 2011.", s:"≈ 500", u:"anos à frente" },
+  { t:"O redemoinho que fecha o coração", c:"Vórtices no seio de Valsalva fecham a válvula aórtica — visto num modelo de vidro com sementes de capim (fólios de Windsor). Confirmado in vitro em 1968 e por ressonância cardíaca décadas depois.", s:"≈ 450", u:"anos à frente" }
+];
+document.getElementById("antecipa").innerHTML = ANTECIPA.map(a => `
+  <div class="antecipa-linha">
+    <h3>${a.t}</h3>
+    <p class="como">${a.c}</p>
+    <div class="salto">${a.s}<small>${a.u}</small></div>
+  </div>`).join("");
+
+/* ================= Sala VI: o tanque de vórtices ================= */
+(() => {
+  const cv = document.getElementById("tanque-canvas");
+  const cx = cv.getContext("2d");
+  const W = cv.width, H = cv.height;
+  const PAPEL = "#e6d7b2";
+  const pilarX = W * 0.28, pilarY = H * 0.5, R = 34;
+  const reduzir = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function campo(x, y, t, toque) {
+    // corrente base + desvio ao redor do pilar + esteira oscilante + toque do visitante
+    let u = 66, v = 0;
+    const dx = x - pilarX, dy = y - pilarY, d2 = dx * dx + dy * dy;
+    if (d2 < (R + 60) * (R + 60)) {
+      const d = Math.sqrt(d2) || 1, f = (R + 60 - d) * 2.4;
+      u += (dx / d) * f; v += (dy / d) * f;
+    }
+    if (x > pilarX) {
+      const decai = Math.exp(-Math.pow((y - pilarY) / 95, 2)) * Math.min(1, (x - pilarX) / 120);
+      v += Math.sin((x - pilarX) * 0.045 - t * 2.6) * 46 * decai;
+    }
+    if (toque.vivo > 0) {
+      const tx = x - toque.x, ty = y - toque.y, td2 = tx * tx + ty * ty;
+      if (td2 < 130 * 130) {
+        const td = Math.sqrt(td2) || 1, g = (1 - td / 130) * 220 * toque.vivo;
+        u += (-ty / td) * g; v += (tx / td) * g;
+      }
+    }
+    return [u, v];
+  }
+
+  function desenhaPilar() {
+    cx.strokeStyle = "rgba(64,49,28,.85)";
+    cx.lineWidth = 2.5;
+    cx.beginPath(); cx.arc(pilarX, pilarY, R, 0, Math.PI * 2); cx.stroke();
+    cx.strokeStyle = "rgba(64,49,28,.3)";
+    cx.lineWidth = 1;
+    cx.beginPath(); cx.arc(pilarX, pilarY, R - 7, 0, Math.PI * 2); cx.stroke();
+    cx.fillStyle = "rgba(64,49,28,.66)";
+    cx.font = "15px 'La Belle Aurore', cursive";
+    cx.fillText("il pilastro", pilarX - 30, pilarY - R - 12);
+  }
+
+  if (reduzir) {
+    // versão em repouso: linhas de corrente estáticas
+    cx.fillStyle = PAPEL; cx.fillRect(0, 0, W, H);
+    cx.strokeStyle = "rgba(64,49,28,.5)"; cx.lineWidth = 1.2;
+    const nada = { vivo: 0, x: 0, y: 0 };
+    for (let l = 0; l < 26; l++) {
+      let x = 4, y = (H / 27) * (l + 1);
+      cx.beginPath(); cx.moveTo(x, y);
+      for (let s = 0; s < 220; s++) {
+        const [u, v] = campo(x, y, 1.3, nada);
+        x += u * 0.016; y += v * 0.016;
+        if (x > W - 4) break;
+        cx.lineTo(x, y);
+      }
+      cx.stroke();
+    }
+    desenhaPilar();
+    return;
+  }
+
+  const N = 460;
+  const parts = Array.from({ length: N }, () => ({
+    x: Math.random() * W, y: Math.random() * H, px: 0, py: 0, vida: Math.random() * 240
+  }));
+  const toque = { x: 0, y: 0, vivo: 0 };
+  cv.addEventListener("pointermove", ev => {
+    const r = cv.getBoundingClientRect();
+    toque.x = (ev.clientX - r.left) * (W / r.width);
+    toque.y = (ev.clientY - r.top) * (H / r.height);
+    toque.vivo = 1;
+  });
+  cv.addEventListener("pointerleave", () => { toque.vivo = 0; });
+
+  cx.fillStyle = PAPEL; cx.fillRect(0, 0, W, H);
+  let t0 = performance.now();
+  function quadro(tn) {
+    const t = tn / 1000, dt = Math.min(0.05, (tn - t0) / 1000); t0 = tn;
+    cx.fillStyle = "rgba(230,215,178,.16)"; cx.fillRect(0, 0, W, H);
+    toque.vivo = Math.max(0, toque.vivo - dt * 1.4);
+    cx.lineWidth = 1.1;
+    for (const p of parts) {
+      p.px = p.x; p.py = p.y;
+      const [u, v] = campo(p.x, p.y, t, toque);
+      p.x += u * dt; p.y += v * dt; p.vida -= 1;
+      const fora = p.x > W + 4 || p.y < -4 || p.y > H + 4 || p.vida < 0 ||
+        ((p.x - pilarX) ** 2 + (p.y - pilarY) ** 2) < R * R;
+      if (fora) {
+        p.x = Math.random() * 30; p.y = Math.random() * H;
+        p.px = p.x; p.py = p.y; p.vida = 160 + Math.random() * 240;
+        continue;
+      }
+      const vel = Math.min(1, Math.hypot(u, v) / 190);
+      cx.strokeStyle = `rgba(64,49,28,${0.16 + vel * 0.4})`;
+      cx.beginPath(); cx.moveTo(p.px, p.py); cx.lineTo(p.x, p.y); cx.stroke();
+    }
+    desenhaPilar();
+    requestAnimationFrame(quadro);
+  }
+  requestAnimationFrame(quadro);
+})();
+
+/* ================= Sala VIII: a lista ================= */
+const tarefas = document.querySelectorAll("#tarefas input");
+const listaConta = document.getElementById("lista-conta");
+tarefas.forEach(t => t.addEventListener("change", () => {
+  const n = [...tarefas].filter(x => x.checked).length;
+  listaConta.textContent = n === 0
+    ? "0 de 12 investigadas — Leonardo também deixou quase todas em aberto"
+    : n === 12
+      ? "12 de 12 — nem ele chegou lá; a lista era um horizonte, não um contrato"
+      : `${n} de 12 investigadas — Leonardo também deixou quase todas em aberto`;
+}));
+
+/* ================= Sala IX: as profecias ================= */
+document.querySelectorAll(".profezia").forEach(card => {
+  const certa = Number(card.dataset.certa);
+  const opcoes = card.querySelectorAll(".opcao");
+  const solucao = card.querySelector(".solucao");
+  opcoes.forEach((op, i) => op.addEventListener("click", () => {
+    opcoes.forEach((o, j) => {
+      o.disabled = true;
+      o.classList.toggle("certa", j === certa);
+      if (j !== certa) o.classList.add("errada");
+    });
+    solucao.innerHTML = (i === certa ? "<b>Acertou.</b> " : "<b>Quase.</b> ") + solucao.dataset.texto;
+  }));
+});
+</script>
+</body>
+</html>
