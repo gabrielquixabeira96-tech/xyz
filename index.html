@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Segundonas 2026/27</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
+<style>
+:root{
+  color-scheme: dark;
+  --carvao:#0E0D0B;
+  --petroleo:#1C2A2E;
+  --veludo:#1F3A44;
+  --latao:#B08D57;
+  --latao-fraco:rgba(176,141,87,.38);
+  --latao-tenue:rgba(176,141,87,.18);
+  --ambar:#E2B66E;
+  --ambar-luz:rgba(226,182,110,.10);
+  --marfim:#EDE6D6;
+  --gelo:#F4F1EA;
+  --gelo-2:rgba(244,241,234,.74);
+  --gelo-3:rgba(244,241,234,.54);
+  --cartao:rgba(14,13,11,.62);
+  --cartao-hover:rgba(20,22,21,.74);
+  --couro:#5B3620;
+  --couro-claro:#6E4428;
+  --grao:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --serif-titulo:"Cormorant Garamond","EB Garamond",Garamond,"Times New Roman",serif;
+  --serif-corpo:"EB Garamond",Garamond,"Georgia","Times New Roman",serif;
+}
+*,*::before,*::after{box-sizing:border-box;border-radius:0;border:0}
+.search input{-webkit-appearance:none;appearance:none}
+[hidden]{display:none!important}
+html{background:var(--carvao)}
+body{
+  margin:0;
+  min-height:100vh;
+  background-color:var(--carvao);
+  background-image:
+    radial-gradient(ellipse 70% 42% at 22% 0%, var(--ambar-luz), transparent 70%),
+    radial-gradient(ellipse 60% 50% at 100% 100%, rgba(31,58,68,.35), transparent 70%),
+    linear-gradient(180deg, var(--carvao) 0%, #141a1b 45%, var(--petroleo) 100%);
+  background-attachment:scroll;
+  color:var(--gelo);
+  font-family:var(--serif-corpo);
+  font-size:17px;
+  line-height:1.55;
+  padding-top:clamp(20px,4vw,40px);
+  padding-bottom:clamp(40px,6vw,72px);
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;background-image:var(--grao);opacity:.3;mix-blend-mode:overlay;z-index:0}
+.wrap{position:relative;z-index:1;max-width:1240px;margin-inline:auto}
+.lbl,.kicker,.ord,.btn,.next-link .k,.search label,.notice .lbl{
+  text-transform:uppercase;letter-spacing:.26em;font-family:var(--serif-corpo);font-weight:500;
+}
+/* Faixa decorativa (grega) — só no topo e acima do rodapé */
+.ornament{height:12px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='12' viewBox='0 0 16 12'%3E%3Cpath d='M0 11.5H12.5V.5H3.5V8.5H9.5V4.5H6.5M12.5 11.5H16' fill='none' stroke='%23B08D57' stroke-opacity='.35' stroke-width='1'/%3E%3C/svg%3E");background-repeat:repeat-x;background-position:left center;background-size:16px 12px}
+/* Hero editorial */
+header.top{padding-top:clamp(56px,9vw,128px);margin-bottom:clamp(72px,10vw,132px)}
+.kicker{color:var(--ambar);font-size:.7rem;margin:0 0 clamp(20px,3vw,32px)}
+h1{font-family:var(--serif-titulo);font-weight:300;font-size:clamp(2.75rem,8.2vw,5.5rem);line-height:1.02;margin:0 0 clamp(22px,3vw,34px);letter-spacing:-.005em;color:var(--gelo);text-wrap:balance}
+h1 em{font-style:italic;font-weight:300;color:var(--ambar)}
+.inst{color:var(--gelo-3);font-size:.95rem;margin:0;max-width:64ch;font-style:italic}
+.facts{display:flex;flex-wrap:wrap;gap:6px 0;margin:16px 0 0;padding:0;list-style:none;color:var(--gelo-2);font-size:.95rem}
+.facts li+li::before{content:"·";color:var(--latao);margin:0 14px}
+/* Nota editorial + destaque + filtro */
+.tools{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(40px,7vw,112px);align-items:start;margin-bottom:clamp(88px,11vw,140px)}
+.notice{max-width:60ch}
+.notice .lbl{color:var(--ambar);font-size:.66rem;display:block;margin-bottom:16px}
+.notice ul{margin:0;padding:0;list-style:none;color:var(--gelo-2);font-size:1.02rem;font-style:italic;line-height:1.6}
+.notice li{margin:0 0 8px;padding-left:1.5em;text-indent:-1.5em}
+.notice li::before{content:"—";color:var(--latao);margin-right:.6em;font-style:normal}
+.side{display:flex;flex-direction:column;gap:clamp(40px,5vw,56px)}
+.next-link{display:block;text-decoration:none;color:var(--gelo);transition:color .4s ease}
+.next-link .k{display:block;color:var(--ambar);font-size:.66rem;margin-bottom:14px}
+.next-link .t{font-family:var(--serif-titulo);font-style:italic;font-weight:400;font-size:clamp(1.45rem,2.4vw,1.85rem);line-height:1.22}
+.next-link .t::after{content:"\2192";font-style:normal;color:var(--ambar);margin-left:.45em;transition:opacity .4s ease;opacity:.85}
+.next-link:hover,.next-link:focus-visible{color:var(--marfim);outline:none}
+.next-link:hover .t::after,.next-link:focus-visible .t::after{opacity:1}
+.next-link:focus-visible .t{text-decoration:underline;text-decoration-color:var(--latao-fraco);text-underline-offset:6px}
+.search label{display:block;color:var(--ambar);font-size:.66rem;margin-bottom:12px}
+.search input{width:100%;font:inherit;font-size:1.05rem;font-style:italic;color:var(--gelo);background:rgba(244,241,234,.045);padding:14px 16px;outline:none;transition:background-color .4s ease}
+.search input:not(:placeholder-shown){font-style:normal}
+.search input::placeholder{color:var(--gelo-3);font-style:italic}
+.search input:hover{background:rgba(244,241,234,.06)}
+.search input:focus{background:rgba(244,241,234,.085)}
+/* Meses */
+.month{margin-bottom:clamp(88px,11vw,140px)}
+h2{font-family:var(--serif-titulo);font-weight:400;font-size:clamp(1.9rem,3.6vw,2.6rem);line-height:1.1;color:var(--gelo-2);margin:0 0 clamp(32px,4.5vw,56px);letter-spacing:0}
+h2 em{font-style:italic;color:var(--gelo)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(56px,6vw,80px) clamp(28px,3.6vw,48px)}
+/* Cartões — imagem protagonista, texto sobre o fundo da página */
+.card{position:relative;display:flex;flex-direction:column;background:transparent;transition:opacity .6s ease,transform .6s ease}
+.thumb{margin:0;aspect-ratio:16/9;overflow:hidden;background:#0b0b0a;box-shadow:0 24px 48px -28px rgba(0,0,0,.85)}
+.thumb img{display:block;width:100%;height:100%;object-fit:cover;filter:brightness(.92);transition:filter .6s ease}
+.card:hover .thumb img{filter:brightness(1.02)}
+.body{display:flex;flex-direction:column;flex:1;padding:22px 0 0}
+.ord{display:flex;flex-wrap:wrap;align-items:center;gap:6px 0;margin:0 0 12px;color:var(--ambar);font-size:.64rem}
+.ord .tdate{color:var(--gelo-3)}
+.ord .tdate::before{content:"·";margin:0 .7em;color:var(--latao)}
+.flag{margin-left:auto;color:var(--gelo);background-color:var(--couro);background-image:var(--grao);background-blend-mode:overlay;padding:3px 9px;font-size:.58rem;letter-spacing:.24em}
+.flag.past{color:var(--gelo-3);background-color:rgba(14,13,11,.6)}
+h3{font-family:var(--serif-titulo);font-weight:400;font-size:clamp(1.55rem,2.1vw,1.85rem);line-height:1.14;margin:0 0 10px;color:var(--gelo);text-wrap:balance}
+.sub{margin:0 0 8px;color:var(--gelo-2);font-style:italic;font-size:1rem}
+.credit{margin:4px 0 0;color:var(--gelo-2);font-size:1rem;line-height:1.5}
+.credit .nm{color:var(--gelo)}
+.credit .niv{color:var(--gelo-3);font-size:.9rem;white-space:nowrap}
+.credit .ori{font-style:italic}
+.meta{margin:12px 0 0;color:var(--gelo-3);font-size:.9rem;font-variant-numeric:oldstyle-nums}
+.conf{margin:8px 0 0;color:var(--gelo-3);font-size:.86rem;font-style:italic;line-height:1.45}
+.conf .lbl{color:var(--latao);text-transform:none;letter-spacing:0;font-weight:400;font-size:inherit;margin-right:.25em}
+.dl{margin-top:auto;padding-top:20px}
+.btn{display:inline-flex;align-items:center;gap:10px;font-size:.62rem;letter-spacing:.24em;color:var(--gelo);background-color:var(--couro);background-image:var(--grao),radial-gradient(ellipse 120% 140% at 30% 20%, rgba(255,220,180,.10), transparent 60%);background-blend-mode:overlay,normal;padding:9px 14px;cursor:pointer;transition:background-color .3s ease,color .3s ease}
+.btn .size{color:rgba(244,241,234,.6);letter-spacing:.1em;text-transform:none;font-size:.76rem}
+.btn:hover,.btn:focus-visible{background-color:var(--couro-claro);color:var(--gelo);outline:none}
+.btn:focus-visible{box-shadow:0 0 0 2px var(--carvao),0 0 0 3px var(--latao-fraco)}
+.btn[disabled]{cursor:progress;opacity:.7}
+.dlrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn-pptx{text-decoration:none;text-transform:uppercase}
+.btn-pdf{background:transparent;background-image:none;border:1px solid var(--latao-fraco);color:var(--gelo-2)}
+.btn-pdf:hover,.btn-pdf:focus-visible{background:transparent;border-color:var(--ambar);color:var(--gelo)}
+.status{margin:8px 0 0;min-height:1em;color:var(--gelo-3);font-size:.86rem;font-style:italic}
+.status:empty{display:none}
+.pdfnote{margin:8px 0 0;color:var(--gelo-3);font-size:.8rem;font-style:italic;line-height:1.45;opacity:.85}
+.card.is-next .thumb{box-shadow:0 34px 70px -30px rgba(226,182,110,.32)}
+.card.is-next .thumb img{filter:brightness(1)}
+.card.is-past{opacity:.72}
+.card.is-past:hover{opacity:1}
+.empty{color:var(--gelo-3);font-style:italic;text-align:center;padding:40px 0}
+.foot-ornament{margin-top:clamp(24px,4vw,40px)}
+footer{padding-top:24px;color:var(--gelo-3);font-size:.85rem;text-align:center;font-style:italic}
+.js .card.pre{opacity:0;transform:translateY(6px)}
+@media (max-width:1024px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  .tools{grid-template-columns:minmax(0,1fr)}
+  .side{order:-1}
+  .facts{flex-direction:column;gap:2px}
+  .facts li+li::before{display:none}
+}
+@media (max-width:640px){
+  .grid{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:420px){
+  body{font-size:16px}
+  h3{font-size:1.5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .js .card.pre{opacity:1;transform:none}
+}
+</style>
+
+
+</head>
+<body>
+<div class="wrap">
+  <div class="ornament" aria-hidden="true"></div>
+  <header class="top">
+    <p class="kicker">Centro de Estudos Dr. Cervantes Caporossi · Cuiabá-MT</p>
+    <h1>As <em>Segundonas</em> de 2026/27</h1>
+    <p class="inst">PRM em Cirurgia Geral do Hospital Santa Rosa · PRM em Cirurgia Geral do HGU · Serviço de Cirurgia Geral do Hospital Santa Helena · Secretaria Municipal de Saúde</p>
+    <ul class="facts">
+      <li>13 aulas, da 34ª à 46ª</li>
+      <li>9 de novembro de 2026 a 15 de fevereiro de 2027</li>
+      <li>Às segundas-feiras</li>
+    </ul>
+  </header>
+
+  <div class="tools">
+    <aside class="notice" aria-label="Avisos">
+      <span class="lbl">Antes de projetar</span>
+      <ul>
+        <li>Para projetar, baixe o .pptx e abra no PowerPoint (Windows ou Mac): é nele que estão as transições Morph e as animações.</li>
+        <li>Fontes usadas: Garamond e Gill Sans MT, que já vêm com o Office.</li>
+        <li>Confira cada arquivo uma vez, no computador da projeção, antes da aula.</li>
+        <li>O PDF desta página é só para consulta e pode mostrar fontes substitutas.</li>
+      </ul>
+    </aside>
+    <div class="side">
+      <a class="next-link" id="next-link" href="#" hidden><span class="k">Próxima aula</span><span class="t"></span></a>
+      <div class="search">
+        <label for="filtro">Filtrar</label>
+        <input id="filtro" type="search" placeholder="Tema, apresentador ou orientador" autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+  </div>
+
+  <main id="lista">
+
+<section class="month" data-month="2026-11">
+  <h2><em>Novembro</em> de 2026</h2>
+  <div class="grid">
+<article class="card" id="s34" data-date="2026-11-09" data-search="34 tumores da região periampular e duodenal: diagnóstico e manejo cirúrgico  milena coelho dr. cervantes caporossi ampuloscopia eus ercp mrcp adenoma carcinoma ampulectomia whipple duodenopancreatectomia 9 de novembro de 2026">
+  <figure class="thumb"><img src="thumbs/34.jpg" width="640" height="360" alt="Capa da 34ª Segundona: Tumores da Região Periampular e Duodenal: Diagnóstico e Manejo Cirúrgico" loading="lazy" decoding="async"></figure>
+  <div class="body">
+    <p class="ord"><span>34ª Segundona</span><span class="tdate"><time datetime="2026-11-09">9 de novembro</time></span><span class="flag" hidden></span></p>
+    <h3>Tumores da Região Periampular e Duodenal: Diagnóstico e Manejo Cirúrgico</h3>
+    
+    <p class="credit"><span class="nm">Milena Coelho</span>, <span class="niv">R1 · HSR</span> <span class="ori">— orientação de</span> <span class="nm">Dr. Cervantes Caporossi</span></p>
+    <p class="meta">40 slides · ~27 min de fala</p>
+    
+    <div class="dl">
+      <div class="dlrow"><a class="btn btn-pptx" href="pptx/Segundona_34_Periampular.pptx" download>Baixar .pptx <span class="size">· 5,5 MB</span></a><a class="btn btn-pdf" href="pdf/Segundona_34_Periampular.pdf" download>PDF <span class="size">· 2,5 MB</span></a></div>
+      <p class="status" role="status" aria-live="polite"></p>
+      <p class="pdfnote">O .pptx tem as transições e animações: é o arquivo para projetar. O PDF serve só para consulta.</p>
+    </div>
+  </div>
+</article>
+<article class="card" id="s35" data-date="2026-11-16" data-search="35 cirurgia endócrina: hiperparatireoidismo primário  melissa ramos santos paes dra. bianca faria oliveira paratireoide pth intraoperatório miami paratireoidectomia 16 de novembro de 2026">
+  <figure class="thumb"><img src="thumbs/35.jpg" width="640" height="360" alt="Capa da 35ª Segundona: Cirurgia Endócrina: Hiperparatireoidismo Primário" loading="lazy" decoding="async"></figure>
+  <div class="body">
+    <p class="ord"><span>35ª Segundona</span><span class="tdate"><time datetime="2026-11-16">16 de novembro</time></span><span class="flag" hidden></span></p>
+    <h3>Cirurgia Endócrina: Hiperparatireoidismo Primário</h3>
+    
+    <p class="credit"><span class="nm">Melissa Ramos Santos Paes</span> <span class="ori">— orientação de</span> <span class="nm">Dra. Bianca Faria Oliveira</span></p>
+    <p class="meta">44 slides · ~27 min de fala</p>
+    <p class="conf"><span class="lbl">Conferir antes</span> Perguntas-bússola agora literais, como na programação.</p>
+    <div class="dl">
+      <div class="dlrow"><a class="btn btn-pptx" href="pptx/Segundona_35_Hiperparatireoidismo_Primario.pptx" download>Baixar .pptx <span class="size">· 7,3 MB</span></a><a class="btn btn-pdf" href="pdf/Segundona_35_Hiperparatireoidismo_Primario.pdf" download>PDF <span class="size">· 2,9 MB</span></a></div>
+      <p class="status" role="status" aria-live="polite"></p>
+      <p class="pdfnote">O .pptx tem as transições e animações: é o arquivo para projetar. O PDF serve só para consulta.</p>
+    </div>
+  </div>
+</article>
+<article class="card" id="s36" data-date="2026-11-23" data-search="36 trauma esplênico: manejo não operatório, angioembolização e indicação de esplenectomia  julia turra dr. renan mancio baço trauma angioembolização esplenectomia 23 de novembro de 2026">
+  <figure class="thumb"><img src="thumbs/36.jpg" width="640" height="360" alt="Capa da 36ª Segundona: Trauma Esplênico: Manejo Não Operatório, Angioembolização e Indicação de Esplenectomia" loading="lazy" decoding="async"></figure>
+  <div class="body">
+    <p class="ord"><span>36ª Segundona</span><span class="tdate"><time datetime="2026-11-23">23 de novembro</time></span><span class="flag" hidden></span></p>
+    <h3>Trauma Esplênico: Manejo Não Operatório, Angioembolização e Indicação de Esplenectomia</h3>
+    
+    <p class="credit"><span class="nm">Julia Turra</span>, <span class="niv">R1 · HSR</span> <span class="ori">— orientação de</span> <span class="nm">Dr. Renan Mancio</span></p>
+    <p class="meta">42 slides · ~29 min de fala</p>
+    <p class="conf"><span class="lbl">Conferir antes</span> Técnica de esplenectomia: confirmar com o orientador.</p>
+    <div class="dl">
+      <div class="dlrow"><a class="btn btn-pptx" href="pptx/Segundona_36_Trauma_Esplenico.pptx" download>Baixar .pptx <span class="size">· 5,5 MB</span></a><a class="btn btn-pdf" href="pdf/Segundona_36_Trauma_Esplenico.pdf" download>PDF <span class="size">· 2,9 MB</span></a></div>
+      <p class="status" role="status" aria-live="polite"></p>
+      <p class="pdfnote">O .pptx tem as transições e animações: é o arquivo para projetar. O PDF serve só para consulta.</p>
+    </div>
+  </div>
+</article>
+<article class="card" id="s37" data-date="2026-11-30" data-search="37 hérnias incisionais e ventrais: prevenção, técnicas de reparo e telas  davi rabelo misukami dr. josé carlos costa marques hérnia incisional ventral tela retromuscular 30 de novembro de 2026">
+  <figure class="thumb"><img src="thumbs/37.jpg" width="640" height="360" alt="Capa da 37ª Segundona: Hérnias Incisionais e Ventrais: Prevenção, Técnicas de Reparo e Telas" loading="lazy" decoding="async"></figure>
+  <div class="body">
+    <p class="ord"><span>37ª Segundona</span><span class="tdate"><time datetime="2026-11-30">30 de novembro</time></span><span class="flag" hidden></span></p>
+    <h3>Hérnias Incisionais e Ventrais: Prevenção, Técnicas de Reparo e Telas</h3>
+    
+    <p class="credit"><span class="nm">Davi Rabelo Misukami</span>, <span class="niv">R2 · HGU</span> <span class="ori">— orientação de</span> <span class="nm">Dr. José Carlos Costa Marques</span></p>
+    <p class="meta">42 slides · ~29 min de fala</p>
+    
+    <div class="dl">
+      <div class="dlrow"><a class="btn btn-pptx" href="pptx/Segundona_37_Hernias_Incisionais.pptx" download>Baixar .pptx <span class="size">· 7,4 MB</span></a><a class="btn btn-pdf" href="pdf/Segundona_37_Hernias_Incisionais.pdf" download>PDF <span class="size">· 3,7 MB</span></a></div>
+      <p class="status" role="status" aria-live="polite"></p>
+      <p class="pdfnote">O .pptx tem as transições e animações: é o arquivo para projetar. O PDF serve só para consulta.</p>
+    </div>
+  </div>
+</article>
+  </div>
+</section>
+<section class="month" data-month="2026-12">
+  <h2><em>Dezembro</em> de 2026</h2>
+  <div class="grid">
+<article class="card" id="s38" data-date="2026-12-07" data-search="38 cirurgia bariátrica e metabólica: indicações atuais, técnica e seguimento  bianca curvo dr. marcondes costa marques bariátrica metabólica bypass gastrectomia vertical sleeve obesidade 7 de dezembro de 2026">
+  <figure class="thumb"><img src="thumbs/38.jpg" width="640" height="360" alt="Capa da 38ª Segundona: Cirurgia Bariátrica e Metabólica: Indicações Atuais, Técnica e Seguimento" loading="lazy" decoding="async"></figure>
+  <div class="body">
+    <p class="ord"><span>38ª Segundona</span><span class="tdate"><time datetime="2026-12-07">7 de dezembro</time></span><span class="flag" hidden></span></p>
+    <h3>Cirurgia Bariátrica e Metabólica: Indicações Atuais, Técnica e Seguimento</h3>
+    
+    <p class="credit"><span class="nm">Bianca Curvo</span>, <span class="niv">R1 · HSR</span> <span class="ori">— orientação de</span> <span class="nm">Dr. Marcondes Costa Marques</span></p>
+    <p class="meta">42 slides · ~29 min de fala</p>
+    <p class="conf"><span class="lbl">Conferir antes</span> Pranchas do bypass e uma endoscopia ficam pequenas na projeção (figuras originais de baixa resolução).</p>
+    <div class="dl">
+      <div class="dlrow"><a class="btn btn-pptx" href="pptx/Segundona_38_Cirurgia_Bariatrica.pptx" download>Baixar .pptx <span class="size">· 5,4 MB</span></a><a class="btn btn-pdf" href="pdf/Segundona_38_Cirurgia_Bariatrica.pdf" download>PDF <span class="size">· 2,4 MB</span></a></div>
+      <p class="status" role="status" aria-live="polite"></p>
+      <p class="pdfnote">O .pptx tem as transições e animações: é o arquivo para projetar. O PDF serve só para consulta.</p>
+    </div>
+  </div>
+</article>
+<article class="card" id="s39" data-date="2026-12-14" data-search="39 complicações pós-operatórias: fístula anastomótica e deiscência  vinicius ribeiro paes de barros dr. mykhael maddi fístula deiscência anastomose terapia endoscópica a vácuo 14 de dezembro de 2026">
+  <figure class="thumb"><img src="thumbs/39.jpg" width="640" height="360" alt="Capa da 39ª Segundona: Complicações Pós-Operatórias: Fístula Anastomótica e Deiscência" loading="lazy" decoding="async"></figure>
+  <div class="body">
+    <p class="ord"><span>39ª Segundona</span><span class="tdate"><time datetime="2026-12-14">14 de dezembro</time></span><span class="flag" hidden></span></p>
+    <h3>Complicações Pós-Operatórias: Fístula Anastomótica e Deiscência</h3>
+    
+    <p class="credit"><span class="nm">Vinicius Ribeiro Paes de Barros</span>, <span class="niv">R2 · HGU</span> <span class="ori">— orientação de</span> <span class="nm">Dr. Mykhael Maddi</span></p>
+    <p class="meta">42 slides · ~27 min de fala</p>
+    <p class="conf"><span class="lbl">Conferir antes</span> Dois marcadores postos pela aparência da imagem (“abscesso pré-sacral” e “dreno transanal”).</p>
+    <div class="dl">
+      <div class="dlrow"><a class="btn btn-pptx" href="pptx/Segundona_39_Fistula_Anastomotica.pptx" download>Baixar .pptx <span class="size">· 4,3 MB</span></a><a class="btn btn-pdf" href="pdf/Segundona_39_Fistula_Anastomotica.pdf" download>PDF <span class="size">· 1,9 MB</span></a></div>
+      <p class="status" role="status" aria-live="polite"></p>
+      <p class="pdfnote">O .pptx tem as transições e animações: é o arquivo para projetar. O PDF serve só para consulta.</p>
+    </div>
+  </div>
+</article>
+<article class="card" id="s40" data-date="2026-12-21" data-search="40 infecções intra-abdominais complicadas e controle de foco parte 1 · reconhecimento e antibiótico bruna de oliveira rodrigues dr. cervantes caporossi infecção intra-abdominal iia sepse peritonite antibiótico 21 de dezembro de 2026">
+  <figure class="thumb"><img src="thumbs/40.jpg" width="640" height="360" alt="Capa da 40ª Segundona: Infecções Intra-Abdominais Complicadas e Controle de Foco" loading="lazy" decoding="async"></figure>
+  <div class="body">
+    <p class="ord"><span>40ª Segundona</span><span class="tdate"><time datetime="2026-12-21">21 de dezembro</time></span><span class="flag" hidden></span></p>
+    <h3>Infecções Intra-Abdominais Complicadas e Controle de Foco</h3>
+    <p class="sub">Parte 1 · reconhecimento e antibiótico</p>
+    <p class="credit"><span class="nm">Bruna de Oliveira Rodrigues</span>, <span class="niv">R1 · HGU</span> <span class="ori">— orientação de</span> <span class="nm">Dr. Cervantes Caporossi</span></p>
+    <p class="meta">42 slides · ~28 min de fala</p>
+    <p class="conf"><span class="lbl">Conferir antes</span> Prazos de 6–12 h da SIS 2024 vêm de fonte secundária.</p>
+    <div class="dl">
+      <div class="dlrow"><a class="btn btn-pptx" href="pptx/Segundona_40_IIA_Reconhecimento_e_Antibiotico.pptx" download>Baixar .pptx <span class="size">· 4,0 MB</span></a><a class="btn btn-pdf" href="pdf/Segundona_40_IIA_Reconhecimento_e_Antibiotico.pdf" download>PDF <span class="size">· 1,7 MB</span></a></div>
+      <p class="status" role="status" aria-live="polite"></p>
+      <p class="pdfnote">O .pptx tem as transições e animações: é o arquivo para projetar. O PDF serve só para consulta.</p>
+    </div>
+  </div>
+</article>
+  </div>
+</section>
+<section class="month" data-month="2027-01">
+  <h2><em>Janeiro</em> de 2027</h2>
+  <div class="grid">
+<article class="card" id="s41" data-date="2027-01-11" data-search="41 infecções intra-abdominais complicadas e controle de foco parte 2 · controle de foco lhorrainy barbosa nogueira dr. cervantes caporossi infecção intra-abdominal iia controle de foco drenagem peritonite 11 de janeiro de 2027">
+  <figure class="thumb"><img src="thumbs/41.jpg" width="640" height="360" alt="Capa da 41ª Segundona: Infecções Intra-Abdominais Complicadas e Controle de Foco" loading="lazy" decoding="async"></figure>
+  <div class="body">
+    <p class="ord"><span>41ª Segundona</span><span class="tdate"><time datetime="2027-01-11">11 de janeiro</time></span><span class="flag" hidden></span></p>
+    <h3>Infecções Intra-Abdominais Complicadas e Controle de Foco</h3>
+    <p class="sub">Parte 2 · controle de foco</p>
+    <p class="credit"><span class="nm">Lhorrainy Barbosa Nogueira</span>, <span class="niv">R3 · HSR</span> <span class="ori">— orientação de</span> <span class="nm">Dr. Cervantes Caporossi</span></p>
+    <p class="meta">42 slides · ~29 min de fala</p>
+    <p class="conf"><span class="lbl">Conferir antes</span> Números do LADIES lidos só no resumo.</p>
+    <div class="dl">
+      <div class="dlrow"><a class="btn btn-pptx" href="pptx/Segundona_41_IIA_Controle_de_Foco.pptx" download>Baixar .pptx <span class="size">· 4,7 MB</span></a><a class="btn btn-pdf" href="pdf/Segundona_41_IIA_Controle_de_Foco.pdf" download>PDF <span class="size">· 2,4 MB</span></a></div>
+      <p class="status" role="status" aria-live="polite"></p>
+      <p class="pdfnote">O .pptx tem as transições e animações: é o arquivo para projetar. O PDF serve só para consulta.</p>
+    </div>
+  </div>
+</article>
+<article class="card" id="s42" data-date="2027-01-18" data-search="42 doença diverticular complicada: antibióticos, drenagem e cirurgia  natan buono rainho dr. manoel antonio ramos neto diverticulite hinchey hartmann lavagem anastomose 18 de janeiro de 2027">
+  <figure class="thumb"><img src="thumbs/42.jpg" width="640" height="360" alt="Capa da 42ª Segundona: Doença Diverticular Complicada: Antibióticos, Drenagem e Cirurgia" loading="lazy" decoding="async"></figure>
+  <div class="body">
+    <p class="ord"><span>42ª Segundona</span><span class="tdate"><time datetime="2027-01-18">18 de janeiro</time></span><span class="flag" hidden></span></p>
+    <h3>Doença Diverticular Complicada: Antibióticos, Drenagem e Cirurgia</h3>
+    
+    <p class="credit"><span class="nm">Natan Buono Rainho</span>, <span class="niv">R1 · HGU</span> <span class="ori">— orientação de</span> <span class="nm">Dr. Manoel Antonio Ramos Neto</span></p>
+    <p class="meta">42 slides · ~29 min de fala</p>
+    <p class="conf"><span class="lbl">Conferir antes</span> Referências em 9 pt.</p>
+    <div class="dl">
+      <div class="dlrow"><a class="btn btn-pptx" href="pptx/Segundona_42_Diverticulite_Complicada.pptx" download>Baixar .pptx <span class="size">· 4,6 MB</span></a><a class="btn btn-pdf" href="pdf/Segundona_42_Diverticulite_Complicada.pdf" download>PDF <span class="size">· 2,5 MB</span></a></div>
+      <p class="status" role="status" aria-live="polite"></p>
+      <p class="pdfnote">O .pptx tem as transições e animações: é o arquivo para projetar. O PDF serve só para consulta.</p>
+    </div>
+  </div>
+</article>
+<article class="card" id="s43" data-date="2027-01-25" data-search="43 hemorragia digestiva alta: ressuscitação, endoscopia e tratamento de resgate  lucas fernandes neves dr. andré santos hda hemorragia endoscopia embolização úlcera 25 de janeiro de 2027">
+  <figure class="thumb"><img src="thumbs/43.jpg" width="640" height="360" alt="Capa da 43ª Segundona: Hemorragia Digestiva Alta: Ressuscitação, Endoscopia e Tratamento de Resgate" loading="lazy" decoding="async"></figure>
+  <div class="body">
+    <p class="ord"><span>43ª Segundona</span><span class="tdate"><time datetime="2027-01-25">25 de janeiro</time></span><span class="flag" hidden></span></p>
+    <h3>Hemorragia Digestiva Alta: Ressuscitação, Endoscopia e Tratamento de Resgate</h3>
+    
+    <p class="credit"><span class="nm">Lucas Fernandes Neves</span>, <span class="niv">R1 · HSR</span> <span class="ori">— orientação de</span> <span class="nm">Dr. André Santos</span></p>
+    <p class="meta">42 slides · ~29 min de fala</p>
+    
+    <div class="dl">
+      <div class="dlrow"><a class="btn btn-pptx" href="pptx/Segundona_43_Hemorragia_Digestiva_Alta.pptx" download>Baixar .pptx <span class="size">· 5,1 MB</span></a><a class="btn btn-pdf" href="pdf/Segundona_43_Hemorragia_Digestiva_Alta.pdf" download>PDF <span class="size">· 2,5 MB</span></a></div>
+      <p class="status" role="status" aria-live="polite"></p>
+      <p class="pdfnote">O .pptx tem as transições e animações: é o arquivo para projetar. O PDF serve só para consulta.</p>
+    </div>
+  </div>
+</article>
+  </div>
+</section>
+<section class="month" data-month="2027-02">
+  <h2><em>Fevereiro</em> de 2027</h2>
+  <div class="grid">
+<article class="card" id="s44" data-date="2027-02-01" data-search="44 isquemia mesentérica crônica: diagnóstico e revascularização  beatriz merlim rodrigues major dr. ângelo lobato isquemia mesentérica stent revascularização angiotomografia 1 de fevereiro de 2027">
+  <figure class="thumb"><img src="thumbs/44.jpg" width="640" height="360" alt="Capa da 44ª Segundona: Isquemia Mesentérica Crônica: Diagnóstico e Revascularização" loading="lazy" decoding="async"></figure>
+  <div class="body">
+    <p class="ord"><span>44ª Segundona</span><span class="tdate"><time datetime="2027-02-01">1 de fevereiro</time></span><span class="flag" hidden></span></p>
+    <h3>Isquemia Mesentérica Crônica: Diagnóstico e Revascularização</h3>
+    
+    <p class="credit"><span class="nm">Beatriz Merlim Rodrigues Major</span>, <span class="niv">R2 · HGU</span> <span class="ori">— orientação de</span> <span class="nm">Dr. Ângelo Lobato</span></p>
+    <p class="meta">41 slides · ~29 min de fala</p>
+    <p class="conf"><span class="lbl">Conferir antes</span> Sete slides com notas de até 121 palavras.</p>
+    <div class="dl">
+      <div class="dlrow"><a class="btn btn-pptx" href="pptx/Segundona_44_Isquemia_Mesenterica_Cronica.pptx" download>Baixar .pptx <span class="size">· 3,7 MB</span></a><a class="btn btn-pdf" href="pdf/Segundona_44_Isquemia_Mesenterica_Cronica.pdf" download>PDF <span class="size">· 1,6 MB</span></a></div>
+      <p class="status" role="status" aria-live="polite"></p>
+      <p class="pdfnote">O .pptx tem as transições e animações: é o arquivo para projetar. O PDF serve só para consulta.</p>
+    </div>
+  </div>
+</article>
+<article class="card" id="s45" data-date="2027-02-08" data-search="45 cirurgia de emergência no idoso frágil: avaliação, decisão compartilhada e resultados  leticia nunes torres dra. ana rita passos idoso fragilidade clinical frailty scale decisão compartilhada laparotomia 8 de fevereiro de 2027">
+  <figure class="thumb"><img src="thumbs/45.jpg" width="640" height="360" alt="Capa da 45ª Segundona: Cirurgia de Emergência no Idoso Frágil: Avaliação, Decisão Compartilhada e Resultados" loading="lazy" decoding="async"></figure>
+  <div class="body">
+    <p class="ord"><span>45ª Segundona</span><span class="tdate"><time datetime="2027-02-08">8 de fevereiro</time></span><span class="flag" hidden></span></p>
+    <h3>Cirurgia de Emergência no Idoso Frágil: Avaliação, Decisão Compartilhada e Resultados</h3>
+    
+    <p class="credit"><span class="nm">Leticia Nunes Torres</span>, <span class="niv">R3 · HSR</span> <span class="ori">— orientação de</span> <span class="nm">Dra. Ana Rita Passos</span></p>
+    <p class="meta">42 slides · ~28 min de fala</p>
+    <p class="conf"><span class="lbl">Conferir antes</span> Conferir a Res. CFM 1.995/2012 no portal do CFM.</p>
+    <div class="dl">
+      <div class="dlrow"><a class="btn btn-pptx" href="pptx/Segundona_45_Idoso_Fragil.pptx" download>Baixar .pptx <span class="size">· 4,1 MB</span></a><a class="btn btn-pdf" href="pdf/Segundona_45_Idoso_Fragil.pdf" download>PDF <span class="size">· 2,0 MB</span></a></div>
+      <p class="status" role="status" aria-live="polite"></p>
+      <p class="pdfnote">O .pptx tem as transições e animações: é o arquivo para projetar. O PDF serve só para consulta.</p>
+    </div>
+  </div>
+</article>
+<article class="card" id="s46" data-date="2027-02-15" data-search="46 câncer de esôfago: estadiamento, neoadjuvância e tratamento cirúrgico  andrezza almeida dr. gilmar espírito santo esôfago esofagectomia cross flot neoadjuvância imunoterapia 15 de fevereiro de 2027">
+  <figure class="thumb"><img src="thumbs/46.jpg" width="640" height="360" alt="Capa da 46ª Segundona: Câncer de Esôfago: Estadiamento, Neoadjuvância e Tratamento Cirúrgico" loading="lazy" decoding="async"></figure>
+  <div class="body">
+    <p class="ord"><span>46ª Segundona</span><span class="tdate"><time datetime="2027-02-15">15 de fevereiro</time></span><span class="flag" hidden></span></p>
+    <h3>Câncer de Esôfago: Estadiamento, Neoadjuvância e Tratamento Cirúrgico</h3>
+    
+    <p class="credit"><span class="nm">Andrezza Almeida</span>, <span class="niv">R3 · HGU</span> <span class="ori">— orientação de</span> <span class="nm">Dr. Gilmar Espírito Santo</span></p>
+    <p class="meta">42 slides · ~29 min de fala</p>
+    <p class="conf"><span class="lbl">Conferir antes</span> ESMO 2026 e sobrevida final do CheckMate 577 de fonte secundária; conferir ordem dos braços do SANO no resumo.</p>
+    <div class="dl">
+      <div class="dlrow"><a class="btn btn-pptx" href="pptx/Segundona_46_Cancer_de_Esofago.pptx" download>Baixar .pptx <span class="size">· 4,2 MB</span></a><a class="btn btn-pdf" href="pdf/Segundona_46_Cancer_de_Esofago.pdf" download>PDF <span class="size">· 2,0 MB</span></a></div>
+      <p class="status" role="status" aria-live="polite"></p>
+      <p class="pdfnote">O .pptx tem as transições e animações: é o arquivo para projetar. O PDF serve só para consulta.</p>
+    </div>
+  </div>
+</article>
+  </div>
+</section>
+    <p class="empty" id="vazio" hidden>Nenhuma aula encontrada.</p>
+  </main>
+
+  <div class="ornament foot-ornament" aria-hidden="true"></div>
+  <footer>Material didático do Centro de Estudos Dr. Cervantes Caporossi · PRM Cirurgia Geral · Cuiabá-MT</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var doc = document.documentElement;
+  doc.classList.add("js");
+  var cards = Array.prototype.slice.call(document.querySelectorAll(".card"));
+
+  /* Próxima aula (a partir de hoje, data local) */
+  function hoje(){
+    var d = new Date();
+    return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+  }
+  var h = hoje(), proxima = null;
+  cards.forEach(function(c){
+    var dt = c.getAttribute("data-date");
+    var flag = c.querySelector(".flag");
+    if (dt < h) { c.classList.add("is-past"); flag.textContent = "Realizada"; flag.classList.add("past"); flag.hidden = false; }
+    else if (!proxima) { proxima = c; }
+  });
+  if (proxima) {
+    var hojeMesmo = proxima.getAttribute("data-date") === h;
+    proxima.classList.add("is-next");
+    var f = proxima.querySelector(".flag");
+    f.textContent = hojeMesmo ? "Hoje" : "Próxima";
+    f.hidden = false;
+    var link = document.getElementById("next-link");
+    link.href = "#" + proxima.id;
+    link.querySelector(".k").textContent = hojeMesmo ? "Aula de hoje" : "Próxima aula";
+    link.querySelector(".t").textContent = proxima.querySelector(".ord span").textContent + " · " + proxima.querySelector("h3").textContent;
+    link.hidden = false;
+    link.addEventListener("click", function(ev){
+      ev.preventDefault();
+      var reduz = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      proxima.scrollIntoView({behavior: reduz ? "auto" : "smooth", block: "start"});
+      var b = proxima.querySelector(".btn-pptx"); if (b && !b.hidden) b.focus({preventScroll:true});
+    });
+  }
+
+  /* Fade suave na entrada */
+  var reduz = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduz) {
+    cards.forEach(function(c){ c.classList.add("pre"); });
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){
+      cards.forEach(function(c, i){ setTimeout(function(){ c.classList.remove("pre"); }, Math.min(i, 12) * 45); });
+    }); });
+  }
+
+  /* Filtro */
+  var filtro = document.getElementById("filtro");
+  function norm(s){ return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
+  var idx = cards.map(function(c){ return norm(c.getAttribute("data-search")); });
+  filtro.addEventListener("input", function(){
+    var termos = norm(filtro.value).split(/\s+/).filter(Boolean);
+    var algum = false;
+    cards.forEach(function(c, i){
+      var ok = termos.every(function(t){ return idx[i].indexOf(t) !== -1; });
+      c.hidden = !ok; if (ok) algum = true;
+    });
+    document.querySelectorAll(".month").forEach(function(s){
+      s.hidden = !s.querySelector(".card:not([hidden])");
+    });
+    document.getElementById("vazio").hidden = algum;
+  });
+
+})();
+</script>
+
+</body>
+</html>
