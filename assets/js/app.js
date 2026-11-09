@@ -173,7 +173,7 @@
   function icone(nome, tam) {
     var d = GLIFOS[nome] || GLIFOS.alvo, s = tam || 20;
     return '<svg width="' + s + '" height="' + s + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
-      'stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' +
+      'stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' +
       d.map(function (p) { return '<path d="' + p + '"/>'; }).join("") + "</svg>";
   }
   /* glifo característico por matéria — dá identidade ao ícone da matéria */
@@ -1355,6 +1355,9 @@
       default: html = vazio("Página não encontrada.");
     }
     tela.innerHTML = html;
+    /* fade de entrada só quando muda de tela, nunca a cada clique */
+    if (nav && r.base !== baseAnterior) { tela.classList.remove("entra"); void tela.offsetWidth; tela.classList.add("entra"); }
+    else tela.classList.remove("entra");
     atualizarShell();
     /* trocar de aba (mesma página, outro filtro) não deve jogar a leitura para o topo */
     /* só as abas do tema (?ver=) e o filtro do atlas (?area=) preservam a rolagem */
