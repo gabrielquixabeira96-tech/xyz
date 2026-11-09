@@ -1,0 +1,908 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atlas da Sepse Cirúrgica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#121110; --bg-2:#0e0d0c; --surface:#171614; --surface-2:#1c1a18; --surface-3:#23201d;
+  --ink:#f6f4f2; --ink-strong:#faf8f6;
+  --ink-body:rgba(243,242,242,.82); --ink-soft:rgba(243,242,242,.70); --ink-meta:rgba(243,242,242,.56);
+  --rule:rgba(243,242,242,.10); --rule-2:rgba(243,242,242,.16); --rule-3:rgba(243,242,242,.28);
+  --accent:#b68235; --accent-300:#facb8d; --accent-400:#e1ad66; --accent-600:#8d6428; --accent-700:#6b4c1e;
+  --tint-1:rgba(194,141,65,.12); --tint-2:rgba(194,141,65,.26); --tint-3:rgba(194,141,65,.50); --tint-4:rgba(194,141,65,.82);
+  --f-head:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --f-body:"Lora",Georgia,"Times New Roman",serif;
+  --shadow:0 1px 2px rgba(0,0,0,.45),0 10px 28px -14px rgba(0,0,0,.75);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink-body);font-family:var(--f-body);font-size:15.5px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--f-head);font-weight:500;color:var(--ink-strong);margin:0;text-wrap:balance;letter-spacing:-.005em}
+a{color:var(--accent-300)}
+b,strong{color:var(--ink);font-weight:600}
+.num,.n{font-variant-numeric:tabular-nums lining-nums}
+:focus-visible{outline:2px solid var(--accent-400);outline-offset:2px;border-radius:3px}
+::selection{background:var(--tint-2);color:var(--ink-strong)}
+mark{background:var(--tint-2);color:var(--accent-300);padding:0 3px;border-radius:2px}
+svg text{font-family:var(--f-body)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px 80px}
+
+/* ---- topo ---- */
+header.hero{max-width:1120px;margin:0 auto;padding:56px 24px 30px;position:relative}
+.kicker{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-400)}
+h1{font-size:clamp(38px,6vw,66px);line-height:1;margin:14px 0 0;font-weight:500}
+h1 em{font-style:italic;color:var(--accent-300)}
+.lede{max-width:62ch;color:var(--ink-soft);font-size:17px;margin:18px 0 0}
+.stem{margin:28px 0 0;padding:20px 22px;border-left:2px solid var(--accent);background:var(--surface);border-radius:0 8px 8px 0;box-shadow:var(--shadow);max-width:76ch}
+.stem p{margin:0 0 8px;color:var(--ink-body)}
+.stem p:last-child{margin:0}
+.stem .src{display:block;margin-bottom:8px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-400)}
+.vitals{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.vitals span{font-size:12.5px;border:1px solid var(--rule-2);border-radius:999px;padding:3px 10px;color:var(--ink-soft)}
+.vitals span b{color:var(--accent-300);font-weight:500}
+
+/* ---- trilho ---- */
+nav.rail{position:sticky;top:0;z-index:40;background:rgba(14,13,12,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);border-top:1px solid var(--rule);margin-top:30px}
+.rail-in{max-width:1120px;margin:0 auto;padding:8px 24px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.rail-in::-webkit-scrollbar{display:none}
+.rail a{flex:none;font-size:13px;color:var(--ink-soft);text-decoration:none;padding:5px 11px;border-radius:999px;border:1px solid transparent;white-space:nowrap;transition:.15s}
+.rail a:hover{color:var(--ink);background:var(--surface-2)}
+.rail a.on{color:var(--accent-300);border-color:var(--tint-3);background:var(--tint-1)}
+.rail a .n{color:var(--accent-400);margin-right:6px;font-size:11.5px}
+
+/* ---- capítulo ---- */
+section.ch{padding-top:58px;scroll-margin-top:56px}
+.ch-head{display:flex;gap:18px;align-items:baseline;border-top:1px solid var(--rule-2);padding-top:22px}
+.ch-num{font-family:var(--f-head);font-size:30px;color:var(--accent);line-height:1;font-style:italic;min-width:34px}
+.ch-head h2{font-size:clamp(26px,3.4vw,36px);line-height:1.1}
+.ch-sub{color:var(--ink-meta);font-size:14.5px;margin:6px 0 0;max-width:72ch}
+.plate{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr);gap:24px;margin-top:24px;align-items:start}
+.plate.even{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+@media (max-width:880px){.plate,.plate.even{grid-template-columns:minmax(0,1fr)}}
+.fig{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:14px;box-shadow:var(--shadow);overflow:hidden;min-width:0}
+.fig svg{display:block;width:100%;height:auto}
+.figcap{font-size:12.5px;color:var(--ink-meta);margin:10px 2px 0;line-height:1.55}
+.panel{display:flex;flex-direction:column;gap:14px;min-width:0}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:16px 17px;box-shadow:var(--shadow);min-width:0}
+.card h3,.lbl{font-family:var(--f-body);font-size:11px;font-weight:500;letter-spacing:.17em;text-transform:uppercase;color:var(--accent-400);margin:0 0 10px}
+.card p{margin:0 0 8px}
+.card p:last-child{margin-bottom:0}
+.prose{margin-top:24px;max-width:70ch;color:var(--ink-body)}
+.prose p{margin:0 0 13px}
+.prose h3{font-size:23px;margin:22px 0 8px}
+
+/* ---- controles ---- */
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button,.btn{font:inherit;font-size:13px;padding:6px 12px;border-radius:4px;cursor:pointer;border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-soft);transition:.15s;line-height:1.35}
+.seg button:hover,.btn:hover{border-color:var(--accent-400);color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#17120b;font-weight:600}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#17120b;font-weight:600}
+.btn.ghost{background:transparent;border-style:dashed}
+.sl{margin-top:12px}
+.sl label{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--ink-soft);margin-bottom:4px}
+.sl label b{color:var(--accent-300);font-weight:500;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:var(--accent);height:22px;margin:0}
+.tog{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink-soft);cursor:pointer;padding:6px 0;border-bottom:1px solid var(--rule)}
+.tog:last-child{border-bottom:0}
+.tog input{accent-color:var(--accent);width:16px;height:16px;margin-top:3px;flex:none}
+.tog small{display:block;color:var(--ink-meta);font-size:12px}
+input[type=number]{font:inherit;width:100%;background:var(--surface-2);border:1px solid var(--rule-2);color:var(--ink);border-radius:4px;padding:6px 9px}
+
+/* ---- veredito: uma matiz, quatro intensidades ---- */
+.verd{border-radius:6px;padding:13px 15px;border:1px solid var(--rule-2);font-size:14px;background:var(--surface-2)}
+.verd .t{font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;display:block;margin-bottom:4px;color:var(--ink-meta)}
+.verd .h{font-family:var(--f-head);font-size:22px;line-height:1.15;display:block;margin-bottom:6px;color:var(--ink-strong)}
+.verd p{margin:0;color:var(--ink-body)}
+.verd.b{border-color:var(--rule-3)}
+.verd.w{border-color:var(--tint-3);background:var(--tint-1)}
+.verd.w .h{color:var(--accent-300)}
+.verd.d{border:1px solid var(--accent-400);border-left:4px solid var(--accent-400);background:var(--tint-2)}
+.verd.d .h{color:var(--accent-300)}
+.verd.d .t{color:var(--accent-300)}
+.verd.m{border-style:dashed;border-color:var(--accent-400)}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:2px 8px;border-radius:999px;border:1px solid var(--rule-3);color:var(--ink-soft);white-space:nowrap}
+.tag.w{border-color:var(--tint-3);color:var(--accent-400);background:var(--tint-1)}
+.tag.d{border-color:var(--accent-400);color:#17120b;background:var(--accent-400);font-weight:600}
+.tag.m{border-style:dashed;border-color:var(--accent-400);color:var(--accent-300)}
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;font-size:13.5px;margin:0}
+.kv dt{color:var(--ink-meta);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding-top:3px}
+.kv dd{margin:0;color:var(--ink-body)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.steps li{counter-increment:s;position:relative;padding-left:30px;font-size:14px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;border:1px solid var(--accent-400);color:var(--accent-300);font-size:11px;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+.no{margin-top:10px;padding:10px 12px;border:1px dashed var(--accent-600);border-radius:6px;font-size:13.5px}
+.no::before{content:"Proibido · ";color:var(--accent-300);font-weight:600;letter-spacing:.03em}
+.pearl{margin-top:10px;padding:10px 12px;border:1px dashed var(--accent-600);border-radius:6px;font-size:13.5px}
+.pearl::before{content:"Pegadinha · ";color:var(--accent-300);font-weight:600}
+.big{font-family:var(--f-head);font-size:44px;line-height:1;color:var(--accent-300);font-variant-numeric:tabular-nums lining-nums}
+.stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:8px}
+.stat div{background:var(--surface-2);border:1px solid var(--rule);border-radius:6px;padding:8px 10px}
+.stat small{display:block;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-meta)}
+.stat b{font-family:var(--f-head);font-size:25px;font-weight:500;color:var(--ink-strong);font-variant-numeric:tabular-nums lining-nums}
+.stat div.hot{border-color:var(--accent-400);background:var(--tint-1)}
+.stat div.hot b{color:var(--accent-300)}
+
+/* ---- tabelas ---- */
+.tblw{overflow-x:auto;margin-top:18px;border:1px solid var(--rule);border-radius:8px;background:var(--surface);-webkit-overflow-scrolling:touch}
+table.t{border-collapse:collapse;width:100%;font-size:13.5px;min-width:560px}
+table.t th,table.t td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule)}
+table.t thead th{font-family:var(--f-body);font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-400);background:var(--surface-2);position:sticky;top:0}
+table.t tbody th{color:var(--ink);font-weight:600;white-space:nowrap}
+table.t tr:last-child td,table.t tr:last-child th{border-bottom:0}
+table.t td.hi,table.t tr.hi td,table.t tr.hi th{background:var(--tint-1);color:var(--ink)}
+table.t tr.sel td,table.t tr.sel th{background:var(--tint-2)}
+.tblnote{font-size:12.5px;color:var(--ink-meta);margin:8px 2px 0}
+
+/* ---- divergência, pérola ---- */
+.divg{margin-top:18px;border:1px dashed var(--accent-400);border-radius:8px;padding:14px 16px;background:var(--surface);max-width:76ch}
+.divg .t{font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--accent-300);display:block;margin-bottom:4px}
+.divg p{margin:0 0 6px;font-size:14.5px}
+.divg p:last-child{margin:0}
+
+/* ---- fluxograma em escada (HTML, legível no celular) ---- */
+.ladder{display:flex;flex-direction:column;margin-top:4px}
+.rung{display:grid;grid-template-columns:minmax(0,1.15fr) 64px minmax(0,1fr);align-items:center}
+.fn{border:1px solid var(--rule-3);background:var(--surface-2);border-radius:6px;padding:9px 12px;font-size:13.5px;line-height:1.4;color:var(--ink);transition:.2s}
+.fn.q{border-color:var(--accent-600);background:var(--surface-3);color:var(--accent-300);font-family:var(--f-head);font-size:18px;line-height:1.2}
+.fn.act{background:var(--tint-1);border-color:var(--tint-3)}
+.fn.stop{background:var(--tint-2);border-color:var(--accent-400);font-weight:600}
+.fn small{display:block;color:var(--ink-meta);font-size:12px;font-weight:400;margin-top:2px;font-family:var(--f-body)}
+.arr{position:relative;height:100%;min-height:30px;display:flex;align-items:center;justify-content:center}
+.arr::before{content:"";position:absolute;left:4px;right:8px;top:50%;border-top:1.3px solid var(--ink-meta)}
+.arr::after{content:"";position:absolute;right:3px;top:calc(50% - 4px);border:4px solid transparent;border-left:6px solid var(--ink-meta)}
+.arr span,.down span{position:relative;z-index:1;background:var(--surface);padding:0 4px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-400)}
+.down{height:34px;width:calc((100% - 64px) * 1.15 / 2.15);display:flex;align-items:center;justify-content:center;position:relative}
+.down::before{content:"";position:absolute;top:2px;bottom:6px;left:50%;border-left:1.3px solid var(--ink-meta)}
+.down::after{content:"";position:absolute;bottom:0;left:calc(50% - 4px);border:4px solid transparent;border-top:6px solid var(--ink-meta)}
+.ends{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.fn.lit{border-color:var(--accent-300);box-shadow:0 0 0 1px var(--accent-300),0 0 18px -4px rgba(250,203,141,.55);color:var(--ink-strong)}
+.fn.q.lit{color:var(--accent-300)}
+.down.lit::before,.arr.lit::before{border-color:var(--accent-300);border-width:2px}
+.down.lit::after{border-top-color:var(--accent-300)}
+.arr.lit::after{border-left-color:var(--accent-300)}
+.ladder.dimmed .fn:not(.lit){opacity:.55}
+@media (max-width:600px){
+  .rung{grid-template-columns:minmax(0,1fr)}
+  .arr{height:30px;min-height:30px;justify-content:flex-start;padding-left:22px}
+  .arr::before{left:14px;right:auto;top:2px;bottom:6px;border-top:0;border-left:1.3px dashed var(--ink-meta)}
+  .arr::after{right:auto;left:10px;top:auto;bottom:0;border:4px solid transparent;border-top:6px solid var(--ink-meta)}
+  .arr.lit::after{border-left-color:transparent;border-top-color:var(--accent-300)}
+  .arr.lit::before{border-left:2px dashed var(--accent-300)}
+  .down{width:100%}
+}
+
+/* ---- pegadinhas ---- */
+.traps{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-top:22px}
+@media (max-width:420px){.traps{grid-template-columns:minmax(0,1fr)}}
+.trap{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:15px 16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px}
+.trap .say{font-family:var(--f-head);font-size:20px;line-height:1.2;color:var(--ink-strong)}
+.trap .say::before{content:"A banca diz: ";font-family:var(--f-body);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-meta);display:block;margin-bottom:3px}
+.trap .truth{font-size:14px;border-top:1px solid var(--rule);padding-top:8px}
+.trap .truth::before{content:"Na verdade";display:block;font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-400);margin-bottom:2px}
+.trap button{align-self:flex-start}
+.trap .truth[hidden]{display:none}
+
+/* ---- quiz ---- */
+.quizbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-top:22px;padding:12px 16px;border:1px solid var(--rule-2);border-radius:8px;background:var(--surface)}
+.quizbar .sc{font-family:var(--f-head);font-size:24px;color:var(--accent-300)}
+.qs{display:flex;flex-direction:column;gap:16px;margin-top:16px}
+.q{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:18px;box-shadow:var(--shadow)}
+.q .qn{font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--accent-400);margin-bottom:6px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.q .qt{font-size:15.5px;color:var(--ink);margin:0 0 12px}
+.q ol{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px}
+.q li button{font:inherit;font-size:14px;width:100%;text-align:left;display:flex;gap:11px;align-items:flex-start;padding:9px 12px;border-radius:6px;border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-body);cursor:pointer;transition:.15s}
+.q li button:hover:not([disabled]){border-color:var(--accent-400);color:var(--ink)}
+.q li button .l{flex:none;width:22px;height:22px;border-radius:50%;border:1px solid var(--rule-3);display:grid;place-items:center;font-size:12px;color:var(--ink-soft)}
+.q li button[disabled]{cursor:default}
+.q li button.ok{border-color:var(--accent-400);background:var(--tint-2);color:var(--ink-strong)}
+.q li button.ok .l{background:var(--accent-400);border-color:var(--accent-400);color:#17120b;font-weight:700}
+.q li button.bad{border-style:dashed;border-color:var(--ink-meta);opacity:.8;text-decoration:line-through;text-decoration-color:var(--ink-meta)}
+.q li button.bad .l{border-style:dashed}
+.q li button.dim{opacity:.5}
+.q .exp{margin-top:12px;padding:12px 14px;border-left:2px solid var(--accent-400);background:var(--surface-2);border-radius:0 6px 6px 0;font-size:14px}
+.q .exp .res{display:block;font-family:var(--f-head);font-size:19px;color:var(--accent-300);margin-bottom:3px}
+.q .exp p{margin:0 0 6px}
+.q .exp p:last-child{margin:0}
+
+/* ---- tabela-mãe ---- */
+.mother{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:22px}
+@media (max-width:420px){.mother{grid-template-columns:minmax(0,1fr)}}
+.mc{background:var(--surface);border:1px solid var(--rule);border-top:3px solid var(--rule-3);border-radius:6px;padding:13px 14px}
+.mc.w{border-top-color:var(--accent-600)}
+.mc.d{border-top-color:var(--accent-300)}
+.mc.m{border-top:3px dashed var(--accent-400)}
+.mc .g{font-size:13.5px;color:var(--ink-soft);margin:0 0 7px}
+.mc .g::before{content:"Gatilho · ";font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-meta)}
+.mc .a{font-family:var(--f-head);font-size:19px;line-height:1.2;color:var(--ink-strong);margin:0}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;font-size:12.5px;color:var(--ink-meta)}
+
+/* ---- rodapé ---- */
+footer.refs{max-width:1120px;margin:40px auto 0;padding:24px 24px 60px;border-top:1px solid var(--rule-2);font-size:13px;color:var(--ink-meta)}
+footer.refs h3{font-size:20px;margin-bottom:8px}
+footer.refs ol{padding-left:20px;margin:0}
+footer.refs li{margin:3px 0}
+
+/* ---- utilitários ---- */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:18px}
+@media (max-width:420px){.grid2{grid-template-columns:minmax(0,1fr)}}
+.muted{color:var(--ink-meta)}
+.small{font-size:13px}
+.mt{margin-top:14px}
+.hidden{display:none!important}
+.hot-svg{cursor:pointer}
+.hot-svg:hover .hl,.hot-svg.on .hl{stroke:var(--accent-300);stroke-width:2.6}
+@media (max-width:600px){
+  body{font-size:15px}
+  .wrap{padding:0 16px 64px}
+  header.hero{padding:36px 16px 20px}
+  .rail-in{padding:8px 16px}
+  footer.refs{padding:20px 16px 48px}
+  .ch-head{gap:12px}
+  .ch-num{font-size:24px;min-width:24px}
+  .fig{padding:10px}
+  .card{padding:14px}
+  .big{font-size:38px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+.mk{cursor:pointer}
+.mk circle{fill:#1c1a18;stroke:#e1ad66;stroke-width:1.4}
+.mk text{fill:#facb8d;pointer-events:none}
+.mk.on circle,.mk:hover circle{fill:#e1ad66}
+.mk.on text,.mk:hover text{fill:#17120b}
+.org .hl{transition:stroke .2s,filter .2s}
+.org.on .hl{stroke:#facb8d;filter:drop-shadow(0 0 6px rgba(250,203,141,.55))}
+.org.on path.hl[fill]:not([fill="none"]),.org.on ellipse.hl{stroke-width:2.4}
+#clock circle{transition:fill .25s}
+#clock-arc{transition:stroke-dasharray .4s}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="kicker">Atlas · Perioperatório · Surviving Sepsis Campaign 2021</div>
+  <h1>Sepse cirúrgica e <em>controle do foco</em></h1>
+  <p class="lede">Antibiótico compra tempo; quem resolve a sepse cirúrgica é a mão que drena, desbrida ou resseca. Este atlas acompanha uma paciente do reconhecimento à reoperação e mostra onde a diretriz manda correr — e onde manda esperar.</p>
+  <div class="stem">
+    <span class="src">O caso que atravessa o atlas</span>
+    <p><b>Dona Lúcia, 68 anos</b>, 3º dia de pós-operatório de sigmoidectomia com anastomose primária por adenocarcinoma. Desde a madrugada está confusa, com dor abdominal difusa e defesa. A tomografia mostra líquido livre e gás extraluminal junto à anastomose.</p>
+    <div class="vitals"><span>T <b>38,9</b> °C</span><span>FC <b>118</b> bpm</span><span>PA <b>84 × 46</b> mmHg</span><span>FR <b>26</b> irpm</span><span>Lactato <b>4,6</b> mmol/L</span><span>Peso <b>60</b> kg</span></div>
+  </div>
+</header>
+
+<nav class="rail" aria-label="Capítulos">
+  <div class="rail-in">
+    <a href="#c1"><span class="n">1</span>Sepse-3</a>
+    <a href="#c2"><span class="n">2</span>A primeira hora</a>
+    <a href="#c3"><span class="n">3</span>Volume e vasopressor</a>
+    <a href="#c4"><span class="n">4</span>Mapa do foco</a>
+    <a href="#c5"><span class="n">5</span>Relaparotomia</a>
+    <a href="#c6"><span class="n">6</span>Pressão intra-abdominal</a>
+    <a href="#c7"><span class="n">7</span>Antibiótico: qual e até quando</a>
+    <a href="#c8"><span class="n">8</span>Pegadinhas</a>
+    <a href="#c9"><span class="n">9</span>Forja</a>
+    <a href="#c10"><span class="n">10</span>Tabela-mãe</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- 1 -->
+<section class="ch" id="c1">
+  <div class="ch-head"><span class="ch-num">1</span><div><h2>Sepse-3: infecção, sepse e choque séptico</h2>
+  <p class="ch-sub">Marque o que o enunciado traz. A classificação depende de disfunção orgânica, não de febre e leucocitose — e o choque séptico exige dois critérios ao mesmo tempo.</p></div></div>
+  <div class="plate even">
+    <div class="card">
+      <h3>Critérios</h3>
+      <label class="tog"><input type="checkbox" class="s3" id="s3a" checked><span>Infecção suspeita ou confirmada</span></label>
+      <label class="tog"><input type="checkbox" class="s3" id="s3b" checked><span>Aumento agudo do SOFA ≥ 2 pontos<small>disfunção orgânica; se o basal é desconhecido, presume-se 0</small></span></label>
+      <label class="tog"><input type="checkbox" class="s3" id="s3c" checked><span>Vasopressor para manter PAM ≥ 65 mmHg após volume adequado</span></label>
+      <label class="tog"><input type="checkbox" class="s3" id="s3d" checked><span>Lactato &gt; 2 mmol/L</span></label>
+      <div id="s3-verd" class="mt" aria-live="polite"></div>
+    </div>
+    <div class="panel">
+      <div class="card">
+        <h3>qSOFA — triagem à beira do leito</h3>
+        <label class="tog"><input type="checkbox" class="qs" checked><span>FR ≥ 22 irpm</span></label>
+        <label class="tog"><input type="checkbox" class="qs" checked><span>Alteração do estado mental (Glasgow &lt; 15)</span></label>
+        <label class="tog"><input type="checkbox" class="qs" checked><span>PAS ≤ 100 mmHg</span></label>
+        <div class="mt" style="display:flex;gap:14px;align-items:center"><div class="big" id="qs-sc">3</div><p class="small" id="qs-t" style="margin:0"></p></div>
+      </div>
+      <div class="divg" style="margin-top:0"><span class="t">Divergência de banca</span><p>Questões antigas definem sepse por <b>SIRS + infecção</b> e falam em “sepse grave”. A Sepse-3 (2016) eliminou a sepse grave e define sepse por disfunção orgânica. E a SSC 2021 recomenda <b>não usar o qSOFA isoladamente</b> como ferramenta de triagem, em comparação com SIRS, NEWS ou MEWS: ele prediz mortalidade, mas é pouco sensível.</p></div>
+    </div>
+  </div>
+  <div class="tblw"><table class="t">
+    <thead><tr><th>SOFA · sistema</th><th>O que mede</th><th>Exemplo de pontuação alta</th></tr></thead>
+    <tbody>
+      <tr><th>Respiratório</th><td>PaO₂/FiO₂</td><td>&lt; 200 com suporte ventilatório</td></tr>
+      <tr><th>Coagulação</th><td>Plaquetas</td><td>&lt; 50.000/mm³</td></tr>
+      <tr><th>Hepático</th><td>Bilirrubina</td><td>≥ 6 mg/dL</td></tr>
+      <tr><th>Cardiovascular</th><td>PAM e drogas vasoativas</td><td>Noradrenalina &gt; 0,1 µg/kg/min</td></tr>
+      <tr><th>Neurológico</th><td>Escala de Coma de Glasgow</td><td>&lt; 10</td></tr>
+      <tr><th>Renal</th><td>Creatinina ou débito urinário</td><td>Creatinina ≥ 3,5 mg/dL ou diurese &lt; 500 mL/dia</td></tr>
+    </tbody>
+  </table></div>
+  <p class="tblnote">Cada sistema vai de 0 a 4. A prova raramente pede o SOFA completo; pede reconhecer que “aumento de 2 pontos” = disfunção orgânica = sepse.</p>
+</section>
+
+<!-- 2 -->
+<section class="ch" id="c2">
+  <div class="ch-head"><span class="ch-num">2</span><div><h2>A primeira hora</h2>
+  <p class="ch-sub">Marque o que já foi feito para Dona Lúcia. Depois use a matriz para decidir quando o antibiótico precisa entrar em quem ainda não está em choque.</p></div></div>
+  <div class="plate">
+    <div class="fig">
+      <svg viewBox="0 0 440 340" role="img" aria-label="Relógio da primeira hora com os cinco itens do pacote" id="clock">
+        <circle cx="220" cy="170" r="128" fill="#1c1a18" stroke="rgba(243,242,242,.2)"/>
+        <circle cx="220" cy="170" r="128" fill="none" stroke="#e1ad66" stroke-width="10" stroke-dasharray="0 805" id="clock-arc" transform="rotate(-90 220 170)"/>
+        <g id="clock-ticks"></g>
+        <text x="220" y="164" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="44" fill="#facb8d" id="clock-n">0/5</text>
+        <text x="220" y="190" text-anchor="middle" font-size="12" fill="rgba(243,242,242,.6)" letter-spacing="2">PACOTE DA 1ª HORA</text>
+      </svg>
+      <p class="figcap">Pacote da 1ª hora da SSC (atualização de 2018). O relógio começa no reconhecimento da sepse — na triagem ou, no paciente internado, no momento em que alguém a identifica.</p>
+    </div>
+    <div class="panel">
+      <div class="card">
+        <h3>Pacote</h3>
+        <label class="tog"><input type="checkbox" class="b1"><span>Dosar lactato<small>repetir se &gt; 2 mmol/L</small></span></label>
+        <label class="tog"><input type="checkbox" class="b1"><span>Hemoculturas antes do antibiótico<small>se não atrasar o antibiótico</small></span></label>
+        <label class="tog"><input type="checkbox" class="b1"><span>Antibiótico de amplo espectro</span></label>
+        <label class="tog"><input type="checkbox" class="b1"><span>Cristaloide 30 mL/kg se hipotensão ou lactato ≥ 4<small>Dona Lúcia: 60 kg → 1.800 mL</small></span></label>
+        <label class="tog"><input type="checkbox" class="b1"><span>Vasopressor se PAM &lt; 65 durante ou após o volume</span></label>
+      </div>
+      <div class="verd" id="b1-verd" aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="plate even" style="margin-top:18px">
+    <div class="card">
+      <h3>Quando dar o antibiótico (SSC 2021)</h3>
+      <p class="small muted">Choque?</p>
+      <div class="seg" data-seg="abx-s"><button data-v="1" aria-pressed="true">Sim</button><button data-v="0">Não</button></div>
+      <p class="small muted mt">Probabilidade de infecção</p>
+      <div class="seg" data-seg="abx-p"><button data-v="alta" aria-pressed="true">Alta / provável</button><button data-v="poss">Possível</button><button data-v="baixa">Baixa</button></div>
+    </div>
+    <div class="verd" id="abx-verd" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="ch" id="c3">
+  <div class="ch-head"><span class="ch-num">3</span><div><h2>Volume e vasopressor</h2>
+  <p class="ch-sub">Arraste a dose de noradrenalina e marque o que acontece. A escada acende o próximo degrau que a SSC 2021 sugere.</p></div></div>
+  <div class="plate">
+    <div class="fig" style="padding:16px">
+      <div class="ladder dimmed" id="flowH">
+        <div class="rung">
+          <div class="fn q" data-k="h1">PAM &lt; 65 ou lactato ≥ 4?</div>
+          <div class="arr" data-k="he1"><span>sim</span></div>
+          <div class="fn act" data-k="h2">Cristaloide balanceado; 30 mL/kg nas primeiras 3 h (sugestão)<small>reavaliar com medidas dinâmicas e enchimento capilar</small></div>
+        </div>
+        <div class="down" data-k="hd1"><span>PAM &lt; 65</span></div>
+        <div class="rung">
+          <div class="fn act" data-k="h3">Noradrenalina — 1ª escolha<small>pode começar em veia periférica, sem esperar o cateter central</small></div>
+          <div class="arr" data-k="he3"><span>0,25–0,5</span></div>
+          <div class="fn act" data-k="h4">Associar vasopressina<small>em vez de escalar a noradrenalina</small></div>
+        </div>
+        <div class="down" data-k="hd3"><span>PAM ainda baixa</span></div>
+        <div class="rung">
+          <div class="fn act" data-k="h5">Associar epinefrina</div>
+          <div class="arr" data-k="he5"><span>disfunção cardíaca</span></div>
+          <div class="fn act" data-k="h6">Dobutamina ou epinefrina<small>hipoperfusão persistente com volume e PAM adequados</small></div>
+        </div>
+        <div class="down" data-k="hd5"><span>≥ 0,25 por ≥ 4 h</span></div>
+        <div class="fn stop" data-k="h7">Hidrocortisona 200 mg/dia<small>50 mg a cada 6 h ou infusão contínua</small></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="card">
+        <div class="sl" style="margin-top:0"><label for="ne">Noradrenalina <b id="ne-v">0</b></label><input type="range" id="ne" min="0" max="80" step="1" value="0"></div>
+        <label class="tog mt"><input type="checkbox" id="ne4"><span>Dose ≥ 0,25 µg/kg/min há pelo menos 4 h</span></label>
+        <label class="tog"><input type="checkbox" id="neC"><span>Disfunção cardíaca com hipoperfusão persistente</span></label>
+        <label class="tog"><input type="checkbox" id="neV"><span>PAM inadequada mesmo com noradrenalina + vasopressina</span></label>
+      </div>
+      <div class="verd" id="ne-verd" aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="tblw"><table class="t">
+    <thead><tr><th>Fluido</th><th>SSC 2021</th></tr></thead>
+    <tbody>
+      <tr><th>Cristaloide balanceado (Ringer)</th><td>Sugerido em vez de soro fisiológico</td></tr>
+      <tr><th>Albumina</th><td>Sugerida quando já foram usados grandes volumes de cristaloide</td></tr>
+      <tr><th>Amido (hidroxietilamido)</th><td>Contraindicado (recomendação forte contra)</td></tr>
+      <tr><th>Gelatina</th><td>Sugerido não usar</td></tr>
+      <tr><th>Concentrado de hemácias</th><td>Estratégia restritiva: transfundir com Hb &lt; 7 g/dL</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 4 -->
+<section class="ch" id="c4">
+  <div class="ch-head"><span class="ch-num">4</span><div><h2>Mapa do foco</h2>
+  <p class="ch-sub">Toque num foco. Para cada um: a intervenção menos invasiva que de fato controla, o tempo, e o erro que a banca planta.</p></div></div>
+  <div class="plate">
+    <div class="fig">
+      <svg viewBox="0 0 420 460" role="img" aria-label="Abdome esquemático com focos de sepse cirúrgica numerados" id="abd">
+        <path d="M80 20 L340 20 C362 120 372 300 352 446 L68 446 C48 300 58 120 80 20 Z" fill="#211d1a" stroke="rgba(243,242,242,.2)"/>
+        <g data-f="1" class="org"><path class="hl" d="M90 60 C150 40 240 50 252 82 C232 122 170 150 100 150 C85 130 82 90 90 60 Z" fill="#4e3a2e" stroke="rgba(243,242,242,.18)"/><ellipse class="hl" cx="150" cy="148" rx="13" ry="22" transform="rotate(-20 150 148)" fill="#6b5a3a" stroke="rgba(243,242,242,.2)"/><path class="hl" d="M160 128 C175 150 185 170 192 188" stroke="#8d6428" stroke-width="4" fill="none"/></g>
+        <g data-f="2" class="org"><path class="hl" d="M252 82 C300 70 332 100 322 150 C312 190 262 200 228 176 C250 150 262 112 252 82 Z" fill="#41372f" stroke="rgba(243,242,242,.18)"/><path class="hl" d="M228 178 C196 176 172 196 178 222 C182 240 200 246 214 240" stroke="#5a4c3e" stroke-width="14" fill="none" stroke-linecap="round"/></g>
+        <g data-f="3" class="org"><path class="hl" d="M214 230 C246 214 290 204 326 196" stroke="#6b5a3a" stroke-width="18" fill="none" stroke-linecap="round"/></g>
+        <g data-f="5" class="org"><path class="hl" d="M112 352 L112 214 L318 214 L318 330 C318 372 280 384 252 380 C230 378 216 386 214 400" stroke="#3a3129" stroke-width="22" fill="none" stroke-linejoin="round" stroke-linecap="round" opacity=".95"/></g>
+        <g data-f="7" class="org"><path class="hl" d="M150 250 C190 236 250 250 270 270 C240 286 170 280 150 300 C176 318 250 312 274 330 C240 350 170 344 150 340" stroke="#5a4c3e" stroke-width="12" fill="none" stroke-linecap="round"/></g>
+        <g data-f="4" class="org"><path class="hl" d="M112 356 C104 378 110 394 122 400" stroke="#6b5a3a" stroke-width="8" fill="none" stroke-linecap="round"/></g>
+        <g data-f="6" class="org"><path class="hl" d="M214 400 L214 446" stroke="#3a3129" stroke-width="22" fill="none"/><path d="M200 400 L228 400" stroke="#facb8d" stroke-width="2" stroke-dasharray="3 3"/></g>
+        <g data-f="8" class="org"><path class="hl" d="M68 446 C58 380 54 300 62 230" stroke="#6b5a3a" stroke-width="7" fill="none" stroke-linecap="round" opacity=".9"/></g>
+        <g data-f="9" class="org"><path class="hl" d="M300 22 C308 50 318 70 334 84" stroke="#d8cbb4" stroke-width="4" fill="none" stroke-linecap="round"/></g>
+        <g font-size="13" font-weight="600" text-anchor="middle" id="fmk">
+          <g class="mk" data-f="1"><circle cx="128" cy="100" r="13"/><text x="128" y="104.5">1</text></g>
+          <g class="mk" data-f="2"><circle cx="286" cy="128" r="13"/><text x="286" y="132.5">2</text></g>
+          <g class="mk" data-f="3"><circle cx="300" cy="226" r="13"/><text x="300" y="230.5">3</text></g>
+          <g class="mk" data-f="4"><circle cx="138" cy="404" r="13"/><text x="138" y="408.5">4</text></g>
+          <g class="mk" data-f="5"><circle cx="318" cy="290" r="13"/><text x="318" y="294.5">5</text></g>
+          <g class="mk" data-f="6"><circle cx="246" cy="420" r="13"/><text x="246" y="424.5">6</text></g>
+          <g class="mk" data-f="7"><circle cx="212" cy="292" r="13"/><text x="212" y="296.5">7</text></g>
+          <g class="mk" data-f="8"><circle cx="64" cy="266" r="13"/><text x="64" y="270.5">8</text></g>
+          <g class="mk" data-f="9"><circle cx="336" cy="52" r="13"/><text x="336" y="56.5">9</text></g>
+        </g>
+      </svg>
+      <p class="figcap"><b>Contrato de vista:</b> abdome em vista anterior, esquemático; parede anterior e omento removidos; fígado e estômago encurtados para expor duodeno e pâncreas; lado esquerdo da figura = lado direito da paciente. O marcador 9 representa um cateter venoso central, fora do abdome.</p>
+    </div>
+    <div class="panel">
+      <div class="card">
+        <h3>Foco</h3>
+        <div class="seg" data-seg="foco">
+          <button data-v="6" aria-pressed="true">6 · Deiscência</button><button data-v="1">1 · Vias biliares</button><button data-v="2">2 · Úlcera perfurada</button><button data-v="3">3 · Pâncreas</button><button data-v="4">4 · Apêndice</button><button data-v="5">5 · Diverticulite</button><button data-v="7">7 · Isquemia</button><button data-v="8">8 · Partes moles</button><button data-v="9">9 · Cateter</button>
+        </div>
+      </div>
+      <div class="card" id="foco-out" aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>A SSC 2021 trata o controle do foco como declaração de boa prática: <strong>identificar ou excluir rapidamente</strong> um foco anatômico que exija controle de emergência e intervir <strong>tão logo seja médica e logisticamente viável</strong>. A edição de 2016 sugeria, no racional, que 6–12 horas após o diagnóstico seriam suficientes; a recomendação de 2021 não fixa prazo. O princípio que a acompanha é a <strong>intervenção menos invasiva que seja eficaz</strong> — drenagem percutânea de um abscesso bem delimitado em vez de laparotomia, por exemplo.</p>
+    <p>A grande exceção é a <strong>necrose pancreática infectada</strong>: intervir cedo, antes do encapsulamento, aumenta a mortalidade. Ali a regra é antibiótico, suporte e intervenção adiada — idealmente após cerca de 4 semanas — em degraus (step-up).</p>
+  </div>
+  <div class="tblw"><table class="t">
+    <thead><tr><th>Peritonite</th><th>Mecanismo</th><th>Conduta</th></tr></thead>
+    <tbody>
+      <tr><th>Primária (espontânea)</th><td>Translocação/hematogênica, sem perfuração; típica do cirrótico com ascite; monomicrobiana</td><td>Antibiótico; <b>não</b> operar</td></tr>
+      <tr><th>Secundária</th><td>Perfuração, deiscência ou necrose de víscera; polimicrobiana</td><td>Controle do foco + antibiótico</td></tr>
+      <tr><th>Terciária</th><td>Persistente ou recorrente após tratamento adequado de secundária; germes hospitalares (enterococo, cândida, estafilococo coagulase-negativo)</td><td>Difícil controle; alta mortalidade</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 5 -->
+<section class="ch" id="c5">
+  <div class="ch-head"><span class="ch-num">5</span><div><h2>Relaparotomia programada ou sob demanda</h2>
+  <p class="ch-sub">Depois da primeira cirurgia, a pergunta é se o cirurgião volta em data marcada ou só quando o paciente pedir. Marque a situação.</p></div></div>
+  <div class="plate even">
+    <div class="card">
+      <h3>Situação após a primeira operação</h3>
+      <label class="tog"><input type="checkbox" class="rl" id="rl-a"><span>Foco não controlado na primeira operação<small>ressecção impossível, desbridamento incompleto</small></span></label>
+      <label class="tog"><input type="checkbox" class="rl" id="rl-b"><span>Cirurgia abreviada por controle de danos<small>instabilidade, coagulopatia, compressas</small></span></label>
+      <label class="tog"><input type="checkbox" class="rl" id="rl-c"><span>Isquemia mesentérica com viabilidade duvidosa</span></label>
+      <label class="tog"><input type="checkbox" class="rl" id="rl-d"><span>Parede não fecha sem tensão / hipertensão intra-abdominal</span></label>
+      <label class="tog"><input type="checkbox" class="rl" id="rl-e"><span>Piora clínica, disfunção orgânica nova ou persistente, ou TC com coleção/extravasamento</span></label>
+    </div>
+    <div class="verd" id="rl-verd" aria-live="polite"></div>
+  </div>
+  <div class="prose">
+    <p>O ensaio <strong>RELAP</strong> (2007) randomizou pacientes com peritonite secundária grave entre relaparotomia programada (a cada 36–48 h) e sob demanda. O desfecho composto de morte ou morbidade grave em 12 meses não diferiu significativamente, mas o grupo sob demanda teve menos relaparotomias, menor uso de recursos e custos menores. Desde então, <strong>sob demanda é a estratégia-padrão</strong> quando o foco foi controlado na primeira operação; a programada fica para quando a própria primeira operação deixou trabalho por fazer.</p>
+  </div>
+</section>
+
+<!-- 6 -->
+<section class="ch" id="c6">
+  <div class="ch-head"><span class="ch-num">6</span><div><h2>Pressão intra-abdominal</h2>
+  <p class="ch-sub">Peritonite, edema de alças e muito volume aumentam a pressão no abdome. Arraste a PIA e marque se há disfunção orgânica nova.</p></div></div>
+  <div class="plate">
+    <div class="fig">
+      <svg viewBox="0 0 520 170" role="img" aria-label="Régua de pressão intra-abdominal com os graus" id="pia">
+        <g font-size="12" fill="rgba(243,242,242,.7)" text-anchor="middle">
+          <rect x="20" y="50" width="160" height="40" fill="#1c1a18"/>
+          <rect x="180" y="50" width="60" height="40" fill="rgba(194,141,65,.18)"/>
+          <rect x="240" y="50" width="80" height="40" fill="rgba(194,141,65,.32)"/>
+          <rect x="320" y="50" width="80" height="40" fill="rgba(194,141,65,.5)"/>
+          <rect x="400" y="50" width="100" height="40" fill="rgba(194,141,65,.75)"/>
+          <text x="100" y="75">normal</text><text x="210" y="75">I</text><text x="280" y="75">II</text><text x="360" y="75" fill="#17120b">III</text><text x="450" y="75" fill="#17120b">IV</text>
+          <text x="20" y="110">0</text><text x="180" y="110">12</text><text x="240" y="110">16</text><text x="320" y="110">21</text><text x="400" y="110">26</text><text x="500" y="110">35</text>
+        </g>
+        <g id="pia-ptr"><path d="M0 40 L-7 28 L7 28 Z" fill="#f6f4f2"/><line x1="0" y1="40" x2="0" y2="96" stroke="#f6f4f2" stroke-width="2"/></g>
+        <text id="pia-lab" x="260" y="150" font-size="16" fill="#facb8d" text-anchor="middle"></text>
+      </svg>
+      <p class="figcap">Graus de hipertensão intra-abdominal (WSACS): I 12–15, II 16–20, III 21–25, IV &gt; 25 mmHg. Régua em mmHg, não linear nas bordas.</p>
+    </div>
+    <div class="panel">
+      <div class="card">
+        <div class="sl" style="margin-top:0"><label for="piav">PIA <b id="pia-v">10 mmHg</b></label><input type="range" id="piav" min="0" max="35" step="1" value="10"></div>
+        <label class="tog mt"><input type="checkbox" id="pia-od"><span>Disfunção orgânica nova<small>oligúria, aumento da pressão de via aérea, queda do débito cardíaco</small></span></label>
+        <label class="tog"><input type="checkbox" id="pia-mx"><span>Medidas clínicas já otimizadas e sem resposta</span></label>
+      </div>
+      <div class="verd" id="pia-verd" aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card"><h3>Como medir</h3><ol class="steps"><li>Via sonda vesical, com no máximo 25 mL de soro instilados.</li><li>Paciente em decúbito dorsal, sem contração abdominal.</li><li>Zero na linha axilar média; leitura ao fim da expiração.</li></ol></div>
+    <div class="card"><h3>Definições</h3><dl class="kv"><dt>HIA</dt><dd>PIA sustentada ou repetida ≥ 12 mmHg</dd><dt>SCA</dt><dd>PIA sustentada &gt; 20 mmHg com disfunção orgânica nova</dd><dt>PPA</dt><dd>Pressão de perfusão abdominal = PAM − PIA</dd></dl></div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="ch" id="c7">
+  <div class="ch-head"><span class="ch-num">7</span><div><h2>Antibiótico: qual e até quando</h2>
+  <p class="ch-sub">O espectro segue a origem da infecção; a duração segue o controle do foco.</p></div></div>
+  <div class="tblw"><table class="t">
+    <thead><tr><th>Infecção intra-abdominal</th><th>Esquema típico</th><th>Observação</th></tr></thead>
+    <tbody>
+      <tr><th>Comunitária, leve a moderada</th><td>Ceftriaxona + metronidazol (ou equivalente)</td><td>Cobrir gram-negativos entéricos e anaeróbios</td></tr>
+      <tr><th>Comunitária grave ou associada a cuidados de saúde (pós-operatória)</th><td>Piperacilina-tazobactam ou carbapenêmico</td><td>Ajustar à flora local e à cultura; considerar cobertura para MRSA e dupla cobertura gram-negativa só se alto risco de multirresistência</td></tr>
+      <tr><th>Fungos</th><td>Antifúngico empírico em situações selecionadas</td><td>Associada a cuidados de saúde com risco ou cândida isolada; não de rotina na comunitária</td></tr>
+    </tbody>
+  </table></div>
+  <div class="grid2">
+    <div class="card"><h3>STOP-IT (2015)</h3><p>Infecção intra-abdominal complicada com <b>controle adequado do foco</b>: curso fixo de cerca de <b>4 dias</b> de antibiótico teve desfechos semelhantes (infecção de sítio cirúrgico, infecção recorrente ou morte) ao tratamento até a resolução dos sinais fisiológicos (mediana de 8 dias).</p></div>
+    <div class="card"><h3>SSC 2021</h3><p>Reavaliar diariamente o descalonamento; preferir cursos mais curtos; procalcitonina associada à avaliação clínica pode ajudar a decidir a suspensão.</p></div>
+  </div>
+  <div class="divg"><span class="t">Regra de prova</span><p>Antibiótico prolongado <b>não substitui</b> controle do foco. Febre e leucocitose que persistem depois do 4º–5º dia pedem nova imagem e busca de coleção, não troca automática de antibiótico.</p></div>
+</section>
+
+<!-- 8 -->
+<section class="ch" id="c8">
+  <div class="ch-head"><span class="ch-num">8</span><div><h2>Pegadinhas de prova</h2>
+  <p class="ch-sub">Decida antes de revelar.</p></div></div>
+  <div class="traps">
+    <div class="trap"><div class="say">“Sepse = infecção + 2 critérios de SIRS.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>Definição antiga (Sepse-1/2). Pela Sepse-3, sepse é infecção com <b>disfunção orgânica</b> (aumento do SOFA ≥ 2).</div></div>
+    <div class="trap"><div class="say">“Choque séptico = sepse com hipotensão.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>Exige <b>vasopressor para PAM ≥ 65</b> após volume <b>e</b> lactato &gt; 2 mmol/L.</div></div>
+    <div class="trap"><div class="say">“qSOFA ≥ 2 é critério diagnóstico de sepse.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>É prognóstico; a SSC 2021 recomenda não usá-lo isoladamente para triagem.</div></div>
+    <div class="trap"><div class="say">“Estabilizar na UTI por 24–48 h antes de operar o foco.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>Reanimação e controle do foco andam juntos; o foco não drenado impede a estabilização.</div></div>
+    <div class="trap"><div class="say">“Necrose pancreática infectada: necrosectomia aberta imediata.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>Adiar (idealmente ~4 semanas) e usar step-up: drenagem percutânea/endoscópica primeiro.</div></div>
+    <div class="trap"><div class="say">“Peritonite grave: relaparotomia programada a cada 48 h para todos.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>Com foco controlado, <b>sob demanda</b> (RELAP). Programada para foco não controlado, controle de danos e isquemia.</div></div>
+    <div class="trap"><div class="say">“Esperar o cateter central para iniciar noradrenalina.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>A SSC 2021 sugere iniciar por <b>veia periférica</b> em vez de atrasar.</div></div>
+    <div class="trap"><div class="say">“Hidroxietilamido é boa opção para expandir rápido.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>Recomendação forte <b>contra</b> amidos (lesão renal, mortalidade).</div></div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section class="ch" id="c9">
+  <div class="ch-head"><span class="ch-num">9</span><div><h2>Forja: uma questão-mãe e sete pivôs</h2>
+  <p class="ch-sub">A mãe é Dona Lúcia; os pivôs trocam um dado (marcado) e a conduta vira.</p></div></div>
+  <div class="quizbar"><div><div class="lbl" style="margin:0">Placar</div><span class="sc" id="quiz-score">0 / 8</span></div><span class="muted small" id="quiz-prog"></span><button class="btn" id="quiz-reset" type="button">Recomeçar</button></div>
+  <div class="qs" id="quiz"></div>
+</section>
+
+<!-- 10 -->
+<section class="ch" id="c10">
+  <div class="ch-head"><span class="ch-num">10</span><div><h2>Tabela-mãe: gatilho → conduta</h2>
+  <p class="ch-sub">Borda clara: conduta-padrão; dourada: ação imediata; tracejada: exceção ou proibição.</p></div></div>
+  <div class="mother">
+    <div class="mc d"><p class="g">Choque séptico ou sepse provável</p><p class="a">Antibiótico em até 1 hora</p></div>
+    <div class="mc w"><p class="g">Sepse possível, sem choque</p><p class="a">Avaliação rápida; antibiótico em até 3 h se a suspeita persistir</p></div>
+    <div class="mc d"><p class="g">Hipotensão ou lactato ≥ 4</p><p class="a">Cristaloide balanceado 30 mL/kg nas primeiras 3 h</p></div>
+    <div class="mc d"><p class="g">PAM &lt; 65 após volume</p><p class="a">Noradrenalina, inclusive por veia periférica</p></div>
+    <div class="mc"><p class="g">Noradrenalina 0,25–0,5 µg/kg/min</p><p class="a">Associar vasopressina</p></div>
+    <div class="mc"><p class="g">Vasopressor ≥ 0,25 por ≥ 4 h</p><p class="a">Hidrocortisona 200 mg/dia</p></div>
+    <div class="mc d"><p class="g">Peritonite difusa por deiscência, com choque</p><p class="a">Relaparotomia; desfazer a anastomose</p></div>
+    <div class="mc w"><p class="g">Abscesso bem delimitado e acessível</p><p class="a">Drenagem percutânea + antibiótico</p></div>
+    <div class="mc d"><p class="g">Colangite grave (Tokyo III)</p><p class="a">Drenagem biliar urgente, CPRE preferida</p></div>
+    <div class="mc m"><p class="g">Necrose pancreática infectada</p><p class="a">Adiar; step-up após encapsulamento</p></div>
+    <div class="mc d"><p class="g">Dor desproporcional, crepitação, bolhas na pele</p><p class="a">Desbridamento imediato e reexploração em 24 h</p></div>
+    <div class="mc w"><p class="g">Cateter suspeito</p><p class="a">Retirar após obter outro acesso</p></div>
+    <div class="mc"><p class="g">Foco controlado na 1ª cirurgia</p><p class="a">Relaparotomia sob demanda</p></div>
+    <div class="mc w"><p class="g">Controle de danos, isquemia, foco não controlado</p><p class="a">Relaparotomia programada</p></div>
+    <div class="mc d"><p class="g">PIA &gt; 20 com disfunção nova, refratária</p><p class="a">Laparotomia descompressiva</p></div>
+    <div class="mc"><p class="g">Foco controlado, infecção intra-abdominal</p><p class="a">Antibiótico por cerca de 4 dias</p></div>
+    <div class="mc m"><p class="g">Peritonite bacteriana espontânea</p><p class="a">Antibiótico; não operar</p></div>
+  </div>
+</section>
+</main>
+
+<footer class="refs">
+  <h3>Referências</h3>
+  <ol>
+    <li>Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2021. Intensive Care Med. 2021;47(11):1181-247.</li>
+    <li>Singer M, Deutschman CS, Seymour CW, et al. The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3). JAMA. 2016;315(8):801-10.</li>
+    <li>Levy MM, Evans LE, Rhodes A. The Surviving Sepsis Campaign Bundle: 2018 update. Crit Care Med. 2018;46(6):997-1000.</li>
+    <li>van Ruler O, Mahler CW, Boer KR, et al. Comparison of on-demand vs planned relaparotomy strategy in patients with severe peritonitis: a randomized trial (RELAP). JAMA. 2007;298(8):865-72.</li>
+    <li>Sawyer RG, Claridge JA, Nathens AB, et al. Trial of short-course antimicrobial therapy for intraabdominal infection (STOP-IT). N Engl J Med. 2015;372(21):1996-2005.</li>
+    <li>Kirkpatrick AW, Roberts DJ, De Waele J, et al. Intra-abdominal hypertension and the abdominal compartment syndrome: updated consensus definitions and clinical practice guidelines from the World Society of the Abdominal Compartment Syndrome. Intensive Care Med. 2013;39(7):1190-206.</li>
+    <li>van Santvoort HC, Besselink MG, Bakker OJ, et al. A step-up approach or open necrosectomy for necrotizing pancreatitis (PANTER). N Engl J Med. 2010;362(16):1491-502.</li>
+    <li>Kiriyama S, Kozaka K, Takada T, et al. Tokyo Guidelines 2018: diagnostic criteria and severity grading of acute cholangitis. J Hepatobiliary Pancreat Sci. 2018;25(1):17-30.</li>
+  </ol>
+  <p class="mt">Atlas produzido para o Residência Max. Conteúdo de estudo; a conduta real segue o protocolo do serviço.</p>
+</footer>
+
+<script>
+/* ===== utilitários comuns do atlas ===== */
+var RM = (function(){
+  function $(s, r){ return (r || document).querySelector(s); }
+  function $$(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function fmt(n, d){ return Number(n).toFixed(d || 0).replace('.', ','); }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  /* grupo de botões exclusivos: <div class="seg" data-seg="nome"><button data-v="x"> */
+  function seg(name, cb){
+    var box = $('[data-seg="' + name + '"]');
+    if (!box) return;
+    var bs = $$('button', box);
+    function pick(b){
+      bs.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      cb(b.getAttribute('data-v'), b);
+    }
+    bs.forEach(function(b){ b.type = 'button'; b.addEventListener('click', function(){ pick(b); }); });
+    var ini = bs.filter(function(b){ return b.getAttribute('aria-pressed') === 'true'; })[0] || bs[0];
+    if (ini) pick(ini);
+    return { pick: function(v){ var b = bs.filter(function(x){ return x.getAttribute('data-v') === v; })[0]; if (b) pick(b); } };
+  }
+
+  /* realça nós e arestas de um fluxograma: ids separados por espaço */
+  function lightFlow(svg, ids){
+    if (!svg) return;
+    $$('.lit', svg).forEach(function(e){ e.classList.remove('lit'); });
+    (ids || '').split(/\s+/).forEach(function(id){ if (!id) return; var e = svg.querySelector('[data-k="' + id + '"]'); if (e) e.classList.add('lit'); });
+  }
+
+  /* trilho: capítulo ativo */
+  function rail(){
+    var links = $$('.rail a');
+    if (!('IntersectionObserver' in window) || !links.length) return;
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (!e.isIntersecting) return;
+        links.forEach(function(a){
+          var on = a.getAttribute('href') === '#' + e.target.id;
+          a.classList.toggle('on', on);
+          if (on && a.scrollIntoView && a.parentNode.scrollWidth > a.parentNode.clientWidth){
+            var p = a.parentNode; p.scrollLeft = a.offsetLeft - p.clientWidth / 2 + a.clientWidth / 2;
+          }
+        });
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    $$('section.ch').forEach(function(s){ io.observe(s); });
+  }
+
+  /* pegadinhas com revelação */
+  function traps(){
+    $$('.trap').forEach(function(t){
+      var b = $('button', t), tr = $('.truth', t);
+      if (!b || !tr) return;
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var h = tr.hasAttribute('hidden');
+        if (h) tr.removeAttribute('hidden'); else tr.setAttribute('hidden', '');
+        b.textContent = h ? 'Esconder' : 'Revelar a verdade';
+        b.setAttribute('aria-expanded', h ? 'true' : 'false');
+      });
+    });
+  }
+
+  /* quiz: Q = [{tag, q, o:[5], c: índice, e: html, pv: 'dado-pivô'}] */
+  function quiz(Q){
+    var box = $('#quiz'), sc = $('#quiz-score'), rs = $('#quiz-reset');
+    if (!box) return;
+    var L = 'ABCDE', state;
+    function upd(){
+      var n = 0, ok = 0;
+      state.forEach(function(s){ if (s !== null){ n++; if (s) ok++; } });
+      sc.textContent = ok + ' / ' + Q.length;
+      $('#quiz-prog').textContent = n === Q.length ? (ok === Q.length ? 'Gabaritou. Releia os comentários dos distratores — é deles que a próxima prova sai.' : 'Fim. Volte aos capítulos das que errou e refaça.') : (n + ' de ' + Q.length + ' respondidas');
+    }
+    function render(){
+      state = Q.map(function(){ return null; });
+      box.innerHTML = Q.map(function(x, i){
+        return '<article class="q" id="q' + i + '"><div class="qn"><span>Questão ' + (i + 1) + '</span>' + (x.tag ? '<span class="tag">' + x.tag + '</span>' : '') + '</div>' +
+          '<p class="qt">' + x.q + '</p><ol>' + x.o.map(function(o, j){
+            return '<li><button type="button" data-i="' + i + '" data-j="' + j + '"><span class="l">' + L[j] + '</span><span>' + o + '</span></button></li>';
+          }).join('') + '</ol><div class="exp hidden" aria-live="polite"></div></article>';
+      }).join('');
+      $$('button[data-i]', box).forEach(function(b){ b.addEventListener('click', answer); });
+      upd();
+    }
+    function answer(ev){
+      var b = ev.currentTarget, i = +b.getAttribute('data-i'), j = +b.getAttribute('data-j'), x = Q[i];
+      if (state[i] !== null) return;
+      state[i] = (j === x.c);
+      var art = $('#q' + i);
+      $$('button', art).forEach(function(bb){
+        var jj = +bb.getAttribute('data-j');
+        bb.disabled = true;
+        if (jj === x.c) bb.classList.add('ok');
+        else if (jj === j) bb.classList.add('bad');
+        else bb.classList.add('dim');
+      });
+      var ex = $('.exp', art);
+      ex.innerHTML = '<span class="res">' + (state[i] ? 'Certo — ' : 'Não. ') + 'Gabarito ' + L[x.c] + '.</span>' + x.e;
+      ex.classList.remove('hidden');
+      upd();
+    }
+    rs.addEventListener('click', function(){ render(); box.scrollIntoView({ block: 'start' }); });
+    render();
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){ rail(); traps(); });
+  return { $: $, $$: $$, fmt: fmt, esc: esc, seg: seg, lightFlow: lightFlow, quiz: quiz };
+})();
+
+/* ===== 1. Sepse-3 e qSOFA ===== */
+(function(){
+  function upd(){
+    var a = RM.$('#s3a').checked, b = RM.$('#s3b').checked, c = RM.$('#s3c').checked, d = RM.$('#s3d').checked, v = RM.$('#s3-verd'), cls, h, p;
+    if (!a){ cls = 'b'; h = 'Sem infecção suspeita'; p = 'Disfunção orgânica sem infecção não é sepse: pense em hipovolemia, sangramento, embolia, pancreatite estéril, insuficiência adrenal.'; }
+    else if (!b){ cls = 'b'; h = 'Infecção sem sepse'; p = 'Não há disfunção orgânica nova. Tratar a infecção e reavaliar — a disfunção pode aparecer em horas.'; }
+    else if (c && d){ cls = 'd'; h = 'Choque séptico'; p = 'Sepse com vasopressor para PAM ≥ 65 após volume adequado <b>e</b> lactato &gt; 2 mmol/L. Mortalidade hospitalar acima de 40% na coorte da Sepse-3.'; }
+    else if (c){ cls = 'w'; h = 'Sepse — ainda não choque séptico'; p = 'Precisa de vasopressor, mas o lactato não passa de 2 mmol/L: pela Sepse-3, os dois critérios são exigidos juntos. A conduta (vasopressor, antibiótico em 1 h, foco) não muda.'; }
+    else { cls = 'w'; h = 'Sepse'; p = 'Infecção com aumento agudo do SOFA ≥ 2. O lactato elevado sem necessidade de vasopressor não define choque séptico.'; }
+    v.className = 'verd ' + cls;
+    v.innerHTML = '<span class="t">Classificação</span><span class="h">' + h + '</span><p>' + p + '</p>';
+    var q = RM.$$('.qs').filter(function(x){ return x.checked; }).length;
+    RM.$('#qs-sc').textContent = q;
+    RM.$('#qs-t').textContent = q >= 2 ? 'qSOFA ≥ 2: maior risco de desfecho ruim — investigar disfunção orgânica. Não é critério diagnóstico.' : 'qSOFA < 2 não exclui sepse: o escore é pouco sensível.';
+  }
+  RM.$$('.s3, .qs').forEach(function(x){ x.addEventListener('change', upd); }); upd();
+})();
+
+/* ===== 2. Primeira hora ===== */
+(function(){
+  var labels = ['Lactato','Culturas','Antibiótico','30 mL/kg','Vasopressor'];
+  var g = RM.$('#clock-ticks'), h = '';
+  labels.forEach(function(l, i){
+    var ang = (i / 5) * 2 * Math.PI - Math.PI / 2, x = 220 + 150 * Math.cos(ang), y = 170 + 150 * Math.sin(ang);
+    var cx = 220 + 128 * Math.cos(ang), cy = 170 + 128 * Math.sin(ang);
+    var anchor = Math.abs(Math.cos(ang)) < .2 ? 'middle' : (Math.cos(ang) > 0 ? 'start' : 'end');
+    h += '<circle cx="' + cx.toFixed(1) + '" cy="' + cy.toFixed(1) + '" r="9" fill="#121110" stroke="#e1ad66" stroke-width="1.5" id="tk' + i + '"/>';
+    h += '<text x="' + (x + (anchor === 'start' ? 4 : anchor === 'end' ? -4 : 0)).toFixed(1) + '" y="' + (y + 4 + (i === 0 ? -4 : 0)).toFixed(1) + '" font-size="13" fill="rgba(243,242,242,.8)" text-anchor="' + anchor + '">' + l + '</text>';
+  });
+  g.innerHTML = h;
+  var bs = RM.$$('.b1');
+  function upd(){
+    var n = 0;
+    bs.forEach(function(b, i){ if (b.checked) n++; RM.$('#tk' + i).setAttribute('fill', b.checked ? '#facb8d' : '#121110'); });
+    RM.$('#clock-n').textContent = n + '/5';
+    RM.$('#clock-arc').setAttribute('stroke-dasharray', (804 * n / 5).toFixed(1) + ' 805');
+    var v = RM.$('#b1-verd');
+    if (n === 5){ v.className = 'verd b'; v.innerHTML = '<span class="t">Pacote</span><span class="h">Pacote completo — falta o foco</span><p>Nada disso controla a deiscência. Com Dona Lúcia reanimada em paralelo, a próxima decisão é cirúrgica: relaparotomia.</p>'; }
+    else if (!bs[2].checked){ v.className = 'verd d'; v.innerHTML = '<span class="t">Pacote</span><span class="h">Antibiótico ainda não entrou</span><p>Choque séptico: antibiótico de amplo espectro em até 1 hora. Hemoculturas antes, se não atrasarem o antibiótico.</p>'; }
+    else { v.className = 'verd w'; v.innerHTML = '<span class="t">Pacote</span><span class="h">' + n + ' de 5 itens</span><p>Complete o pacote: lactato (e sua repetição), volume para hipotensão ou lactato ≥ 4 e vasopressor se a PAM continuar abaixo de 65.</p>'; }
+  }
+  bs.forEach(function(b){ b.addEventListener('change', upd); }); upd();
+
+  var st = { s:'1', p:'alta' };
+  function abx(){
+    var v = RM.$('#abx-verd'), cls, h, p;
+    if (st.s === '1'){ cls = 'd'; h = 'Imediato: idealmente em até 1 hora'; p = 'Possível choque séptico: antibiótico logo que possível, sem esperar exames — independentemente da probabilidade estimada.'; }
+    else if (st.p === 'alta'){ cls = 'd'; h = 'Em até 1 hora'; p = 'Sepse provável ou definida, mesmo sem choque: antibiótico imediato, idealmente na primeira hora.'; }
+    else if (st.p === 'poss'){ cls = 'w'; h = 'Avaliar rápido; até 3 horas'; p = 'Sepse possível sem choque: avaliação rápida de causas infecciosas e não infecciosas; se a suspeita persistir, antibiótico em até 3 h do reconhecimento.'; }
+    else { cls = 'm'; h = 'Adiar e monitorar'; p = 'Baixa probabilidade de infecção e sem choque: a SSC sugere adiar o antibiótico, mantendo vigilância.'; }
+    v.className = 'verd ' + cls;
+    v.innerHTML = '<span class="t">SSC 2021</span><span class="h">' + h + '</span><p>' + p + '</p>';
+  }
+  RM.seg('abx-s', function(x){ st.s = x; abx(); });
+  RM.seg('abx-p', function(x){ st.p = x; abx(); });
+})();
+
+/* ===== 3. Volume e vasopressor ===== */
+(function(){
+  var sl = RM.$('#ne'), c4 = RM.$('#ne4'), cC = RM.$('#neC'), cV = RM.$('#neV');
+  function upd(){
+    var d = +sl.value / 100;
+    RM.$('#ne-v').textContent = d === 0 ? 'sem noradrenalina' : RM.fmt(d, 2) + ' µg/kg/min';
+    var lit = 'h1 he1 h2', cls = 'w', h = 'Volume primeiro', p = 'Cristaloide balanceado, 30 mL/kg nas primeiras 3 h para hipotensão ou lactato ≥ 4 (recomendação fraca na SSC 2021), reavaliando a resposta. Se a PAM continua abaixo de 65, noradrenalina.';
+    if (d > 0){ lit += ' hd1 h3'; h = 'Noradrenalina em curso'; p = 'Alvo inicial PAM de 65 mmHg. Pode ser iniciada em veia periférica enquanto se obtém o acesso central.'; }
+    if (d >= .25){ lit += ' he3 h4'; cls = 'd'; h = 'Associar vasopressina'; p = 'Com noradrenalina entre 0,25 e 0,5 µg/kg/min, a SSC sugere associar vasopressina em vez de seguir escalando a noradrenalina.'; }
+    if (cV.checked && d >= .25){ lit += ' hd3 h5'; cls = 'd'; h = 'Associar epinefrina'; p = 'PAM inadequada apesar de noradrenalina e vasopressina: a sugestão é acrescentar epinefrina.'; }
+    if (cC.checked && d > 0){ lit += ' he5 h6'; }
+    if (c4.checked && d >= .25){ lit += ' hd5 h7'; cls = 'd'; h = 'Hidrocortisona'; p = 'Choque séptico com necessidade contínua de vasopressor (noradrenalina ou epinefrina ≥ 0,25 µg/kg/min por pelo menos 4 h): hidrocortisona 200 mg/dia.'; }
+    var extra = (cC.checked && d > 0) ? '<p class="mt"><b>Disfunção cardíaca:</b> com volume e PAM adequados mas hipoperfusão persistente, associar dobutamina ou trocar para epinefrina.</p>' : '';
+    RM.lightFlow(RM.$('#flowH'), lit);
+    var v = RM.$('#ne-verd');
+    v.className = 'verd ' + cls;
+    v.innerHTML = '<span class="t">Próximo degrau</span><span class="h">' + h + '</span><p>' + p + '</p>' + extra;
+  }
+  sl.addEventListener('input', upd); [c4, cC, cV].forEach(function(x){ x.addEventListener('change', upd); }); upd();
+})();
+
+/* ===== 4. Mapa do foco ===== */
+(function(){
+  var F = {
+    1:{ n:'Vias biliares — colangite e colecistite', pista:'Charcot: febre, icterícia e dor no hipocôndrio direito; Reynolds acrescenta hipotensão e confusão.', faz:'Colangite: drenagem biliar — CPRE preferida; drenagem trans-hepática percutânea se falhar. Colecistite grave em paciente sem condição cirúrgica: colecistostomia percutânea.', tempo:'Tokyo 2018: grau III (disfunção orgânica) → drenagem urgente após suporte inicial; grau II → drenagem precoce; grau I → antibiótico, drenar se não responder.', trap:'Na colangite, o foco é a via biliar obstruída: colecistectomia de urgência não drena o colédoco.' },
+    2:{ n:'Úlcera péptica perfurada', pista:'Dor súbita em “facada”, abdome em tábua, pneumoperitônio.', faz:'Cirurgia (aberta ou laparoscópica): rafia com epiploplastia e lavagem; tratamento não operatório só em casos selecionados, estáveis e com perfuração bloqueada.', tempo:'Urgente, junto com a reanimação.', trap:'Gastrectomia não é necessária na maioria; e o “estável, sem peritonite difusa” é a única porta para o conservador.' },
+    3:{ n:'Necrose pancreática infectada', pista:'Pancreatite necrosante que piora após a 1ª–2ª semana; gás na necrose na TC.', faz:'Antibiótico e suporte; intervenção em degraus (step-up): drenagem percutânea ou endoscópica e, se necessário, necrosectomia minimamente invasiva.', tempo:'Adiar, idealmente até cerca de 4 semanas, quando a necrose está encapsulada.', trap:'É a exceção ao “controle imediato”: necrosectomia aberta precoce aumenta a mortalidade. E antibiótico profilático na necrose estéril não é indicado.' },
+    4:{ n:'Apendicite complicada', pista:'Plastrão ou abscesso na fossa ilíaca direita; ou peritonite difusa.', faz:'Abscesso bem delimitado: drenagem percutânea + antibiótico. Peritonite difusa: apendicectomia com lavagem.', tempo:'Peritonite: urgente. Abscesso drenado: tratamento clínico, cirurgia de intervalo discutível.', trap:'Operar um plastrão bem bloqueado pode exigir ressecção maior; drenar e esperar é a regra quando há abscesso acessível.' },
+    5:{ n:'Diverticulite aguda complicada', pista:'Classificação de Hinchey: I abscesso pericólico; II abscesso pélvico/distante; III peritonite purulenta; IV peritonite fecal.', faz:'Hinchey I–II: antibiótico ± drenagem percutânea (abscessos maiores, em geral acima de 3–4 cm). III: lavagem laparoscópica ou ressecção. IV: ressecção — Hartmann, ou anastomose com estoma de proteção em pacientes selecionados.', tempo:'III e IV: cirurgia urgente.', trap:'Lavagem laparoscópica não serve para peritonite fecal (Hinchey IV).' },
+    6:{ n:'Deiscência de anastomose — o caso de Dona Lúcia', pista:'Taquicardia, confusão, febre e dor entre o 3º e o 7º dia pós-operatório; TC com líquido e gás perianastomóticos, extravasamento de contraste.', faz:'Peritonite difusa com choque: relaparotomia, lavagem e desfazer a anastomose (colostomia terminal — Hartmann). Coleção localizada em paciente estável: drenagem percutânea.', tempo:'Assim que médica e logisticamente viável, em paralelo à reanimação.', trap:'Taquicardia inexplicada no pós-operatório colorretal é deiscência até prova em contrário — não atribuir a dor ou ansiedade.' },
+    7:{ n:'Isquemia mesentérica aguda', pista:'Dor desproporcional ao exame físico; fibrilação atrial; acidose e lactato elevados (tardios).', faz:'Laparotomia: revascularização (embolectomia/derivação ou endovascular) e ressecção do intestino inviável.', tempo:'Emergência. Second-look programado em 24–48 h quando a viabilidade é duvidosa.', trap:'Lactato normal não exclui; e esta é uma das indicações clássicas de relaparotomia programada.' },
+    8:{ n:'Infecção necrotizante de partes moles', pista:'Dor desproporcional, edema além do eritema, bolhas, crepitação, necrose cutânea, toxemia; Fournier no períneo.', faz:'Desbridamento cirúrgico amplo imediato; reexploração em cerca de 24 h; antibióticos de amplo espectro, incluindo clindamicina pelo efeito antitoxina.', tempo:'Imediato — cada hora de atraso aumenta mortalidade.', trap:'Esperar TC, ressonância ou escore (LRINEC) com suspeita clínica forte: o diagnóstico é cirúrgico.' },
+    9:{ n:'Cateter venoso central', pista:'Sepse sem outro foco, hiperemia ou secreção no óstio, hemoculturas positivas.', faz:'Retirar prontamente o dispositivo suspeito depois de obter outro acesso vascular.', tempo:'Assim que houver acesso alternativo.', trap:'Trocar o cateter por fio-guia no mesmo sítio mantém o foco.' }
+  };
+  var svg = RM.$('#abd'), seg;
+  function show(f){
+    RM.$$('.mk, .org', svg).forEach(function(e){ e.classList.toggle('on', e.getAttribute('data-f') === String(f)); });
+    var d = F[f];
+    RM.$('#foco-out').innerHTML = '<h3>Foco ' + f + '</h3><div style="font-family:var(--f-head);font-size:23px;color:var(--ink-strong);line-height:1.15;margin-bottom:8px">' + d.n + '</div><dl class="kv"><dt>Pista</dt><dd>' + d.pista + '</dd><dt>Controle</dt><dd>' + d.faz + '</dd><dt>Tempo</dt><dd>' + d.tempo + '</dd></dl><div class="pearl">' + d.trap + '</div>';
+  }
+  seg = RM.seg('foco', function(v){ show(v); });
+  RM.$$('.mk', svg).forEach(function(m){
+    m.setAttribute('tabindex', '0'); m.setAttribute('role', 'button'); m.setAttribute('aria-label', 'Foco ' + m.getAttribute('data-f'));
+    m.addEventListener('click', function(){ seg.pick(m.getAttribute('data-f')); });
+    m.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); seg.pick(m.getAttribute('data-f')); } });
+  });
+})();
+
+/* ===== 5. Relaparotomia ===== */
+(function(){
+  function upd(){
+    var a = RM.$('#rl-a').checked, b = RM.$('#rl-b').checked, c = RM.$('#rl-c').checked, d = RM.$('#rl-d').checked, e = RM.$('#rl-e').checked;
+    var v = RM.$('#rl-verd'), cls, h, p, no = '';
+    if (e){ cls = 'd'; h = 'Relaparotomia agora (sob demanda)'; p = 'É exatamente o gatilho da estratégia sob demanda: deterioração clínica, disfunção orgânica nova ou persistente, ou imagem com coleção/extravasamento. Coleção localizada e acessível pode ser drenada por via percutânea.'; no = 'Trocar ou escalar o antibiótico e esperar mais 48 h.'; }
+    else if (a || b || c){ cls = 'w'; h = 'Relaparotomia programada'; p = 'A primeira operação deixou trabalho por fazer: ' + [a ? 'foco não controlado' : '', b ? 'controle de danos' : '', c ? 'viabilidade intestinal a reavaliar (second-look)' : ''].filter(Boolean).join(', ') + '. Retorno em 24–48 h, com o paciente reanimado.' + (d ? ' Abdome deixado aberto com fechamento temporário (peritoneostomia).' : ''); }
+    else if (d){ cls = 'm'; h = 'Abdome aberto / fechamento temporário'; p = 'Sem trabalho cirúrgico pendente, mas a parede não fecha: fechamento temporário (pressão negativa) e fechamento definitivo assim que o edema permitir. Vigiar a pressão intra-abdominal.'; }
+    else { cls = 'b'; h = 'Sob demanda: vigiar'; p = 'Foco controlado na primeira operação. Reoperar apenas se houver piora clínica ou imagem que indique — estratégia do RELAP, com menos reoperações e menor custo, sem pior desfecho.'; no = 'Relaparotomia programada “de rotina” a cada 48 h.'; }
+    v.className = 'verd ' + cls;
+    v.innerHTML = '<span class="t">Veredito</span><span class="h">' + h + '</span><p>' + p + '</p>' + (no ? '<div class="no">' + no + '</div>' : '');
+  }
+  RM.$$('.rl').forEach(function(x){ x.addEventListener('change', upd); }); upd();
+})();
+
+/* ===== 6. PIA ===== */
+(function(){
+  var sl = RM.$('#piav'), od = RM.$('#pia-od'), mx = RM.$('#pia-mx');
+  function xOf(p){ var pts = [[0,20],[12,180],[16,240],[21,320],[26,400],[35,500]]; for (var i = 1; i < pts.length; i++){ if (p <= pts[i][0]){ var a = pts[i-1], b = pts[i]; return a[1] + (b[1]-a[1]) * (p-a[0]) / (b[0]-a[0]); } } return 500; }
+  function upd(){
+    var p = +sl.value;
+    RM.$('#pia-ptr').setAttribute('transform', 'translate(' + xOf(p).toFixed(1) + ' 0)');
+    RM.$('#pia-v').textContent = p + ' mmHg';
+    var g = p < 12 ? 'normal' : p <= 15 ? 'grau I' : p <= 20 ? 'grau II' : p <= 25 ? 'grau III' : 'grau IV';
+    RM.$('#pia-lab').textContent = p + ' mmHg · ' + (p < 12 ? 'sem hipertensão intra-abdominal' : 'HIA ' + g);
+    var v = RM.$('#pia-verd'), cls, h, t;
+    if (p < 12){ cls = 'b'; h = 'Sem hipertensão intra-abdominal'; t = 'Manter vigilância em quem tem fatores de risco (ressuscitação volumosa, peritonite, íleo).'; }
+    else if (p > 20 && od.checked){
+      if (mx.checked){ cls = 'd'; h = 'Síndrome compartimental refratária: descomprimir'; t = 'PIA > 20 mmHg com disfunção orgânica nova, sem resposta às medidas clínicas: laparotomia descompressiva e abdome aberto com fechamento temporário.'; }
+      else { cls = 'd'; h = 'Síndrome compartimental abdominal'; t = 'Medidas clínicas imediatas: sedação e analgesia, bloqueio neuromuscular se necessário, sonda nasogástrica/retal para descompressão, drenar ascite ou coleção por punção, evitar balanço hídrico positivo. Sem resposta: laparotomia descompressiva.'; }
+    }
+    else { cls = 'w'; h = 'Hipertensão intra-abdominal — ' + g; t = 'Medidas clínicas para reduzir a PIA e medições seriadas. ' + (p > 20 ? 'Acima de 20 mmHg, procurar ativamente disfunção orgânica nova.' : 'Ainda sem critério de síndrome compartimental.'); }
+    v.className = 'verd ' + cls;
+    v.innerHTML = '<span class="t">Veredito</span><span class="h">' + h + '</span><p>' + t + '</p>';
+  }
+  sl.addEventListener('input', upd); od.addEventListener('change', upd); mx.addEventListener('change', upd); upd();
+})();
+
+/* ===== 9. Forja ===== */
+RM.quiz([
+  { tag:'Questão-mãe', c:3,
+    q:'Dona Lúcia, 68 anos, 3º PO de sigmoidectomia com anastomose primária: confusa, FC 118, PA 84 × 46 após 1.800 mL de cristaloide, lactato 4,6 mmol/L, peritonite difusa; TC com líquido livre e gás perianastomótico. Qual a conduta?',
+    o:['Antibiótico de amplo espectro e reavaliação clínica em 72 h','Drenagem percutânea guiada por TC e manter a anastomose','Estabilizar 24–48 h na UTI e só então operar','Antibiótico em até 1 h, noradrenalina para PAM ≥ 65 e relaparotomia com desfazimento da anastomose','Relaparotomia programada a cada 48 h por 1 semana, sem antibiótico'],
+    e:'<p>Choque séptico por peritonite difusa de deiscência: reanimação e controle do foco andam juntos. Relaparotomia, lavagem e colostomia terminal (Hartmann).</p><p><b>A</b> trata sem controlar o foco. <b>B</b> é a conduta da coleção localizada no estável. <b>C</b>: o foco não drenado impede a estabilização. <b>E</b> inverte o RELAP e dispensa o antibiótico.</p>' },
+  { tag:'Pivô · definição', c:0,
+    q:'Paciente com pneumonia, <mark>SOFA aumentado em 3 pontos, em uso de noradrenalina para PAM ≥ 65 após volume adequado, lactato de 1,6 mmol/L</mark>. Pela Sepse-3:',
+    o:['Sepse, sem critério de choque séptico','Choque séptico','Sepse grave','SIRS sem sepse','Infecção sem disfunção orgânica'],
+    e:'<p>Choque séptico exige vasopressor <b>e</b> lactato &gt; 2 mmol/L. Com lactato 1,6 é sepse — a conduta não muda.</p><p><b>B</b> esquece o lactato. <b>C</b> e <b>D</b> são termos da definição antiga. <b>E</b> ignora o SOFA.</p>' },
+  { tag:'Pivô · triagem', c:4,
+    q:'Sobre o qSOFA, segundo a <mark>Surviving Sepsis Campaign 2021</mark>:',
+    o:['qSOFA ≥ 2 confirma o diagnóstico de sepse','qSOFA substitui o SOFA na definição de choque séptico','qSOFA < 2 exclui sepse e dispensa antibiótico','É a ferramenta de triagem preferida, superior a SIRS e NEWS','Não deve ser usado isoladamente como ferramenta de triagem, em comparação com SIRS, NEWS ou MEWS'],
+    e:'<p>A SSC 2021 recomenda contra o uso do qSOFA isolado na triagem: prediz mortalidade, mas é pouco sensível.</p><p><b>A</b>, <b>B</b> e <b>C</b> dão a ele papel diagnóstico que nunca teve. <b>D</b> inverte a recomendação.</p>' },
+  { tag:'Pivô · tempo do antibiótico', c:1,
+    q:'Paciente no 2º PO com febre e taquicardia, <mark>sem hipotensão, lactato normal, e a causa infecciosa é apenas possível</mark>. Quanto ao antibiótico, a SSC 2021 sugere:',
+    o:['Iniciar em até 1 hora, sempre','Avaliação rápida; se a suspeita persistir, iniciar em até 3 horas do reconhecimento','Aguardar o resultado das hemoculturas','Não iniciar antes de 24 h de observação','Iniciar apenas se procalcitonina elevada'],
+    e:'<p>Sepse possível sem choque: há tempo para investigar causas não infecciosas, mas o limite é 3 h.</p><p><b>A</b> é para choque ou sepse provável. <b>C</b>, <b>D</b> e <b>E</b> atrasam além do sugerido.</p>' },
+  { tag:'Pivô · pâncreas', c:2,
+    q:'Pancreatite necrosante no <mark>12º dia, com gás na necrose à TC; paciente estável, sem disfunção orgânica progressiva</mark>. Conduta?',
+    o:['Necrosectomia aberta imediata','Laparotomia com lavagem e drenos','Antibiótico e suporte, adiando a intervenção; step-up quando encapsulada','Colecistectomia de urgência','Tratamento só sintomático, sem antibiótico'],
+    e:'<p>Necrose infectada no estável: antibiótico, adiar (idealmente ~4 semanas) e intervir em degraus — drenagem percutânea/endoscópica antes de necrosectomia.</p><p><b>A</b> e <b>B</b> são a intervenção precoce que aumenta mortalidade. <b>D</b> não trata a necrose. <b>E</b> ignora a infecção.</p>' },
+  { tag:'Pivô · reoperação', c:3,
+    q:'Peritonite fecal por perfuração de sigmoide tratada com <mark>Hartmann, foco totalmente controlado e aponeurose fechada</mark>. Paciente estável no 1º PO. Estratégia de reoperação?',
+    o:['Relaparotomia programada em 48 h','Peritoneostomia e lavagens a cada 24 h','Second-look obrigatório em 24 h','Relaparotomia sob demanda, guiada por piora clínica ou imagem','Reoperar após 7 dias para lavagem de rotina'],
+    e:'<p>Foco controlado: sob demanda (RELAP) — mesmo desfecho, menos reoperações e menos custo.</p><p><b>A</b>, <b>B</b> e <b>E</b> são programadas sem indicação. <b>C</b> é para isquemia mesentérica com viabilidade duvidosa.</p>' },
+  { tag:'Pivô · compartimento', c:0,
+    q:'Após reanimação volumosa, <mark>PIA 28 mmHg, oligúria e aumento da pressão de via aérea, apesar de sedação, bloqueio neuromuscular, sonda nasogástrica e balanço negativo</mark>. Conduta?',
+    o:['Laparotomia descompressiva com fechamento temporário','Aumentar o volume para melhorar a diurese','Diurético e reavaliar em 24 h','Elevar a cabeceira a 60°','Nova medida em 12 h'],
+    e:'<p>Síndrome compartimental abdominal (PIA &gt; 20 com disfunção nova) refratária às medidas clínicas: descompressão.</p><p><b>B</b> agrava. <b>C</b> e <b>E</b> atrasam. <b>D</b>: elevar a cabeceira aumenta a PIA.</p>' },
+  { tag:'Pivô · duração', c:1,
+    q:'Apendicite perfurada com peritonite purulenta; <mark>apendicectomia e lavagem com controle adequado do foco</mark>. Duração do antibiótico pelo STOP-IT?',
+    o:['14 dias','Cerca de 4 dias','Até normalizar leucócitos e PCR, sem limite','Dose única intraoperatória','21 dias, pela gravidade'],
+    e:'<p>Com controle adequado do foco, curso fixo de ~4 dias teve desfechos semelhantes ao tratamento até a resolução fisiológica (~8 dias).</p><p><b>A</b>, <b>C</b> e <b>E</b> prolongam sem benefício. <b>D</b> é profilaxia, não tratamento.</p>' }
+]);
+
+</script>
+</body>
+</html>

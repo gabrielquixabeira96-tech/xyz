@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atlas do Câncer Gástrico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{
+  color-scheme:dark;
+  --ground:#121110;--surface:#171614;--surface-2:#1c1a18;--surface-3:#23201d;
+  --ink:#f6f4f2;--ink-strong:#faf8f6;--ink-body:rgba(243,242,242,.82);--ink-soft:rgba(243,242,242,.70);
+  --ink-meta:rgba(243,242,242,.58);--rule:rgba(243,242,242,.10);--rule-2:rgba(243,242,242,.16);--rule-3:rgba(243,242,242,.28);
+  --accent:#b68235;--accent-300:#facb8d;--accent-400:#e1ad66;--accent-600:#8d6428;--accent-700:#6b4c1e;
+  --tint-1:rgba(194,141,65,.16);--tint-2:rgba(194,141,65,.34);--tint-3:rgba(194,141,65,.56);--tint-4:rgba(194,141,65,.82);
+  --fh:"Cormorant Garamond",Georgia,"Times New Roman",serif;--fb:"Lora",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:56px}
+body{margin:0;background:var(--ground);color:var(--ink-body);font-family:var(--fb);font-size:15.5px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--fh);font-weight:500;color:var(--ink-strong);margin:0;letter-spacing:-.005em;text-wrap:balance}
+p{margin:0 0 .8em}
+b,strong{color:var(--ink);font-weight:600}
+em{color:var(--accent-300)}
+a{color:var(--accent-300)}
+button{font-family:var(--fb);color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent-400);outline-offset:2px;border-radius:3px}
+::selection{background:var(--tint-2);color:var(--ink-strong)}
+.num{font-variant-numeric:tabular-nums}
+svg text{font-family:var(--fb)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px 80px}
+header.hero{max-width:1140px;margin:0 auto;padding:52px 20px 26px}
+.kicker{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-meta)}
+.kicker.g{color:var(--accent-300)}
+h1{font-size:clamp(34px,6vw,60px);line-height:1.02;margin:12px 0 0;font-weight:500}
+h1 i{color:var(--accent-400)}
+.lede{max-width:62ch;font-size:17px;color:var(--ink-soft);margin:16px 0 0}
+.caso{margin:24px 0 0;padding:18px 20px;border-left:2px solid var(--accent);background:var(--surface);border-radius:0 8px 8px 0;max-width:76ch}
+.caso p{margin:0;font-size:15px}
+.caso .src{display:block;margin-top:9px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-meta)}
+nav.rail{position:sticky;top:0;z-index:40;background:rgba(14,13,12,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);margin-top:28px}
+.rail-in{max-width:1140px;margin:0 auto;padding:8px 20px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.rail-in::-webkit-scrollbar{display:none}
+.rail a{flex:none;font-size:12.5px;color:var(--ink-soft);text-decoration:none;padding:5px 11px;border-radius:999px;border:1px solid var(--rule);white-space:nowrap;transition:.15s}
+.rail a .n{color:var(--accent-400);margin-right:6px;font-size:11px;font-variant-numeric:tabular-nums}
+.rail a:hover{border-color:var(--rule-3);color:var(--ink)}
+.rail a.on{background:var(--tint-1);border-color:var(--accent-600);color:var(--accent-300)}
+section.ch{padding-top:54px;scroll-margin-top:56px}
+.ch-head{display:flex;gap:16px;align-items:baseline;border-top:1px solid var(--rule-2);padding-top:18px}
+.ch-num{font-size:12px;color:var(--accent-400);letter-spacing:.12em;padding-top:6px;font-variant-numeric:tabular-nums;flex:none}
+.ch-head h2{font-size:clamp(25px,3.4vw,36px);line-height:1.12}
+.ch-sub{color:var(--ink-meta);font-size:14.5px;margin:6px 0 0;max-width:72ch}
+.plate{display:grid;grid-template-columns:1.2fr .95fr;gap:24px;margin-top:22px;align-items:start}
+.plate>*{min-width:0}
+@media (max-width:880px){.plate{grid-template-columns:1fr}}
+.fig{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:14px;min-width:0}
+.fig svg{display:block;width:100%;height:auto}
+.figcap{font-size:12px;color:var(--ink-meta);margin:10px 2px 0;line-height:1.55}
+.panel{display:flex;flex-direction:column;gap:14px;min-width:0}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:15px 16px}
+.card h3,.lbl{font-family:var(--fb);font-size:10.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-meta);margin:0 0 10px}
+.prose{margin-top:22px;max-width:70ch;font-size:15.5px}
+.prose p{margin:0 0 12px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{font-size:13px;padding:6px 11px;border-radius:4px;border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-soft);transition:.15s}
+.seg button:hover{border-color:var(--accent-600);color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#121110;font-weight:600}
+.sl{margin-top:10px}
+.sl label{display:flex;justify-content:space-between;gap:10px;font-size:13px;color:var(--ink-soft);margin-bottom:3px}
+.sl label b{font-variant-numeric:tabular-nums;color:var(--accent-300);font-weight:600}
+input[type=range]{width:100%;accent-color:var(--accent);height:22px;margin:0}
+.chk{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--ink-soft);cursor:pointer;padding:4px 0;line-height:1.45}
+.chk input{accent-color:var(--accent);width:16px;height:16px;margin-top:2px;flex:none}
+select,input[type=number]{font-family:var(--fb);font-size:13.5px;background:var(--surface-2);color:var(--ink);border:1px solid var(--rule-2);border-radius:4px;padding:6px 8px;width:100%}
+.verd{border-radius:8px;padding:13px 15px;border:1px solid var(--rule-2);font-size:14px}
+.verd .t{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:4px;color:var(--ink-meta)}
+.verd .h{font-family:var(--fh);font-size:23px;line-height:1.15;display:block;margin-bottom:6px;color:var(--ink-strong)}
+.verd p{margin:0 0 6px;color:var(--ink-body)}
+.verd p:last-child{margin:0}
+.v-1{background:var(--surface-2)}
+.v-2{background:var(--tint-1);border-color:var(--accent-600)}
+.v-2 .h,.v-3 .h{color:var(--accent-300)}
+.v-3{background:var(--tint-2);border-color:var(--accent-400)}
+.v-4{background:var(--accent);border-color:var(--accent)}
+.v-4 .t,.v-4 .h,.v-4 p,.v-4 b{color:#121110}
+.v-x{background:transparent;border:1px dashed var(--accent-400)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13.5px;margin:0}
+.kv dt{color:var(--ink-meta);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding-top:3px}
+.kv dd{margin:0;color:var(--ink)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.steps li{counter-increment:s;position:relative;padding-left:30px;font-size:14px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:var(--tint-2);color:var(--accent-300);font-size:11px;display:grid;place-items:center;font-weight:600}
+.forbid{margin-top:12px;padding:11px 13px;border-radius:6px;border:1px dashed var(--accent-400);font-size:13.5px}
+.forbid b{color:var(--accent-300)}
+.note{margin-top:12px;padding:11px 13px;border-radius:6px;background:var(--surface-2);border:1px solid var(--rule);font-size:13.5px}
+.divg{margin-top:16px;padding:13px 15px;border-left:2px solid var(--accent-400);background:var(--tint-1);border-radius:0 8px 8px 0;font-size:14px;max-width:76ch}
+.divg .t{display:block;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-300);margin-bottom:4px}
+mark{background:var(--tint-2);color:var(--accent-300);padding:0 3px;border-radius:3px}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:999px;border:1px solid var(--accent-600);color:var(--accent-300)}
+.tbl{width:100%;overflow-x:auto;margin-top:16px;border:1px solid var(--rule);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;vertical-align:top;padding:9px 11px;border-bottom:1px solid var(--rule)}
+th{font-weight:500;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-300);background:var(--surface-2)}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+tr.hl td{background:var(--tint-1)}
+@media (max-width:560px){table{font-size:12.5px}th,td{padding:7px 7px}}
+.traps{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px;margin-top:20px}
+.trap{background:var(--surface);border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.trap button{all:unset;box-sizing:border-box;display:block;width:100%;padding:14px 16px;cursor:pointer;font-family:var(--fh);font-size:19px;line-height:1.25;color:var(--ink-strong)}
+.trap button::after{content:"＋ ver a armadilha";display:block;font-family:var(--fb);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-400);margin-top:8px}
+.trap.open button::after{content:"− fechar"}
+.trap .ans{display:none;padding:0 16px 14px;font-size:14px}
+.trap.open .ans{display:block}
+.trap.open{border-color:var(--accent-600)}
+.score{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:18px;font-size:14px}
+.score b{font-family:var(--fh);font-size:28px;color:var(--accent-300);font-weight:500}
+.score button{font-size:12.5px;padding:6px 12px;border-radius:4px;border:1px solid var(--rule-2);background:var(--surface-2)}
+.q{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:18px;margin-top:16px}
+.q .qn{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-400)}
+.q .qs{margin:6px 0 12px;font-size:15.5px;color:var(--ink)}
+.alts{display:flex;flex-direction:column;gap:7px}
+.alts button{text-align:left;font-size:14.5px;padding:9px 12px;border-radius:6px;border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-body);display:flex;gap:10px;line-height:1.5}
+.alts button .L{flex:none;width:22px;height:22px;border-radius:50%;border:1px solid var(--rule-3);display:grid;place-items:center;font-size:12px;color:var(--ink-meta)}
+.alts button:hover:not([disabled]){border-color:var(--accent-600)}
+.alts button[disabled]{cursor:default}
+.alts button.right{background:var(--tint-2);border-color:var(--accent-400);color:var(--ink-strong)}
+.alts button.right .L{background:var(--accent);border-color:var(--accent);color:#121110}
+.alts button.wrong{border-style:dashed;border-color:var(--rule-3);opacity:.75;text-decoration:line-through;text-decoration-color:var(--rule-3)}
+.exp{display:none;margin-top:12px;padding:12px 14px;border-left:2px solid var(--accent);background:var(--surface-2);border-radius:0 6px 6px 0;font-size:14px}
+.exp .res{display:block;font-family:var(--fh);font-size:21px;color:var(--accent-300);margin-bottom:4px}
+.q.done .exp{display:block}
+.mother{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:20px}
+.mc{background:var(--surface);border:1px solid var(--rule);border-top:3px solid var(--rule-3);border-radius:6px;padding:13px 14px;font-size:13.5px}
+.mc.l2{border-top-color:var(--accent-600)}.mc.l3{border-top-color:var(--accent-400)}.mc.l4{border-top-color:var(--accent-300)}
+.mc .g{color:var(--ink-meta);font-size:12.5px}
+.mc .a{font-family:var(--fh);font-size:19px;color:var(--ink-strong);line-height:1.2;margin:4px 0}
+.mc p{margin:0;color:var(--ink-soft)}
+footer.fontes{margin-top:60px;border-top:1px solid var(--rule-2);padding-top:18px;font-size:12.5px;color:var(--ink-meta);max-width:90ch}
+footer.fontes ol{padding-left:18px;margin:8px 0 0}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--ink-meta);margin-top:8px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:2px;display:inline-block}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.big{font-family:var(--fh);font-size:40px;line-height:1;color:var(--accent-300)}
+@media (max-width:560px){.two{grid-template-columns:1fr}.wrap,header.hero{padding-left:16px;padding-right:16px}.rail-in{padding-left:16px;padding-right:16px}.card{padding:13px}.fig{padding:10px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+</style>
+</head>
+<body>
+<header class="hero">
+  <span class="kicker g">Residência Max · Cirurgia Geral · Estômago e duodeno</span>
+  <h1>Adenocarcinoma gástrico: <i>profundidade</i> decide tudo</h1>
+  <p class="lede">Quanto o tumor desceu na parede define se ele sai pelo endoscópio, se vai direto para a mesa ou se passa antes por oito semanas de quimioterapia. Onde ele está define quanto estômago sai. E a linfadenectomia D2 é o que separa uma gastrectomia de uma operação oncológica.</p>
+  <div class="caso">
+    <p><b>O caso.</b> Homem de 62 anos, epigastralgia e perda de 7 kg em 4 meses. Endoscopia: lesão ulcerada de bordas mal definidas e infiltrativas no <b>antro</b> (Borrmann III); biópsia com adenocarcinoma do <b>tipo intestinal de Lauren</b>. TC: espessamento parietal com linfonodos perigástricos aumentados, sem metástases. Laparoscopia: sem implantes, citologia do lavado negativa. Estadiamento clínico <b>cT3 N1 M0</b>.</p>
+    <span class="src">A pergunta: cirurgia direto ou quimioterapia antes? Subtotal ou total? Quais linfonodos?</span>
+  </div>
+</header>
+
+<nav class="rail" aria-label="Capítulos"><div class="rail-in">
+  <a href="#c1"><span class="n">01</span>Lauren</a>
+  <a href="#c2"><span class="n">02</span>Borrmann</a>
+  <a href="#c3"><span class="n">03</span>Câncer precoce</a>
+  <a href="#c4"><span class="n">04</span>TNM</a>
+  <a href="#c5"><span class="n">05</span>Linfonodos D1/D2</a>
+  <a href="#c6"><span class="n">06</span>Total ou subtotal</a>
+  <a href="#c7"><span class="n">07</span>FLOT</a>
+  <a href="#c8"><span class="n">08</span>Pegadinhas</a>
+  <a href="#c9"><span class="n">09</span>Forja</a>
+  <a href="#c10"><span class="n">10</span>Tabela-mãe</a>
+</div></nav>
+
+<div class="wrap">
+
+<section class="ch" id="c1">
+  <div class="ch-head"><span class="ch-num">01</span><div>
+    <h2>Lauren: duas doenças com o mesmo nome</h2>
+    <p class="ch-sub">Compare os dois campos microscópicos. O tipo intestinal forma glândulas; o difuso perdeu a adesão entre as células e infiltra a parede uma a uma.</p>
+  </div></div>
+  <div class="plate">
+    <div class="fig">
+      <svg id="histo" viewBox="0 0 480 340" role="img" aria-label="Campo histológico esquemático"></svg>
+      <p class="figcap">Campo histológico esquemático, sem a cor real da hematoxilina-eosina. Tipo difuso: célula em anel de sinete — vacúolo de muco empurrando o núcleo em crescente para a periferia.</p>
+    </div>
+    <div class="panel">
+      <div class="card"><h3>Tipo de Lauren</h3><div class="seg" id="segLauren"></div></div>
+      <div class="verd" id="vLauren"></div>
+    </div>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th></th><th>Intestinal</th><th>Difuso</th></tr></thead>
+    <tbody>
+      <tr><td>Histologia</td><td>Glândulas neoplásicas, coesas</td><td>Células isoladas, pouco coesas, em anel de sinete</td></tr>
+      <tr><td>Origem</td><td>Cascata de Correa: gastrite crônica (H. pylori) → atrofia → metaplasia intestinal → displasia → câncer</td><td>Sem lesão precursora visível; perda de E-caderina (CDH1)</td></tr>
+      <tr><td>Paciente</td><td>Mais idoso, sexo masculino, áreas de alta incidência</td><td>Mais jovem, proporção maior de mulheres; associação com sangue tipo A</td></tr>
+      <tr><td>Local e forma</td><td>Antro, lesão expansiva ou ulcerada</td><td>Qualquer parte; pode tomar todo o órgão (linite plástica)</td></tr>
+      <tr><td>Disseminação</td><td>Hematogênica (fígado)</td><td>Contiguidade, linfática e peritoneal (Krukenberg, Blumer)</td></tr>
+      <tr><td>Prognóstico</td><td>Melhor</td><td>Pior</td></tr>
+      <tr><td>Hereditário</td><td>—</td><td>Mutação germinativa de CDH1: câncer gástrico difuso hereditário → gastrectomia total profilática</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="ch" id="c2">
+  <div class="ch-head"><span class="ch-num">02</span><div>
+    <h2>Borrmann: a forma do câncer avançado</h2>
+    <p class="ch-sub">Corte transversal da parede gástrica, mucosa para cima. A classificação vale para o câncer avançado (que já passou da submucosa).</p>
+  </div></div>
+  <div class="plate">
+    <div class="fig">
+      <svg id="borr" viewBox="0 0 480 280" role="img" aria-label="Corte da parede gástrica com tumor"></svg>
+      <p class="figcap">Esquema em corte. Faixas, de cima para baixo: mucosa, submucosa, muscular própria, subserosa e serosa. O tumor está em ouro claro.</p>
+    </div>
+    <div class="panel">
+      <div class="card"><h3>Tipo de Borrmann</h3><div class="seg" id="segBorr"></div></div>
+      <div class="verd" id="vBorr"></div>
+    </div>
+  </div>
+  <div class="prose"><p>A forma tem consequência cirúrgica: os tipos <strong>I e II</strong> são expansivos, com borda nítida, e a margem proximal exigida é menor; os tipos <strong>III e IV</strong> infiltram além do que se vê, e a margem precisa ser maior. O Borrmann IV — a linite plástica, quase sempre do tipo difuso — é o de pior prognóstico e o que mais esconde doença peritoneal.</p></div>
+</section>
+
+<section class="ch" id="c3">
+  <div class="ch-head"><span class="ch-num">03</span><div>
+    <h2>Câncer precoce: a escola japonesa</h2>
+    <p class="ch-sub">Câncer gástrico precoce é o restrito à mucosa ou à submucosa (T1), <b>com ou sem</b> metástase linfonodal. A classificação macroscópica é a de Paris/japonesa; a decisão endoscópica segue a JGCA.</p>
+  </div></div>
+  <div class="fig" style="margin-top:20px"><svg id="paris" viewBox="0 0 640 150" role="img" aria-label="Tipos macroscópicos do câncer precoce"></svg>
+    <p class="figcap">Perfis esquemáticos dos tipos 0. Linha de base = superfície da mucosa normal.</p></div>
+  <div class="plate">
+    <div class="card"><h3>Indicação de ressecção endoscópica (JGCA, 6ª ed., 2021)</h3>
+      <h3 style="margin-top:4px">Histologia</h3><div class="seg" id="eHist"></div>
+      <h3 style="margin-top:14px">Profundidade clínica</h3><div class="seg" id="eDep"></div>
+      <h3 style="margin-top:14px">Úlcera ou cicatriz</h3><div class="seg" id="eUl"></div>
+      <div class="sl"><label for="eSz"><span>Tamanho</span><b id="lSz">1,5 cm</b></label><input type="range" id="eSz" min="0.5" max="6" step="0.5" value="1.5"></div>
+    </div>
+    <div class="panel"><div class="verd" id="vEsd"></div>
+      <div class="note">Na submucosa o risco de metástase linfonodal sobe de poucos por cento para cerca de um em cada cinco casos — é por isso que a profundidade, e não o tamanho, é a primeira pergunta. A peça da dissecção é que confirma a cura (margens, invasão linfovascular, profundidade real).</div></div>
+  </div>
+  <div class="divg"><span class="t">Divergência de banca</span>Livros mais antigos ensinam o critério “clássico” da mucossectomia: adenocarcinoma diferenciado, intramucoso, sem úlcera, <b>≤ 2 cm se elevado e ≤ 1 cm se deprimido</b>. A JGCA atual ampliou a indicação com a dissecção submucosa (ESD). Se o enunciado traz os números clássicos, a banca está usando o critério antigo — e a resposta continua sendo ressecção endoscópica.</div>
+</section>
+
+<section class="ch" id="c4">
+  <div class="ch-head"><span class="ch-num">04</span><div>
+    <h2>TNM (AJCC, 8ª edição)</h2>
+    <p class="ch-sub">Desça o tumor pela parede e conte os linfonodos positivos. O N depende do número, não da localização — e exige pelo menos 16 linfonodos examinados.</p>
+  </div></div>
+  <div class="plate">
+    <div class="fig"><svg id="wall" viewBox="0 0 480 330" role="img" aria-label="Camadas da parede gástrica e profundidade do tumor"></svg>
+      <p class="figcap">Parede gástrica em corte com o pâncreas abaixo (estrutura adjacente). A linha escura dentro da mucosa é a muscular da mucosa; a cunha dourada é o tumor.</p></div>
+    <div class="panel">
+      <div class="card"><h3>Profundidade (T)</h3><div class="seg" id="segT"></div>
+        <div class="sl"><label for="rN"><span>Linfonodos regionais positivos</span><b id="lN">2</b></label><input type="range" id="rN" min="0" max="25" step="1" value="2"></div>
+        <label class="chk"><input type="checkbox" id="cM"> Metástase à distância ou citologia peritoneal positiva</label></div>
+      <div class="verd" id="vTnm"></div>
+    </div>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>Exame</th><th>Para quê</th></tr></thead>
+    <tbody>
+      <tr><td>EDA com biópsias</td><td>Diagnóstico, localização, extensão; tipo histológico; HER2 e status de MMR/MSI nos avançados</td></tr>
+      <tr><td>TC de tórax, abdome e pelve</td><td>Metástases (fígado, pulmão, peritônio), linfonodos, ascite</td></tr>
+      <tr><td>Ecoendoscopia</td><td>Profundidade (T) nas lesões precoces e candidatas a ressecção endoscópica</td></tr>
+      <tr><td>Laparoscopia + citologia do lavado</td><td>Doença potencialmente ressecável em estádio IB–III (ESMO): achar implantes que a TC não vê. Citologia positiva = M1</td></tr>
+      <tr><td>PET-CT</td><td>Opcional; pouco sensível no tipo difuso/mucinoso</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="ch" id="c5">
+  <div class="ch-head"><span class="ch-num">05</span><div>
+    <h2>Estações linfonodais e a linfadenectomia D1/D2</h2>
+    <p class="ch-sub">A definição japonesa atual depende do tipo de gastrectomia. Escolha a operação e o nível; toque numa estação para ver o nome.</p>
+  </div></div>
+  <div class="plate">
+    <div class="fig"><svg id="lnm" viewBox="0 0 520 440" role="img" aria-label="Estômago com estações linfonodais numeradas"></svg>
+      <p class="figcap">Vista anterior esquemática. Direita do paciente à esquerda da figura. Círculos cheios = estações incluídas no nível escolhido; vazados = não incluídas. 14v e 16 ficam fora da D2 padrão. O tronco celíaco está sob a estação 9.</p></div>
+    <div class="panel">
+      <div class="card"><h3>Gastrectomia</h3><div class="seg" id="segGx"></div>
+        <h3 style="margin-top:14px">Nível</h3><div class="seg" id="segD"></div></div>
+      <div class="verd v-2" id="vSt"></div>
+      <div class="verd v-1" id="vD"></div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>A D2 é o padrão para o câncer avançado ressecável no Japão, na Coreia, nas diretrizes europeias e americanas: no seguimento de 15 anos do ensaio holandês, menos recidiva locorregional e menos morte pelo câncer que a D1. A <strong>esplenectomia e a pancreatectomia caudal</strong> de rotina saíram da D2 — aumentam a morbidade sem ganho (a estação 10 deixou a D2 da gastrectomia total). A linfadenectomia para-aórtica profilática (D2+) não melhorou sobrevida (JCOG 9501).</p>
+  </div>
+</section>
+
+<section class="ch" id="c6">
+  <div class="ch-head"><span class="ch-num">06</span><div>
+    <h2>Total ou subtotal: a margem decide</h2>
+    <p class="ch-sub">A gastrectomia subtotal (distal) tem sobrevida igual à total nos tumores distais e menos sequela. O que obriga a total é não caber a margem proximal.</p>
+  </div></div>
+  <div class="plate">
+    <div class="fig"><svg id="gx" viewBox="0 0 440 340" role="img" aria-label="Estômago com tumor, margem e linha de secção"></svg>
+      <p class="figcap">Esquema: tumor em ouro claro, faixa tracejada = margem proximal exigida; linha cheia = secção. 1 cm = 10 unidades na pequena curvatura.</p></div>
+    <div class="panel">
+      <div class="card"><h3>Localização</h3><div class="seg" id="segLoc"></div>
+        <h3 style="margin-top:14px">Padrão de crescimento</h3><div class="seg" id="segPad"></div>
+        <h3 style="margin-top:14px">Profundidade</h3><div class="seg" id="segProf"></div></div>
+      <div class="verd" id="vGx"></div>
+    </div>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>Reconstrução</th><th>Como</th><th>Quando</th></tr></thead>
+    <tbody>
+      <tr><td>Billroth I</td><td>Gastroduodenoanastomose</td><td>Subtotal com coto e duodeno que se aproximam sem tensão</td></tr>
+      <tr><td>Billroth II</td><td>Gastrojejunoanastomose em alça, coto duodenal fechado</td><td>Subtotal; risco de refluxo biliar e síndrome da alça aferente</td></tr>
+      <tr><td>Y de Roux</td><td>Alça jejunal exclusa de ≈ 40–50 cm</td><td>Obrigatória na total (esofagojejunoanastomose); preferida por muitos na subtotal — menos refluxo biliar</td></tr>
+    </tbody></table></div>
+  <div class="divg"><span class="t">Junção esofagogástrica — Siewert</span><b>Tipo I</b>: centro do tumor 1 a 5 cm acima da JEG (tratado como esôfago). <b>Tipo II</b>: de 1 cm acima a 2 cm abaixo (cárdia verdadeira). <b>Tipo III</b>: 2 a 5 cm abaixo (subcárdico) — tratado como câncer gástrico, com gastrectomia total e esofagectomia distal.</div>
+</section>
+
+<section class="ch" id="c7">
+  <div class="ch-head"><span class="ch-num">07</span><div>
+    <h2>Quimioterapia perioperatória: FLOT</h2>
+    <p class="ch-sub">Escolha o paciente e veja onde ele entra na linha do tempo.</p>
+  </div></div>
+  <div class="plate">
+    <div class="fig"><svg id="flot" viewBox="0 0 560 210" role="img" aria-label="Linha do tempo do tratamento"></svg>
+      <p class="figcap">Cada bloco FLOT = 1 ciclo de 14 dias. 4 ciclos antes (≈ 8 semanas) e 4 depois da cirurgia.</p></div>
+    <div class="panel">
+      <div class="card"><h3>Paciente</h3><div class="seg" id="segFl"></div></div>
+      <div class="verd" id="vFl"></div>
+    </div>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>Ensaio</th><th>Estratégia</th><th>Mensagem</th></tr></thead>
+    <tbody>
+      <tr><td>FLOT4 (Al-Batran, Lancet 2019)</td><td>FLOT perioperatório × ECF/ECX perioperatório, ≥ cT2 e/ou cN+</td><td>Sobrevida mediana 50 × 35 meses. Padrão ocidental atual</td></tr>
+      <tr><td>MAGIC (Cunningham, NEJM 2006)</td><td>ECF perioperatório × cirurgia isolada</td><td>Estabeleceu a quimioterapia perioperatória</td></tr>
+      <tr><td>CLASSIC (Bang, Lancet 2012)</td><td>D2 + capecitabina/oxaliplatina adjuvante × D2 isolada</td><td>Base da estratégia asiática: operar primeiro, adjuvância depois</td></tr>
+      <tr><td>INT-0116 (Macdonald, NEJM 2001)</td><td>Quimiorradioterapia adjuvante × observação</td><td>Benefício em cenário de linfadenectomia limitada (maioria D0/D1)</td></tr>
+      <tr><td>MATTERHORN (2025)</td><td>Durvalumabe + FLOT perioperatório × FLOT</td><td>Acrescentar imunoterapia melhorou a sobrevida livre de eventos</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="ch" id="c8">
+  <div class="ch-head"><span class="ch-num">08</span><div>
+    <h2>Pegadinhas de prova</h2>
+    <p class="ch-sub">Decida antes de abrir.</p>
+  </div></div>
+  <div class="traps">
+    <div class="trap"><button type="button">“Câncer gástrico precoce é o que não tem metástase linfonodal.”</button><div class="ans">Falso. Precoce é definição de <b>profundidade</b>: restrito à mucosa ou submucosa, <b>independentemente</b> de linfonodos.</div></div>
+    <div class="trap"><button type="button">“Borrmann se aplica ao câncer precoce.”</button><div class="ans">Não. Borrmann (I–IV) é para o <b>avançado</b>. O precoce usa a classificação japonesa/Paris (0-I, 0-IIa, 0-IIb, 0-IIc, 0-III).</div></div>
+    <div class="trap"><button type="button">“A D2 inclui esplenectomia.”</button><div class="ans">Não mais. Esplenectomia e pancreatectomia caudal de rotina aumentam complicações sem ganho; ficam para invasão direta. A estação 10 saiu da D2 na gastrectomia total.</div></div>
+    <div class="trap"><button type="button">“Citologia positiva no lavado, sem implantes visíveis: estádio III, operar.”</button><div class="ans">Citologia peritoneal positiva é <b>M1</b> (estádio IV). Tratamento sistêmico, não gastrectomia curativa.</div></div>
+    <div class="trap"><button type="button">“O N do TNM depende de quais estações estão comprometidas.”</button><div class="ans">No AJCC é pelo <b>número</b> de linfonodos positivos: N1 1–2, N2 3–6, N3a 7–15, N3b ≥ 16. As estações (JGCA) definem a extensão da linfadenectomia, não o N.</div></div>
+    <div class="trap"><button type="button">“Linfonodo supraclavicular esquerdo palpável em câncer gástrico: linfonodo regional.”</button><div class="ans">É o <b>linfonodo de Virchow</b> — metástase à distância (M1). Mesma lógica: Irish (axilar esquerdo), Irmã Maria José (umbilical), prateleira de Blumer (fundo de saco ao toque retal), Krukenberg (ovário).</div></div>
+  </div>
+</section>
+
+<section class="ch" id="c9">
+  <div class="ch-head"><span class="ch-num">09</span><div>
+    <h2>Forja: um caso, oito versões</h2>
+    <p class="ch-sub">A primeira é a questão-mãe. Nas seguintes, só o dado <mark>marcado</mark> muda.</p>
+  </div></div>
+  <div class="score" id="score"></div>
+  <div id="qs"></div>
+</section>
+
+<section class="ch" id="c10">
+  <div class="ch-head"><span class="ch-num">10</span><div>
+    <h2>Tabela-mãe: gatilho → conduta</h2>
+    <p class="ch-sub">Borda mais clara, conduta mais agressiva ou doença mais avançada.</p>
+  </div></div>
+  <div class="mother">
+    <div class="mc"><div class="g">cT1a diferenciado, sem úlcera</div><div class="a">Dissecção submucosa endoscópica</div><p>Qualquer tamanho (JGCA 2021). Peça define a cura.</p></div>
+    <div class="mc"><div class="g">cT1a indiferenciado, sem úlcera, ≤ 2 cm</div><div class="a">Dissecção submucosa endoscópica</div><p>Acima de 2 cm ou com úlcera: cirurgia.</p></div>
+    <div class="mc l2"><div class="g">cT1b N0 ou T1 fora de critério</div><div class="a">Gastrectomia + D1/D1+</div><p>Sem quimioterapia pré-operatória.</p></div>
+    <div class="mc l3"><div class="g">≥ cT2 ou cN+, M0</div><div class="a">FLOT 4 ciclos → gastrectomia D2 → FLOT 4 ciclos</div><p>Laparoscopia com citologia antes.</p></div>
+    <div class="mc l2"><div class="g">Tumor distal (antro, corpo distal)</div><div class="a">Gastrectomia subtotal</div><p>Se a margem proximal couber: 3 cm (I–II) ou 5 cm (III–IV).</p></div>
+    <div class="mc l3"><div class="g">Tumor proximal ou linite plástica</div><div class="a">Gastrectomia total + Y de Roux</div><p>Siewert III entra aqui.</p></div>
+    <div class="mc l2"><div class="g">Operado sem neoadjuvância, pT3 N+</div><div class="a">Adjuvância</div><p>Capecitabina + oxaliplatina (CLASSIC) ou FLOT pós.</p></div>
+    <div class="mc l4"><div class="g">Citologia positiva, Virchow, Blumer, Krukenberg, metástase hepática</div><div class="a">M1 — tratamento sistêmico</div><p>Gastrectomia só paliativa (sangramento, obstrução).</p></div>
+  </div>
+  <footer class="fontes">
+    <b>Referências usadas para o conteúdo</b>
+    <ol>
+      <li>Japanese Gastric Cancer Association. Japanese Gastric Cancer Treatment Guidelines 2021 (6th edition). Gastric Cancer, 2023;26:1–25.</li>
+      <li>Amin MB et al. AJCC Cancer Staging Manual, 8th ed. Springer, 2017 — estômago.</li>
+      <li>Al-Batran SE et al. Perioperative chemotherapy with FLOT versus ECF/ECX (FLOT4). Lancet, 2019;393:1948–57.</li>
+      <li>Songun I et al. Surgical treatment of gastric cancer: 15-year follow-up of the Dutch D1D2 trial. Lancet Oncol, 2010;11:439–49.</li>
+      <li>Sasako M et al. D2 lymphadenectomy alone or with para-aortic nodal dissection (JCOG 9501). N Engl J Med, 2008;359:453–62.</li>
+      <li>Bang YJ et al. Adjuvant capecitabine and oxaliplatin after D2 gastrectomy (CLASSIC). Lancet, 2012;379:315–21.</li>
+      <li>Lordick F et al. Gastric cancer: ESMO Clinical Practice Guideline, 2022.</li>
+      <li>Janjigian YY et al. Perioperative durvalumab in gastric and gastroesophageal junction cancer (MATTERHORN). N Engl J Med, 2025.</li>
+      <li>Cunningham D et al. Perioperative chemotherapy versus surgery alone for resectable gastroesophageal cancer (MAGIC). N Engl J Med, 2006;355:11–20.</li>
+      <li>Macdonald JS et al. Chemoradiotherapy after surgery compared with surgery alone for adenocarcinoma of the stomach or gastroesophageal junction (INT-0116). N Engl J Med, 2001;345:725–30.</li>
+    </ol>
+    <p style="margin-top:10px">Figuras são esquemas didáticos em SVG, sem escala anatômica fiel.</p>
+  </footer>
+</section>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(s,r){return (r||document).querySelector(s)};
+  var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  window.$=$;window.$$=$$;
+  window.fmt=function(n,d){return Number(n).toFixed(d==null?0:d).replace(".",",")};
+  /* trilho: marca o capítulo visível */
+  var links=$$(".rail a");
+  if("IntersectionObserver" in window&&links.length){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id)})}
+    })},{rootMargin:"-45% 0px -50% 0px"});
+    $$("section.ch").forEach(function(s){io.observe(s)});
+  }
+  /* segmentados genéricos */
+  window.segmented=function(el,items,onPick,initial){
+    el.innerHTML="";
+    items.forEach(function(it,i){
+      var b=document.createElement("button");b.type="button";b.innerHTML=it.label;
+      b.setAttribute("aria-pressed",i===(initial||0)?"true":"false");
+      b.addEventListener("click",function(){
+        $$("button",el).forEach(function(x){x.setAttribute("aria-pressed","false")});
+        b.setAttribute("aria-pressed","true");onPick(it,i);
+      });
+      el.appendChild(b);
+    });
+    onPick(items[initial||0],initial||0);
+  };
+  /* pegadinhas */
+  $$(".trap button").forEach(function(b){
+    b.setAttribute("aria-expanded","false");
+    b.addEventListener("click",function(){
+      var t=b.parentNode;t.classList.toggle("open");
+      b.setAttribute("aria-expanded",t.classList.contains("open")?"true":"false");
+    });
+  });
+  /* forja */
+  window.buildQuiz=function(data){
+    var box=$("#qs"),score=$("#score");if(!box)return;
+    var ok=0,done=0,L="ABCDE";
+    function upd(){score.innerHTML="<span>Placar</span> <b class='num'>"+ok+"/"+done+"</b> <span class='num' style='color:var(--ink-meta)'>de "+data.length+" questões</span> <button type='button' id='qreset'>Recomeçar</button>";
+      $("#qreset").addEventListener("click",render)}
+    function render(){
+      ok=0;done=0;box.innerHTML="";
+      data.forEach(function(q,qi){
+        var d=document.createElement("div");d.className="q";
+        d.innerHTML="<div class='qn'>Questão "+(qi+1)+(qi===0?" · questão-mãe":" · pivô")+"</div><p class='qs'>"+q.s+"</p><div class='alts'></div><div class='exp'><span class='res'></span>"+q.e+"</div>";
+        var alts=$(".alts",d);
+        q.a.forEach(function(t,ai){
+          var b=document.createElement("button");b.type="button";
+          b.innerHTML="<span class='L'>"+L[ai]+"</span><span>"+t+"</span>";
+          b.addEventListener("click",function(){
+            if(d.classList.contains("done"))return;
+            d.classList.add("done");done++;
+            if(ai===q.c)ok++;
+            $$("button",alts).forEach(function(x,xi){x.disabled=true;if(xi===q.c)x.classList.add("right");else if(xi===ai)x.classList.add("wrong")});
+            $(".res",d).textContent=(ai===q.c?"Certo — ":"Não — ")+"gabarito "+L[q.c];
+            upd();
+          });
+          alts.appendChild(b);
+        });
+        box.appendChild(d);
+      });
+      upd();
+    }
+    render();
+  };
+  window.svgEl=function(tag,attrs,parent){
+    var e=document.createElementNS("http://www.w3.org/2000/svg",tag);
+    for(var k in attrs){e.setAttribute(k,attrs[k])}
+    if(parent)parent.appendChild(e);return e;
+  };
+})();
+
+(function(){
+"use strict";
+function S(tag,a,p){return svgEl(tag,a,p)}
+function T(txt,a,p){var t=S("text",a,p);t.textContent=txt;return t}
+function clear(el){while(el.firstChild)el.removeChild(el.firstChild)}
+function group(el,labels,cb,ini){
+  var bs=[];el.innerHTML="";
+  labels.forEach(function(l,i){var b=document.createElement("button");b.type="button";b.innerHTML=l;
+    b.addEventListener("click",function(){set(i)});el.appendChild(b);bs.push(b)});
+  function set(i,silent){bs.forEach(function(b,j){b.setAttribute("aria-pressed",j===i?"true":"false")});g.v=i;if(!silent)cb(i)}
+  var g={v:ini||0,set:set};set(g.v,true);return g;
+}
+function verd(el,cls,t,h,body){el.className="verd "+cls;el.innerHTML="<span class='t'>"+t+"</span><span class='h'>"+h+"</span>"+body}
+var seed=11;function rnd(){seed=(seed*16807)%2147483647;return seed/2147483647}
+var C={bg:"#151412",lum:"#100f0e",muc:"#a88b62",sub:"#4b3d2c",mus:"#7a5a2c",ss:"#3a2f22",ser:"#e8d9c0",tum:"#e1ad66",tumS:"#facb8d",panc:"#5e4a33"};
+
+/* ============ 01 Lauren ============ */
+var hi=$("#histo");
+function drawHisto(k){
+  clear(hi);seed=k?29:11;
+  S("rect",{x:0,y:0,width:480,height:340,fill:"#2a2219"},hi);
+  for(var f=0;f<40;f++){var y=rnd()*340;S("path",{d:"M0 "+y.toFixed(0)+" Q240 "+(y+rnd()*40-20).toFixed(0)+" 480 "+(y+rnd()*30-15).toFixed(0),fill:"none",stroke:"rgba(232,217,192,.06)","stroke-width":2},hi)}
+  if(k===0){
+    var G=[[90,80,48,34],[210,70,40,30],[330,90,52,36],[420,200,40,46],[110,210,46,40],[240,190,54,42],[350,270,44,32],[170,295,40,28],[60,300,30,26]];
+    G.forEach(function(g){var cx=g[0],cy=g[1],rx=g[2],ry=g[3],n=Math.round((rx+ry)/4.2);
+      S("ellipse",{cx:cx,cy:cy,rx:rx,ry:ry,fill:"#5a4630"},hi);
+      for(var i=0;i<n;i++){var a=i/n*Math.PI*2+rnd()*.15,x=cx+Math.cos(a)*(rx-7),y=cy+Math.sin(a)*(ry-7);
+        S("ellipse",{cx:x.toFixed(1),cy:y.toFixed(1),rx:4.2,ry:7,transform:"rotate("+(a*180/Math.PI+90).toFixed(0)+" "+x.toFixed(1)+" "+y.toFixed(1)+")",fill:"#8d6428"},hi);
+        S("circle",{cx:(cx+Math.cos(a)*(rx-4)).toFixed(1),cy:(cy+Math.sin(a)*(ry-4)).toFixed(1),r:2.4,fill:"#3a2a14"},hi);}
+      S("ellipse",{cx:cx,cy:cy,rx:rx-14,ry:ry-14,fill:"#efe4cf",opacity:.85},hi);
+    });
+    T("glândulas neoplásicas, luz central",{x:16,y:330,fill:"#facb8d","font-size":13},hi);
+  }else{
+    S("ellipse",{cx:400,cy:70,rx:44,ry:30,fill:"#5a4630",opacity:.6},hi);
+    for(var c=0;c<46;c++){var x=20+rnd()*440,y=20+rnd()*290,r=7+rnd()*4;
+      S("circle",{cx:x.toFixed(1),cy:y.toFixed(1),r:r.toFixed(1),fill:"#efe4cf",stroke:"#b68235","stroke-width":.8},hi);
+      var a=rnd()*Math.PI*2,nx=x+Math.cos(a)*r*.62,ny=y+Math.sin(a)*r*.62;
+      S("ellipse",{cx:nx.toFixed(1),cy:ny.toFixed(1),rx:(r*.55).toFixed(1),ry:(r*.24).toFixed(1),transform:"rotate("+(a*180/Math.PI+90).toFixed(0)+" "+nx.toFixed(1)+" "+ny.toFixed(1)+")",fill:"#3a2a14"},hi);}
+    S("circle",{cx:240,cy:170,r:26,fill:"none",stroke:"#facb8d","stroke-width":1.5,"stroke-dasharray":"4 3"},hi);
+    T("células em anel de sinete, isoladas",{x:16,y:330,fill:"#facb8d","font-size":13},hi);
+  }
+}
+var LAU=[
+ ["v-2","Lauren","Tipo intestinal","<p>Glândulas formadas por células coesas. Nasce sobre metaplasia intestinal ao fim da cascata de Correa — por isso é o tipo que cai com a erradicação do H. pylori e com a melhora do saneamento. Prognóstico melhor.</p>"],
+ ["v-4","Lauren","Tipo difuso","<p>Sem glândulas: células soltas, cheias de muco, infiltrando a parede sob mucosa às vezes normal. Jovens, linite plástica, peritônio e ovário. Mutação germinativa de CDH1 define o câncer gástrico difuso hereditário — gastrectomia total profilática nos portadores.</p>"]];
+group($("#segLauren"),["Intestinal","Difuso"],function(i){drawHisto(i);verd.apply(null,[$("#vLauren")].concat(LAU[i]))},0);
+drawHisto(0);verd.apply(null,[$("#vLauren")].concat(LAU[0]));
+
+/* ============ 02 Borrmann ============ */
+var bo=$("#borr");
+function layers(svg,w,thick){
+  var k=thick||1;
+  S("rect",{x:0,y:0,width:w,height:300,fill:C.bg},svg);
+  S("rect",{x:0,y:60,width:w,height:40*k,fill:C.muc},svg);
+  S("rect",{x:0,y:60+40*k,width:w,height:40*k,fill:C.sub},svg);
+  S("rect",{x:0,y:60+80*k,width:w,height:60*k,fill:C.mus},svg);
+  S("rect",{x:0,y:60+140*k,width:w,height:18*k,fill:C.ss},svg);
+  S("rect",{x:0,y:60+158*k,width:w,height:4,fill:C.ser},svg);
+}
+var BOR=[
+ {l:"I",h:"Polipoide",b:"<p>Massa vegetante bem delimitada, projetando-se para a luz, sem ulceração significativa. Expansivo.</p>",
+  d:"M150 62 Q140 8 200 6 Q240 -2 285 6 Q345 10 330 62 L320 150 Q240 175 160 150Z"},
+ {l:"II",h:"Ulcerado, bordas nítidas",b:"<p>Úlcera com bordas elevadas e bem delimitadas (“em cratera”), sem infiltração da mucosa vizinha. Expansivo.</p>",
+  d:"M130 62 Q140 30 180 34 Q200 36 205 70 L215 112 Q240 120 265 112 L275 70 Q280 36 300 34 Q340 30 350 62 L340 170 Q240 192 140 170Z"},
+ {l:"III",h:"Ulcerado, infiltrativo",b:"<p>Úlcera de bordas mal definidas que se continuam com a parede infiltrada; o tumor se estende sob a mucosa aparentemente normal além do que a endoscopia mostra. O tipo mais comum.</p>",
+  d:"M70 70 Q120 66 170 58 Q200 70 210 110 L240 124 L270 110 Q280 70 310 58 Q360 66 410 70 L420 110 L400 185 Q240 210 80 185 L60 110Z"},
+ {l:"IV",h:"Infiltrativo difuso — linite plástica",b:"<p>Espessamento difuso e rígido da parede, sem úlcera ou massa dominante: o “estômago em garrafa de couro”. Quase sempre tipo difuso de Lauren; a biópsia superficial pode vir negativa.</p>",d:null}
+];
+function drawBorr(i){
+  clear(bo);var b=BOR[i];
+  if(i===3){
+    layers(bo,480,1.15);
+    S("path",{d:"M0 64 L480 64 L480 248 L0 248Z",fill:C.tum,opacity:.55},bo);
+    for(var k=0;k<14;k++){var x=k*36+10;S("path",{d:"M"+x+" 64 q18 -14 36 0",fill:C.tum,stroke:C.tumS},bo)}
+    for(var j=0;j<90;j++){S("circle",{cx:(rnd()*480).toFixed(0),cy:(70+rnd()*170).toFixed(0),r:2,fill:"#3a2a14",opacity:.6},bo)}
+    T("parede espessada e rígida em toda a extensão",{x:14,y:274,fill:"#facb8d","font-size":13},bo);
+  }else{
+    layers(bo,480,1);
+    S("path",{d:b.d,fill:C.tum,stroke:C.tumS,"stroke-width":1.5,opacity:.95,transform:i===2?"translate(240 0) scale(.7 1) translate(-240 0)":""},bo);
+    if(i===2){for(var j2=0;j2<12;j2++){var x2=130+rnd()*220,y2=110+rnd()*70;S("path",{d:"M"+x2.toFixed(0)+" "+y2.toFixed(0)+" l"+(rnd()*30-15).toFixed(0)+" "+(rnd()*16).toFixed(0),stroke:C.tumS,"stroke-width":3,opacity:.8},bo)}}
+    T("luz",{x:14,y:30,fill:"rgba(243,242,242,.5)","font-size":13},bo);
+  }
+  [["mucosa",86],["submucosa",126],["muscular própria",176],["subserosa",214]].forEach(function(l){if(i!==3)T(l[0],{x:372,y:l[1],fill:"rgba(18,17,16,.75)","font-size":12,"text-anchor":"start"},bo)});
+  verd($("#vBorr"),i>=2?"v-3":"v-2","Borrmann "+b.l,b.h,b.b);
+}
+group($("#segBorr"),["I","II","III","IV"],drawBorr,2);drawBorr(2);
+
+/* ============ 03 precoce ============ */
+var pa=$("#paris");
+(function(){
+  S("rect",{x:0,y:0,width:640,height:150,fill:C.bg},pa);
+  var P=[["0-I","protruso","M14 78 L40 78 Q38 30 64 28 Q90 30 88 78 L114 78"],
+         ["0-IIa","elevado superficial","M142 78 L168 78 Q170 66 192 66 Q214 66 216 78 L242 78"],
+         ["0-IIb","plano","M270 78 L370 78"],
+         ["0-IIc","deprimido superficial","M398 78 L424 78 Q426 90 448 90 Q470 90 472 78 L498 78"],
+         ["0-III","escavado","M526 78 L552 78 Q554 120 576 120 Q598 120 600 78 L626 78"]];
+  P.forEach(function(p,i){var cx=64+i*128;
+    S("rect",{x:cx-50,y:78,width:100,height:16,fill:C.muc,opacity:.7},pa);
+    S("path",{d:p[2],fill:"none",stroke:C.tumS,"stroke-width":3},pa);
+    if(i===2)S("path",{d:"M296 78 L344 78",stroke:C.tum,"stroke-width":6},pa);
+    T(p[0],{x:cx,y:22,fill:"#facb8d","font-size":17,"text-anchor":"middle"},pa);
+    T(p[1],{x:cx,y:140,fill:"rgba(243,242,242,.7)","font-size":13,"text-anchor":"middle"},pa);});
+})();
+var E={h:0,d:0,u:0,s:1.5};
+group($("#eHist"),["Diferenciado","Indiferenciado"],function(i){E.h=i;esd()},0);
+group($("#eDep"),["cT1a (mucosa)","cT1b (submucosa)"],function(i){E.d=i;esd()},0);
+group($("#eUl"),["Ausente (UL0)","Presente (UL1)"],function(i){E.u=i;esd()},0);
+$("#eSz").addEventListener("input",function(){E.s=+this.value;$("#lSz").textContent=fmt(E.s,1)+" cm";esd()});
+function esd(){
+  var ok=false,why="";
+  if(E.d===1){why="Invasão da submucosa: risco linfonodal alto demais para tratamento local.";}
+  else if(E.h===0&&E.u===0){ok=true;why="Diferenciado, intramucoso, sem úlcera: indicação absoluta de ESD em qualquer tamanho"+(E.s<=2?" (≤ 2 cm: a mucossectomia também serve).":".");}
+  else if(E.h===0&&E.u===1){ok=E.s<=3;why=ok?"Diferenciado, intramucoso, com úlcera e ≤ 3 cm: indicação absoluta de ESD.":"Diferenciado com úlcera acima de 3 cm: fora de critério.";}
+  else if(E.h===1&&E.u===0){ok=E.s<=2;why=ok?"Indiferenciado, intramucoso, sem úlcera e ≤ 2 cm: indicação absoluta de ESD na edição de 2021.":"Indiferenciado acima de 2 cm: fora de critério.";}
+  else{why="Indiferenciado com úlcera: fora de critério.";}
+  if(ok)verd($("#vEsd"),"v-2","Ressecção endoscópica","Dissecção submucosa (ESD)","<p>"+why+"</p><p>Se a peça mostrar invasão linfovascular, margem vertical comprometida ou submucosa profunda, completa-se com gastrectomia.</p>");
+  else verd($("#vEsd"),"v-3","Fora de critério endoscópico","Gastrectomia com linfadenectomia","<p>"+why+"</p><p>cT1 N0: linfadenectomia D1 ou D1+; com linfonodo clinicamente positivo, D2. Sem quimioterapia pré-operatória no cT1 N0; cT1 N+ segue FLOT perioperatório + D2.</p>");
+}
+esd();
+
+/* ============ 04 TNM ============ */
+var wl=$("#wall");
+var TS=[["Tis","Carcinoma in situ / displasia de alto grau, sem invasão da lâmina própria",56],["T1a","Lâmina própria ou muscular da mucosa",86],["T1b","Submucosa",132],["T2","Muscular própria",196],["T3","Subserosa, sem perfurar o peritônio visceral",232],["T4a","Serosa (peritônio visceral)",252],["T4b","Estruturas adjacentes (pâncreas, baço, cólon transverso, fígado...)",300]];
+var tT=4,nN=2;
+function drawWall(){
+  clear(wl);
+  S("rect",{x:0,y:0,width:480,height:330,fill:C.bg},wl);
+  S("rect",{x:0,y:40,width:480,height:50,fill:C.muc},wl);
+  S("line",{x1:0,y1:86,x2:480,y2:86,stroke:"#5a4630","stroke-width":2},wl);
+  S("rect",{x:0,y:90,width:480,height:50,fill:C.sub},wl);
+  S("rect",{x:0,y:140,width:480,height:70,fill:C.mus},wl);
+  S("rect",{x:0,y:210,width:480,height:30,fill:C.ss},wl);
+  S("rect",{x:0,y:240,width:480,height:5,fill:C.ser},wl);
+  S("path",{d:"M150 280 Q300 266 480 276 L480 330 L150 330Z",fill:C.panc},wl);
+  var L=[["luz",24],["mucosa",68],["submucosa",120],["muscular própria",180],["subserosa",230],["serosa",262],["pâncreas",312]];
+  L.forEach(function(l,i){T(l[0],{x:10,y:l[1],fill:i===0||i===5?"rgba(243,242,242,.6)":(i===6?"rgba(243,242,242,.75)":"rgba(18,17,16,.8)"),"font-size":13},wl)});
+  var dep=TS[tT][2],top=40;
+  if(tT===0){S("rect",{x:230,y:40,width:140,height:8,fill:C.tum,stroke:C.tumS},wl)}
+  else{var w0=150,w1=Math.max(30,110-dep*.2);S("path",{d:"M"+(300-w0/2)+" "+top+" L"+(300+w0/2)+" "+top+" L"+(300+w1/2)+" "+dep+" Q300 "+(dep+14)+" "+(300-w1/2)+" "+dep+"Z",fill:C.tum,stroke:C.tumS,"stroke-width":1.5},wl)}
+  S("rect",{x:388,y:8,width:84,height:30,rx:4,fill:"rgba(18,17,16,.85)",stroke:"#8d6428"},wl);
+  T(TS[tT][0],{x:430,y:30,fill:"#facb8d","font-size":20,"text-anchor":"middle"},wl);
+  tnm();
+}
+function ncat(n){return n===0?["N0","sem linfonodo positivo"]:n<=2?["N1","1–2 linfonodos"]:n<=6?["N2","3–6 linfonodos"]:n<=15?["N3a","7–15 linfonodos"]:["N3b","16 ou mais linfonodos"]}
+function tnm(){
+  var N=ncat(nN),m=$("#cM").checked,t=TS[tT][0],cls,h,b;
+  if(m){cls="v-4";h="Estádio IV";b="<p>M1 (inclui citologia peritoneal positiva): tratamento sistêmico; cirurgia só paliativa.</p>";}
+  else if(tT===0){cls="v-1";h="Tis";b="<p>Lesão não invasiva: ressecção endoscópica.</p>";}
+  else if(tT<=2&&nN===0){cls="v-2";h="Câncer precoce, N0";b="<p>"+(tT===1?"T1a: avaliar critérios de ressecção endoscópica.":"T1b: gastrectomia com D1/D1+, sem neoadjuvância.")+"</p>";}
+  else if(tT<=2){cls="v-3";h="Câncer precoce com linfonodo positivo";b="<p>Continua “precoce” (definição de profundidade), mas N+: gastrectomia com D2; cN+ conhecido antes da cirurgia → quimioterapia perioperatória.</p>";}
+  else{cls="v-3";h="Localmente avançado";b="<p>≥ T2 e/ou N+: FLOT perioperatório e gastrectomia com D2"+(tT===6?", com ressecção em bloco da estrutura invadida se R0 for possível":"")+".</p>";}
+  verd($("#vTnm"),cls,t+" "+N[0]+" "+(m?"M1":"M0"),h,"<p><b>"+t+":</b> "+TS[tT][1]+". <b>"+N[0]+":</b> "+N[1]+".</p>"+b);
+}
+group($("#segT"),TS.map(function(t){return t[0]}),function(i){tT=i;drawWall()},4);
+$("#rN").addEventListener("input",function(){nN=+this.value;$("#lN").textContent=nN;tnm()});
+$("#cM").addEventListener("change",tnm);
+drawWall();
+
+/* ============ 05 estações ============ */
+var lm=$("#lnm");
+var STN={"1":["Paracardíacos direitos",212,96],"2":["Paracardíacos esquerdos",280,70],"3a":["Pequena curvatura — ramos da a. gástrica esquerda",206,152],"3b":["Pequena curvatura — ramos da a. gástrica direita",158,226],
+ "4sa":["Grande curvatura — vasos gástricos curtos",420,98],"4sb":["Grande curvatura — a. gastroepiploica esquerda",440,232],"4d":["Grande curvatura — a. gastroepiploica direita",252,358],
+ "5":["Suprapilóricos (a. gástrica direita)",118,238],"6":["Infrapilóricos",128,322],"7":["Ao longo da a. gástrica esquerda",246,312],"8a":["A. hepática comum, anterossuperiores",200,388],
+ "9":["Tronco celíaco",286,404],"10":["Hilo esplênico",466,170],"11p":["A. esplênica proximal",344,388],"11d":["A. esplênica distal",436,350],"12a":["Ligamento hepatoduodenal (a. hepática própria)",58,232],
+ "14v":["Veia mesentérica superior",176,424],"16":["Para-aórticos",320,428]};
+var DS={total:{D1:["1","2","3a","3b","4sa","4sb","4d","5","6","7"],"D1+":["8a","9","11p"],D2:["8a","9","11p","11d","12a"]},
+        distal:{D1:["1","3a","3b","4sb","4d","5","6","7"],"D1+":["8a","9"],D2:["8a","9","11p","12a"]}};
+var gxT="distal",dL="D2",sel="7";
+function inc(){var b=DS[gxT],s=b.D1.slice();if(dL!=="D1")s=s.concat(b[dL]);return s}
+function drawLn(){
+  clear(lm);var on=inc();
+  S("rect",{x:0,y:0,width:520,height:440,fill:C.bg},lm);
+  S("ellipse",{cx:500,cy:150,rx:26,ry:62,fill:"#4a3a24"},lm);T("baço",{x:478,y:60,fill:"rgba(243,242,242,.5)","font-size":12},lm);
+  S("path",{d:"M140 372 Q260 350 440 352 Q470 356 460 372 Q300 380 150 392Z",fill:C.panc,opacity:.6},lm);
+  S("path",{d:"M108 266 Q70 270 62 300 Q52 340 60 400",fill:"none",stroke:"#7a5a2c","stroke-width":22,"stroke-linecap":"round"},lm);
+  S("rect",{x:230,y:0,width:28,height:96,fill:"#8d6428"},lm);
+  var stomach=gxT==="total"?1:0;
+  S("path",{d:"M228 98 Q222 200 170 245 Q140 265 110 265 L110 296 Q200 346 310 332 Q420 306 425 200 Q430 80 335 58 Q282 50 258 92Z",fill:"#7a5a2c",stroke:"#8d6428","stroke-width":1.5},lm);
+  // área ressecada
+  if(gxT==="total")S("path",{d:"M228 98 Q222 200 170 245 Q140 265 110 265 L110 296 Q200 346 310 332 Q420 306 425 200 Q430 80 335 58 Q282 50 258 92Z",fill:"rgba(250,203,141,.18)"},lm);
+  else S("path",{d:"M214 178 Q205 215 170 245 Q140 265 110 265 L110 296 Q200 346 310 332 Q400 312 420 240 Z",fill:"rgba(250,203,141,.18)",stroke:"#facb8d","stroke-dasharray":"5 4"},lm);
+  T("estômago",{x:300,y:180,fill:"rgba(250,203,141,.6)","font-size":13},lm);
+  // artérias
+  var A="#d9c3a0";
+  S("path",{d:"M270 412 L270 384",stroke:A,"stroke-width":4},lm);
+  S("path",{d:"M270 384 Q252 320 222 196",fill:"none",stroke:A,"stroke-width":2.5,"stroke-dasharray":"5 4"},lm);
+  S("path",{d:"M270 384 L160 384 Q120 370 98 320 Q80 270 66 200",fill:"none",stroke:A,"stroke-width":3},lm);
+  S("path",{d:"M160 384 L156 420",stroke:A,"stroke-width":2.5},lm);
+  S("path",{d:"M270 384 Q330 372 380 378 Q430 384 450 340 Q470 260 470 190",fill:"none",stroke:A,"stroke-width":3},lm);
+  
+  Object.keys(STN).forEach(function(k){
+    var s=STN[k],isOn=on.indexOf(k)>=0,out=(k==="14v"||k==="16");
+    var g=S("g",{tabindex:"0",role:"button","aria-label":"Estação "+k+": "+s[0],style:"cursor:pointer"},lm);
+    S("circle",{cx:s[1],cy:s[2],r:16,fill:isOn?"#e1ad66":"#151412",stroke:k===sel?"#faf6ee":(isOn?"#facb8d":(out?"rgba(243,242,242,.25)":"rgba(250,203,141,.6)")),"stroke-width":k===sel?3:1.5,"stroke-dasharray":out?"3 3":"0"},g);
+    T(k,{x:s[1],y:s[2]+4,fill:isOn?"#121110":"rgba(250,203,141,.85)","font-size":k.length>2?10:12,"text-anchor":"middle","font-weight":"600"},g);
+    function pick(){sel=k;drawLn()}
+    g.addEventListener("click",pick);g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();pick()}});
+  });
+  var s=STN[sel],isOn=on.indexOf(sel)>=0;
+  verd($("#vSt"),isOn?"v-2":"v-1","Estação "+sel,s[0],"<p>"+(isOn?"Incluída na "+dL+" da gastrectomia "+gxT+".":(sel==="14v"||sel==="16"?"Fora da D2 padrão em qualquer gastrectomia.":"Não incluída na "+dL+" da gastrectomia "+gxT+"."))+"</p>");
+  var b=DS[gxT];
+  verd($("#vD"),"v-1","Gastrectomia "+gxT+" · "+dL,dL==="D2"?"Linfadenectomia D2":dL==="D1+"?"Linfadenectomia D1+":"Linfadenectomia D1",
+   "<p><b>D1:</b> "+b.D1.join(", ")+"</p>"+(dL!=="D1"?"<p><b>"+dL+":</b> D1 + "+b[dL].join(", ")+"</p>":"")+"<p>"+(dL==="D2"?"Padrão para ≥ cT2 ou cN+. Examinar ≥ 16 linfonodos (idealmente ≥ 30).":dL==="D1+"?"Para cT1 N0 fora de critério endoscópico.":"Para cT1a N0 fora de critério endoscópico.")+"</p>");
+}
+group($("#segGx"),["Subtotal (distal)","Total"],function(i){gxT=i?"total":"distal";drawLn()},0);
+group($("#segD"),["D1","D1+","D2"],function(i){dL=["D1","D1+","D2"][i];drawLn()},2);
+drawLn();
+
+/* ============ 06 total ou subtotal ============ */
+var gxs=$("#gx"),G={loc:0,pad:1,prof:1};
+var LOC=[["Antro",272,150,290],["Corpo distal",205,205,226],["Corpo proximal",118,215,140],["Cárdia / subcárdico",56,218,74],["Linite plástica",40,0,0]];
+function drawGx(){
+  clear(gxs);
+  S("rect",{x:0,y:0,width:440,height:340,fill:C.bg},gxs);
+  var SP="M198 58 Q196 190 160 236 Q130 266 96 270 L96 304 Q190 338 290 318 Q372 290 374 170 Q378 50 300 30 Q250 22 228 54Z";
+  S("rect",{x:200,y:0,width:28,height:58,fill:"#8d6428"},gxs);
+  var cp=S("clipPath",{id:"stc"},S("defs",{},gxs));S("path",{d:SP},cp);
+  S("path",{d:SP,fill:"#7a5a2c",stroke:"#8d6428","stroke-width":1.5},gxs);
+  var marg=G.prof===0?2:(G.pad===0?3:5),L=LOC[G.loc],top=L[1],cut=top-marg*10,total=(G.loc>=3)||cut<100;
+  var g=S("g",{"clip-path":"url(#stc)"},gxs);
+  if(total){S("rect",{x:0,y:0,width:440,height:340,fill:"rgba(250,203,141,.2)"},g)}
+  else{S("rect",{x:0,y:cut,width:440,height:340,fill:"rgba(250,203,141,.2)"},g);
+    S("rect",{x:0,y:cut,width:440,height:marg*10,fill:"none"},g);
+    S("line",{x1:0,y1:cut,x2:440,y2:cut,stroke:"#faf6ee","stroke-width":2.5},g);}
+  if(G.loc===4){S("path",{d:SP,fill:"none",stroke:C.tum,"stroke-width":16,opacity:.8},g)}
+  else{S("ellipse",{cx:L[2],cy:L[3],rx:30,ry:20,fill:C.tum,stroke:C.tumS,"stroke-width":1.5},g);
+    S("rect",{x:150,y:top-marg*10,width:250,height:marg*10,fill:"rgba(250,203,141,.12)",stroke:"#facb8d","stroke-dasharray":"4 4"},g);}
+  if(total)S("line",{x1:190,y1:38,x2:240,y2:38,stroke:"#faf6ee","stroke-width":2.5},gxs);
+  T(total?"secção no esôfago":"linha de secção",{x:total?246:8,y:total?42:Math.max(14,cut-6),fill:"#faf6ee","font-size":12},gxs);
+  if(G.loc!==4)T("margem "+marg+" cm",{x:384,y:Math.max(16,top-marg*5)+4,fill:"#facb8d","font-size":12,"text-anchor":"end"},gxs);
+  T("piloro",{x:40,y:300,fill:"rgba(243,242,242,.5)","font-size":12},gxs);
+  var rec=total?"Esofagojejunoanastomose em Y de Roux.":"Reconstrução a Billroth I, Billroth II ou Y de Roux.";
+  var lnf=G.prof===0?"D1/D1+ (cT1 N0)":"D2";
+  var h,b,cls;
+  if(G.loc===4){cls="v-4";h="Gastrectomia total — se ressecável";b="<p>Linite plástica: laparoscopia com citologia obrigatória antes — doença peritoneal oculta é frequente. Margens amplas e congelação. "+rec+"</p>";}
+  else if(G.loc===3){cls="v-3";h="Gastrectomia total";b="<p>Tumor proximal: não sobra estômago funcional acima da margem. Subcárdico (Siewert III) é tratado como gástrico."+(G.prof===0?" No cT1 do terço superior, a JGCA aceita gastrectomia proximal.":"")+" "+rec+" Linfadenectomia "+lnf+".</p>";}
+  else if(total){cls="v-3";h="Gastrectomia total";b="<p>Com margem de "+marg+" cm, a secção cairia junto à cárdia: o remanescente seria pequeno demais. "+rec+" Linfadenectomia "+lnf+".</p>";}
+  else{cls="v-2";h="Gastrectomia subtotal (distal)";b="<p>Margem proximal de "+marg+" cm cabe com remanescente adequado; sobrevida igual à total e menos sequela nutricional. "+rec+" Linfadenectomia "+lnf+".</p>";}
+  verd($("#vGx"),cls,L[0]+" · margem exigida "+marg+" cm",h,b);
+}
+group($("#segLoc"),LOC.map(function(l){return l[0]}),function(i){G.loc=i;drawGx()},0);
+group($("#segPad"),["Expansivo (Borrmann I–II)","Infiltrativo (III–IV)"],function(i){G.pad=i;drawGx()},1);
+group($("#segProf"),["T1","≥ T2"],function(i){G.prof=i;drawGx()},1);
+drawGx();
+
+/* ============ 07 FLOT ============ */
+var fl=$("#flot");
+var FL=[
+ ["cT1a em critério",["esd"],"v-1","Sem quimioterapia","Ressecção endoscópica (ESD)","<p>Lesão intramucosa dentro de critério: tratamento local. A peça decide se precisa completar com cirurgia.</p>"],
+ ["cT1b N0",["cx"],"v-2","Sem neoadjuvância","Gastrectomia + D1/D1+","<p>Precoce fora de critério endoscópico, sem linfonodo clínico: operar direto. Adjuvância só se a patologia surpreender (pN+, pT ≥ 2).</p>"],
+ ["≥ cT2 ou cN+ (o caso)",["pre","cx","pos"],"v-3","FLOT4","FLOT perioperatório + gastrectomia D2","<p>4 ciclos antes, cirurgia em 4–6 semanas após o último, 4 ciclos depois. Cada ciclo: docetaxel 50 mg/m², oxaliplatina 85 mg/m², leucovorina 200 mg/m² e 5-FU 2.600 mg/m² em 24 h, a cada 14 dias.</p>"],
+ ["Operado direto, pT3 N2",["cx","adj"],"v-2","Estratégia asiática","Adjuvância após D2","<p>Quem foi operado sem neoadjuvância e tem doença ≥ pT2 ou pN+ recebe quimioterapia adjuvante — capecitabina + oxaliplatina por 6 meses (CLASSIC) ou S-1 nos protocolos asiáticos.</p>"],
+ ["M1 / citologia +",["pal"],"v-4","Estádio IV","Tratamento sistêmico paliativo","<p>Fluoropirimidina + platina; HER2 positivo: acrescentar trastuzumabe; imunoterapia conforme PD-L1 e instabilidade de microssatélites. Cirurgia só para complicações (sangramento, obstrução).</p>"]
+];
+function drawFl(i){
+  clear(fl);var f=FL[i],on=f[1];
+  S("rect",{x:0,y:0,width:560,height:210,fill:C.bg},fl);
+  function blk(x,w,lab,key,sub){var a=on.indexOf(key)>=0;
+    S("rect",{x:x,y:60,width:w,height:60,rx:4,fill:a?"#b68235":"#1c1a18",stroke:a?"#facb8d":"rgba(243,242,242,.16)","stroke-dasharray":a?"0":"4 4"},fl);
+    T(lab,{x:x+w/2,y:sub?86:95,fill:a?"#121110":"rgba(243,242,242,.4)","font-size":13,"text-anchor":"middle","font-weight":a?"600":"400"},fl);
+    if(sub)T(sub,{x:x+w/2,y:104,fill:a?"#121110":"rgba(243,242,242,.35)","font-size":11,"text-anchor":"middle"},fl);}
+  if(on.indexOf("pal")>=0){blk(20,520,"Quimioterapia sistêmica contínua","pal","± anti-HER2 / imunoterapia");}
+  else if(on.indexOf("esd")>=0){blk(200,160,"ESD","esd","endoscopia");}
+  else{
+    for(var k=0;k<4;k++)blk(20+k*44,40,"F"+(k+1),"pre");
+    blk(206,140,"Gastrectomia","cx","+ linfadenectomia");
+    if(on.indexOf("adj")>=0)blk(360,180,"Adjuvância","adj","CAPOX 6 meses");
+    else for(var j=0;j<4;j++)blk(360+j*44,40,"F"+(j+5),"pos");
+  }
+  S("line",{x1:20,y1:150,x2:540,y2:150,stroke:"rgba(243,242,242,.25)"},fl);
+  [["0",20],["≈ 8 sem",190],["cirurgia",276],["≈ 24 sem",540]].forEach(function(t){S("line",{x1:t[1],y1:146,x2:t[1],y2:154,stroke:"rgba(243,242,242,.4)"},fl);T(t[0],{x:t[1],y:172,fill:"rgba(243,242,242,.55)","font-size":12,"text-anchor":t[1]>500?"end":t[1]<30?"start":"middle"},fl)});
+  T("tempo →",{x:540,y:196,fill:"rgba(243,242,242,.4)","font-size":11,"text-anchor":"end"},fl);
+  T(f[0],{x:20,y:36,fill:"#facb8d","font-size":15},fl);
+  verd($("#vFl"),f[2],f[3],f[4],f[5]);
+}
+group($("#segFl"),FL.map(function(f){return f[0]}),drawFl,2);drawFl(2);
+
+/* ============ 09 forja ============ */
+var base="Homem de 62 anos com epigastralgia e perda de peso. ";
+buildQuiz([
+ {s:base+"EDA: lesão ulcerada infiltrativa no antro (Borrmann III), adenocarcinoma tipo intestinal. TC: espessamento parietal e linfonodos perigástricos aumentados, sem metástases. Laparoscopia sem implantes, citologia negativa (cT3 N1 M0). A melhor conduta é:",
+  a:["Gastrectomia subtotal com D2 imediata, seguida de observação","Quimioterapia perioperatória (FLOT) e gastrectomia subtotal com D2","Gastrectomia total com linfadenectomia D1","Dissecção submucosa endoscópica","Quimioterapia paliativa exclusiva"],c:1,
+  e:"<p>≥ cT2 / cN+ ressecável → <b>FLOT perioperatório</b> + gastrectomia com D2; tumor de antro → subtotal. Operar primeiro (A) é a estratégia asiática, mas exige adjuvância — “observação” torna a alternativa errada. Total com D1 (C) erra a extensão e o nível; ESD (D) é para cT1a em critério; paliação (E) é para M1.</p>"},
+ {s:base+"EDA: <mark>lesão elevada (0-IIa) de 1,5 cm no antro, sem úlcera; adenocarcinoma bem diferenciado; ecoendoscopia: restrita à mucosa</mark>. TC sem alterações. A melhor conduta é:",
+  a:["Gastrectomia subtotal com D2","FLOT perioperatório","Ressecção endoscópica (dissecção submucosa)","Gastrectomia total","Erradicação do H. pylori e nova EDA em 1 ano"],c:2,
+  e:"<p>cT1a diferenciado, sem úlcera: <b>indicação absoluta de ressecção endoscópica</b> (pelo critério clássico também: elevado ≤ 2 cm). A, B e D são tratamentos de doença invasiva profunda; E deixa o câncer no lugar.</p>"},
+ {s:base+"Mesmo quadro da questão-mãe (cT3 N1, antro), mas a laparoscopia mostra <mark>citologia oncótica do lavado peritoneal positiva</mark>, sem implantes visíveis. A melhor conduta é:",
+  a:["Gastrectomia subtotal com D2","FLOT perioperatório e gastrectomia","Gastrectomia total com peritonectomia","Ressecção endoscópica paliativa","Tratamento sistêmico (doença M1)"],c:4,
+  e:"<p>Citologia positiva = <b>M1</b>, estádio IV, mesmo sem implante visível. Tratamento sistêmico; cirurgia só para complicações. A, B e C tratariam como doença localizada; D não tem papel.</p>"},
+ {s:base+"EDA: lesão Borrmann III no <mark>corpo proximal, a 2 cm da cárdia</mark>, adenocarcinoma. cT3 N1 M0, laparoscopia negativa. Após FLOT, a operação indicada é:",
+  a:["Gastrectomia total com D2 e reconstrução em Y de Roux","Gastrectomia subtotal com D2 e Billroth II","Gastrectomia proximal com D1","Esofagectomia transtorácica","Gastrectomia subtotal com D1 e Billroth I"],c:0,
+  e:"<p>Infiltrativo exige margem proximal de 5 cm: a secção cairia no esôfago — <b>gastrectomia total com D2</b>, esofagojejunoanastomose em Y de Roux. Subtotal (B, E) não alcança a margem; proximal (C) é opção só no cT1 do terço superior; esofagectomia (D) não é a operação para tumor do corpo.</p>"},
+ {s:"Na gastrectomia <mark>subtotal (distal)</mark> por adenocarcinoma cT3 N1, a linfadenectomia D2 compreende as estações:",
+  a:["1 a 12a, incluindo 10","1, 2, 3, 4sa, 4sb, 4d, 5, 6, 7","1 a 7 e 16","1, 3, 4sb, 4d, 5, 6, 7, 8a, 9, 11p, 12a","3, 4d, 5, 6 apenas"],c:3,
+  e:"<p>Distal: D1 = 1, 3, 4sb, 4d, 5, 6, 7; <b>D2 = D1 + 8a, 9, 11p, 12a</b> (JGCA). B é a D1 da total; 16 (C) é para-aórtica, fora da D2; 10 (A) saiu da D2; E é ressecção incompleta.</p>"},
+ {s:"Mulher de <mark>34 anos</mark>, EDA com estômago rígido, pouco distensível, pregas espessadas e biópsia com <mark>células em anel de sinete</mark>. Sobre esse tipo tumoral, é correto:",
+  a:["Origina-se de metaplasia intestinal na cascata de Correa","Associa-se à perda de E-caderina (CDH1) e à linite plástica, com pior prognóstico","Dissemina-se preferencialmente por via hematogênica para o fígado","Tem melhor prognóstico que o tipo intestinal","Predomina no antro de homens idosos"],c:1,
+  e:"<p>Tipo <b>difuso de Lauren</b>: células pouco coesas (CDH1), linite plástica, jovens, peritônio e ovário, pior prognóstico. A, C, D e E descrevem o tipo intestinal.</p>"},
+ {s:"Peça de gastrectomia com D2: tumor invadindo a subserosa, <mark>9 linfonodos positivos de 32 examinados</mark>, sem metástase à distância. A classificação TN (AJCC 8ª) é:",
+  a:["T3 N1","T3 N2","T3 N3a","T4a N3b","T2 N3a"],c:2,
+  e:"<p>Subserosa sem perfurar o peritônio visceral = <b>T3</b>; 7 a 15 linfonodos = <b>N3a</b>. N1 é 1–2, N2 é 3–6, N3b é ≥ 16; T4a seria serosa, T2 muscular própria.</p>"},
+ {s:base+"No estadiamento do caso-mãe, o <mark>toque retal revela massa endurecida no fundo de saco</mark>. Esse achado corresponde a:",
+  a:["Linfonodo de Virchow","Linfonodo de Irish","Nódulo da Irmã Maria José","Tumor de Krukenberg","Prateleira de Blumer"],c:4,
+  e:"<p><b>Prateleira de Blumer</b>: implante peritoneal no fundo de saco — M1. Virchow (A) é supraclavicular esquerdo; Irish (B) axilar esquerdo; Irmã Maria José (C) umbilical; Krukenberg (D) ovário. Todos indicam doença disseminada.</p>"}
+]);
+})();
+
+</script>
+</body>
+</html>

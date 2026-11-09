@@ -1,0 +1,1086 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atlas da Avaliação Inicial no Trauma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#121110; --bg-2:#0e0d0c; --surface:#171614; --surface-2:#1c1a18; --surface-3:#23201d;
+  --ink:#f6f4f2; --ink-strong:#faf8f6;
+  --ink-body:rgba(243,242,242,.82); --ink-soft:rgba(243,242,242,.70); --ink-meta:rgba(243,242,242,.56);
+  --rule:rgba(243,242,242,.10); --rule-2:rgba(243,242,242,.16); --rule-3:rgba(243,242,242,.28);
+  --accent:#b68235; --accent-300:#facb8d; --accent-400:#e1ad66; --accent-600:#8d6428; --accent-700:#6b4c1e;
+  --tint-1:rgba(194,141,65,.12); --tint-2:rgba(194,141,65,.26); --tint-3:rgba(194,141,65,.50); --tint-4:rgba(194,141,65,.82);
+  --f-head:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --f-body:"Lora",Georgia,"Times New Roman",serif;
+  --shadow:0 1px 2px rgba(0,0,0,.45),0 10px 28px -14px rgba(0,0,0,.75);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink-body);font-family:var(--f-body);font-size:15.5px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--f-head);font-weight:500;color:var(--ink-strong);margin:0;text-wrap:balance;letter-spacing:-.005em}
+a{color:var(--accent-300)}
+b,strong{color:var(--ink);font-weight:600}
+.num,.n{font-variant-numeric:tabular-nums lining-nums}
+:focus-visible{outline:2px solid var(--accent-400);outline-offset:2px;border-radius:3px}
+::selection{background:var(--tint-2);color:var(--ink-strong)}
+mark{background:var(--tint-2);color:var(--accent-300);padding:0 3px;border-radius:2px}
+svg text{font-family:var(--f-body)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px 80px}
+
+/* ---- topo ---- */
+header.hero{max-width:1120px;margin:0 auto;padding:56px 24px 30px;position:relative}
+.kicker{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-400)}
+h1{font-size:clamp(38px,6vw,66px);line-height:1;margin:14px 0 0;font-weight:500}
+h1 em{font-style:italic;color:var(--accent-300)}
+.lede{max-width:62ch;color:var(--ink-soft);font-size:17px;margin:18px 0 0}
+.stem{margin:28px 0 0;padding:20px 22px;border-left:2px solid var(--accent);background:var(--surface);border-radius:0 8px 8px 0;box-shadow:var(--shadow);max-width:76ch}
+.stem p{margin:0 0 8px;color:var(--ink-body)}
+.stem p:last-child{margin:0}
+.stem .src{display:block;margin-bottom:8px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-400)}
+.vitals{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.vitals span{font-size:12.5px;border:1px solid var(--rule-2);border-radius:999px;padding:3px 10px;color:var(--ink-soft)}
+.vitals span b{color:var(--accent-300);font-weight:500}
+
+/* ---- trilho ---- */
+nav.rail{position:sticky;top:0;z-index:40;background:rgba(14,13,12,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);border-top:1px solid var(--rule);margin-top:30px}
+.rail-in{max-width:1120px;margin:0 auto;padding:8px 24px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.rail-in::-webkit-scrollbar{display:none}
+.rail a{flex:none;font-size:13px;color:var(--ink-soft);text-decoration:none;padding:5px 11px;border-radius:999px;border:1px solid transparent;white-space:nowrap;transition:.15s}
+.rail a:hover{color:var(--ink);background:var(--surface-2)}
+.rail a.on{color:var(--accent-300);border-color:var(--tint-3);background:var(--tint-1)}
+.rail a .n{color:var(--accent-400);margin-right:6px;font-size:11.5px}
+
+/* ---- capítulo ---- */
+section.ch{padding-top:58px;scroll-margin-top:56px}
+.ch-head{display:flex;gap:18px;align-items:baseline;border-top:1px solid var(--rule-2);padding-top:22px}
+.ch-num{font-family:var(--f-head);font-size:30px;color:var(--accent);line-height:1;font-style:italic;min-width:34px}
+.ch-head h2{font-size:clamp(26px,3.4vw,36px);line-height:1.1}
+.ch-sub{color:var(--ink-meta);font-size:14.5px;margin:6px 0 0;max-width:72ch}
+.plate{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr);gap:24px;margin-top:24px;align-items:start}
+.plate.even{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+@media (max-width:880px){.plate,.plate.even{grid-template-columns:minmax(0,1fr)}}
+.fig{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:14px;box-shadow:var(--shadow);overflow:hidden;min-width:0}
+.fig svg{display:block;width:100%;height:auto}
+.figcap{font-size:12.5px;color:var(--ink-meta);margin:10px 2px 0;line-height:1.55}
+.panel{display:flex;flex-direction:column;gap:14px;min-width:0}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:16px 17px;box-shadow:var(--shadow);min-width:0}
+.card h3,.lbl{font-family:var(--f-body);font-size:11px;font-weight:500;letter-spacing:.17em;text-transform:uppercase;color:var(--accent-400);margin:0 0 10px}
+.card p{margin:0 0 8px}
+.card p:last-child{margin-bottom:0}
+.prose{margin-top:24px;max-width:70ch;color:var(--ink-body)}
+.prose p{margin:0 0 13px}
+.prose h3{font-size:23px;margin:22px 0 8px}
+
+/* ---- controles ---- */
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button,.btn{font:inherit;font-size:13px;padding:6px 12px;border-radius:4px;cursor:pointer;border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-soft);transition:.15s;line-height:1.35}
+.seg button:hover,.btn:hover{border-color:var(--accent-400);color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#17120b;font-weight:600}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#17120b;font-weight:600}
+.btn.ghost{background:transparent;border-style:dashed}
+.sl{margin-top:12px}
+.sl label{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--ink-soft);margin-bottom:4px}
+.sl label b{color:var(--accent-300);font-weight:500;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:var(--accent);height:22px;margin:0}
+.tog{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink-soft);cursor:pointer;padding:6px 0;border-bottom:1px solid var(--rule)}
+.tog:last-child{border-bottom:0}
+.tog input{accent-color:var(--accent);width:16px;height:16px;margin-top:3px;flex:none}
+.tog small{display:block;color:var(--ink-meta);font-size:12px}
+input[type=number]{font:inherit;width:100%;background:var(--surface-2);border:1px solid var(--rule-2);color:var(--ink);border-radius:4px;padding:6px 9px}
+
+/* ---- veredito: uma matiz, quatro intensidades ---- */
+.verd{border-radius:6px;padding:13px 15px;border:1px solid var(--rule-2);font-size:14px;background:var(--surface-2)}
+.verd .t{font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;display:block;margin-bottom:4px;color:var(--ink-meta)}
+.verd .h{font-family:var(--f-head);font-size:22px;line-height:1.15;display:block;margin-bottom:6px;color:var(--ink-strong)}
+.verd p{margin:0;color:var(--ink-body)}
+.verd.b{border-color:var(--rule-3)}
+.verd.w{border-color:var(--tint-3);background:var(--tint-1)}
+.verd.w .h{color:var(--accent-300)}
+.verd.d{border:1px solid var(--accent-400);border-left:4px solid var(--accent-400);background:var(--tint-2)}
+.verd.d .h{color:var(--accent-300)}
+.verd.d .t{color:var(--accent-300)}
+.verd.m{border-style:dashed;border-color:var(--accent-400)}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:2px 8px;border-radius:999px;border:1px solid var(--rule-3);color:var(--ink-soft);white-space:nowrap}
+.tag.w{border-color:var(--tint-3);color:var(--accent-400);background:var(--tint-1)}
+.tag.d{border-color:var(--accent-400);color:#17120b;background:var(--accent-400);font-weight:600}
+.tag.m{border-style:dashed;border-color:var(--accent-400);color:var(--accent-300)}
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;font-size:13.5px;margin:0}
+.kv dt{color:var(--ink-meta);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding-top:3px}
+.kv dd{margin:0;color:var(--ink-body)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.steps li{counter-increment:s;position:relative;padding-left:30px;font-size:14px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;border:1px solid var(--accent-400);color:var(--accent-300);font-size:11px;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+.no{margin-top:10px;padding:10px 12px;border:1px dashed var(--accent-600);border-radius:6px;font-size:13.5px}
+.no::before{content:"Proibido · ";color:var(--accent-300);font-weight:600;letter-spacing:.03em}
+.pearl{margin-top:10px;padding:10px 12px;border:1px dashed var(--accent-600);border-radius:6px;font-size:13.5px}
+.pearl::before{content:"Pegadinha · ";color:var(--accent-300);font-weight:600}
+.big{font-family:var(--f-head);font-size:44px;line-height:1;color:var(--accent-300);font-variant-numeric:tabular-nums lining-nums}
+.stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:8px}
+.stat div{background:var(--surface-2);border:1px solid var(--rule);border-radius:6px;padding:8px 10px}
+.stat small{display:block;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-meta)}
+.stat b{font-family:var(--f-head);font-size:25px;font-weight:500;color:var(--ink-strong);font-variant-numeric:tabular-nums lining-nums}
+.stat div.hot{border-color:var(--accent-400);background:var(--tint-1)}
+.stat div.hot b{color:var(--accent-300)}
+
+/* ---- tabelas ---- */
+.tblw{overflow-x:auto;margin-top:18px;border:1px solid var(--rule);border-radius:8px;background:var(--surface);-webkit-overflow-scrolling:touch}
+table.t{border-collapse:collapse;width:100%;font-size:13.5px;min-width:560px}
+table.t th,table.t td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule)}
+table.t thead th{font-family:var(--f-body);font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-400);background:var(--surface-2);position:sticky;top:0}
+table.t tbody th{color:var(--ink);font-weight:600;white-space:nowrap}
+table.t tr:last-child td,table.t tr:last-child th{border-bottom:0}
+table.t td.hi,table.t tr.hi td,table.t tr.hi th{background:var(--tint-1);color:var(--ink)}
+table.t tr.sel td,table.t tr.sel th{background:var(--tint-2)}
+.tblnote{font-size:12.5px;color:var(--ink-meta);margin:8px 2px 0}
+
+/* ---- divergência, pérola ---- */
+.divg{margin-top:18px;border:1px dashed var(--accent-400);border-radius:8px;padding:14px 16px;background:var(--surface);max-width:76ch}
+.divg .t{font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--accent-300);display:block;margin-bottom:4px}
+.divg p{margin:0 0 6px;font-size:14.5px}
+.divg p:last-child{margin:0}
+
+/* ---- fluxograma em escada (HTML, legível no celular) ---- */
+.ladder{display:flex;flex-direction:column;margin-top:4px}
+.rung{display:grid;grid-template-columns:minmax(0,1.15fr) 64px minmax(0,1fr);align-items:center}
+.fn{border:1px solid var(--rule-3);background:var(--surface-2);border-radius:6px;padding:9px 12px;font-size:13.5px;line-height:1.4;color:var(--ink);transition:.2s}
+.fn.q{border-color:var(--accent-600);background:var(--surface-3);color:var(--accent-300);font-family:var(--f-head);font-size:18px;line-height:1.2}
+.fn.act{background:var(--tint-1);border-color:var(--tint-3)}
+.fn.stop{background:var(--tint-2);border-color:var(--accent-400);font-weight:600}
+.fn small{display:block;color:var(--ink-meta);font-size:12px;font-weight:400;margin-top:2px;font-family:var(--f-body)}
+.arr{position:relative;height:100%;min-height:30px;display:flex;align-items:center;justify-content:center}
+.arr::before{content:"";position:absolute;left:4px;right:8px;top:50%;border-top:1.3px solid var(--ink-meta)}
+.arr::after{content:"";position:absolute;right:3px;top:calc(50% - 4px);border:4px solid transparent;border-left:6px solid var(--ink-meta)}
+.arr span,.down span{position:relative;z-index:1;background:var(--surface);padding:0 4px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-400)}
+.down{height:34px;width:calc((100% - 64px) * 1.15 / 2.15);display:flex;align-items:center;justify-content:center;position:relative}
+.down::before{content:"";position:absolute;top:2px;bottom:6px;left:50%;border-left:1.3px solid var(--ink-meta)}
+.down::after{content:"";position:absolute;bottom:0;left:calc(50% - 4px);border:4px solid transparent;border-top:6px solid var(--ink-meta)}
+.ends{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.fn.lit{border-color:var(--accent-300);box-shadow:0 0 0 1px var(--accent-300),0 0 18px -4px rgba(250,203,141,.55);color:var(--ink-strong)}
+.fn.q.lit{color:var(--accent-300)}
+.down.lit::before,.arr.lit::before{border-color:var(--accent-300);border-width:2px}
+.down.lit::after{border-top-color:var(--accent-300)}
+.arr.lit::after{border-left-color:var(--accent-300)}
+.ladder.dimmed .fn:not(.lit){opacity:.55}
+@media (max-width:600px){
+  .rung{grid-template-columns:minmax(0,1fr)}
+  .arr{height:30px;min-height:30px;justify-content:flex-start;padding-left:22px}
+  .arr::before{left:14px;right:auto;top:2px;bottom:6px;border-top:0;border-left:1.3px dashed var(--ink-meta)}
+  .arr::after{right:auto;left:10px;top:auto;bottom:0;border:4px solid transparent;border-top:6px solid var(--ink-meta)}
+  .arr.lit::after{border-left-color:transparent;border-top-color:var(--accent-300)}
+  .arr.lit::before{border-left:2px dashed var(--accent-300)}
+  .down{width:100%}
+}
+
+/* ---- pegadinhas ---- */
+.traps{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-top:22px}
+@media (max-width:420px){.traps{grid-template-columns:minmax(0,1fr)}}
+.trap{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:15px 16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px}
+.trap .say{font-family:var(--f-head);font-size:20px;line-height:1.2;color:var(--ink-strong)}
+.trap .say::before{content:"A banca diz: ";font-family:var(--f-body);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-meta);display:block;margin-bottom:3px}
+.trap .truth{font-size:14px;border-top:1px solid var(--rule);padding-top:8px}
+.trap .truth::before{content:"Na verdade";display:block;font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-400);margin-bottom:2px}
+.trap button{align-self:flex-start}
+.trap .truth[hidden]{display:none}
+
+/* ---- quiz ---- */
+.quizbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-top:22px;padding:12px 16px;border:1px solid var(--rule-2);border-radius:8px;background:var(--surface)}
+.quizbar .sc{font-family:var(--f-head);font-size:24px;color:var(--accent-300)}
+.qs{display:flex;flex-direction:column;gap:16px;margin-top:16px}
+.q{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:18px;box-shadow:var(--shadow)}
+.q .qn{font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--accent-400);margin-bottom:6px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.q .qt{font-size:15.5px;color:var(--ink);margin:0 0 12px}
+.q ol{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px}
+.q li button{font:inherit;font-size:14px;width:100%;text-align:left;display:flex;gap:11px;align-items:flex-start;padding:9px 12px;border-radius:6px;border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-body);cursor:pointer;transition:.15s}
+.q li button:hover:not([disabled]){border-color:var(--accent-400);color:var(--ink)}
+.q li button .l{flex:none;width:22px;height:22px;border-radius:50%;border:1px solid var(--rule-3);display:grid;place-items:center;font-size:12px;color:var(--ink-soft)}
+.q li button[disabled]{cursor:default}
+.q li button.ok{border-color:var(--accent-400);background:var(--tint-2);color:var(--ink-strong)}
+.q li button.ok .l{background:var(--accent-400);border-color:var(--accent-400);color:#17120b;font-weight:700}
+.q li button.bad{border-style:dashed;border-color:var(--ink-meta);opacity:.8;text-decoration:line-through;text-decoration-color:var(--ink-meta)}
+.q li button.bad .l{border-style:dashed}
+.q li button.dim{opacity:.5}
+.q .exp{margin-top:12px;padding:12px 14px;border-left:2px solid var(--accent-400);background:var(--surface-2);border-radius:0 6px 6px 0;font-size:14px}
+.q .exp .res{display:block;font-family:var(--f-head);font-size:19px;color:var(--accent-300);margin-bottom:3px}
+.q .exp p{margin:0 0 6px}
+.q .exp p:last-child{margin:0}
+
+/* ---- tabela-mãe ---- */
+.mother{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:22px}
+@media (max-width:420px){.mother{grid-template-columns:minmax(0,1fr)}}
+.mc{background:var(--surface);border:1px solid var(--rule);border-top:3px solid var(--rule-3);border-radius:6px;padding:13px 14px}
+.mc.w{border-top-color:var(--accent-600)}
+.mc.d{border-top-color:var(--accent-300)}
+.mc.m{border-top:3px dashed var(--accent-400)}
+.mc .g{font-size:13.5px;color:var(--ink-soft);margin:0 0 7px}
+.mc .g::before{content:"Gatilho · ";font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-meta)}
+.mc .a{font-family:var(--f-head);font-size:19px;line-height:1.2;color:var(--ink-strong);margin:0}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;font-size:12.5px;color:var(--ink-meta)}
+
+/* ---- rodapé ---- */
+footer.refs{max-width:1120px;margin:40px auto 0;padding:24px 24px 60px;border-top:1px solid var(--rule-2);font-size:13px;color:var(--ink-meta)}
+footer.refs h3{font-size:20px;margin-bottom:8px}
+footer.refs ol{padding-left:20px;margin:0}
+footer.refs li{margin:3px 0}
+
+/* ---- utilitários ---- */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:18px}
+@media (max-width:420px){.grid2{grid-template-columns:minmax(0,1fr)}}
+.muted{color:var(--ink-meta)}
+.small{font-size:13px}
+.mt{margin-top:14px}
+.hidden{display:none!important}
+.hot-svg{cursor:pointer}
+.hot-svg:hover .hl,.hot-svg.on .hl{stroke:var(--accent-300);stroke-width:2.6}
+@media (max-width:600px){
+  body{font-size:15px}
+  .wrap{padding:0 16px 64px}
+  header.hero{padding:36px 16px 20px}
+  .rail-in{padding:8px 16px}
+  footer.refs{padding:20px 16px 48px}
+  .ch-head{gap:12px}
+  .ch-num{font-size:24px;min-width:24px}
+  .fig{padding:10px}
+  .card{padding:14px}
+  .big{font-size:38px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+.mk{cursor:pointer}
+.mk circle{fill:#1c1a18;stroke:#e1ad66;stroke-width:1.4}
+.mk text{fill:#facb8d;pointer-events:none}
+.mk.on circle,.mk:hover circle{fill:#e1ad66}
+.mk.on text,.mk:hover text{fill:#17120b}
+#body [data-r]{transition:fill .25s,stroke .25s}
+#body [data-r].on{fill:rgba(194,141,65,.42);stroke:#facb8d;stroke-width:2}
+#body g,#chest g,#chest path,#chest ellipse{transition:opacity .3s,transform .4s}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="kicker">Atlas · Trauma · ATLS 11ª edição</div>
+  <h1>Avaliação inicial e <em>via aérea</em> no trauma</h1>
+  <p class="lede">A avaliação primária é uma fila de prioridades: o que mata primeiro é tratado primeiro, e nada passa para a letra seguinte enquanto a anterior ameaça a vida. Este atlas percorre a fila com um paciente só — e para demoradamente na via aérea, que é onde a banca mais cobra conduta.</p>
+  <div class="stem">
+    <span class="src">O caso que atravessa o atlas</span>
+    <p><b>Rafael, 28 anos</b>, motociclista, colide contra um poste a cerca de 60 km/h. Há <b>sangramento ativo em jato na face anterior da coxa direita</b>. Chega à sala de trauma com colar cervical e prancha. Está agitado, com roncos à respiração e sangue na orofaringe; abre os olhos à pressão, emite sons incompreensíveis e flexiona de forma anormal os membros superiores ao estímulo.</p>
+    <div class="vitals"><span>FC <b>124</b> bpm</span><span>PA <b>96 × 60</b> mmHg</span><span>FR <b>30</b> irpm</span><span>SpO₂ <b>88%</b> em ar ambiente</span><span>ECG <b>?</b></span></div>
+  </div>
+</header>
+
+<nav class="rail" aria-label="Capítulos">
+  <div class="rail-in">
+    <a href="#c1"><span class="n">1</span>xABCDE</a>
+    <a href="#c2"><span class="n">2</span>Glasgow</a>
+    <a href="#c3"><span class="n">3</span>Via aérea ameaçada</a>
+    <a href="#c4"><span class="n">4</span>Máquina da via aérea</a>
+    <a href="#c5"><span class="n">5</span>Na mesa: cricotireoidostomia</a>
+    <a href="#c6"><span class="n">6</span>B e C que matam</a>
+    <a href="#c7"><span class="n">7</span>Adjuntos e secundária</a>
+    <a href="#c8"><span class="n">8</span>Pegadinhas</a>
+    <a href="#c9"><span class="n">9</span>Forja</a>
+    <a href="#c10"><span class="n">10</span>Tabela-mãe</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- 1 -->
+<section class="ch" id="c1">
+  <div class="ch-head"><span class="ch-num">1</span><div><h2>xABCDE: a fila de prioridades</h2>
+  <p class="ch-sub">Clique em cada letra. O corpo mostra onde está a ameaça; o painel diz o que olhar e o que fazer antes de passar adiante.</p></div></div>
+  <div class="plate">
+    <div class="fig">
+      <svg viewBox="0 0 300 548" role="img" aria-label="Silhueta corporal com a região da letra selecionada destacada" id="body">
+        <defs>
+          <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#e1ad66" stroke-width="1.2" opacity=".55"/></pattern>
+        </defs>
+        <g fill="#2a2521" stroke="rgba(243,242,242,.28)" stroke-width="1.2">
+          <path data-r="arm" d="M98 124 C78 132 66 150 60 178 L44 290 C42 300 58 304 62 294 L82 196 L96 160 Z"/>
+          <path data-r="arm" d="M202 124 C222 132 234 150 240 178 L256 290 C258 300 242 304 238 294 L218 196 L204 160 Z"/>
+          <path data-r="leg" d="M92 338 L146 338 L140 430 L134 504 C132 512 112 512 112 504 L104 430 Z"/>
+          <path data-r="leg2" d="M154 338 L208 338 L196 430 L188 504 C186 512 166 512 166 504 L160 430 Z"/>
+          <path data-r="pelvis" d="M94 298 L206 298 L212 340 L88 340 Z"/>
+          <path data-r="abd" d="M90 228 L210 228 L206 298 L94 298 Z"/>
+          <path data-r="chest" d="M104 118 Q150 108 196 118 L212 160 L210 228 L90 228 L88 160 Z"/>
+          <rect data-r="neck" x="136" y="90" width="28" height="30" rx="6"/>
+          <circle data-r="head" cx="150" cy="58" r="34"/>
+        </g>
+        <!-- sangramento na coxa -->
+        <g id="bleed">
+          <path d="M108 378 q6 -10 12 0 q-6 10 -12 0z" fill="#e1ad66"/>
+          <path d="M98 396 q5 -8 10 0 q-5 8 -10 0z" fill="#e1ad66" opacity=".8"/>
+          <path d="M112 404 q4 -7 8 0 q-4 7 -8 0z" fill="#e1ad66" opacity=".6"/>
+        </g>
+        <rect id="tq" x="94" y="350" width="52" height="9" rx="2" fill="#facb8d" opacity="0"/>
+        <!-- termômetro (E) -->
+        <g id="therm" opacity="0">
+          <rect x="262" y="40" width="10" height="70" rx="5" fill="none" stroke="#facb8d"/>
+          <circle cx="267" cy="118" r="9" fill="#facb8d"/>
+          <rect x="265" y="70" width="4" height="44" fill="#facb8d"/>
+        </g>
+        <!-- pupilas (D) -->
+        <g id="pup" opacity="0"><circle cx="138" cy="54" r="5" fill="#facb8d"/><circle cx="162" cy="54" r="3" fill="#facb8d"/></g>
+        <!-- ondas (B) -->
+        <g id="lungs" opacity="0" fill="url(#hatch)" stroke="#e1ad66" stroke-width="1">
+          <path d="M146 128 C120 128 104 150 104 190 C104 212 118 220 140 218 Z"/>
+          <path d="M154 128 C180 128 196 150 196 190 C196 212 182 220 160 218 Z"/>
+        </g>
+        <!-- via aérea (A) -->
+        <path id="airway" d="M150 70 L150 92 L150 128" stroke="#facb8d" stroke-width="5" stroke-linecap="round" fill="none" opacity="0"/>
+        <text id="bodylab" x="150" y="538" text-anchor="middle" font-size="13" fill="#e1ad66"></text>
+      </svg>
+      <p class="figcap">Esquema, vista anterior. O sangramento na coxa direita do paciente (à esquerda na figura) existe desde o início: na nova edição ele é a primeira coisa a ser tratada.</p>
+    </div>
+    <div class="panel">
+      <div class="card">
+        <h3>Letra</h3>
+        <div class="seg" data-seg="abc">
+          <button data-v="x" aria-pressed="true">x</button><button data-v="A">A</button><button data-v="B">B</button><button data-v="C">C</button><button data-v="D">D</button><button data-v="E">E</button>
+        </div>
+      </div>
+      <div class="card" id="abc-out" aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>A letra minúscula que antecede o ABCDE é a mudança que a 11ª edição do ATLS consolidou: <strong>hemorragia externa exsanguinante</strong> — membro amputado, sangramento em jato, poça que cresce — é controlada antes mesmo da via aérea, com compressão direta e torniquete. O raciocínio é de tempo: uma artéria femoral aberta mata em poucos minutos, e um torniquete leva segundos.</p>
+    <p>O “x” não autoriza inverter a ordem para o sangramento interno. Hemotórax, hemoperitônio e fratura de bacia continuam na letra C, depois que a via aérea e a ventilação estão garantidas. Na prática da equipe as letras correm em paralelo; na prova, a pergunta “qual a primeira conduta?” segue a fila.</p>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="ch" id="c2">
+  <div class="ch-head"><span class="ch-num">2</span><div><h2>Escala de Coma de Glasgow: o número que indica o tubo</h2>
+  <p class="ch-sub">Monte o Glasgow do Rafael a partir do enunciado. O total decide se a via aérea, mesmo pérvia agora, precisa virar definitiva.</p></div></div>
+  <div class="plate even">
+    <div class="card">
+      <h3>Abertura ocular</h3>
+      <div class="seg" data-seg="gO">
+        <button data-v="4">4 · espontânea</button><button data-v="3">3 · ao som</button><button data-v="2" aria-pressed="true">2 · à pressão</button><button data-v="1">1 · nenhuma</button>
+      </div>
+      <h3 class="mt">Resposta verbal</h3>
+      <div class="seg" data-seg="gV">
+        <button data-v="5">5 · orientada</button><button data-v="4">4 · confusa</button><button data-v="3">3 · palavras</button><button data-v="2" aria-pressed="true">2 · sons</button><button data-v="1">1 · nenhuma</button>
+      </div>
+      <h3 class="mt">Resposta motora</h3>
+      <div class="seg" data-seg="gM">
+        <button data-v="6">6 · obedece</button><button data-v="5">5 · localiza</button><button data-v="4">4 · flexão normal</button><button data-v="3" aria-pressed="true">3 · flexão anormal</button><button data-v="2">2 · extensão</button><button data-v="1">1 · nenhuma</button>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="card" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+        <div><div class="lbl">Total</div><div class="big" id="gcs-tot">7</div><div class="muted small" id="gcs-str">O2 V2 M3</div></div>
+        <div style="flex:1;min-width:180px"><div class="lbl">Gravidade do TCE</div><div id="gcs-cls" style="font-family:var(--f-head);font-size:22px;color:var(--ink-strong)"></div></div>
+      </div>
+      <div class="verd" id="gcs-verd"></div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>A escala soma o <strong>melhor</strong> resultado de cada componente: se um braço estende e o outro localiza, vale o “localiza”. O motor é o componente que mais carrega prognóstico, e é por isso que a banca gosta de casos em que abertura ocular e fala enganam. Em paciente intubado, o verbal não é testável e se registra como “NT”; o escore passa a ser descrito por componentes.</p>
+    <p>A faixa clássica do TCE — leve 13–15, moderado 9–12, grave 3–8 — e a regra “<strong>Glasgow ≤ 8, intuba</strong>” vêm do mesmo raciocínio: abaixo desse nível a proteção reflexa da via aérea é incerta, e a hipóxia e a hipercapnia pioram a lesão cerebral secundária.</p>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="ch" id="c3">
+  <div class="ch-head"><span class="ch-num">3</span><div><h2>Via aérea ameaçada: o que o paciente diz sem falar</h2>
+  <p class="ch-sub">Cada sinal aponta para um mecanismo diferente de falência. Escolha um e veja o que ele significa.</p></div></div>
+  <div class="plate">
+    <div class="card">
+      <h3>Sinal à beira do leito</h3>
+      <div class="seg" data-seg="sig">
+        <button data-v="fala" aria-pressed="true">Fala normalmente</button>
+        <button data-v="agit">Agitação</button>
+        <button data-v="rebx">Rebaixamento</button>
+        <button data-v="ronco">Roncos</button>
+        <button data-v="gorg">Gorgolejo</button>
+        <button data-v="estr">Estridor</button>
+        <button data-v="rouq">Rouquidão</button>
+        <button data-v="cian">Cianose</button>
+      </div>
+      <div id="sig-out" class="mt" aria-live="polite"></div>
+    </div>
+    <div class="panel">
+      <div class="card">
+        <h3>Manobras antes do tubo</h3>
+        <ol class="steps">
+          <li><b>Elevação do mento</b> ou <b>tração da mandíbula</b> — sem hiperextensão cervical.</li>
+          <li><b>Aspiração</b> com cânula rígida de sangue, vômito e corpos estranhos.</li>
+          <li><b>Cânula orofaríngea</b> só no inconsciente sem reflexo de vômito.</li>
+          <li><b>Cânula nasofaríngea</b> tolerada no semiconsciente — evitar se houver suspeita de fratura da base do crânio.</li>
+          <li><b>Dispositivo extraglótico</b> (máscara laríngea, tubo laríngeo) como ponte, não como via aérea definitiva.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="tblw"><table class="t">
+    <thead><tr><th>Avaliação LEMON</th><th>O que procurar</th><th>Por que dificulta</th></tr></thead>
+    <tbody>
+      <tr><th>L · Look</th><td>Trauma facial, barba, pescoço curto, obesidade, dentes proeminentes</td><td>Impressão geral de via aérea difícil e de ventilação difícil com máscara</td></tr>
+      <tr><th>E · Evaluate 3-3-2</th><td>3 dedos de abertura bucal, 3 dedos mento–hioide, 2 dedos hioide–cartilagem tireoide</td><td>Menos espaço para deslocar a língua e alinhar os eixos</td></tr>
+      <tr><th>M · Mallampati</th><td>Visualização da faringe com a boca aberta</td><td>Classes altas associam-se a laringoscopia difícil</td></tr>
+      <tr><th>O · Obstruction</th><td>Hematoma cervical, epiglote, abscesso, queimadura de via aérea</td><td>Distorce a anatomia e pode fechar a via aérea a qualquer momento</td></tr>
+      <tr><th>N · Neck mobility</th><td>Colar cervical, restrição da coluna</td><td>Não se pode alinhar a cabeça — exige estabilização manual em linha</td></tr>
+    </tbody>
+  </table></div>
+  <div class="prose">
+    <p>A regra mais útil da sala de trauma cabe numa linha: <strong>o paciente que responde com voz clara tem via aérea pérvia neste momento</strong> e ventilação suficiente para falar. Isso não garante o minuto seguinte — queimadura de via aérea, hematoma cervical em expansão e trauma de laringe pioram com o tempo, e a reavaliação é contínua.</p>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="ch" id="c4">
+  <div class="ch-head"><span class="ch-num">4</span><div><h2>Máquina da via aérea definitiva</h2>
+  <p class="ch-sub">Responda às perguntas na ordem em que a sala responde. O fluxograma acende o caminho e o veredito dá a conduta e a proibição.</p></div></div>
+  <div class="plate">
+    <div class="fig" style="padding:16px">
+      <div class="ladder dimmed" id="flowA">
+        <div class="rung">
+          <div class="fn q" data-k="q1">Há indicação de via aérea definitiva?<small>apneia · ECG ≤ 8 · não protege a via aérea · não oxigena · obstrução iminente</small></div>
+          <div class="arr" data-k="e1"><span>não</span></div>
+          <div class="fn" data-k="n1">Oxigênio, manobras básicas e reavaliação contínua</div>
+        </div>
+        <div class="down" data-k="d1"><span>sim</span></div>
+        <div class="rung">
+          <div class="fn act" data-k="q2">Intubação orotraqueal em sequência rápida<small>pré-oxigenação · estabilização manual da coluna em linha</small></div>
+          <div class="arr" data-k="e2"><span>intubou</span></div>
+          <div class="fn stop" data-k="n2">Via aérea definitiva<small>confirmar com capnografia, fixar, RX de tórax</small></div>
+        </div>
+        <div class="down" data-k="d2"><span>falhou</span></div>
+        <div class="rung">
+          <div class="fn q" data-k="q3">Consegue oxigenar?<small>bolsa-válvula-máscara ou dispositivo extraglótico</small></div>
+          <div class="arr" data-k="e3"><span>sim</span></div>
+          <div class="fn act" data-k="n3">Ponte com extraglótico; nova tentativa pelo mais experiente; preparar via cirúrgica</div>
+        </div>
+        <div class="down" data-k="d3"><span>não</span></div>
+        <div class="fn q" data-k="q4" style="max-width:100%">Não intuba, não oxigena: via aérea cirúrgica — qual?</div>
+        <div class="down" data-k="d4" style="width:100%"><span>depende de</span></div>
+        <div class="ends">
+          <div class="fn stop" data-k="t1">Cricotireoidostomia cirúrgica<small>adulto e criança ≥ 12 anos</small></div>
+          <div class="fn stop" data-k="t2">Cricotireoidostomia por punção + insuflação a jato<small>&lt; 12 anos · ponte de 30–45 min</small></div>
+          <div class="fn stop" data-k="t3">Traqueostomia<small>suspeita de fratura de laringe</small></div>
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="card">
+        <h3>Presets de prova</h3>
+        <div class="seg" data-seg="apre">
+          <button data-v="rafael" aria-pressed="true">Rafael (ECG 7)</button>
+          <button data-v="face">Face destruída</button>
+          <button data-v="crianca">Criança de 8 anos</button>
+          <button data-v="laringe">Fratura de laringe</button>
+          <button data-v="fala">Fala bem</button>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Dados do enunciado</h3>
+        <label class="tog"><input type="checkbox" id="a-ind"><span>Indicação de via aérea definitiva<small>apneia, ECG ≤ 8, vômito/sangue sem proteção, hipoxemia refratária, queimadura de via aérea, hematoma em expansão</small></span></label>
+        <label class="tog"><input type="checkbox" id="a-iot"><span>A intubação orotraqueal funcionou</span></label>
+        <label class="tog"><input type="checkbox" id="a-oxi"><span>Oxigena com máscara ou extraglótico</span></label>
+        <label class="tog"><input type="checkbox" id="a-kid"><span>Idade abaixo de 12 anos</span></label>
+        <label class="tog"><input type="checkbox" id="a-lar"><span>Rouquidão, enfisema subcutâneo e crepitação laríngea</span></label>
+      </div>
+      <div class="verd" id="a-verd" aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="tblw"><table class="t">
+    <thead><tr><th>Via aérea definitiva</th><th>Quando</th><th>Contraindicação que a banca cobra</th></tr></thead>
+    <tbody>
+      <tr><th>Orotraqueal</th><td>Primeira escolha na maioria; sequência rápida com estabilização manual em linha</td><td>—</td></tr>
+      <tr><th>Nasotraqueal</th><td>Paciente respirando espontaneamente, em situações selecionadas</td><td>Apneia; suspeita de fratura de base do crânio ou de face média</td></tr>
+      <tr><th>Cricotireoidostomia cirúrgica</th><td>Falha de intubação sem conseguir oxigenar, no adulto</td><td>Criança &lt; 12 anos (cartilagem cricoide é o único suporte circunferencial da traqueia)</td></tr>
+      <tr><th>Cricotireoidostomia por punção</th><td>Criança &lt; 12 anos; ponte temporária em qualquer idade</td><td>Não é via aérea definitiva: retém CO₂, sustenta 30–45 minutos</td></tr>
+      <tr><th>Traqueostomia</th><td>Lesão de laringe; procedimento eletivo posterior</td><td>Em emergência é mais lenta e sangra mais que a crico</td></tr>
+    </tbody>
+  </table></div>
+  <p class="tblnote">Via aérea definitiva = tubo na traqueia, com balonete insuflado abaixo das cordas vocais, conectado a oxigênio e fixado. Máscara laríngea e combitubo não são definitivos.</p>
+  <div class="prose">
+    <p>A sequência rápida existe porque o paciente de trauma está, por definição, de estômago cheio: pré-oxigenação, um indutor de efeito rápido (etomidato ou cetamina) e um bloqueador neuromuscular (succinilcolina ou rocurônio) colocam o tubo sem ventilar com pressão positiva antes. O colar cervical sai e um auxiliar segura a cabeça em linha durante a laringoscopia — é a <strong>restrição de movimento</strong> que a nova nomenclatura do ATLS adota no lugar de “imobilização”.</p>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="ch" id="c5">
+  <div class="ch-head"><span class="ch-num">5</span><div><h2>Na mesa: a anatomia da cricotireoidostomia</h2>
+  <p class="ch-sub">Toque nos marcadores. O alvo é uma janela entre duas cartilagens; tudo acima e abaixo dela tem um motivo para ser evitado.</p></div></div>
+  <div class="plate">
+    <div class="fig">
+      <svg viewBox="0 0 460 440" role="img" aria-label="Vista anterior do pescoço com laringe, membrana cricotireóidea e traqueia" id="neck">
+        <path d="M130 8 C140 120 125 300 70 432 L390 432 C335 300 320 120 330 8 Z" fill="#2a2420" stroke="rgba(243,242,242,.18)"/>
+        <path d="M150 30 L208 428" stroke="#3a312a" stroke-width="20" stroke-linecap="round" opacity=".7"/>
+        <path d="M310 30 L252 428" stroke="#3a312a" stroke-width="20" stroke-linecap="round" opacity=".7"/>
+        <g class="hot-svg" data-m="1"><path class="hl" d="M170 70 Q230 90 290 70" stroke="#d8cbb4" stroke-width="7" fill="none" stroke-linecap="round"/></g>
+        <g class="hot-svg" data-m="2"><path class="hl" d="M184 82 Q230 96 276 82 L278 100 L182 100 Z" fill="#4a4036" stroke="rgba(243,242,242,.2)"/></g>
+        <g class="hot-svg" data-m="3"><path class="hl" d="M180 100 L222 100 L230 112 L238 100 L280 100 L268 150 L230 184 L192 150 Z" fill="#5a4c3e" stroke="#8d6428" stroke-width="1.4"/></g>
+        <g class="hot-svg" data-m="4"><path class="hl" d="M205 188 L255 188 L258 206 L202 206 Z" fill="rgba(225,173,102,.5)" stroke="#facb8d" stroke-width="1.6"/></g>
+        <g class="hot-svg" data-m="5"><path class="hl" d="M198 208 L262 208 L266 226 L194 226 Z" fill="#5a4c3e" stroke="#8d6428" stroke-width="1.4"/></g>
+        <g class="hot-svg" data-m="7" id="rings">
+          <rect class="hl" x="202" y="232" width="56" height="190" rx="8" fill="#3a3129" stroke="rgba(243,242,242,.15)"/>
+        </g>
+        <g class="hot-svg" data-m="6">
+          <ellipse class="hl" cx="186" cy="290" rx="26" ry="50" fill="rgba(141,100,40,.55)" stroke="#8d6428"/>
+          <ellipse class="hl" cx="274" cy="290" rx="26" ry="50" fill="rgba(141,100,40,.55)" stroke="#8d6428"/>
+          <rect class="hl" x="198" y="250" width="64" height="26" rx="9" fill="rgba(141,100,40,.75)" stroke="#8d6428"/>
+        </g>
+        <g class="hot-svg" data-m="8"><path class="hl" d="M196 424 Q230 404 264 424" stroke="#d8cbb4" stroke-width="5" fill="none" stroke-linecap="round"/></g>
+        <path id="incis" d="M196 197 L264 197" stroke="#facb8d" stroke-width="2.4" stroke-dasharray="6 4" opacity="0"/>
+        <g stroke="rgba(243,242,242,.45)" stroke-width="1" fill="none">
+          <path d="M51 72 L172 72"/><path d="M51 128 L192 128"/><path d="M51 217 L196 217"/><path d="M51 400 L204 400"/>
+          <path d="M409 90 L276 90"/><path d="M409 197 L256 197"/><path d="M409 262 L262 262"/><path d="M409 416 L262 416"/>
+        </g>
+        <g font-size="13" text-anchor="middle" font-weight="600">
+          <g class="mk" data-m="1"><circle cx="40" cy="72" r="12"/><text x="40" y="76.5">1</text></g>
+          <g class="mk" data-m="3"><circle cx="40" cy="128" r="12"/><text x="40" y="132.5">3</text></g>
+          <g class="mk" data-m="5"><circle cx="40" cy="217" r="12"/><text x="40" y="221.5">5</text></g>
+          <g class="mk" data-m="7"><circle cx="40" cy="400" r="12"/><text x="40" y="404.5">7</text></g>
+          <g class="mk" data-m="2"><circle cx="420" cy="90" r="12"/><text x="420" y="94.5">2</text></g>
+          <g class="mk" data-m="4"><circle cx="420" cy="197" r="12"/><text x="420" y="201.5">4</text></g>
+          <g class="mk" data-m="6"><circle cx="420" cy="262" r="12"/><text x="420" y="266.5">6</text></g>
+          <g class="mk" data-m="8"><circle cx="420" cy="416" r="12"/><text x="420" y="420.5">8</text></g>
+        </g>
+      </svg>
+      <p class="figcap"><b>Contrato de vista:</b> vista anterior do pescoço, decúbito dorsal, cabeça em posição neutra; pele, platisma e músculos infra-hióideos removidos; esternocleidomastóideos em sombra. Proporções esquematizadas, não em escala. Lado esquerdo da figura = lado direito do paciente.</p>
+    </div>
+    <div class="panel">
+      <div class="card" id="neck-out" aria-live="polite"></div>
+      <div class="card">
+        <h3>Técnica cirúrgica (adulto)</h3>
+        <label class="tog" style="border:0;padding-top:0"><input type="checkbox" id="show-inc"><span>Mostrar a incisão na membrana</span></label>
+        <ol class="steps mt">
+          <li>Palpar a incisura tireóidea, a membrana cricotireóidea e a cricoide; estabilizar a laringe com a mão não dominante.</li>
+          <li>Incisão de pele sobre a membrana (transversa ou vertical).</li>
+          <li>Incisão transversa da membrana; dilatar o orifício com pinça ou cabo do bisturi.</li>
+          <li>Introduzir tubo com balonete de pequeno calibre (cerca de 5–7 mm de diâmetro) ou cânula de traqueostomia.</li>
+          <li>Insuflar o balonete, ventilar, confirmar com capnografia e ausculta, fixar.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>A membrana cricotireóidea é escolhida porque é superficial, pouco vascularizada e fica <strong>acima</strong> do istmo da tireoide e dos vasos que a traqueostomia encontra. Por isso a crico é mais rápida e sangra menos — e é a via aérea cirúrgica de emergência no adulto. Na criança, a cricoide é o único anel cartilaginoso completo da via aérea; lesá-la pode deixar estenose subglótica, e a punção com agulha entra no lugar da incisão.</p>
+  </div>
+</section>
+
+<!-- 6 -->
+<section class="ch" id="c6">
+  <div class="ch-head"><span class="ch-num">6</span><div><h2>B e C: lesões torácicas que matam na avaliação primária</h2>
+  <p class="ch-sub">Selecione a lesão. O tórax esquematizado muda; o painel separa o que é diagnóstico clínico do que exige exame.</p></div></div>
+  <div class="plate">
+    <div class="fig">
+      <svg viewBox="0 0 420 320" role="img" aria-label="Tórax em corte coronal esquemático" id="chest">
+        <defs>
+          <pattern id="air" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#facb8d" stroke-width="1" opacity=".55"/></pattern>
+        </defs>
+        <rect x="56" y="40" width="308" height="260" rx="60" fill="#211d1a" stroke="rgba(243,242,242,.22)"/>
+        <g id="ribs" stroke="rgba(243,242,242,.14)" stroke-width="5" fill="none" stroke-linecap="round">
+          <path d="M200 72 C150 66 100 80 76 104"/><path d="M200 100 C150 94 96 108 70 134"/><path d="M200 128 C150 122 94 136 66 164"/><path d="M200 156 C150 150 92 164 66 194"/><path d="M200 184 C150 178 94 192 68 222"/><path d="M200 212 C150 206 98 220 74 248"/>
+          <path d="M220 72 C270 66 320 80 344 104"/><path d="M220 100 C270 94 324 108 350 134"/><path d="M220 128 C270 122 326 136 354 164"/><path d="M220 156 C270 150 328 164 354 194"/><path d="M220 184 C270 178 326 192 352 222"/><path d="M220 212 C270 206 322 220 346 248"/>
+        </g>
+        
+        <g id="lungR"><path d="M198 72 C150 62 86 92 80 180 C76 240 92 268 122 272 C160 276 190 262 196 232 Z" fill="#4a3f36" stroke="#8d6428" stroke-width="1.3"/></g>
+        <path id="airR" d="M198 72 C150 62 86 92 80 180 C76 240 92 268 122 272 C160 276 190 262 196 232 Z" fill="url(#air)" opacity="0"/>
+        <path id="fluid" d="M80 206 Q140 196 196 210 L196 232 C190 262 160 276 122 272 C92 268 76 240 80 206 Z" fill="rgba(225,173,102,.55)" stroke="#facb8d" opacity="0"/>
+        <path d="M222 72 C270 62 334 92 340 180 C344 240 328 268 298 272 C270 274 256 262 252 250 C242 230 228 200 224 160 Z" fill="#4a3f36" stroke="#8d6428" stroke-width="1.3"/>
+        <g id="med">
+          <path d="M210 14 L210 96 M210 96 L190 124 M210 96 L232 124" stroke="#d8cbb4" stroke-width="9" fill="none" stroke-linecap="round"/>
+          <ellipse id="peri" cx="238" cy="222" rx="56" ry="48" fill="none" stroke="#facb8d" stroke-width="9" opacity="0" transform="rotate(-20 238 222)"/>
+          <ellipse cx="238" cy="222" rx="44" ry="37" fill="#6b4c1e" stroke="#e1ad66" stroke-width="1.4" transform="rotate(-20 238 222)"/>
+        </g>
+        <g id="wound" opacity="0">
+          <ellipse cx="66" cy="168" rx="9" ry="13" fill="#121110" stroke="#facb8d" stroke-width="2"/>
+          <path d="M14 160 L48 166 M40 158 L50 166 L40 174" stroke="#facb8d" stroke-width="2" fill="none"/>
+        </g>
+        <g id="tbi" opacity="0">
+          <path d="M196 112 l-6 -6 l4 -4 l-6 -6" stroke="#facb8d" stroke-width="2.4" fill="none" transform="translate(-2 6)"/>
+          <circle cx="196" cy="114" r="11" fill="none" stroke="#facb8d" stroke-width="1.6" stroke-dasharray="3 2"/>
+          <g fill="none" stroke="#facb8d" stroke-width="1.2"><circle cx="182" cy="22" r="3"/><circle cx="174" cy="32" r="2.5"/><circle cx="188" cy="36" r="2"/><circle cx="238" cy="24" r="3"/><circle cx="246" cy="34" r="2.5"/><circle cx="232" cy="38" r="2"/><circle cx="168" cy="46" r="2"/><circle cx="252" cy="48" r="2"/></g>
+        </g>
+        <text x="110" y="34" font-size="12" fill="rgba(243,242,242,.56)" text-anchor="middle">direito</text>
+        <text x="310" y="34" font-size="12" fill="rgba(243,242,242,.56)" text-anchor="middle">esquerdo</text>
+        <text id="chestlab" x="210" y="314" font-size="13" fill="#e1ad66" text-anchor="middle"></text>
+      </svg>
+      <p class="figcap">Corte coronal esquemático visto de frente (lado direito do paciente à esquerda da figura). A lesão está sempre no hemitórax direito, para comparar com o lado normal.</p>
+    </div>
+    <div class="panel">
+      <div class="card">
+        <h3>Lesão</h3>
+        <div class="seg" data-seg="cx">
+          <button data-v="hip" aria-pressed="true">Pneumotórax hipertensivo</button>
+          <button data-v="abe">Pneumotórax aberto</button>
+          <button data-v="hem">Hemotórax maciço</button>
+          <button data-v="tam">Tamponamento</button>
+          <button data-v="tqb">Lesão da árvore traqueobrônquica</button>
+        </div>
+      </div>
+      <div class="card" id="cx-out" aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="tblw"><table class="t">
+    <thead><tr><th></th><th>Hipertensivo</th><th>Hemotórax maciço</th><th>Tamponamento</th></tr></thead>
+    <tbody>
+      <tr><th>Murmúrio vesicular</th><td>Abolido</td><td>Abolido</td><td>Presente</td></tr>
+      <tr><th>Percussão</th><td>Hipertimpânica</td><td>Maciça</td><td>Normal</td></tr>
+      <tr><th>Traqueia</th><td>Desviada para o lado oposto</td><td>Pode desviar</td><td>Central</td></tr>
+      <tr><th>Jugulares</th><td>Túrgidas (podem faltar no hipovolêmico)</td><td>Planas</td><td>Túrgidas</td></tr>
+      <tr><th>Bulhas</th><td>Normais</td><td>Normais</td><td>Abafadas</td></tr>
+    </tbody>
+  </table></div>
+  <p class="tblnote">Lista do ATLS para a avaliação primária: obstrução de via aérea, lesão da árvore traqueobrônquica, pneumotórax hipertensivo, pneumotórax aberto, hemotórax maciço, tamponamento cardíaco e parada circulatória traumática.</p>
+  <div class="divg"><span class="t">Divergência de banca</span><p>O <b>tórax instável</b> (com contusão pulmonar) estava na avaliação primária até a 9ª edição do ATLS; da 10ª em diante, é lesão da <b>avaliação secundária</b>, junto com contusão pulmonar, lesão cardíaca contusa, ruptura traumática da aorta, lesão diafragmática e ruptura esofágica. Questão antiga pode listá-lo entre as lesões da primária.</p></div>
+</section>
+
+<!-- 7 -->
+<section class="ch" id="c7">
+  <div class="ch-head"><span class="ch-num">7</span><div><h2>Adjuntos, coluna cervical e avaliação secundária</h2>
+  <p class="ch-sub">Os adjuntos acompanham a avaliação primária; a secundária só começa quando a primária terminou e a reanimação está em curso.</p></div></div>
+  <div class="tblw"><table class="t">
+    <thead><tr><th>Adjunto</th><th>Para quê</th><th>Quando não fazer (ou fazer de outro jeito)</th></tr></thead>
+    <tbody>
+      <tr><th>Sonda vesical</th><td>Débito urinário como marcador de perfusão: 0,5 mL/kg/h no adulto, 1 mL/kg/h na criança, 2 mL/kg/h abaixo de 1 ano</td><td class="hi">Sangue no meato uretral ou equimose perineal: uretrografia retrógrada antes</td></tr>
+      <tr><th>Sonda gástrica</th><td>Descomprimir o estômago e reduzir risco de aspiração</td><td class="hi">Suspeita de fratura de lâmina crivosa (equimose periorbitária, rinorreia, otorreia): via oral</td></tr>
+      <tr><th>Capnografia</th><td>Confirma tubo na traqueia; acompanha a ventilação</td><td>—</td></tr>
+      <tr><th>Oximetria, ECG, gasometria e lactato</th><td>Oxigenação, arritmias, contusão cardíaca, perfusão (déficit de base, lactato)</td><td>Oximetria falha com má perfusão periférica</td></tr>
+      <tr><th>RX de tórax e de pelve (AP)</th><td>Pneumo/hemotórax, alargamento do mediastino, fratura de bacia</td><td>Não usar para diagnosticar pneumotórax hipertensivo</td></tr>
+      <tr><th>eFAST</th><td>Líquido livre no abdome, pericárdio; pneumotórax</td><td>Negativo não exclui lesão retroperitoneal nem de víscera oca</td></tr>
+    </tbody>
+  </table></div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Liberação clínica da coluna — NEXUS</h3>
+      <p class="small">Dispensa imagem quando <b>todos</b> estão presentes:</p>
+      <ol class="steps">
+        <li>Sem dor à palpação na linha média posterior.</li>
+        <li>Sem déficit neurológico focal.</li>
+        <li>Nível de consciência normal.</li>
+        <li>Sem intoxicação.</li>
+        <li>Sem lesão dolorosa que distraia.</li>
+      </ol>
+      <p class="small mt muted">A regra canadense (Canadian C-Spine) é a alternativa; ambas indicam TC quando não se aplicam.</p>
+    </div>
+    <div class="card">
+      <h3>História AMPLE</h3>
+      <dl class="kv">
+        <dt>A</dt><dd>Alergias</dd>
+        <dt>M</dt><dd>Medicamentos em uso (anticoagulante, betabloqueador)</dd>
+        <dt>P</dt><dd>Passado médico, prenhez</dd>
+        <dt>L</dt><dd>Líquidos e alimentos ingeridos por último (last meal)</dd>
+        <dt>E</dt><dd>Eventos e ambiente relacionados ao trauma</dd>
+      </dl>
+      <p class="small mt muted">Exame da cabeça aos pés, incluindo dorso por rolamento em bloco. A avaliação terciária, nas primeiras 24 h, busca lesões que passaram despercebidas.</p>
+    </div>
+  </div>
+  <div class="divg"><span class="t">Divergência de banca</span>
+    <p>Questões antigas usam “ABCDE” e “colar e prancha para imobilização”; as recentes falam em <b>xABCDE</b> e <b>restrição de movimento da coluna</b>. Se a questão trouxer hemorragia externa exsanguinante, a resposta “controle do sangramento” só é a primeira conduta quando o enunciado (ou a alternativa) seguir a nova sequência — se todas as alternativas seguirem o ABCDE clássico, a via aérea continua primeiro.</p>
+  </div>
+</section>
+
+<!-- 8 -->
+<section class="ch" id="c8">
+  <div class="ch-head"><span class="ch-num">8</span><div><h2>Pegadinhas de prova</h2>
+  <p class="ch-sub">Leia a afirmação, decida se é verdade, e só depois revele.</p></div></div>
+  <div class="traps">
+    <div class="trap"><div class="say">“Paciente que conversa normalmente tem via aérea definitiva.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>Tem via aérea <b>pérvia</b> naquele momento. Definitiva é tubo com balonete na traqueia, conectado a O₂ e fixado.</div></div>
+    <div class="trap"><div class="say">“Pneumotórax hipertensivo: confirmar com RX antes de descomprimir.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>Diagnóstico <b>clínico</b>. Descompressão imediata (agulha no 4º–5º EIC entre as linhas axilares anterior e média no adulto, ou toracostomia digital), depois dreno.</div></div>
+    <div class="trap"><div class="say">“Na criança de 8 anos que não intuba nem oxigena, crico cirúrgica.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>Abaixo de 12 anos: <b>cricotireoidostomia por punção</b> com insuflação a jato.</div></div>
+    <div class="trap"><div class="say">“A insuflação a jato garante a ventilação até o dia seguinte.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>Oxigena, mas ventila mal: o CO₂ se acumula. É ponte de <b>30–45 minutos</b>.</div></div>
+    <div class="trap"><div class="say">“xABCDE: tratar o choque antes da via aérea.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>O “x” é só a <b>hemorragia externa exsanguinante</b>. Sangramento interno segue na letra C.</div></div>
+    <div class="trap"><div class="say">“Agitação no politraumatizado alcoolizado é efeito do álcool.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>Agitação sugere <b>hipóxia</b>, e rebaixamento sugere hipercapnia ou TCE — até prova em contrário.</div></div>
+    <div class="trap"><div class="say">“Sem taquicardia, não há choque.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>Idoso, betabloqueador, marca-passo e atleta podem não acelerar. Paciente de trauma frio e com perfusão ruim está em choque até prova em contrário.</div></div>
+    <div class="trap"><div class="say">“Equimose periorbitária bilateral: passar sonda nasogástrica e intubar por via nasal.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>Suspeita de fratura de base do crânio <b>contraindica</b> sonda nasogástrica e intubação nasotraqueal. Use a via oral.</div></div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section class="ch" id="c9">
+  <div class="ch-head"><span class="ch-num">9</span><div><h2>Forja: uma questão-mãe e sete pivôs</h2>
+  <p class="ch-sub">Todas partem do Rafael. Em cada pivô o dado trocado está marcado; a conduta vira. Os distratores são condutas certas de outras linhas da tabela-mãe.</p></div></div>
+  <div class="quizbar"><div><div class="lbl" style="margin:0">Placar</div><span class="sc" id="quiz-score">0 / 8</span></div><span class="muted small" id="quiz-prog"></span><button class="btn" id="quiz-reset" type="button">Recomeçar</button></div>
+  <div class="qs" id="quiz"></div>
+</section>
+
+<!-- 10 -->
+<section class="ch" id="c10">
+  <div class="ch-head"><span class="ch-num">10</span><div><h2>Tabela-mãe: gatilho → conduta</h2>
+  <p class="ch-sub">Um cartão por linha de conduta. Borda clara: conduta-padrão; borda dourada: ação imediata; tracejada: proibição ou exceção.</p></div></div>
+  <div class="mother">
+    <div class="mc d"><p class="g">Sangramento externo em jato num membro</p><p class="a">Torniquete / compressão direta antes do A</p></div>
+    <div class="mc d"><p class="g">ECG ≤ 8, apneia ou sem proteção da via aérea</p><p class="a">IOT em sequência rápida com estabilização em linha</p></div>
+    <div class="mc d"><p class="g">Não intuba, não oxigena — adulto</p><p class="a">Cricotireoidostomia cirúrgica</p></div>
+    <div class="mc m"><p class="g">Não intuba, não oxigena — &lt; 12 anos</p><p class="a">Crico por punção + jato (30–45 min)</p></div>
+    <div class="mc m"><p class="g">Rouquidão, enfisema subcutâneo, crepitação laríngea</p><p class="a">Traqueostomia, não crico</p></div>
+    <div class="mc w"><p class="g">Queimadura de via aérea, hematoma cervical em expansão</p><p class="a">Intubar precocemente, antes do edema</p></div>
+    <div class="mc d"><p class="g">Hipotensão, MV abolido, hipertimpanismo, traqueia desviada</p><p class="a">Descompressão imediata, sem RX</p></div>
+    <div class="mc w"><p class="g">Ferida torácica aspirativa</p><p class="a">Curativo fixado em três lados, dreno longe da ferida</p></div>
+    <div class="mc w"><p class="g">Dreno com 1.500 mL imediatos ou 200 mL/h por 2–4 h</p><p class="a">Toracotomia</p></div>
+    <div class="mc d"><p class="g">Hipotensão, jugulares túrgidas, bulhas abafadas</p><p class="a">Tamponamento: cirurgia; pericardiocentese só como ponte</p></div>
+    <div class="mc m"><p class="g">Sangue no meato uretral</p><p class="a">Sem sonda vesical: uretrografia retrógrada</p></div>
+    <div class="mc m"><p class="g">Equimose periorbitária, rinorreia</p><p class="a">Sem sonda nasal e sem intubação nasotraqueal</p></div>
+    <div class="mc"><p class="g">Fala com voz clara</p><p class="a">Via aérea pérvia agora — reavaliar sempre</p></div>
+    <div class="mc"><p class="g">Hipotermia na sala</p><p class="a">Expor tudo, depois aquecer: sala, mantas, fluidos a 39 °C</p></div>
+  </div>
+</section>
+</main>
+
+<footer class="refs">
+  <h3>Referências</h3>
+  <ol>
+    <li>American College of Surgeons. ATLS — Advanced Trauma Life Support. 11ª ed. Chicago: ACS; 2025.</li>
+    <li>American College of Surgeons. ATLS — Advanced Trauma Life Support. 10ª ed. Chicago: ACS; 2018.</li>
+    <li>Teasdale G, Jennett B. Assessment of coma and impaired consciousness: a practical scale. Lancet. 1974;2(7872):81-4.</li>
+    <li>Hoffman JR, Mower WR, Wolfson AB, et al. Validity of a set of clinical criteria to rule out injury to the cervical spine in patients with blunt trauma (NEXUS). N Engl J Med. 2000;343(2):94-9.</li>
+    <li>Stiell IG, Wells GA, Vandemheen KL, et al. The Canadian C-spine rule for radiography in alert and stable trauma patients. JAMA. 2001;286(15):1841-8.</li>
+  </ol>
+  <p class="mt">Atlas produzido para o Residência Max. Conteúdo de estudo; a conduta real segue o protocolo do serviço.</p>
+</footer>
+
+<script>
+/* ===== utilitários comuns do atlas ===== */
+var RM = (function(){
+  function $(s, r){ return (r || document).querySelector(s); }
+  function $$(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function fmt(n, d){ return Number(n).toFixed(d || 0).replace('.', ','); }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  /* grupo de botões exclusivos: <div class="seg" data-seg="nome"><button data-v="x"> */
+  function seg(name, cb){
+    var box = $('[data-seg="' + name + '"]');
+    if (!box) return;
+    var bs = $$('button', box);
+    function pick(b){
+      bs.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      cb(b.getAttribute('data-v'), b);
+    }
+    bs.forEach(function(b){ b.type = 'button'; b.addEventListener('click', function(){ pick(b); }); });
+    var ini = bs.filter(function(b){ return b.getAttribute('aria-pressed') === 'true'; })[0] || bs[0];
+    if (ini) pick(ini);
+    return { pick: function(v){ var b = bs.filter(function(x){ return x.getAttribute('data-v') === v; })[0]; if (b) pick(b); } };
+  }
+
+  /* realça nós e arestas de um fluxograma: ids separados por espaço */
+  function lightFlow(svg, ids){
+    if (!svg) return;
+    $$('.lit', svg).forEach(function(e){ e.classList.remove('lit'); });
+    (ids || '').split(/\s+/).forEach(function(id){ if (!id) return; var e = svg.querySelector('[data-k="' + id + '"]'); if (e) e.classList.add('lit'); });
+  }
+
+  /* trilho: capítulo ativo */
+  function rail(){
+    var links = $$('.rail a');
+    if (!('IntersectionObserver' in window) || !links.length) return;
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (!e.isIntersecting) return;
+        links.forEach(function(a){
+          var on = a.getAttribute('href') === '#' + e.target.id;
+          a.classList.toggle('on', on);
+          if (on && a.scrollIntoView && a.parentNode.scrollWidth > a.parentNode.clientWidth){
+            var p = a.parentNode; p.scrollLeft = a.offsetLeft - p.clientWidth / 2 + a.clientWidth / 2;
+          }
+        });
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    $$('section.ch').forEach(function(s){ io.observe(s); });
+  }
+
+  /* pegadinhas com revelação */
+  function traps(){
+    $$('.trap').forEach(function(t){
+      var b = $('button', t), tr = $('.truth', t);
+      if (!b || !tr) return;
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var h = tr.hasAttribute('hidden');
+        if (h) tr.removeAttribute('hidden'); else tr.setAttribute('hidden', '');
+        b.textContent = h ? 'Esconder' : 'Revelar a verdade';
+        b.setAttribute('aria-expanded', h ? 'true' : 'false');
+      });
+    });
+  }
+
+  /* quiz: Q = [{tag, q, o:[5], c: índice, e: html, pv: 'dado-pivô'}] */
+  function quiz(Q){
+    var box = $('#quiz'), sc = $('#quiz-score'), rs = $('#quiz-reset');
+    if (!box) return;
+    var L = 'ABCDE', state;
+    function upd(){
+      var n = 0, ok = 0;
+      state.forEach(function(s){ if (s !== null){ n++; if (s) ok++; } });
+      sc.textContent = ok + ' / ' + Q.length;
+      $('#quiz-prog').textContent = n === Q.length ? (ok === Q.length ? 'Gabaritou. Releia os comentários dos distratores — é deles que a próxima prova sai.' : 'Fim. Volte aos capítulos das que errou e refaça.') : (n + ' de ' + Q.length + ' respondidas');
+    }
+    function render(){
+      state = Q.map(function(){ return null; });
+      box.innerHTML = Q.map(function(x, i){
+        return '<article class="q" id="q' + i + '"><div class="qn"><span>Questão ' + (i + 1) + '</span>' + (x.tag ? '<span class="tag">' + x.tag + '</span>' : '') + '</div>' +
+          '<p class="qt">' + x.q + '</p><ol>' + x.o.map(function(o, j){
+            return '<li><button type="button" data-i="' + i + '" data-j="' + j + '"><span class="l">' + L[j] + '</span><span>' + o + '</span></button></li>';
+          }).join('') + '</ol><div class="exp hidden" aria-live="polite"></div></article>';
+      }).join('');
+      $$('button[data-i]', box).forEach(function(b){ b.addEventListener('click', answer); });
+      upd();
+    }
+    function answer(ev){
+      var b = ev.currentTarget, i = +b.getAttribute('data-i'), j = +b.getAttribute('data-j'), x = Q[i];
+      if (state[i] !== null) return;
+      state[i] = (j === x.c);
+      var art = $('#q' + i);
+      $$('button', art).forEach(function(bb){
+        var jj = +bb.getAttribute('data-j');
+        bb.disabled = true;
+        if (jj === x.c) bb.classList.add('ok');
+        else if (jj === j) bb.classList.add('bad');
+        else bb.classList.add('dim');
+      });
+      var ex = $('.exp', art);
+      ex.innerHTML = '<span class="res">' + (state[i] ? 'Certo — ' : 'Não. ') + 'Gabarito ' + L[x.c] + '.</span>' + x.e;
+      ex.classList.remove('hidden');
+      upd();
+    }
+    rs.addEventListener('click', function(){ render(); box.scrollIntoView({ block: 'start' }); });
+    render();
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){ rail(); traps(); });
+  return { $: $, $$: $$, fmt: fmt, esc: esc, seg: seg, lightFlow: lightFlow, quiz: quiz };
+})();
+
+/* ===== 1. xABCDE ===== */
+(function(){
+  var D = {
+    x: { t:'Hemorragia externa exsanguinante', r:['leg'], tq:1,
+      olhar:'Sangramento em jato, poça que cresce, amputação traumática, sangramento em junções (virilha, axila, pescoço).',
+      fazer:'Compressão direta firme; torniquete proximal à lesão, apertado até parar o sangramento, com horário anotado; curativo hemostático com compressão nas junções.',
+      rafael:'Sangramento na coxa direita: torniquete antes de qualquer outra coisa.' },
+    A: { t:'Via aérea com restrição de movimento da coluna cervical', r:['head','neck'], air:1,
+      olhar:'Fala? Roncos, gorgolejo, estridor, rouquidão; agitação (hipóxia) ou rebaixamento (hipercapnia); sangue, vômito, dentes, fratura de face; hematoma cervical.',
+      fazer:'Aspiração, elevação do mento/tração da mandíbula, cânulas; via aérea definitiva se indicada. Colar retirado durante a intubação com estabilização manual em linha.',
+      rafael:'Roncos, sangue na orofaringe, SpO₂ 88% e Glasgow 7: via aérea definitiva.' },
+    B: { t:'Ventilação e respiração', r:['chest'], lungs:1,
+      olhar:'Exposição do tórax: expansibilidade, desvio de traqueia, turgência jugular, ferida aspirativa, ausculta e percussão, oximetria.',
+      fazer:'O₂ suplementar; descomprimir pneumotórax hipertensivo; curativo de três lados no aberto; drenar hemotórax; ventilar.',
+      rafael:'Reavaliar o tórax depois do tubo: a ventilação com pressão positiva pode converter um pneumotórax simples em hipertensivo.' },
+    C: { t:'Circulação com controle da hemorragia', r:['chest','abd','pelvis','leg','leg2'],
+      olhar:'Consciência, cor e temperatura da pele, pulso, PA, enchimento capilar. Fontes: tórax, abdome, pelve/retroperitônio, ossos longos e externa.',
+      fazer:'Dois acessos periféricos calibrosos (ou intraósseo), amostras com tipagem, cristaloide aquecido limitado e sangue precoce; cinta pélvica; eFAST; acionar protocolo de transfusão maciça.',
+      rafael:'FC 124 e PA 96 × 60 com sangramento externo: choque hemorrágico até prova em contrário.' },
+    D: { t:'Disfunção neurológica', r:['head'], pup:1,
+      olhar:'Escala de Coma de Glasgow, pupilas (tamanho e reação), sinais de lateralização, nível de lesão medular.',
+      fazer:'Evitar lesão secundária: oxigenação e pressão adequadas; acionar a neurocirurgia cedo. Álcool e drogas não explicam o rebaixamento antes de excluir TCE, hipóxia e hipoperfusão.',
+      rafael:'Glasgow 7 com anisocoria seria TCE grave com sinal de herniação — tomografia assim que estável.' },
+    E: { t:'Exposição e controle do ambiente', r:['head','neck','chest','abd','pelvis','arm','leg','leg2'], th:1,
+      olhar:'Despir completamente; rolamento em bloco para inspecionar o dorso.',
+      fazer:'Prevenir hipotermia: sala aquecida, mantas térmicas, fluidos aquecidos a 39 °C. Hipotermia piora a coagulopatia.',
+      rafael:'Depois de expor tudo, cobrir. A sala de trauma fria é causa evitável de coagulopatia.' }
+  };
+  var svg = RM.$('#body');
+  RM.seg('abc', function(v){
+    var d = D[v];
+    RM.$$('[data-r]', svg).forEach(function(e){ e.classList.toggle('on', d.r.indexOf(e.getAttribute('data-r')) >= 0); });
+    RM.$('#tq').setAttribute('opacity', v === 'x' ? 1 : 0);
+    RM.$('#bleed').setAttribute('opacity', v === 'x' ? 1 : .35);
+    RM.$('#airway').setAttribute('opacity', d.air ? 1 : 0);
+    RM.$('#lungs').setAttribute('opacity', d.lungs ? 1 : 0);
+    RM.$('#pup').setAttribute('opacity', d.pup ? 1 : 0);
+    RM.$('#therm').setAttribute('opacity', d.th ? 1 : 0);
+    RM.$('#bodylab').textContent = (v === 'x' ? 'x' : v) + ' · ' + d.t;
+    RM.$('#abc-out').innerHTML = '<h3>' + (v === 'x' ? 'x' : v) + ' — ' + d.t + '</h3><dl class="kv"><dt>Olhar</dt><dd>' + d.olhar + '</dd><dt>Fazer</dt><dd>' + d.fazer + '</dd><dt>Rafael</dt><dd>' + d.rafael + '</dd></dl>';
+  });
+})();
+
+/* ===== 2. Glasgow ===== */
+(function(){
+  var g = { O:2, V:2, M:3 };
+  function upd(){
+    var t = g.O + g.V + g.M;
+    RM.$('#gcs-tot').textContent = t;
+    RM.$('#gcs-str').textContent = 'O' + g.O + ' V' + g.V + ' M' + g.M;
+    var cls = t >= 13 ? 'Leve (13–15)' : t >= 9 ? 'Moderado (9–12)' : 'Grave (3–8)';
+    RM.$('#gcs-cls').textContent = cls;
+    var v = RM.$('#gcs-verd');
+    if (t <= 8){
+      v.className = 'verd d';
+      v.innerHTML = '<span class="t">Veredito</span><span class="h">Glasgow ' + t + ': via aérea definitiva</span><p>Proteção da via aérea incerta. Intubação orotraqueal em sequência rápida com estabilização em linha, evitando hipóxia e hipotensão (lesão secundária).</p>';
+    } else if (t <= 12){
+      v.className = 'verd w';
+      v.innerHTML = '<span class="t">Veredito</span><span class="h">Glasgow ' + t + ': vigiar de perto</span><p>Sem indicação automática de tubo pelo número; a indicação vem de outra falha (não oxigena, vomita sem proteger, piora do Glasgow). TC de crânio.</p>';
+    } else {
+      v.className = 'verd b';
+      v.innerHTML = '<span class="t">Veredito</span><span class="h">Glasgow ' + t + ': via aérea pelo exame</span><p>O número não indica intubação. A decisão depende dos outros sinais de via aérea e ventilação.</p>';
+    }
+  }
+  ['O','V','M'].forEach(function(k){ RM.seg('g' + k, function(v){ g[k] = +v; upd(); }); });
+})();
+
+/* ===== 3. Sinais de via aérea ===== */
+(function(){
+  var S = {
+    fala:['b','Via aérea pérvia agora','Voz clara exige via aérea permeável e ventilação suficiente. Não dispensa reavaliação: o que piora com o tempo (queimadura, hematoma, laringe) pode fechar a via aérea depois.'],
+    agit:['w','Pense em hipóxia','Agitação e combatividade no trauma são hipóxia até prova em contrário — não atribuir ao álcool antes de oferecer O₂ e checar a via aérea.'],
+    rebx:['w','Pense em hipercapnia (ou TCE)','Rebaixamento sugere retenção de CO₂ ou lesão cerebral. Se o Glasgow cair a 8 ou menos, via aérea definitiva.'],
+    ronco:['w','Obstrução parcial pela língua','Típico do rebaixado: base da língua cai sobre a faringe. Tração da mandíbula/elevação do mento, cânula e reavaliar a indicação de tubo.'],
+    gorg:['w','Líquido na via aérea','Sangue, secreção ou vômito na orofaringe: aspirar com cânula rígida já. Se a fonte persistir (trauma de face), o paciente não protege a via aérea.'],
+    estr:['d','Obstrução alta, ameaça iminente','Estridor indica estreitamento laríngeo ou traqueal significativo — queimadura de via aérea, hematoma, lesão laríngea. Via aérea definitiva precoce, preparado para via cirúrgica.'],
+    rouq:['d','Lesão de laringe até prova em contrário','Rouquidão com enfisema subcutâneo e crepitação: fratura de laringe. Se precisar de via cirúrgica, traqueostomia — a crico atravessaria a lesão.'],
+    cian:['d','Sinal tardio de hipoxemia','A cianose aparece tarde e pode faltar na anemia aguda. Não esperar por ela: a oximetria e a clínica decidem antes.']
+  };
+  RM.seg('sig', function(v){
+    var s = S[v];
+    RM.$('#sig-out').innerHTML = '<div class="verd ' + s[0] + '"><span class="t">Significado</span><span class="h">' + s[1] + '</span><p>' + s[2] + '</p></div>';
+  });
+})();
+
+/* ===== 4. Máquina da via aérea ===== */
+(function(){
+  var ids = ['a-ind','a-iot','a-oxi','a-kid','a-lar'], el = {};
+  ids.forEach(function(i){ el[i] = RM.$('#' + i); el[i].addEventListener('change', run); });
+  var P = {
+    rafael:{ 'a-ind':1 },
+    face:{ 'a-ind':1 },
+    crianca:{ 'a-ind':1, 'a-kid':1 },
+    laringe:{ 'a-ind':1, 'a-lar':1 },
+    fala:{}
+  };
+  RM.seg('apre', function(v){ ids.forEach(function(i){ el[i].checked = !!P[v][i]; }); if (v === 'rafael'){ el['a-iot'].checked = true; } run(); });
+  function run(){
+    var c = {}; ids.forEach(function(i){ c[i] = el[i].checked; });
+    var flow = RM.$('#flowA'), lit, cls, h, p, no = '';
+    if (!c['a-ind']){
+      lit = 'q1 e1 n1'; cls = 'b'; h = 'Sem indicação: manter e reavaliar';
+      p = 'O₂ suplementar, manobras básicas, aspiração; reavaliar a cada mudança. Indicações que surgirem depois (queda do Glasgow, estridor) mudam a conduta.';
+      no = 'Intubar “por protocolo” um paciente que fala bem e oxigena.';
+    } else if (c['a-iot']){
+      lit = 'q1 d1 q2 e2 n2'; cls = 'b'; h = 'Via aérea definitiva obtida';
+      p = 'Confirmar com capnografia (CO₂ expirado) e ausculta, insuflar o balonete, fixar, RX de tórax. Reavaliar o tórax: ventilação com pressão positiva pode tornar hipertensivo um pneumotórax simples.';
+      no = 'Usar apenas a ausculta como confirmação do tubo.';
+    } else if (c['a-oxi']){
+      lit = 'q1 d1 q2 d2 q3 e3 n3'; cls = 'w'; h = 'Falhou a intubação, mas oxigena';
+      p = 'Ventilar com bolsa-válvula-máscara ou dispositivo extraglótico como ponte, otimizar a posição, nova tentativa pelo mais experiente — e preparar a via cirúrgica caso a oxigenação se perca.';
+      no = 'Tentativas repetidas e prolongadas de laringoscopia sem oxigenar entre elas.';
+    } else {
+      var base = 'q1 d1 q2 d2 q3 d3 q4 d4 ';
+      if (c['a-kid']){
+        lit = base + 't2'; cls = 'd'; h = 'Cricotireoidostomia por punção + jato';
+        p = 'Abaixo de 12 anos: agulha calibrosa pela membrana cricotireóidea com insuflação intermitente de O₂. Oxigena, mas retém CO₂ — ponte de 30–45 minutos até a via definitiva.';
+        no = 'Cricotireoidostomia cirúrgica em menor de 12 anos (risco de lesão da cricoide e estenose subglótica).';
+      } else if (c['a-lar']){
+        lit = base + 't3'; cls = 'm'; h = 'Traqueostomia';
+        p = 'Rouquidão, enfisema subcutâneo e crepitação sugerem fratura de laringe: a crico passaria pela lesão. Traqueostomia de emergência, idealmente pelo cirurgião mais experiente.';
+        no = 'Cricotireoidostomia sobre laringe fraturada.';
+      } else {
+        lit = base + 't1'; cls = 'd'; h = 'Cricotireoidostomia cirúrgica, agora';
+        p = 'Não intuba e não oxigena: incisão na membrana cricotireóidea e tubo com balonete de pequeno calibre. É mais rápida e sangra menos que a traqueostomia.';
+        no = 'Nova laringoscopia ou intubação nasotraqueal às cegas enquanto a saturação cai.';
+      }
+    }
+    RM.lightFlow(flow, lit);
+    var v = RM.$('#a-verd');
+    v.className = 'verd ' + cls;
+    v.innerHTML = '<span class="t">Veredito</span><span class="h">' + h + '</span><p>' + p + '</p>' + (no ? '<div class="no">' + no + '</div>' : '');
+  }
+})();
+
+/* ===== 5. Prancha do pescoço ===== */
+(function(){
+  var M = {
+    1:['Osso hioide','Limite superior palpável da laringe. Acima dele está o assoalho da boca — fora do território da via aérea cirúrgica.'],
+    2:['Membrana tíreo-hióidea','Entre o hioide e a cartilagem tireoide. Incisar aqui leva à região supraglótica e à epiglote: lugar errado.'],
+    3:['Cartilagem tireoide','A proeminência laríngea (“pomo de Adão”) e a incisura superior são o primeiro ponto de referência. As cordas vocais ficam por trás dela.'],
+    4:['Membrana cricotireóidea — o alvo','Entre a borda inferior da tireoide e a cricoide; superficial e pouco vascularizada, abaixo das cordas vocais. Palpa-se descendo o dedo da proeminência até o “degrau” da cricoide.'],
+    5:['Cartilagem cricoide','Único anel cartilaginoso completo da via aérea. Na criança é o ponto mais estreito e a principal sustentação da traqueia superior — por isso a crico cirúrgica é evitada abaixo de 12 anos.'],
+    6:['Istmo da tireoide','Cruza a traqueia sobre os anéis 2 a 4. Vascularizado: é o que torna a traqueostomia de emergência mais lenta e mais sangrante que a crico.'],
+    7:['Anéis traqueais','Local da traqueostomia (abaixo do istmo ou com sua secção). Indicada na emergência quando a laringe está lesada.'],
+    8:['Fúrcula esternal','Limite inferior. Abaixo dela, o tronco braquiocefálico cruza a traqueia — risco de traqueostomia baixa.']
+  };
+  var svg = RM.$('#neck');
+  function pick(m){
+    RM.$$('.mk, .hot-svg', svg).forEach(function(e){ e.classList.toggle('on', e.getAttribute('data-m') === String(m)); });
+    RM.$('#neck-out').innerHTML = '<h3>Marcador ' + m + '</h3><div style="font-family:var(--f-head);font-size:24px;color:var(--ink-strong);line-height:1.15;margin-bottom:6px">' + M[m][0] + '</div><p>' + M[m][1] + '</p>';
+  }
+  RM.$$('.mk, .hot-svg', svg).forEach(function(e){
+    e.setAttribute('tabindex', '0'); e.setAttribute('role', 'button');
+    e.addEventListener('click', function(){ pick(e.getAttribute('data-m')); });
+    e.addEventListener('keydown', function(ev){ if (ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); pick(e.getAttribute('data-m')); } });
+  });
+  RM.$('#show-inc').addEventListener('change', function(){ RM.$('#incis').setAttribute('opacity', this.checked ? 1 : 0); if (this.checked) pick(4); });
+  pick(4);
+})();
+
+/* ===== 6. Tórax ===== */
+(function(){
+  var C = {
+    hip:{ n:'Pneumotórax hipertensivo', clin:'Dispneia, hipotensão, taquicardia; MV abolido e hipertimpanismo do lado afetado; traqueia desviada para o lado oposto; jugulares túrgidas.',
+      dx:'Clínico. Não se pede RX.', act:'Descompressão imediata: agulha no 4º–5º espaço intercostal entre as linhas axilares anterior e média (adulto) ou toracostomia digital; depois dreno de tórax no 5º EIC, anterior à linha axilar média.',
+      trap:'Jugulares podem estar planas no hipovolêmico; na criança, a punção ainda é no 2º EIC na linha hemiclavicular.' },
+    abe:{ n:'Pneumotórax aberto', clin:'Ferida torácica que “aspira” ar a cada inspiração. Quando o defeito tem cerca de dois terços do diâmetro da traqueia, o ar entra preferencialmente pela ferida.',
+      dx:'Clínico.', act:'Curativo oclusivo fixado em três lados (válvula unidirecional) ou selo torácico com válvula; dreno de tórax em local distante da ferida; fechamento cirúrgico do defeito.',
+      trap:'Fechar os quatro lados sem dreno transforma o aberto em hipertensivo.' },
+    hem:{ n:'Hemotórax maciço', clin:'Choque, MV abolido e <b>macicez</b> à percussão do lado afetado; jugulares geralmente planas.',
+      dx:'Clínico, confirmado pela saída do dreno (eFAST/RX ajudam se houver tempo).', act:'Reposição com sangue e dreno de tórax. Toracotomia se saírem ≥ 1.500 mL de imediato ou mais de 200 mL/h por 2–4 horas, ou se houver necessidade persistente de transfusão.',
+      trap:'Macicez × hipertimpanismo é o que separa do hipertensivo; traqueia pode desviar nos dois.' },
+    tam:{ n:'Tamponamento cardíaco', clin:'Tríade de Beck: hipotensão, turgência jugular, bulhas abafadas. Pulso paradoxal; sinal de Kussmaul.',
+      dx:'eFAST com janela subxifoide mostrando líquido no pericárdio.', act:'Toracotomia ou esternotomia pelo cirurgião. Pericardiocentese apenas como medida temporária quando a cirurgia não está disponível.',
+      trap:'MV presente e traqueia central: é o que o diferencia do pneumotórax hipertensivo, que também tem jugulares túrgidas e hipotensão.' },
+    tqb:{ n:'Lesão da árvore traqueobrônquica', clin:'Hemoptise, enfisema subcutâneo cervical, pneumotórax (às vezes hipertensivo); dispneia e desconforto respiratório. Rara e frequentemente fatal antes da chegada; a maioria ocorre a cerca de 2,5 cm da carina.',
+      dx:'Suspeita clínica quando o pulmão não reexpande ou persiste grande fuga aérea após a drenagem; confirmação por broncoscopia.', act:'Pode exigir mais de um dreno de tórax. Intubação pode ser difícil: idealmente guiada por fibrobroncoscopia, com intubação seletiva do brônquio contralateral se necessário. Reparo cirúrgico após estabilização, ou de imediato se a via aérea não puder ser mantida.',
+      trap:'Pneumotórax que não reexpande com dreno bem posicionado e borbulhamento intenso e contínuo: pense em lesão brônquica, não apenas em “dreno mal posicionado”.' }
+  };
+  var s = RM.$('#chest');
+  RM.seg('cx', function(v){
+    var c = C[v];
+    var lr = RM.$('#lungR', s);
+    lr.setAttribute('transform', (v === 'hip' || v === 'abe' || v === 'tqb') ? 'translate(196 150) scale(.62) translate(-196 -150)' : (v === 'hem' ? '' : ''));
+    RM.$('#airR', s).setAttribute('opacity', (v === 'hip' || v === 'abe' || v === 'tqb') ? 1 : 0);
+    RM.$('#med', s).setAttribute('transform', v === 'hip' ? 'translate(22 0)' : '');
+    RM.$('#fluid', s).setAttribute('opacity', v === 'hem' ? 1 : 0);
+    RM.$('#peri', s).setAttribute('opacity', v === 'tam' ? .8 : 0);
+    RM.$('#wound', s).setAttribute('opacity', v === 'abe' ? 1 : 0);
+        RM.$('#tbi', s).setAttribute('opacity', v === 'tqb' ? 1 : 0);
+    RM.$('#chestlab', s).textContent = c.n;
+    RM.$('#cx-out').innerHTML = '<h3>' + c.n + '</h3><dl class="kv"><dt>Clínica</dt><dd>' + c.clin + '</dd><dt>Diagnóstico</dt><dd>' + c.dx + '</dd><dt>Conduta</dt><dd>' + c.act + '</dd></dl><div class="pearl">' + c.trap + '</div>';
+  });
+})();
+
+/* ===== 9. Forja ===== */
+RM.quiz([
+  { tag:'Questão-mãe', c:1,
+    q:'Rafael, 28 anos, motociclista, chega com roncos, sangue na orofaringe, SpO₂ 88% e Glasgow 7 (O2 V2 M3). Já está com colar cervical. Qual a conduta para a via aérea?',
+    o:['Manter o colar, oferecer O₂ por máscara e realizar TC de crânio antes de qualquer manobra','Intubação orotraqueal em sequência rápida com estabilização manual da coluna em linha','Intubação nasotraqueal às cegas, para não mobilizar a coluna','Cricotireoidostomia cirúrgica imediata','Cânula nasofaríngea e reavaliação após a tomografia'],
+    e:'<p>Glasgow ≤ 8 com via aérea sem proteção e hipoxemia: via aérea definitiva, e a orotraqueal é a primeira escolha. O colar é aberto e um auxiliar mantém a cabeça em linha.</p><p><b>A</b> e <b>E</b> adiam o A por um exame. <b>C</b>: nasotraqueal é contraindicada em suspeita de fratura de face/base de crânio (sangue na orofaringe em trauma de alta energia). <b>D</b> é a resposta só depois de falhar a intubação sem conseguir oxigenar.</p>' },
+  { tag:'Pivô · falha', c:3,
+    q:'Mesmo cenário, mas Rafael tem <mark>trauma de face extenso; duas tentativas de intubação falharam e não se consegue oxigenar com bolsa-válvula-máscara nem com máscara laríngea</mark>. A saturação cai para 70%. Conduta?',
+    o:['Terceira tentativa de laringoscopia com outro laringoscópio','Intubação nasotraqueal','Traqueostomia de emergência','Cricotireoidostomia cirúrgica','Cricotireoidostomia por punção mantida como via aérea até o dia seguinte'],
+    e:'<p>“Não intuba, não oxigena” no adulto: cricotireoidostomia cirúrgica, mais rápida e menos sangrante que a traqueostomia.</p><p><b>A</b> gasta o tempo que ele não tem. <b>B</b> é contraindicada no trauma de face. <b>C</b> fica para a lesão de laringe. <b>E</b> erra duas vezes: a punção é a escolha da criança e sustenta só 30–45 minutos.</p>' },
+  { tag:'Pivô · idade', c:0,
+    q:'Mesmo quadro de “não intuba, não oxigena”, mas o paciente é <mark>uma criança de 8 anos</mark>. Qual a via aérea cirúrgica?',
+    o:['Cricotireoidostomia por punção com insuflação a jato','Cricotireoidostomia cirúrgica','Traqueostomia por punção percutânea','Intubação nasotraqueal','Máscara laríngea como via aérea definitiva'],
+    e:'<p>Abaixo de 12 anos, a punção é a via cirúrgica de escolha: a cricoide é o único suporte circunferencial da traqueia superior e a crico cirúrgica arrisca estenose subglótica.</p><p><b>B</b> é a resposta no adulto. <b>C</b> não é técnica de emergência. <b>E</b>: extraglótico não é via aérea definitiva.</p>' },
+  { tag:'Pivô · laringe', c:4,
+    q:'Adulto com trauma cervical anterior, <mark>rouquidão, enfisema subcutâneo e crepitação palpável da cartilagem tireoide</mark>, evoluindo com desconforto respiratório. A intubação falhou. Qual a via cirúrgica?',
+    o:['Cricotireoidostomia cirúrgica','Cricotireoidostomia por punção','Nova tentativa de intubação nasotraqueal','Máscara laríngea e transferência','Traqueostomia'],
+    e:'<p>A tríade sugere fratura de laringe. A crico atravessaria a área lesada; a via cirúrgica indicada é a traqueostomia.</p><p><b>A</b> é a via do adulto sem lesão de laringe; <b>B</b>, a da criança. <b>C</b> e <b>D</b> não resolvem uma obstrução que piora.</p>' },
+  { tag:'Pivô · tórax', c:2,
+    q:'Após a intubação, Rafael evolui com <mark>PA 70 × 40, murmúrio abolido e hipertimpanismo à direita, traqueia desviada para a esquerda e jugulares túrgidas</mark>. Próximo passo?',
+    o:['RX de tórax no leito para confirmar','TC de tórax antes de qualquer procedimento','Descompressão imediata com agulha ou toracostomia digital no 4º–5º EIC entre as linhas axilares anterior e média','Pericardiocentese subxifoide','Aumentar a pressão positiva do ventilador para recrutar o pulmão'],
+    e:'<p>Pneumotórax hipertensivo é diagnóstico clínico: descomprimir já, depois dreno.</p><p><b>A</b> e <b>B</b> atrasam. <b>D</b> trata o tamponamento, que tem bulhas abafadas e murmúrio presente. <b>E</b> piora o hipertensivo.</p>' },
+  { tag:'Pivô · x', c:0,
+    q:'Paciente consciente, falando, com <mark>sangramento em jato da coxa por amputação traumática parcial</mark>, FC 130 bpm. Pela sequência da 11ª edição do ATLS, a primeira conduta é:',
+    o:['Torniquete proximal à lesão (ou compressão direta)','Intubação orotraqueal','Dois acessos venosos e 1 L de cristaloide','eFAST','Radiografia do fêmur'],
+    e:'<p>xABCDE: hemorragia externa exsanguinante é controlada antes da via aérea. Ele fala — a via aérea está pérvia.</p><p><b>B</b> não está indicada. <b>C</b> e <b>D</b> pertencem à letra C, depois de fechar a torneira. <b>E</b> é avaliação secundária.</p>' },
+  { tag:'Pivô · adjuntos', c:3,
+    q:'Durante os adjuntos da avaliação primária, nota-se <mark>sangue no meato uretral e equimose perineal</mark> em paciente com fratura de bacia. Conduta quanto à sondagem vesical?',
+    o:['Sonda vesical de demora com cuidado e sem forçar','Sonda de alívio e retirada','Cistostomia por punção imediata, antes de qualquer exame','Não sondar pela uretra; uretrografia retrógrada antes','Sonda vesical guiada por fio, sem exame prévio'],
+    e:'<p>Sinais de lesão de uretra contraindicam sondagem uretral às cegas: primeiro uretrografia retrógrada.</p><p><b>A</b>, <b>B</b> e <b>E</b> podem converter lesão parcial em total. <b>C</b> é a saída se a uretrografia confirmar lesão e houver necessidade de drenagem — não é o primeiro passo.</p>' },
+  { tag:'Pivô · base do crânio', c:1,
+    q:'Paciente com <mark>equimose periorbitária bilateral e rinorreia clara</mark> precisa de descompressão gástrica. Qual a via?',
+    o:['Sonda nasogástrica','Sonda orogástrica','Sonda nasoenteral','Não há indicação de sonda no trauma','Gastrostomia percutânea'],
+    e:'<p>Sinais de fratura de base do crânio (lâmina crivosa) contraindicam sondas e tubos nasais — a sonda pode entrar no crânio. Usa-se a via oral.</p><p><b>A</b> e <b>C</b> são as vias proibidas. <b>D</b> erra: a descompressão gástrica reduz aspiração. <b>E</b> não é conduta de sala de trauma.</p>' }
+]);
+
+</script>
+</body>
+</html>

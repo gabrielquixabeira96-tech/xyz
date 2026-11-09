@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atlas da Apendicite Aguda</title>
+<meta name="description" content="Aula-atlas interativa: anatomia e posições do apêndice, ponto de McBurney e sinais, Alvarado e AIR, imagem, WSES 2020, tratamento não operatório.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#121110; --bg-nav:#0e0d0c; --surface:#171614; --surface-2:#1c1a18; --surface-3:#22201d;
+  --ink:#f6f4f2; --ink-strong:#faf8f6;
+  --ink-body:rgba(243,242,242,.82); --ink-soft:rgba(243,242,242,.70); --ink-meta:rgba(243,242,242,.58);
+  --ink-faint:rgba(243,242,242,.38);
+  --rule:rgba(243,242,242,.10); --rule-2:rgba(243,242,242,.16); --rule-3:rgba(243,242,242,.28);
+  --accent:#b68235; --a300:#facb8d; --a400:#e1ad66; --a600:#8d6428; --a700:#6b4c1e;
+  --t1:rgba(194,141,65,.16); --t2:rgba(194,141,65,.34); --t3:rgba(194,141,65,.56); --t4:rgba(194,141,65,.82);
+  --fh:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --fb:"Lora",Georgia,"Times New Roman",serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink-body);font-family:var(--fb);font-size:15.5px;line-height:1.68;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--fh);color:var(--ink-strong);font-weight:500;margin:0;text-wrap:balance;letter-spacing:-.005em}
+a{color:var(--a300);text-decoration:none}
+::selection{background:var(--t2);color:var(--ink-strong)}
+:focus-visible{outline:2px solid var(--a400);outline-offset:2px;border-radius:3px}
+.num{font-variant-numeric:tabular-nums}
+h1,h2,h3,h4,.big,td:first-child,.verd .h,svg text{font-variant-numeric:lining-nums}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px 90px}
+@media (max-width:600px){.wrap{padding:0 16px 70px}}
+
+/* topo */
+header.hero{max-width:1140px;margin:0 auto;padding:54px 24px 26px}
+@media (max-width:600px){header.hero{padding:34px 16px 20px}}
+.kicker{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--a300)}
+h1{font-size:clamp(36px,6vw,64px);line-height:1.02;font-weight:400;margin:14px 0 0}
+h1 em{font-style:italic;color:var(--a300)}
+.lede{max-width:62ch;font-size:17px;color:var(--ink-soft);margin:18px 0 0}
+.stem{margin:26px 0 0;padding:18px 20px;border-left:2px solid var(--accent);background:var(--surface);
+  border-radius:0 8px 8px 0;max-width:78ch}
+.stem p{margin:0;font-size:15px}
+.stem b{color:var(--ink-strong);font-weight:600}
+.stem .src{display:block;margin-top:10px;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-meta)}
+
+/* trilho */
+nav.rail{position:sticky;top:0;z-index:40;background:rgba(14,13,12,.94);backdrop-filter:blur(8px);
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-top:30px}
+.rail-in{max-width:1140px;margin:0 auto;padding:8px 24px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.rail-in::-webkit-scrollbar{display:none}
+.rail a{flex:none;font-size:12.5px;color:var(--ink-soft);padding:6px 11px;border-radius:999px;white-space:nowrap;
+  border:1px solid transparent;transition:.15s}
+.rail a:hover,.rail a.on{color:var(--ink-strong);border-color:var(--rule-2);background:var(--surface-2)}
+.rail a .n{color:var(--a400);margin-right:6px;font-size:11px;font-variant-numeric:tabular-nums}
+@media (max-width:600px){.rail-in{padding:8px 16px}}
+
+/* capítulo */
+section.ch{padding-top:58px;scroll-margin-top:56px}
+.ch-head{display:flex;gap:16px;align-items:baseline;border-top:1px solid var(--rule-2);padding-top:20px}
+.ch-num{font-size:12px;color:var(--a400);letter-spacing:.14em;padding-top:6px;font-variant-numeric:tabular-nums}
+.ch-head h2{font-size:clamp(26px,3.4vw,36px);line-height:1.1}
+.ch-sub{color:var(--ink-meta);font-size:14.5px;margin:6px 0 0;max-width:72ch;font-style:italic}
+.plate{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr);gap:24px;margin-top:24px;align-items:start}
+@media (max-width:880px){.plate{grid-template-columns:minmax(0,1fr)}}
+.fig{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:12px;overflow:hidden;min-width:0}
+.fig svg{display:block;width:100%;height:auto}
+.figcap{font-size:12px;color:var(--ink-meta);margin:10px 2px 0;line-height:1.55}
+.panel{display:flex;flex-direction:column;gap:14px;min-width:0}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:15px 16px;min-width:0}
+.card h3{font-family:var(--fb);font-size:10.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-meta);margin-bottom:11px}
+.card h4{font-size:21px;line-height:1.15;margin-bottom:6px}
+.card p{margin:0 0 8px;font-size:14px}
+.card p:last-child{margin-bottom:0}
+.prose{margin-top:24px;max-width:70ch;font-size:15.5px}
+.prose p{margin:0 0 13px}
+.prose strong{color:var(--ink-strong);font-weight:600}
+.prose em{color:var(--ink)}
+
+/* controles */
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button,.btn{font:inherit;font-size:13px;padding:6px 11px;border-radius:4px;cursor:pointer;
+  border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-soft);transition:.15s;text-align:left}
+.seg button:hover,.btn:hover{border-color:var(--a600);color:var(--ink-strong)}
+.seg button[aria-pressed="true"]{background:var(--t2);border-color:var(--a400);color:var(--ink-strong)}
+.btn.prim{background:var(--accent);border-color:var(--accent);color:#17120b;font-weight:600}
+.btn.prim:hover{background:var(--a400);color:#17120b}
+.q-lbl{font-size:13px;color:var(--ink-soft);margin:12px 0 6px}
+.q-lbl:first-child{margin-top:0}
+.chk{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--ink-soft);cursor:pointer;padding:4px 0}
+.chk input{accent-color:var(--accent);width:16px;height:16px;margin-top:3px;flex:none}
+.chk .pt{margin-left:auto;color:var(--a400);font-variant-numeric:tabular-nums;font-size:12px;padding-left:8px}
+input[type=range]{width:100%;accent-color:var(--accent)}
+select{font:inherit;font-size:13px;background:var(--surface-2);color:var(--ink);border:1px solid var(--rule-2);
+  border-radius:4px;padding:5px 8px;max-width:100%}
+
+/* veredito — intensidade do ouro codifica gravidade */
+.verd{border-radius:6px;padding:13px 15px;border:1px solid var(--rule-2);font-size:14px;background:var(--surface-2)}
+.verd .t{font-size:10px;letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:4px;color:var(--ink-meta)}
+.verd .h{font-family:var(--fh);font-size:22px;line-height:1.15;display:block;margin-bottom:6px;color:var(--ink-strong)}
+.verd p{margin:0;color:var(--ink-soft)}
+.verd.g1{border-color:var(--rule-3)}
+.verd.g2{border-color:var(--a600);background:var(--t1)}
+.verd.g2 .t{color:var(--a400)}
+.verd.g3{border:1px solid var(--a300);background:var(--t2);box-shadow:inset 3px 0 0 var(--a300)}
+.verd.g3 .t{color:var(--a300)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.steps li{counter-increment:s;position:relative;padding-left:30px;font-size:14px;color:var(--ink-soft)}
+.steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;
+  border:1px solid var(--a600);color:var(--a300);font-size:11px;display:grid;place-items:center}
+.forbid{padding:11px 13px;border-radius:6px;border:1px dashed var(--a400);font-size:13.5px;color:var(--ink-soft)}
+.forbid b{color:var(--a300);font-weight:600}
+.note{padding:11px 13px;border-radius:6px;background:var(--surface-2);border:1px solid var(--rule);font-size:13.5px}
+.note b{color:var(--ink-strong);font-weight:600}
+.path{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center;font-size:12.5px}
+.path span{padding:3px 8px;border-radius:999px;border:1px solid var(--rule-2);color:var(--ink-soft)}
+.path span:last-child{border-color:var(--a400);color:var(--a300)}
+.path i{color:var(--ink-faint);font-style:normal}
+mark{background:var(--t2);color:var(--ink-strong);padding:0 3px;border-radius:2px}
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;font-size:13.5px;margin:0}
+.kv dt{color:var(--ink-meta);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding-top:3px}
+.kv dd{margin:0;color:var(--ink-body)}
+.big{font-family:var(--fh);font-size:52px;line-height:1;color:var(--a300);font-variant-numeric:tabular-nums}
+.big small{font-size:20px;color:var(--ink-meta)}
+
+/* tabelas */
+.tbl{overflow-x:auto;margin-top:22px;border:1px solid var(--rule);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
+th,td{text-align:left;vertical-align:top;padding:10px 13px;border-bottom:1px solid var(--rule)}
+th{font-weight:500;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-meta);background:var(--surface-2)}
+td:first-child{color:var(--a300);font-family:var(--fh);font-size:18px;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+tr.hl td{background:var(--t1)}
+tr[data-k]{cursor:pointer}
+tr[data-k]:hover td{background:var(--surface-2)}
+
+/* pegadinhas */
+.traps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin-top:24px}
+.trap{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:15px 16px}
+.trap .t{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--a400)}
+.trap h4{font-size:20px;margin:6px 0 8px;line-height:1.15}
+.trap p{margin:0;font-size:14px;color:var(--ink-soft)}
+.trap p b{color:var(--ink-strong);font-weight:600}
+
+/* forja */
+.quiz{margin-top:24px;display:flex;flex-direction:column;gap:16px}
+.qz{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:17px 18px}
+.qz .qn{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--a400)}
+.qz .qs{margin:8px 0 12px;font-size:15px;color:var(--ink-body)}
+.qz .qs b{color:var(--ink-strong);font-weight:600}
+.alts{display:flex;flex-direction:column;gap:7px}
+.alts button{font:inherit;font-size:14px;text-align:left;display:flex;gap:10px;align-items:flex-start;
+  padding:9px 12px;border-radius:5px;border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-soft);cursor:pointer}
+.alts button:hover:not(:disabled){border-color:var(--a600);color:var(--ink-strong)}
+.alts button .L{flex:none;width:22px;height:22px;border-radius:50%;border:1px solid var(--rule-3);display:grid;place-items:center;
+  font-size:11.5px;color:var(--ink-meta)}
+.alts button:disabled{cursor:default}
+.alts button.ok{border-color:var(--a300);background:var(--t2);color:var(--ink-strong)}
+.alts button.ok .L{background:var(--a300);border-color:var(--a300);color:#17120b}
+.alts button.no{border-style:dashed;border-color:var(--rule-3);color:var(--ink-faint);text-decoration:line-through;text-decoration-color:var(--rule-3)}
+.alts button.no .L{border-style:dashed}
+.alts button.dim{opacity:.55}
+.qexp{display:none;margin-top:12px;padding:12px 14px;border-left:2px solid var(--a400);background:var(--surface-2);
+  border-radius:0 6px 6px 0;font-size:14px;color:var(--ink-soft)}
+.qexp b{color:var(--ink-strong);font-weight:600}
+.qexp .res{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--a300);margin-bottom:5px}
+.qz.done .qexp{display:block}
+.score{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--rule);
+  border-radius:8px;padding:14px 16px;position:sticky;bottom:12px;z-index:5}
+.score .big{font-size:38px}
+.score .lab{font-size:13px;color:var(--ink-meta);flex:1;min-width:160px}
+
+/* tabela-mãe */
+.mom{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px;margin-top:24px}
+.mc{background:var(--surface);border:1px solid var(--rule);border-top:2px solid var(--rule-3);border-radius:6px;padding:13px 15px}
+.mc.g2{border-top-color:var(--a600)} .mc.g3{border-top-color:var(--a300)}
+.mc .gat{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-meta)}
+.mc h4{font-size:19px;margin:5px 0 6px;line-height:1.15}
+.mc p{margin:0;font-size:13.5px;color:var(--ink-soft)}
+.mc p b{color:var(--a300);font-weight:600}
+
+/* svg */
+.svgtxt{font-family:var(--fb)}
+.hot{cursor:pointer}
+.hot:hover .hl,.hot.on .hl{stroke:var(--a300);stroke-width:2.4}
+.leg{display:flex;flex-wrap:wrap;gap:6px 14px;margin:10px 2px 0;font-size:12px;color:var(--ink-meta)}
+.leg span{display:inline-flex;align-items:center;gap:6px}
+.leg svg{width:26px;height:10px;display:inline-block}
+footer.fim{max-width:1140px;margin:0 auto;padding:30px 24px 50px;border-top:1px solid var(--rule);font-size:12.5px;color:var(--ink-meta)}
+footer.fim p{margin:0 0 6px;max-width:90ch}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="kicker">Residência Max · Cirurgia Geral · Apêndice e delgado</span>
+  <h1>Apendicite aguda: <em>a dor que muda de endereço</em></h1>
+  <p class="lede">A doença cirúrgica de urgência mais comum tem uma história que se conta em horas: um
+  lúmen obstruído, uma dor que começa no umbigo e desce para a fossa ilíaca direita, e uma decisão
+  que hoje inclui operar, não operar ou esperar o abscesso ser drenado.</p>
+  <div class="stem">
+    <p><b>Caso-guia.</b> Homem de <b>24 anos</b>, dor periumbilical há 20 horas que <b>migrou para a
+    fossa ilíaca direita</b>, anorexia e um episódio de vômito <b>depois</b> da dor. Temperatura
+    37,8 °C, dor e descompressão dolorosa no ponto de McBurney. Leucócitos 14.200/mm³ com 84% de
+    neutrófilos; PCR 32 mg/L.
+    <span class="src">Pergunta que a página responde: qual a probabilidade, precisa de imagem, e opera ou não opera.</span></p>
+  </div>
+</header>
+
+<nav class="rail"><div class="rail-in">
+  <a href="#c1"><span class="n">01</span>Anatomia</a>
+  <a href="#c2"><span class="n">02</span>As horas</a>
+  <a href="#c3"><span class="n">03</span>Sinais</a>
+  <a href="#c4"><span class="n">04</span>Escores</a>
+  <a href="#c5"><span class="n">05</span>Imagem</a>
+  <a href="#c6"><span class="n">06</span>Fluxograma</a>
+  <a href="#c7"><span class="n">07</span>Pegadinhas</a>
+  <a href="#c8"><span class="n">08</span>Forja</a>
+  <a href="#c9"><span class="n">09</span>Tabela-mãe</a>
+</div></nav>
+
+<div class="wrap">
+
+<section class="ch" id="c1">
+  <div class="ch-head"><span class="ch-num">01</span><div>
+    <h2>Base fixa, ponta errante</h2>
+    <p class="ch-sub">A base do apêndice está sempre no mesmo lugar; a ponta, não. Mude a posição e veja
+    como o quadro clínico muda junto.</p>
+  </div></div>
+  <div class="plate">
+    <div class="fig" id="figAbd">
+<svg id="svgAbd" viewBox="0 0 600 560" role="img" aria-label="Abdome em visão frontal com ceco, apêndice, ponto de McBurney e sinais da apendicite">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#facb8d"/></marker>
+  </defs>
+  <rect width="600" height="560" fill="#1a1816"/>
+  <path d="M90,20 Q60,260 110,440 Q150,520 300,540 Q450,520 490,440 Q540,260 510,20 Z" fill="#201d1a" stroke="rgba(243,242,242,.18)" stroke-width="2"/>
+  <!-- coxa direita (para psoas/obturador) -->
+  <path d="M110,440 Q120,520 150,560 L250,560 Q240,520 250,500" fill="#1d1a17" stroke="rgba(243,242,242,.12)"/>
+  <!-- cólon -->
+  <path d="M190,380 L180,140 Q180,110 210,110 L390,110 Q420,110 420,140 L420,360 Q430,420 380,440 Q330,450 330,490" fill="none" stroke="#3d3229" stroke-width="30" stroke-linecap="round"/>
+  <!-- íleo terminal -->
+  <path d="M232,384 Q290,380 320,330 Q340,290 300,300" fill="none" stroke="#4a3a2a" stroke-width="16" stroke-linecap="round"/>
+  <!-- ceco -->
+  <ellipse cx="195" cy="392" rx="34" ry="30" fill="#4a3a2a" stroke="rgba(243,242,242,.25)"/>
+  <!-- apêndice (desenhado por JS) -->
+  <path id="apx" d="" fill="none" stroke="#e1ad66" stroke-width="9" stroke-linecap="round"/>
+  <path id="ileoTop" d="M232,384 Q290,380 320,330" fill="none" stroke="#4a3a2a" stroke-width="16" stroke-linecap="round" style="display:none"/>
+  <!-- linha espinoumbilical e McBurney -->
+  <line x1="120" y1="420" x2="300" y2="252" stroke="rgba(243,242,242,.4)" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <circle cx="300" cy="252" r="7" fill="none" stroke="rgba(243,242,242,.6)" stroke-width="2"/>
+  <circle cx="120" cy="420" r="5" fill="rgba(243,242,242,.6)"/>
+  <text x="314" y="248" class="svgtxt" font-size="14" fill="rgba(243,242,242,.55)">umbigo</text>
+  <text x="74" y="412" class="svgtxt" font-size="14" fill="rgba(243,242,242,.55)">EIAS</text>
+  <circle cx="180" cy="364" r="8" fill="#facb8d"/>
+  <text x="96" y="352" class="svgtxt" font-size="14" fill="#facb8d">McBurney</text>
+  <!-- camadas de sinal -->
+  <g id="sg-blumberg" class="sg" style="display:none">
+    <circle cx="180" cy="364" r="30" fill="none" stroke="#facb8d" stroke-width="2.5" stroke-dasharray="6 5"/>
+    <path d="M180,282 L180,328" stroke="#facb8d" stroke-width="3" marker-end="url(#arr)"/>
+    <path d="M219,328 L219,284" stroke="#facb8d" stroke-width="3" marker-end="url(#arr)"/>
+    <text x="166" y="292" text-anchor="end" class="svgtxt" font-size="14" fill="#facb8d">soltar rápido</text></g>
+  <g id="sg-rovsing" class="sg" style="display:none">
+    <circle cx="410" cy="400" r="28" fill="rgba(250,203,141,.18)" stroke="#facb8d" stroke-width="2.5"/>
+    <path d="M410,372 Q420,160 300,140 Q200,150 186,330" fill="none" stroke="#facb8d" stroke-width="2.5" stroke-dasharray="7 6" marker-end="url(#arr)"/>
+    <text x="440" y="440" class="svgtxt" font-size="14" fill="#facb8d">compressão FIE</text></g>
+  <g id="sg-psoas" class="sg" style="display:none">
+    <path d="M200,450 Q190,500 175,550" fill="none" stroke="#facb8d" stroke-width="3" marker-end="url(#arr)"/>
+    <path d="M232,300 Q215,380 205,450" fill="none" stroke="rgba(250,203,141,.7)" stroke-width="10" stroke-linecap="round" opacity=".6"/>
+    <text x="40" y="520" class="svgtxt" font-size="14" fill="#facb8d">extensão da coxa</text></g>
+  <g id="sg-obturador" class="sg" style="display:none">
+    <ellipse cx="250" cy="470" rx="34" ry="22" fill="rgba(250,203,141,.18)" stroke="#facb8d" stroke-width="2.5"/>
+    <path d="M180,520 A30,30 0 1 1 220,530" fill="none" stroke="#facb8d" stroke-width="3" marker-end="url(#arr)"/>
+    <text x="290" y="480" class="svgtxt" font-size="14" fill="#facb8d">obturador interno</text></g>
+  <g id="sg-dunphy" class="sg" style="display:none">
+    <circle cx="180" cy="364" r="44" fill="none" stroke="#facb8d" stroke-width="2" stroke-dasharray="3 6"/>
+    <circle cx="180" cy="364" r="62" fill="none" stroke="#facb8d" stroke-width="1.5" stroke-dasharray="3 8" opacity=".6"/>
+    <text x="300" y="60" text-anchor="middle" class="svgtxt" font-size="16" fill="#facb8d">tosse → dor na FID</text></g>
+  <g id="sg-lenander" class="sg" style="display:none">
+    <text x="300" y="60" text-anchor="middle" class="svgtxt" font-size="16" fill="#facb8d">T retal − T axilar &gt; 1 °C</text></g>
+  <text x="560" y="548" text-anchor="end" class="svgtxt" font-size="13" fill="rgba(243,242,242,.4)">direita do paciente à esquerda</text>
+</svg>
+      <p class="figcap">Esquema frontal fora de escala. Ponto de McBurney: junção do terço lateral com
+      os dois terços mediais da linha entre a espinha ilíaca anterossuperior (EIAS) e o umbigo.
+      Traço tracejado = apêndice atrás de outra estrutura.</p>
+    </div>
+    <div class="panel">
+      <div class="card"><h3>Posição da ponta</h3><div class="seg" id="posSeg"></div></div>
+      <div class="card" id="posOut" aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>A <strong>base</strong> fica na face posteromedial do ceco, onde as três tênias convergem —
+    é por isso que, na cirurgia, seguir a tênia anterior leva ao apêndice. A irrigação vem da
+    <strong>artéria apendicular</strong>, ramo da ileocólica (tronco da mesentérica superior), que
+    corre no mesoapêndice.</p>
+    <p>A <strong>ponta</strong> é que varia, e a posição muda o exame: retrocecal dá pouca defesa
+    anterior e sinal do psoas; pélvica dá dor suprapúbica, disúria, diarreia, sinal do obturador e
+    toque retal doloroso. A retrocecal é a mais frequente.</p>
+  </div>
+</section>
+
+<section class="ch" id="c2">
+  <div class="ch-head"><span class="ch-num">02</span><div>
+    <h2>As horas da apendicite</h2>
+    <p class="ch-sub">Arraste o tempo. A anatomia da dor acompanha a parede.</p>
+  </div></div>
+  <div class="plate">
+    <div class="fig">
+<svg id="svgF" viewBox="0 0 600 300" role="img" aria-label="Apêndice em corte longitudinal ao longo das horas de evolução">
+  <rect width="600" height="300" fill="#1a1816"/>
+  <!-- ceco -->
+  <path d="M0,60 L90,60 Q120,60 120,90 L120,210 Q120,240 90,240 L0,240 Z" fill="#3d3229"/>
+  <text x="20" y="155" class="svgtxt" font-size="15" fill="rgba(243,242,242,.45)">ceco</text>
+  <path id="fWall" d="" fill="#4a3a2a" stroke="rgba(243,242,242,.3)" stroke-width="2"/>
+  <path id="fLum" d="" fill="#0e0d0c"/>
+  <ellipse id="fFeca" cx="150" cy="150" rx="16" ry="13" fill="#8d6428" stroke="#facb8d"/>
+  <g id="fPerf" style="display:none"><circle cx="470" cy="112" r="10" fill="#0e0d0c" stroke="#facb8d" stroke-width="2.5"/>
+    <g fill="rgba(250,203,141,.7)"><circle cx="480" cy="85" r="3"/><circle cx="495" cy="72" r="2.5"/><circle cx="470" cy="68" r="2"/></g></g>
+  <text id="fHora" x="580" y="280" text-anchor="end" font-family="Cormorant Garamond,Georgia,serif" font-size="26" fill="#facb8d">0 h</text>
+</svg>
+      <div class="q-lbl" style="margin-top:12px">Horas desde o início da dor: <b id="hLbl" class="num" style="color:var(--a300)">0</b></div>
+      <input type="range" id="hRange" min="0" max="72" step="1" value="0" aria-label="Horas de evolução">
+    </div>
+    <div class="panel" id="fOut" aria-live="polite"></div>
+  </div>
+  <div class="prose">
+    <p>A obstrução da luz (hiperplasia linfoide no jovem, fecalito no adulto) mantém a secreção de muco
+    num tubo fechado: a pressão sobe, a drenagem venosa cai e as bactérias proliferam. Enquanto a
+    inflamação é só da parede, a dor é <strong>visceral</strong> — mal localizada, periumbilical
+    (dermátomo T10), com náusea. Quando chega à serosa e irrita o peritônio parietal, a dor vira
+    <strong>somática</strong> e se fixa na fossa ilíaca direita.</p>
+    <p>A sequência clássica (Murphy) é <strong>dor → anorexia/náusea → vômito</strong>. Vômito que
+    precede a dor fala mais de gastroenterite. A perfuração é mais frequente nos extremos de idade,
+    em quem chega tarde, e em quem tem fecalito.</p>
+  </div>
+</section>
+
+<section class="ch" id="c3">
+  <div class="ch-head"><span class="ch-num">03</span><div>
+    <h2>Os sinais com nome</h2>
+    <p class="ch-sub">Escolha o sinal: o esquema mostra a manobra e o painel explica por que ele aparece.</p>
+  </div></div>
+  <div class="plate">
+    <div class="fig" id="figSig"></div>
+    <div class="panel">
+      <div class="card"><h3>Sinal</h3><div class="seg" id="sigSeg"></div></div>
+      <div class="card" id="sigOut" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section class="ch" id="c4">
+  <div class="ch-head"><span class="ch-num">04</span><div>
+    <h2>Os escores: Alvarado e AIR</h2>
+    <p class="ch-sub">Marque os dados do caso-guia. Os dois somam, mas não dizem a mesma coisa.</p>
+  </div></div>
+  <div class="plate">
+    <div class="panel">
+      <div class="card"><h3>Alvarado (MANTRELS)</h3><div id="alvBox"></div></div>
+    </div>
+    <div class="panel">
+      <div class="card"><h3>Resultado</h3><div class="big num" id="alvTot">0<small>/10</small></div><div id="alvOut" style="margin-top:10px"></div></div>
+    </div>
+  </div>
+  <div class="plate">
+    <div class="panel">
+      <div class="card"><h3>Appendicitis Inflammatory Response (AIR)</h3><div id="airBox"></div></div>
+    </div>
+    <div class="panel">
+      <div class="card"><h3>Resultado</h3><div class="big num" id="airTot">0<small>/12</small></div><div id="airOut" style="margin-top:10px"></div></div>
+      <div class="note"><b>Divergência que a banca explora.</b> Alvarado é o escore mais cobrado
+      e ainda aparece como "o" escore em livros-texto, mas a WSES 2020 o considera pouco específico
+      para confirmar apendicite no adulto — serve melhor para <b>excluir</b> (escore baixo). Para
+      estratificar, a diretriz prefere <b>AIR</b> ou <b>AAS</b> (Adult Appendicitis Score).</div>
+    </div>
+  </div>
+</section>
+
+<section class="ch" id="c5">
+  <div class="ch-head"><span class="ch-num">05</span><div>
+    <h2>Imagem: quem precisa e qual</h2>
+    <p class="ch-sub">A escolha depende do paciente antes de depender do escore.</p>
+  </div></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Paciente</th><th>Primeiro exame</th><th>Se inconclusivo</th></tr></thead>
+    <tbody>
+      <tr><td>Criança</td><td>Ultrassonografia</td><td>Reavaliação clínica seriada; TC de baixa dose ou RM conforme disponibilidade</td></tr>
+      <tr><td>Gestante</td><td>Ultrassonografia</td><td>Ressonância magnética (sem gadolínio)</td></tr>
+      <tr><td>Adulto, risco intermediário</td><td>TC com contraste (de baixa dose, quando disponível)</td><td>—</td></tr>
+      <tr><td>Adulto jovem, alto risco</td><td>Em casos selecionados, a imagem pode ser dispensada antes da laparoscopia</td><td>—</td></tr>
+      <tr><td>Adulto, baixo risco</td><td>Em geral dispensa TC; observação ou reavaliação</td><td>US se persistir dúvida</td></tr>
+    </tbody>
+  </table></div>
+  <div class="traps" style="margin-top:16px">
+    <div class="trap"><span class="t">Ultrassonografia</span><h4>O apêndice que não comprime</h4><p>Estrutura tubular em fundo cego, <b>não compressível</b>, com diâmetro <b>&gt; 6 mm</b>, aperistáltica; apendicolito com sombra acústica; gordura hiperecogênica ao redor. Não visualizar o apêndice não exclui.</p></div>
+    <div class="trap"><span class="t">Tomografia</span><h4>Maior acurácia no adulto</h4><p>Diâmetro aumentado, parede espessada que realça, densificação da gordura, apendicolito. Mostra as complicações: abscesso, flegmão, gás extraluminal — e sugere tumor no idoso.</p></div>
+    <div class="trap"><span class="t">Radiografia</span><h4>Quase nunca ajuda</h4><p>O fecalito calcificado aparece numa minoria. Não é exame para diagnosticar apendicite.</p></div>
+  </div>
+</section>
+
+<section class="ch" id="c6">
+  <div class="ch-head"><span class="ch-num">06</span><div>
+    <h2>Fluxograma de conduta (WSES 2020)</h2>
+    <p class="ch-sub">Primeiro: complicada ou não? Depois: com o quê, e em quem.</p>
+  </div></div>
+  <div class="plate">
+    <div class="panel">
+      <div class="card"><h3>Cenários de prova</h3><div class="seg" id="mqPre"></div></div>
+      <div class="card"><h3>Perguntas</h3><div id="mqQ"></div></div>
+    </div>
+    <div class="panel" id="mqOut" aria-live="polite"></div>
+  </div>
+  <div class="prose">
+    <p>A <strong>apendicectomia laparoscópica</strong> continua sendo o tratamento padrão: menos
+    infecção de ferida, menos dor e alta mais precoce do que a aberta. O tratamento com
+    <strong>antibiótico</strong> isolado é uma alternativa segura para a apendicite não complicada
+    sem apendicolito em pacientes selecionados e informados — no APPAC, cerca de 27% foram
+    operados em um ano e cerca de 39% em cinco anos. O <strong>apendicolito</strong> é o principal
+    marcador de falha (CODA).</p>
+    <p>Na forma complicada, o que define é a contenção. <strong>Abscesso ou flegmão</strong> bloqueado
+    (o "plastrão") em paciente estável aceita antibiótico com drenagem percutânea se houver coleção
+    drenável — ou laparoscopia em mãos experientes. <strong>Peritonite difusa</strong> é cirurgia de
+    urgência. Após tratamento não operatório de abscesso, não se faz apendicectomia de intervalo de
+    rotina em jovens; a partir dos 40 anos, colonoscopia e TC de controle, pela maior frequência de
+    neoplasia.</p>
+  </div>
+</section>
+
+<section class="ch" id="c7">
+  <div class="ch-head"><span class="ch-num">07</span><div>
+    <h2>Pegadinhas de prova</h2>
+    <p class="ch-sub">O que a banca planta para ser recusado.</p>
+  </div></div>
+  <div class="traps">
+    <div class="trap"><span class="t">Sequência</span><h4>A dor vem antes do vômito</h4><p>Vômito antes da dor sugere outro diagnóstico (gastroenterite).</p></div>
+    <div class="trap"><span class="t">Laboratório</span><h4>Leucograma normal não exclui</h4><p>Leucocitose e PCR aumentam a probabilidade; isoladamente, não confirmam nem excluem.</p></div>
+    <div class="trap"><span class="t">Escore</span><h4>Alvarado alto não é diagnóstico</h4><p>É pouco específico no adulto, sobretudo em mulheres. Escore baixo ajuda a excluir.</p></div>
+    <div class="trap"><span class="t">Antibiótico</span><h4>Profilaxia sim, pós-operatório não</h4><p>Dose única pré-operatória em todos. Na não complicada, <b>sem</b> antibiótico pós-operatório. Na complicada com bom controle do foco, curso curto (3 a 5 dias).</p></div>
+    <div class="trap"><span class="t">Dreno</span><h4>Não drenar a cavidade de rotina</h4><p>Na apendicite complicada do adulto, o dreno não reduz abscesso e prolonga a internação.</p></div>
+    <div class="trap"><span class="t">Gestação</span><h4>Dor na FID continua sendo a regra</h4><p>É a urgência cirúrgica não obstétrica mais comum na gestação. US primeiro, RM se inconclusivo. Laparoscopia é segura em qualquer trimestre.</p></div>
+    <div class="trap"><span class="t">Achado na peça</span><h4>Tumor neuroendócrino do apêndice</h4><p>≤ 1 cm, geralmente na ponta: apendicectomia basta. &gt; 2 cm: hemicolectomia direita. Entre 1 e 2 cm: decidir por fatores de risco (invasão do mesoapêndice, base, angioinvasão).</p></div>
+    <div class="trap"><span class="t">Mucocele</span><h4>Não romper</h4><p>Apêndice dilatado por muco: retirar íntegro. A ruptura de neoplasia mucinosa pode levar a pseudomixoma peritoneal.</p></div>
+    <div class="trap"><span class="t">Idoso</span><h4>Pouca dor, muita perfuração</h4><p>Quadro arrastado e oligossintomático; perfuração mais frequente. Abscesso no idoso: lembrar câncer do ceco.</p></div>
+  </div>
+</section>
+
+<section class="ch" id="c8">
+  <div class="ch-head"><span class="ch-num">08</span><div>
+    <h2>Forja</h2>
+    <p class="ch-sub">Oito questões comentadas.</p>
+  </div></div>
+  <div class="quiz" id="quiz"></div>
+</section>
+
+<section class="ch" id="c9">
+  <div class="ch-head"><span class="ch-num">09</span><div>
+    <h2>Tabela-mãe: gatilho → conduta</h2>
+    <p class="ch-sub">A borda superior mais clara indica maior gravidade.</p>
+  </div></div>
+  <div class="mom">
+    <div class="mc g3"><span class="gat">Peritonite difusa</span><h4>Apendicectomia de urgência</h4><p>Laparoscópica se possível; antibiótico <b>3–5 dias</b>; sem dreno.</p></div>
+    <div class="mc g2"><span class="gat">Abscesso / plastrão, estável</span><h4>Antibiótico ± drenagem percutânea</h4><p>Ou laparoscopia em centro experiente.</p></div>
+    <div class="mc g2"><span class="gat">Após abscesso, ≥ 40 anos</span><h4>Colonoscopia + TC</h4><p>Excluir neoplasia; intervalo não é rotina no jovem.</p></div>
+    <div class="mc g2"><span class="gat">Apendicolito</span><h4>Operar</h4><p>Preditor de falha do antibiótico.</p></div>
+    <div class="mc"><span class="gat">Não complicada</span><h4>Apendicectomia laparoscópica</h4><p>Profilaxia dose única; <b>sem</b> antibiótico depois.</p></div>
+    <div class="mc"><span class="gat">Não complicada, sem apendicolito, paciente informado</span><h4>Antibiótico isolado</h4><p>Alternativa; recidiva em ~4 de 10 em 5 anos.</p></div>
+    <div class="mc"><span class="gat">Gestante</span><h4>US → RM</h4><p>Laparoscopia segura em qualquer trimestre.</p></div>
+    <div class="mc"><span class="gat">Criança</span><h4>US primeiro</h4><p>Evitar radiação.</p></div>
+    <div class="mc"><span class="gat">TNE &gt; 2 cm</span><h4>Hemicolectomia direita</h4><p>≤ 1 cm: apendicectomia basta.</p></div>
+  </div>
+</section>
+</div>
+
+<footer class="fim">
+  <p><b>Fontes de referência:</b> Di Saverio S et al. Diagnosis and treatment of acute appendicitis: 2020 update of the WSES Jerusalem guidelines. World J Emerg Surg 2020;15:27 ·
+  Alvarado A. Ann Emerg Med 1986 · Andersson M, Andersson RE. The appendicitis inflammatory response score. World J Surg 2008 ·
+  Salminen P et al. APPAC (JAMA 2015; 2018) · CODA Collaborative. N Engl J Med 2020.</p>
+  <p>Esquemas didáticos, fora de escala. Atlas produzido para o Residência Max.</p>
+</footer>
+
+<script>
+(function(){
+  /* trilho: marca o capítulo visível */
+  var links=[].slice.call(document.querySelectorAll('.rail a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function spy(){var y=window.scrollY+120,idx=0;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)idx=i});
+    links.forEach(function(a,i){a.classList.toggle('on',i===idx)})}
+  window.addEventListener('scroll',spy,{passive:true});spy();
+})();
+
+function montarQuiz(alvo,QS){
+  var box=document.getElementById(alvo),feitas=0,acertos=0,L='ABCDE';
+  var sc=document.createElement('div');sc.className='score';
+  sc.innerHTML='<span class="big num" id="'+alvo+'-p">0<small>/'+QS.length+'</small></span>'+
+    '<span class="lab" id="'+alvo+'-l">Responda as questões; cada uma abre o comentário ao ser marcada.</span>'+
+    '<button class="btn" type="button" id="'+alvo+'-r">Recomeçar</button>';
+  function placar(){document.getElementById(alvo+'-p').innerHTML=acertos+'<small>/'+QS.length+'</small>';
+    document.getElementById(alvo+'-l').textContent=feitas<QS.length?(feitas+' de '+QS.length+' respondidas.'):
+      (acertos===QS.length?'Gabarito completo.':'Releia os comentários das que errou — cada distrator é a conduta certa de outro cenário.')}
+  function render(){
+    box.innerHTML='';feitas=0;acertos=0;
+    QS.forEach(function(q,i){
+      var d=document.createElement('div');d.className='qz';
+      var h='<div class="qn">Questão '+(i+1)+(q.tag?' · '+q.tag:'')+'</div><p class="qs">'+q.q+'</p><div class="alts">';
+      q.a.forEach(function(t,j){h+='<button type="button" data-j="'+j+'"><span class="L">'+L[j]+'</span><span>'+t+'</span></button>'});
+      h+='</div><div class="qexp"><span class="res"></span>'+q.e+'</div>';
+      d.innerHTML=h;
+      [].forEach.call(d.querySelectorAll('.alts button'),function(b){
+        b.addEventListener('click',function(){
+          if(d.classList.contains('done'))return;
+          var j=+b.getAttribute('data-j');d.classList.add('done');feitas++;
+          if(j===q.c)acertos++;
+          [].forEach.call(d.querySelectorAll('.alts button'),function(x){var k=+x.getAttribute('data-j');x.disabled=true;
+            if(k===q.c)x.classList.add('ok');else if(k===j)x.classList.add('no');else x.classList.add('dim')});
+          d.querySelector('.res').textContent=(j===q.c?'Acertou':'Errou')+' · gabarito '+L[q.c];
+          placar();
+        });
+      });
+      box.appendChild(d);
+    });
+    box.appendChild(sc);placar();
+  }
+  render();
+  document.addEventListener('click',function(e){if(e.target&&e.target.id===alvo+'-r'){render();box.scrollIntoView({behavior:'smooth'})}});
+}
+
+/* máquina de decisão genérica: Q = [{id,lbl,ops:[[valor,rótulo],...]}], f(estado) -> resultado */
+function montarMaquina(cfg){
+  var st={};cfg.Q.forEach(function(q){st[q.id]=q.ops[0][0]});
+  var qbox=document.getElementById(cfg.qbox);
+  function desenhar(){
+    qbox.innerHTML='';
+    cfg.Q.forEach(function(q){
+      if(q.se&&!q.se(st))return;
+      var l=document.createElement('div');l.className='q-lbl';l.textContent=q.lbl;qbox.appendChild(l);
+      var s=document.createElement('div');s.className='seg';
+      q.ops.forEach(function(o){var b=document.createElement('button');b.type='button';b.textContent=o[1];
+        b.setAttribute('aria-pressed',st[q.id]===o[0]?'true':'false');
+        b.onclick=function(){st[q.id]=o[0];desenhar()};s.appendChild(b)});
+      qbox.appendChild(s);
+    });
+    var r=cfg.f(st);
+    document.getElementById(cfg.out).innerHTML=
+      '<div class="verd g'+r.g+'"><span class="t">'+r.t+'</span><span class="h">'+r.h+'</span><p>'+r.p+'</p></div>'+
+      (r.path?'<div class="card"><h3>Caminho no fluxograma</h3><div class="path">'+r.path.map(function(x){return '<span>'+x+'</span>'}).join('<i>→</i>')+'</div></div>':'')+
+      '<div class="card"><h3>Conduta</h3><ol class="steps">'+r.s.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ol></div>'+
+      (r.x?'<div class="forbid"><b>Proibido / distrator:</b> '+r.x+'</div>':'');
+  }
+  if(cfg.presets){var pb=document.getElementById(cfg.presets);
+    cfg.presets_list.forEach(function(p){var b=document.createElement('button');b.type='button';b.textContent=p[0];
+      b.onclick=function(){for(var k in p[1])st[k]=p[1][k];desenhar()};pb.appendChild(b)})}
+  desenhar();
+}
+
+/* pontos clicáveis num SVG -> painel */
+function montarHot(svgId,outId,DATA,first){
+  var svg=document.getElementById(svgId),out=document.getElementById(outId);
+  function show(k){[].forEach.call(svg.querySelectorAll('.hot'),function(g){g.classList.toggle('on',g.getAttribute('data-k')===k)});
+    var d=DATA[k];out.innerHTML='<div class="t" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--a400)">'+(d.t||'')+'</div><h4>'+d.h+'</h4>'+d.b}
+  [].forEach.call(svg.querySelectorAll('.hot'),function(g){g.setAttribute('tabindex','0');g.setAttribute('role','button');
+    g.addEventListener('click',function(){show(g.getAttribute('data-k'))});
+    g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();show(g.getAttribute('data-k'))}})});
+  show(first);
+  return show;
+}
+
+
+/* posições */
+var POS={
+ retro:{l:'Retrocecal',d:'M205,412 Q215,370 196,325',dash:true,h:'Retrocecal',p:'<p>A mais frequente. Atrás do ceco, longe do peritônio anterior: a defesa da FID é discreta e a dor pode ir para o flanco. Sinal do <b>psoas</b> positivo.</p>'},
+ pelv:{l:'Pélvica',d:'M210,415 Q240,450 265,478',h:'Pélvica',p:'<p>A segunda mais frequente. Irrita bexiga e reto: <b>disúria, polaciúria, diarreia</b>, dor suprapúbica, <b>toque retal</b> doloroso e sinal do <b>obturador</b>. Leucocitúria discreta não afasta apendicite.</p>'},
+ sub:{l:'Subcecal',d:'M198,420 Q195,455 185,485',h:'Subcecal',p:'<p>Abaixo do ceco, voltada para a pelve lateral. Quadro próximo do clássico, com dor mais baixa.</p>'},
+ pre:{l:'Pré-ileal',d:'M215,405 Q262,392 286,356',h:'Pré-ileal',p:'<p>Anterior ao íleo terminal. Dor mais medial, periumbilical baixa.</p>'},
+ pos:{l:'Pós-ileal',d:'M215,405 Q262,392 286,356',dash:true,top:true,h:'Pós-ileal',p:'<p>Atrás do íleo terminal. Dor mal localizada; pode haver diarreia por irritação do íleo. Diagnóstico clínico mais difícil.</p>'}
+};
+var posK='retro';
+function posDraw(){var d=POS[posK],a=document.getElementById('apx');a.setAttribute('d',d.d);a.setAttribute('stroke-dasharray',d.dash?'10 7':'');
+  document.getElementById('ileoTop').style.display=d.top?'':'none';
+  document.getElementById('posOut').innerHTML='<h4>'+d.h+'</h4>'+d.p+'<p style="color:var(--ink-meta);font-size:13px">A base é a mesma em todas: posteromedial no ceco, na convergência das tênias.</p>';
+  [].forEach.call(document.querySelectorAll('#posSeg button'),function(b){b.setAttribute('aria-pressed',b.dataset.k===posK)});}
+Object.keys(POS).forEach(function(k){var b=document.createElement('button');b.type='button';b.textContent=POS[k].l;b.dataset.k=k;b.onclick=function(){posK=k;posDraw();sigDraw()};document.getElementById('posSeg').appendChild(b)});
+
+/* sinais: um segundo SVG clonado do primeiro */
+var figSig=document.getElementById('figSig');
+var clone=document.getElementById('svgAbd').cloneNode(true);clone.id='svgSig';
+[].forEach.call(clone.querySelectorAll('[id]'),function(n){n.id='s2-'+n.id});
+figSig.appendChild(clone);
+var cap=document.createElement('p');cap.className='figcap';cap.textContent='Mesmo esquema do capítulo 01; a camada dourada mostra a manobra.';figSig.appendChild(cap);
+var SIG={
+ blumberg:{l:'Blumberg',h:'Sinal de Blumberg',p:'<p>Dor à <b>descompressão súbita</b> no ponto de McBurney. Indica irritação do peritônio parietal — a dor deixou de ser visceral.</p>'},
+ rovsing:{l:'Rovsing',h:'Sinal de Rovsing',p:'<p>A compressão da <b>fossa ilíaca esquerda</b> provoca dor na <b>direita</b>: o gás é empurrado retrogradamente até o ceco distendendo-o, e há deslocamento do peritônio inflamado.</p>'},
+ psoas:{l:'Psoas',h:'Sinal do psoas',p:'<p>Dor à <b>extensão da coxa direita</b> (paciente em decúbito lateral esquerdo) ou à flexão contra resistência. O apêndice inflamado repousa sobre o iliopsoas: típico da posição <b>retrocecal</b>.</p>'},
+ obturador:{l:'Obturador',h:'Sinal do obturador',p:'<p>Dor à <b>rotação interna da coxa direita fletida</b>. Estira o obturador interno, que fica em contato com o apêndice <b>pélvico</b>.</p>'},
+ dunphy:{l:'Dunphy',h:'Sinal de Dunphy',p:'<p>Dor na fossa ilíaca direita <b>à tosse</b>. Mesma lógica do Blumberg: peritônio parietal irritado.</p>'},
+ lenander:{l:'Lenander',h:'Sinal de Lenander',p:'<p>Diferença entre temperatura <b>retal e axilar maior que 1 °C</b>. Sinal clássico de livro brasileiro, de pouco valor isolado.</p>'}
+};
+var sigK='blumberg';
+function sigDraw(){var a=document.getElementById('s2-apx');a.setAttribute('d',POS[posK].d);a.setAttribute('stroke-dasharray',POS[posK].dash?'10 7':'');
+  document.getElementById('s2-ileoTop').style.display=POS[posK].top?'':'none';
+  Object.keys(SIG).forEach(function(k){document.getElementById('s2-sg-'+k).style.display=k===sigK?'':'none'});
+  document.getElementById('sigOut').innerHTML='<h4>'+SIG[sigK].h+'</h4>'+SIG[sigK].p;
+  [].forEach.call(document.querySelectorAll('#sigSeg button'),function(b){b.setAttribute('aria-pressed',b.dataset.k===sigK)});}
+Object.keys(SIG).forEach(function(k){var b=document.createElement('button');b.type='button';b.textContent=SIG[k].l;b.dataset.k=k;b.onclick=function(){sigK=k;sigDraw()};document.getElementById('sigSeg').appendChild(b)});
+posDraw();sigDraw();
+
+/* horas */
+var FASES=[
+ {ate:6,t:'0–6 h · obstrução',g:1,h:'Lúmen fechado, pressão subindo',p:'Muco acumula atrás do fecalito ou da hiperplasia linfoide. Distensão estimula fibras viscerais aferentes de T10.',dor:'Periumbilical / epigástrica, vaga, em cólica. Anorexia e náusea.'},
+ {ate:18,t:'6–18 h · inflamação da parede',g:1,h:'Congestão venosa e invasão bacteriana',p:'A pressão supera a venosa; a mucosa ulcera e as bactérias invadem a parede.',dor:'Ainda visceral, começa a migrar. Febre baixa; vômito depois da dor.'},
+ {ate:36,t:'18–36 h · supurativa',g:2,h:'Serosa inflamada toca o peritônio parietal',p:'Exsudato fibrinopurulento na serosa: a irritação passa a ser somática.',dor:'Fixa na FID (McBurney), Blumberg, defesa localizada.'},
+ {ate:48,t:'36–48 h · gangrena',g:2,h:'Isquemia arterial, parede necrótica',p:'A congestão evolui para infarto da parede, principalmente na borda antimesentérica.',dor:'Dor intensa, febre mais alta, leucocitose maior.'},
+ {ate:72,t:'> 48 h · perfuração',g:3,h:'Perfuração: bloqueio ou peritonite',p:'Se omento e alças bloqueiam, forma-se flegmão ou abscesso (plastrão palpável). Se não bloqueiam, peritonite difusa.',dor:'Alívio transitório possível; depois dor difusa, distensão, toxemia — ou massa dolorosa na FID.'}];
+function fDraw(){var h=+document.getElementById('hRange').value,f=FASES.filter(function(x){return h<=x.ate})[0]||FASES[4];
+  var k=Math.min(h/48,1),w=22+k*20,lw=8+Math.min(h/24,1)*16;
+  var y0=150,x0=120,x1=520;
+  var wall='M'+x0+','+(y0-w)+' L'+(x1-30)+','+(y0-w*0.9)+' Q'+x1+','+(y0-w*0.9)+' '+x1+','+y0+' Q'+x1+','+(y0+w*0.9)+' '+(x1-30)+','+(y0+w*0.9)+' L'+x0+','+(y0+w)+' Z';
+  var lum='M'+(x0+48)+','+(y0-lw/2)+' L'+(x1-40)+','+(y0-lw/2)+' Q'+(x1-18)+','+y0+' '+(x1-40)+','+(y0+lw/2)+' L'+(x0+48)+','+(y0+lw/2)+' Z';
+  var W=document.getElementById('fWall');W.setAttribute('d',wall);
+  var c=h<18?'#4a3a2a':h<36?'#6b4c1e':h<48?'#8d6428':'#3a2c20';W.setAttribute('fill',c);
+  W.setAttribute('stroke',h>=36?'#facb8d':'rgba(243,242,242,.3)');W.setAttribute('stroke-dasharray',h>=36&&h<48?'6 4':'');
+  document.getElementById('fLum').setAttribute('d',lum);
+  document.getElementById('fPerf').style.display=h>48?'':'none';
+  document.getElementById('fHora').textContent=h+' h';document.getElementById('hLbl').textContent=h;
+  document.getElementById('fOut').innerHTML='<div class="verd g'+f.g+'"><span class="t">'+f.t+'</span><span class="h">'+f.h+'</span><p>'+f.p+'</p></div><div class="card"><h3>O que o paciente sente</h3><p>'+f.dor+'</p></div><div class="note">Tempos aproximados, para orientar o raciocínio — a evolução varia muito entre pacientes.</div>';}
+document.getElementById('hRange').addEventListener('input',fDraw);fDraw();
+
+/* escores */
+function montarEscore(box,tot,out,max,itens,interp){
+  var B=document.getElementById(box);
+  itens.forEach(function(it,i){
+    if(it.ops){var d=document.createElement('div');d.className='q-lbl';d.textContent=it.l;B.appendChild(d);
+      var s=document.createElement('div');s.className='seg';s.dataset.i=i;
+      it.ops.forEach(function(o,j){var b=document.createElement('button');b.type='button';b.textContent=o[0]+(o[1]?' (+'+o[1]+')':'');b.dataset.v=o[1];
+        b.setAttribute('aria-pressed',j===0);b.onclick=function(){[].forEach.call(s.children,function(x){x.setAttribute('aria-pressed',x===b)});calc()};s.appendChild(b)});
+      B.appendChild(s);}
+    else{var l=document.createElement('label');l.className='chk';l.innerHTML='<input type="checkbox" data-v="'+it.v+'"><span>'+it.l+'</span><span class="pt">+'+it.v+'</span>';
+      l.querySelector('input').onchange=calc;B.appendChild(l);}
+  });
+  function calc(){var t=0;[].forEach.call(B.querySelectorAll('input:checked'),function(x){t+=+x.dataset.v});
+    [].forEach.call(B.querySelectorAll('.seg button[aria-pressed="true"]'),function(x){t+=+x.dataset.v});
+    document.getElementById(tot).innerHTML=t+'<small>/'+max+'</small>';var r=interp(t);
+    document.getElementById(out).innerHTML='<div class="verd g'+r.g+'"><span class="t">'+r.t+'</span><span class="h">'+r.h+'</span><p>'+r.p+'</p></div>';}
+  calc();
+}
+montarEscore('alvBox','alvTot','alvOut',10,[
+ {l:'<b>M</b>igração da dor para a FID',v:1},{l:'<b>A</b>norexia',v:1},{l:'<b>N</b>áusea ou vômito',v:1},
+ {l:'Dor (<b>T</b>enderness) na FID',v:2},{l:'<b>R</b>ebote — descompressão dolorosa',v:1},{l:'<b>E</b>levação da temperatura (≥ 37,3 °C)',v:1},
+ {l:'<b>L</b>eucocitose (&gt; 10.000/mm³)',v:2},{l:'De<b>S</b>vio à esquerda (neutrófilos &gt; 75%)',v:1}],
+ function(t){if(t<=4)return {g:1,t:'Alvarado '+t,h:'Baixa probabilidade',p:'Escore baixo é onde o Alvarado é mais útil: ajuda a excluir. Reavaliar se persistirem sintomas.'};
+  if(t<=6)return {g:2,t:'Alvarado '+t,h:'Probabilidade intermediária',p:'Faixa de dúvida: é aqui que a imagem mais contribui.'};
+  return {g:3,t:'Alvarado '+t,h:'Alta probabilidade',p:'Sugere apendicite, mas o escore é pouco específico no adulto (sobretudo em mulheres) — não substitui avaliação e, em geral, imagem.'};});
+montarEscore('airBox','airTot','airOut',12,[
+ {l:'Vômito',v:1},{l:'Dor na fossa ilíaca direita',v:1},
+ {l:'Descompressão dolorosa / defesa',ops:[['Ausente',0],['Leve',1],['Moderada',2],['Intensa',3]]},
+ {l:'Temperatura ≥ 38,5 °C',v:1},
+ {l:'Neutrófilos',ops:[['< 70%',0],['70–84%',1],['≥ 85%',2]]},
+ {l:'Leucócitos',ops:[['< 10.000',0],['10.000–14.900',1],['≥ 15.000',2]]},
+ {l:'PCR (mg/L)',ops:[['< 10',0],['10–49',1],['≥ 50',2]]}],
+ function(t){if(t<=4)return {g:1,t:'AIR '+t,h:'Baixo risco (0–4)',p:'Manejo ambulatorial ou observação, com reavaliação se não melhorar.'};
+  if(t<=8)return {g:2,t:'AIR '+t,h:'Risco intermediário (5–8)',p:'Observação ativa e imagem (US/TC) para decidir.'};
+  return {g:3,t:'AIR '+t,h:'Alto risco (9–12)',p:'Alta probabilidade de apendicite: avaliação cirúrgica.'};});
+
+/* fluxograma */
+montarMaquina({qbox:'mqQ',out:'mqOut',presets:'mqPre',
+ presets_list:[['Caso-guia: não complicada',{gest:'n',tipo:'nc',col:'n',pref:'cir'}],
+  ['Não complicada, quer evitar cirurgia',{gest:'n',tipo:'nc',col:'n',pref:'atb'}],
+  ['Apendicolito na TC',{gest:'n',tipo:'nc',col:'s'}],
+  ['Plastrão no 6º dia',{gest:'n',tipo:'abs',drn:'s',idade:'j'}],
+  ['Abscesso, 58 anos',{gest:'n',tipo:'abs',drn:'s',idade:'v'}],
+  ['Peritonite difusa',{gest:'n',tipo:'per'}],
+  ['Gestante, 2º trimestre',{gest:'s'}]],
+ Q:[{id:'gest',lbl:'Gestante?',ops:[['n','Não'],['s','Sim']]},
+    {id:'tipo',lbl:'Apresentação (clínica + imagem)',ops:[['nc','Não complicada'],['abs','Abscesso / flegmão bloqueado'],['per','Peritonite difusa / instável']],se:function(s){return s.gest==='n'}},
+    {id:'col',lbl:'Apendicolito?',ops:[['n','Não'],['s','Sim']],se:function(s){return s.gest==='n'&&s.tipo==='nc'}},
+    {id:'pref',lbl:'Escolha informada do paciente',ops:[['cir','Cirurgia'],['atb','Prefere tentar antibiótico']],se:function(s){return s.gest==='n'&&s.tipo==='nc'&&s.col==='n'}},
+    {id:'drn',lbl:'Coleção drenável por via percutânea?',ops:[['s','Sim'],['n','Não / só flegmão']],se:function(s){return s.gest==='n'&&s.tipo==='abs'}},
+    {id:'idade',lbl:'Idade',ops:[['j','< 40 anos'],['v','≥ 40 anos']],se:function(s){return s.gest==='n'&&s.tipo==='abs'}}],
+ f:function(s){
+  if(s.gest==='s')return {g:2,t:'Gestante',h:'Apendicectomia laparoscópica',path:['Gestante','US → RM se inconclusivo','Laparoscopia'],p:'A laparoscopia é segura em qualquer trimestre e preferível à aberta quando há indicação cirúrgica. Atrasar o tratamento aumenta perfuração — e a perfuração é que aumenta a perda fetal.',
+    s:['US; se inconclusiva, RM sem gadolínio','Avaliação conjunta com obstetrícia','Apendicectomia laparoscópica'],x:'TC como primeiro exame na gestante; observar por medo de operar.'};
+  if(s.tipo==='per')return {g:3,t:'Complicada · peritonite',h:'Apendicectomia de urgência',path:['Peritonite difusa','Cirurgia de urgência'],p:'Controle do foco imediato, com ressuscitação e antibiótico.',
+    s:['Ressuscitação, antibiótico de amplo espectro','Apendicectomia (laparoscópica se condições), aspiração do pus','Sem dreno de rotina','Antibiótico pós-operatório curto (3–5 dias) se controle adequado do foco'],x:'Tratamento não operatório na peritonite difusa; antibiótico prolongado por rotina.'};
+  if(s.tipo==='abs'){var st=s.drn==='s'?['Antibiótico IV','Drenagem percutânea guiada da coleção','Reavaliar; cirurgia se falha']:['Antibiótico IV','Reavaliação clínica e por imagem','Cirurgia se falha'];
+    st.push(s.idade==='v'?'≥ 40 anos: colonoscopia e TC de controle (excluir neoplasia)':'< 40 anos: apendicectomia de intervalo não é rotina (só se sintomas recorrentes)');
+    return {g:2,t:'Complicada · bloqueada',h:s.drn==='s'?'Antibiótico + drenagem percutânea':'Antibiótico, sem drenagem',path:['Abscesso / flegmão','Estável',s.drn==='s'?'Drenagem percutânea':'Antibiótico',s.idade==='v'?'Colonoscopia + TC':'Sem intervalo de rotina'],
+      p:'Tratamento não operatório do plastrão em paciente estável. Laparoscopia é alternativa em centros experientes.',s:st,x:'Laparotomia de urgência no plastrão em paciente estável sem experiência laparoscópica; esquecer a neoplasia no paciente ≥ 40 anos.'};}
+  if(s.col==='s')return {g:2,t:'Não complicada · apendicolito',h:'Apendicectomia laparoscópica',path:['Não complicada','Apendicolito','Cirurgia'],p:'O apendicolito é o principal preditor de falha do antibiótico (CODA) — e de complicação.',
+    s:['Antibiótico profilático em dose única','Apendicectomia laparoscópica','Sem antibiótico pós-operatório'],x:'Tratamento não operatório como primeira escolha com apendicolito.'};
+  if(s.pref==='atb')return {g:1,t:'Não complicada · sem apendicolito',h:'Antibiótico isolado (alternativa)',path:['Não complicada','Sem apendicolito','Paciente informado','Antibiótico'],p:'Seguro em pacientes selecionados. Informar: cerca de 27% operam em 1 ano e cerca de 39% em 5 anos (APPAC).',
+    s:['Antibiótico (IV inicial, depois oral)','Reavaliação em 24–48 h; cirurgia se piora','Orientar sobre recidiva','Em ≥ 40 anos, considerar investigar neoplasia no seguimento'],x:'Antibiótico isolado em peritonite, em gestante sem discussão ou com apendicolito.'};
+  return {g:1,t:'Não complicada',h:'Apendicectomia laparoscópica',path:['Não complicada','Sem apendicolito','Cirurgia'],p:'Tratamento padrão. É a resposta do caso-guia.',
+    s:['Antibiótico profilático em dose única','Apendicectomia laparoscópica (coto com endoloop ou grampeador — equivalentes)','Sem antibiótico pós-operatório','Alta precoce'],x:'Prolongar antibiótico depois de apendicectomia não complicada.'};
+ }});
+
+montarQuiz('quiz',[
+ {tag:'Alvarado',q:'Paciente com migração da dor para a FID, náusea, dor e descompressão dolorosa na FID, temperatura de 37,8 °C e leucócitos de 12.000/mm³ com 70% de neutrófilos, <b>sem anorexia</b>. O escore de Alvarado é:',
+  a:['6','7','8','9','10'],c:2,
+  e:'<b>C (8).</b> Migração 1 + náusea 1 + dor FID 2 + descompressão 1 + temperatura 1 + leucocitose 2 = 8. Sem anorexia (0) e sem desvio (neutrófilos ≤ 75%: 0).'},
+ {tag:'Gestante',q:'Gestante de 22 semanas com suspeita de apendicite; a ultrassonografia não visualizou o apêndice. O próximo exame é:',
+  a:['TC com contraste','Ressonância magnética sem gadolínio','Laparotomia exploradora','Radiografia de abdome','Repetir US em 7 dias'],c:1,
+  e:'<b>B.</b> Na gestante, US primeiro e RM se inconclusiva. TC é o exame do adulto não gestante; esperar 7 dias aumenta a chance de perfuração, que é o que mais ameaça o feto.'},
+ {tag:'Plastrão',q:'Homem de 31 anos, 6º dia de dor na FID, estável, com massa palpável. TC: flegmão com <b>abscesso de 5 cm</b> acessível. A conduta é:',
+  a:['Apendicectomia aberta imediata','Alta com analgésico','Hemicolectomia direita','Colonoscopia na internação','Antibiótico e drenagem percutânea'],c:4,
+  e:'<b>E.</b> Apendicite complicada bloqueada em paciente estável: tratamento não operatório com drenagem da coleção. Abaixo de 40 anos, apendicectomia de intervalo não é rotina. Colonoscopia entra no seguimento a partir dos 40 anos.'},
+ {tag:'Não operatório',q:'No tratamento não operatório da apendicite não complicada, o principal fator associado à <b>falha</b> é:',
+  a:['Apendicolito','Sexo masculino','Idade abaixo de 30 anos','Leucocitose de 12.000/mm³','Dor há menos de 24 h'],c:0,
+  e:'<b>A.</b> O apendicolito aumenta falha e complicação (CODA). Por isso a WSES reserva o antibiótico isolado para quem não tem apendicolito.'},
+ {tag:'Sinais',q:'A compressão da fossa ilíaca <b>esquerda</b> provoca dor na fossa ilíaca <b>direita</b>. Esse é o sinal de:',
+  a:['Blumberg','Psoas','Rovsing','Obturador','Lenander'],c:2,
+  e:'<b>C.</b> Rovsing. Blumberg é descompressão dolorosa em McBurney; psoas, dor à extensão da coxa (retrocecal); obturador, à rotação interna da coxa fletida (pélvica); Lenander, diferença de temperatura retal-axilar.'},
+ {tag:'Pós-operatório',q:'Após apendicectomia laparoscópica por apendicite <b>não complicada</b>, a antibioticoterapia recomendada é:',
+  a:['Cinco dias por via oral','Sete dias por via IV','Nenhuma no pós-operatório; apenas profilaxia pré-operatória','Até normalizar a PCR','Até normalizar o leucograma'],c:2,
+  e:'<b>C.</b> Na forma não complicada, a profilaxia em dose única basta. Curso curto (3–5 dias) é para a complicada com bom controle do foco.'},
+ {tag:'Achado na peça',q:'A peça de apendicectomia mostra <b>tumor neuroendócrino de 2,5 cm</b>. A conduta é:',
+  a:['Nenhuma, apendicectomia é suficiente','Quimioterapia adjuvante','Somente seguimento com cromogranina','Hemicolectomia direita','Colectomia total'],c:3,
+  e:'<b>D.</b> Acima de 2 cm, hemicolectomia direita (risco de metástase linfonodal). Até 1 cm, a apendicectomia basta; entre 1 e 2 cm, decide-se pelos fatores de risco.'},
+ {tag:'Seguimento',q:'Homem de <b>58 anos</b> tratado sem cirurgia por apendicite com abscesso, com boa evolução. Antes da alta, deve-se programar:',
+  a:['Colonoscopia e TC de controle','Apendicectomia de intervalo obrigatória em 7 dias','Nenhum seguimento','Antibiótico profilático contínuo','Ultrassonografia mensal'],c:0,
+  e:'<b>A.</b> A partir de 40 anos, após tratamento não operatório de apendicite complicada, investiga-se neoplasia (colonoscopia e TC). A apendicectomia de intervalo não é rotina — fica para sintomas recorrentes.'}
+]);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,655 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Atlas da Colecistite Aguda</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"><style>:root{color-scheme:dark;
+  --bg:#121110;--bg-2:#0e0d0c;--surface:#171614;--surface-2:#1c1a18;--surface-3:#22201d;
+  --ink:#f6f4f2;--ink-strong:#faf8f6;--ink-body:rgba(243,242,242,.82);--ink-soft:rgba(243,242,242,.70);
+  --ink-meta:rgba(243,242,242,.58);--rule:rgba(243,242,242,.10);--rule-2:rgba(243,242,242,.16);--rule-3:rgba(243,242,242,.28);
+  --accent:#b68235;--a300:#facb8d;--a400:#e1ad66;--a600:#8d6428;--a700:#6b4c1e;
+  --t1:rgba(194,141,65,.10);--t2:rgba(194,141,65,.20);--t3:rgba(194,141,65,.36);--t4:rgba(194,141,65,.62);
+  --fh:"Cormorant Garamond",Georgia,"Times New Roman",serif;--fb:"Lora",Georgia,"Times New Roman",serif;
+  --shadow:0 1px 2px rgba(0,0,0,.45),0 10px 28px -14px rgba(0,0,0,.75)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink-body);font-family:var(--fb);font-size:15.5px;line-height:1.68;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--fh);font-weight:500;color:var(--ink-strong);margin:0;text-wrap:balance;letter-spacing:-.005em}
+b,strong{color:var(--ink);font-weight:600}
+a{color:var(--a300)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px 80px}
+::selection{background:var(--t3);color:var(--ink-strong)}
+:focus-visible{outline:2px solid var(--a400);outline-offset:2px;border-radius:3px}
+header.hero{max-width:1140px;margin:0 auto;padding:54px 24px 26px}
+.kicker{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-meta)}
+.kicker.g{color:var(--a300)}
+h1{font-size:clamp(36px,6vw,64px);line-height:1.02;margin:14px 0 0;font-weight:500}
+h1 em{font-style:italic;color:var(--a300)}
+.lede{max-width:62ch;color:var(--ink-soft);font-size:17px;margin:18px 0 0}
+.stem{margin:26px 0 0;padding:18px 22px;border-left:2px solid var(--accent);background:var(--surface);border-radius:0 8px 8px 0;max-width:76ch;box-shadow:var(--shadow)}
+.stem p{margin:0;font-size:15px;color:var(--ink-soft)}
+.stem .src{display:block;margin-top:10px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-meta)}
+nav.rail{position:sticky;top:0;z-index:40;background:rgba(14,13,12,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-top:30px}
+.rail-in{max-width:1140px;margin:0 auto;padding:8px 24px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.rail-in::-webkit-scrollbar{display:none}
+.rail a{flex:none;font-size:12.5px;color:var(--ink-soft);text-decoration:none;padding:5px 11px;border-radius:999px;border:1px solid transparent;white-space:nowrap;transition:.15s}
+.rail a:hover{color:var(--ink);background:var(--surface-2)}
+.rail a.on{color:var(--a300);border-color:var(--t3)}
+.rail a .n{color:var(--a400);margin-right:6px;font-size:11px;font-variant-numeric:tabular-nums}
+section.ch{padding-top:58px;scroll-margin-top:52px}
+.ch-head{display:flex;gap:18px;align-items:baseline;border-top:1px solid var(--rule-2);padding-top:20px}
+.ch-num{font-family:var(--fh);font-size:30px;color:var(--a400);line-height:1;font-style:italic;flex:none;min-width:34px}
+.ch-head h2{font-size:clamp(25px,3.4vw,34px);line-height:1.12}
+.ch-head p{color:var(--ink-meta);font-size:14.5px;margin:7px 0 0;max-width:72ch}
+.plate{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr);gap:24px;margin-top:24px;align-items:start}
+.plate.even{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+@media (max-width:880px){.plate,.plate.even{grid-template-columns:minmax(0,1fr)}}
+.fig{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:12px;box-shadow:var(--shadow);overflow:hidden;min-width:0}
+.fig svg{display:block;width:100%;height:auto;border-radius:5px}
+.figcap{font-size:12px;color:var(--ink-meta);margin:10px 2px 2px;line-height:1.55}
+.panel{display:flex;flex-direction:column;gap:14px;min-width:0}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:16px 17px;box-shadow:var(--shadow);min-width:0}
+.lbl{font-family:var(--fb);font-size:10.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-meta);margin-bottom:11px;display:block}
+.prose{margin-top:24px;max-width:68ch;color:var(--ink-soft);font-size:15.5px}
+.prose p{margin:0 0 13px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button,.btn{font:inherit;font-size:13px;padding:6px 12px;border-radius:4px;cursor:pointer;border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-soft);transition:.15s;line-height:1.35}
+.seg button:hover,.btn:hover{border-color:var(--a600);color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#16110a}
+.btn.pri{border-color:var(--a600);color:var(--a300)}
+.sl{margin-top:12px}
+.sl label{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--ink-soft);margin-bottom:4px}
+.sl label b{font-variant-numeric:tabular-nums;color:var(--a300);font-weight:500;white-space:nowrap}
+input[type=range]{width:100%;accent-color:var(--accent);height:22px;margin:0}
+.chk{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--ink-soft);cursor:pointer;padding:4px 0;line-height:1.45}
+.chk input{accent-color:var(--accent);width:16px;height:16px;flex:none;margin:2px 0 0}
+.chk:hover{color:var(--ink)}
+.chk small{display:block;color:var(--ink-meta);font-size:12px}
+.grp+.grp{margin-top:12px;padding-top:12px;border-top:1px solid var(--rule)}
+.grp .gt{font-family:var(--fh);font-size:18px;color:var(--a300);margin-bottom:4px;display:block}
+.verd{border-radius:6px;padding:13px 15px;border:1px solid var(--rule-3);font-size:14px;background:var(--surface-2)}
+.verd .t{font-size:10px;letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:4px;color:var(--ink-meta)}
+.verd .h{font-family:var(--fh);font-size:23px;line-height:1.15;display:block;margin-bottom:6px;color:var(--ink)}
+.verd p{margin:0;color:var(--ink-soft)}
+.verd p+p{margin-top:6px}
+.v-w{border-color:var(--a600);background:var(--t1)} .v-w .h{color:var(--a400)}
+.v-d{border:1.5px solid var(--a300);background:var(--t2)} .v-d .h{color:var(--a300)}
+.v-m{border:1px dashed var(--a400);background:transparent} .v-m .h{color:var(--a400);font-style:italic}
+.tag{display:inline-block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;border-radius:999px;border:1px solid var(--rule-3);color:var(--ink-soft);white-space:nowrap}
+.tag.w{border-color:var(--a600);color:var(--a400)} .tag.d{border-color:var(--a300);color:var(--a300);background:var(--t2)} .tag.m{border-style:dashed;border-color:var(--a400);color:var(--a400)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
+.steps li{counter-increment:s;position:relative;padding-left:30px;font-size:14px;color:var(--ink-soft)}
+.steps li::before{content:counter(s);position:absolute;left:0;top:1px;width:20px;height:20px;border-radius:50%;border:1px solid var(--a600);color:var(--a300);font-size:11px;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+.note{margin-top:12px;padding:11px 13px;border-radius:6px;background:var(--surface-2);border:1px solid var(--rule);font-size:13.5px;color:var(--ink-soft)}
+.diverg{margin-top:18px;padding:14px 16px;border-left:2px solid var(--a400);background:var(--t1);border-radius:0 6px 6px 0;font-size:14px;color:var(--ink-soft);max-width:76ch}
+.diverg .t{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--a400);margin-bottom:4px}
+mark{background:var(--t3);color:var(--ink-strong);padding:0 3px;border-radius:2px}
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:7px 14px;font-size:13.5px;margin:0}
+.kv dt{color:var(--ink-meta);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding-top:3px}
+.kv dd{margin:0;color:var(--ink-body)}
+.meter{display:flex;gap:4px;margin-top:8px}
+.meter i{flex:1;height:6px;border-radius:2px;background:var(--rule-2)}
+.meter i.on{background:var(--accent)}
+.big{font-family:var(--fh);font-size:46px;line-height:1;color:var(--a300);font-variant-numeric:tabular-nums}
+.tblw{overflow-x:auto;margin-top:18px;border:1px solid var(--rule);border-radius:8px;background:var(--surface);max-width:100%}
+table.t{border-collapse:collapse;width:100%;font-size:13.5px;min-width:540px}
+table.t th{font-weight:500;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--a400);text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule-2);background:var(--surface-2)}
+table.t td{padding:9px 12px;border-bottom:1px solid var(--rule);vertical-align:top;color:var(--ink-soft)}
+table.t tr:last-child td{border-bottom:0}
+table.t td:first-child{color:var(--ink);font-weight:500}
+table.t tr.hl td{background:var(--t2)}
+.traps{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-top:22px}
+.trap{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:15px 16px 14px;box-shadow:var(--shadow)}
+.trap .q{font-family:var(--fh);font-size:20px;color:var(--ink);line-height:1.2;margin-bottom:8px;display:block}
+.trap .q::before{content:"“";color:var(--a400);margin-right:2px}
+.trap .q::after{content:"”";color:var(--a400)}
+.trap p{margin:0;font-size:13.5px;color:var(--ink-soft)}
+.trap .x{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--a400);margin-bottom:6px}
+.flow{display:flex;flex-direction:column}
+.fnode{border:1px solid var(--rule-2);border-radius:6px;padding:10px 13px;background:var(--surface-2);font-size:13.5px;color:var(--ink-soft)}
+.fnode b{display:block;font-family:var(--fh);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:2px}
+.fnode.on{border-color:var(--a300);background:var(--t2);color:var(--ink-body)}
+.fnode.on b{color:var(--a300)}
+.farrow{height:20px;margin-left:22px;border-left:1px solid var(--a400)}
+.q-item{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:18px 19px;margin-top:16px;box-shadow:var(--shadow)}
+.q-item .qn{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--a400);display:block;margin-bottom:6px}
+.q-item .qs{margin:0 0 12px;color:var(--ink-body);font-size:15px}
+.alts{display:flex;flex-direction:column;gap:7px}
+.alt{display:flex;gap:10px;align-items:flex-start;text-align:left;font:inherit;font-size:14px;line-height:1.45;padding:9px 12px;border-radius:5px;border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-soft);cursor:pointer;transition:.15s;width:100%}
+.alt:hover:not([disabled]){border-color:var(--a600);color:var(--ink)}
+.alt .L{flex:none;width:22px;height:22px;border-radius:50%;border:1px solid var(--rule-3);display:grid;place-items:center;font-size:11.5px;color:var(--ink-meta);margin-top:-1px}
+.alt[disabled]{cursor:default}
+.alt.ok{border:1.5px solid var(--a300);background:var(--t2);color:var(--ink)}
+.alt.ok .L{background:var(--a300);border-color:var(--a300);color:#16110a}
+.alt.ko{border-style:dashed;border-color:var(--rule-3);opacity:.8;text-decoration:line-through;text-decoration-color:var(--rule-3)}
+.alt.dim{opacity:.55}
+.expl{display:none;margin-top:12px;padding:12px 14px;border-left:2px solid var(--a400);background:var(--t1);border-radius:0 6px 6px 0;font-size:14px;color:var(--ink-soft)}
+.expl.show{display:block}
+.expl .res{display:block;font-family:var(--fh);font-size:20px;color:var(--a300);margin-bottom:4px}
+.expl ul{margin:8px 0 0;padding-left:18px}
+.expl li{margin:3px 0}
+.score{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:18px;padding:14px 17px;border:1px solid var(--rule-2);border-radius:8px;background:var(--surface-2)}
+.score .s{font-family:var(--fh);font-size:22px;color:var(--ink)}
+.score .s b{color:var(--a300);font-weight:500}
+.mother{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:16px}
+.cell{background:var(--surface);border:1px solid var(--rule);border-top:3px solid var(--rule-3);border-radius:6px;padding:14px 15px}
+.cell.w{border-top-color:var(--a600)} .cell.d{border-top-color:var(--a300)} .cell.m{border-top-style:dashed;border-top-color:var(--a400)}
+.cell h3{font-size:20px;line-height:1.2;margin-bottom:6px}
+.cell p{margin:0;font-size:13px;color:var(--ink-meta)}
+.cell .act{margin-top:9px;padding-top:9px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--ink-body)}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+footer{max-width:1140px;margin:0 auto;padding:26px 24px 50px;border-top:1px solid var(--rule);font-size:12.5px;color:var(--ink-meta);line-height:1.65}
+footer p{margin:0 0 8px;max-width:96ch}
+.hot{cursor:pointer}
+.hot circle.pin{fill:#16110a;stroke:#e1ad66;stroke-width:1.4;transition:.15s}
+.hot text{fill:#facb8d;font:600 12px var(--fb);text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.hot:hover circle.pin,.hot.on circle.pin{fill:#e1ad66}
+.hot:hover text,.hot.on text{fill:#16110a}
+.hot:focus{outline:none}.hot:focus-visible circle.pin{stroke-width:3}
+svg text{font-family:var(--fb)}
+@media (max-width:600px){
+  .wrap{padding:0 16px 60px} header.hero{padding:36px 16px 20px} .rail-in{padding:7px 16px}
+  footer{padding:22px 16px 40px} .ch-head{gap:12px} .ch-num{font-size:24px;min-width:26px}
+  .fig{padding:8px} .card{padding:14px} body{font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body><header class="hero">
+<span class="kicker g">Residência Max · Vias biliares · Aula-atlas</span>
+<h1>Colecistite aguda <em>e os critérios de Tóquio</em></h1>
+<p class="lede">Uma pedra que para no infundíbulo, uma parede que incha e três perguntas em ordem: é colecistite? Qual o grau? Este doente aguenta a colecistectomia agora? Cada capítulo responde a uma delas com um instrumento que você manipula antes de ler.</p>
+<div class="stem"><p><b>Caso-índice.</b> Marlene, 46 anos, dor contínua no hipocôndrio direito há 30 horas, que começou depois do jantar e não cedeu. Febre de 38,3 °C, Murphy positivo, leucócitos 14.000/mm³, PCR 9 mg/dL. Hipertensa controlada, sem outras doenças (ASA II). O ultrassom está no capítulo 1.</p><span class="src">Caso construído para a aula · condutas segundo as Diretrizes de Tóquio 2018 (TG18)</span></div>
+</header>
+<nav class="rail" aria-label="Capítulos"><div class="rail-in">
+<a href="#c1"><span class="n">1</span>O ultrassom</a><a href="#c2"><span class="n">2</span>Por que inflama</a><a href="#c3"><span class="n">3</span>Diagnóstico TG18</a><a href="#c4"><span class="n">4</span>Gravidade</a><a href="#c5"><span class="n">5</span>Conduta</a><a href="#c6"><span class="n">6</span>Na mesa</a><a href="#c7"><span class="n">7</span>Pegadinhas</a><a href="#c8"><span class="n">8</span>Forja</a><a href="#c9"><span class="n">9</span>Tabela-mãe</a>
+</div></nav>
+<main class="wrap">
+
+<section class="ch" id="c1">
+<div class="ch-head"><div class="ch-num">1</div><div><h2>O ultrassom que o médico viu</h2><p>Corte longitudinal da vesícula. Mexa nos achados e veja quando a imagem deixa de ser só colelitíase e passa a ser critério C de Tóquio.</p></div></div>
+<div class="plate">
+<div class="fig"><svg id="us" viewBox="0 0 640 470" role="img" aria-label="Ultrassom simulado da vesícula biliar em corte longitudinal"></svg>
+<p class="figcap">Simulação esquemática em escala (barra = 1 cm). Transdutor no topo, fígado no campo próximo, vesícula anecoica abaixo. O cálculo é a imagem hiperecogênica com sombra acústica posterior.</p></div>
+<div class="panel">
+<div class="card"><span class="lbl">Achados</span>
+<div class="sl"><label>Espessura da parede <b id="o-wall">3,0 mm</b></label><input type="range" id="i-wall" min="2" max="9" step="0.5" value="3"></div>
+<div class="sl"><label>Eixo longo da vesícula <b id="o-len">7,0 cm</b></label><input type="range" id="i-len" min="5" max="11" step="0.5" value="7"></div>
+<div style="margin-top:10px">
+<label class="chk"><input type="checkbox" id="i-stone" checked><span>Cálculo impactado no infundíbulo</span></label>
+<label class="chk"><input type="checkbox" id="i-fluid"><span>Líquido pericolecístico</span></label>
+<label class="chk"><input type="checkbox" id="i-sludge"><span>Lama / debris no lúmen</span></label>
+<label class="chk"><input type="checkbox" id="i-murphy"><span>Murphy ultrassonográfico (dor sob o transdutor)</span></label>
+</div>
+<div class="seg" style="margin-top:12px" id="us-pre"><button data-v="lit" aria-pressed="false">Colelitíase simples</button><button data-v="ac" aria-pressed="false">Marlene</button><button data-v="asc" aria-pressed="false">Parede grossa, sem cálculo</button></div>
+</div>
+<div class="verd" id="us-v"></div>
+</div></div>
+<div class="prose">
+<p>O ultrassom é o primeiro exame porque responde às duas perguntas de uma vez: há cálculo e a parede está inflamada? Os achados que Tóquio aceita como característicos são a <strong>parede espessada (acima de 4 mm)</strong>, a <strong>vesícula distendida (eixo longo acima de 8 cm, transverso acima de 4 cm)</strong>, o <strong>cálculo impactado</strong>, o <strong>debris</strong>, o <strong>líquido pericolecístico</strong> e o <strong>Murphy ultrassonográfico</strong>, entre outros.</p>
+<p>Repare no terceiro cenário: parede grossa sem cálculo e sem dor. Ascite, hipoalbuminemia, hepatite aguda e insuficiência cardíaca espessam a parede sem inflamar a vesícula. O espessamento isolado é o achado mais inespecífico da lista. A cintilografia hepatobiliar (ausência de enchimento da vesícula) é mais acurada, mas fica para a dúvida; quem abre a investigação é o ultrassom.</p>
+</div>
+</section>
+
+<section class="ch" id="c2">
+<div class="ch-head"><div class="ch-num">2</div><div><h2>Por que a vesícula inflama</h2><p>A obstrução vem primeiro, a infecção vem depois. Troque o estágio e veja a parede mudar camada por camada.</p></div></div>
+<div class="plate">
+<div class="fig"><svg id="wall" viewBox="0 0 640 380" role="img" aria-label="Corte histológico esquemático da parede da vesícula nos estágios da colecistite"></svg>
+<p class="figcap">Campo esquemático, lúmen no topo. Camadas: mucosa (epitélio colunar e lâmina própria), muscular, tecido perimuscular (subseroso) e serosa. A vesícula não tem muscular da mucosa nem submucosa.</p></div>
+<div class="panel">
+<div class="card"><span class="lbl">Estágio patológico (TG13/TG18)</span>
+<div class="seg" id="w-seg"><button data-v="0" aria-pressed="true">Edematosa · 2–4 d</button><button data-v="1" aria-pressed="false">Necrosante · 3–5 d</button><button data-v="2" aria-pressed="false">Supurativa · 7–10 d</button><button data-v="3" aria-pressed="false">Crônica</button></div>
+<div id="w-txt" style="margin-top:12px;font-size:14px"></div></div>
+<div class="card"><span class="lbl">A cadeia causal</span>
+<ol class="steps">
+<li>O cálculo impacta no infundíbulo ou no cístico.</li>
+<li>A mucosa continua secretando; a vesícula distende e a pressão intraluminal sobe.</li>
+<li>A pressão comprime vênulas e capilares da parede: edema, depois isquemia.</li>
+<li>A fosfolipase A transforma lecitina da bile em lisolecitina, que agride a mucosa: inflamação química.</li>
+<li>A infecção bacteriana é secundária, sobre uma parede já lesada.</li>
+</ol></div>
+</div></div>
+<div class="prose">
+<p>Essa ordem explica duas condutas. Primeiro, o antibiótico não é o tratamento da causa; a causa é mecânica, e é por isso que a cirurgia resolve. Segundo, a isquemia progride com o tempo: a parede edematosa dos primeiros dias se descola bem do leito hepático, enquanto a parede necrosada ou fibrosada sangra, adere e esconde a anatomia. É o argumento biológico para operar cedo.</p>
+<p>Os intervalos em dias são os que as diretrizes de Tóquio descrevem para cada estágio e se sobrepõem de propósito: o estágio é patológico, não um relógio.</p>
+</div>
+</section>
+
+<section class="ch" id="c3">
+<div class="ch-head"><div class="ch-num">3</div><div><h2>Diagnóstico: as três letras de Tóquio</h2><p>Sinais locais, sinais sistêmicos e imagem. A combinação decide entre suspeita e diagnóstico definitivo.</p></div></div>
+<div class="plate even">
+<div class="card">
+<div class="grp"><span class="gt">A · Inflamação local</span>
+<label class="chk"><input type="checkbox" class="dx" data-g="A" checked><span>Sinal de Murphy</span></label>
+<label class="chk"><input type="checkbox" class="dx" data-g="A"><span>Massa, dor ou defesa no quadrante superior direito</span></label></div>
+<div class="grp"><span class="gt">B · Inflamação sistêmica</span>
+<label class="chk"><input type="checkbox" class="dx" data-g="B" checked><span>Febre</span></label>
+<label class="chk"><input type="checkbox" class="dx" data-g="B"><span>PCR elevada</span></label>
+<label class="chk"><input type="checkbox" class="dx" data-g="B" checked><span>Leucocitose</span></label></div>
+<div class="grp"><span class="gt">C · Imagem</span>
+<label class="chk"><input type="checkbox" class="dx" data-g="C"><span>Achados de imagem característicos de colecistite aguda<small>os do capítulo 1</small></span></label></div>
+</div>
+<div class="panel">
+<div class="verd" id="dx-v"></div>
+<div class="card"><span class="lbl">A regra</span>
+<dl class="kv"><dt>Suspeita</dt><dd>um item de A <b>+</b> um item de B</dd><dt>Definitivo</dt><dd>um item de A <b>+</b> um de B <b>+</b> C</dd></dl>
+<div class="note">Os critérios são os mesmos no TG13 e no TG18. A banca costuma dar A e C sem B (dor e ultrassom, sem febre ou leucocitose) e perguntar se o diagnóstico está fechado: pelos critérios, não está.</div></div>
+</div></div>
+<div class="prose"><p>O sinal de Murphy é a parada súbita da inspiração quando a mão comprime o hipocôndrio direito. Tem boa especificidade e sensibilidade limitada; no idoso e no diabético pode faltar, e a ausência não afasta o diagnóstico. A colangite aguda tem outra régua de Tóquio, construída sobre colestase e não sobre Murphy (está no atlas de coledocolitíase).</p></div>
+</section>
+
+<section class="ch" id="c4">
+<div class="ch-head"><div class="ch-num">4</div><div><h2>Gravidade: de cima para baixo</h2><p>Leia o grau III primeiro, depois o II. Grau I é o que sobra.</p></div></div>
+<div class="plate even">
+<div class="card">
+<div class="grp"><span class="gt">Grau III · disfunção orgânica (qualquer uma)</span>
+<label class="chk"><input type="checkbox" class="gv" data-g="3"><span>Cardiovascular<small>hipotensão que exige dopamina ≥ 5 µg/kg/min ou qualquer dose de noradrenalina</small></span></label>
+<label class="chk"><input type="checkbox" class="gv" data-g="3"><span>Neurológica<small>rebaixamento do nível de consciência</small></span></label>
+<label class="chk"><input type="checkbox" class="gv" data-g="3"><span>Respiratória<small>PaO₂/FiO₂ &lt; 300</small></span></label>
+<label class="chk"><input type="checkbox" class="gv" data-g="3"><span>Renal<small>oligúria ou creatinina &gt; 2,0 mg/dL</small></span></label>
+<label class="chk"><input type="checkbox" class="gv" data-g="3"><span>Hepática<small>INR &gt; 1,5</small></span></label>
+<label class="chk"><input type="checkbox" class="gv" data-g="3"><span>Hematológica<small>plaquetas &lt; 100.000/mm³</small></span></label></div>
+<div class="grp"><span class="gt">Grau II · qualquer um</span>
+<label class="chk"><input type="checkbox" class="gv" data-g="2"><span>Leucócitos &gt; 18.000/mm³</span></label>
+<label class="chk"><input type="checkbox" class="gv" data-g="2"><span>Massa dolorosa palpável no quadrante superior direito</span></label>
+<label class="chk"><input type="checkbox" class="gv" data-g="2"><span>Queixa com duração &gt; 72 horas</span></label>
+<label class="chk"><input type="checkbox" class="gv" data-g="2"><span>Inflamação local acentuada<small>gangrenosa, enfisematosa, abscesso pericolecístico ou hepático, peritonite biliar</small></span></label></div>
+</div>
+<div class="panel">
+<div class="verd" id="gv-v"></div>
+<div class="card"><span class="lbl">Marlene</span><p style="margin:0;font-size:14px">Leucócitos 14.000, 30 horas de dor, sem massa palpável, sem disfunção orgânica. O líquido pericolecístico do ultrassom é achado de imagem, não abscesso. <b>Grau I.</b></p>
+<div class="seg" style="margin-top:12px" id="gv-pre"><button data-v="m" aria-pressed="false">Marlene</button><button data-v="l" aria-pressed="false">+ leucócitos 21.000</button><button data-v="h" aria-pressed="false">+ noradrenalina</button><button data-v="z" aria-pressed="false">Limpar</button></div></div>
+</div></div>
+<div class="diverg"><span class="t">Divergência de banca</span>As 72 horas aparecem em dois lugares diferentes e a banca mistura. Como <b>critério de gravidade</b>, queixa há mais de 72 h faz grau II. Como <b>janela cirúrgica</b>, livros mais antigos limitam a colecistectomia precoce a 72 h do início; o TG18 manteve a colecistectomia precoce como preferida mesmo depois disso, em centro experiente. Se o enunciado cita Tóquio 2018, o tempo sozinho não contraindica operar.</div>
+</section>
+
+<section class="ch" id="c5">
+<div class="ch-head"><div class="ch-num">5</div><div><h2>A máquina de conduta do TG18</h2><p>Grau, depois o doente: índice de comorbidade de Charlson (CCI) e classe ASA. No grau III, entram a disfunção orgânica favorável e os preditores negativos.</p></div></div>
+<div class="plate">
+<div class="card">
+<span class="lbl">Fluxo</span>
+<div class="flow" id="fl"></div>
+</div>
+<div class="panel">
+<div class="card"><span class="lbl">Entradas</span>
+<span class="lbl" style="margin-bottom:5px;letter-spacing:.1em">Grau TG18</span>
+<div class="seg" id="m-g"><button data-v="1" aria-pressed="true">I · leve</button><button data-v="2" aria-pressed="false">II · moderada</button><button data-v="3" aria-pressed="false">III · grave</button></div>
+<div class="sl"><label>Índice de comorbidade de Charlson <b id="o-cci">1</b></label><input type="range" id="i-cci" min="0" max="10" step="1" value="1"></div>
+<span class="lbl" style="margin:12px 0 5px;letter-spacing:.1em">ASA-PS</span>
+<div class="seg" id="m-asa"><button data-v="1" aria-pressed="false">I</button><button data-v="2" aria-pressed="true">II</button><button data-v="3" aria-pressed="false">III</button><button data-v="4" aria-pressed="false">IV</button></div>
+<div id="m-g3" style="margin-top:12px">
+<label class="chk"><input type="checkbox" id="i-fosf"><span>Disfunção orgânica favorável (FOSF)<small>cardiovascular ou renal, que reverte rápido com o tratamento inicial</small></span></label>
+<label class="chk"><input type="checkbox" id="i-npf"><span>Preditor negativo presente<small>icterícia (BT ≥ 2 mg/dL), disfunção neurológica ou respiratória</small></span></label>
+<label class="chk"><input type="checkbox" id="i-resp" checked><span>Responde a antibiótico e suporte</span></label>
+</div></div>
+<div class="verd" id="m-v"></div>
+</div></div>
+<div class="prose">
+<p>O TG18 escreve os limiares como "CCI ≤ 5 e/ou ASA-PS ≤ 2" nos graus I e II, e "CCI ≤ 3 e ASA-PS ≤ 2" no grau III. Quando os dois índices discordam, a máquina devolve <em>individualizar</em>: o TG18 não resolve a discordância; a leitura deste atlas é individualizar. A drenagem da vesícula de primeira escolha é a <strong>colecistostomia percutânea trans-hepática</strong>; a drenagem endoscópica transpapilar ou guiada por ecoendoscopia fica para centros com experiência.</p>
+<p>No grau I e II operado, o antibiótico pode parar em até 24 horas depois da colecistectomia. O antibiótico do doente que não opera é tratamento, não profilaxia.</p>
+</div>
+</section>
+
+<section class="ch" id="c6">
+<div class="ch-head"><div class="ch-num">6</div><div><h2>Na mesa: o triângulo hepatocístico e a visão crítica de segurança</h2><p>Vista anterior esquemática, fígado rebatido cranialmente. A lesão de via biliar nasce de identificar errado, não de clipar errado.</p></div></div>
+<div class="plate">
+<div class="fig"><svg id="calot" viewBox="44 112 520 408" role="img" aria-label="Prancha do triângulo hepatocístico com vesícula, ducto cístico, ducto hepático comum, colédoco, artéria hepática direita e artéria cística"></svg>
+<p class="figcap">Convenção desta prancha (sem cores fisiológicas): ductos biliares em marfim, artérias em ouro vivo, veia porta em bronze escuro, fígado em sépia. Proporções reduzidas; direita do paciente à esquerda da figura.</p>
+<div class="legend"><span class="tag">ducto · marfim</span><span class="tag w">artéria · ouro</span><span class="tag">porta · bronze</span></div></div>
+<div class="panel">
+<div class="card"><span class="lbl">Dissecção</span>
+<div class="seg" id="cv-seg"><button data-v="0" aria-pressed="true">Antes de dissecar</button><button data-v="1" aria-pressed="false">Triângulo dissecado</button></div>
+<div style="margin-top:12px">
+<label class="chk"><input type="checkbox" class="cvs"><span>Triângulo hepatocístico limpo de gordura e tecido fibroso</span></label>
+<label class="chk"><input type="checkbox" class="cvs"><span>Terço inferior da vesícula separado do leito hepático (placa cística exposta)</span></label>
+<label class="chk"><input type="checkbox" class="cvs"><span>Duas, e só duas, estruturas entrando na vesícula</span></label>
+</div></div>
+<div class="verd" id="cv-v"></div>
+<div class="card" id="cal-box"></div>
+</div></div>
+<div class="prose">
+<p>O triângulo de Calot original tinha a artéria cística como limite superior; o que se disseca hoje é o <strong>triângulo hepatocístico</strong>: ducto cístico, ducto hepático comum e borda inferior do fígado. A visão crítica de segurança de Strasberg não é uma técnica, é um teste de identificação: os três critérios precisam estar presentes antes de clipar qualquer coisa.</p>
+<p>Quando a inflamação impede a visão crítica, o TG18 recomenda um procedimento de resgate em vez de insistir: <strong>colecistectomia subtotal</strong> (fenestrada ou reconstituinte), colecistostomia ou conversão. A colangiografia intraoperatória ajuda a definir a anatomia, mas não substitui a visão crítica.</p>
+</div>
+</section>
+
+<section class="ch" id="c7">
+<div class="ch-head"><div class="ch-num">7</div><div><h2>Pegadinhas de prova</h2><p>O enunciado troca um dado e a conduta muda. Estas são as trocas mais frequentes.</p></div></div>
+<div class="traps">
+<div class="trap"><span class="x">Alitiásica</span><span class="q">Paciente de UTI, sem cálculos</span><p>Doente crítico (queimado, politrauma, sepse, nutrição parenteral, ventilação prolongada) com vesícula distendida e parede espessa sem cálculo. Estase e isquemia, evolução rápida para gangrena. No instável, <b>colecistostomia percutânea</b>.</p></div>
+<div class="trap"><span class="x">Enfisematosa</span><span class="q">Diabético com gás na parede</span><p>Gás na parede ou no lúmen da vesícula, associado a anaeróbios produtores de gás (como <i>Clostridium</i>). Conta como inflamação local acentuada: no mínimo grau II. Antibiótico de amplo espectro e colecistectomia de urgência.</p></div>
+<div class="trap"><span class="x">Murphy ausente</span><span class="q">Idosa sem dor à palpação</span><p>Idosos e diabéticos podem não ter Murphy nem febre. A ausência não afasta colecistite; o ultrassom decide. Esses mesmos doentes evoluem mais para gangrena.</p></div>
+<div class="trap"><span class="x">Icterícia</span><span class="q">Colecistite com bilirrubina de 4 mg/dL</span><p>Colecistite aguda pode elevar discretamente as bilirrubinas, mas icterícia franca obriga a pensar em coledocolitíase associada ou em síndrome de Mirizzi. Estratifique o risco de cálculo no colédoco antes de operar.</p></div>
+<div class="trap"><span class="x">Mirizzi</span><span class="q">Cálculo no infundíbulo e icterícia</span><p>Cálculo impactado no infundíbulo ou no cístico comprimindo o ducto hepático comum (Csendes I) ou erodindo para dentro dele como fístula colecistobiliar (II a IV, pelo tamanho da fístula; V com fístula colecistoentérica). Não tente a dissecção clássica do triângulo.</p></div>
+<div class="trap"><span class="x">Gestante</span><span class="q">Colecistite na gravidez: esperar o parto?</span><p>Não. A colecistectomia laparoscópica é segura na gestação, e o tratamento conservador tem mais recorrência. O segundo trimestre é o período mais confortável, mas a cirurgia pode ser feita em qualquer trimestre.</p></div>
+<div class="trap"><span class="x">Primeiro exame</span><span class="q">Qual o exame mais acurado?</span><p>A cintilografia hepatobiliar (HIDA) tem a maior acurácia; o ultrassom é o exame inicial de escolha. Se a pergunta é "primeiro exame", é ultrassom. Tomografia entra para complicações e diagnóstico diferencial.</p></div>
+<div class="trap"><span class="x">Antibiótico</span><span class="q">Manter antibiótico por 7 dias após operar o grau I</span><p>No grau I e II, após a colecistectomia, o antibiótico pode ser suspenso em até 24 horas. Prolongar não acrescenta.</p></div>
+</div>
+</section>
+
+<section class="ch" id="c8">
+<div class="ch-head"><div class="ch-num">8</div><div><h2>Forja: a mesma questão, cinco pivôs</h2><p>A questão-mãe é a Marlene. Em cada pivô, o dado trocado está marcado. Responda antes de abrir.</p></div></div>
+<div id="forja-list"></div>
+<div class="score"><span class="s" id="forja-score"></span><button class="btn pri" id="forja-reset">Recomeçar</button></div>
+</section>
+
+<section class="ch" id="c9">
+<div class="ch-head"><div class="ch-num">9</div><div><h2>Tabela-mãe</h2><p>Cada cartão é uma resposta possível. O que muda de um para outro é o dado que a questão vai trocar.</p></div></div>
+<div class="legend"><span class="tag">operar cedo</span><span class="tag w">alerta</span><span class="tag d">perigo</span><span class="tag m">individualizar</span></div>
+<div class="mother">
+<div class="cell"><h3>Grau I, doente bom</h3><p>Sem critério de II ou III · CCI ≤ 5 e/ou ASA ≤ 2</p><div class="act">Colecistectomia laparoscópica precoce</div></div>
+<div class="cell w"><h3>Grau II, doente bom</h3><p>Leucócitos &gt; 18.000, massa, &gt; 72 h ou inflamação local acentuada · CCI ≤ 5 e/ou ASA ≤ 2</p><div class="act">Colecistectomia laparoscópica precoce em centro experiente</div></div>
+<div class="cell m"><h3>Grau I ou II, doente ruim</h3><p>CCI ≥ 6 e/ou ASA ≥ 3</p><div class="act">Antibiótico e suporte; sem resposta, drenagem da vesícula; colecistectomia tardia quando o risco permitir</div></div>
+<div class="cell w"><h3>Grau III favorável</h3><p>Disfunção cardiovascular ou renal reversível · sem preditor negativo · CCI ≤ 3 e ASA ≤ 2</p><div class="act">Suporte, antibiótico e colecistectomia precoce em centro avançado</div></div>
+<div class="cell d"><h3>Grau III desfavorável</h3><p>Disfunção neurológica ou respiratória, icterícia, ou doente de alto risco</p><div class="act">Suporte, antibiótico e drenagem urgente ou precoce da vesícula; colecistectomia eletiva depois</div></div>
+<div class="cell d"><h3>Alitiásica no doente crítico</h3><p>UTI, sem cálculo, vesícula distendida</p><div class="act">Antibiótico e colecistostomia percutânea se instável</div></div>
+<div class="cell d"><h3>Enfisematosa</h3><p>Gás na parede, diabético</p><div class="act">Antibiótico de amplo espectro e colecistectomia de urgência</div></div>
+<div class="cell m"><h3>Visão crítica impossível</h3><p>Triângulo inflamado, anatomia não identificada</p><div class="act">Resgate: colecistectomia subtotal, colecistostomia ou conversão</div></div>
+</div>
+</section>
+</main>
+<footer>
+<p><b>Fontes.</b> Yokoe M et al. Tokyo Guidelines 2018: diagnostic criteria and severity grading of acute cholecystitis. J Hepatobiliary Pancreat Sci 2018;25:41–54 · Okamoto K et al. TG18 flowchart for the management of acute cholecystitis. J Hepatobiliary Pancreat Sci 2018;25:55–72 · Gomi H et al. TG18 antimicrobial therapy for acute cholangitis and cholecystitis. J Hepatobiliary Pancreat Sci 2018;25:3–16 · Kimura Y et al. TG13 definitions, pathophysiology and epidemiology. J Hepatobiliary Pancreat Sci 2013;20:8–23 · Strasberg SM, Hertl M, Soper NJ. An analysis of the problem of biliary injury during laparoscopic cholecystectomy. J Am Coll Surg 1995;180:101–25 · Sabiston Textbook of Surgery, 21ª ed. · Csendes A et al. Mirizzi syndrome classification, 1989 e 2008.</p>
+<p>Atlas produzido para o Residência Max. As figuras são esquemas didáticos, não imagens de pacientes.</p>
+</footer>
+<script>(function(){
+  var links=[].slice.call(document.querySelectorAll('.rail a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))}).filter(Boolean);
+  function spy(){var y=window.scrollY+90,cur=null;secs.forEach(function(s){if(s.offsetTop<=y)cur=s.id});
+    links.forEach(function(a){var on=a.getAttribute('href')==='#'+cur;if(on!==a.classList.contains('on')){a.classList.toggle('on',on);
+      if(on){var r=a.parentNode;r.scrollLeft=a.offsetLeft-r.clientWidth/2+a.clientWidth/2}}})}
+  window.addEventListener('scroll',spy,{passive:true});spy();
+  links.forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();window.scrollTo({top:t.offsetTop-44,behavior:'smooth'})}})});
+})();
+function $(s,r){return (r||document).querySelector(s)}
+function $$(s,r){return [].slice.call((r||document).querySelectorAll(s))}
+function br(n,d){return Number(n).toFixed(d||0).replace('.',',')}
+function seg(el,cb){var bs=$$('button',el);bs.forEach(function(b){b.addEventListener('click',function(){
+  bs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});cb(b.dataset.v,b)})});}
+function segVal(el){var b=$('button[aria-pressed="true"]',el);return b?b.dataset.v:null}
+function verd(el,cls,t,h,body){el.className='verd v-'+cls;el.innerHTML='<span class="t">'+t+'</span><span class="h">'+h+'</span>'+body}
+function rng(seed){var s=seed>>>0;return function(){s=(s*1664525+1013904223)>>>0;return s/4294967296}}
+/* prancha: <g class="hot" data-k>; INFO[k]={t,h,body} */
+function plate(svgSel,boxSel,INFO,first,onShow){
+  var hs=$$(svgSel+' .hot'),box=$(boxSel);
+  function show(k){hs.forEach(function(h){h.classList.toggle('on',h.dataset.k===k)});var o=INFO[k];
+    box.innerHTML='<span class="lbl">'+o.t+'</span><h3 style="font-size:24px;margin-bottom:6px;color:var(--a300)">'+o.h+'</h3>'+o.body;
+    if(onShow)onShow(k)}
+  hs.forEach(function(h){h.setAttribute('tabindex','0');h.setAttribute('role','button');h.setAttribute('aria-label',INFO[h.dataset.k].t);
+    h.addEventListener('click',function(){show(h.dataset.k)});
+    h.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();show(h.dataset.k)}})});
+  show(first||hs[0].dataset.k);
+}
+/* forja: [{s, a:[5], c, r, w:[5]}] */
+function forja(list,listSel,scoreSel,resetSel){
+  var root=$(listSel),done=0,hit=0,L='ABCDE';
+  function upd(){$(scoreSel).innerHTML=done?('<b>'+hit+'</b> de '+done+' certas · '+(list.length-done)+' por responder'):(list.length+' questões · nenhuma respondida')}
+  function render(){root.innerHTML='';done=0;hit=0;
+    list.forEach(function(q,i){var d=document.createElement('div');d.className='q-item';
+      d.innerHTML='<span class="qn">'+(i===0?'Questão-mãe':'Pivô '+i)+'</span><p class="qs">'+q.s+'</p><div class="alts">'+
+        q.a.map(function(a,j){return '<button class="alt" data-j="'+j+'"><span class="L">'+L[j]+'</span><span>'+a+'</span></button>'}).join('')+
+        '</div><div class="expl" aria-live="polite"><span class="res"></span><div class="why"></div></div>';
+      root.appendChild(d);
+      $$('.alt',d).forEach(function(b){b.addEventListener('click',function(){
+        var j=+b.dataset.j,ok=j===q.c;done++;if(ok)hit++;
+        $$('.alt',d).forEach(function(x){x.disabled=true;var k=+x.dataset.j;x.classList.add(k===q.c?'ok':(k===j?'ko':'dim'))});
+        var e=$('.expl',d);e.classList.add('show');
+        $('.res',e).textContent=(ok?'Certo — ':'Não — ')+'gabarito '+L[q.c]+'.';
+        $('.why',e).innerHTML='<p style="margin:0">'+q.r+'</p><ul>'+q.w.map(function(w,k){return k===q.c?'':'<li><b>'+L[k]+'</b> — '+w+'</li>'}).join('')+'</ul>';
+        upd()})})});upd()}
+  $(resetSel).addEventListener('click',function(){render();window.scrollTo({top:root.getBoundingClientRect().top+window.scrollY-60,behavior:'smooth'})});
+  render();
+}
+
+
+/* ---------- 1. ultrassom ---------- */
+(function(){
+  var svg=$('#us'),S=26; /* 26 px = 1 cm */
+  var DEF='<defs><clipPath id="fan"><path d="M262 24 L378 24 L614 428 Q320 476 26 428 Z"/></clipPath>'+
+   '<filter id="spk" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9 .32" numOctaves="2" seed="7"/>'+
+   '<feColorMatrix type="matrix" values="0 0 0 0 .86  0 0 0 0 .82  0 0 0 0 .75  1.9 0 0 0 -.62"/></filter>'+
+   '<filter id="spk2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.4 .5" numOctaves="1" seed="3"/>'+
+   '<feColorMatrix type="matrix" values="0 0 0 0 .9  0 0 0 0 .87  0 0 0 0 .8  2.4 0 0 0 -1.05"/></filter>'+
+   '<filter id="blur"><feGaussianBlur stdDeviation="1.4"/></filter>'+
+   '<radialGradient id="tgc" cx=".5" cy="0" r="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".55"/></radialGradient></defs>';
+  function draw(){
+    var w=+$('#i-wall').value,L=+$('#i-len').value,st=$('#i-stone').checked,fl=$('#i-fluid').checked,
+        sl=$('#i-sludge').checked,mu=$('#i-murphy').checked;
+    $('#o-wall').textContent=br(w,1)+' mm';$('#o-len').textContent=br(L,1)+' cm';
+    var cx=330,cy=245,rx=L*S/2,ry=Math.min(rx*0.42,2.0*S+ (L>8?(L-8)*7:0)),wp=w*S/10;
+    var g='<rect width="640" height="470" fill="#050505"/><g clip-path="url(#fan)">'+
+      '<rect width="640" height="470" fill="#1b1916"/><rect width="640" height="470" filter="url(#spk)" opacity=".55"/>'+
+      '<rect y="24" width="640" height="34" fill="#d8cfbf" opacity=".10"/><path d="M0 60 Q320 50 640 60" stroke="#e8dfcf" stroke-opacity=".35" stroke-width="2" fill="none"/>'+
+      '<path d="M0 86 Q320 76 640 86" stroke="#e8dfcf" stroke-opacity=".18" stroke-width="1.2" fill="none"/>';
+    /* líquido pericolecístico: faixa anecoica fora da parede, na face inferior */
+    if(fl) g+='<path d="M'+(cx-rx*0.55)+' '+(cy+ry+wp*0.5+3)+' Q'+cx+' '+(cy+ry+wp+22)+' '+(cx+rx*0.85)+' '+(cy+ry*0.55+wp)+'" stroke="#030303" stroke-width="13" fill="none" stroke-linecap="round" opacity=".95" filter="url(#blur)"/>';
+    /* parede */
+    g+='<ellipse cx="'+cx+'" cy="'+cy+'" rx="'+(rx+wp/2)+'" ry="'+(ry+wp/2)+'" fill="none" stroke="#e6dccb" stroke-width="'+wp+'" opacity=".78"/>'+
+       '<ellipse cx="'+cx+'" cy="'+cy+'" rx="'+(rx+wp/2)+'" ry="'+(ry+wp/2)+'" fill="none" stroke="#000" stroke-width="'+wp+'" filter="url(#spk2)" opacity=".5"/>';
+    if(w>5) g+='<ellipse cx="'+cx+'" cy="'+cy+'" rx="'+(rx+wp/2)+'" ry="'+(ry+wp/2)+'" fill="none" stroke="#141210" stroke-width="'+(wp*0.36)+'" opacity=".8"/>';
+    /* lúmen */
+    g+='<ellipse cx="'+cx+'" cy="'+cy+'" rx="'+rx+'" ry="'+ry+'" fill="#070706"/>';
+    if(sl) g+='<clipPath id="lum"><ellipse cx="'+cx+'" cy="'+cy+'" rx="'+rx+'" ry="'+ry+'"/></clipPath><g clip-path="url(#lum)"><rect x="'+(cx-rx)+'" y="'+(cy+ry*0.35)+'" width="'+(2*rx)+'" height="'+ry+'" fill="#4a4540" opacity=".55"/><rect x="'+(cx-rx)+'" y="'+(cy+ry*0.35)+'" width="'+(2*rx)+'" height="'+ry+'" filter="url(#spk2)" opacity=".7"/></g>';
+    /* cálculo no infundíbulo (polo esquerdo) com sombra */
+    if(st){var sx=cx-rx+16,sy=cy+2;
+      g+='<path d="M'+(sx-10)+' '+(sy+4)+' L'+(sx+12)+' '+(sy+4)+' L'+(sx+44)+' 470 L'+(sx-34)+' 470 Z" fill="#020202" opacity=".88"/>'+
+         '<path d="M'+(sx-11)+' '+(sy+4)+' A12 10 0 0 1 '+(sx+13)+' '+(sy+4)+'" stroke="#fbf5ea" stroke-width="5" fill="none" stroke-linecap="round"/>'+
+         '<path d="M'+(sx-11)+' '+(sy+4)+' A12 10 0 0 1 '+(sx+13)+' '+(sy+4)+'" stroke="#fff" stroke-width="2" fill="none" opacity=".8"/>';}
+    g+='<rect width="640" height="470" fill="url(#tgc)"/></g>';
+    /* calibradores */
+    var yb=cy-ry-wp, xL=cx-rx-wp, xR=cx+rx+wp;
+    g+='<g stroke="#facb8d" stroke-width="1.2" fill="none" opacity=".95"><path d="M'+(cx+30)+' '+(cy-ry-wp)+' v'+wp+'"/>'+
+      '<path d="M'+(cx+25)+' '+(cy-ry-wp)+' h10 M'+(cx+25)+' '+(cy-ry)+' h10"/>'+
+      '<path d="M'+xL+' '+(cy+ry+wp+30)+' H'+xR+'" stroke-dasharray="3 4"/><path d="M'+xL+' '+(cy+ry+wp+25)+' v10 M'+xR+' '+(cy+ry+wp+25)+' v10"/></g>'+
+      '<text x="'+(cx+42)+'" y="'+(cy-ry-wp/2-14)+'" fill="#facb8d" font-size="13">parede '+br(w,1)+' mm</text>'+
+      '<text x="'+cx+'" y="'+(cy+ry+wp+48)+'" fill="#facb8d" font-size="13" text-anchor="middle">eixo longo '+br(L,1)+' cm</text>';
+    g+='<text x="40" y="44" fill="#b9b0a2" font-size="12">VB · longitudinal</text><text x="600" y="44" fill="#b9b0a2" font-size="12" text-anchor="end">5 MHz</text>'+
+       '<text x="150" y="120" fill="#b9b0a2" font-size="12">fígado</text>'+(st?'<text x="'+(cx-rx-30)+'" y="'+(cy-ry-wp-12)+'" fill="#b9b0a2" font-size="12">infundíbulo</text>':'')+
+       '<path d="M560 440 h26" stroke="#b9b0a2" stroke-width="2"/><text x="573" y="458" fill="#b9b0a2" font-size="11" text-anchor="middle">1 cm</text>';
+    if(mu) g+='<g><path d="M320 6 v14" stroke="#facb8d" stroke-width="2"/><path d="M313 14 l7 8 l7 -8" stroke="#facb8d" stroke-width="2" fill="none"/><text x="336" y="18" fill="#facb8d" font-size="12">compressão: dor máxima sobre a vesícula</text></g>';
+    svg.innerHTML=DEF+g;
+    /* veredito */
+    var thick=w>4,dist=L>8,n=(thick?1:0)+(dist?1:0)+(fl?1:0)+(mu?1:0)+(sl?1:0)+(st?1:0),el=$('#us-v');
+    if(st&&!thick&&!dist&&!fl&&!mu&&!sl) verd(el,'b','Imagem','Colelitíase','<p>Cálculo com sombra acústica e parede fina, sem dor sob o transdutor. Não há critério de imagem para colecistite. Se a dor passou em poucas horas, é cólica biliar.</p>');
+    else if(!st&&thick&&!dist&&!fl&&!mu) verd(el,'m','Imagem','Espessamento isolado','<p>Parede de '+br(w,1)+' mm sem cálculo, sem distensão e sem Murphy. Pense em ascite, hipoalbuminemia, hepatite e insuficiência cardíaca antes de chamar de colecistite.</p>');
+    else if(n===0) verd(el,'b','Imagem','Vesícula normal','<p>Parede fina, sem cálculo, sem distensão.</p>');
+    else if(!st&&(thick||dist||fl||mu)) verd(el,'w','Imagem · critério C','Colecistite sem cálculo visível','<p>Há achados inflamatórios sem cálculo. No doente crítico, é a colecistite alitiásica; fora dele, procure o cálculo pequeno ou impactado no cístico.</p>');
+    else verd(el,(fl||w>5)?'d':'w','Imagem · critério C de Tóquio','Compatível com colecistite aguda','<p>'+[st?'cálculo impactado':'',thick?'parede de '+br(w,1)+' mm':'',dist?'vesícula distendida':'',fl?'líquido pericolecístico':'',sl?'debris':'',mu?'Murphy ultrassonográfico':''].filter(Boolean).join(' · ')+'.</p>'+(w>5?'<p>A faixa escura dentro da parede é a camada sonolucente: edema da subserosa.</p>':''));
+  }
+  ['#i-wall','#i-len'].forEach(function(s){$(s).addEventListener('input',draw)});
+  ['#i-stone','#i-fluid','#i-sludge','#i-murphy'].forEach(function(s){$(s).addEventListener('change',draw)});
+  var P={lit:[2.5,7,1,0,0,0],ac:[6,9,1,1,1,1],asc:[7,7,0,0,0,0]};
+  seg($('#us-pre'),function(v){var p=P[v];$('#i-wall').value=p[0];$('#i-len').value=p[1];
+    $('#i-stone').checked=!!p[2];$('#i-fluid').checked=!!p[3];$('#i-sludge').checked=!!p[4];$('#i-murphy').checked=!!p[5];draw()});
+  draw();
+})();
+
+/* ---------- 2. parede ---------- */
+(function(){
+  var TXT=[
+   '<b>Edematosa.</b> Capilares e linfáticos dilatados, edema da camada subserosa. A parede está intacta e a arquitetura preservada. É o melhor momento para operar: o plano com o leito hepático ainda descola.',
+   '<b>Necrosante.</b> A pressão intramural obstrui o fluxo: áreas de hemorragia e necrose focal. A necrose ainda não atravessa toda a parede. Na imagem, parede irregular e assimétrica.',
+   '<b>Supurativa.</b> Leucócitos invadem a parede, há abscessos intramurais e a necrose se completa. O processo de reparo começa: a parede contrai e fibrosa. Risco de perfuração e abscesso pericolecístico.',
+   '<b>Crônica.</b> Surtos repetidos deixam fibrose, atrofia da mucosa e seios de Rokitansky-Aschoff. Não é estágio do episódio agudo; é o fundo sobre o qual o próximo episódio acontece.'];
+  function draw(k){var r=rng(11+k),o='<rect width="640" height="380" fill="#efe6d6"/>';
+    var th=[[56,40,70,92],[56,40,70,100],[40,34,58,96],[26,30,40,72]][k]; /* mucosa, lâmina, muscular, subserosa */
+    var y0=46,y=y0;
+    o+='<rect width="640" height="'+(y0+th[0])+'" fill="#cdb57f"/><text x="16" y="28" font-size="13" fill="#5a4630">lúmen · bile</text>';
+    /* mucosa com pregas */
+    var mh=th[0],path='M0 '+(y0+mh);
+    for(var x=0;x<=640;x+=40){var hgt=k===3?8:mh;path+=' L'+x+' '+(y0+mh)+' L'+(x+8)+' '+(y0+mh-hgt+6)+' Q'+(x+20)+' '+(y0-4+(mh-hgt))+' '+(x+32)+' '+(y0+mh-hgt+6)+' L'+(x+40)+' '+(y0+mh);}
+    o+='<path d="'+path+' L640 '+(y0+mh+th[1])+' L0 '+(y0+mh+th[1])+' Z" fill="#d7b98a"/>';
+    o+='<path d="'+path.replace(/^M0 [0-9.]+/,'M0 '+(y0+mh))+'" fill="none" stroke="#8d6428" stroke-width="2"/>';
+    y=y0+mh;var yl=y+th[1],ym=yl+th[2],ys=ym+th[3];
+    o+='<rect x="0" y="'+yl+'" width="640" height="'+th[2]+'" fill="#b98f5c"/>';
+    for(var i=0;i<38;i++){var xx=r()*640,yy=yl+6+r()*(th[2]-12);o+='<path d="M'+xx+' '+yy+' l'+(18+r()*20)+' '+(r()*4-2)+'" stroke="#8d6428" stroke-width="2" opacity=".55"/>';}
+    o+='<rect x="0" y="'+ym+'" width="640" height="'+th[3]+'" fill="'+(k===0?'#f3ead8':'#e8d6b4')+'"/>';
+    o+='<rect x="0" y="'+ys+'" width="640" height="4" fill="#6b4c1e"/><rect x="0" y="'+(ys+4)+'" width="640" height="'+(380-ys-4)+'" fill="#c7a77a" opacity=".5"/>';
+    /* edema: pontilhado e vasos dilatados */
+    if(k<=1){for(i=0;i<70;i++)o+='<circle cx="'+(r()*640)+'" cy="'+(ym+4+r()*(th[3]-8))+'" r="1.3" fill="#b68235" opacity=".35"/>';
+      for(i=0;i<9;i++){var vx=30+i*70+r()*20,vy=ym+20+r()*(th[3]-40);o+='<ellipse cx="'+vx+'" cy="'+vy+'" rx="'+(9+r()*6)+'" ry="'+(5+r()*3)+'" fill="#fff8ec" stroke="#8d6428" stroke-width="1.5"/>';}}
+    if(k===1){for(i=0;i<7;i++){var hx=40+r()*560,hy=y0+10+r()*(mh+th[1]+th[2]-20);o+='<ellipse cx="'+hx+'" cy="'+hy+'" rx="'+(16+r()*16)+'" ry="'+(8+r()*8)+'" fill="#4a3420" opacity=".75"/>';}
+      o+='<rect x="210" y="'+y0+'" width="120" height="'+(mh+th[1])+'" fill="url(#hatch)"/>';}
+    if(k===2){for(i=0;i<260;i++)o+='<circle cx="'+(r()*640)+'" cy="'+(y0+r()*(ys-y0))+'" r="1.6" fill="#3a2a1a" opacity=".7"/>';
+      o+='<circle cx="380" cy="'+(ym+th[3]/2)+'" r="30" fill="#f6e6bf" stroke="#3a2a1a" stroke-width="2"/>';
+      for(i=0;i<40;i++){var a=r()*6.28,d=r()*26;o+='<circle cx="'+(380+Math.cos(a)*d)+'" cy="'+(ym+th[3]/2+Math.sin(a)*d)+'" r="1.6" fill="#3a2a1a"/>';}
+      o+='<text x="420" y="'+(ym+th[3]/2+4)+'" font-size="12" fill="#3a2a1a">abscesso intramural</text>';
+      for(i=0;i<14;i++){var fx=r()*600;o+='<path d="M'+fx+' '+(ym+6+r()*(th[3]-12))+' q20 -6 40 0" stroke="#6b4c1e" fill="none" stroke-width="1.2" opacity=".7"/>';}}
+    if(k===3){for(i=0;i<34;i++){var fx2=r()*600;o+='<path d="M'+fx2+' '+(yl+4+r()*(ys-yl-8))+' q22 -5 44 0" stroke="#6b4c1e" fill="none" stroke-width="1.4" opacity=".75"/>';}
+      [120,330,500].forEach(function(sx){o+='<path d="M'+(sx-9)+' '+y+' Q'+(sx-12)+' '+(ym+18)+' '+sx+' '+(ym+26)+' Q'+(sx+12)+' '+(ym+18)+' '+(sx+9)+' '+y+'" fill="#d9c49a" stroke="#8d6428" stroke-width="2"/>'});
+      o+='<text x="350" y="'+(ym+44)+'" font-size="12" fill="#3a2a1a">seio de Rokitansky-Aschoff</text>';}
+    if(k===1) o+='<text x="340" y="'+(y0+mh/2+4)+'" font-size="12" fill="#3a2a1a">necrose focal da mucosa</text>';
+    if(k===0) o+='<rect x="24" y="'+(ym+th[3]-26)+'" width="226" height="20" fill="#f3ead8"/><text x="30" y="'+(ym+th[3]-11)+'" font-size="12" fill="#3a2a1a">edema subseroso e vasos dilatados</text>';
+    /* rótulos laterais */
+    var lab=[['mucosa',y0+mh/2],['lâmina própria',y+th[1]/2],['muscular',yl+th[2]/2],['perimuscular',ym+th[3]/2],['serosa',ys+12]];
+    o+='<g font-size="11.5" fill="#3a2a1a" text-anchor="end">';lab.forEach(function(l){o+='<rect x="530" y="'+(l[1]-9)+'" width="104" height="18" fill="#efe6d6" opacity=".85" rx="2"/><text x="630" y="'+(l[1]+4)+'">'+l[0]+'</text>'});o+='</g>';
+    var tot=mh+th[1]+th[2]+th[3];
+    o='<defs><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0 V8" stroke="#3a2a1a" stroke-width="2" opacity=".5"/></pattern></defs>'+o;
+    $('#wall').innerHTML=o;$('#w-txt').innerHTML='<p style="margin:0">'+TXT[k]+'</p>';}
+  seg($('#w-seg'),function(v){draw(+v)});draw(0);
+})();
+
+/* ---------- 3. diagnóstico ---------- */
+(function(){
+  function upd(){var h={A:0,B:0,C:0};$$('.dx').forEach(function(c){if(c.checked)h[c.dataset.g]=1});var el=$('#dx-v');
+    if(h.A&&h.B&&h.C) verd(el,'d','TG18','Diagnóstico definitivo','<p>A + B + C. Siga para a gravidade.</p>');
+    else if(h.A&&h.B) verd(el,'w','TG18','Diagnóstico suspeito','<p>A + B sem imagem. Peça o ultrassom: com critério C, vira definitivo.</p>');
+    else if(h.A&&h.C) verd(el,'m','TG18','Não preenche os critérios','<p>A + C sem B. Falta inflamação sistêmica. Repita exames e reavalie; não é diagnóstico pelos critérios.</p>');
+    else verd(el,'b','TG18','Não preenche os critérios',h.A?'<p>Só sinais locais.</p>':'<p>Sem sinal local (A), Tóquio não sustenta o diagnóstico, por mais que a imagem e os exames sugiram.</p>');}
+  $$('.dx').forEach(function(c){c.addEventListener('change',upd)});upd();
+})();
+
+/* ---------- 4. gravidade ---------- */
+(function(){
+  var cb=$$('.gv');
+  function upd(){var g3=cb.some(function(c){return c.checked&&c.dataset.g==='3'}),g2=cb.some(function(c){return c.checked&&c.dataset.g==='2'}),el=$('#gv-v');
+    var m='<div class="meter">'+[1,2,3].map(function(i){return '<i class="'+((g3?3:g2?2:1)>=i?'on':'')+'"></i>'}).join('')+'</div>';
+    if(g3) verd(el,'d','TG18 · gravidade','Grau III · grave','<p>Há disfunção orgânica. O grau III é definido pela disfunção, não pela vesícula.</p>'+m);
+    else if(g2) verd(el,'w','TG18 · gravidade','Grau II · moderada','<p>Sem disfunção orgânica, mas com inflamação local ou sistêmica importante. Dissecção difícil esperada.</p>'+m);
+    else verd(el,'b','TG18 · gravidade','Grau I · leve','<p>Nenhum critério de II ou III. Doente saudável com inflamação leve da vesícula.</p>'+m);}
+  cb.forEach(function(c){c.addEventListener('change',upd)});
+  seg($('#gv-pre'),function(v){cb.forEach(function(c,i){c.checked=(v==='l'&&i===6)||(v==='h'&&(i===0||i===6))});upd()});
+  upd();
+})();
+
+/* ---------- 5. máquina ---------- */
+(function(){
+  function run(){
+    var g=+segVal($('#m-g')),cci=+$('#i-cci').value,asa=+segVal($('#m-asa')),fosf=$('#i-fosf').checked,npf=$('#i-npf').checked,resp=$('#i-resp').checked;
+    $('#o-cci').textContent=cci;$('#m-g3').querySelectorAll('label')[0].style.display=g===3?'':'none';$('#m-g3').querySelectorAll('label')[1].style.display=g===3?'':'none';$('#m-g3').querySelectorAll('label')[2].style.display=g===2?'':'none';
+    var nodes=[],el=$('#m-v'),okC,okA;
+    nodes.push(['Antibiótico e suporte clínico','Para todos os graus. No grau III, suporte de órgãos (vasopressor, ventilação) antes de decidir.',1]);
+    if(g<3){okC=cci<=5;okA=asa<=2;
+      nodes.push(['CCI ≤ 5 e/ou ASA ≤ 2?','CCI '+cci+' · ASA '+['','I','II','III','IV'][asa],1]);
+      if(okC&&okA){nodes.push(['Colecistectomia laparoscópica precoce',g===2?'Em centro com experiência em técnica laparoscópica avançada.':'Assim que possível na mesma internação.',1]);
+        verd(el,g===2?'w':'b','Conduta TG18 · grau '+['','I','II'][g],'Colecistectomia laparoscópica precoce',g===2?'<p>Em centro experiente. Se a visão crítica não for obtida, procedimento de resgate.</p>':'<p>É o tratamento definitivo e o mais custo-efetivo.</p>');}
+      else if(okC||okA){nodes.push(['Índices discordam','A diretriz escreve "e/ou": decisão individual pelo risco cirúrgico real.',1]);
+        verd(el,'m','Conduta TG18 · grau '+['','I','II'][g],'Individualizar','<p>Um índice favorece operar, o outro não. Pese o risco cirúrgico; se não operar, antibiótico e reavaliação.</p>');}
+      else{nodes.push(['Tratamento conservador inicial','Antibiótico e suporte, observação.',1]);
+        if(g===2&&!resp){nodes.push(['Sem resposta → drenagem da vesícula','Colecistostomia percutânea trans-hepática, urgente ou precoce.',1]);
+          verd(el,'d','Conduta TG18 · grau II alto risco','Drenagem da vesícula','<p>Doente de alto risco sem resposta clínica: colecistostomia percutânea. Colecistectomia eletiva quando o risco cair.</p>');}
+        else{nodes.push(['Colecistectomia tardia ou eletiva','Quando o risco cirúrgico permitir.',1]);
+          verd(el,'m','Conduta TG18 · grau '+['','I','II'][g]+' alto risco','Conservador, cirurgia tardia','<p>Antibiótico e observação. Se não responder, drenagem da vesícula. Colecistectomia eletiva depois.</p>');}}
+    } else {
+      var ok=fosf&&!npf&&cci<=3&&asa<=2;
+      nodes.push(['FOSF, sem preditor negativo, CCI ≤ 3 e ASA ≤ 2?',(fosf?'disfunção favorável':'disfunção não favorável')+' · '+(npf?'com':'sem')+' preditor negativo · CCI '+cci+' · ASA '+['','I','II','III','IV'][asa],1]);
+      if(ok){nodes.push(['Colecistectomia laparoscópica precoce','Só em centro avançado, depois de reverter a disfunção.',1]);
+        verd(el,'w','Conduta TG18 · grau III','Colecistectomia precoce em centro avançado','<p>Disfunção cardiovascular ou renal que reverteu rápido, sem icterícia, sem disfunção neurológica ou respiratória, doente de baixo risco.</p>');}
+      else{nodes.push(['Drenagem urgente ou precoce da vesícula','Colecistostomia percutânea assim que o doente permitir.',1]);
+        nodes.push(['Colecistectomia eletiva após melhora','Se o risco cirúrgico permitir.',1]);
+        verd(el,'d','Conduta TG18 · grau III','Drenagem da vesícula','<p>'+(npf?'Há preditor negativo (icterícia, disfunção neurológica ou respiratória). ':'')+(!fosf?'A disfunção não é do tipo favorável. ':'')+((cci>3||asa>2)?'O doente é de alto risco. ':'')+'Suporte, antibiótico e drenagem; colecistectomia depois.</p>');}
+    }
+    var h='';nodes.forEach(function(n,i){if(i)h+='<div class="farrow on"></div>';h+='<div class="fnode'+(i===nodes.length-1?' on':'')+'"><b>'+n[0]+'</b>'+n[1]+'</div>'});
+    $('#fl').innerHTML=h;}
+  seg($('#m-g'),run);seg($('#m-asa'),run);$('#i-cci').addEventListener('input',run);
+  ['#i-fosf','#i-npf','#i-resp'].forEach(function(s){$(s).addEventListener('change',run)});run();
+})();
+
+/* ---------- 6. prancha ---------- */
+(function(){
+  var svg=$('#calot');
+  var base='<defs><pattern id="liv" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".9" fill="#2c2015"/><circle cx="5.5" cy="5" r=".7" fill="#7a5a33"/></pattern>'+
+    '<pattern id="fat" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="3" fill="#e9d29a" opacity=".55"/><circle cx="8" cy="8" r="2.4" fill="#d8bb78" opacity=".5"/></pattern></defs>'+
+    '<rect width="680" height="520" fill="#1a1612"/>'+
+    /* porta */
+    '<path d="M438 512 C 432 420 426 300 420 172" stroke="#5a4026" stroke-width="30" fill="none" stroke-linecap="round"/>'+
+    /* duodeno */
+    '<path d="M300 470 C 360 456 470 456 560 470 C 610 478 650 490 676 500 L676 520 L300 520 Z" fill="#5d4a35" stroke="#2c2015" stroke-width="1.5"/>'+
+    '<text x="480" y="498" fill="#d8c7a8" font-size="13">duodeno</text><text x="446" y="440" fill="#d8c7a8" font-size="12" transform="rotate(-86 446 440)">veia porta</text>'+
+    /* fígado */
+    '<path d="M0 0 H680 V176 C 560 182 470 166 420 160 C 360 168 300 178 250 196 C 180 222 110 250 60 286 C 36 302 14 312 0 318 Z" fill="#4a3420"/>'+
+    '<path d="M0 0 H680 V176 C 560 182 470 166 420 160 C 360 168 300 178 250 196 C 180 222 110 250 60 286 C 36 302 14 312 0 318 Z" fill="url(#liv)" opacity=".5"/>'+
+    '<text x="440" y="140" fill="#d8c7a8" font-size="14" font-style="italic">fígado (rebatido)</text>'+
+    /* sulco de Rouvière */
+    '<path d="M70 232 C 95 222 120 216 150 214" stroke="#120e0a" stroke-width="5" fill="none" stroke-linecap="round"/>'+
+    /* placa cística (visível só dissecado) */
+    '<path id="plca" class="reg" d="M128 268 C 180 240 240 214 292 200" stroke="#e1ad66" stroke-width="3" stroke-dasharray="6 4" fill="none" opacity="0"/>'+
+    /* triângulo */
+    '<path class="reg" data-reg="tri" id="tri" d="M314 232 C 340 258 360 284 388 300 L 410 170 C 370 174 330 182 300 196 Z" fill="#facb8d" opacity=".0"/>'+
+    /* artéria hepática própria e direita (passa atrás do DHC) */
+    '<path class="reg" data-reg="ahd" d="M470 512 C 462 420 452 320 448 262 C 444 236 430 214 404 206" stroke="#e1ad66" stroke-width="7" fill="none" stroke-linecap="round"/>'+
+    '<path class="reg" data-reg="ahd" d="M404 206 C 380 200 350 194 300 186" stroke="#e1ad66" stroke-width="6" fill="none" stroke-dasharray="7 5"/>'+
+    '<path d="M448 262 C 470 236 500 200 520 176" stroke="#e1ad66" stroke-width="5" fill="none"/>'+
+    /* artéria cística */
+    '<path class="reg" data-reg="ac" d="M372 199 C 352 208 334 216 312 222" stroke="#facb8d" stroke-width="4" fill="none" stroke-linecap="round"/>'+
+    /* vesícula */
+    '<path class="reg" data-reg="ves inf" d="M300 200 C 330 206 334 236 314 250 C 290 268 240 300 190 340 C 150 372 104 372 98 340 C 92 306 150 266 210 234 C 240 218 270 202 300 200 Z" fill="#8d6428" stroke="#3a2a1a" stroke-width="1.5"/>'+
+    '<path d="M110 336 C 140 300 200 262 270 222" stroke="#c09456" stroke-width="5" fill="none" opacity=".5" stroke-linecap="round"/>'+
+    /* ductos */
+    '<g fill="none" stroke-linecap="round"><path class="reg" data-reg="dc" d="M314 236 C 338 256 358 284 388 300" stroke="#efe6d6" stroke-width="9"/>'+
+    '<path class="reg" data-reg="dhc" d="M412 158 C 406 210 398 262 390 300" stroke="#efe6d6" stroke-width="11"/>'+
+    '<path d="M412 158 C 392 148 372 146 352 150 M412 158 C 434 148 456 146 478 150" stroke="#efe6d6" stroke-width="8"/>'+
+    '<path class="reg" data-reg="col" d="M390 300 C 391 360 396 412 404 470" stroke="#efe6d6" stroke-width="12"/></g>'+
+    /* linfonodo */
+    '<ellipse class="reg" data-reg="lund" cx="334" cy="230" rx="8" ry="6" fill="#c7a77a" stroke="#3a2a1a"/>';
+  var fat='<g id="fatg"><path d="M310 196 C 350 186 400 176 408 176 C 404 230 396 270 390 296 C 360 290 330 262 312 236 C 300 222 300 206 310 196 Z" fill="#a8864f"/><path d="M310 196 C 350 186 400 176 408 176 C 404 230 396 270 390 296 C 360 290 330 262 312 236 C 300 222 300 206 310 196 Z" fill="url(#fat)"/></g>';
+  var pins=[['ves',150,318,'1'],['inf',300,254,'2'],['dc',356,292,'3'],['dhc',426,232,'4'],['col',412,380,'5'],['ac',346,192,'6'],['ahd',476,300,'7'],['lund',322,214,'8'],['rouv',112,236,'9'],['tri',372,236,'T']];
+  var INFO={
+   ves:{t:'1 · Vesícula',h:'Fundo e corpo',body:'<p style="margin:0;font-size:14px">O fundo é tracionado em direção ao ombro direito para expor o triângulo. Na colecistite, a parede edemaciada é friável; a pinça atraumática segura melhor o corpo esvaziado por punção.</p>'},
+   inf:{t:'2 · Infundíbulo',h:'Bolsa de Hartmann',body:'<p style="margin:0;font-size:14px">Tracionado lateral e caudalmente, abre o triângulo hepatocístico. É onde o cálculo impacta. Um cálculo grande aqui, colado ao ducto hepático comum, é a configuração de Mirizzi.</p>'},
+   dc:{t:'3 · Ducto cístico',h:'Limite inferior do triângulo',body:'<p style="margin:0;font-size:14px">Só é clipado depois da visão crítica. Variações frequentes: inserção baixa, trajeto paralelo ao hepático comum, implantação no ducto hepático direito.</p>'},
+   dhc:{t:'4 · Ducto hepático comum',h:'Limite medial',body:'<p style="margin:0;font-size:14px">A estrutura que não pode ser confundida com o cístico. A lesão clássica (Strasberg E) é clipar e seccionar o colédoco ou o hepático comum achando que é o cístico.</p>'},
+   col:{t:'5 · Colédoco',h:'Abaixo da junção cístico-hepática',body:'<p style="margin:0;font-size:14px">Segue para trás do duodeno e para dentro do pâncreas até a papila. Está no plano do sulco de Rouvière; a dissecção deve ficar acima dele.</p>'},
+   ac:{t:'6 · Artéria cística',h:'Dentro do triângulo',body:'<p style="margin:0;font-size:14px">Ramo habitual da artéria hepática direita, chega à vesícula pelo lado do infundíbulo, perto do linfonodo cístico. Pode ser dupla ou nascer fora do triângulo.</p>'},
+   ahd:{t:'7 · Artéria hepática direita',h:'Atrás do hepático comum',body:'<p style="margin:0;font-size:14px">Cruza por trás do ducto hepático comum (tracejado) para entrar no fígado. Quando forma uma alça próxima à vesícula (a "corcova de Moynihan"), pode ser tomada pela artéria cística.</p>'},
+   lund:{t:'8 · Linfonodo cístico',h:'Linfonodo de Mascagni ou de Lund',body:'<p style="margin:0;font-size:14px">Marca a vizinhança da artéria cística. Costuma aumentar na colecistite.</p>'},
+   rouv:{t:'9 · Sulco de Rouvière',h:'Linha de segurança',body:'<p style="margin:0;font-size:14px">Sulco na face inferior do lobo direito, no plano da via biliar principal. Dissecar sempre acima (ventral) dessa linha.</p>'},
+   tri:{t:'T · Triângulo hepatocístico',h:'Cístico, hepático comum, fígado',body:'<p style="margin:0;font-size:14px">É a área que precisa ser limpa de gordura e tecido fibroso. A artéria cística passa por dentro dele. O triângulo de Calot original usava a artéria cística como limite superior.</p>'}};
+  function draw(){var d=+segVal($('#cv-seg'));var p='';
+    pins.forEach(function(q){p+='<g class="hot" data-k="'+q[0]+'"><circle class="pin" cx="'+q[1]+'" cy="'+q[2]+'" r="10"/><text x="'+q[1]+'" y="'+q[2]+'">'+q[3]+'</text></g>'});
+    svg.innerHTML=base+(d?'':fat)+'<g id="pins">'+p+'</g><text x="52" y="510" fill="#b9a68c" font-size="11">Vista anterior esquemática · direita do paciente à esquerda</text>';
+    if(d)$('#plca').setAttribute('opacity','1');
+    plate('#calot','#cal-box',INFO,cur);
+    $$('#calot .hot').forEach(function(h){h.addEventListener('click',function(){cur=h.dataset.k;hi()})});hi();}
+  var cur='tri';
+  function hi(){$$('#calot .reg').forEach(function(r){var k=r.dataset.reg;if(!k)return;var on=k.split(' ').indexOf(cur)>=0;
+      if(r.id==='tri')r.setAttribute('opacity',on?'.28':'0');else r.style.filter=on?'drop-shadow(0 0 5px #facb8d)':'';});}
+  function cvs(){var n=$$('.cvs').filter(function(c){return c.checked}).length,d=+segVal($('#cv-seg')),el=$('#cv-v');
+    if(n===3&&d) verd(el,'b','Visão crítica de segurança','Pode clipar e seccionar','<p>Duas estruturas, e só duas, entram na vesícula: cístico e artéria cística.</p>');
+    else if(n===3&&!d) verd(el,'m','Visão crítica de segurança','Marcado sem dissecar?','<p>Com a gordura cobrindo o triângulo, os três critérios não podem estar presentes. Disseque antes.</p>');
+    else verd(el,n?'w':'d','Visão crítica de segurança','Não clipe nada','<p>'+n+' de 3 critérios. Se a inflamação impede o restante: colecistectomia subtotal (ou técnica fundo-primeiro), colecistostomia ou conversão.</p>');}
+  seg($('#cv-seg'),function(){draw();cvs()});$$('.cvs').forEach(function(c){c.addEventListener('change',cvs)});draw();cvs();
+})();
+
+/* ---------- 8. forja ---------- */
+forja([
+ {s:'Marlene, 46 anos, dor no hipocôndrio direito há 30 horas, febre de 38,3 °C, Murphy positivo, leucócitos 14.000/mm³. Ultrassom: cálculo impactado no infundíbulo, parede de 6 mm, líquido pericolecístico. ASA II, índice de Charlson 1. Qual a conduta?',
+  a:['Antibiótico e colecistectomia eletiva em 6 a 8 semanas','Colecistectomia laparoscópica precoce','Colecistostomia percutânea','CPRE com papilotomia','Cintilografia hepatobiliar para confirmar'],c:1,
+  r:'Diagnóstico definitivo (A + B + C), grau I (nenhum critério de II ou III), doente de baixo risco: colecistectomia laparoscópica precoce, na mesma internação.',
+  w:['Era a conduta para quem não pode operar agora; o atraso aumenta readmissão e não facilita a cirurgia.','','Drenagem é para o doente de alto risco que não responde, ou para o grau III desfavorável.','Não há sinal de cálculo no colédoco (sem icterícia, sem dilatação).','O diagnóstico já está fechado pelos critérios; cintilografia é para a dúvida.']},
+ {s:'Mesmo caso, mas com <mark>leucócitos de 21.000/mm³</mark>. ASA II, Charlson 1, hospital com cirurgião experiente em videolaparoscopia. Qual a conduta?',
+  a:['Antibiótico por 7 dias e alta','Colecistostomia percutânea','Tratamento conservador e colecistectomia após 6 semanas','Colecistectomia laparoscópica precoce em centro experiente','Colecistectomia aberta de urgência'],c:3,
+  r:'Leucócitos acima de 18.000 fazem grau II. Com CCI ≤ 5 e ASA ≤ 2, o TG18 indica colecistectomia laparoscópica precoce em centro com experiência. A gravidade mudou; a conduta, não.',
+  w:['Antibiótico isolado não trata a obstrução e mantém a recorrência.','Drenagem é para alto risco sem resposta.','O adiamento é para o doente de alto risco.','','A via laparoscópica continua preferida; a aberta é conversão, não escolha inicial.']},
+ {s:'Mesmo quadro grau II, mas o paciente tem <mark>82 anos, insuficiência cardíaca classe III e DPOC (Charlson 6, ASA IV)</mark>. Após 48 horas de antibiótico, segue febril e com dor. Qual a conduta?',
+  a:['Colecistostomia percutânea','Colecistectomia laparoscópica imediata','Trocar o antibiótico e aguardar mais 72 horas','CPRE com prótese na via biliar','Colecistectomia subtotal aberta'],c:0,
+  r:'Grau II em doente de alto risco que não respondeu ao tratamento inicial: drenagem urgente ou precoce da vesícula, preferencialmente percutânea trans-hepática. Colecistectomia eletiva depois, se o risco permitir.',
+  w:['','O risco cirúrgico é proibitivo neste momento.','A falta de resposta é justamente a indicação de drenar.','A prótese biliar drena o colédoco, não a vesícula obstruída no infundíbulo.','É manobra de resgate intraoperatório, não alternativa à drenagem no doente que não suporta cirurgia.']},
+ {s:'Mesma Marlene, mas evolui com <mark>hipotensão que exige noradrenalina e rebaixamento do nível de consciência</mark>. Após reanimação, a pressão estabiliza. Qual a conduta?',
+  a:['Colecistectomia laparoscópica precoce','Observação clínica até a melhora neurológica','Colecistectomia aberta imediata','CPRE de urgência','Suporte, antibiótico e drenagem da vesícula'],c:4,
+  r:'Disfunção orgânica faz grau III. A disfunção neurológica é preditor negativo: mesmo que a cardiovascular reverta, a colecistectomia precoce não está indicada. Drenagem urgente ou precoce da vesícula e colecistectomia eletiva depois.',
+  w:['Só para grau III com disfunção favorável, sem preditor negativo e doente de baixo risco.','O foco precisa ser drenado.','Operar o doente instável e grave aumenta a mortalidade.','Não há colangite nem cálculo no colédoco.','']},
+ {s:'Mulher de 50 anos com dor no hipocôndrio direito e <mark>Murphy positivo, sem febre, leucócitos e PCR normais</mark>. Ultrassom com cálculo e parede de 5 mm. Pelos critérios de Tóquio, o diagnóstico é:',
+  a:['Definitivo, porque há sinal local e imagem','Suspeito, porque falta a cintilografia','Não preenche os critérios: falta inflamação sistêmica','Definitivo, porque a parede está acima de 4 mm','Suspeito, porque o Murphy isolado basta'],c:2,
+  r:'Suspeita exige A + B; definitivo, A + B + C. Sem febre, PCR ou leucocitose, não há B. A + C não fecha nenhum dos dois.',
+  w:['A + C não é combinação válida.','A cintilografia não é exigida: o ultrassom com achados característicos já preenche C. Se feita, a não visualização da vesícula também conta como critério C.','','A imagem é C; sozinha com A, não fecha.','Murphy é um item de A; precisa de B junto.']},
+ {s:'Homem de 64 anos, <mark>diabético</mark>, com dor no hipocôndrio direito há 2 dias e febre. Tomografia mostra <mark>gás na parede da vesícula</mark>. Sem disfunção orgânica. Qual a conduta?',
+  a:['Antibiótico de amplo espectro e colecistectomia de urgência','Antibiótico oral e colecistectomia eletiva','Cintilografia hepatobiliar','CPRE','Observação: gás na parede é artefato frequente no diabético'],c:0,
+  r:'Colecistite enfisematosa: inflamação local acentuada (grau II, no mínimo), associada a anaeróbios produtores de gás, com alto risco de gangrena e perfuração. Antibiótico de amplo espectro e colecistectomia de urgência.',
+  w:['','Subestima a gravidade da forma enfisematosa.','O diagnóstico já está feito.','Não há obstrução do colédoco.','Gás na parede é sinal de infecção por anaeróbio, não artefato.']}
+],'#forja-list','#forja-score','#forja-reset');
+</script></body></html>
