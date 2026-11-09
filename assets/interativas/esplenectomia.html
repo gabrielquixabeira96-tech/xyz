@@ -1,0 +1,1246 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
+<title>Atlas da Esplenectomia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F6F2EA; --panel:#FFFDF9; --panel2:#F0EAE0; --line:#D9D0C3; --ink:#1F1A17; --ink2:#6B5F55; --ink3:#9A8E82;
+  --acc:#2F5D8A; --acc-soft:#DCE7F2;
+  --b:#1E7F72; --b-soft:#D9EFEA; --d:#B7352B; --d-soft:#F6DBD7; --w:#B9741A; --w-soft:#F8E8CF; --m:#6B4FA3; --m-soft:#E7DFF5;
+  --mark:#FFF1B8;
+  --shadow:0 1px 2px rgba(31,26,23,.06),0 8px 24px rgba(31,26,23,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#171412; --panel:#221E1B; --panel2:#2B2623; --line:#3C3531; --ink:#EDE6DC; --ink2:#B5A99C; --ink3:#7E746A;
+    --acc:#7FA8D6; --acc-soft:#26364A;
+    --b:#4FB3A4; --b-soft:#1B3A36; --d:#E0655A; --d-soft:#4A211D; --w:#E0A04A; --w-soft:#4A3517; --m:#A88FE0; --m-soft:#332A4D;
+    --mark:#4A3F1A;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#171412; --panel:#221E1B; --panel2:#2B2623; --line:#3C3531; --ink:#EDE6DC; --ink2:#B5A99C; --ink3:#7E746A;
+  --acc:#7FA8D6; --acc-soft:#26364A;
+  --b:#4FB3A4; --b-soft:#1B3A36; --d:#E0655A; --d-soft:#4A211D; --w:#E0A04A; --w-soft:#4A3517; --m:#A88FE0; --m-soft:#332A4D;
+  --mark:#4A3F1A;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15.5px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Fraunces,Georgia,"Times New Roman",serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(2rem,4.6vw,3.4rem);font-weight:600;line-height:1.05;letter-spacing:-.01em}
+h2{font-size:1.7rem;font-weight:600;line-height:1.15}
+h3{font-size:1.1rem;font-weight:600}
+p{margin:.55em 0}
+mark{background:var(--mark);color:inherit;padding:0 .2em;border-radius:3px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+.eyebrow{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);font-weight:600}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+/* rail */
+.rail{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.rail .wrap{display:flex;gap:4px;overflow-x:auto;padding:8px 22px;scrollbar-width:none}
+.rail .wrap::-webkit-scrollbar{display:none}
+.rail a{flex:0 0 auto;text-decoration:none;color:var(--ink2);font-size:.78rem;padding:6px 10px;border-radius:999px;border:1px solid transparent;white-space:nowrap}
+.rail a b{font-family:"IBM Plex Mono",monospace;font-weight:500;color:var(--acc);margin-right:4px}
+.rail a:hover,.rail a.on{background:var(--panel);border-color:var(--line);color:var(--ink)}
+/* hero */
+.hero{padding:56px 0 30px;border-bottom:1px solid var(--line)}
+.hero .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:end}
+.hero p.lead{font-size:1.08rem;max-width:62ch;color:var(--ink)}
+.vitals{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow)}
+.vitals .row{display:grid;grid-template-columns:1fr auto;gap:10px;padding:6px 0;border-bottom:1px dashed var(--line);align-items:baseline}
+.vitals .row:last-child{border-bottom:0}
+.vitals .k{color:var(--ink2);font-size:.85rem}
+.vitals .v{font-family:"IBM Plex Mono",monospace;font-size:1rem}
+.vitals .v.d{color:var(--d);font-weight:500}
+/* chapters */
+section.ch{padding:54px 0 26px;border-bottom:1px solid var(--line)}
+section.ch .num{font-family:"IBM Plex Mono",monospace;color:var(--acc);font-size:.8rem;letter-spacing:.1em}
+section.ch header{margin-bottom:18px;max-width:70ch}
+section.ch header p{color:var(--ink2);margin-top:6px}
+.plate{display:grid;grid-template-columns:1.25fr .9fr;gap:22px;align-items:start}
+@media (max-width:860px){.plate{grid-template-columns:1fr}.hero .grid{grid-template-columns:1fr}}
+.fig{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:var(--shadow);overflow:hidden}
+.fig svg,.fig canvas{display:block;width:100%;height:auto;max-width:100%}
+.fig .cap{font-size:.8rem;color:var(--ink2);margin:10px 4px 0;line-height:1.4}
+.ctl{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
+.ctl h3{font-size:.95rem}
+.prose{max-width:70ch;margin-top:20px}
+.prose p{margin:.7em 0}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button,.btn{font:inherit;font-size:.82rem;padding:7px 11px;border-radius:9px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);cursor:pointer;transition:all .15s}
+.seg button:hover,.btn:hover{border-color:var(--acc)}
+.seg button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.seg button.b.on{background:var(--b);border-color:var(--b)} .seg button.d.on{background:var(--d);border-color:var(--d)} .seg button.w.on{background:var(--w);border-color:var(--w)} .seg button.m.on{background:var(--m);border-color:var(--m)}
+.btn.primary{background:var(--acc);color:#fff;border-color:var(--acc)}
+.btn.danger{background:var(--d);color:#fff;border-color:var(--d)}
+.btn:focus-visible,.seg button:focus-visible,input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+label.sl{display:flex;flex-direction:column;gap:4px;font-size:.82rem;color:var(--ink2)}
+label.sl .lv{display:flex;justify-content:space-between;align-items:baseline}
+label.sl .lv b{font-family:"IBM Plex Mono",monospace;color:var(--ink);font-weight:500}
+input[type=range]{width:100%;accent-color:var(--acc)}
+.ver{border-radius:10px;padding:10px 12px;border:1px solid var(--line);background:var(--panel2);font-size:.88rem}
+.ver.b{background:var(--b-soft);border-color:var(--b);color:var(--ink)} .ver.d{background:var(--d-soft);border-color:var(--d)} .ver.w{background:var(--w-soft);border-color:var(--w)} .ver.m{background:var(--m-soft);border-color:var(--m)}
+.ver strong{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px}
+.ver.b strong{color:var(--b)} .ver.d strong{color:var(--d)} .ver.w strong{color:var(--w)} .ver.m strong{color:var(--m)}
+.tag{display:inline-block;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:999px;font-weight:600}
+.tag.b{background:var(--b-soft);color:var(--b)} .tag.d{background:var(--d-soft);color:var(--d)} .tag.w{background:var(--w-soft);color:var(--w)} .tag.m{background:var(--m-soft);color:var(--m)} .tag.a{background:var(--acc-soft);color:var(--acc)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:.85rem}
+.kv .k{color:var(--ink2)} .kv .v{font-family:"IBM Plex Mono",monospace}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:22px 1fr;gap:8px;font-size:.88rem;align-items:start}
+.steps li::before{content:counter(s);font-family:"IBM Plex Mono",monospace;font-size:.75rem;color:#fff;background:var(--acc);border-radius:50%;width:20px;height:20px;display:grid;place-items:center;margin-top:2px}
+.forbid{border-left:3px solid var(--d);padding:8px 12px;background:var(--d-soft);border-radius:0 10px 10px 0;font-size:.86rem}
+.forbid b{color:var(--d)}
+.divg{border:1px dashed var(--w);background:var(--w-soft);border-radius:12px;padding:12px 14px;font-size:.9rem;margin-top:16px;max-width:70ch}
+.divg b{color:var(--w);text-transform:uppercase;font-size:.72rem;letter-spacing:.1em;display:block;margin-bottom:4px}
+.pearl{border-left:3px solid var(--acc);padding:8px 14px;margin-top:14px;max-width:70ch;font-family:Fraunces,Georgia,serif;font-size:1.05rem;font-style:italic}
+/* layers */
+.layer{cursor:pointer;transition:opacity .15s}
+.layer:hover{opacity:.85}
+.layer.on rect,.layer.on path,.layer.on circle,.layer.on ellipse{stroke:var(--acc)!important;stroke-width:3px!important}
+/* timeline */
+.tl{position:relative;padding:10px 0 0}
+.tl .ev{cursor:pointer}
+.tl .ev:hover circle{stroke-width:4}
+.tl .ev.on circle{stroke:var(--acc);stroke-width:4}
+/* forja */
+.q{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow);margin-bottom:16px}
+.q .qh{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.q .st{max-width:75ch}
+.q .alts{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+.q .alts button{text-align:left;font:inherit;font-size:.9rem;padding:9px 12px;border-radius:9px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);cursor:pointer;display:grid;grid-template-columns:22px 1fr;gap:8px}
+.q .alts button b{font-family:"IBM Plex Mono",monospace;color:var(--acc);font-weight:500}
+.q .alts button:hover{border-color:var(--acc)}
+.q .alts button.ok{background:var(--b-soft);border-color:var(--b)}
+.q .alts button.no{background:var(--d-soft);border-color:var(--d)}
+.q .alts button:disabled{cursor:default}
+.q .exp{display:none;margin-top:12px;border-top:1px dashed var(--line);padding-top:10px;font-size:.9rem;max-width:75ch}
+.q.done .exp{display:block}
+.q .exp .why{margin:.4em 0}
+.q .exp .dis{color:var(--ink2);font-size:.85rem;margin:.3em 0}
+.score{position:sticky;bottom:12px;display:flex;gap:10px;align-items:center;justify-content:space-between;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px;box-shadow:var(--shadow);margin-top:10px}
+/* tabela-mãe */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--acc);border-radius:12px;padding:12px 14px;font-size:.87rem}
+.card.b{border-top-color:var(--b)} .card.d{border-top-color:var(--d)} .card.w{border-top-color:var(--w)} .card.m{border-top-color:var(--m)}
+.card h3{font-size:.98rem;margin-bottom:4px}
+.card .g{color:var(--ink2);font-size:.8rem}
+.card .a{margin-top:6px}
+.card .a b{font-weight:600}
+footer{padding:40px 0 60px;color:var(--ink2);font-size:.85rem}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+/* pulse anim for drain */
+@keyframes drip{0%{transform:translateY(0);opacity:1}100%{transform:translateY(22px);opacity:0}}
+.drip{animation:drip 1.1s linear infinite;transform-origin:center}
+@keyframes flow{to{stroke-dashoffset:-40}}
+.flow{stroke-dasharray:8 6;animation:flow 1.2s linear infinite}
+.flow.slow{animation-duration:3s}
+.axis-off{opacity:.25}
+
+.howto{border:1px solid var(--acc);background:var(--acc-soft);border-radius:12px;padding:12px 16px;font-size:.9rem;margin:0 0 18px;max-width:72ch;line-height:1.55}
+.howto b.t{color:var(--acc);text-transform:uppercase;font-size:.72rem;letter-spacing:.1em;display:block;margin-bottom:4px}
+.howto ol{margin:.3em 0 .2em 1.2em;padding:0}
+.howto li{margin:.2em 0}
+.prose h3{margin:1.5em 0 .45em;font-size:1.2rem}
+.prose h3:first-child{margin-top:1em}
+.prose .key{background:var(--panel);border-left:3px solid var(--b);padding:10px 14px;border-radius:0 10px 10px 0;margin:1em 0;font-size:.95rem}
+.prose .key b{color:var(--b);text-transform:uppercase;font-size:.72rem;letter-spacing:.1em;display:block;margin-bottom:3px}
+.prose .num-table{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:.9rem;margin:.8em 0;padding:10px 14px;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+.prose .num-table .k{font-family:"IBM Plex Mono",monospace;color:var(--acc);white-space:nowrap}
+.chance{display:inline-block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--w-soft);color:var(--w);font-weight:600;margin-left:8px;vertical-align:middle}
+.gloss{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
+.gloss .card{border-top-color:var(--acc)}
+.gloss .card h3{font-size:1rem}
+</style>
+
+<nav class="rail" id="rail"><div class="wrap">
+<a href="#c0"><b>00</b>Vocabulário</a>
+<a href="#c1"><b>01</b>Recuperação</a>
+<a href="#c2"><b>02</b>Perda</a>
+<a href="#c3"><b>03</b>Adrenal</a>
+<a href="#c4"><b>04</b>Baço por dentro</a>
+<a href="#c5"><b>05</b>Máquina</a>
+<a href="#c6"><b>06</b>Reposição</a>
+<a href="#c7"><b>07</b>Na mesa</a>
+<a href="#c8"><b>08</b>Complicações</a>
+<a href="#c9"><b>09</b>Forja</a>
+<a href="#c10"><b>10</b>Tabela-mãe</a>
+</div></nav>
+
+<div class="hero"><div class="wrap"><div class="grid">
+<div>
+<div class="eyebrow">ENARE R+ Cirurgia · baço · ~55% de cair, uma questão por edição</div>
+<h1 style="margin-top:10px">Atlas da Esplenectomia</h1>
+<p class="lead">Dona Marlene, 47 anos, PTI refratária, quatro anos de prednisona. Esplenectomia laparoscópica convertida para aberta por dificuldade técnica. Duas horas depois, na recuperação, a enfermeira te chama. O monitor está à direita. O dreno está no chão, cheio. Você tem dois motores possíveis de choque neste corpo — um deles deixa prova física no enunciado, o outro só deixa história. Cada capítulo abaixo é um instrumento: manipule antes de ler. Se alguma palavra do caso for nova, o capítulo 00 explica todas — e cada capítulo começa com uma caixa "como usar".</p>
+</div>
+<div class="vitals">
+<div class="eyebrow" style="margin-bottom:8px">Recuperação pós-anestésica · 2 h de PO</div>
+<div class="row"><span class="k">PA</span><span class="v d">80 × 40 mmHg</span></div>
+<div class="row"><span class="k">FC</span><span class="v d">118 bpm</span></div>
+<div class="row"><span class="k">Ringer lactato (bolus)</span><span class="v">1.000 mL · sem resposta</span></div>
+<div class="row"><span class="k">Hemoglobina</span><span class="v d">12,0 → 7,2 g/dL</span></div>
+<div class="row"><span class="k">Lactato</span><span class="v d">42 mg/dL (≈ 4,7 mmol/L)</span></div>
+<div class="row"><span class="k">Plaquetas</span><span class="v">130.000/µL</span></div>
+<div class="row"><span class="k">Abdome</span><span class="v d">distendido</span></div>
+<div class="row"><span class="k">Dreno</span><span class="v d">cheio de sangue</span></div>
+</div>
+</div></div></div>
+
+
+<!-- ===================== CAP 0 ===================== -->
+<section class="ch" id="c0"><div class="wrap">
+<header><div class="num">CAPÍTULO 00</div><h2>Antes de começar — o vocabulário do caso</h2><p>Tudo o que vem depois usa estas palavras. Se você já as domina, pule; se alguma é nova, leia o cartão dela e volte aqui sempre que precisar. Cada cartão diz o que a coisa é e por que ela importa neste caso.</p></header>
+<div class="gloss">
+<div class="card"><h3>Baço</h3><div class="a">Órgão do tamanho de um punho (≈ 150 g, 11 cm), escondido no canto superior esquerdo do abdome, atrás do estômago e sob as costelas 9 a 11. É um filtro de sangue e uma fábrica de anticorpos. Recebe 5% de todo o sangue que o coração bombeia — por isso sangra tanto quando é ferido.</div></div>
+<div class="card"><h3>Esplenectomia</h3><div class="a">Cirurgia que retira o baço. Pode ser <b>laparoscópica</b> (por furos, com câmera) ou <b>aberta</b> (por uma incisão grande). <b>Conversão</b> é começar por vídeo e ter de abrir no meio — quase sempre por sangramento ou aderências, e por isso é um sinal de que o pós-operatório será mais arriscado.</div></div>
+<div class="card"><h3>PTI — púrpura trombocitopênica imune</h3><div class="a">Doença em que o próprio corpo fabrica anticorpos contra as plaquetas (as células que tapam furos nos vasos). As plaquetas marcadas são destruídas no baço; a contagem cai e a pessoa sangra fácil. <b>Refratária</b> = não respondeu aos remédios. Aí se tira o baço.</div></div>
+<div class="card"><h3>Prednisona / corticoide</h3><div class="a">Versão em comprimido do cortisol, o hormônio que a glândula adrenal produz. Trata a PTI porque freia o sistema imune. Tomada por muito tempo, "desliga" a adrenal — o corpo para de fabricar o próprio cortisol. Isso é o que chamamos de <b>eixo suprimido</b>.</div></div>
+<div class="card"><h3>Choque</h3><div class="a">Estado em que os tecidos não recebem oxigênio suficiente porque o sangue não chega direito. O sinal mais visível é pressão baixa com coração acelerado. Há quatro motores possíveis: falta de volume (hemorragia), vaso largo demais (sepse, crise adrenal), bomba fraca (coração) ou obstrução (embolia).</div></div>
+<div class="card"><h3>PA e FC</h3><div class="a"><b>PA</b> (pressão arterial) 80×40 significa sistólica 80 e diastólica 40 mmHg — sistólica abaixo de 90 é hipotensão. <b>FC</b> (frequência cardíaca) 118 bpm é taquicardia: o coração acelera para compensar o que falta. FC dividida pela sistólica é o <b>índice de choque</b>; acima de 1 é grave.</div></div>
+<div class="card"><h3>Volemia</h3><div class="a">Quantidade total de sangue no corpo: cerca de 70 mL por quilo, ≈ 4,9 litros em 70 kg. Perder 15% passa despercebido; 30% derruba a pressão; 40% mata sem transfusão. Esses percentuais são a base das "classes de choque" do ATLS.</div></div>
+<div class="card"><h3>Hemoglobina (Hb)</h3><div class="a">Proteína dentro das hemácias que carrega oxigênio. Medida em gramas por decilitro (normal ≈ 12–16). É uma <b>concentração</b>: cai quando o sangue é diluído, não no instante em que se perde sangue inteiro. Queda de 2 g/dL em poucas horas no pós-operatório é sinal de sangramento.</div></div>
+<div class="card"><h3>Lactato</h3><div class="a">Substância que a célula produz quando trabalha sem oxigênio. Normal até 18 mg/dL (2 mmol/L; 9 mg/dL = 1 mmol/L). Quanto mais alto, mais tecido está sufocando. 42 mg/dL ≈ 4,7 mmol/L é choque grave.</div></div>
+<div class="card"><h3>Bolus e cristaloide</h3><div class="a"><b>Cristaloide</b> é soro (Ringer lactato, soro fisiológico). <b>Bolus</b> é dar 1 litro rápido, em 10–15 minutos, e observar. A <b>resposta ao bolus</b> — a pressão sobe e fica, sobe e cai, ou não sobe — é a pergunta mais importante do trauma e do pós-operatório.</div></div>
+<div class="card"><h3>Dreno</h3><div class="a">Tubo deixado no lugar onde o baço estava (a "loja esplênica"), saindo pela pele até um frasco. Normalmente sai pouco líquido claro ou rosado. Sangue vivo em volume grande = vaso sangrando. Dreno vazio, porém, não prova nada: ele pode estar entupido por coágulo.</div></div>
+<div class="card"><h3>Hemoderivados</h3><div class="a"><b>CH</b> = concentrado de hemácias (sobe a Hb ≈ 1 g/dL por bolsa). <b>PFC</b> = plasma fresco congelado (fatores de coagulação). <b>Plaquetas</b> = pool ou aférese (+30–50 mil por dose). <b>1:1:1</b> = dar os três em proporções iguais, imitando sangue total.</div></div>
+<div class="card"><h3>Recuperação pós-anestésica (RPA)</h3><div class="a">Sala onde o paciente fica nas primeiras horas depois da cirurgia, monitorado. É o lugar onde a hemorragia pós-operatória aparece — e onde esta questão acontece.</div></div>
+</div>
+</div></section>
+
+<!-- ===================== CAP 1 ===================== -->
+<section class="ch" id="c1"><div class="wrap">
+<header><div class="num">CAPÍTULO 01</div><h2>O leito da recuperação</h2><p>Cinco pacientes podem chegar com PA 80×40 duas horas depois de uma esplenectomia. Só um deles é a Dona Marlene. Escolha a causa, arraste o tempo e veja qual prova física cada motor de choque deixa — e qual não deixa.</p></header>
+<div class="howto"><b class="t">Como usar este instrumento</b>
+<ol><li>Escolha um dos cinco pacientes à direita. Todos chegam com a mesma pressão; o que muda é o que está por trás dela.</li>
+<li>Arraste o tempo de 0 a 4 h. O bolus de 1 litro de Ringer corre entre 1 h 30 e 2 h — repare o que a pressão faz <em>depois</em> dele.</li>
+<li>Leia os seis números à direita. Os que ficam vermelhos ou roxos são as "provas físicas". No monitor, veja o dreno encher (ou não) e o abdome crescer (ou não).</li></ol>
+Exercício: para cada paciente, anote em uma linha qual número mudou e qual não mudou. Ao final você terá, sozinho, a tabela que separa sangue de cortisol.</div>
+<div class="plate">
+<div class="fig">
+<canvas id="cv1" width="640" height="560" aria-label="Monitor de recuperação simulado com dreno e abdome"></canvas>
+<div class="cap">Monitor, dreno e abdome redesenhados a cada posição do tempo. O bolus de 1.000 mL de Ringer é infundido entre 1 h 30 e 2 h em todos os cenários — o que muda é o que acontece depois dele.</div>
+</div>
+<div class="ctl">
+<h3>Quem está na maca?</h3>
+<div class="seg" id="c1cause">
+<button class="d on" data-c="hem">Hemorragia ativa</button>
+<button class="d" data-c="hemdry">Hemorragia com dreno seco</button>
+<button class="w" data-c="trans">Respondedor transitório</button>
+<button class="b" data-c="sust">Respondedor sustentado</button>
+<button class="m" data-c="adr">Crise adrenal</button>
+</div>
+<label class="sl"><span class="lv"><span>Tempo de pós-operatório</span><b id="c1tv">2 h 00</b></span><input type="range" id="c1t" min="0" max="240" step="5" value="120"></label>
+<div class="kv" id="c1labs"></div>
+<div id="c1ver" class="ver d"></div>
+</div>
+</div>
+<div class="prose">
+<h3>O que é choque, dito de forma simples</h3>
+<p>Choque não é "pressão baixa". Choque é célula sem oxigênio. A pressão baixa é só o sinal mais fácil de ver. Para que o oxigênio chegue à célula, três coisas precisam funcionar: precisa haver sangue suficiente dentro dos vasos (volume), o coração precisa bombear (bomba) e os vasos precisam ter tônus para manter a pressão (o "cano" não pode estar largo demais). Cada motor de choque quebra uma dessas peças. Hemorragia tira volume. Sepse, anafilaxia e crise adrenal alargam o cano. Infarto quebra a bomba. Embolia pulmonar e pneumotórax hipertensivo bloqueiam o caminho do sangue.</p>
+<p>Duas horas depois de uma esplenectomia, só dois desses motores são realistas: perda de volume (o baço sangra) e cano largo por falta de cortisol (a adrenal foi desligada pela prednisona). Sepse não chega em duas horas. Por isso a questão inteira é uma disputa entre esses dois — e o enunciado foi escrito para que você escolha o errado.</p>
+
+<h3>Lendo o monitor como um cirurgião</h3>
+<p>PA 80×40 mmHg: a pressão sistólica (o primeiro número) abaixo de 90 é hipotensão. A pressão de pulso — a diferença entre os dois números — é de 40; quando ela estreita, é porque o vaso está se fechando para compensar. FC 118: o coração acelera antes de a pressão cair; é a primeira compensação do corpo, e por isso taquicardia sem hipotensão já é sinal de perda. Índice de choque = FC ÷ sistólica = 118 ÷ 80 = 1,48; acima de 1 significa perda importante e é um dos gatilhos para pedir sangue. A saturação (SpO₂) só cai tarde; a temperatura cai devagar em quem sangra (perde calor com o sangue e recebe soro frio) e sobe em quem está em crise adrenal (o cortisol segurava a febre).</p>
+
+<h3>O bolus e a resposta: a pergunta mais importante</h3>
+<p>Bolus é um litro de cristaloide aquecido correndo rápido. Ele não trata nada — ele faz uma pergunta ao corpo: "quanto você está perdendo?". Há três respostas possíveis, e o ATLS as chama de <b>respondedor sustentado</b> (a pressão sobe e fica: perdeu menos de 20% e o sangramento parou), <b>respondedor transitório</b> (sobe e volta a cair: ainda perde, mas devagar — mais devagar do que você repõe) e <b>não respondedor</b> (não sobe: perde mais rápido do que você consegue repor, ou seja, hemorragia ativa e volumosa — ou então o motor do choque não é falta de volume). A Dona Marlene é não respondedora. A partir daí, a única forma de saber se é sangue ou cortisol é procurar a <em>prova física</em>.</p>
+
+<h3>As três provas físicas de sangue</h3>
+<p>Primeira: a hemoglobina. Ela é uma concentração — gramas de Hb por decilitro de sangue. Quando você perde sangue inteiro, o que sobra tem a mesma concentração, então a Hb não cai na hora. Ela cai quando o corpo puxa água do interstício para dentro do vaso e quando você infunde soro: o mesmo número de hemácias fica diluído em mais líquido. Uma queda de 12,0 para 7,2 em duas horas — 4,8 g/dL — só acontece com perda enorme mais diluição. O capítulo 2 faz esse número nascer no tanque.</p>
+<p>Segunda: o dreno. É um tubo que fica na loja esplênica, o espaço vazio onde o baço estava. Nas primeiras horas ele drena normalmente 50–200 mL de líquido rosado. Sangue vermelho-vivo enchendo o frasco é um vaso aberto. Mas atenção ao cenário "dreno seco": o dreno pode entupir com um coágulo ou estar posicionado longe do sangramento, e nesse caso dois litros ficam dentro do abdome sem avisar. Dreno cheio confirma; dreno vazio não exclui.</p>
+<p>Terceira: o abdome. Dois litros de sangue livre distendem o abdome e o deixam tenso e doloroso. Em quem está sedado ou com analgesia forte, a distensão é a única dessas provas que você vê sem exame de laboratório.</p>
+
+<h3>As provas físicas da crise adrenal — e o que ela nunca faz</h3>
+<p>Quem está em crise adrenal também não responde ao bolus, porque o problema não é volume, é cano largo. Mas o laboratório conta outra história: o sódio cai (sem cortisol, o hormônio antidiurético dispara e o corpo retém água), a glicose cai (sem cortisol, o fígado não fabrica glicose), a temperatura sobe, há náusea e dor abdominal, e os eosinófilos sobem. E a hemoglobina fica onde estava — cai no máximo 0,4 g/dL, que é a diluição do litro de Ringer. Arraste o tempo no cenário "Crise adrenal" e confira: PA igual à da hemorragia, Hb de 11,6, dreno de 45 mL seroso, abdome flácido. Mesma pressão, provas físicas invertidas.</p>
+
+<div class="key"><b>Guarde isto</b>Prova física é o dado que só uma causa consegue produzir. Sangue produz Hb caindo, dreno vermelho e abdome crescendo. Cortisol faltando produz sódio caindo, glicose caindo e febre — e nunca derruba a hemoglobina. Quando os dois motores são possíveis, o enunciado sempre deixa a prova de um e a história do outro.</div>
+
+<div class="divg"><b>Como a banca cobra <span class="chance">≈ 55% de cair</span></b>Baço rende uma questão por edição, em três roupagens. (1) Choque no pós-operatório imediato com Hb caindo e dreno vermelho → sangue e reoperação; as iscas são hidrocortisona (por causa do corticoide crônico), tomografia e plaquetas (por causa da PTI). (2) A mesma história com as provas invertidas — Hb intacta, Na baixo, glicose baixa em usuário de corticoide → hidrocortisona. (3) Complicação tardia com dia marcado: febre no 7º dia com derrame à esquerda → abscesso subfrênico; plaquetas de 1 milhão → aspirina; dor com febre e plaquetas altas → trombose portal. Nas três, o enunciado dá o dado decisivo uma única vez, no meio de dados que não decidem nada.</div>
+</div></section>
+
+<!-- ===================== CAP 2 ===================== -->
+<section class="ch" id="c2"><div class="wrap">
+<header><div class="num">CAPÍTULO 02</div><h2>Por que a hemoglobina cai e o lactato sobe</h2><p>Quem sangra perde sangue inteiro — a hemoglobina do que sobra é a mesma do que saiu. A queda no papel só aparece quando o corpo (e você, com o Ringer) diluem o que ficou. Arraste a perda e a reposição e veja o número nascer.</p></header>
+<div class="howto"><b class="t">Como usar este instrumento</b>
+<ol><li>O tanque à esquerda é a volemia (todo o sangue dentro dos vasos). Arraste <em>Sangue perdido</em> e veja a coluna vermelha encolher e a coluna "perdido" crescer.</li>
+<li>Arraste <em>Cristaloide infundido</em>: só um quarto entra no tanque (faixa azul); o resto vai para o interstício. Arraste <em>Refill transcapilar</em>: é a água que o próprio corpo puxa para dentro do vaso (faixa rosa).</li>
+<li>O termômetro do meio mostra a hemoglobina calculada pela fórmula; o cartão da direita, a classe de choque do ATLS para essa perda.</li></ol>
+Exercício 1: perda 1.900, cristaloide 0, refill 0 — a Hb continua 12. Exercício 2: perda 0, cristaloide 4.000 — a Hb cai sem uma gota de sangue perdida. Agora você entendeu diluição.</div>
+<div class="plate">
+<div class="fig">
+<svg id="sv2" viewBox="0 0 640 430" role="img" aria-label="Tanque de volemia com perda, reposição e hemoglobina calculada"></svg>
+<div class="cap">Volemia estimada 70 mL/kg × 70 kg = 4.900 mL. Hb inicial 12,0 g/dL. O refill transcapilar puxa líquido intersticial para o vaso na primeira hora; o cristaloide fica 1/4 no vaso e 3/4 no interstício. As classes seguem o ATLS (10ª/11ª ed.).</div>
+</div>
+<div class="ctl">
+<label class="sl"><span class="lv"><span>Sangue perdido</span><b id="c2lv">1.900 mL · 39%</b></span><input type="range" id="c2l" min="0" max="2600" step="50" value="1900"></label>
+<label class="sl"><span class="lv"><span>Cristaloide infundido</span><b id="c2cv">1.000 mL</b></span><input type="range" id="c2c" min="0" max="4000" step="250" value="1000"></label>
+<label class="sl"><span class="lv"><span>Refill transcapilar</span><b id="c2rv">600 mL</b></span><input type="range" id="c2r" min="0" max="1200" step="100" value="600"></label>
+<div class="kv" id="c2out"></div>
+<div id="c2ver" class="ver d"></div>
+<div class="seg" style="margin-top:4px">
+<button class="btn" id="c2p1">Preset: Dona Marlene</button>
+<button class="btn" id="c2p2">Preset: classe II</button>
+</div>
+</div>
+</div>
+<div class="prose">
+<h3>Volemia: quanto sangue você tem e onde ele está</h3>
+<p>Um adulto tem cerca de 70 mL de sangue por quilo — 4.900 mL em 70 kg (crianças, 80 mL/kg). Esse sangue é só um dos três compartimentos de líquido do corpo. Dois terços de toda a água ficam dentro das células; do terço restante, três quartos ficam no interstício (o espaço entre as células) e só um quarto dentro dos vasos. É por isso que um litro de Ringer não vira um litro de volemia: em uma hora, 750 mL escapam para o interstício e apenas 250 mL ficam onde você precisava. Para repor um litro de sangue perdido com cristaloide, você precisaria de três a quatro litros — e o capítulo 6 mostra o preço disso.</p>
+
+<h3>Por que a hemoglobina não cai na hora — e depois despenca</h3>
+<p>A hemoglobina é medida em gramas por decilitro. É uma concentração, como o açúcar num copo de suco. Se você derramar metade do copo, o suco que sobrou continua igualmente doce. Perder sangue inteiro é isso: o que ficou tem a mesma Hb do que saiu. Então a primeira hemoglobina de quem acabou de sangrar pode ser enganosamente normal.</p>
+<p>A queda começa quando o líquido que entra no vaso não traz hemácias. Isso acontece por dois caminhos. O primeiro é o <b>refill transcapilar</b>: com menos pressão dentro do capilar, a água do interstício é puxada para dentro do vaso — até 1 litro nas primeiras horas, um mecanismo de defesa que mantém a pressão à custa de diluir o sangue. O segundo é o soro que você infunde. Mova os dois controles e repare: quanto mais o corpo (e você) repõem com água, mais baixa a Hb fica, mesmo sem uma gota nova de sangue perdida. Na Dona Marlene, 4,8 g/dL de queda em duas horas significam as duas coisas ao mesmo tempo: perda muito grande e diluição já em curso. Isso é prova física de hemorragia, e o número "12 → 7,2" é a frase mais importante do enunciado.</p>
+
+<h3>As quatro classes de choque do ATLS</h3>
+<p>O ATLS divide a perda em quatro faixas, e vale entender por que os sinais aparecem na ordem em que aparecem. Na <b>classe I</b> (até 15%, até 750 mL — o que se doa num banco de sangue) nada muda; o corpo compensa em silêncio. Na <b>classe II</b> (15–30%, 750–1.500 mL) o coração acelera para 100–120 e os vasos se fecham; a sistólica ainda está normal, mas a pressão de pulso estreita — a diastólica sobe porque o cano se apertou. Esse é o paciente "ansioso, taquicárdico, com pressão normal" que a banca usa para perguntar se já é choque (é). Na <b>classe III</b> (30–40%, 1.500–2.000 mL) a compensação não dá mais conta: a sistólica cai, a FC vai a 120–140, a urina cai para 5–15 mL/h e o paciente fica confuso. É a partir daqui que só sangue sobe a pressão de verdade. Na <b>classe IV</b> (mais de 40%, mais de 2 litros) a FC passa de 140, a pressão despenca, a urina some e o paciente fica letárgico; sem sangue e sem controle da fonte, ele morre em minutos.</p>
+<p>A Dona Marlene, com sistólica de 80 e FC de 118 sem responder ao bolus, está na fronteira entre III e IV. Perdeu perto de dois litros — quase metade do que tinha. O ATLS mais recente preferiu a resposta ao bolus aos números fixos justamente porque idosos, atletas, gestantes e usuários de betabloqueador não obedecem à tabela; a resposta ao volume, sim.</p>
+
+<h3>Lactato: o grito da célula</h3>
+<p>A célula com oxigênio queima glicose até o fim e produz muita energia. Sem oxigênio, ela para no meio do caminho e despeja lactato. Por isso o lactato é o termômetro da perfusão: normal até 18 mg/dL (2 mmol/L); acima de 36 mg/dL (4 mmol/L) a mortalidade do choque hemorrágico dobra. Os 42 mg/dL da Dona Marlene são 4,7 mmol/L. Mais útil ainda é a velocidade com que ele cai: quem limpa o lactato nas primeiras 24 h foi bem ressuscitado; quem não limpa ainda sangra ou ainda está mal perfundido. A banca usa o lactato para dizer "isto é grave" sem dizer a palavra.</p>
+
+<h3>"Não respondedor" em números</h3>
+<p>Traduza: você infundiu 1 litro em 15 minutos e a pressão não subiu. Como só 250 mL ficaram no vaso, isso significa que nesse mesmo intervalo o paciente perdeu pelo menos esses 250 mL — cerca de 20 mL por minuto, ou mais de um litro por hora. Nenhum dreno, nenhum tomógrafo e nenhum hormônio param isso. Uma pinça para.</p>
+
+<div class="divg"><b>Números que decidem</b>Volemia 70 mL/kg · Classe II a partir de 750 mL: taquicardia com PA normal · Classe III a partir de 1.500 mL: PA cai, FC 120–140 · Lactato normal &lt; 18 mg/dL (2 mmol/L); grave &gt; 36 (4 mmol/L) · Índice de choque FC/PAS &gt; 1 · Queda de Hb ≥ 2 g/dL em horas = sangramento · Gatilho de transfusão em choque hemorrágico: não responder ao bolus, não a Hb.</div>
+</div></section>
+
+<!-- ===================== CAP 3 ===================== -->
+<section class="ch" id="c3"><div class="wrap">
+<header><div class="num">CAPÍTULO 03</div><h2>O eixo que a prednisona apagou</h2><p>Quatro anos de prednisona é uma frase que a banca escreve para que você a escolha. Ajuste dose e duração, ligue o estresse cirúrgico e veja o que o eixo consegue — e o que ele deixa no laboratório.</p></header>
+<div class="howto"><b class="t">Como usar este instrumento</b>
+<ol><li>Ajuste a dose de prednisona e por quanto tempo ela foi usada. Veja o eixo apagar (as caixas ficam cinza) quando a regra "≥ 5 mg por ≥ 3 semanas" é atingida.</li>
+<li>Ligue <em>Estresse cirúrgico</em>: a demanda de cortisol salta (linha tracejada da barra). Se o eixo está apagado, a barra verde não a alcança, a arteríola dilata e a pressão cai.</li>
+<li>Ligue <em>Hidrocortisona 100 mg</em>: a barra enche e a arteríola volta a obedecer. Compare os números de Na, K e glicose em cada estado.</li></ol>
+Exercício: com 20 mg por 4 anos e estresse ligado, leia a pressão; depois reduza a duração para 2 semanas e veja o eixo religar. É esta a diferença entre "usa corticoide" e "tem o eixo suprimido".</div>
+<div class="plate">
+<div class="fig">
+<svg id="sv3" viewBox="0 0 640 470" role="img" aria-label="Eixo hipotálamo-hipófise-adrenal sob prednisona e estresse cirúrgico"></svg>
+<div class="cap">CRH → ACTH → cortisol. A prednisona exógena fecha a alça em cima (feedback negativo); a adrenal, sem ACTH, atrofia a zona fasciculada. A zona glomerulosa segue o sistema renina-angiotensina, não o ACTH — por isso a aldosterona sobrevive.</div>
+</div>
+<div class="ctl">
+<label class="sl"><span class="lv"><span>Prednisona</span><b id="c3dv">20 mg/dia</b></span><input type="range" id="c3d" min="0" max="60" step="2.5" value="20"></label>
+<label class="sl"><span class="lv"><span>Duração</span><b id="c3wv">4 anos</b></span><input type="range" id="c3w" min="0" max="52" step="1" value="52"></label>
+<div class="seg">
+<button id="c3stress" class="d">Estresse cirúrgico: OFF</button>
+<button id="c3hc" class="b">Hidrocortisona 100 mg: OFF</button>
+</div>
+<div class="kv" id="c3out"></div>
+<div id="c3ver" class="ver w"></div>
+</div>
+</div>
+<div class="prose">
+<h3>O que o cortisol faz — e por que se chama hormônio do estresse</h3>
+<p>O cortisol é fabricado pela camada fasciculada do córtex da adrenal, a glândula em cima de cada rim. Em repouso, um adulto produz o equivalente a 20–30 mg de hidrocortisona por dia. Ele faz quatro coisas que importam aqui. Mantém a glicose no sangue, mandando o fígado fabricar glicose a partir de proteína (gliconeogênese). Dá "licença" para os vasos responderem à adrenalina e à noradrenalina: sem cortisol, o receptor α1 do músculo do vaso fica pouco expresso e as catecolaminas — as suas e as da bomba de infusão — batem em parede. Freia a inflamação. E inibe o hormônio antidiurético (ADH), de modo que sem cortisol o corpo retém água e o sódio cai por diluição.</p>
+<p>Sob estresse — cirurgia grande, infecção, trauma — a adrenal saudável multiplica a produção por cinco a dez vezes, chegando ao equivalente a 200–300 mg/dia. É esse salto que segura a pressão no pós-operatório. Quem não consegue dar o salto entra em crise.</p>
+
+<h3>O eixo: hipotálamo → hipófise → adrenal, e o que a prednisona faz com ele</h3>
+<p>O hipotálamo libera CRH; a hipófise responde com ACTH; o ACTH manda a adrenal produzir cortisol; o cortisol, quando sobe, avisa o hipotálamo e a hipófise para pararem — um termostato. A prednisona é cortisol sintético. Quando ela entra pela boca todos os dias, o termostato lê "já tem cortisol suficiente" e desliga CRH e ACTH. Sem ACTH, a camada fasciculada da adrenal atrofia em poucas semanas, como um músculo que não se usa. O paciente vive bem — a dose diária cobre a necessidade de repouso — mas perdeu a capacidade de multiplicar por dez quando o estresse chega. É por isso que o instrumento não mostra nada em repouso e mostra tudo quando você liga o estresse.</p>
+
+<h3>Quem está suprimido: a regra dos números</h3>
+<div class="num-table">
+<span class="k">≥ 20 mg/dia ≥ 3 semanas</span><span>Eixo suprimido com certeza. Cobrir sempre.</span>
+<span class="k">5–20 mg/dia ≥ 3 semanas</span><span>Supressão possível. Endocrinologia testa (cortisol da manhã ou ACTH) ou cobre; a banca, pelo Sabiston, considera suprimido.</span>
+<span class="k">&lt; 5 mg/dia, ou qualquer dose &lt; 3 semanas</span><span>Sem supressão clinicamente relevante.</span>
+<span class="k">Parou há menos de 12 meses</span><span>O eixo demora até um ano para religar; conta como suprimido.</span>
+</div>
+<p>A regra que cai em prova é a do Sabiston e da maioria das apostilas: <b>prednisona ≥ 5 mg/dia por ≥ 3 semanas no último ano</b> = eixo suprimido até prova em contrário. Quatro anos de prednisona é muito além desse corte. Isso não faz da crise adrenal a resposta — faz dela uma possibilidade real que exige prova física.</p>
+
+<h3>Como a crise adrenal aparece</h3>
+<p>O paciente entra em choque que não obedece a nada: volume não sobe a pressão, noradrenalina em dose crescente não sobe a pressão. A pele está quente (cano largo, não cano fechado). Há febre sem foco, náusea, vômito, dor abdominal difusa. No laboratório: sódio baixo, glicose baixa, eosinófilos altos. E a hemoglobina intacta, o dreno seroso, o abdome flácido — porque ninguém está sangrando. Se você vir hipotensão refratária com hemoglobina que não caiu em quem usa corticoide, pense em cortisol.</p>
+
+<h3>A dose de estresse, sem decoreba</h3>
+<p>A lógica é repor o que a adrenal saudável produziria. Cirurgia pequena (hérnia, catarata): a dose habitual do paciente basta. Cirurgia moderada (colecistectomia, colectomia segmentar): hidrocortisona 50 mg na indução e 25 mg 8/8 h por um dia. Cirurgia grande (esplenectomia, esofagectomia, cirurgia cardíaca): <b>100 mg IV na indução e 50 mg a cada 6 h por 24–48 h</b>, depois voltar à dose habitual. Na crise já instalada: 100 mg em bolus agora, 200 mg nas próximas 24 h (50 mg 6/6 h ou infusão contínua), soro fisiológico e glicose. Não espere o cortisol sérico para tratar; se quiser preservar o teste, use dexametasona 4 mg, que não interfere no ensaio, e trate.</p>
+<p>Voltando à Dona Marlene: dar a dose de estresse é razoável e provavelmente foi esquecido na indução. Mas escolhê-la como <em>a</em> conduta é corrigir o cortisol de quem está exsanguinando — a hemoglobina de 7,2 diz que o motor é outro.</p>
+
+<h3>Primária, secundária e terciária — por que isso importa no potássio</h3>
+<p>Insuficiência adrenal <b>primária</b> (doença de Addison) é a adrenal inteira destruída: some o cortisol e some a aldosterona, o hormônio da camada glomerulosa que manda o rim reter sódio e excretar potássio. Sem aldosterona, o sódio vai embora na urina e o potássio fica: hiponatremia com hipercalemia. Na insuficiência <b>secundária</b> (hipófise) e <b>terciária</b> (hipotálamo, que é o caso do corticoide crônico) só o ACTH está faltando — e a glomerulosa não depende de ACTH, depende do sistema renina-angiotensina. A aldosterona continua normal, o potássio continua normal, e o sódio cai por outro motivo (o ADH desinibido). Guarde: corticoide crônico → Na baixo, K normal.</p>
+<div class="divg"><b>Divergência de banca — o potássio</b>A tríade "hiponatremia, hipercalemia, hipoglicemia" é a da doença de Addison. Muitos enunciados a escrevem inteira mesmo em usuário de prednisona, porque a fonte da banca é a lista clássica. Como agir: se o enunciado der K alto em quem usa corticoide, aceite como marcador de "adrenal" e não brigue com a questão; se der K normal com Na baixo e glicose baixa, o diagnóstico continua sendo crise adrenal — e esse é o enunciado mais fiel à fisiologia.</div>
+</div></section>
+
+<!-- ===================== CAP 4 ===================== -->
+<section class="ch" id="c4"><div class="wrap">
+<header><div class="num">CAPÍTULO 04</div><h2>O baço por dentro — e por que a PTI o escolhe</h2><p>Um órgão de 150 g que recebe 5% do débito cardíaco e obriga o sangue a atravessar um labirinto sem parede. Clique em cada compartimento: o que ele faz de normal, o que ele faz de errado na PTI, e o que o paciente perde quando você o tira.</p></header>
+<div class="howto"><b class="t">Como usar este instrumento</b>
+<ol><li>O campo mostra um pedacinho de baço visto ao microscópio. Clique em cada região: o fundo rosa (polpa vermelha), o anel laranja (zona marginal), a elipse lilás (polpa branca) e a caixa amarela (reservatório). O painel diz o que ela faz de normal, o que faz de errado na PTI e o que se perde sem ela.</li>
+<li>Abaixo, os botões da <em>Escada da PTI</em> mostram a conduta em cada fase da doença. A Dona Marlene está no degrau roxo.</li></ol>
+Exercício: depois de clicar nas quatro regiões, responda sem olhar — qual delas explica a OPSI, qual explica a trombocitose de um milhão e qual é a "fábrica" da PTI.</div>
+<div class="plate">
+<div class="fig">
+<svg id="sv4" viewBox="0 0 640 470" role="img" aria-label="Campo microscópico esquemático do baço com polpa vermelha, zona marginal, polpa branca e reservatório"></svg>
+<div class="cap">Campo esquemático. A arteríola central atravessa a polpa branca, abre-se na zona marginal e despeja o sangue nos cordões de Billroth — circulação aberta. Para voltar à veia, cada célula tem de se espremer pela fenda de 1–3 µm da parede do sinusoide. Quem não passa, morre ali.</div>
+</div>
+<div class="ctl">
+<h3>Compartimento selecionado</h3>
+<div id="c4panel" class="ver"></div>
+<h3 style="margin-top:6px">Escada da PTI — onde a Dona Marlene está?</h3>
+<div class="seg" id="c4pti">
+<button data-p="new" class="b">Recém-diagnosticada &lt; 3 m</button>
+<button data-p="pers" class="w">Persistente 3–12 m</button>
+<button data-p="chr" class="m on">Crônica &gt; 12 m refratária</button>
+<button data-p="emer" class="d">Sangramento grave</button>
+<button data-p="pre" class="w">Véspera da esplenectomia</button>
+</div>
+<div id="c4ptiout" class="ver m"></div>
+</div>
+</div>
+<div class="prose">
+<h3>O baço em um minuto</h3>
+<p>Fica no hipocôndrio esquerdo, encostado no diafragma, atrás do estômago e em cima do rim esquerdo, protegido pelas costelas 9 a 11. Recebe sangue pela artéria esplênica, um ramo do tronco celíaco que corre tortuoso pela borda superior do pâncreas; devolve o sangue pela veia esplênica, que se junta à mesentérica superior para formar a veia porta. Isso já explica duas complicações: o pâncreas está colado no hilo (fístula pancreática) e a veia esplênica desemboca na porta (trombose portal). O baço tem quatro funções: filtrar o sangue, montar a resposta imune contra bactérias, guardar plaquetas e, na vida fetal, fabricar sangue.</p>
+
+<h3>Circulação aberta: o truque do filtro</h3>
+<p>Em quase todo órgão o sangue vai de artéria para capilar para veia sem sair do tubo. No baço, não. A arteríola central atravessa a polpa branca, chega à zona marginal e simplesmente termina, despejando o sangue num tecido esponjoso sem parede — os cordões de Billroth da polpa vermelha. Para voltar à circulação, cada célula precisa achar um sinusoide e se espremer por fendas de 1 a 3 micrômetros na sua parede. Uma hemácia jovem e flexível passa. Uma hemácia velha, rígida, com 120 dias de vida, fica presa e é comida pelo macrófago (culling). Uma hemácia jovem com um resto de núcleo dentro tem o resto arrancado e segue (pitting). Uma célula recoberta de anticorpos é reconhecida pelo receptor Fc do macrófago e devorada. É esse último mecanismo que a PTI sequestra.</p>
+
+<h3>PTI do zero</h3>
+<p>Plaquetas são fragmentos de célula que tapam furos nos vasos; normal 150 a 450 mil por microlitro; vida útil de 7 a 10 dias. Na PTI o sistema imune fabrica IgG contra proteínas da superfície da plaqueta (GPIIb/IIIa e GPIb/IX). A plaqueta marcada passa pelo baço, o macrófago a reconhece pela cauda do anticorpo e a destrói em horas. A medula responde fabricando mais — por isso o aspirado mostra megacariócitos aumentados —, mas não vence. Resultado: plaquetas baixas, sangramento de pele e mucosa (petéquias, gengiva, menstruação abundante) e, abaixo de 10–20 mil, risco de sangramento grave. É um diagnóstico de exclusão: plaquetopenia isolada, esfregaço com plaquetas grandes e nada mais, sem esplenomegalia. Se o enunciado descrever baço palpável, ele quer outro diagnóstico (linfoma, hiperesplenismo, leucemia).</p>
+<p>A PTI tem três fases que definem a conduta: recém-diagnosticada (até 3 meses), persistente (3 a 12) e crônica (mais de 12). Trata-se quem tem plaquetas abaixo de 20–30 mil ou sangramento. Primeira linha: corticoide (prednisona 1 mg/kg ou dexametasona 40 mg por 4 dias), que reduz a produção do anticorpo e a fome do macrófago; imunoglobulina IV 1 g/kg quando é preciso subir rápido — ela satura os receptores Fc e, em 24–48 h, a plaqueta marcada passa pelo baço sem ser comida. Segunda linha, quando falha ou depende de corticoide: agonistas do receptor de trombopoetina (eltrombopag, romiplostim), que aumentam a fábrica; rituximab, que mata os linfócitos B que produzem o anticorpo; e a esplenectomia, que tira a fábrica e o matadouro de uma vez.</p>
+
+<h3>Por que a esplenectomia funciona — e quando falha</h3>
+<p>O baço é o único órgão que, na PTI, faz as duas coisas: os folículos da polpa branca produzem o IgG e os macrófagos da polpa vermelha destroem a plaqueta marcada. Retirá-lo responde em cerca de 80% dos pacientes, com resposta durável em 60–70%, melhor em jovens. As diretrizes (ASH 2019) pedem para esperar 12 meses do diagnóstico antes de operar, porque um terço dos adultos remite sozinho no primeiro ano. Quando falha ou recidiva anos depois, a causa clássica é o baço acessório: um pedacinho de tecido esplênico que 15–30% das pessoas têm, quase sempre no hilo, e que, sem o baço principal, cresce e assume o serviço. O esfregaço sem corpúsculos de Howell-Jolly denuncia tecido esplênico funcionante; a cintilografia com hemácias marcadas e desnaturadas pelo calor o localiza.</p>
+
+<h3>O preparo pré-operatório da PTI — a parte que a banca ama</h3>
+<p>Quatro pontos. Vacinar pelo menos 14 dias antes, com o baço ainda presente para montar a memória (capítulo 8). Chegar à cirurgia com plaquetas acima de 50 mil, usando imunoglobulina 1–2 dias antes ou pulso de corticoide. Transfundir plaquetas <em>somente depois de ligar a artéria esplênica</em>: antes disso, a bolsa inteira é destruída no baço em minutos. E dar a dose de estresse de hidrocortisona a quem tomou prednisona por anos. A via preferida é a laparoscópica, com busca sistemática do baço acessório antes de qualquer sangramento sujar o campo.</p>
+
+<h3>O que muda no sangue quando o baço sai</h3>
+<p>Sem o filtro, aparecem no esfregaço os corpúsculos de Howell-Jolly (restos de núcleo que ninguém mais arranca — a assinatura da asplenia), hemácias em alvo, corpúsculos de Heinz e de Pappenheimer. As plaquetas do reservatório entram em circulação: sobem em 1–2 dias, fazem pico no 7º ao 14º dia e, na PTI, passam com frequência de 1 milhão, porque pela primeira vez em anos nenhuma é destruída. Leucócitos também sobem por duas semanas. Duas regras saem daí: plaquetas acima de 1 milhão pedem aspirina profilática, e leucocitose persistente depois do 5º dia (ou razão plaquetas/leucócitos abaixo de 20) sugere infecção, não reação.</p>
+
+<div class="divg"><b>Como a banca cobra</b>"PTI crônica refratária a corticoide" → esplenectomia (ou TPO-RA/rituximab, no mesmo nível). "Plaquetas 14 mil, cirurgia em 48 h" → imunoglobulina, plaquetas só após ligar a artéria. "Esplenomegalia" em enunciado de PTI → não é PTI. "Howell-Jolly ausente após esplenectomia com recidiva" → baço acessório. "Esferocitose hereditária" → esplenectomia a partir dos 6 anos, com colecistectomia se houver cálculos (a hemólise crônica faz cálculos de bilirrubina).</div>
+</div></section>
+
+<!-- ===================== CAP 5 ===================== -->
+<section class="ch" id="c5"><div class="wrap">
+<header><div class="num">CAPÍTULO 05</div><h2>A máquina de decisão</h2><p>Três perguntas, sempre na mesma ordem. A primeira separa quem sangra de quem não sangra; a segunda decide se o paciente pode ir ao tomógrafo; a terceira só existe para quem passou limpo pelas duas primeiras. Monte o cenário e leia o veredito.</p></header>
+<div class="howto"><b class="t">Como usar este instrumento</b>
+<ol><li>Comece pelos presets (Dona Marlene, Transitório estável, Crise adrenal…). Cada um monta as quatro respostas automaticamente e ilumina um caminho na escada à esquerda.</li>
+<li>Depois altere uma pergunta de cada vez e veja o caminho, o veredito, os passos numerados e o bloco "Proibido" mudarem.</li>
+<li>A caixa tracejada vermelha mostra a alternativa-isca que a banca coloca para exatamente esse cenário — e de qual outra linha da tabela ela foi tirada.</li></ol>
+Exercício: monte "prova de sangue presente + resposta sustentada" e explique por que a escada não manda reoperar.</div>
+<div class="plate">
+<div class="fig">
+<svg id="sv5" viewBox="0 0 640 470" role="img" aria-label="Escada de decisão do choque pós-esplenectomia com caminho destacado"></svg>
+<div class="cap">O caminho iluminado é o do cenário montado à direita. A caixa vermelha é a alternativa-isca que a banca coloca para esse mesmo cenário.</div>
+</div>
+<div class="ctl">
+<div class="seg" id="c5pre">
+<button class="d on" data-p="marlene">Dona Marlene</button>
+<button class="w" data-p="trans">Transitório estável</button>
+<button class="m" data-p="adr">Crise adrenal</button>
+<button class="w" data-p="abs">PO 7 · febre</button>
+<button class="w" data-p="tvp">PO 12 · plaquetas 1,1 mi</button>
+<button class="d" data-p="opsi">3 anos · febre 39,8</button>
+</div>
+<label class="sl"><span class="lv"><span>1 · Prova física de sangue (Hb ↓ ≥ 2 g/dL, dreno vermelho, abdome)</span></span><div class="seg" id="c5q1"><button data-v="1" class="d on">Presente</button><button data-v="0" class="b">Ausente</button></div></label>
+<label class="sl"><span class="lv"><span>2 · Resposta ao bolus</span></span><div class="seg" id="c5q2"><button data-v="none" class="d on">Nenhuma</button><button data-v="trans" class="w">Transitória</button><button data-v="sust" class="b">Sustentada</button></div></label>
+<label class="sl"><span class="lv"><span>3 · Prova física adrenal (Na ↓, glicose ↓, corticoide crônico) ou outro foco</span></span><div class="seg" id="c5q3"><button data-v="0" class="b on">Ausente</button><button data-v="adr" class="m">Adrenal</button><button data-v="sep" class="w">Foco infeccioso</button><button data-v="tvp" class="w">Dor + trombocitose</button></div></label>
+<label class="sl"><span class="lv"><span>4 · Momento</span></span><div class="seg" id="c5q4"><button data-v="h" class="on">&lt; 48 h</button><button data-v="d5">PO 3–10</button><button data-v="d14">PO 7–30</button><button data-v="y">Anos</button></div></label>
+<div id="c5ver" class="ver d"></div>
+<ol class="steps" id="c5steps"></ol>
+<div class="forbid" id="c5forbid"></div>
+</div>
+</div>
+<div class="prose">
+<h3>Por que as perguntas têm ordem fixa</h3>
+<p>A ordem é a da mortalidade. Sangue mata em minutos; cortisol mata em horas; infecção mata em dias. Então a primeira pergunta de qualquer choque pós-operatório é "está sangrando?", e ela precisa ser respondida com prova física, não com impressão: hemoglobina que caiu 2 g/dL ou mais, dreno com sangue, abdome que distendeu. Se qualquer uma delas está presente, você está na coluna esquerda da escada e não sai dela até o sangramento estar controlado. Só quem passa limpo por essa pergunta ganha licença para pensar em cortisol, e só quem passa pelas duas procura foco infeccioso — que, de qualquer forma, não aparece em duas horas.</p>
+
+<h3>Pergunta 2 decide o lugar, não o diagnóstico</h3>
+<p>Se sangra, a próxima pergunta é onde tratar. O não respondedor vai ao centro cirúrgico, porque não há tempo de imagem e porque no tomógrafo não há quem o opere. O respondedor sustentado ou transitório que se estabilizou pode ir à tomografia com contraste em fase arterial: ela mostra o hematoma na loja e, se houver extravasamento de contraste ("blush"), aponta o vaso. Com o vaso apontado e o paciente estável, a radiologia intervencionista pode fechar de dentro — angioembolização, um cateter que sobe pela artéria femoral até o ramo que sangra e o oclui com molas. Depois de esplenectomia, porém, os sangradores típicos (vaso curto, hilo, leito) são superficiais e o cirurgião já conhece o caminho; a reoperação continua sendo a resposta na maioria dos enunciados, e a embolização aparece no estável com blush em ramo identificável.</p>
+
+<h3>Pergunta 3: as outras causas, cada uma com seu dia</h3>
+<p>Crise adrenal: nas primeiras horas, em quem usa corticoide, com Na e glicose baixos e Hb intacta. Foco infeccioso: nunca em 2 h; do 3º ao 7º dia pense em necrose do fundo gástrico (vasos curtos selados rente); do 5º ao 10º, abscesso subfrênico; anos depois, em quem tem febre alta e colapso, OPSI. Trombose de veia porta ou esplênica: do 7º ao 30º dia, com dor vaga, febre baixa e plaquetas de um milhão. E quando nada se encaixa: as causas não hemorrágicas de choque no pós-operatório — embolia pulmonar, infarto, anafilaxia a droga ou hemoderivado, pneumotórax hipertensivo — se investigam com ecocardiograma à beira do leito, ECG e gasometria, sem largar a hemoglobina seriada, porque sangue tamponado aparece tarde.</p>
+
+<h3>As iscas e de onde vêm</h3>
+<p>Cada distrator de uma boa questão é a conduta correta de outra linha. "Hidrocortisona e expansão" é a resposta da crise adrenal. "Tomografia" é a do respondedor estável. "Plaquetas e plasma" é a da coagulopatia demonstrada (INR alto, fibrinogênio baixo) ou da PTI com plaquetas de 10 mil sangrando — não da paciente com 130 mil e um vaso aberto. "Tranexâmico e mais cristaloide" mistura um adjuvante correto com um dano. Quando você reconhece a linha de origem de cada isca, a alternativa certa deixa de ser uma escolha e vira uma sobra.</p>
+
+<div class="key"><b>Guarde isto</b>Pergunta 1 é prova física de sangue. Pergunta 2 é resposta ao bolus e decide mesa ou tomógrafo. Pergunta 3 só existe para quem não sangra, e cada causa tem um dia no calendário. Toda alternativa errada é a resposta certa de outro cenário.</div>
+</div></section>
+
+<!-- ===================== CAP 6 ===================== -->
+<section class="ch" id="c6"><div class="wrap">
+<header><div class="num">CAPÍTULO 06</div><h2>A reposição que a banca pune</h2><p>Você tem a Dona Marlene sangrando 25 mL por minuto de um vaso curto no fundo da loja esplênica. Cada botão gasta dez minutos. Repare o que acontece com a temperatura, o cálcio e os fatores quando você insiste no cristaloide — e o que só a reoperação resolve.</p></header>
+<div class="howto"><b class="t">Como usar este instrumento</b>
+<ol><li>A Dona Marlene começa sangrando 25 mL por minuto de um vaso curto. Cada botão é uma ação e faz passarem 10 minutos de sangramento.</li>
+<li>Observe as cinco barras (hemoglobina, fatores efetivos, plaquetas, temperatura, cálcio) e a pressão sobre o coração. Verde é seguro, âmbar é alerta, vermelho é perigo.</li>
+<li>Rode o <em>Caminho errado</em> (só cristaloide) e depois o <em>Caminho certo</em> (sangue 1:1:1, TXA, cálcio, calor e reoperação). Leia o registro cronológico embaixo.</li></ol>
+Exercício: tente salvar a paciente só com bolsas, sem apertar "Reoperar". Repare que a hemoglobina sobe e desce, e que a temperatura e os fatores nunca voltam.</div>
+<div class="plate">
+<div class="fig">
+<svg id="sv6" viewBox="0 0 640 400" role="img" aria-label="Simulação de volemia, hemoglobina, coagulação e temperatura durante a reposição"></svg>
+<div class="cap">Modelo simplificado: volemia intravascular, hemácias, fatores de coagulação e plaquetas como frações; cada bolsa de cristaloide dilui os três e rouba 0,3 °C; cada unidade de hemácias traz citrato, que quela cálcio. O sangramento só para quando alguém liga o vaso.</div>
+</div>
+<div class="ctl">
+<div class="kv mono" id="c6out"></div>
+<div class="seg">
+<button class="btn" data-a="cris">+ 1.000 mL cristaloide</button>
+<button class="btn" data-a="ch">+ 1 CH</button>
+<button class="btn" data-a="pfc">+ 1 PFC</button>
+<button class="btn" data-a="plq">+ 1 pool plaquetas</button>
+<button class="btn" data-a="txa">TXA 1 g</button>
+<button class="btn" data-a="ca">Cálcio</button>
+<button class="btn" data-a="warm">Aquecer</button>
+<button class="btn" data-a="hc">Hidrocortisona</button>
+<button class="btn danger" data-a="op">Reoperar · ligar o vaso</button>
+</div>
+<div class="seg" style="border-top:1px dashed var(--line);padding-top:10px">
+<button class="btn" id="c6wrong">▶ Caminho errado (4 L de cristaloide)</button>
+<button class="btn primary" id="c6right">▶ Caminho certo (1:1:1 + TXA + mesa)</button>
+<button class="btn" id="c6reset">Recomeçar</button>
+</div>
+<div id="c6ver" class="ver d"></div>
+<div id="c6log" style="font-size:.8rem;color:var(--ink2);max-height:150px;overflow:auto;font-family:'IBM Plex Mono',monospace;line-height:1.5"></div>
+</div>
+</div>
+<div class="prose">
+<h3>O que é cada bolsa</h3>
+<p>O sangue de um doador é separado em componentes. O <b>concentrado de hemácias</b> (CH, ≈ 300 mL) traz as células que carregam oxigênio: cada bolsa sobe a Hb em cerca de 1 g/dL em um adulto. O <b>plasma fresco congelado</b> (PFC, ≈ 250 mL) traz os fatores de coagulação — as proteínas que transformam sangue líquido em coágulo. O <b>concentrado de plaquetas</b> (pool de 4–6 doadores ou aférese de um) sobe a contagem em 30–50 mil. O <b>crioprecipitado</b> concentra fibrinogênio, a "argamassa" final do coágulo. Cristaloide é só água com sal: Ringer lactato ou soro fisiológico. Nenhum deles carrega oxigênio nem coagula.</p>
+
+<h3>Por que o cristaloide machuca quem sangra</h3>
+<p>Ele faz quatro coisas ruins ao mesmo tempo. Dilui: cada litro que entra reduz a concentração de hemácias, fatores e plaquetas — o sangue vira água rosada que não coagula. Esfria: sai da bolsa a 20 °C e rouba 0,3 °C por litro de um paciente que já está perdendo calor. Acidifica: o soro fisiológico, com cloro em excesso, produz acidose hiperclorêmica. E estoura o coágulo: ao subir a pressão de repente, ele arranca o tampão frágil que a plaqueta tinha montado na boca do vaso, e o sangramento recomeça mais forte. Daí a ideia de <b>hipotensão permissiva</b>: até controlar a fonte, aceitar uma sistólica de 80–90 mmHg em vez de forçar 120 — exceto em traumatismo craniano, onde a pressão de perfusão cerebral manda.</p>
+
+<h3>A tríade letal, peça por peça</h3>
+<p><b>Hipotermia</b>: as enzimas da coagulação são proteínas que trabalham a 37 °C; abaixo de 35 elas perdem atividade e abaixo de 34 perdem metade; as plaquetas também param de aderir. <b>Acidose</b>: o pH baixo (do lactato e do cloro) inibe os mesmos fatores e piora a contratilidade do coração. <b>Coagulopatia</b>: resultado das duas anteriores mais a diluição e o consumo de fatores no próprio sangramento. As três se alimentam: quem coagula menos sangra mais, quem sangra mais esfria e acidifica mais, e assim por diante. O instrumento marca a tríade quando temperatura, fatores e lactato cruzam a fronteira ao mesmo tempo; a partir daí, a cirurgia deixa de ser hemostasia definitiva e vira controle de danos — parar o sangramento do jeito mais rápido (compressas, ligaduras), fechar temporariamente e reaquecer na UTI.</p>
+
+<h3>Ressuscitação hemostática: as regras que a banca cobra</h3>
+<p><b>Proporção 1:1:1</b> — hemácias, plasma e plaquetas em partes iguais, imitando sangue total; o estudo PROPPR mostrou menos mortes por exsanguinação do que com 2:1:1. <b>Ácido tranexâmico</b> — 1 g em 10 minutos e 1 g nas 8 h seguintes, iniciado dentro de 3 h do início do sangramento (CRASH-2); depois disso, não ajuda e pode piorar. Ele impede que o corpo dissolva o coágulo que acabou de formar. <b>Cálcio</b> — cada bolsa vem com citrato como anticoagulante, e o citrato "sequestra" o cálcio ionizado do paciente; sem cálcio, nenhum fator funciona. Reponha a cada 4 unidades ou quando o cálcio iônico cair abaixo de 1,1. <b>Calor</b> — manta térmica, fluidos e sangue aquecidos. <b>Gatilhos de protocolo de transfusão maciça</b>: escore ABC ≥ 2 (mecanismo penetrante, sistólica ≤ 90, FC ≥ 120, FAST positivo), índice de choque acima de 1, ou simplesmente não responder ao bolus. Definição de transfusão maciça: mais de 10 unidades em 24 h ou mais de 4 em 1 h.</p>
+<p>Depois de controlar a fonte, os alvos: Hb 7–8 g/dL (mais alto só em coronariopata), plaquetas acima de 50 mil, fibrinogênio acima de 150–200 mg/dL, INR abaixo de 1,5, temperatura acima de 35,5 °C, lactato caindo.</p>
+
+<h3>E a hidrocortisona?</h3>
+<p>Ela está no menu de propósito. Aperte e veja: a pressão sobe 2 mmHg por cinco minutos, porque o cortisol não liga vaso nem carrega oxigênio. Como adjuvante em quem usou prednisona por anos, é razoável e barato — dê a caminho da mesa. Como resposta da questão, é a isca principal, e o instrumento mostra em números por que ela não funciona sozinha.</p>
+
+<div class="key"><b>Guarde isto</b>Transfusão compra tempo; pinça compra vida. Sangue cedo e em proporção, TXA nas primeiras 3 h, cálcio a cada 4 bolsas, paciente aquecido — e o cirurgião chamado antes de tudo isso terminar.</div>
+</div></section>
+
+<!-- ===================== CAP 7 ===================== -->
+<section class="ch" id="c7"><div class="wrap">
+<header><div class="num">CAPÍTULO 07</div><h2>Na mesa — de onde o baço sangra</h2><p>A conversão "por dificuldade técnica" que o enunciado escreveu de passagem é o marcador de risco da hemorragia que vem depois. Escolha o sítio e veja o que sangra, por que sangra e o que ele vira no pós-operatório.</p></header>
+<div class="howto"><b class="t">Como usar este instrumento</b>
+<ol><li>Você está olhando pela câmera do laparoscópio, apontada para o canto superior esquerdo do abdome, com a paciente deitada sobre o lado direito (leia o contrato de vista abaixo da prancha). À esquerda da tela está o estômago; à direita, a parede e o diafragma; embaixo, o cólon.</li>
+<li>Os números na prancha correspondem à legenda; siga-os na ordem: 1 a 4 são os vasos, do tronco ao hilo; 5 é o baço; 6 a 10 são os ligamentos; 11 a 14, as vizinhanças. As setas com ponta são manobras (tração), não estruturas.</li>
+<li>Clique em cada <em>Sítio de sangramento</em>: a região se ilumina e o painel explica o mecanismo. Depois alterne entre a sequência laparoscópica e a aberta.</li></ol></div>
+<div class="plate">
+<div class="fig">
+<svg id="sv7" viewBox="0 0 640 520" role="img" aria-label="Prancha laparoscópica do hipocôndrio esquerdo: baço, hilo, ligamentos e sítios de sangramento" style="border-radius:8px">
+<defs>
+<marker id="mv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#3A2A20"/></marker>
+</defs>
+<rect x="0" y="0" width="640" height="520" fill="#F3EBE1"/>
+<!-- posterior → anterior -->
+<!-- diafragma -->
+<path d="M0,0 L640,0 L640,58 Q330,-6 0,70 Z" fill="#C08A80" stroke="#A8483E" stroke-width="1.6"/>
+<path d="M0,70 Q330,-6 640,58" fill="none" stroke="#A8483E" stroke-width="1" stroke-dasharray="3 3" opacity=".5"/>
+<!-- rim esquerdo -->
+<ellipse cx="540" cy="380" rx="62" ry="96" fill="#A05A4A" stroke="#7A4032" stroke-width="1.6"/>
+<!-- lig. esplenorrenal (fundo do hilo) -->
+<path id="g_esprenal" d="M400,200 C470,210 540,260 560,330 C540,380 470,380 410,350 Z" fill="#EBD9B8" stroke="#B9A692" stroke-width="1" opacity=".95"/>
+<!-- pâncreas: cauda -->
+<path d="M120,318 C200,300 280,308 330,300 C370,296 392,290 405,282 C412,300 400,318 380,326 C330,340 240,342 120,344 Z" fill="#D9B98A" stroke="#B9A692" stroke-width="1.6"/>
+<g fill="none" stroke="#B9A692" stroke-width=".8" opacity=".7"><path d="M170,318 q10,10 0,22"/><path d="M230,314 q10,10 0,24"/><path d="M290,310 q10,10 0,24"/><path d="M345,306 q8,8 0,20"/></g>
+<!-- veia esplênica (posterior, inferior à artéria) -->
+<path d="M120,332 C220,322 320,322 392,302" fill="none" stroke="#4A6FA5" stroke-width="13" stroke-linecap="round"/>
+<!-- artéria esplênica tortuosa na borda superior do pâncreas -->
+<path d="M120,304 C160,296 175,312 210,302 C245,292 255,310 290,300 C320,292 335,306 360,296 C378,289 388,282 396,270" fill="none" stroke="#C0392B" stroke-width="8" stroke-linecap="round"/>
+<!-- ramos hilares (distribuído) -->
+<path d="M396,270 C405,240 420,215 440,190" fill="none" stroke="#C0392B" stroke-width="5" stroke-linecap="round"/>
+<path d="M396,270 C405,300 420,330 440,352" fill="none" stroke="#C0392B" stroke-width="5" stroke-linecap="round"/>
+<path d="M392,302 C405,318 420,338 436,356" fill="none" stroke="#4A6FA5" stroke-width="7" stroke-linecap="round"/>
+<path d="M394,296 C404,262 418,232 438,204" fill="none" stroke="#4A6FA5" stroke-width="7" stroke-linecap="round"/>
+<!-- baço -->
+<path id="g_baco" d="M410,108 C520,66 618,172 596,320 C580,428 486,456 428,404 C388,368 378,300 386,232 C390,180 384,126 410,108 Z" fill="#8A3F52" stroke="#5E2A38" stroke-width="1.6"/>
+<path d="M430,150 C470,140 520,170 545,230" fill="none" stroke="#5E2A38" stroke-width="1" opacity=".35"/>
+<!-- baço acessório no hilo -->
+<circle id="g_acess" cx="408" cy="370" r="9" fill="#8A3F52" stroke="#5E2A38" stroke-width="1.4"/>
+<!-- lig. gastroesplênico (gordura) -->
+<path id="g_gastro" d="M292,112 C330,110 360,130 388,150 L388,300 C360,300 330,306 300,300 Z" fill="#E8CE8E" stroke="#B9A692" stroke-width="1" opacity=".92"/>
+<!-- vasos gástricos curtos -->
+<g stroke="#C0392B" stroke-width="4.5" stroke-linecap="round" fill="none" id="g_curtos">
+<path d="M304,136 C330,132 360,138 394,150"/><path d="M304,168 C330,164 360,170 392,182"/><path d="M304,200 C330,196 360,204 390,216"/><path d="M304,232 C330,230 360,238 390,250"/>
+</g>
+<!-- a. gastroepiploica esquerda -->
+<path id="g_gepe" d="M394,268 C360,272 330,286 300,292 C260,300 220,318 180,350" fill="none" stroke="#C0392B" stroke-width="4" stroke-linecap="round"/>
+<!-- estômago -->
+<path d="M30,84 C110,44 240,60 296,120 C318,190 302,270 250,318 C180,362 60,342 32,262 Z" fill="#C98A7A" stroke="#9E5B47" stroke-width="1.6"/>
+<path d="M60,120 C120,90 210,100 260,150" fill="none" stroke="#9E5B47" stroke-width="1" opacity=".4"/>
+<!-- cólon: ângulo esplênico -->
+<path d="M170,520 C220,440 330,420 420,432 C470,438 500,470 520,520 Z" fill="#C4917B" stroke="#9E5B47" stroke-width="1.6"/>
+<g fill="none" stroke="#9E5B47" stroke-width="1" opacity=".5"><path d="M230,470 q20,-8 40,0"/><path d="M300,450 q20,-8 40,0"/><path d="M380,448 q20,-8 40,0"/></g>
+<!-- lig. esplenocólico -->
+<path id="g_espcol" d="M420,432 C430,414 440,404 452,398 C462,410 468,420 470,436 Z" fill="#E8CE8E" stroke="#B9A692" stroke-width="1"/>
+<!-- lig. frenoesplênico -->
+<path id="g_freno" d="M420,112 C440,80 470,62 500,58 C510,80 490,100 470,118 Z" fill="#EBD9B8" stroke="#B9A692" stroke-width="1"/>
+<!-- destaques dinâmicos -->
+<g id="g_hl"></g>
+<!-- manobras -->
+<path d="M296,236 L248,244" fill="none" stroke="#3A2A20" stroke-width="2.2" marker-end="url(#mv)"/>
+<path d="M455,470 L455,426" fill="none" stroke="#3A2A20" stroke-width="2.2" marker-end="url(#mv)"/>
+<!-- marcadores -->
+<g id="g_marks" font-family="'IBM Plex Sans',Helvetica,Arial,sans-serif" font-size="12" font-weight="500" fill="#3A2A20">
+<g><line x1="200" y1="262" x2="230" y2="298" stroke="#6B5647" stroke-width=".8"/><circle cx="200" cy="262" r="10" fill="#fff" stroke="#3A2A20"/><text x="200" y="266" text-anchor="middle">1</text></g>
+<g><line x1="200" y1="392" x2="235" y2="336" stroke="#6B5647" stroke-width=".8"/><circle cx="200" cy="392" r="10" fill="#fff" stroke="#3A2A20"/><text x="200" y="396" text-anchor="middle">2</text></g>
+<g><line x1="330" y1="404" x2="352" y2="334" stroke="#6B5647" stroke-width=".8"/><circle cx="330" cy="404" r="10" fill="#fff" stroke="#3A2A20"/><text x="330" y="408" text-anchor="middle">3</text></g>
+<g><line x1="336" y1="240" x2="392" y2="270" stroke="#6B5647" stroke-width=".8"/><circle cx="336" cy="240" r="10" fill="#fff" stroke="#3A2A20"/><text x="336" y="244" text-anchor="middle">4</text></g>
+<g><circle cx="520" cy="250" r="10" fill="#fff" stroke="#3A2A20"/><text x="520" y="254" text-anchor="middle">5</text></g>
+<g><line x1="336" y1="92" x2="348" y2="134" stroke="#6B5647" stroke-width=".8"/><circle cx="336" cy="92" r="10" fill="#fff" stroke="#3A2A20"/><text x="336" y="96" text-anchor="middle">6</text></g>
+<g><line x1="262" y1="368" x2="286" y2="296" stroke="#6B5647" stroke-width=".8"/><circle cx="262" cy="368" r="10" fill="#fff" stroke="#3A2A20"/><text x="262" y="372" text-anchor="middle">7</text></g>
+<g><line x1="500" y1="486" x2="464" y2="424" stroke="#6B5647" stroke-width=".8"/><circle cx="500" cy="486" r="10" fill="#fff" stroke="#3A2A20"/><text x="500" y="490" text-anchor="middle">8</text></g>
+<g><line x1="610" y1="420" x2="556" y2="366" stroke="#6B5647" stroke-width=".8"/><circle cx="610" cy="420" r="10" fill="#fff" stroke="#3A2A20"/><text x="610" y="424" text-anchor="middle">9</text></g>
+<g><line x1="540" y1="70" x2="482" y2="92" stroke="#6B5647" stroke-width=".8"/><circle cx="540" cy="70" r="10" fill="#fff" stroke="#3A2A20"/><text x="540" y="74" text-anchor="middle">10</text></g>
+<g><line x1="608" y1="480" x2="572" y2="446" stroke="#6B5647" stroke-width=".8"/><circle cx="608" cy="480" r="10" fill="#fff" stroke="#3A2A20"/><text x="608" y="484" text-anchor="middle">11</text></g>
+<g><line x1="380" y1="446" x2="404" y2="380" stroke="#6B5647" stroke-width=".8"/><circle cx="380" cy="446" r="10" fill="#fff" stroke="#3A2A20"/><text x="380" y="450" text-anchor="middle">12</text></g>
+<g><circle cx="120" cy="150" r="10" fill="#fff" stroke="#3A2A20"/><text x="120" y="154" text-anchor="middle">13</text></g>
+<g><circle cx="60" cy="30" r="10" fill="#fff" stroke="#3A2A20"/><text x="60" y="34" text-anchor="middle">14</text></g>
+<g><circle cx="272" cy="252" r="10" fill="#fff" stroke="#3A2A20"/><text x="272" y="256" text-anchor="middle">A</text></g>
+<g><circle cx="455" cy="492" r="10" fill="#fff" stroke="#3A2A20"/><text x="455" y="496" text-anchor="middle">B</text></g>
+</g>
+<!-- orientação -->
+<g font-family="'IBM Plex Sans',Helvetica,Arial,sans-serif" font-size="11" fill="#6B5647">
+<text x="8" y="510">MEDIAL · estômago</text><text x="632" y="510" text-anchor="end">LATERAL · parede / diafragma</text>
+<text x="320" y="510" text-anchor="middle">CAUDAL · ângulo esplênico</text>
+</g>
+</svg>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px 14px;font-size:.8rem;margin:10px 4px 0;line-height:1.45" id="c7leg">
+<div><b>1</b> Artéria esplênica</div><div><b>2</b> Veia esplênica</div><div><b>3</b> Cauda do pâncreas</div>
+<div><b>4</b> Hilo — ramos segmentares</div><div><b>5</b> Baço, face visceral</div><div><b>6</b> Vasos gástricos curtos</div>
+<div><b>7</b> A. gastroepiploica esquerda</div><div><b>8</b> Lig. esplenocólico</div><div><b>9</b> Lig. esplenorrenal</div>
+<div><b>10</b> Lig. frenoesplênico</div><div><b>11</b> Rim esquerdo</div><div><b>12</b> Baço acessório (hilo)</div>
+<div><b>13</b> Estômago (grande curvatura)</div><div><b>14</b> Diafragma</div><div><b>A</b> Tração do estômago para medial · <b>B</b> Vetor de secção do esplenocólico</div>
+</div>
+<div class="cap">Contrato de vista: via laparoscópica, ótica de 30° no portal subcostal esquerdo médio-clavicular, dirigida ao hipocôndrio esquerdo. Paciente em decúbito lateral direito a 60°, mesa quebrada no flanco, Trendelenburg reverso 15°; cirurgião e assistente à frente do paciente (lado ventral). Âncoras: estômago medial (à esquerda do campo), diafragma cefálico, ângulo esplênico caudal, rim atrás do hilo. Calibres dos vasos exagerados para leitura.</div>
+</div>
+<div class="ctl">
+<h3>Sítio de sangramento</h3>
+<div class="seg" id="c7site">
+<button class="d on" data-s="curtos">Vasos curtos</button>
+<button class="d" data-s="hilo">Hilo</button>
+<button class="w" data-s="panc">Cauda do pâncreas</button>
+<button class="d" data-s="caps">Cápsula / diafragma</button>
+<button class="m" data-s="acess">Baço acessório</button>
+</div>
+<div id="c7out" class="ver d"></div>
+<h3 style="margin-top:6px">Sequência</h3>
+<div class="seg" id="c7seq"><button class="on" data-q="lap">Laparoscópica</button><button data-q="open">Aberta</button></div>
+<ol class="steps" id="c7steps"></ol>
+</div>
+</div>
+<div class="prose">
+<h3>Como montar o baço em três dimensões na cabeça</h3>
+<p>Imagine a paciente deitada de lado sobre o lado direito, com o esquerdo virado para o teto. O baço fica no fundo, encostado no diafragma e na parede posterior, como uma mão aberta apoiada na costela. A face que você vê da frente é a face visceral, côncava, com o hilo no meio — o hilo é a "porta" por onde entram os vasos. Encostado nessa porta, vindo da esquerda da tela, chega o pâncreas, cuja cauda toca o hilo em cerca de 30% das pessoas. Atrás do hilo, mais fundo, está o rim esquerdo. À esquerda da tela, na frente do pâncreas, o fundo do estômago, ligado ao baço por uma cortina de gordura (o ligamento gastroesplênico) atravessada pelos vasos curtos. Embaixo, o ângulo esplênico do cólon, preso ao polo inferior por outra cortina (ligamento esplenocólico). Em cima, o ligamento frenoesplênico prende o polo superior ao diafragma.</p>
+
+<h3>Os quatro ligamentos e o que cada um carrega</h3>
+<p>Ligamentos são dobras de peritônio que seguram o baço no lugar; alguns são só "cabos" sem vasos, outros são "conduítes" cheios de vasos. O <b>gastroesplênico</b> (6–7 na prancha) carrega os 4 a 6 vasos gástricos curtos e a artéria gastroepiploica esquerda — é o ligamento que mais sangra. O <b>esplenorrenal</b> (9), atrás, envolve a artéria e a veia esplênicas e a cauda do pâncreas até o hilo — é o ligamento que esconde o pâncreas. O <b>esplenocólico</b> (8) e o <b>frenoesplênico</b> (10) são quase avasculares e servem de âncoras — mas em esplenomegalia ou inflamação prévia ganham vasos e aderências que sangram em lençol.</p>
+
+<h3>A artéria tortuosa e os dois tipos de hilo</h3>
+<p>A artéria esplênica nasce do tronco celíaco e corre pela borda superior do pâncreas fazendo curvas — é a artéria mais tortuosa do abdome, o que a torna fácil de reconhecer e propensa a aneurisma (indicação de tratamento acima de 2 cm ou em mulher em idade fértil). A veia corre abaixo e atrás dela, colada ao pâncreas. Perto do hilo a artéria se divide de dois jeitos: no padrão <b>distribuído</b> (70%) ela se abre em vários ramos 2–3 cm antes de um hilo largo; no padrão <b>magistral</b> (30%) entra como um tronco único num hilo estreito. O magistral é mais fácil de grampear e mais catastrófico se o grampo escorrega. Uma regra de ouro: ligar a artéria antes da veia. O baço esvazia o sangue que tinha dentro para a circulação (autotransfusão), fica menor e mais fácil de manusear — e, na PTI, é depois desse momento que a transfusão de plaquetas passa a valer. O baço não infarta após ligar a artéria porque os vasos curtos, vindos do estômago, mantêm o polo superior vivo.</p>
+
+<h3>Laparoscópica × aberta: por que a sequência inverte</h3>
+<p>Na laparoscopia em decúbito lateral a gravidade é o afastador: estômago e cólon caem para o lado da mesa e o baço fica "pendurado" nos ligamentos posteriores e superiores. Você corta de baixo para cima e de frente para trás — esplenocólico, gastroesplênico com os vasos curtos, hilo — e só por último os ligamentos que seguram, porque enquanto eles seguram o baço não despenca sobre o campo. Na cirurgia aberta é o contrário: a mão do cirurgião entra por trás, solta primeiro o esplenorrenal e traz o baço para a linha média, onde os vasos curtos e o hilo são ligados sob visão direta. Em esplenomegalia maciça (baço acima de 20–25 cm) ou hipertensão portal, a via aberta é a escolha desde o início; na laparoscopia, a conversão acontece em 5–10% dos casos, quase sempre por sangramento — e é por isso que a palavra "convertida" no enunciado é um marcador de risco, não um detalhe.</p>
+
+<h3>O que sangra na recuperação</h3>
+<p>Em ordem de frequência: um vaso curto cujo clipe escorregou quando a pressão voltou a subir; um ramo do hilo mal selado pela linha de grampos; a superfície cruenta do leito diafragmático e da cápsula, que na PTI e nas doenças hematológicas é friável e sangra em lençol; e a cauda do pâncreas ferida, que sangra pouco mas vaza enzima. Todos ficam ao alcance da mesma incisão, e é por isso que a reabordagem — e não a tomografia — é a resposta no instável.</p>
+
+<div class="divg"><b>Como a banca cobra</b>"Ligar a artéria antes da veia" e "plaquetas após ligar a artéria" (PTI). "Cauda do pâncreas no hilo" → fístula pancreática, dreno com amilase. "Vasos curtos selados rente ao estômago" → necrose do fundo no 3º–7º dia. "Baço acessório no hilo" → recidiva da PTI. "Baço > 20–25 cm" → via aberta. "Esplenectomia laparoscópica convertida" → risco de hemorragia e abscesso.</div>
+</div></section>
+
+<!-- ===================== CAP 8 ===================== -->
+<section class="ch" id="c8"><div class="wrap">
+<header><div class="num">CAPÍTULO 08</div><h2>O calendário das complicações</h2><p>Cada complicação da esplenectomia tem um dia certo para aparecer, um sinal que a denuncia e um exame que a confirma. A banca escreve o dia e o sinal; você entrega o exame e a conduta. Clique nos eventos.</p></header>
+<div class="howto"><b class="t">Como usar este instrumento</b>
+<ol><li>A linha do tempo vai de horas (esquerda) a anos (direita). Cada bolha é uma complicação; o tamanho indica o quanto ela mata se não for reconhecida; a cor, a urgência da conduta.</li>
+<li>Clique em cada bolha e leia, no painel, o sinal que a denuncia, o exame que a confirma, a conduta e a frase que a banca costuma usar.</li>
+<li>Embaixo, alterne o <em>Cartão de vacinação</em> entre cirurgia eletiva e de urgência — o calendário muda.</li></ol></div>
+<div class="plate">
+<div class="fig">
+<svg id="sv8" viewBox="0 0 640 300" role="img" aria-label="Linha do tempo das complicações da esplenectomia"></svg>
+<div class="cap">Escala não linear: horas à esquerda, anos à direita. A altura da bolha é a mortalidade quando não reconhecida; a cor é a classe de conduta.</div>
+</div>
+<div class="ctl">
+<div id="c8panel" class="ver d"></div>
+<h3 style="margin-top:6px">Cartão de vacinação do asplênico</h3>
+<div class="seg" id="c8vac"><button class="on" data-v="elet">Eletiva (PTI)</button><button data-v="urg">Urgência (trauma)</button></div>
+<div id="c8vacout" style="font-size:.85rem;line-height:1.5"></div>
+</div>
+</div>
+<div class="prose">
+<h3>Raciocinar por tempo</h3>
+<p>Cada complicação tem uma janela porque tem um mecanismo. Um vaso sangra quando a pressão volta (horas). Um pulmão colapsa quando a dor impede a respiração profunda (1–3 dias). Uma parede gástrica isquêmica leva 3 a 7 dias para necrosar e perfurar. Um hematoma ou um vazamento de pâncreas leva 5 a 10 dias para virar pus. Um trombo no coto da veia esplênica se forma entre a 1ª e a 4ª semana, quando as plaquetas estão no pico. E a memória imunológica perdida cobra seu preço pela vida toda, principalmente nos dois primeiros anos. Quando o enunciado diz "PO 7" ou "há 3 anos", ele já está apontando a bolha.</p>
+
+<h3>Pulmão: a mais comum de todas</h3>
+<p>Atelectasia da base esquerda e derrame pleural pequeno são as complicações mais frequentes da esplenectomia, porque a incisão subcostal dói, o diafragma esquerdo foi manipulado e o paciente respira raso. Aparecem nas primeiras 48–72 h, com febre baixa e dessaturação. Tratam-se com analgesia, fisioterapia e deambulação; não se punciona derrame pequeno. O derrame que importa é o outro: o que surge no 7º dia, com febre em pico — ele é o reflexo pleural de um abscesso embaixo do diafragma.</p>
+
+<h3>Abscesso subfrênico</h3>
+<p>A loja esplênica é um espaço morto ideal: sangue residual, um pouco de suco pancreático e o contato com o diafragma. Entre o 5º e o 10º dia surgem febre em picos, dor no ombro esquerdo (o nervo frênico, que inerva o diafragma, entra na medula no mesmo nível que a sensibilidade do ombro), soluços e derrame pleural à esquerda, com leucocitose. O exame é a tomografia com contraste; o tratamento é drenagem percutânea guiada mais antibiótico de amplo espectro. Reopera-se só quando a coleção é inacessível ou a drenagem falha. Fatores de risco: conversão, fístula pancreática, hematoma da loja, lesão gástrica.</p>
+
+<h3>Fístula pancreática, pelo critério que a banca usa</h3>
+<p>Quando a cauda do pâncreas foi ferida no hilo, o dreno traz suco pancreático. A definição do ISGPS (2016): amilase do dreno acima de três vezes o limite superior da amilase sérica, a partir do 3º dia. Se isso não muda nada na evolução, é apenas "vazamento bioquímico". Vira fístula grau B quando muda a conduta (dreno prolongado além de 3 semanas, antibiótico, drenagem percutânea, nutrição parenteral) e grau C quando leva a reoperação, falência de órgão ou morte. A grande maioria é tratada mantendo o dreno, alimentando o paciente e esperando; octreotide é opcional; CPRE com prótese pancreática fica para as que persistem por semanas.</p>
+
+<h3>Trombose de veia porta e esplênica</h3>
+<p>Ao ligar a veia esplênica sobra um coto cego onde o sangue para, no exato momento em que as plaquetas passam de um milhão — estase mais hipercoagulabilidade. O trombo nasce no coto e cresce até a veia porta ou a mesentérica superior. Acontece em 5–10% das esplenectomias (até 30% quando se faz Doppler de rotina), mais em esplenomegalia maciça, doenças mieloproliferativas e anemias hemolíticas. Entre o 7º e o 30º dia aparecem dor abdominal vaga, febre baixa, íleo, às vezes ascite, com leucocitose e trombocitose. O exame é o Doppler do sistema porta ou a angiotomografia venosa. O tratamento é anticoagulação plena (heparina, depois varfarina ou anticoagulante oral direto) por 3 a 6 meses. Sem tratamento, o trombo pode isquemiar o intestino ou virar cavernoma portal com hipertensão portal anos depois. Prevenção: heparina de baixo peso profilática no pós-operatório e aspirina quando as plaquetas passam de um milhão.</p>
+
+<h3>OPSI, do zero</h3>
+<p>Algumas bactérias — pneumococo, hemófilo tipo b, meningococo — usam uma cápsula de açúcar como capa de invisibilidade: os macrófagos do fígado não conseguem agarrá-las. Para serem engolidas, precisam primeiro ser "marcadas" com anticorpo e complemento — isso se chama opsonização, e as marcas funcionam como alças. Quem fabrica esses anticorpos (IgM, em resposta rápida a polissacarídeos) são os linfócitos B de memória da zona marginal do baço; e o baço é o único órgão capaz de capturar a bactéria encapsulada <em>antes</em> de ela estar marcada, porque a circulação aberta força cada bactéria a passar pelos macrófagos dos cordões. Sem o baço, a bactéria circula livre, se multiplica e, em 12 a 24 horas, uma "gripe" vira choque séptico com coagulação intravascular disseminada e hemorragia das adrenais (Waterhouse-Friderichsen). Isso é a OPSI — <i>overwhelming post-splenectomy infection</i>. Risco de 3–5% ao longo da vida, maior em crianças, em quem operou por doença hematológica e nos primeiros 2–3 anos; mortalidade de 50–70%. Outros vilões: <i>Capnocytophaga</i> após mordida de cão, babesiose e malária grave.</p>
+<p>A conduta em quem tem febre alta sem baço é antibiótico na primeira hora — ceftriaxona IV depois de colher hemoculturas, sem esperar resultado nem imagem — e UTI. A prevenção tem quatro pernas. Vacinas: pneumocócica conjugada seguida da polissacarídica 23-valente 8 semanas depois (a conjugada recruta linfócitos T e funciona mesmo sem baço; a polissacarídica pura depende da zona marginal, por isso vem depois e é reforçada em 5 anos), meningocócica ACWY e B, hemófilo b e influenza anual. Momento: 14 dias antes da cirurgia eletiva; se foi urgência, 14 dias depois — antes disso a resposta é pior — ou na alta, se houver risco de perder o paciente. Antibiótico profilático: penicilina ou amoxicilina para crianças menores de 5 anos até completá-los e por 1–2 anos após a cirurgia; adultos por 1–2 anos ou enquanto imunossuprimidos. Educação: febre é emergência; antibiótico de bolso (amoxicilina-clavulanato) para tomar a caminho do pronto-socorro; cartão de asplênico.</p>
+
+<div class="divg"><b>Como a banca cobra</b>"PO 7, febre em picos, dor no ombro esquerdo, derrame à esquerda" → abscesso subfrênico, TC + drenagem. "Dreno claro, amilase 3× a sérica" → fístula pancreática, conservador. "PO 12, dor vaga, febre baixa, plaquetas 1,1 milhão" → trombose portal, Doppler + anticoagulação. "Plaquetas 1,2 milhão, assintomático" → aspirina. "3 anos depois, febre alta e choque" → OPSI, ceftriaxona já. "Quando vacinar?" → 14 dias antes (eletiva) ou 14 dias depois (urgência).</div>
+</div></section>
+
+<!-- ===================== CAP 9 ===================== -->
+<section class="ch" id="c9"><div class="wrap">
+<header><div class="num">CAPÍTULO 09</div><h2>A forja — a mesma questão em dez roupagens</h2><p>A questão-mãe e nove pivôs. Em cada um, o dado trocado está marcado. Responda antes de abrir a explicação: ela diz por que a conduta virou e de que linha da tabela-mãe cada distrator foi tirado.</p></header>
+<div class="howto"><b class="t">Como usar a forja</b>
+<ol><li>Leia a questão-mãe e responda. Depois, em cada pivô, procure primeiro o dado marcado em amarelo: é ele que mudou — e é ele que muda a conduta.</li>
+<li>Marque uma alternativa antes de abrir a explicação. A explicação diz por que a conduta virou e de que linha da tabela-mãe cada alternativa errada foi tirada.</li>
+<li>O placar fica fixo embaixo. Ao terminar, volte à tabela-mãe e releia as linhas das questões que errou.</li></ol></div>
+<div id="forja"></div>
+<div class="score"><span id="scoretxt" class="mono">0 / 10</span><button class="btn" id="forjareset">Recomeçar</button></div>
+</div></section>
+
+<!-- ===================== CAP 10 ===================== -->
+<section class="ch" id="c10"><div class="wrap">
+<header><div class="num">CAPÍTULO 10</div><h2>Tabela-mãe</h2><p>Uma linha por conduta. O gatilho é o que o enunciado escreve; a ação é o que você marca. A cor da borda é a classe: vermelho decide em minutos, âmbar decide em horas, teal é rotina, violeta é o eixo que a banca planta.</p></header>
+<div class="howto"><b class="t">Como usar a tabela-mãe</b>
+Leia cada cartão de cima para baixo: o texto cinza é o <em>gatilho</em> — a frase que o enunciado escreve —, o texto abaixo é a <em>ação</em> que você marca. A cor da borda diz a pressa: vermelho decide em minutos, âmbar decide em horas, teal é rotina, violeta é o eixo adrenal que a banca planta. Na véspera da prova, cubra as ações e recite-as a partir dos gatilhos.</div>
+<div class="cards" id="cards"></div>
+<div class="pearl">Pós-operatório imediato em choque é sangue até prova em contrário. Hemoglobina que cai é a prova; corticoide crônico é só a história. O dreno é o paciente — e quando o dreno está seco, o abdome e a hemoglobina são o dreno.</div>
+</div></section>
+
+<footer><div class="wrap">Atlas de estudo para o ENARE R+ Cirurgia Geral. Fontes de referência: ATLS 10ª/11ª ed. (classes de choque e resposta ao bolus), Sabiston 21ª ed. (baço, insuficiência adrenal perioperatória), ASH 2019 (PTI), PROPPR/CRASH-2 (ressuscitação hemostática), ISGPS 2016 (fístula pancreática), diretrizes de vacinação do asplênico (CDC/ACIP e CRIE-MS). Modelos fisiológicos das simulações são didáticos e simplificados.</div></footer>
+<script>
+(function(){
+'use strict';
+const $=(s,r)=>(r||document).querySelector(s), $$=(s,r)=>Array.from((r||document).querySelectorAll(s));
+const fmt=(n,d)=>Number(n).toLocaleString('pt-BR',{minimumFractionDigits:d||0,maximumFractionDigits:d||0});
+const lerp=(a,b,t)=>a+(b-a)*t, clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const NS='http://www.w3.org/2000/svg';
+function el(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in attrs){if(k==='text'){e.textContent=attrs[k];}else e.setAttribute(k,attrs[k]);}if(parent)parent.appendChild(e);return e;}
+function seg(container,onPick){const btns=$$('button',container);btns.forEach(b=>b.addEventListener('click',()=>{btns.forEach(x=>x.classList.remove('on'));b.classList.add('on');onPick(b.dataset,b);}));return {set(key,val){btns.forEach(x=>x.classList.toggle('on',x.dataset[key]===val));}};}
+const css=(v)=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+
+/* ---------- rail ---------- */
+const links=$$('#rail a');
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id));}});},{rootMargin:'-30% 0px -60% 0px'});
+$$('section.ch').forEach(s=>io.observe(s));
+
+/* ================= CAP 1 — leito da recuperação ================= */
+const C1={
+  hem:{name:'Hemorragia ativa — não respondedor',cls:'d',dren:'sangue',
+    t:[0,60,90,120,150,240],pas:[118,100,84,80,72,60],pad:[76,64,50,40,38,30],fc:[82,98,112,118,126,140],hb:[12,11.2,9.4,7.2,6.4,5.2],lac:[14,22,32,42,50,68],na:[138,138,138,138,138,137],k:[4,4,4,4,4.1,4.2],gli:[118,122,130,134,140,150],temp:[36.4,36.2,36,35.6,35.3,34.8],dreno:[0,220,500,900,1200,1800],abd:[0,.2,.5,.8,.9,1],
+    ver:'<strong>Sangue — prova física completa</strong>Bolus não subiu a PA, Hb caiu 4,8 g/dL, dreno vermelho e abdome crescendo. Perde mais do que recebe: sangramento ativo até prova em contrário. Conduta: concentrado de hemácias agora, protocolo 1:1:1, TXA, e reabordagem. O tomógrafo não tem cirurgião.'},
+  hemdry:{name:'Hemorragia com dreno seco',cls:'d',dren:'sangue',
+    t:[0,60,90,120,150,240],pas:[118,100,84,80,72,60],pad:[76,64,50,40,38,30],fc:[82,98,112,118,126,140],hb:[12,11.2,9.4,7.2,6.4,5.2],lac:[14,22,32,42,50,68],na:[138,138,138,138,138,137],k:[4,4,4,4,4.1,4.2],gli:[118,122,130,134,140,150],temp:[36.4,36.2,36,35.6,35.3,34.8],dreno:[0,30,45,50,60,70],abd:[0,.3,.6,.9,1,1],
+    ver:'<strong>Sangue — o dreno mentiu</strong>Dreno com 50 mL não absolve ninguém: coágulo na ponta ou dreno fora da loja. A prova que resta é a Hb que caiu 4,8 g/dL e o abdome distendido. Mesma conduta da hemorragia com dreno cheio: sangue e reoperação. Enunciado-armadilha típico: "dreno com débito mínimo".'},
+  trans:{name:'Respondedor transitório',cls:'w',dren:'sangue',
+    t:[0,60,90,120,150,240],pas:[118,104,88,108,92,84],pad:[76,68,54,66,58,52],fc:[82,96,110,94,108,116],hb:[12,11.4,10.6,9.4,8.8,8.2],lac:[14,18,24,22,28,32],na:[138,138,138,138,138,138],k:[4,4,4,4,4,4],gli:[118,120,124,126,128,130],temp:[36.4,36.3,36.1,36,35.9,35.8],dreno:[0,120,240,350,420,520],abd:[0,.1,.25,.35,.45,.5],
+    ver:'<strong>Sangra devagar — janela para imagem</strong>Subiu com o bolus e voltou a cair: ainda perde, mais lentamente que a reposição. Sangue reservado, TC com contraste em fase arterial enquanto está estável, angioembolização se houver blush; se cair de novo, vai para a mesa sem a imagem.'},
+  sust:{name:'Respondedor sustentado',cls:'b',dren:'sangue',
+    t:[0,60,90,120,150,240],pas:[118,108,96,114,116,118],pad:[76,70,62,72,74,76],fc:[82,92,102,88,84,80],hb:[12,11.6,11,10.6,10.5,10.4],lac:[14,16,20,18,15,12],na:[138,138,138,138,138,138],k:[4,4,4,4,4,4],gli:[118,120,122,122,120,118],temp:[36.4,36.3,36.2,36.2,36.3,36.4],dreno:[0,80,140,170,190,210],abd:[0,.1,.15,.15,.15,.15],
+    ver:'<strong>Perdeu e parou</strong>Subiu e ficou: perda < 20%, sangramento cessou. Hb seriada a cada 4–6 h, dreno vigiado, nada de imagem de rotina. É o único cenário em que "observar" é resposta certa — e a banca sabe disso, por isso coloca "observar" como isca nos outros quatro.'},
+  adr:{name:'Crise adrenal',cls:'m',dren:'seroso',
+    t:[0,60,90,120,150,240],pas:[118,100,84,78,74,70],pad:[76,62,50,42,40,38],fc:[82,98,110,112,116,120],hb:[12,11.9,11.8,11.6,11.5,11.5],lac:[14,20,26,30,34,38],na:[138,134,130,127,125,123],k:[4,4.1,4.3,4.4,4.5,4.6],gli:[118,96,78,58,52,46],temp:[36.4,36.9,37.5,38.1,38.4,38.6],dreno:[0,20,35,45,55,65],abd:[0,.05,.1,.1,.1,.1],
+    ver:'<strong>Choque sem perda — a história virou causa</strong>Bolus não subiu a PA, mas a Hb ficou em 11,6 (só diluição), dreno seroso, abdome flácido. O que caiu foi o sódio e a glicose, e subiu a temperatura. Eixo suprimido por quatro anos de prednisona: hidrocortisona 100 mg IV agora, 50 mg 6/6 h, soro fisiológico e glicose.'}
+};
+function interp(arr,ts,t){let i=0;while(i<ts.length-1&&ts[i+1]<t)i++;const a=ts[i],b=ts[Math.min(i+1,ts.length-1)];const f=b===a?0:clamp((t-a)/(b-a),0,1);return lerp(arr[i],arr[Math.min(i+1,arr.length-1)],f);}
+let c1cause='hem', c1t=120;
+const cv=$('#cv1'), ctx=cv.getContext('2d');
+let ecgPhase=0, lastTs=0;
+function c1vals(){const s=C1[c1cause];const g=k=>interp(s[k],s.t,c1t);return {pas:g('pas'),pad:g('pad'),fc:g('fc'),hb:g('hb'),lac:g('lac'),na:g('na'),k:g('k'),gli:g('gli'),temp:g('temp'),dreno:g('dreno'),abd:g('abd'),spo2:clamp(99-(120-g('pas'))*0.12,88,99)};}
+function drawC1(ts){
+  const dt=lastTs?(ts-lastTs)/1000:0;lastTs=ts;const v=c1vals();ecgPhase+=dt*(v.fc/60);
+  const W=640,H=560;ctx.clearRect(0,0,W,H);
+  /* monitor */
+  ctx.fillStyle='#14181C';roundRect(0,0,404,300,12);ctx.fill();
+  ctx.fillStyle='#9AA3AD';ctx.font='500 11px "IBM Plex Mono",monospace';ctx.fillText('RPA · LEITO 3 · MARLENE, 47 a',14,20);
+  const hh=Math.floor(c1t/60),mm=c1t%60;ctx.textAlign='right';ctx.fillText('PO '+hh+' h '+String(mm).padStart(2,'0'),392,20);ctx.textAlign='left';
+  /* ECG trace */
+  const traceY=80,traceX0=14,traceW=270;
+  ctx.strokeStyle='#4CE07A';ctx.lineWidth=1.6;ctx.beginPath();
+  for(let x=0;x<=traceW;x++){const tt=(x/traceW)*4+ecgPhase;const y=traceY-ecg(tt%1)*34;if(x===0)ctx.moveTo(traceX0+x,y);else ctx.lineTo(traceX0+x,y);}
+  ctx.stroke();
+  ctx.fillStyle='#4CE07A';ctx.font='500 11px "IBM Plex Mono",monospace';ctx.fillText('ECG II',traceX0,traceY-46);
+  ctx.font='600 34px "IBM Plex Mono",monospace';ctx.textAlign='right';ctx.fillText(Math.round(v.fc),392,92);ctx.font='500 11px "IBM Plex Mono",monospace';ctx.fillText('bpm',392,106);ctx.textAlign='left';
+  /* PA */
+  const paY=160;ctx.strokeStyle='#FF5A5A';ctx.lineWidth=1.4;ctx.beginPath();
+  for(let x=0;x<=traceW;x++){const tt=(x/traceW)*4+ecgPhase;const p=tt%1;const amp=(v.pas-v.pad)/2;const y=paY-Math.max(0,Math.sin(p*Math.PI*2)*(p<.5?1:.25))*amp*0.5+8;if(x===0)ctx.moveTo(traceX0+x,y);else ctx.lineTo(traceX0+x,y);}
+  ctx.stroke();
+  ctx.fillStyle='#FF5A5A';ctx.font='500 11px "IBM Plex Mono",monospace';ctx.fillText('PA (PANI)',traceX0,paY-30);
+  ctx.font='600 30px "IBM Plex Mono",monospace';ctx.textAlign='right';ctx.fillText(Math.round(v.pas)+'/'+Math.round(v.pad),392,166);ctx.font='500 11px "IBM Plex Mono",monospace';ctx.fillText('PAM '+Math.round((v.pas+2*v.pad)/3)+' mmHg',392,180);ctx.textAlign='left';
+  /* SpO2 + temp */
+  const spY=232;ctx.strokeStyle='#52C7F2';ctx.lineWidth=1.4;ctx.beginPath();
+  for(let x=0;x<=traceW;x++){const tt=(x/traceW)*4+ecgPhase;const p=tt%1;const y=spY-Math.pow(Math.max(0,Math.sin(p*Math.PI)),2)*20+8;if(x===0)ctx.moveTo(traceX0+x,y);else ctx.lineTo(traceX0+x,y);}
+  ctx.stroke();
+  ctx.fillStyle='#52C7F2';ctx.font='500 11px "IBM Plex Mono",monospace';ctx.fillText('SpO₂',traceX0,spY-28);
+  ctx.font='600 26px "IBM Plex Mono",monospace';ctx.textAlign='right';ctx.fillText(Math.round(v.spo2)+'%',392,236);ctx.textAlign='left';
+  ctx.fillStyle=v.temp<35.5?'#52C7F2':(v.temp>37.8?'#FFB84C':'#E5E9EE');ctx.font='500 13px "IBM Plex Mono",monospace';ctx.fillText('T '+fmt(v.temp,1)+' °C',14,282);
+  ctx.fillStyle='#E5E9EE';ctx.fillText('IC '+fmt(v.fc/v.pas,2),150,282);
+  ctx.fillStyle=(v.pas<90)?'#FF5A5A':'#9AA3AD';ctx.fillText(v.pas<90?'▲ HIPOTENSÃO':'',270,282);
+  /* bolus marker */
+  if(c1t>=90&&c1t<=120){ctx.fillStyle='#FFB84C';ctx.font='500 11px "IBM Plex Mono",monospace';ctx.textAlign='right';ctx.fillText('RL 1.000 mL correndo',392,262);ctx.textAlign='left';}
+  /* drain */
+  const s=C1[c1cause];const bx=440,by=30,bw=150,bh=250;
+  ctx.fillStyle='#F3EBE1';ctx.strokeStyle='#B9A692';ctx.lineWidth=1.5;roundRect(bx,by,bw,bh,10);ctx.fill();ctx.stroke();
+  const level=clamp(v.dreno/2000,0,1);const fh=level*(bh-16);
+  ctx.fillStyle=s.dren==='sangue'?'#8E1B1B':'#E2C15E';roundRect(bx+6,by+bh-6-fh,bw-12,fh,6);ctx.fill();
+  for(let i=1;i<=4;i++){const y=by+bh-6-(bh-16)*i/4;ctx.strokeStyle='#8A7A66';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(bx+bw-30,y);ctx.lineTo(bx+bw-6,y);ctx.stroke();ctx.fillStyle='#6B5647';ctx.font='10px "IBM Plex Mono",monospace';ctx.textAlign='right';ctx.fillText((i*500).toString(),bx+bw-32,y+3);ctx.textAlign='left';}
+  ctx.strokeStyle='#8A7A66';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(bx+40,by-14);ctx.lineTo(bx+40,by);ctx.stroke();
+  if(v.dreno>0&&c1t>0){const dy=by+10+((ecgPhase*40)%24);ctx.fillStyle=s.dren==='sangue'?'#8E1B1B':'#E2C15E';ctx.beginPath();ctx.arc(bx+40,dy,3,0,7);ctx.fill();}
+  ctx.fillStyle=css('--ink')||'#1F1A17';ctx.font='500 12px "IBM Plex Sans",sans-serif';ctx.fillText('Dreno da loja esplênica',bx,by+bh+22);
+  ctx.font='600 16px "IBM Plex Mono",monospace';ctx.fillText(fmt(v.dreno)+' mL · '+(s.dren==='sangue'?'sangue':'seroso'),bx,by+bh+44);
+  /* abdomen profile */
+  const gy=470;ctx.strokeStyle='#8A7A66';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(20,gy+44);ctx.lineTo(620,gy+44);ctx.stroke();
+  ctx.fillStyle='#E7D9C8';ctx.beginPath();ctx.moveTo(40,gy+44);ctx.lineTo(40,gy);ctx.quadraticCurveTo(90,gy-52,150,gy-40);ctx.lineTo(230,gy-30);
+  const bulge=36+v.abd*70;ctx.bezierCurveTo(300,gy-30-bulge,430,gy-30-bulge,500,gy-24);
+  ctx.quadraticCurveTo(560,gy-18,600,gy+4);ctx.lineTo(600,gy+44);ctx.closePath();ctx.fill();ctx.strokeStyle='#B9A692';ctx.stroke();
+  /* incision */
+  ctx.strokeStyle='#8E1B1B';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(330,gy-30-bulge*0.95);ctx.lineTo(420,gy-28-bulge*0.7);ctx.stroke();
+  ctx.fillStyle=css('--ink2')||'#6B5647';ctx.font='500 12px "IBM Plex Sans",sans-serif';ctx.fillText('cabeça',44,gy+62);ctx.textAlign='right';ctx.fillText('pés',600,gy+62);ctx.textAlign='left';
+  ctx.fillStyle=v.abd>.5?'#B7352B':(css('--ink2')||'#6B5647');ctx.font='600 13px "IBM Plex Sans",sans-serif';ctx.fillText(v.abd>.7?'Abdome distendido, tenso':(v.abd>.3?'Abdome discretamente distendido':'Abdome flácido, indolor'),240,gy+62);
+  requestAnimationFrame(drawC1);
+}
+function ecg(p){ if(p<.1)return Math.sin(p/.1*Math.PI)*.12; if(p<.16)return 0; if(p<.19)return -.15*((p-.16)/.03); if(p<.23)return -.15+1.15*((p-.19)/.04); if(p<.27)return 1-1.3*((p-.23)/.04); if(p<.30)return -.3+.3*((p-.27)/.03); if(p<.42)return 0; if(p<.6)return Math.sin((p-.42)/.18*Math.PI)*.25; return 0; }
+function roundRect(x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+function c1panel(){
+  const v=c1vals(),s=C1[c1cause];const box=$('#c1labs');
+  const row=(k,val,cls)=>'<span class="k">'+k+'</span><span class="v'+(cls?' '+cls:'')+'">'+val+'</span>';
+  box.innerHTML=row('Hb',fmt(v.hb,1)+' g/dL'+(12-v.hb>=2?' ▼':''),12-v.hb>=2?'d':'')+row('Lactato',fmt(v.lac)+' mg/dL',v.lac>36?'d':'')+row('Na⁺',fmt(v.na)+' mEq/L',v.na<130?'m':'')+row('K⁺',fmt(v.k,1)+' mEq/L','')+row('Glicemia',fmt(v.gli)+' mg/dL',v.gli<70?'m':'')+row('Índice de choque',fmt(v.fc/v.pas,2),v.fc/v.pas>1?'d':'');
+  const ver=$('#c1ver');ver.className='ver '+s.cls;
+  if(c1t<90)ver.innerHTML='<strong>Antes do bolus</strong>Ainda sem classificação de resposta. Observe a tendência: o que já está caindo?';
+  else if(c1t<120)ver.innerHTML='<strong>Bolus correndo</strong>1.000 mL de Ringer entre 1 h 30 e 2 h. A classificação do ATLS só vale ao final.';
+  else ver.innerHTML=s.ver;
+  $$('.v.d',box).forEach(x=>x.style.color='var(--d)');$$('.v.m',box).forEach(x=>x.style.color='var(--m)');
+}
+seg($('#c1cause'),d=>{c1cause=d.c;c1panel();});
+$('#c1t').addEventListener('input',e=>{c1t=+e.target.value;$('#c1tv').textContent=Math.floor(c1t/60)+' h '+String(c1t%60).padStart(2,'0');c1panel();});
+c1panel();requestAnimationFrame(drawC1);
+
+/* ================= CAP 2 — perda e diluição ================= */
+const sv2=$('#sv2');
+function drawC2(){
+  const loss=+$('#c2l').value,cris=+$('#c2c').value,ref=+$('#c2r').value;const VOL=4900;
+  const pct=loss/VOL*100;const vol=VOL-loss+ref+cris*0.25;const hb=12*(VOL-loss)/vol;
+  const cls=pct<15?1:pct<30?2:pct<40?3:4;
+  const T={1:{fc:'< 100',pa:'normal',pp:'normal',fr:'14–20',diu:'> 30 mL/h',men:'ansioso leve',c:'b'},2:{fc:'100–120',pa:'normal',pp:'↓',fr:'20–30',diu:'20–30 mL/h',men:'ansioso',c:'w'},3:{fc:'120–140',pa:'↓',pp:'↓',fr:'30–40',diu:'5–15 mL/h',men:'confuso',c:'d'},4:{fc:'> 140',pa:'↓↓',pp:'↓',fr:'> 35',diu:'desprezível',men:'letárgico',c:'d'}}[cls];
+  $('#c2lv').textContent=fmt(loss)+' mL · '+fmt(pct)+'%';$('#c2cv').textContent=fmt(cris)+' mL';$('#c2rv').textContent=fmt(ref)+' mL';
+  sv2.innerHTML='';
+  const ink=css('--ink'),ink2=css('--ink2'),line=css('--line');
+  /* tank */
+  const tx=40,ty=40,tw=200,th=330;
+  el('rect',{x:tx,y:ty,width:tw,height:th,rx:12,fill:'none',stroke:ink2,'stroke-width':1.5},sv2);
+  const scale=th/6000;
+  let y=ty+th;
+  const remain=VOL-loss;const hRem=remain*scale;y-=hRem;el('rect',{x:tx+4,y:y,width:tw-8,height:hRem,fill:'#B7352B',opacity:.85},sv2);
+  el('text',{x:tx+tw/2,y:y+hRem/2+4,'text-anchor':'middle',fill:'#fff','font-size':12,'font-family':'IBM Plex Mono',text:'sangue que ficou '+fmt(remain)+' mL'},sv2);
+  const hRef=ref*scale;if(ref>0){y-=hRef;el('rect',{x:tx+4,y:y,width:tw-8,height:hRef,fill:'#E9A29A'},sv2);if(hRef>14)el('text',{x:tx+tw/2,y:y+hRef/2+4,'text-anchor':'middle',fill:'#5A1E18','font-size':11,'font-family':'IBM Plex Mono',text:'refill '+fmt(ref)},sv2);}
+  const hCr=cris*0.25*scale;if(cris>0){y-=hCr;el('rect',{x:tx+4,y:y,width:tw-8,height:hCr,fill:'#9CC4E8'},sv2);if(hCr>14)el('text',{x:tx+tw/2,y:y+hCr/2+4,'text-anchor':'middle',fill:'#1F3A55','font-size':11,'font-family':'IBM Plex Mono',text:'cristaloide ¼ '+fmt(cris*0.25)},sv2);}
+  /* lost */
+  const hLoss=loss*scale;if(loss>0){el('rect',{x:tx+tw+16,y:ty+th-hLoss,width:40,height:hLoss,fill:'#B7352B',opacity:.35,rx:4},sv2);el('text',{x:tx+tw+36,y:ty+th+16,'text-anchor':'middle',fill:ink2,'font-size':10,text:'perdido'},sv2);}
+  /* baseline mark */
+  el('line',{x1:tx-6,x2:tx+tw+6,y1:ty+th-VOL*scale,y2:ty+th-VOL*scale,stroke:ink2,'stroke-dasharray':'4 3'},sv2);
+  el('text',{x:tx,y:ty+th-VOL*scale-6,fill:ink2,'font-size':10,text:'volemia normal 4.900 mL'},sv2);
+  el('text',{x:tx,y:ty+th+16,fill:ink2,'font-size':10,text:'intravascular agora: '+fmt(vol)+' mL'},sv2);
+  /* Hb gauge */
+  const gx=340,gy=40,gw=44,gh=200;
+  el('rect',{x:gx,y:gy,width:gw,height:gh,rx:8,fill:'none',stroke:ink2},sv2);
+  const gh2=clamp(hb/14,0,1)*gh;el('rect',{x:gx+3,y:gy+gh-gh2,width:gw-6,height:gh2,rx:6,fill:hb<8?'#B7352B':hb<10?'#B9741A':'#1E7F72'},sv2);
+  el('line',{x1:gx-8,x2:gx+gw+8,y1:gy+gh-7/14*gh,y2:gy+gh-7/14*gh,stroke:ink2,'stroke-dasharray':'3 3'},sv2);
+  el('text',{x:gx-10,y:gy+gh-7/14*gh+4,'text-anchor':'end',fill:ink2,'font-size':10,text:'gatilho 7'},sv2);
+  el('text',{x:gx+gw/2,y:gy+gh+20,'text-anchor':'middle',fill:ink,'font-size':22,'font-weight':600,'font-family':'IBM Plex Mono',text:fmt(hb,1)},sv2);
+  el('text',{x:gx+gw/2,y:gy+gh+36,'text-anchor':'middle',fill:ink2,'font-size':10,text:'Hb g/dL'},sv2);
+  el('text',{x:gx,y:gy-12,fill:ink2,'font-size':10,text:'Hb = 12 × (4.900 − perda) ÷ volume atual'},sv2);
+  /* class card */
+  const cx=440,cy=40;const col={b:'#1E7F72',w:'#B9741A',d:'#B7352B'}[T.c];
+  el('rect',{x:cx,y:cy,width:180,height:238,rx:12,fill:'none',stroke:col,'stroke-width':1.5},sv2);
+  el('text',{x:cx+14,y:cy+28,fill:col,'font-size':20,'font-weight':600,'font-family':'Fraunces',text:'Classe '+['','I','II','III','IV'][cls]},sv2);
+  const rows=[['Perda',['< 15%','15–30%','31–40%','> 40%'][cls-1]],['FC',T.fc],['PAS',T.pa],['Pressão de pulso',T.pp],['FR',T.fr],['Diurese',T.diu],['Mental',T.men]];
+  rows.forEach((r,i)=>{el('text',{x:cx+14,y:cy+56+i*24,fill:ink2,'font-size':11,text:r[0]},sv2);el('text',{x:cx+166,y:cy+56+i*24,'text-anchor':'end',fill:ink,'font-size':12,'font-family':'IBM Plex Mono',text:r[1]},sv2);});
+  /* class scale bar */
+  const bx=340,by=300,bw=280;
+  [[0,15,'#1E7F72','I'],[15,30,'#B9741A','II'],[30,40,'#B7352B','III'],[40,55,'#7A1F18','IV']].forEach(s=>{el('rect',{x:bx+s[0]/55*bw,y:by,width:(s[1]-s[0])/55*bw,height:14,fill:s[2],opacity:.8},sv2);el('text',{x:bx+(s[0]+s[1])/2/55*bw,y:by+30,'text-anchor':'middle',fill:ink2,'font-size':10,text:s[3]},sv2);});
+  const mx=bx+clamp(pct,0,55)/55*bw;el('polygon',{points:(mx-6)+','+(by-8)+' '+(mx+6)+','+(by-8)+' '+mx+','+by,fill:ink},sv2);
+  el('text',{x:bx,y:by+50,fill:ink2,'font-size':10,text:'≈ 750 · 1.500 · 2.000 mL em 70 kg'},sv2);
+  /* output */
+  const hbRaw=12;$('#c2out').innerHTML='<span class="k">Hb no instante da perda</span><span class="v">'+fmt(hbRaw,1)+' g/dL (sangue inteiro)</span><span class="k">Hb após refill + cristaloide</span><span class="v">'+fmt(hb,1)+' g/dL</span><span class="k">Queda</span><span class="v">'+fmt(12-hb,1)+' g/dL</span><span class="k">Massa de hemácias</span><span class="v">'+fmt((VOL-loss)/VOL*100)+'% do normal</span>';
+  const ver=$('#c2ver');ver.className='ver '+T.c;
+  ver.innerHTML=cls>=3?'<strong>Classe '+['','I','II','III','IV'][cls]+' — precisa de sangue</strong>Perda ≥ 30%: PA cai, e o que sobe a PA de volta é hemácia, não água. Se não responder ao bolus inicial, protocolo de transfusão maciça e controle da fonte.':(cls===2?'<strong>Classe II — cristaloide pode bastar</strong>Taquicardia e pressão de pulso estreita com PAS preservada. Bolus de cristaloide aquecido e reavaliar: sustentado → observa; transitório → sangue e imagem.':'<strong>Classe I — compensada</strong>Doação de sangue de 500 mL é classe I. Sem alteração hemodinâmica; reposição por perda de líquidos apenas.');
+}
+['#c2l','#c2c','#c2r'].forEach(s=>$(s).addEventListener('input',drawC2));
+$('#c2p1').addEventListener('click',()=>{$('#c2l').value=1900;$('#c2c').value=1000;$('#c2r').value=600;drawC2();});
+$('#c2p2').addEventListener('click',()=>{$('#c2l').value=1000;$('#c2c').value=1000;$('#c2r').value=300;drawC2();});
+drawC2();
+
+/* ================= CAP 3 — eixo adrenal ================= */
+const sv3=$('#sv3');let c3stress=false,c3hc=false;
+function drawC3(){
+  const dose=+$('#c3d').value,wk=+$('#c3w').value;
+  $('#c3dv').textContent=fmt(dose,dose%1?1:0)+' mg/dia';$('#c3wv').textContent=wk>=52?'4 anos':wk+' semana'+(wk===1?'':'s');
+  const sup=(dose>=5&&wk>=3)?(dose>=20?'alto':'provável'):'baixo';
+  const suppressed=sup!=='baixo';
+  const demand=c3stress?100:20; /* % */
+  const avail=c3hc?100:(!c3stress?100:(suppressed?(sup==='alto'?12:30):100));
+  const ok=avail>=demand;
+  sv3.innerHTML='';const ink=css('--ink'),ink2=css('--ink2');
+  const pos=(x,y,w,h,label,sub,off)=>{const g=el('g',{class:off?'axis-off':''},sv3);el('rect',{x:x,y:y,width:w,height:h,rx:10,fill:css('--panel2'),stroke:ink2},g);el('text',{x:x+w/2,y:y+h/2-2,'text-anchor':'middle',fill:ink,'font-size':13,'font-weight':600,text:label},g);if(sub)el('text',{x:x+w/2,y:y+h/2+14,'text-anchor':'middle',fill:ink2,'font-size':10,text:sub},g);return g;};
+  const arrowDef=el('defs',{},sv3);const mk=el('marker',{id:'ar3',viewBox:'0 0 10 10',refX:'9',refY:'5',markerWidth:'7',markerHeight:'7',orient:'auto'},arrowDef);el('path',{d:'M0,0 L10,5 L0,10 Z',fill:ink2},mk);
+  pos(240,20,160,50,'Hipotálamo','CRH',suppressed&&!c3hc);
+  const a1=el('line',{x1:320,y1:70,x2:320,y2:118,stroke:ink2,'stroke-width':3,'marker-end':'url(#ar3)',class:suppressed?'axis-off':'flow'},sv3);
+  el('text',{x:330,y:98,fill:ink2,'font-size':11,text:'CRH'},sv3);
+  pos(240,120,160,50,'Hipófise','ACTH',suppressed&&!c3hc);
+  el('line',{x1:320,y1:170,x2:320,y2:218,stroke:ink2,'stroke-width':3,'marker-end':'url(#ar3)',class:suppressed?'axis-off':'flow'},sv3);
+  el('text',{x:330,y:198,fill:ink2,'font-size':11,text:'ACTH'},sv3);
+  /* adrenal */
+  const g=el('g',{},sv3);
+  el('path',{d:'M250,260 C270,215 370,215 390,260 C395,280 375,300 320,302 C265,300 245,280 250,260 Z',fill:'#D9B98A',stroke:'#B9A692','stroke-width':1.5},g);
+  el('path',{d:'M262,262 C280,232 360,232 378,262 C382,278 366,290 320,291 C274,290 258,278 262,262 Z',fill:suppressed&&!c3hc?'#E8DCC7':'#E3A06A',stroke:'#B9A692'},g);
+  el('ellipse',{cx:320,cy:272,rx:26,ry:11,fill:'#B0725A'},g);
+  el('text',{x:320,y:320,'text-anchor':'middle',fill:ink,'font-size':12,'font-weight':600,text:'Adrenal'},sv3);
+  el('text',{x:320,y:334,'text-anchor':'middle',fill:ink2,'font-size':10,text:'fasciculada '+(suppressed?'atrofiada':'íntegra')+' · glomerulosa íntegra (RAA)'},sv3);
+  /* prednisone */
+  const pg=el('g',{},sv3);el('rect',{x:40,y:120,width:120,height:50,rx:25,fill:dose>0?'#E7DFF5':css('--panel2'),stroke:'#6B4FA3'},pg);
+  el('text',{x:100,y:141,'text-anchor':'middle',fill:'#6B4FA3','font-size':12,'font-weight':600,text:'Prednisona'},pg);
+  el('text',{x:100,y:157,'text-anchor':'middle',fill:'#6B4FA3','font-size':11,'font-family':'IBM Plex Mono',text:fmt(dose,dose%1?1:0)+' mg · '+(wk>=52?'4 a':wk+' sem')},pg);
+  if(dose>0){el('path',{d:'M160,135 C200,120 220,60 240,45',fill:'none',stroke:'#6B4FA3','stroke-width':2,'stroke-dasharray':'6 4'},sv3);el('path',{d:'M160,145 L240,145',fill:'none',stroke:'#6B4FA3','stroke-width':2,'stroke-dasharray':'6 4'},sv3);el('text',{x:180,y:105,fill:'#6B4FA3','font-size':11,text:'feedback ⊣'},sv3);}
+  /* cortisol → vessel */
+  el('line',{x1:392,y1:265,x2:470,y2:265,stroke:ink2,'stroke-width':3,'marker-end':'url(#ar3)',class:avail>=demand?'flow':'axis-off'},sv3);
+  el('text',{x:400,y:255,fill:ink2,'font-size':11,text:'cortisol'},sv3);
+  /* vessel */
+  const tone=avail>=demand?1:avail/demand;const r=18+(1-tone)*16;
+  el('circle',{cx:530,cy:265,r:r+6,fill:'#C0392B',opacity:.25},sv3);el('circle',{cx:530,cy:265,r:r,fill:'#F3EBE1',stroke:'#C0392B','stroke-width':3},sv3);
+  el('text',{x:530,y:305,'text-anchor':'middle',fill:ink,'font-size':12,'font-weight':600,text:'Arteríola'},sv3);
+  el('text',{x:530,y:320,'text-anchor':'middle',fill:ink2,'font-size':10,text:tone>=1?'α1 responsivo':'α1 pouco expresso — NORA bate em parede'},sv3);
+  /* bars */
+  const bx=60,by=380,bw=520;
+  el('text',{x:bx,y:by-8,fill:ink2,'font-size':11,text:'Cortisol necessário vs disponível ('+(c3stress?'cirurgia grande ≈ 200–300 mg/dia de equivalente':'repouso ≈ 20–30 mg/dia')+')'},sv3);
+  el('rect',{x:bx,y:by,width:bw,height:14,rx:7,fill:css('--panel2'),stroke:ink2},sv3);
+  el('rect',{x:bx,y:by,width:bw*demand/100,height:14,rx:7,fill:'none',stroke:'#B9741A','stroke-width':2,'stroke-dasharray':'4 3'},sv3);
+  el('rect',{x:bx,y:by+2,width:bw*Math.min(avail,100)/100,height:10,rx:5,fill:ok?'#1E7F72':'#B7352B'},sv3);
+  el('text',{x:bx+bw*demand/100,y:by+32,'text-anchor':'middle',fill:'#B9741A','font-size':10,text:'demanda'},sv3);
+  el('text',{x:bx,y:by+50,fill:ink,'font-size':12,'font-family':'IBM Plex Mono',text:'disponível '+avail+'% da demanda'+(c3hc?' (hidrocortisona 100 mg cobre)':'')},sv3);
+  /* outputs */
+  const pa=!c3stress?'118 × 76':(ok?'108 × 68':(sup==='alto'?'76 × 42':'88 × 54'));
+  const na=!c3stress?'138':(ok?'136':'127'),k=!c3stress?'4,0':(ok?'4,1':'4,4'),gli=!c3stress?'96':(ok?'110':'58');
+  $('#c3out').innerHTML='<span class="k">Supressão do eixo</span><span class="v">'+sup+(suppressed?' (regra: ≥ 5 mg ≥ 3 sem)':'')+'</span><span class="k">PA sob estresse</span><span class="v">'+pa+'</span><span class="k">Na⁺ / K⁺</span><span class="v">'+na+' / '+k+'</span><span class="k">Glicemia</span><span class="v">'+gli+'</span><span class="k">Hemoglobina</span><span class="v">inalterada</span>';
+  const ver=$('#c3ver');
+  if(!c3stress){ver.className='ver b';ver.innerHTML='<strong>Em repouso, nada aparece</strong>'+(suppressed?'A dose diária de prednisona cobre a demanda basal — o eixo está suprimido, mas ninguém percebe. A supressão só vira doença quando a demanda sobe.':'Sem supressão relevante: dose < 5 mg ou menos de 3 semanas.');}
+  else if(ok){ver.className='ver b';ver.innerHTML='<strong>Demanda coberta</strong>'+(c3hc?'Hidrocortisona 100 mg na indução e 50 mg 6/6 h por 24–48 h: o vaso volta a obedecer à noradrenalina. Retorne à dose habitual depois.':'Eixo íntegro responde ao estresse multiplicando o cortisol por 5–10. Sem dose de estresse necessária.');}
+  else{ver.className='ver m';ver.innerHTML='<strong>Crise adrenal — choque sem prova de perda</strong>Hipotensão refratária a volume e vasopressor, Na 127, glicose 58, febre, dor abdominal, eosinofilia. Hb intacta. Hidrocortisona 100 mg IV agora — não espere cortisol sérico (se quiser o teste, use dexametasona 4 mg, que não interfere no ensaio).';}
+}
+['#c3d','#c3w'].forEach(s=>$(s).addEventListener('input',drawC3));
+$('#c3stress').addEventListener('click',e=>{c3stress=!c3stress;e.target.textContent='Estresse cirúrgico: '+(c3stress?'ON':'OFF');e.target.classList.toggle('on',c3stress);drawC3();});
+$('#c3hc').addEventListener('click',e=>{c3hc=!c3hc;e.target.textContent='Hidrocortisona 100 mg: '+(c3hc?'ON':'OFF');e.target.classList.toggle('on',c3hc);drawC3();});
+drawC3();
+
+/* ================= CAP 4 — baço por dentro ================= */
+const sv4=$('#sv4');
+const C4={
+  red:{t:'Polpa vermelha — cordões de Billroth e sinusoides',cls:'d',
+    h:'<b>Função.</b> Filtro mecânico e imune: a fenda de 1–3 µm do sinusoide retém hemácia velha (culling), arranca inclusão de hemácia jovem (pitting) e o macrófago do cordão devora célula recoberta de IgG pelo receptor Fc.<br><b>Na PTI.</b> É o matadouro: plaqueta com anti-GPIIb/IIIa dura horas em vez de 7–10 dias. Vida média curta com medula cheia de megacariócitos.<br><b>Sem baço.</b> Howell-Jolly, Heinz, Pappenheimer e hemácias em alvo no esfregaço; trombocitose e leucocitose de 1–2 semanas.<br><b>Gatilho de prova.</b> "Corpúsculos de Howell-Jolly" = asplenia funcional; "esferocitose" = culling exagerado, esplenectomia cura a anemia (≥ 6 anos, com colecistectomia se litíase).'},
+  marg:{t:'Zona marginal',cls:'w',
+    h:'<b>Função.</b> Onde o sangue da arteríola central encontra o sistema imune. Linfócito B de memória IgM+ que responde a polissacarídeo capsular sem ajuda de T — resposta rápida a pneumococo, hemófilo b e meningococo.<br><b>Sem baço.</b> A bactéria encapsulada não opsonizada circula livre; o fígado só a captura depois de coberta de anticorpo e complemento. É a base da OPSI.<br><b>Vacinas.</b> Conjugadas (PCV, MenACWY, Hib) recrutam T e funcionam melhor sem baço; a polissacarídica pura (VPP23) depende justamente da zona marginal — por isso a sequência conjugada → polissacarídica ≥ 8 semanas.<br><b>Gatilho de prova.</b> "Febre alta 3 anos após esplenectomia" = OPSI; "vacinar 14 dias antes".'},
+  white:{t:'Polpa branca — PALS e folículos',cls:'m',
+    h:'<b>Função.</b> Bainha linfoide periarteriolar (T) e folículos (B) com centro germinativo: maior órgão linfoide do corpo, produz IgM, tuftsina e properdina (opsoninas).<br><b>Na PTI.</b> É a fábrica: os plasmócitos esplênicos produzem o IgG anti-GPIIb/IIIa e anti-GPIb/IX. Por isso a esplenectomia funciona em 80% — remove produção e destruição de uma vez — e por isso o rituximab (anti-CD20) é alternativa.<br><b>Sem baço.</b> Menos IgM e opsoninas; resposta pior à vacina polissacarídica.<br><b>Gatilho de prova.</b> "PTI crônica refratária a corticoide" = esplenectomia (ou TPO-RA / rituximab); "esplenomegalia" no enunciado de PTI = pense em outro diagnóstico.'},
+  res:{t:'Reservatório',cls:'b',
+    h:'<b>Função.</b> Guarda cerca de 1/3 das plaquetas e uma pequena reserva de hemácias e granulócitos; a esplenomegalia sequestra até 90% das plaquetas (hiperesplenismo).<br><b>Depois da esplenectomia.</b> As plaquetas do reservatório entram em circulação: contagem sobe em 1–2 dias e faz pico no 7º–14º. Na PTI passa de um milhão com frequência.<br><b>Regra.</b> Plaquetas > 1.000.000 → AAS profilático. Dor abdominal + febre + trombocitose entre o 7º e 30º dia → Doppler: trombose de veia porta/esplênica → anticoagular.<br><b>Gatilho de prova.</b> "Sequestro esplênico" na anemia falciforme; "trombocitose de 1,2 milhão no PO 10".'}
+};
+function drawC4(){
+  sv4.innerHTML='';
+  /* physical colors — histology field */
+  el('rect',{x:0,y:0,width:640,height:470,fill:'#F7F3EC'},sv4);
+  /* red pulp background: cords + sinusoids */
+  const red=el('g',{id:'l_red',class:'layer'},sv4);
+  el('rect',{x:0,y:0,width:640,height:470,fill:'#F1D5D0'},red);
+  for(let i=0;i<7;i++){const y=40+i*62;el('path',{d:'M0,'+y+' C120,'+(y-14)+' 240,'+(y+16)+' 360,'+y+' C480,'+(y-16)+' 560,'+(y+14)+' 640,'+y,fill:'none',stroke:'#C98A8A','stroke-width':22,'stroke-linecap':'round',opacity:.55},red);
+    for(let x=30;x<640;x+=54){el('rect',{x:x,y:y-4,width:5,height:8,rx:2,fill:'#F7F3EC',opacity:.9},red);}}
+  /* rbc dots */
+  for(let i=0;i<80;i++){const x=(i*97)%640,y=(i*53)%470;if(Math.hypot(x-320,y-215)<150)continue;el('circle',{cx:x,cy:y,r:5,fill:'#C0392B',opacity:.55},red);}
+  /* macrophage eating platelet */
+  el('circle',{cx:120,cy:380,r:22,fill:'#D6B9A0',stroke:'#8A6A50'},red);el('circle',{cx:112,cy:376,r:7,fill:'#8A6A50'},red);
+  el('ellipse',{cx:134,cy:386,rx:6,ry:3.5,fill:'#E0B93C',stroke:'#7A6420'},red);
+  el('text',{x:120,y:418,'text-anchor':'middle',fill:'#3A2A20','font-size':10,text:'macrófago do cordão · receptor Fc'},red);
+  /* platelets coated with IgG */
+  [[520,60],[560,120],[600,380],[60,60]].forEach(p=>{el('ellipse',{cx:p[0],cy:p[1],rx:7,ry:4,fill:'#E0B93C',stroke:'#7A6420'},red);['M-9,-6 l-4,-6 m4,6 l-4,2','M9,-6 l4,-6 m-4,6 l4,2','M0,7 l0,7 m0,-7 l-3,3 m3,-3 l3,3'].forEach(d=>el('path',{d:d,transform:'translate('+p[0]+','+p[1]+')',stroke:'#6B4FA3','stroke-width':1.6,fill:'none'},red));});
+  el('text',{x:520,y:44,'text-anchor':'middle',fill:'#6B4FA3','font-size':10,text:'plaqueta + IgG anti-GPIIb/IIIa'},red);
+  /* central arteriole */
+  el('path',{d:'M320,0 L320,215',stroke:'#C0392B','stroke-width':10,'stroke-linecap':'round',fill:'none'},sv4);
+  el('path',{d:'M320,0 L320,215',stroke:'#F7B3A9','stroke-width':3,fill:'none',class:'flow'},sv4);
+  /* white pulp */
+  const white=el('g',{id:'l_white',class:'layer'},sv4);
+  el('ellipse',{cx:320,cy:215,rx:110,ry:88,fill:'#CFC3E6',stroke:'#8E7BC2','stroke-width':1.5},white);
+  el('ellipse',{cx:320,cy:150,rx:40,ry:22,fill:'#B8A8DE',opacity:.9},white);el('text',{x:320,y:154,'text-anchor':'middle',fill:'#3A2A20','font-size':10,text:'PALS · T'},white);
+  el('circle',{cx:280,cy:240,r:34,fill:'#DCD2EE',stroke:'#8E7BC2'},white);el('circle',{cx:280,cy:240,r:16,fill:'#EFE9F8',stroke:'#8E7BC2','stroke-dasharray':'2 2'},white);
+  el('text',{x:280,y:244,'text-anchor':'middle',fill:'#3A2A20','font-size':9,text:'CG'},white);el('text',{x:280,y:290,'text-anchor':'middle',fill:'#3A2A20','font-size':10,text:'folículo B'},white);
+  el('text',{x:372,y:238,'text-anchor':'middle',fill:'#6B4FA3','font-size':10,text:'plasmócitos'},white);el('text',{x:372,y:250,'text-anchor':'middle',fill:'#6B4FA3','font-size':10,text:'→ IgG anti-plaqueta'},white);
+  for(let i=0;i<5;i++)el('circle',{cx:355+i*9,cy:262,r:3.5,fill:'#6B4FA3'},white);
+  /* marginal zone ring */
+  const marg=el('g',{id:'l_marg',class:'layer'},sv4);
+  el('ellipse',{cx:320,cy:215,rx:140,ry:116,fill:'none',stroke:'#E3B072','stroke-width':26,opacity:.8},marg);
+  el('text',{x:320,y:340,'text-anchor':'middle',fill:'#3A2A20','font-size':10,text:'zona marginal · B de memória IgM · circulação aberta'},marg);
+  /* open circulation arrows out of the arteriole ending */
+  [[-1,0],[1,0],[-.7,.7],[.7,.7]].forEach(v=>{el('path',{d:'M320,215 l'+(v[0]*60)+','+(v[1]*60),stroke:'#C0392B','stroke-width':2,fill:'none','stroke-dasharray':'4 3'},sv4);});
+  /* encapsulated bacterium */
+  el('circle',{cx:470,cy:110,r:9,fill:'#7FA36B',stroke:'#3E5F2A'},marg);el('circle',{cx:470,cy:110,r:14,fill:'none',stroke:'#3E5F2A','stroke-dasharray':'2 2'},marg);
+  el('text',{x:470,y:88,'text-anchor':'middle',fill:'#3A2A20','font-size':10,text:'pneumococo encapsulado'},marg);
+  /* reservoir */
+  const res=el('g',{id:'l_res',class:'layer'},sv4);
+  el('rect',{x:20,y:20,width:170,height:90,rx:12,fill:'#F3E6C8',stroke:'#B9A692'},res);
+  for(let i=0;i<24;i++)el('ellipse',{cx:36+(i%8)*20,cy:44+Math.floor(i/8)*22,rx:6,ry:3.5,fill:'#E0B93C',stroke:'#7A6420','stroke-width':.6},res);
+  el('text',{x:105,y:104,'text-anchor':'middle',fill:'#3A2A20','font-size':10,text:'reservatório · ⅓ das plaquetas'},res);
+  /* sinusoid to vein */
+  el('path',{d:'M640,300 L560,300',stroke:'#4A6FA5','stroke-width':12,'stroke-linecap':'round'},sv4);el('text',{x:600,y:284,'text-anchor':'middle',fill:'#3A2A20','font-size':10,text:'vênula esplênica'},sv4);
+  /* scale */
+  el('line',{x1:20,y1:452,x2:100,y2:452,stroke:'#3A2A20','stroke-width':2},sv4);el('text',{x:60,y:446,'text-anchor':'middle',fill:'#3A2A20','font-size':10,text:'100 µm'},sv4);
+  ['red','marg','white','res'].forEach(k=>{$('#l_'+k).addEventListener('click',()=>pickC4(k));});
+}
+function pickC4(k){$$('#sv4 .layer').forEach(g=>g.classList.toggle('on',g.id==='l_'+k));const p=$('#c4panel');p.className='ver '+C4[k].cls;p.innerHTML='<strong>'+C4[k].t+'</strong>'+C4[k].h;}
+drawC4();pickC4('red');
+const PTI={
+  new:{c:'b',h:'<strong>Recém-diagnosticada (&lt; 3 meses)</strong>Trata se plaquetas &lt; 20–30.000 ou sangramento: prednisona 1 mg/kg/dia (ou dexametasona 40 mg × 4 dias). IVIG 1 g/kg se precisar subir rápido. Esplenectomia aqui é erro: 30–40% remitem sozinhos no primeiro ano.'},
+  pers:{c:'w',h:'<strong>Persistente (3–12 meses)</strong>Falhou ou dependeu de corticoide: agonista do receptor de trombopoetina (eltrombopag, romiplostim) ou rituximab. A ASH 2019 pede adiar a esplenectomia até completar 12 meses do diagnóstico, salvo urgência.'},
+  chr:{c:'m',h:'<strong>Crônica (&gt; 12 meses) refratária — Dona Marlene</strong>Esplenectomia laparoscópica: resposta 80%, durável em 60–70%, melhor em jovens. Alternativas com a mesma classe de recomendação: TPO-RA e rituximab. Antes de operar: vacinas ≥ 14 dias, plaquetas ≥ 50.000, procurar baço acessório.'},
+  emer:{c:'d',h:'<strong>Sangramento grave (SNC, digestivo)</strong>Tudo ao mesmo tempo: IVIG 1 g/kg, metilprednisolona 1 g, transfusão de plaquetas (aqui sim, apesar da destruição), TXA; TPO-RA cedo. Esplenectomia de urgência só se refratária a tudo — raríssimo e com mortalidade alta.'},
+  pre:{c:'w',h:'<strong>Véspera da esplenectomia</strong>Alvo ≥ 50.000 para cirurgia maior: IVIG 1 g/kg 1–2 dias antes (sobe em 24–48 h) ou pulso de corticoide. Transfusão de plaquetas só depois de ligar a artéria esplênica — antes disso, o baço come a bolsa. Dose de estresse de hidrocortisona pelos anos de prednisona. Vacinar ≥ 14 dias antes.'}
+};
+seg($('#c4pti'),d=>{const o=$('#c4ptiout');o.className='ver '+PTI[d.p].c;o.innerHTML=PTI[d.p].h;});
+(function(){const o=$('#c4ptiout');o.className='ver m';o.innerHTML=PTI.chr.h;})();
+
+/* ================= CAP 5 — máquina de decisão ================= */
+const sv5=$('#sv5');const S5={q1:'1',q2:'none',q3:'0',q4:'h'};
+const segs5={q1:seg($('#c5q1'),d=>{S5.q1=d.v;drawC5();}),q2:seg($('#c5q2'),d=>{S5.q2=d.v;drawC5();}),q3:seg($('#c5q3'),d=>{S5.q3=d.v;drawC5();}),q4:seg($('#c5q4'),d=>{S5.q4=d.v;drawC5();})};
+const PRE5={marlene:{q1:'1',q2:'none',q3:'0',q4:'h'},trans:{q1:'1',q2:'trans',q3:'0',q4:'h'},adr:{q1:'0',q2:'none',q3:'adr',q4:'h'},abs:{q1:'0',q2:'sust',q3:'sep',q4:'d5'},tvp:{q1:'0',q2:'sust',q3:'tvp',q4:'d14'},opsi:{q1:'0',q2:'none',q3:'sep',q4:'y'}};
+seg($('#c5pre'),d=>{Object.assign(S5,PRE5[d.p]);Object.keys(segs5).forEach(k=>segs5[k].set('v',S5[k]));drawC5();});
+function verdict5(){
+  const s=S5;
+  if(s.q1==='1'){
+    if(s.q2==='none')return {c:'d',t:'Hemorragia ativa — não respondedor',b:'Perde mais do que recebe. Hb caiu, dreno vermelho, abdome cresce. Sangue e mesa; o resto é adjuvante.',steps:['Concentrado de hemácias agora (O negativo / tipado), 2 acessos calibrosos, aquecido','Ativar protocolo de transfusão maciça 1:1:1 (CH : PFC : plaquetas)','Ácido tranexâmico 1 g em 10 min (dentro de 3 h), cálcio a cada 4 U, manta térmica','Hidrocortisona 100 mg a caminho do centro cirúrgico (adjuvante, pelo corticoide crônico)','Reabordagem: hemostasia dos vasos curtos / hilo / leito diafragmático'],forbid:'<b>Proibido:</b> TC (instável não vai ao tomógrafo), "plaquetas e plasma em observação" (não há coagulopatia demonstrada; o sangramento é anatômico), hidrocortisona <i>como</i> a conduta, mais cristaloide. Alternativa da questão-mãe: <b>A</b>.',path:['q1y','q2n','reop'],isca:'D · Hidrocortisona e expansão'};
+    return {c:'w',t:s.q2==='trans'?'Respondedor transitório — sangra devagar':'Respondedor sustentado com queda de Hb — sangrou e parou?',b:'Estável agora. Você tem a janela para localizar antes de decidir o lugar.',steps:['Reservar hemoderivados; Hb e lactato seriados (4/4 h)','TC de abdome com contraste em fase arterial: hematoma da loja, blush','Blush de vaso curto ou hilo → angioembolização; sem blush e estável → vigilância','Instabilizou de novo → centro cirúrgico sem a imagem'],forbid:'<b>Proibido:</b> reoperar às cegas quem está estável com sangramento pequeno; dar alta da recuperação; repetir bolus sem sangue reservado. Alternativa correspondente na forja: <b>Q2 · D</b>.',path:['q1y','q2t','tc'],isca:'A · Reabordagem imediata'};
+  }
+  if(s.q3==='adr')return {c:'m',t:'Crise adrenal — choque sem prova de perda',b:'Hb intacta, dreno seroso, Na baixo, glicose baixa, corticoide crônico. A história virou causa porque a prova física apontou para ela.',steps:['Hidrocortisona 100 mg IV em bolus, depois 50 mg 6/6 h (ou 200 mg/24 h em infusão)','SF 0,9% e glicose 5–10%; corrigir Na devagar','Noradrenalina volta a funcionar em 1–2 h','Procurar o gatilho (sangramento oculto, infecção)','Desmame para a dose habitual em 24–72 h'],forbid:'<b>Proibido:</b> esperar cortisol sérico para tratar; fludrocortisona (não é Addison: aldosterona íntegra); reoperar sem prova de sangue. Alternativa na forja: <b>Q3 · C</b>.',path:['q1n','q3a','hc'],isca:'A · CH e reabordagem'};
+  if(s.q3==='sep'){
+    if(s.q4==='y')return {c:'d',t:'OPSI — sepse fulminante do asplênico',b:'Febre alta, prostração, petéquias e hipotensão anos depois da esplenectomia: pneumococo até prova em contrário. Mortalidade 50–70%, tudo acontece em 12–24 h.',steps:['Hemoculturas e ceftriaxona 2 g IV imediatamente (vancomicina se meningite ou resistência local)','UTI, volume, vasopressor; atenção a CIVD e Waterhouse-Friderichsen','Depois: revisar vacinas, profilaxia e educação'],forbid:'<b>Proibido:</b> antibiótico oral e reavaliação em 24 h; imagem antes do antibiótico; hidrocortisona como conduta principal. Alternativa na forja: <b>Q8 · D</b>.',path:['q1n','q3s','opsi'],isca:'B · Amoxicilina e reavaliar'};
+    if(s.q4==='h')return {c:'w',t:'Foco infeccioso em < 48 h é improvável',b:'Sepse não chega em duas horas de pós-operatório. Volte à pergunta 1: dreno seco não exclui sangue; lesão de víscera (estômago, cólon) também sangra e contamina.',steps:['Rever Hb e abdome; US à beira do leito (líquido na loja)','Considerar lesão de estômago (vasos curtos) ou cólon','Se nada: causas não hemorrágicas — TEP, IAM, anafilaxia, pneumotórax'],forbid:'<b>Proibido:</b> rotular como sepse e iniciar só antibiótico.',path:['q1n','q3s','re'],isca:'E · Antibiótico empírico'};
+    return {c:'w',t:'Abscesso subfrênico (5º–10º dia)',b:'Febre em pico, dor no ombro esquerdo, soluços, derrame pleural à esquerda, leucocitose. A loja esplênica é o espaço morto ideal.',steps:['TC de abdome com contraste','Drenagem percutânea guiada + antibiótico de amplo espectro','Reoperação só se inacessível ou falha da drenagem','Se dreno com amilase > 3× a sérica: fístula pancreática associada'],forbid:'<b>Proibido:</b> tratar como pneumonia pelo derrame; antibiótico sem drenagem; anticoagular (isso é a linha da trombose portal). Alternativa na forja: <b>Q4 · B</b>.',path:['q1n','q3s','abs'],isca:'D · Anticoagulação'};
+  }
+  if(s.q3==='tvp')return {c:'w',t:'Trombose de veia porta / esplênica (7º–30º dia)',b:'Dor abdominal vaga, febre baixa, íleo, leucocitose e plaquetas acima de um milhão. Mais comum com esplenomegalia maciça e doença mieloproliferativa.',steps:['Doppler do sistema porta ou angioTC venosa','Anticoagulação plena (heparina → antagonista de vitamina K ou DOAC) por 3–6 meses','Antibiótico se febre alta/bacteremia; vigiar isquemia mesentérica','Prevenção: HBPM profilática no PO; AAS quando plaquetas > 1.000.000'],forbid:'<b>Proibido:</b> AAS isolada no trombo constituído; laparotomia; chamar de abscesso e drenar. Alternativa na forja: <b>Q6 · A</b>.',path:['q1n','q3t','tvp'],isca:'B · AAS isolada'};
+  return {c:'b',t:'Sem prova física — procure outro motor',b:'Não sangra, não é adrenal, não tem foco. Choque sem hemorragia no pós-operatório: obstrutivo (TEP, pneumotórax hipertensivo), cardiogênico, anafilaxia a droga/hemoderivado.',steps:['Ecocardiograma à beira do leito, ECG, troponina, gasometria','Rever drogas e bolsas infundidas nos últimos 30 min','Repetir Hb em 1 h — sangue tamponado aparece tarde'],forbid:'<b>Proibido:</b> insistir em cristaloide sem hipótese.',path:['q1n','q3n','re'],isca:'—'};
+}
+function drawC5(){
+  const v=verdict5();const ink=css('--ink'),ink2=css('--ink2'),p2=css('--panel2');
+  sv5.innerHTML='';
+  const box=(id,x,y,w,h,label,sub,cls)=>{const on=v.path.includes(id);const col=cls?{d:'#B7352B',w:'#B9741A',b:'#1E7F72',m:'#6B4FA3'}[cls]:css('--acc');const g=el('g',{},sv5);el('rect',{x:x,y:y,width:w,height:h,rx:9,fill:on?col:p2,stroke:on?col:ink2,'stroke-width':on?2:1,opacity:on?1:.7},g);el('text',{x:x+w/2,y:y+(sub?h/2-3:h/2+4),'text-anchor':'middle',fill:on?'#fff':ink,'font-size':11.5,'font-weight':600,text:label},g);if(sub)el('text',{x:x+w/2,y:y+h/2+12,'text-anchor':'middle',fill:on?'#fff':ink2,'font-size':9.5,text:sub},g);return g;};
+  const link=(x1,y1,x2,y2,on,label)=>{el('path',{d:'M'+x1+','+y1+' C'+x1+','+((y1+y2)/2)+' '+x2+','+((y1+y2)/2)+' '+x2+','+y2,fill:'none',stroke:on?ink:ink2,'stroke-width':on?2.5:1,opacity:on?1:.45},sv5);if(label)el('text',{x:(x1+x2)/2+4,y:(y1+y2)/2-2,fill:on?ink:ink2,'font-size':9.5,text:label},sv5);};
+  /* Q1 */
+  box('q1',220,14,200,44,'1 · Prova física de sangue?','Hb ↓ ≥ 2 · dreno · abdome');
+  const y1=v.path.includes('q1y'),n1=v.path.includes('q1n');
+  link(320,58,150,110,y1,'sim');link(320,58,490,110,n1,'não');
+  box('q2',50,110,200,44,'2 · Resposta ao bolus?','sustentada · transitória · nenhuma',y1?'d':null);
+  box('q3',390,110,200,44,'3 · Outra prova física?','Na ↓ glic ↓ · foco · trombocitose',n1?'m':null);
+  /* Q2 outcomes */
+  link(150,154,80,220,v.path.includes('q2n'),'nenhuma');link(150,154,220,220,v.path.includes('q2t'),'sust./trans.');
+  box('reop',10,220,140,60,'CH + reabordagem','1:1:1 · TXA · Ca · aquecer','d');
+  box('tc',160,220,140,60,'TC arterial ± angio','sangue reservado','w');
+  /* Q3 outcomes */
+  link(490,154,370,220,v.path.includes('q3a'),'adrenal');link(490,154,490,220,v.path.includes('q3s'),'foco');link(490,154,600,220,v.path.includes('q3t'),'trombocitose');
+  box('hc',310,220,120,60,'Hidrocortisona','100 mg → 50 mg 6/6 h','m');
+  const sepTarget=v.path.includes('opsi')?'OPSI: ceftriaxona já':(v.path.includes('abs')?'Abscesso: TC + drenagem':'Sepse < 48 h?:volte à Q1');
+  box(v.path.includes('opsi')?'opsi':(v.path.includes('abs')?'abs':'re'),440,220,120,60,sepTarget.split(':')[0],sepTarget.split(':')[1]||'',v.path.includes('opsi')?'d':'w');
+  box('tvp',570,220,66,60,'Doppler','anticoag.','w');
+  link(490,154,320,300,v.path.includes('q3n'),'');
+  box('re',10,310,300,40,'Sem prova: TEP · IAM · anafilaxia · Hb em 1 h','', 'b');
+  /* isca */
+  el('rect',{x:330,y:310,width:300,height:40,rx:9,fill:'none',stroke:'#B7352B','stroke-width':1.5,'stroke-dasharray':'5 4'},sv5);
+  el('text',{x:480,y:327,'text-anchor':'middle',fill:'#B7352B','font-size':10,'font-weight':600,text:'ISCA DA BANCA PARA ESTE CENÁRIO'},sv5);
+  el('text',{x:480,y:342,'text-anchor':'middle',fill:ink,'font-size':11,text:v.isca},sv5);
+  /* time rail */
+  const tl=[['h','< 48 h','sangue · adrenal'],['d5','PO 3–10','abscesso · fístula · necrose gástrica'],['d14','PO 7–30','trombose portal · trombocitose'],['y','anos','OPSI']];
+  tl.forEach((t,i)=>{const on=S5.q4===t[0];el('rect',{x:20+i*152,y:380,width:140,height:70,rx:9,fill:on?css('--acc-soft'):'none',stroke:on?css('--acc'):ink2,'stroke-width':on?2:1,opacity:on?1:.6},sv5);el('text',{x:90+i*152,y:404,'text-anchor':'middle',fill:ink,'font-size':12,'font-weight':600,text:t[1]},sv5);el('text',{x:90+i*152,y:422,'text-anchor':'middle',fill:ink2,'font-size':9.5,text:t[2].split(' · ')[0]},sv5);el('text',{x:90+i*152,y:436,'text-anchor':'middle',fill:ink2,'font-size':9.5,text:t[2].split(' · ').slice(1).join(' · ')},sv5);});
+  const ver=$('#c5ver');ver.className='ver '+v.c;ver.innerHTML='<strong>'+v.t+'</strong>'+v.b;
+  $('#c5steps').innerHTML=v.steps.map(s=>'<li>'+s+'</li>').join('');$('#c5forbid').innerHTML=v.forbid;
+}
+drawC5();
+
+/* ================= CAP 6 — reposição ================= */
+const sv6=$('#sv6');let S6,log6=[];
+function reset6(){S6={V:3850,RBC:832,F:.62,P:130000,T:35.6,Ca:1.05,L:42,r:25,bleed:true,t:0,txa:false,warm:false,ch:0,dead:false};log6=['02:00 — Dona Marlene, PA 80×40, Hb 7,2, dreno cheio. Sangra 25 mL/min.'];draw6();}
+function hb6(){return 12*(S6.RBC/1764)*(4900/S6.V);}
+function hemo6(){const f=S6.V/4900;const pas=clamp(Math.round(120-(1-f)*190),30,125);const fc=clamp(Math.round(80+(1-f)*180),60,160);return {pas:pas,fc:fc};}
+function coag6(){return S6.F*(S6.T<34?.5:S6.T<35?.75:1)*(S6.Ca<.9?.6:1)*(S6.P<50000?.6:1);}
+function tick6(){ /* 10 minutes pass */
+  if(S6.dead)return;S6.t+=10;
+  if(S6.bleed){const c=coag6();if(c<.5)S6.r*=1.15;const loss=Math.min(S6.r*10,S6.V-500);S6.RBC-=loss*S6.RBC/S6.V;S6.V-=loss;S6.F=Math.max(.05,S6.F-.02);S6.P=Math.max(10000,S6.P-6000);}
+  if(!S6.warm)S6.T-=.08;else S6.T=Math.min(36.6,S6.T+.2);
+  const h=hemo6();if(h.pas<90&&S6.bleed)S6.L+=3;else if(!S6.bleed)S6.L=Math.max(10,S6.L-8);else S6.L=Math.max(10,S6.L-2);
+  if(S6.V<2000||hb6()<4){S6.dead=true;log6.push(String(S6.t).padStart(3,'0')+' min — PCR por hipovolemia. Ninguém ligou o vaso.');}
+}
+const ACT6={
+  cris:()=>{S6.F*=S6.V/(S6.V+1000);S6.P*=S6.V/(S6.V+1000);S6.T-=.3;S6.V+=250;if(S6.bleed)S6.r+=4;return '+ 1.000 mL cristaloide: PA sobe 10 min, coágulo estoura, fatores e plaquetas diluem, −0,3 °C. Só 250 mL ficam no vaso.';},
+  ch:()=>{S6.ch++;S6.F*=S6.V/(S6.V+300);S6.V+=300;S6.RBC+=190;S6.Ca-=.08;if(!S6.warm)S6.T-=.12;return '+ 1 CH: Hb sobe ≈ 1 g/dL; citrato quela cálcio'+(S6.ch%4===0?' — 4 unidades, hora de repor cálcio':'')+'.';},
+  pfc:()=>{S6.V+=250;S6.F=Math.min(1,S6.F+.12);S6.Ca-=.04;return '+ 1 PFC: fatores +12%. Sem hemácias, sem plaquetas.';},
+  plq:()=>{S6.V+=250;S6.P+=40000;return '+ 1 pool de plaquetas: +40.000. Na PTI, só faz sentido com a artéria esplênica ligada — aqui o baço já saiu.';},
+  txa:()=>{if(S6.txa)return 'TXA já dado (1 g em 10 min + 1 g em 8 h).';S6.txa=true;S6.r*=.8;return 'TXA 1 g: freia fibrinólise; sangramento −20%. Vale dentro de 3 h (CRASH-2).';},
+  ca:()=>{S6.Ca=1.15;return 'Cálcio: Ca iônico 1,15 — os fatores voltam a funcionar.';},
+  warm:()=>{S6.warm=true;S6.T=Math.min(36.6,S6.T+.5);return 'Manta térmica e fluidos aquecidos: a cascata acorda acima de 35 °C.';},
+  hc:()=>{return 'Hidrocortisona 100 mg: PA +2 mmHg por 5 min. Cortisol não liga vaso. Razoável como adjuvante pelo corticoide crônico; inútil como conduta.';},
+  op:()=>{S6.bleed=false;S6.r=0;return 'Reabordagem: vaso curto sangrando no fundo da loja — ligado. Hemostasia. A partir daqui, tudo que você repõe fica.';}
+};
+function act6(a){if(S6.dead){return;}const msg=ACT6[a]();tick6();log6.push(String(S6.t).padStart(3,'0')+' min — '+msg);draw6();}
+function draw6(){
+  const h=hemo6(),hb=hb6(),c=coag6();const ink=css('--ink'),ink2=css('--ink2'),p2=css('--panel2');
+  sv6.innerHTML='';
+  /* vessel tank */
+  el('rect',{x:30,y:30,width:150,height:300,rx:14,fill:'none',stroke:ink2,'stroke-width':1.5},sv6);
+  const fh=clamp(S6.V/4900,0,1)*292;const col=hb<7?'#D97C72':hb<9?'#C4544A':'#A82A22';
+  el('rect',{x:34,y:326-fh,width:142,height:fh,rx:10,fill:col},sv6);
+  el('line',{x1:24,x2:186,y1:326-292,y2:326-292,stroke:ink2,'stroke-dasharray':'4 3'},sv6);el('text',{x:30,y:24,fill:ink2,'font-size':10,text:'volemia 4.900'},sv6);
+  el('text',{x:105,y:372,'text-anchor':'middle',fill:ink,'font-size':11,text:'intravascular '+fmt(S6.V)+' mL'},sv6);
+  if(S6.bleed&&!S6.dead){for(let i=0;i<3;i++){const g=el('g',{class:'drip',style:'animation-delay:'+(i*.35)+'s'},sv6);el('circle',{cx:105+(i-1)*18,cy:336,r:4,fill:'#A82A22'},g);}el('text',{x:105,y:388,'text-anchor':'middle',fill:'#B7352B','font-size':11,'font-weight':600,text:'sangrando '+fmt(S6.r)+' mL/min'},sv6);}
+  else el('text',{x:105,y:388,'text-anchor':'middle',fill:'#1E7F72','font-size':11,'font-weight':600,text:S6.dead?'':'hemostasia'},sv6);
+  /* heart */
+  const hr=22+(S6.dead?0:Math.sin(Date.now()/ (60000/h.fc) *2*Math.PI)*2);
+  el('circle',{cx:260,cy:80,r:hr,fill:S6.dead?ink2:'#C0392B'},sv6);el('text',{x:260,y:130,'text-anchor':'middle',fill:ink,'font-size':20,'font-weight':600,'font-family':'IBM Plex Mono',text:S6.dead?'PCR':h.pas+'/'+Math.round(h.pas*0.55)},sv6);
+  el('text',{x:260,y:146,'text-anchor':'middle',fill:ink2,'font-size':10,text:'PA · FC '+h.fc},sv6);
+  /* bars */
+  const bar=(i,label,val,txt,cls)=>{const y=180+i*40;el('text',{x:220,y:y+11,fill:ink2,'font-size':10.5,text:label},sv6);el('rect',{x:330,y:y,width:240,height:14,rx:7,fill:p2,stroke:ink2},sv6);el('rect',{x:330,y:y+2,width:clamp(val,0,1)*240,height:10,rx:5,fill:{b:'#1E7F72',w:'#B9741A',d:'#B7352B'}[cls]},sv6);el('text',{x:578,y:y+11,fill:ink,'font-size':10.5,'font-family':'IBM Plex Mono','text-anchor':'start',text:txt},sv6);};
+  bar(0,'Hemoglobina',hb/14,fmt(hb,1),hb<7?'d':hb<9?'w':'b');
+  bar(1,'Fatores (efetivos)',c,fmt(c*100)+'%',c<.5?'d':c<.75?'w':'b');
+  bar(2,'Plaquetas',S6.P/200000,fmt(S6.P/1000)+' mil',S6.P<50000?'d':S6.P<100000?'w':'b');
+  bar(3,'Temperatura',(S6.T-32)/5,fmt(S6.T,1)+' °C',S6.T<34?'d':S6.T<35.5?'w':'b');
+  bar(4,'Ca iônico',S6.Ca/1.3,fmt(S6.Ca,2),S6.Ca<.9?'d':S6.Ca<1.05?'w':'b');
+  const triad=S6.T<35&&c<.6&&S6.L>45;
+  el('text',{x:220,y:395,fill:triad?'#B7352B':ink2,'font-size':12,'font-weight':600,text:triad?'▲ TRÍADE LETAL: hipotermia + acidose + coagulopatia':'lactato '+fmt(S6.L)+' mg/dL · '+(S6.L>36?'hipoperfusão':'clareando')},sv6);
+  $('#c6out').innerHTML='<span class="k">Tempo</span><span class="v">'+String(Math.floor((120+S6.t)/60)).padStart(2,'0')+':'+String((120+S6.t)%60).padStart(2,'0')+' de PO</span><span class="k">Hb</span><span class="v">'+fmt(hb,1)+'</span><span class="k">Lactato</span><span class="v">'+fmt(S6.L)+'</span><span class="k">CH dados</span><span class="v">'+S6.ch+'</span>';
+  const ver=$('#c6ver');
+  if(S6.dead){ver.className='ver d';ver.innerHTML='<strong>Óbito</strong>Cristaloide comprou dez minutos por bolsa e cobrou em fatores, temperatura e coágulo. A reoperação nunca veio.';}
+  else if(!S6.bleed){ver.className='ver b';ver.innerHTML='<strong>Fonte controlada</strong>Agora a transfusão fica. Continue 1:1:1 até Hb ≥ 7–8, fatores > 60%, plaquetas > 50.000, lactato clareando e temperatura > 35,5 °C.';}
+  else if(triad){ver.className='ver d';ver.innerHTML='<strong>Tríade letal instalada</strong>Cada bolsa de cristaloide agora piora o sangramento. Só a mesa resolve — e a cirurgia agora é controle de danos: packing, fechamento temporário, UTI.';}
+  else{ver.className='ver w';ver.innerHTML='<strong>Sangrando</strong>Você está comprando tempo. Sangue e plasma sustentam; TXA, cálcio e calor protegem o coágulo. Nada disso liga o vaso.';}
+  $('#c6log').innerHTML=log6.slice().reverse().map(l=>'<div>'+l+'</div>').join('');
+}
+$$('#c6 .seg button[data-a]').forEach(b=>b.addEventListener('click',()=>act6(b.dataset.a)));
+$('#c6reset').addEventListener('click',reset6);
+function chain6(list){reset6();let i=0;const step=()=>{if(i<list.length){act6(list[i++]);setTimeout(step,450);}};step();}
+$('#c6wrong').addEventListener('click',()=>chain6(['cris','cris','cris','cris','hc','cris']));
+$('#c6right').addEventListener('click',()=>chain6(['ch','txa','pfc','plq','warm','ch','ca','op','ch','pfc']));
+reset6();
+
+/* ================= CAP 7 — na mesa ================= */
+const SITES={
+  curtos:{c:'d',hl:'<ellipse cx="346" cy="192" rx="62" ry="92"/>',h:'<strong>Vasos gástricos curtos — o sangramento mais comum</strong>Quatro a seis ramos da artéria esplênica que atravessam o ligamento gastroesplênico até o fundo. Curtos, escondidos atrás do fundo, tensos quando o estômago está distendido. Clipe que escorrega ou selamento incompleto sangra na recuperação, quando a PA sobe de volta. Selar longe da parede gástrica: perto demais, o fundo necrosa e perfura no 3º–7º dia (febre, peritonite, ar na TC). Prevenção: sonda nasogástrica aberta, energia bipolar/ultrassônica, tração medial suave do estômago (seta A).'},
+  hilo:{c:'d',hl:'<ellipse cx="400" cy="272" rx="42" ry="72"/>',h:'<strong>Hilo — ramos segmentares</strong>Padrão distribuído (70%): a artéria se divide 2–3 cm antes do hilo em muitos ramos que entram por uma face larga. Padrão magistral (30%): tronco único que entra por um hilo compacto — mais fácil de grampear, mais fatal se escorrega. Grampeador vascular no hilo é o sangramento maciço da conversão; clipes em cada ramo no padrão distribuído. Dica de prova: ligar a artéria antes da veia (o baço esvazia, o volume cai, a autotransfusão acontece); na PTI, ligar a artéria antes de transfundir plaquetas.'},
+  panc:{c:'w',hl:'<ellipse cx="376" cy="308" rx="52" ry="34"/>',h:'<strong>Cauda do pâncreas no hilo</strong>Toca o hilo em cerca de 30% das pessoas e fica a menos de 1 cm em até 75%. Entra na linha do grampeador quando a dissecção do hilo é feita colada ao baço sem identificar a cauda. Resultado: fístula pancreática no PO 3–5 — dreno claro com amilase > 3× a sérica (ISGPS 2016). Conduta conservadora: manter dreno, nutrição, octreotide opcional; CPRE com prótese se persistir. Sinal precoce: dreno "de água de carne" que vira turvo, febre, coleção.'},
+  caps:{c:'d',hl:'<ellipse cx="588" cy="236" rx="38" ry="118"/>',h:'<strong>Cápsula, aderências diafragmáticas e leito</strong>Na PTI e nas doenças hematológicas a cápsula é friável; aderências ao diafragma (esplenite prévia, infarto) descolam com laceração capsular. Sangramento em lençol de superfície cruenta, sem vaso para ligar — é o que a conversão "por dificuldade" costuma esconder. Hemostasia com energia, hemostáticos tópicos, e se difuso, packing e reabordagem planejada (controle de danos). Coagulopatia dilucional piora exatamente este sangramento.'},
+  acess:{c:'m',hl:'<circle cx="408" cy="370" r="22"/>',h:'<strong>Baço acessório (15–30%)</strong>Não sangra — recidiva. Locais em ordem: hilo (mais comum), ligamento gastroesplênico, cauda do pâncreas, omento maior, mesentério, ligamento esplenocólico, pelve/gônada. Procure antes de mobilizar, com o campo limpo. Na PTI que recidiva anos depois, o esfregaço sem Howell-Jolly denuncia tecido esplênico funcionante; cintilografia com hemácias marcadas e desnaturadas pelo calor localiza; a reesplenectomia do acessório responde em ~50%.'}
+};
+const SEQ={
+  lap:['Posição: decúbito lateral direito 60°, mesa quebrada, 3–4 portais subcostais esquerdos, ótica 30°','Procurar baço acessório com o campo limpo: hilo, gastroesplênico, cauda do pâncreas, omento','Ligamento esplenocólico e polo inferior (seta B) — o cólon cai para medial','Ligamento gastroesplênico: selar os vasos curtos longe do fundo gástrico','Hilo: identificar a cauda do pâncreas; grampeador vascular ou clipes ramo a ramo; artéria antes da veia','Só agora o esplenorrenal e o frenoesplênico — o baço estava pendurado neles','Saco extrator e morcelamento (nunca em neoplasia); revisar hemostasia com PA normal; dreno se pâncreas foi manipulado'],
+  open:['Incisão subcostal esquerda ou mediana; afastador fixo','Sequência inversa da laparoscopia: primeiro o esplenorrenal lateral, mobilizando o baço para medial até a linha média','Ligar a artéria esplênica na borda superior do pâncreas cedo (esplenomegalia, PTI, sangramento)','Vasos curtos com o baço já na mão, sob visão direta do fundo','Hilo com a cauda do pâncreas afastada; ligaduras individuais','Lavar, hemostasia da loja diafragmática, dreno na loja; conversão = fator de risco de sangramento e de abscesso']
+};
+seg($('#c7site'),d=>pick7(d.s));
+function pick7(k){$('#g_hl').innerHTML=SITES[k].hl.replace('/>',' fill="#EF9F27" opacity=".22" stroke="#EF9F27" stroke-width="1.5"/>');const o=$('#c7out');o.className='ver '+SITES[k].c;o.innerHTML=SITES[k].h;}
+pick7('curtos');
+seg($('#c7seq'),d=>$('#c7steps').innerHTML=SEQ[d.q].map(s=>'<li>'+s+'</li>').join(''));
+$('#c7steps').innerHTML=SEQ.lap.map(s=>'<li>'+s+'</li>').join('');
+
+/* ================= CAP 8 — calendário ================= */
+const sv8=$('#sv8');
+const TICKS=['0 h','6 h','24 h','48 h','3 d','5 d','7 d','10 d','14 d','30 d','6 m','2 a','vida'];
+const EV8=[
+  {id:'hem',x:.8,y:70,r:22,c:'d',t:'Hemorragia (0–48 h)',h:'<b>Sinal.</b> Choque, dreno vermelho, Hb caindo, abdome distendido; risco maior após conversão, PTI, esplenomegalia.<br><b>Exame.</b> Nenhum se instável; TC arterial se estável.<br><b>Conduta.</b> CH + 1:1:1 + TXA + reabordagem; angioembolização no estável com blush.<br><b>Como a banca escreve.</b> "2 h de PO, 1.000 mL sem resposta, Hb 12 → 7".'},
+  {id:'pulm',x:2.4,y:150,r:12,c:'b',t:'Atelectasia · derrame pleural E (24–72 h)',h:'<b>Sinal.</b> Febre baixa nas primeiras 48 h, dessaturação, murmúrio abolido em base esquerda.<br><b>Por quê.</b> A complicação mais frequente de todas é pulmonar: incisão subcostal, dor, diafragma esquerdo irritado.<br><b>Conduta.</b> Fisioterapia, analgesia, deambulação; derrame pequeno não se punciona. Derrame que aparece no 7º dia com febre em pico é outra história (abscesso).'},
+  {id:'gast',x:4.6,y:60,r:15,c:'d',t:'Necrose / fístula gástrica (PO 3–7)',h:'<b>Sinal.</b> Febre, dor, taquicardia, saída de conteúdo gástrico pelo dreno, pneumoperitônio novo.<br><b>Por quê.</b> Vasos curtos selados colados à parede do fundo → isquemia → perfuração.<br><b>Conduta.</b> TC com contraste oral; reoperação com sutura/ressecção do fundo e drenagem; jejum e antibiótico.'},
+  {id:'fist',x:5,y:200,r:13,c:'w',t:'Fístula pancreática (≥ PO 3)',h:'<b>Sinal.</b> Dreno claro que persiste, depois turvo; febre, coleção.<br><b>Critério (ISGPS 2016).</b> Amilase do dreno > 3× o limite sérico a partir do PO 3. Só "bioquímica" se sem repercussão; B se muda a conduta (dreno prolongado, antibiótico, drenagem percutânea); C se reoperação, falência orgânica ou óbito.<br><b>Conduta.</b> Conservadora: manter o dreno, nutrição, octreotide opcional; CPRE com prótese se persistente.'},
+  {id:'abs',x:6.8,y:120,r:17,c:'w',t:'Abscesso subfrênico (PO 5–10)',h:'<b>Sinal.</b> Febre em pico, dor no ombro esquerdo, soluços, derrame pleural esquerdo, leucocitose — tudo tardio.<br><b>Exame.</b> TC de abdome com contraste.<br><b>Conduta.</b> Drenagem percutânea guiada + antibiótico; reoperação se falha. Fatores: conversão, fístula pancreática, hematoma da loja, lesão gástrica.'},
+  {id:'plq',x:7.5,y:220,r:11,c:'b',t:'Trombocitose reativa (pico PO 7–14)',h:'<b>Sinal.</b> Nenhum. Plaquetas sobem em 1–2 dias e fazem pico na 2ª semana; na PTI ultrapassam um milhão.<br><b>Conduta.</b> AAS profilático quando > 1.000.000; HBPM profilática de rotina no PO. Trombocitose por si só não é anticoagulação plena.<br><b>Isca.</b> "Plaquetas 1,2 milhão, assintomático" → AAS, não heparina.'},
+  {id:'tvp',x:8.6,y:60,r:16,c:'d',t:'Trombose de veia porta / esplênica (PO 7–30)',h:'<b>Sinal.</b> Dor abdominal vaga, febre baixa, íleo, ascite, leucocitose, plaquetas altas. Incidência 5–10% (até 30% com Doppler de rotina); risco: esplenomegalia maciça, mieloproliferativas, hemolíticas.<br><b>Exame.</b> Doppler ou angioTC venosa.<br><b>Conduta.</b> Anticoagulação plena 3–6 meses; vigiar isquemia mesentérica; cavernoma e hipertensão portal se não tratada.'},
+  {id:'opsi',x:11.4,y:150,r:24,c:'d',t:'OPSI — sepse fulminante (vida toda; pico 2 anos)',h:'<b>Sinal.</b> Pródromo gripal de horas → febre alta, vômito, prostração, petéquias, choque, CIVD. 50–70% pneumococo; hemófilo b, meningococo; Capnocytophaga (mordida de cão), babesiose, malária grave.<br><b>Risco.</b> 3–5% na vida; maior em crianças, hematológicos, primeiros 2–3 anos. Mortalidade 50–70%.<br><b>Conduta.</b> Ceftriaxona IV imediatamente após hemocultura; UTI. Prevenção: vacinas, penicilina profilática, antibiótico de bolso, cartão.'}
+];
+function drawC8(){
+  sv8.innerHTML='';const ink=css('--ink'),ink2=css('--ink2');
+  const x0=30,x1=610,n=TICKS.length-1;const X=i=>x0+(x1-x0)*i/n;
+  el('line',{x1:x0,x2:x1,y1:262,y2:262,stroke:ink2,'stroke-width':1.5},sv8);
+  TICKS.forEach((t,i)=>{el('line',{x1:X(i),x2:X(i),y1:258,y2:266,stroke:ink2},sv8);el('text',{x:X(i),y:282,'text-anchor':'middle',fill:ink2,'font-size':10,text:t},sv8);});
+  EV8.forEach(e=>{const g=el('g',{class:'ev tl','data-id':e.id},sv8);const col={b:'#1E7F72',w:'#B9741A',d:'#B7352B',m:'#6B4FA3'}[e.c];el('line',{x1:X(e.x),x2:X(e.x),y1:e.y+e.r,y2:262,stroke:col,'stroke-dasharray':'3 3',opacity:.6},g);el('circle',{cx:X(e.x),cy:e.y,r:e.r,fill:col,opacity:.85,stroke:'#fff','stroke-width':2},g);el('text',{x:X(e.x),y:e.y-e.r-6,'text-anchor':'middle',fill:ink,'font-size':10,'font-weight':600,text:e.t.split(' (')[0].split(' — ')[0]},g);g.addEventListener('click',()=>pick8(e.id));});
+}
+function pick8(id){$$('#sv8 .ev').forEach(g=>g.classList.toggle('on',g.dataset.id===id));const e=EV8.find(x=>x.id===id);const p=$('#c8panel');p.className='ver '+e.c;p.innerHTML='<strong>'+e.t+'</strong>'+e.h;}
+drawC8();pick8('hem');
+const VAC={
+  elet:'<b>Quando:</b> ≥ 14 dias antes da cirurgia (o baço ainda está lá para montar a memória).<br><b>Pneumocócica:</b> conjugada (VPC13/15/20) e, ≥ 8 semanas depois, VPP23; reforço de VPP23 em 5 anos.<br><b>Meningocócica:</b> MenACWY 2 doses (8 semanas) com reforço a cada 5 anos + MenB 2 doses.<br><b>Hib:</b> 1 dose. <b>Influenza:</b> anual. COVID conforme calendário.<br><b>Sob prednisona ≥ 20 mg ou rituximab:</b> resposta pior; rituximab → vacinar antes ou esperar 6 meses. Disponíveis no CRIE.',
+  urg:'<b>Quando:</b> 14 dias após a cirurgia (antes disso a resposta é menor) — ou na alta, se houver risco de perder o paciente do seguimento. Mesmo esquema da eletiva.<br><b>Profilaxia antibiótica:</b> crianças &lt; 5 anos até completar 5 anos e pelo menos 1–2 anos após a esplenectomia (penicilina V ou amoxicilina); adultos por 1–2 anos, ou enquanto imunossuprimidos.<br><b>Educação:</b> febre = emergência; amoxicilina-clavulanato de bolso para tomar a caminho do PS; cartão/pulseira de asplênico; cuidado com mordida de cão (Capnocytophaga) e viagem a área de malária.'
+};
+seg($('#c8vac'),d=>$('#c8vacout').innerHTML=VAC[d.v]);$('#c8vacout').innerHTML=VAC.elet;
+
+/* ================= CAP 9 — forja ================= */
+const Q=[
+ {tag:'Questão-mãe',tagc:'d',st:'Mulher de 47 anos, PTI refratária com quatro anos de prednisona, submetida a esplenectomia laparoscópica convertida para aberta por dificuldade técnica. Duas horas depois, na recuperação: PA 80×40 mmHg, FC 118 bpm, sem resposta a 1.000 mL de Ringer lactato. Hb 12,0 → 7,2 g/dL, lactato 42 mg/dL, plaquetas 130.000/µL. Abdome distendido, dreno com débito sanguinolento abundante. A conduta é:',
+  alts:['Concentrado de hemácias e reabordagem cirúrgica imediata.','Transfusão de plaquetas e plasma fresco, mantendo observação clínica.','Tomografia de abdome com contraste para localizar o sangramento.','Hidrocortisona 100 mg IV e novo bolus de cristaloide.','Ácido tranexâmico e expansão volêmica adicional com 2.000 mL de cristaloide.'],ans:0,
+  why:'Não respondedor + Hb que caiu 4,8 g/dL + dreno vermelho + abdome distendido: prova física de sangue completa. Classe III–IV — o que sobe a PA é hemácia, e o que para o sangramento é ligadura. Plaquetas de 130.000 mostram que a hemorragia é anatômica, não plaquetopênica.',
+  dis:['B é a linha da coagulopatia demonstrada (INR alto, fibrinogênio baixo) — não existe aqui; e "observação" nunca é resposta para não respondedor.','C é a linha do respondedor transitório estável: instável não vai ao tomógrafo.','D é a linha da crise adrenal: choque sem prova de perda, Na e glicose baixos, Hb intacta. Adjuvante razoável a caminho da mesa; conduta principal, não.','E é adjuvante (TXA) somado a dano (cristaloide): dilui, esfria, estoura coágulo.']},
+ {tag:'Pivô · resposta ao bolus',tagc:'w',st:'Mesma paciente. Após 1.000 mL de Ringer, <mark>PA 112×72 mmHg e FC 96 bpm, mantidas por 40 minutos</mark>. <mark>Hb 12,0 → 9,6 g/dL</mark>; dreno com <mark>350 mL sanguinolentos</mark>; abdome <mark>flácido</mark>; lactato 22 mg/dL. Conduta:',
+  alts:['Reabordagem cirúrgica imediata.','Alta da recuperação para a enfermaria com Hb de controle em 24 h.','Hidrocortisona 100 mg IV e reavaliação.','Tomografia de abdome com contraste em fase arterial, reserva de hemoderivados e Hb seriada; angioembolização se blush.','Transfusão de 2 concentrados de hemácias e observação sem exame de imagem.'],ans:3,
+  why:'Respondedor sustentado (ou transitório em observação) com queda de Hb moderada: sangrou e pode ter parado. Estável, ele ganha a imagem — a TC arterial localiza hematoma e blush do hilo ou de vaso curto, e a angioembolização resolve o que sangra devagar. Reoperar às cegas o estável e dar alta ao que ainda perde são os dois erros simétricos.',
+  dis:['A é a conduta do não respondedor (questão-mãe).','B ignora a queda de 2,4 g/dL e o dreno de 350 mL.','C não tem prova física adrenal.','E transfunde sem localizar: o estável merece saber de onde perde.']},
+ {tag:'Pivô · prova física invertida',tagc:'m',st:'Mesma paciente e mesmo quadro hemodinâmico, sem resposta ao bolus e com <mark>noradrenalina em dose crescente sem efeito</mark>. Porém: <mark>Hb 12,0 → 11,6 g/dL</mark>, dreno com <mark>40 mL serosos</mark>, abdome <mark>flácido</mark>, <mark>Na 127 mEq/L, K 4,4 mEq/L, glicemia 58 mg/dL, temperatura 38,2 °C</mark>. Conduta:',
+  alts:['Concentrado de hemácias e reabordagem.','Tomografia de abdome com contraste.','Hidrocortisona 100 mg IV em bolus, seguida de 50 mg a cada 6 h, com soro fisiológico e glicose.','Fludrocortisona 0,1 mg via oral.','Dosar cortisol sérico e aguardar o resultado para iniciar corticoide.'],ans:2,
+  why:'Choque refratário a volume e vasopressor <i>sem</i> prova de perda — Hb intacta, dreno seroso, abdome flácido — em quem usou prednisona por quatro anos: o eixo suprimido não gera cortisol para o estresse cirúrgico; sem cortisol o α1 não responde à noradrenalina, o ADH sobe (Na cai) e a gliconeogênese para (glicose cai). Repare no K normal: aldosterona íntegra — insuficiência terciária, não Addison.',
+  dis:['A e B tratam sangue que o enunciado descartou de propósito.','D é para insuficiência primária (falta de aldosterona); aqui a glomerulosa está íntegra.','E é o erro mais perigoso: tratar primeiro; se quiser preservar o teste, dexametasona não interfere no ensaio.']},
+ {tag:'Pivô · complicação tardia',tagc:'w',st:'<mark>Sétimo dia</mark> de pós-operatório de esplenectomia convertida. <mark>Febre de 39 °C em picos, dor no ombro esquerdo, soluços</mark>, leucócitos 18.000/µL. Radiografia: <mark>derrame pleural à esquerda</mark>. Hemodinamicamente estável. Conduta:',
+  alts:['Toracocentese e antibiótico para pneumonia nosocomial.','Tomografia de abdome com contraste e drenagem percutânea guiada da coleção, com antibiótico de amplo espectro.','Reoperação imediata para lavagem da cavidade.','Anticoagulação plena por provável trombose de veia esplênica.','Antibiótico empírico sem exame de imagem, reavaliando em 48 h.'],ans:1,
+  why:'Febre em pico do 5º ao 10º dia com dor referida no ombro (diafragma irritado), soluços e derrame simpático à esquerda é a assinatura do abscesso subfrênico na loja esplênica. O derrame é consequência, não pneumonia. Drenagem percutânea guiada por TC resolve a maioria; a reoperação fica para falha ou inacessibilidade.',
+  dis:['A trata o derrame como doença.','C pula a etapa minimamente invasiva que resolve 80%.','D é a linha da trombose portal: dor + trombocitose > 1 milhão, sem derrame.','E deixa uma coleção sem drenar — antibiótico não entra em pus.']},
+ {tag:'Pivô · dreno com amilase',tagc:'w',st:'<mark>Quarto dia</mark> de pós-operatório. Dreno da loja esplênica com <mark>350 mL/24 h de líquido claro</mark>; <mark>amilase do dreno 4.800 U/L</mark>, amilase sérica 90 U/L. Afebril, sem dor, dieta oral aceita. Conduta:',
+  alts:['Reoperação para pancreatectomia distal.','Retirar o dreno, pois o débito é seroso.','CPRE com prótese pancreática imediata.','Tomografia e drenagem cirúrgica da coleção.','Manter o dreno, classificar como fístula pancreática pelo critério ISGPS (amilase do dreno > 3× a sérica a partir do PO 3) e tratar conservadoramente com suporte nutricional.'],ans:4,
+  why:'A cauda do pâncreas foi lesada no hilo — a complicação previsível da dissecção difícil. Sem repercussão clínica, é fístula "bioquímica"/grau A: dreno mantido, nutrição, octreotide opcional. A maioria fecha sozinha em 2–4 semanas.',
+  dis:['A e D são reoperações para uma fístula que fecha com dreno.','B remove o único controle da fístula.','C é o passo seguinte se persistir além de semanas, não o primeiro.']},
+ {tag:'Pivô · trombocitose com dor',tagc:'d',st:'<mark>Décimo segundo dia</mark> de pós-operatório de esplenectomia por PTI. <mark>Dor abdominal vaga, febre de 37,9 °C, distensão e íleo</mark>. Plaquetas <mark>1.150.000/µL</mark>, leucócitos 14.000/µL, sem derrame pleural. Conduta:',
+  alts:['Doppler do sistema porta (ou angioTC venosa) e anticoagulação plena por 3–6 meses.','Ácido acetilsalicílico 100 mg/dia isoladamente.','Laparotomia exploradora.','Antibiótico e drenagem percutânea por abscesso subfrênico.','Observação: trombocitose reativa é esperada após esplenectomia.'],ans:0,
+  why:'Dor + febre baixa + íleo + trombocitose entre o 7º e o 30º dia é trombose de veia porta/esplênica até prova em contrário — o coto da veia esplênica é o ninho do trombo, e a plaqueta de mais de um milhão da PTI operada é o combustível. Doppler confirma; anticoagulação plena evita extensão para a mesentérica e cavernoma.',
+  dis:['B é a linha da trombocitose assintomática > 1 milhão (profilaxia), não do trombo constituído.','C não tem indicação sem isquemia.','D é a linha do abscesso: febre em pico, ombro, derrame.','E ignora os sintomas — trombocitose por si é esperada; com dor e febre, não.']},
+ {tag:'Pivô · pré-operatório da PTI',tagc:'w',st:'Paciente de 32 anos com PTI crônica refratária, esplenectomia laparoscópica programada para <mark>daqui a 48 horas</mark>. <mark>Plaquetas 14.000/µL</mark>, sem sangramento ativo, vacinada há 3 semanas. Conduta:',
+  alts:['Transfundir plaquetas na indução anestésica, antes da incisão.','Adiar a cirurgia por 6 meses e iniciar eltrombopag.','Imunoglobulina IV 1 g/kg (± pulso de corticoide) para alcançar ≥ 50.000; transfusão de plaquetas reservada para depois da ligadura da artéria esplênica.','Plasmaférese pré-operatória.','Operar com 14.000, porque a via laparoscópica tolera qualquer contagem.'],ans:2,
+  why:'IVIG bloqueia os receptores Fc dos macrófagos esplênicos e sobe a contagem em 24–48 h — cabe no prazo. Plaqueta transfundida antes de ligar a artéria vai direto para o matadouro; depois da ligadura, ela fica. Alvo para cirurgia maior: ≥ 50.000.',
+  dis:['A é o erro clássico: o baço come a bolsa.','B desperdiça a janela; TPO-RA é alternativa, não pré-requisito.','D não tem papel na PTI (é PTT).','E confunde via com risco: o hilo sangra igual.']},
+ {tag:'Pivô · anos depois',tagc:'d',st:'Homem de 29 anos, esplenectomia por trauma <mark>há 3 anos</mark>, sem seguimento. Há 8 horas: <mark>febre de 39,8 °C, vômitos, prostração</mark>; agora <mark>petéquias, PA 84×50 mmHg, FC 130 bpm</mark>, sem foco ao exame. Conduta:',
+  alts:['Tomografia de abdome para pesquisar coleção residual.','Amoxicilina oral e reavaliação ambulatorial em 24 h.','Hidrocortisona 100 mg IV como primeira medida.','Hemoculturas e ceftriaxona IV imediatamente, sem aguardar resultados, com internação em terapia intensiva.','Ciprofloxacino oral e antitérmico.'],ans:3,
+  why:'OPSI: febre alta e colapso em horas no asplênico sem vacinação é pneumococo até prova em contrário. O baço era o único filtro para bactéria encapsulada não opsonizada; sem ele, a bacteremia vira choque e CIVD em 12–24 h. Antibiótico na primeira hora é a única variável que muda a mortalidade de 50–70%.',
+  dis:['A atrasa o antibiótico por uma coleção que não existe 3 anos depois.','B e E são a "profilaxia de bolso" — servem para o pródromo a caminho do PS, nunca para o choque.','C tem lugar (adrenal hemorrágica de Waterhouse-Friderichsen), mas depois do antibiótico.']},
+ {tag:'Pivô · calendário vacinal',tagc:'b',st:'Paciente submetido a <mark>esplenectomia de urgência por trauma há 3 dias</mark>, evoluindo bem, alta prevista em 48 h, sem vacinação prévia. Sobre a imunização:',
+  alts:['Vacinar imediatamente, ainda no primeiro dia de pós-operatório.','Vacinar 14 dias após a cirurgia (ou na alta, se houver risco de perda de seguimento): pneumocócica conjugada seguida da polissacarídica ≥ 8 semanas depois, meningocócica ACWY e B, Hib e influenza anual.','Aguardar 6 meses para a recuperação imunológica.','Apenas vacina pneumocócica, pois é a única bactéria relevante.','As vacinas estão contraindicadas em asplênicos por serem imunossuprimidos.'],ans:1,
+  why:'Na eletiva, 14 dias antes; na urgência, 14 dias depois — a resposta de anticorpos é pior nos primeiros dias de pós-operatório. O risco de perder o paciente do seguimento justifica vacinar na alta. Esquema: PCV → VPP23 (≥ 8 semanas), MenACWY + MenB, Hib, influenza.',
+  dis:['A é cedo demais para a resposta imune.','C deixa o paciente descoberto no período de maior risco.','D esquece meningococo e hemófilo.','E confunde asplenia com imunossupressão para vacina viva — inativadas são obrigatórias.']},
+ {tag:'Pivô · indicações',tagc:'m',st:'Sobre as indicações de esplenectomia, assinale a alternativa correta:',
+  alts:['A esferocitose hereditária é a indicação eletiva mais frequente e deve ser operada antes dos 2 anos de idade.','O trauma é a indicação mais comum de esplenectomia eletiva.','A PTI é a indicação mais frequente de esplenectomia no geral, superando o trauma.','A esplenomegalia maciça (> 20–25 cm) é a indicação preferencial da via laparoscópica.','O trauma é a indicação mais frequente de esplenectomia no geral, e a PTI a mais frequente entre as doenças hematológicas (eletivas).'],ans:4,
+  why:'Epidemiologia que a banca cobra: trauma lidera o total; entre as indicações hematológicas (e as eletivas), a PTI é a primeira, seguida da esferocitose hereditária — operada a partir dos 6 anos, com colecistectomia se houver litíase. Esplenomegalia maciça e hipertensão portal são as contraindicações relativas à laparoscopia.',
+  dis:['A erra a idade (≥ 6 anos, pelo risco de OPSI) e a posição.','B chama trauma de eletivo.','C inverte a ordem.','D inverte a via: baço > 20–25 cm é indicação de aberta ou hand-assisted.']}
+];
+let score=0,answered=0;
+function renderForja(){
+  const box=$('#forja');box.innerHTML='';score=0;answered=0;
+  Q.forEach((q,i)=>{const d=document.createElement('div');d.className='q';d.id='q'+(i+1);
+    d.innerHTML='<div class="qh"><span class="eyebrow">Questão '+(i+1)+' de '+Q.length+'</span><span class="tag '+q.tagc+'">'+q.tag+'</span></div><div class="st">'+q.st+'</div><div class="alts">'+q.alts.map((a,j)=>'<button data-j="'+j+'"><b>'+'ABCDE'[j]+'</b><span>'+a+'</span></button>').join('')+'</div><div class="exp"><div class="why"><b>Gabarito '+'ABCDE'[q.ans]+'.</b> '+q.why+'</div>'+q.dis.map(x=>'<div class="dis">'+x+'</div>').join('')+'</div>';
+    $$('.alts button',d).forEach(b=>b.addEventListener('click',()=>{if(d.classList.contains('done'))return;d.classList.add('done');const j=+b.dataset.j;answered++;if(j===q.ans){score++;b.classList.add('ok');}else{b.classList.add('no');$$('.alts button',d)[q.ans].classList.add('ok');}$$('.alts button',d).forEach(x=>x.disabled=true);$('#scoretxt').textContent=score+' / '+Q.length+(answered===Q.length?(score===Q.length?' — domínio total':' — reveja as linhas erradas na tabela-mãe'):'');}));
+    box.appendChild(d);});
+  $('#scoretxt').textContent='0 / '+Q.length;
+}
+$('#forjareset').addEventListener('click',renderForja);renderForja();
+
+/* ================= CAP 10 — tabela-mãe ================= */
+const CARDS=[
+ ['d','Choque PO + não respondedor + Hb ↓ + dreno vermelho','CH agora, 1:1:1, TXA, cálcio, aquecer — e reabordagem. Sem TC.'],
+ ['w','Choque PO que responde ao bolus + Hb ↓ moderada','Sangue reservado, TC arterial; angioembolização se blush; mesa se instabilizar.'],
+ ['d','Dreno seco + Hb ↓ + abdome distendido','O dreno mentiu: coágulo ou mal posicionado. Mesma conduta da hemorragia.'],
+ ['m','Choque sem perda + corticoide crônico + Na ↓ glicose ↓ (K normal)','Hidrocortisona 100 mg IV → 50 mg 6/6 h; SF e glicose. Não espere cortisol.'],
+ ['m','Prednisona ≥ 5 mg/dia ≥ 3 semanas no último ano','Eixo suprimido: dose de estresse na indução de cirurgia grande (100 mg + 50 mg 6/6 h, 24–48 h).'],
+ ['w','PTI, plaquetas < 50.000 na véspera','IVIG 1 g/kg (ou pulso). Plaquetas só após ligar a artéria esplênica.'],
+ ['m','PTI: quando esplenectomia?','Crônica (> 12 m) refratária/dependente de corticoide; resposta 80%. Alternativas: TPO-RA, rituximab. Procurar baço acessório (15–30%).'],
+ ['b','Vacinas do asplênico','≥ 14 d antes (eletiva) ou 14 d depois (urgência): PCV → VPP23 (8 sem), MenACWY + MenB, Hib, influenza.'],
+ ['d','Febre no asplênico','OPSI até prova em contrário: hemocultura e ceftriaxona IV na primeira hora. Mortalidade 50–70%.'],
+ ['w','PO 5–10: febre em pico + ombro E + derrame E','Abscesso subfrênico: TC + drenagem percutânea + antibiótico.'],
+ ['w','Dreno claro, amilase > 3× sérica a partir do PO 3','Fístula pancreática (ISGPS): manter dreno, suporte; CPRE se persistir.'],
+ ['d','PO 3–7: febre + peritonite + conteúdo gástrico no dreno','Necrose do fundo por vasos curtos selados rente: reoperar.'],
+ ['d','PO 7–30: dor + febre baixa + plaquetas > 1 milhão','Trombose porta/esplênica: Doppler e anticoagulação plena 3–6 meses.'],
+ ['b','Plaquetas > 1.000.000 assintomático','AAS profilático; HBPM profilática de rotina no PO.'],
+ ['b','Esfregaço com Howell-Jolly','Asplenia funcional. Ausência após esplenectomia por PTI que recidiva = baço acessório.'],
+ ['b','Indicações','Trauma (geral); PTI (hematológica/eletiva); esferocitose ≥ 6 anos + colecistectomia se litíase; aneurisma da a. esplênica > 2 cm ou gestante.'],
+ ['m','Contraindicação relativa à laparoscopia','Esplenomegalia maciça (> 20–25 cm), hipertensão portal, trauma instável.'],
+ ['w','Conversão "por dificuldade técnica"','Marcador de risco de hemorragia, fístula pancreática e abscesso. A banca planta de propósito.']
+];
+$('#cards').innerHTML=CARDS.map(c=>'<div class="card '+c[0]+'"><div class="g">'+c[1]+'</div><div class="a">'+c[2]+'</div></div>').join('');
+})();
+</script>
+
+</body></html>

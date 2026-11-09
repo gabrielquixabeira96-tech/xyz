@@ -1,0 +1,936 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mama Luminal Inicial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --panel:#f4f4f2; --panel2:#e9e9e6; --ink:#111111; --ink2:#3a3a3a; --mute:#6b6b6b;
+  --line:#c9c9c4; --strong:#111111; --acc:#111111; --acc-soft:#f4f4f2; --b:#111111;
+  --w:#6e1d1d; --w-soft:#f3e9e7; --ok:#1f1f1f; --bad:#6e1d1d;
+  --tissue:#ecebe7; --tissue2:#d9d7d1; --gland:#b9b6ae; --skin:#8a877f; --tumor:#3b3b3b;
+  --serif:"Source Serif 4","Source Serif Pro",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f0f0f; --panel:#1a1a1a; --panel2:#242424; --ink:#f1f1ee; --ink2:#d0d0cb; --mute:#9a9a94;
+    --line:#3c3c3a; --strong:#f1f1ee; --acc:#f1f1ee; --acc-soft:#1a1a1a; --b:#f1f1ee;
+    --w:#d9a29a; --w-soft:#2a1b1a; --ok:#e8e8e4; --bad:#d9a29a;
+    --tissue:#262624; --tissue2:#33332f; --gland:#4a4944; --skin:#8e8b83; --tumor:#d6d4ce;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f0f0f; --panel:#1a1a1a; --panel2:#242424; --ink:#f1f1ee; --ink2:#d0d0cb; --mute:#9a9a94;
+  --line:#3c3c3a; --strong:#f1f1ee; --acc:#f1f1ee; --acc-soft:#1a1a1a; --b:#f1f1ee;
+  --w:#d9a29a; --w-soft:#2a1b1a; --ok:#e8e8e4; --bad:#d9a29a;
+  --tissue:#262624; --tissue2:#33332f; --gland:#4a4944; --skin:#8e8b83; --tumor:#d6d4ce;
+}
+*{box-sizing:border-box;border-radius:0 !important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.62;overflow-x:hidden}
+a{color:inherit}
+button,input,select{font-family:inherit;font-size:.92rem;color:var(--ink)}
+.wrap{display:grid;grid-template-columns:210px minmax(0,1fr);max-width:1180px;margin:0 auto}
+nav.rail{position:sticky;top:0;align-self:start;height:100vh;overflow-y:auto;border-right:1px solid var(--line);padding:22px 14px;background:var(--bg)}
+nav.rail .brand{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-bottom:14px}
+nav.rail a{display:flex;gap:10px;text-decoration:none;padding:6px 6px;font-size:.9rem;color:var(--ink2);border-left:2px solid transparent}
+nav.rail a span{font-family:var(--mono);font-size:.78rem;color:var(--mute);min-width:20px}
+nav.rail a.on{border-left-color:var(--strong);color:var(--ink);background:var(--panel)}
+nav.rail .theme{margin-top:18px;width:100%;background:none;border:1px solid var(--line);padding:6px;cursor:pointer;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+main{padding:0 40px 80px;min-width:0}
+.hero{padding:48px 0 28px;border-bottom:1px solid var(--strong)}
+.eyebrow{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.hero h1{font-size:2.5rem;line-height:1.12;margin:.25em 0 .3em;font-weight:600;letter-spacing:-.01em}
+.hero p{max-width:70ch;color:var(--ink2)}
+.laudo{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border:1px solid var(--strong);margin:22px 0 6px}
+.laudo div{padding:10px 12px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.laudo div b{display:block;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:600}
+.laudo div span{font-family:var(--mono);font-size:.95rem}
+.laudo div.miss span{color:var(--w)}
+section.ch{padding:44px 0 10px;border-bottom:1px solid var(--line)}
+section.ch>header{margin-bottom:18px}
+section.ch>header .num{font-family:var(--mono);font-size:.8rem;color:var(--mute);letter-spacing:.1em}
+section.ch>header h2{font-size:1.85rem;margin:.1em 0 .25em;font-weight:600;line-height:1.2}
+section.ch>header .lede{color:var(--ink2);max-width:70ch;margin:0;font-style:italic}
+.howto{border:1px solid var(--acc);background:var(--acc-soft);padding:12px 16px;font-size:.9rem;margin:0 0 18px;max-width:72ch;line-height:1.55}
+.howto b.t{color:var(--acc);text-transform:uppercase;font-size:.72rem;letter-spacing:.1em;display:block;margin-bottom:4px}
+.howto ol{margin:.3em 0 .2em 1.2em;padding:0}
+.howto .ex{margin-top:6px;border-top:1px dashed var(--line);padding-top:6px}
+.plate{border:1px solid var(--strong);background:var(--bg);margin:0 0 22px}
+.plate .cap{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;border-bottom:1px solid var(--line);color:var(--mute);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.plate .body{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+.plate .body.one{grid-template-columns:1fr}
+.plate .fig{padding:12px;border-right:1px solid var(--line);min-width:0}
+.plate .ctl{padding:14px;min-width:0}
+.plate svg{width:100%;height:auto;display:block}
+.ctl label{display:block;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin:10px 0 3px}
+.ctl input[type=range]{width:100%;accent-color:var(--strong)}
+.ctl select,.ctl input[type=number]{width:100%;padding:6px 8px;border:1px solid var(--line);background:var(--bg)}
+.ctl .val{font-family:var(--mono);float:right;color:var(--ink)}
+.out{border:1px solid var(--strong);padding:10px 12px;margin-top:12px;background:var(--panel)}
+.out .big{font-size:1.25rem;font-weight:600;line-height:1.25}
+.out .why{font-size:.88rem;color:var(--ink2);margin-top:6px}
+.out .why p{margin:.3em 0}
+.tag{display:inline-block;font-family:var(--mono);font-size:.72rem;border:1px solid var(--line);padding:1px 6px;margin:2px 4px 2px 0}
+.prose{max-width:72ch}
+.prose h3{margin:1.5em 0 .45em;font-size:1.2rem;font-weight:600}
+.prose p{margin:.55em 0}
+.prose .key{background:var(--panel);border-left:3px solid var(--b);padding:10px 14px;margin:1em 0;font-size:.95rem}
+.prose .key b{color:var(--b);text-transform:uppercase;font-size:.72rem;letter-spacing:.1em;display:block;margin-bottom:3px}
+.prose .num-table{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:.9rem;margin:.8em 0;padding:10px 14px;background:var(--panel);border:1px solid var(--line)}
+.prose .num-table .k{font-family:var(--mono);color:var(--acc);white-space:nowrap}
+.divg{border:1px solid var(--line);border-top:2px solid var(--w);padding:10px 14px;margin:1em 0 1.4em;font-size:.93rem}
+.divg>b{text-transform:uppercase;font-size:.72rem;letter-spacing:.1em}
+.chance{display:inline-block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;background:var(--w-soft);color:var(--w);font-weight:600;margin-left:8px;vertical-align:middle;font-family:var(--mono)}
+.gloss{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
+.gloss .card{border:1px solid var(--line);padding:12px 14px;background:var(--bg);font-size:.9rem;line-height:1.5}
+.gloss .card h4{margin:0 0 4px;font-size:1rem}
+.gloss .card p{margin:.3em 0}
+.gloss .card .lbl{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);font-weight:600;margin-right:4px}
+/* tree */
+.tree .q{font-weight:600;font-size:1.02rem;margin:0 0 8px}
+.tree .opts{display:flex;flex-direction:column;gap:6px}
+.btn{background:var(--bg);border:1px solid var(--strong);padding:8px 10px;text-align:left;cursor:pointer;line-height:1.35}
+.btn:hover{background:var(--panel)}
+.btn.sm{padding:5px 10px;font-size:.8rem;display:inline-block;text-align:center}
+.path{font-size:.82rem;color:var(--mute);margin-bottom:10px;font-family:var(--mono);line-height:1.5}
+.crit{display:grid;grid-template-columns:1fr;gap:6px;margin-top:10px}
+.crit .row{border:1px solid var(--line);padding:8px 10px;font-size:.88rem;background:var(--bg)}
+.crit .row.yes{border-color:var(--strong);border-left:4px solid var(--strong)}
+.crit .row.no{color:var(--mute)}
+.crit .row b{display:block}
+.crit .row small{display:block;color:var(--ink2)}
+.chk{display:flex;gap:8px;align-items:center;font-size:.88rem;margin:6px 0;text-transform:none;letter-spacing:0;color:var(--ink)}
+.chk input{accent-color:var(--strong);width:16px;height:16px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+/* table */
+table.mae{width:100%;border-collapse:collapse;font-size:.88rem;margin:6px 0 18px}
+table.mae th,table.mae td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:left}
+table.mae th{background:var(--panel);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+table.mae.hide td.c3{color:transparent;background:var(--panel2);cursor:pointer}
+.tblwrap{overflow-x:auto;max-width:100%}
+/* forja */
+.qz{border:1px solid var(--line);padding:14px 16px;margin:0 0 16px}
+.qz .qh{font-family:var(--mono);font-size:.75rem;color:var(--mute);letter-spacing:.1em}
+.qz .st{margin:.3em 0 .7em}
+.qz .alts{display:flex;flex-direction:column;gap:6px}
+.qz .alt{display:flex;gap:10px;align-items:flex-start;text-align:left;background:var(--bg);border:1px solid var(--line);padding:8px 10px;cursor:pointer;line-height:1.4}
+.qz .alt .L{font-family:var(--mono);font-weight:500;min-width:18px}
+.qz .alt.right{border-color:var(--strong);border-width:2px;background:var(--panel)}
+.qz .alt.wrong{border-color:var(--bad);color:var(--bad);text-decoration:line-through}
+.qz .com{display:none;margin-top:10px;border-top:1px solid var(--line);padding-top:8px;font-size:.92rem}
+.qz.done .com{display:block}
+.score{font-family:var(--mono);font-size:.85rem}
+/* timeline */
+.tl-info{min-height:120px}
+.legend{font-size:.75rem;color:var(--mute);padding:6px 12px;border-top:1px solid var(--line)}
+svg text{font-family:var(--serif)}
+svg .mono{font-family:var(--mono)}
+.qhit{cursor:pointer}
+.qhit:hover .qfill{opacity:.55}
+foot{display:block}
+footer{padding:30px 0;color:var(--mute);font-size:.85rem;max-width:72ch}
+@media (max-width:900px){
+  .wrap{display:block}
+  nav.rail{position:sticky;top:0;z-index:20;height:auto;display:flex;overflow-x:auto;border-right:none;border-bottom:1px solid var(--strong);padding:6px 10px;gap:2px;white-space:nowrap}
+  nav.rail .brand{display:none}
+  nav.rail a{border-left:none;border-bottom:2px solid transparent;padding:6px 8px;font-size:.82rem}
+  nav.rail a.on{border-bottom-color:var(--strong)}
+  nav.rail a em{display:none}
+  nav.rail .theme{margin:0 0 0 6px;width:auto;flex:none}
+  main{padding:0 16px 60px}
+  .hero h1{font-size:1.9rem}
+  .plate .body{grid-template-columns:1fr}
+  .plate .fig{border-right:none;border-bottom:1px solid var(--line)}
+  .two{grid-template-columns:1fr}
+  body{font-size:16.5px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="rail" id="rail">
+  <div class="brand">Aula-atlas · Mama</div>
+  <a href="#c0"><span>00</span><em>Vocabulário</em></a>
+  <a href="#c1"><span>01</span><em>Laudo e subtipo</em></a>
+  <a href="#c2"><span>02</span><em>Estadiamento</em></a>
+  <a href="#c3"><span>03</span><em>Cirurgia da mama</em></a>
+  <a href="#c4"><span>04</span><em>Axila</em></a>
+  <a href="#c5"><span>05</span><em>Radioterapia</em></a>
+  <a href="#c6"><span>06</span><em>Terapia sistêmica</em></a>
+  <a href="#c7"><span>07</span><em>Seguimento e genética</em></a>
+  <a href="#c8"><span>08</span><em>Tabela-mãe e forja</em></a>
+  <button class="theme" id="themeBtn" type="button">Tema</button>
+</nav>
+<main>
+<div class="hero">
+  <div class="eyebrow">Aula-atlas · Residência em Cirurgia · Mastologia oncológica</div>
+  <h1>Câncer de mama inicial luminal A-like: do laudo à alta do seguimento</h1>
+  <p>Um caso real, anonimizado, conduzido do começo ao fim. A paciente M., 55 anos, chega com um nódulo não palpável no quadrante superolateral da mama esquerda, encontrado em exame de imagem, axilas clinicamente livres, sem história familiar. A biópsia por agulha grossa trouxe o laudo abaixo. Dois dados que mudam a conduta não vieram: o tamanho do tumor na imagem e o status menopausal. A aula ensina a decidir em cada cenário possível.</p>
+  <p>Se algum termo do laudo parecer estranho, comece pelo capítulo 00: cada palavra que aparece depois está explicada lá, com o motivo de importar neste caso.</p>
+  <div class="laudo">
+    <div><b>Paciente</b><span>M., 55 anos</span></div>
+    <div><b>Lesão</b><span>QSL · mama E</span></div>
+    <div><b>Exame</b><span>não palpável · cN0</span></div>
+    <div><b>RE</b><span>95% · forte</span></div>
+    <div><b>RP</b><span>95% · forte</span></div>
+    <div><b>HER2</b><span>1+ (low)</span></div>
+    <div><b>Ki-67</b><span>~10%</span></div>
+    <div><b>p63</b><span>negativo</span></div>
+    <div><b>E-caderina</b><span>positiva</span></div>
+    <div class="miss"><b>Tamanho</b><span>a obter</span></div>
+    <div class="miss"><b>Menopausa</b><span>a obter</span></div>
+    <div><b>CID</b><span>C50</span></div>
+  </div>
+</div>
+
+<!-- ============ CAP 00 ============ -->
+<section class="ch" id="c0">
+<header><span class="num">CAPÍTULO 00</span><h2>Antes de começar: o vocabulário do caso</h2>
+<p class="lede">Cada cartão diz o que o termo é, em linguagem simples, e por que ele pesa na decisão da paciente M.</p></header>
+<div class="howto"><b class="t">Como usar este capítulo</b>Leia cada cartão na ordem do laudo; volte aqui sempre que um termo dos capítulos seguintes travar a leitura.</div>
+<div class="gloss">
+<div class="card"><h4>Core biopsy</h4><p><span class="lbl">O que é</span>Biópsia com agulha grossa (14 G, cerca de 2 mm), guiada por ultrassom ou mamografia, que retira cilindros de tecido em vez de células soltas.</p><p><span class="lbl">Neste caso</span>Por ser tecido, permite dizer se o tumor é invasor e fazer a imuno-histoquímica antes da cirurgia; um clipe metálico costuma ser deixado no local para guiar a operação.</p></div>
+<div class="card"><h4>IHQ (imuno-histoquímica)</h4><p><span class="lbl">O que é</span>Técnica que usa anticorpos marcados para revelar, ao microscópio, se uma proteína específica está presente nas células e em que quantidade.</p><p><span class="lbl">Neste caso</span>É a fonte de RE, RP, HER2, Ki-67, p63 e E-caderina: tudo o que define subtipo e tratamento saiu dela.</p></div>
+<div class="card"><h4>RE (receptor de estrogênio)</h4><p><span class="lbl">O que é</span>Proteína do núcleo que, ao ligar o estrogênio, liga genes de proliferação. Positivo se ≥1% das células coram.</p><p><span class="lbl">Neste caso</span>95% e forte: o tumor depende de estrogênio, logo responde a hormonioterapia, que será o eixo do tratamento sistêmico.</p></div>
+<div class="card"><h4>RP (receptor de progesterona)</h4><p><span class="lbl">O que é</span>Receptor cuja produção é induzida pelo próprio RE; é um sinal de que a via do estrogênio está intacta e funcionando.</p><p><span class="lbl">Neste caso</span>RP alto (≥20%) é um dos critérios de luminal A-like; aqui está em 95%.</p></div>
+<div class="card"><h4>HER2</h4><p><span class="lbl">O que é</span>Receptor de membrana de crescimento. Na IHQ se gradua 0, 1+, 2+ ou 3+. 3+ é positivo; 2+ é duvidoso e exige ISH (hibridização in situ, que conta cópias do gene); 0 e 1+ são negativos.</p><p><span class="lbl">Neste caso</span>1+ é HER2-negativo para fins de tratamento: não há indicação de trastuzumabe.</p></div>
+<div class="card"><h4>HER2-low</h4><p><span class="lbl">O que é</span>Rótulo para tumores HER2 1+, ou 2+ com ISH negativo. Não é um subtipo biológico novo; é uma categoria terapêutica.</p><p><span class="lbl">Neste caso</span>Só importa se um dia houver metástase (elegibilidade a trastuzumabe deruxtecana). Na doença inicial, não muda nada.</p></div>
+<div class="card"><h4>Ki-67</h4><p><span class="lbl">O que é</span>Proteína presente só em células que estão se dividindo; a porcentagem de núcleos corados estima a velocidade do tumor.</p><p><span class="lbl">Neste caso</span>~10% é baixo (abaixo de 14–20%): reforça luminal A-like e a baixa chance de benefício de quimioterapia.</p></div>
+<div class="card"><h4>p63</h4><p><span class="lbl">O que é</span>Marcador das células mioepiteliais, a camada contrátil que envolve ductos e lóbulos normais e também o carcinoma in situ.</p><p><span class="lbl">Neste caso</span>Negativo ao redor das células tumorais significa que essa camada foi rompida: o carcinoma é invasor.</p></div>
+<div class="card"><h4>E-caderina</h4><p><span class="lbl">O que é</span>Proteína de adesão que cola uma célula epitelial à vizinha. O carcinoma lobular perde E-caderina e por isso cresce em fila indiana.</p><p><span class="lbl">Neste caso</span>Positiva: favorece carcinoma invasor de tipo não especial (o antigo "ductal").</p></div>
+<div class="card"><h4>CDIS vs invasor</h4><p><span class="lbl">O que é</span>No carcinoma ductal in situ (CDIS) as células malignas ficam dentro do ducto, com a membrana basal e a camada mioepitelial íntegras; no invasor, atravessam-nas e alcançam o estroma, vasos e linfáticos.</p><p><span class="lbl">Neste caso</span>Só o invasor dá metástase linfonodal; por isso aqui a axila precisa ser avaliada.</p></div>
+<div class="card"><h4>Luminal A-like</h4><p><span class="lbl">O que é</span>Subtipo "substituto" definido pela IHQ (sem teste genético): RE+, RP alto, HER2-negativo e Ki-67 baixo. É o de melhor prognóstico.</p><p><span class="lbl">Neste caso</span>É o diagnóstico da paciente M.; abre a porta para desescalonar axila, radioterapia e quimioterapia.</p></div>
+<div class="card"><h4>cT / cN</h4><p><span class="lbl">O que é</span>Estadiamento TNM clínico (prefixo c, antes da cirurgia): T é o tamanho do tumor, N o estado dos linfonodos regionais. Depois da peça vira pT/pN.</p><p><span class="lbl">Neste caso</span>cN0 pelo exame; o cT depende do tamanho na imagem, que ainda falta.</p></div>
+<div class="card"><h4>Linfonodo sentinela (BLS)</h4><p><span class="lbl">O que é</span>O primeiro linfonodo que drena o tumor. Injeta-se radiofármaco (tecnécio-99m) e/ou corante azul perto da lesão ou na região periareolar, e retira-se o linfonodo que capta.</p><p><span class="lbl">Neste caso</span>É o padrão para estadiar uma axila clinicamente negativa; ensaios recentes discutem até omiti-lo.</p></div>
+<div class="card"><h4>Esvaziamento axilar</h4><p><span class="lbl">O que é</span>Retirada dos linfonodos dos níveis I e II da axila (em geral 10 ou mais).</p><p><span class="lbl">Neste caso</span>Muito provavelmente não será feito: causa linfedema em cerca de 15–25% das pacientes e não se indica em cN0 com poucos sentinelas positivos.</p></div>
+<div class="card"><h4>Margem "no ink on tumor"</h4><p><span class="lbl">O que é</span>A superfície da peça é pintada com tinta; margem livre no carcinoma invasor significa apenas que não há célula tumoral tocando a tinta.</p><p><span class="lbl">Neste caso</span>Define se a cirurgia conservadora terminou ou se precisa de reabordagem.</p></div>
+<div class="card"><h4>Oncoplastia</h4><p><span class="lbl">O que é</span>Junção da ressecção oncológica com técnicas de cirurgia plástica (rotação de retalhos glandulares, mamoplastia) para remodelar a mama após a retirada.</p><p><span class="lbl">Neste caso</span>O QSL é o quadrante que mais tolera ressecção com bom resultado estético; é onde a oncoplastia nível I resolve quase tudo.</p></div>
+<div class="card"><h4>Hipofracionamento</h4><p><span class="lbl">O que é</span>Radioterapia com doses maiores por sessão e menos sessões (40 Gy em 15 frações em 3 semanas, ou 26 Gy em 5 frações em 1 semana), em vez das antigas 25 sessões.</p><p><span class="lbl">Neste caso</span>É o padrão atual de radioterapia de mama total: igual controle, menos deslocamento para quem mora longe do serviço.</p></div>
+<div class="card"><h4>PBI (irradiação parcial da mama)</h4><p><span class="lbl">O que é</span>Irradiar só o leito tumoral com margem, e não a mama inteira.</p><p><span class="lbl">Neste caso</span>Provável candidata, se o tumor for ≤ 2 cm, com margens livres e pN0, pelos critérios da ASTRO (≥ 50 anos, RE+).</p></div>
+<div class="card"><h4>Inibidor de aromatase (IA)</h4><p><span class="lbl">O que é</span>Bloqueia a aromatase, enzima que, depois da menopausa, transforma androgênios da gordura em estrogênio. Anastrozol, letrozol, exemestano.</p><p><span class="lbl">Neste caso</span>É a droga se ela estiver na pós-menopausa. Não funciona sozinho na pré-menopausa, porque o ovário produz estrogênio de outro modo.</p></div>
+<div class="card"><h4>Tamoxifeno</h4><p><span class="lbl">O que é</span>Modulador seletivo do receptor de estrogênio: bloqueia o RE na mama e o ativa no endométrio e no osso. 20 mg/dia.</p><p><span class="lbl">Neste caso</span>Droga de escolha se ela ainda for pré-menopausada; alternativa se não tolerar IA.</p></div>
+<div class="card"><h4>Assinatura genômica (Oncotype DX · RS)</h4><p><span class="lbl">O que é</span>Teste que mede a expressão de 21 genes no tumor e devolve o Recurrence Score (RS), de 0 a 100.</p><p><span class="lbl">Neste caso</span>Responde se a quimioterapia acrescenta algo; com o perfil dela, quase certamente não, e no SUS o teste raramente está disponível.</p></div>
+<div class="card"><h4>Bisfosfonato adjuvante</h4><p><span class="lbl">O que é</span>Droga que inibe o osteoclasto (ácido zoledrônico 4 mg IV a cada 6 meses por 3 anos, ou clodronato oral). Na pós-menopausa reduz metástase óssea e mortalidade por câncer de mama.</p><p><span class="lbl">Neste caso</span>Pode ser considerado se ela for pós-menopausada; também protege contra a perda óssea causada pelo IA.</p></div>
+<div class="card"><h4>APAC</h4><p><span class="lbl">O que é</span>Autorização de Procedimento Ambulatorial de Alta Complexidade: o documento do SUS que autoriza e remunera quimioterapia, radioterapia e hormonioterapia oncológica.</p><p><span class="lbl">Neste caso</span>A hormonioterapia de 5 anos dela será dispensada mensalmente via APAC de oncologia; o laudo com CID C50 e estadiamento alimenta essa autorização.</p></div>
+</div>
+<div class="prose">
+<div class="key"><b>Guarde isto</b>p63 negativo = invasor; E-caderina positiva = tipo não especial; RE+/RP ≥ 20%/HER2−/Ki-67 baixo = luminal A-like.</div>
+<div class="divg"><b>Como a banca cobra</b><span class="chance">chance ~60%</span><p>A banca cobra o termo dentro de um laudo, nunca a definição isolada: "p63 negativo", "E-caderina ausente", "HER2 2+", "Ki-67 de 30%" aparecem no enunciado e a resposta depende de traduzi-los em diagnóstico ou conduta.</p></div>
+</div>
+</section>
+
+<!-- ============ CAP 1 ============ -->
+<section class="ch" id="c1">
+<header><span class="num">CAPÍTULO 01</span><h2>Lendo o laudo: do microscópio ao subtipo</h2>
+<p class="lede">Seis marcadores, três perguntas: é invasor? de que tipo? qual biologia?</p></header>
+<div class="howto"><b class="t">Como usar este instrumento</b>
+<ol><li>Comece com os valores da paciente M. (já carregados) e leia o subtipo e a justificativa no quadro inferior.</li>
+<li>Mova um controle por vez (RP, depois Ki-67, depois HER2) e observe qual critério muda o rótulo.</li>
+<li>Selecione HER2 2+ e alterne o ISH entre negativo e positivo: veja o mesmo escore de IHQ virar dois subtipos diferentes.</li></ol>
+<div class="ex"><b>Exercício:</b> mantenha RE 95% e Ki-67 10%, e baixe o RP até o rótulo mudar. Em que valor isso acontece, e por que um tumor com o mesmo RE e o mesmo Ki-67 passa a ser luminal B-like?</div></div>
+<div class="plate"><div class="cap"><span>Classificador de subtipo · St. Gallen</span><span>IHQ substituta</span></div>
+<div class="body">
+<div class="fig">
+<svg id="clsSvg" viewBox="0 0 520 300" role="img" aria-label="Barras dos marcadores">
+</svg>
+</div>
+<div class="ctl">
+<label>RE (% células) <span class="val" id="vEr">95</span></label><input type="range" id="iEr" min="0" max="100" value="95">
+<label>RP (% células) <span class="val" id="vPr">95</span></label><input type="range" id="iPr" min="0" max="100" value="95">
+<label>HER2 (IHQ)</label>
+<select id="iHer"><option value="0">0</option><option value="1" selected>1+</option><option value="2n">2+ com ISH negativo</option><option value="2p">2+ com ISH positivo</option><option value="3">3+</option></select>
+<label>Ki-67 (%) <span class="val" id="vKi">10</span></label><input type="range" id="iKi" min="0" max="80" value="10">
+<div style="margin-top:8px"><button class="btn sm" type="button" id="clsReset">Voltar ao caso</button></div>
+</div></div>
+<div style="padding:0 14px 14px"><div class="out" id="clsOut"></div></div>
+</div>
+<div class="prose">
+<h3>O que o patologista responde, dito de forma simples</h3>
+<p>Uma biópsia de mama responde três perguntas em sequência. Primeiro, se há câncer e se ele já saiu do ducto (invasor) ou ainda está contido (in situ). Segundo, de que tipo histológico ele é. Terceiro, qual é a sua biologia, isto é, de que sinais de crescimento ele depende. A terceira resposta é a que mais decide tratamento, porque cada dependência tem um remédio: estrogênio se bloqueia com hormonioterapia, HER2 com anticorpos anti-HER2, e a proliferação rápida responde melhor à quimioterapia.</p>
+<h3>Mecanismo: por que p63 e E-caderina respondem às duas primeiras perguntas</h3>
+<p>O ducto normal tem duas camadas de células: a luminal, que forra a luz, e a mioepitelial, que a envolve por fora, sobre a membrana basal. O carcinoma in situ cresce dentro desse tubo e mantém a camada mioepitelial ao redor. Quando o tumor invade, ele a atravessa. O p63 cora o núcleo das células mioepiteliais; se os ninhos tumorais aparecem sem esse contorno corado, a camada sumiu e o diagnóstico é de carcinoma invasor. É o caso de M.</p>
+<p>A E-caderina é a "cola" entre células epiteliais vizinhas. O carcinoma lobular nasce justamente de uma mutação no gene CDH1 que elimina essa proteína; as células se soltam umas das outras e infiltram o estroma em fila indiana, sem formar massa definida. E-caderina positiva, como aqui, aponta para carcinoma invasor de tipo não especial, o antigo ductal invasivo. O detalhe que vale guardar é que a correlação não é perfeita: alguns lobulares exibem E-caderina aberrante, e a morfologia continua sendo do patologista.</p>
+<h3>Os números que definem o subtipo</h3>
+<div class="num-table">
+<span class="k">RE ≥ 1%</span><span>Tumor hormônio-sensível; indica hormonioterapia. Entre 1% e 10% é "RE baixo", que se comporta mais como triplo-negativo.</span>
+<span class="k">RP ≥ 20%</span><span>Via estrogênica íntegra; abaixo disso, mesmo com Ki-67 baixo, o tumor é luminal B-like (St. Gallen 2013).</span>
+<span class="k">Ki-67 &lt; 14–20%</span><span>Proliferação baixa; o corte clássico é 14% (St. Gallen 2011), e o painel de 2013 aceitou ~20% conforme o laboratório. Entre 5% e 30% o valor isolado tem baixa reprodutibilidade.</span>
+<span class="k">HER2 3+</span><span>Positivo; indica terapia anti-HER2.</span>
+<span class="k">HER2 2+</span><span>Duvidoso; o ISH decide (amplificado = positivo; não amplificado = HER2-low).</span>
+<span class="k">HER2 0 / 1+</span><span>Negativo para terapia anti-HER2; 1+ entra na categoria HER2-low.</span>
+</div>
+<p>A regra que cai em prova é a combinação de St. Gallen: RE positivo, RP ≥ 20%, HER2 negativo e Ki-67 baixo formam o luminal A-like; basta um desses falhar (RP baixo ou Ki-67 alto) para o rótulo virar luminal B-like HER2-negativo. A banca adora o tumor com RE 90% e RP 5%: muitos marcam luminal A pelo RE alto e erram.</p>
+<h3>Como aparece na paciente M.</h3>
+<p>RE 95% forte, RP 95% forte, HER2 1+ e Ki-67 de 10%, com p63 negativo e E-caderina positiva: carcinoma invasor de tipo não especial, luminal A-like. Esse é o perfil de menor risco entre os cânceres de mama invasores, com dependência hormonal intensa e proliferação lenta. Tudo o que vem depois nesta aula é, no fundo, a pergunta: quanto tratamento podemos tirar sem perder controle da doença?</p>
+<h3>O ponto cobrado: HER2-low não é HER2-positivo</h3>
+<p>O rótulo HER2-low nasceu do ensaio DESTINY-Breast04 (2022), em que o conjugado anticorpo-droga trastuzumabe deruxtecana (T-DXd) prolongou a sobrevida de pacientes metastáticas com HER2 1+ ou 2+/ISH negativo. O efeito vem do conjugado, que carrega quimioterapia para dentro da célula mesmo com pouco receptor na superfície, e não do bloqueio da via HER2. Na doença inicial não há indicação de T-DXd nem de trastuzumabe por HER2-low. Para M., HER2 1+ significa simplesmente HER2-negativo; o dado só ganharia valor se houvesse recidiva metastática.</p>
+<div class="key"><b>Guarde isto</b>p63 negativo é invasão; E-caderina positiva é tipo não especial. RE+, RP ≥ 20%, HER2 negativo e Ki-67 baixo é luminal A-like. HER2-low só importa no metastático.</div>
+<div class="divg"><b>Como a banca cobra</b><span class="chance">chance ~70%</span><p>Aparece como laudo de IHQ no enunciado seguido de "qual o subtipo molecular?" ou "qual a terapia sistêmica indicada?". Frases-gatilho: "RP 10%" ou "Ki-67 35%" com RE alto (luminal B-like); "HER2 2+" sem ISH (resposta: solicitar ISH); "E-caderina negativa" (lobular); "ausência de células mioepiteliais / p63 negativo" (invasor). A pegadinha moderna é oferecer trastuzumabe para HER2-low em doença inicial.</p></div>
+</div>
+</section>
+
+<!-- ============ CAP 2 ============ -->
+<section class="ch" id="c2">
+<header><span class="num">CAPÍTULO 02</span><h2>Estadiamento: o tamanho que falta e os exames que não se pedem</h2>
+<p class="lede">O T decide quase tudo o que vem depois; a busca de metástase, neste estágio, não se faz.</p></header>
+<div class="howto"><b class="t">Como usar este instrumento</b>
+<ol><li>Arraste o controle de tamanho: o círculo mostra o tumor em escala real aproximada sobre a régua em milímetros.</li>
+<li>Leia a categoria T e, no quadro, quais portas terapêuticas se abrem ou fecham naquele tamanho.</li>
+<li>Pare exatamente nos limites (5, 10, 20, 50 mm) e repare que o limite pertence à categoria menor.</li></ol>
+<div class="ex"><b>Exercício:</b> qual é o maior tamanho em que M. ainda cumpre, ao mesmo tempo, os critérios de SOUND, LUMINA e PBI? E o que de concreto ela perde a 21 mm?</div></div>
+<div class="plate"><div class="cap"><span>Régua de tamanho tumoral · AJCC 8ª ed.</span><span>escala aproximada</span></div>
+<div class="body">
+<div class="fig"><svg id="rulerSvg" viewBox="0 0 520 240" role="img" aria-label="Régua do T"></svg></div>
+<div class="ctl">
+<label>Maior diâmetro do invasor (mm) <span class="val" id="vSz">12</span></label>
+<input type="range" id="iSz" min="1" max="70" value="12">
+<div class="out" id="rulerOut"></div>
+</div></div></div>
+<div class="prose">
+<h3>O que é estadiar</h3>
+<p>Estadiar é medir até onde a doença foi, para escolher o tratamento proporcional e prever prognóstico. No sistema TNM da AJCC, T mede o tumor primário, N os linfonodos regionais e M as metástases a distância. Antes da cirurgia tudo leva o prefixo c (clínico, por exame e imagem); depois da peça, p (patológico). A 8ª edição acrescentou um estadiamento prognóstico que incorpora grau, receptores e HER2, e que tende a "rebaixar" tumores luminais pequenos, mas para decidir cirurgia e radioterapia o T anatômico continua sendo o que importa.</p>
+<h3>Mecanismo: por que o tamanho pesa tanto</h3>
+<p>Quanto maior o tumor, maior o número de células, a chance de ter invadido linfáticos e a probabilidade de doença residual após uma ressecção parcial. O tamanho é medido no maior diâmetro do componente invasor, não do CDIS associado. Isso tem consequência prática: uma lesão de 25 mm na mamografia pode ter só 12 mm de invasor na peça.</p>
+<div class="num-table">
+<span class="k">T1mi ≤ 1 mm</span><span>Microinvasão.</span>
+<span class="k">T1a &gt;1–5 mm</span><span>Muito pequeno; em luminal N0, quimioterapia praticamente nunca.</span>
+<span class="k">T1b &gt;5–10 mm</span><span>Pequeno.</span>
+<span class="k">T1c &gt;10–20 mm</span><span>Limite superior de SOUND, LUMINA, PBI (ASTRO) e CALGB 9343.</span>
+<span class="k">T2 &gt;20–50 mm</span><span>Ainda conservadora (se proporção permitir), ainda Z0011 e INSEMA; perde SOUND, LUMINA e PBI.</span>
+<span class="k">T3 &gt;50 mm</span><span>T3N0 é estádio IIB; considerar neoadjuvância e estadiamento sistêmico.</span>
+</div>
+<p>A regra que cai é que o limite pertence à categoria menor: 20 mm é T1c, 20,1 mm é T2. E que o número 2 cm é a fronteira de quase todos os ensaios de desescalonamento; por isso o tamanho na imagem é o primeiro dado a obter para M.</p>
+<h3>Os exames certos</h3>
+<p>Para estádios I e II assintomáticos, as diretrizes (NCCN, ASCO, Choosing Wisely) recomendam não pedir tomografia, cintilografia óssea nem PET-CT. A probabilidade de metástase oculta em estádio I é inferior a 1–2%, e falso-positivos geram biópsias, atraso e ansiedade. Pede-se mamografia bilateral (para medir, ver multicentricidade e avaliar a mama contralateral), ultrassom de mama e de axila, e exames de rotina: hemograma, função hepática e fosfatase alcalina. A imagem sistêmica só entra se houver sintoma (dor óssea, sintoma respiratório), alteração laboratorial ou doença localmente avançada.</p>
+<p>A ressonância magnética não é obrigatória. Ela aumenta a detecção de focos adicionais, mas os ensaios (COMICE, MONET) não mostraram redução de reoperação nem de recidiva, e ela aumenta mastectomias. Fica para mamas densas com discrepância entre métodos, carcinoma lobular, suspeita de multicentricidade ou portadoras de mutação.</p>
+<h3>Como aparece na paciente M.</h3>
+<p>O nódulo é não palpável, o que já sugere tamanho pequeno, em geral abaixo de 1,5–2 cm. Axilas livres ao exame (cN0); falta o ultrassom axilar, que precisa confirmar ausência de linfonodo suspeito. O plano é: obter o laudo da mamografia e do ultrassom com a medida, US axilar, exames de rotina e nenhum rastreio sistêmico. Se estiver entre 10 e 20 mm, é cT1cN0, estádio IA.</p>
+<div class="key"><b>Guarde isto</b>O tamanho é do componente invasor, e 20 mm ainda é T1. Estádio I ou II assintomático não faz tomografia, cintilografia nem PET: só mamografia bilateral, ultrassom de mama e axila e exames de rotina.</div>
+<div class="divg"><b>Como a banca cobra</b><span class="chance">chance ~55%</span><p>"Paciente assintomática, nódulo de 1,5 cm, axila clinicamente negativa. Próximo passo?" com alternativa de PET-CT ou cintilografia óssea como distrator. Também cobra a classificação T pelo tamanho limite ("tumor de 2,0 cm") e a medição pelo componente invasor quando há CDIS extenso.</p></div>
+</div>
+</section>
+
+<!-- ============ CAP 3 ============ -->
+<section class="ch" id="c3">
+<header><span class="num">CAPÍTULO 03</span><h2>Cirurgia da mama: conservar, localizar, ter margem</h2>
+<p class="lede">Retirar a lesão não palpável com margem livre e mama bonita, no quadrante que melhor perdoa.</p></header>
+<div class="howto"><b class="t">Como usar este instrumento</b>
+<ol><li>Oriente-se: vista frontal da paciente em decúbito dorsal na mesa, braço esquerdo abduzido a 90°. Você está aos pés dela olhando para o tórax; a mama ESQUERDA está à SUA DIREITA, o esterno à sua esquerda, a clavícula no alto, o sulco inframamário embaixo.</li>
+<li>Clique em cada quadrante, na região central (aréola) e no prolongamento axilar para ler a particularidade cirúrgica de cada um no quadro.</li>
+<li>Ligue "incisões" para ver a incisão sobre o tumor no QSL e a incisão axilar separada para o sentinela.</li></ol>
+<div class="ex"><b>Exercício:</b> clique no QSL e no prolongamento axilar. Por que, nesse quadrante, a mesma incisão às vezes serve para a mama e para o sentinela, e por que no QSM isso nunca acontece? (Nomenclatura: QSL/QSM/QIL/QIM equivalem, na tradição brasileira, a QSE/QSI/QIE/QII, "externo" = lateral e "interno" = medial.)</div></div>
+<div class="plate"><div class="cap"><span>Mama esquerda · vista frontal · decúbito dorsal · braço abduzido</span><span>clique nas regiões</span></div>
+<div class="body">
+<div class="fig"><svg id="breastSvg" viewBox="0 0 600 470" role="img" aria-label="Quadrantes da mama esquerda"></svg></div>
+<div class="ctl">
+<label class="chk"><input type="checkbox" id="iInc"> Mostrar incisões</label>
+<label class="chk"><input type="checkbox" id="iLab" checked> Mostrar rótulos</label>
+<div class="out" id="breastOut"><div class="big">Clique numa região</div><div class="why">A estrela marca a lesão de M. no QSL, com o clipe da biópsia.</div></div>
+</div></div>
+<div class="legend">Relações: superior → clavícula e borda do peitoral maior; lateral → linha axilar anterior, borda do grande dorsal e axila; medial → esterno; inferior → sulco inframamário. Profundo a toda a mama: fáscia do peitoral maior.</div>
+</div>
+<div class="prose">
+<h3>Conservar a mama é tão seguro quanto tirá-la</h3>
+<p>Cirurgia conservadora é retirar só a parte da mama que contém o tumor, com uma faixa de tecido sadio ao redor. No Brasil se chama setorectomia (segmento com margem) ou quadrantectomia (quadrante inteiro, com pele e fáscia, técnica de Veronesi). Seguida de radioterapia, ela dá a mesma sobrevida que a mastectomia: o NSABP B-06 (Fisher, 20 anos) e o ensaio de Milão (Veronesi, 20 anos) mostraram sobrevida global idêntica. A radioterapia é a contrapartida obrigatória: sem ela, no B-06, a recidiva na mesma mama chegou a ~39% em 20 anos, contra ~14% com ela.</p>
+<h3>Quando não conservar</h3>
+<p>As contraindicações derivam do que a conservadora precisa: margem livre, radioterapia possível e resultado estético aceitável. Não se conserva quando há doença multicêntrica difusa ou microcalcificações malignas difusas, margem persistentemente comprometida após reabordagens, impossibilidade de radioterapia (gestação no primeiro trimestre, irradiação torácica prévia, alguns casos de esclerodermia ou lúpus ativo) e relação tumor/mama desfavorável que deixaria deformidade, situação em que a oncoplastia ou a neoadjuvância podem reverter a contraindicação. Desejo informado da paciente pela mastectomia também é motivo legítimo.</p>
+<h3>Mecanismo: como achar o que não se palpa</h3>
+<p>Uma lesão não palpável precisa ser marcada antes da incisão, senão o cirurgião retira tecido às cegas. As opções são: fio metálico (agulhamento), passado por mamografia ou ultrassom no dia da cirurgia, cuja ponta em gancho fica na lesão; ROLL (radioguided occult lesion localization), injeção de macroagregado de albumina com tecnécio-99m na lesão e localização com sonda gama durante a cirurgia, que pode ser feita junto com a pesquisa do sentinela (SNOLL); sementes radioativas de iodo-125 ou magnéticas, que podem ser colocadas dias antes; e, se a lesão é visível ao ultrassom, localização intraoperatória por ultrassom. Em todas, o clipe deixado na biópsia é a referência, e a radiografia da peça confirma que o clipe e a lesão saíram.</p>
+<h3>Os números da margem</h3>
+<div class="num-table">
+<span class="k">invasor: tinta</span><span>Margem adequada é "no ink on tumor" (SSO-ASTRO 2014). Margens maiores não reduzem recidiva.</span>
+<span class="k">CDIS puro: 2 mm</span><span>Margem recomendada quando há só CDIS e radioterapia de mama total (SSO-ASTRO-ASCO 2016).</span>
+<span class="k">tinta tocando</span><span>Reabordagem (ampliação da margem) ou, se repetida, mastectomia.</span>
+<span class="k">&lt; 20% do volume</span><span>Oncoplastia nível I: deslocamento glandular sem redução da pele.</span>
+<span class="k">20–50%</span><span>Nível II: mamoplastia terapêutica, padrões de redução, simetrização contralateral.</span>
+</div>
+<p>A regra cobrada é que, no carcinoma invasor, 1 mm de margem é margem livre e não se reopera para ganhar milímetros; o número 2 mm pertence ao CDIS puro. A adoção do "no ink" reduziu a taxa de reabordagem nos EUA de cerca de 20–25% para ~15%.</p>
+<h3>Como aparece na paciente M.: o QSL e a oncoplastia</h3>
+<p>O quadrante superolateral concentra cerca de metade do tecido glandular e é onde nasce a maioria dos cânceres de mama. É também o mais generoso: tem volume para fechar a cavidade com retalhos glandulares e fica fora da área medial decotada, onde qualquer retração aparece. Para M., o plano é localizar a lesão (ROLL ou fio, conforme disponibilidade), fazer setorectomia com incisão curvilínea ou radial sobre a lesão, aproximar o parênquima e marcar o leito com clipes para guiar a radioterapia. Como o QSL se continua com o prolongamento axilar (cauda de Spence), lesões altas e laterais às vezes permitem retirar o sentinela pela mesma incisão.</p>
+<p>Para quem vai para a cirurgia plástica, o QSL é o quadrante clássico das técnicas de nível I e II: round block periareolar, plastia lateral em raquete ou mamoplastia em padrão de pedículo superomedial que remove o QSL junto com o excesso de pele. O princípio é sempre o mesmo: retirar com margem, preencher o espaço com tecido vizinho e preservar a vascularização do complexo areolopapilar.</p>
+<div class="key"><b>Guarde isto</b>Conservadora mais radioterapia equivale à mastectomia em sobrevida. Lesão não palpável se localiza antes (fio, ROLL, semente) e se confirma com radiografia da peça. No invasor, margem livre é tinta sem tumor; 2 mm é para CDIS puro.</div>
+<div class="divg"><b>Como a banca cobra</b><span class="chance">chance ~65%</span><p>"Anatomopatológico de setorectomia: carcinoma invasor a 1 mm da margem pintada. Conduta?" (resposta: nenhuma reabordagem, seguir para radioterapia). Variações: CDIS puro a 1 mm (considerar ampliar); contraindicações à conservadora ("irradiação prévia do tórax por linfoma", "gestante de 10 semanas"); qual exame confirma a retirada da lesão não palpável ("radiografia da peça").</p></div>
+</div>
+</section>
+
+<!-- ============ CAP 4 ============ -->
+<section class="ch" id="c4">
+<header><span class="num">CAPÍTULO 04</span><h2>A axila: estadiar sem mutilar</h2>
+<p class="lede">Em trinta anos, a axila foi do esvaziamento de rotina à possibilidade de não operar.</p></header>
+<div class="howto"><b class="t">Como usar este instrumento</b>
+<ol><li>Responda à primeira pergunta (exame e ultrassom da axila) clicando numa das opções.</li>
+<li>Siga as perguntas seguintes; o caminho percorrido aparece no alto, e a conduta final traz o ensaio que a sustenta.</li>
+<li>Use "Recomeçar" e percorra outro ramo, mudando uma única resposta.</li></ol>
+<div class="ex"><b>Exercício:</b> chegue a "2 sentinelas positivos" duas vezes: uma com conservadora e outra com mastectomia. Por que a mesma axila tem condutas diferentes conforme o que se fez na mama?</div></div>
+<div class="plate"><div class="cap"><span>Árvore de decisão da axila · cT1–2</span><span id="treeStep">passo 1</span></div>
+<div class="body one"><div class="ctl tree" id="tree"></div></div></div>
+<div class="prose">
+<h3>Por que operar a axila</h3>
+<p>Os linfonodos da axila recebem a maior parte da linfa da mama. Saber se estão comprometidos sempre foi o dado prognóstico mais forte e, por décadas, a remoção deles era considerada também terapêutica. O esvaziamento axilar, porém, cobra preço: linfedema do braço (15–25%), dor, parestesia e limitação do ombro. A história da axila é a de provar, ensaio após ensaio, que se pode tirar menos sem perder sobrevida.</p>
+<h3>Mecanismo: o sentinela</h3>
+<p>A drenagem linfática é ordenada: as células tumorais chegam primeiro a um ou poucos linfonodos, os sentinelas. Se eles estão livres, a chance de os demais estarem comprometidos é muito baixa (falso-negativo de 5–10%). A biópsia do linfonodo sentinela (BLS) substituiu o esvaziamento na axila clinicamente negativa (cN0) desde os ensaios NSABP B-32 e ALMANAC, com sobrevida igual e muito menos morbidade.</p>
+<h3>Os ensaios e o que cada um decide</h3>
+<div class="num-table">
+<span class="k">Z0011</span><span>cT1–2 cN0, 1–2 sentinelas positivos, conservadora + RT de mama total, sem neoadjuvância: esvaziamento não acrescenta sobrevida (10 anos). Não vale para mastectomia.</span>
+<span class="k">AMAROS</span><span>Sentinela positivo: radioterapia axilar controla a axila como o esvaziamento, com metade do linfedema (~11% vs ~23%). Opção inclusive na mastectomia.</span>
+<span class="k">SOUND (2023)</span><span>Tumor ≤ 2 cm, US axilar negativo, conservadora: omitir a BLS não foi inferior (sobrevida livre de doença a distância em 5 anos 98,0% sem cirurgia axilar vs 97,7% com BLS; recidiva axilar 0,4% em ambos).</span>
+<span class="k">INSEMA (2024)</span><span>cT1–2 (até 5 cm) cN0, conservadora: omitir a BLS não foi inferior em sobrevida livre de doença invasiva (~92% em 5 anos). Mais de 90% eram RE+, HER2–.</span>
+<span class="k">≥ 70 anos</span><span>Choosing Wisely (SSO): não fazer BLS de rotina em cN0, RE+, HER2–, que fará hormonioterapia.</span>
+<span class="k">≥ 3 positivos</span><span>Fora do Z0011: esvaziamento (ou RT axilar em protocolos).</span>
+</div>
+<p>A regra mais cobrada continua sendo o Z0011 com suas condições exatas: cirurgia conservadora, radioterapia de mama total (que irradia parte da axila baixa pelas tangentes), um ou dois sentinelas positivos e axila clinicamente negativa. Trocar qualquer um desses elementos, principalmente para mastectomia, é a pegadinha.</p>
+<h3>Quem pode não operar a axila</h3>
+<p>SOUND e INSEMA mudaram a pergunta: em mulheres pós-menopausadas com tumor pequeno, luminal, e axila negativa ao ultrassom, a informação do sentinela raramente muda a conduta, porque a hormonioterapia e a radioterapia virão de qualquer modo e a quimioterapia é improvável. A crítica é que, sem o sentinela, perde-se o pN para quem decidiria quimioterapia ou radioterapia de drenagens com base nele (pré-menopausadas, tumores de maior risco, candidatas a PBI ou omissão de RT, cujos critérios exigem pN0). Os ensaios foram mais amplos que a recomendação: o INSEMA aceitou tumores de até 5 cm em qualquer idade. A diretriz ASCO 2025, baseada no SOUND e no INSEMA, permite omitir a BLS em pós-menopausadas com 50 anos ou mais, tumor unifocal ≤ 2 cm, grau 1–2, RH+/HER2−, ultrassom axilar negativo, cirurgia conservadora e hormonioterapia planejada. É uma opção de decisão compartilhada, não regra.</p>
+<h3>Como aparece na paciente M.</h3>
+<p>Ela é cN0 ao exame e precisa de ultrassom axilar. Se ele for negativo, o tumor for unifocal com até 2 cm, grau 1–2, e ela for pós-menopausada, M. preenche os critérios da ASCO 2025: a omissão da BLS é discutível com ela. Há um conflito a explicar: se a ideia for omitir também a radioterapia (LUMINA) ou fazer PBI, os critérios desses estudos pressupõem axila patologicamente negativa, e a conduta mais conservadora e defensável é fazer a BLS. No serviço público, com o SOUND ainda recente, a BLS continua sendo o padrão para ela.</p>
+<div class="key"><b>Guarde isto</b>cN0 faz sentinela, não esvaziamento. Um ou dois sentinelas positivos com conservadora e RT de mama total não esvaziam (Z0011); com mastectomia, RT axilar (AMAROS) ou esvaziamento. Pós-menopausa com 50 anos ou mais, tumor ≤ 2 cm, grau 1–2, RH+/HER2−, US axilar negativo e conservadora: omitir a BLS é opção (ASCO 2025, com base em SOUND e INSEMA).</div>
+<div class="divg"><b>Como a banca cobra</b><span class="chance">chance ~80%</span><p>Tema mais cobrado de mastologia cirúrgica. Gatilhos: "dois linfonodos sentinelas com macrometástase, cirurgia conservadora, radioterapia programada" (sem esvaziamento); "mastectomia, um sentinela positivo" (Z0011 não se aplica); "linfonodo palpável com PAAF positiva" (não é candidata a BLS sem neoadjuvância; esvaziamento ou neoadjuvância); "70 anos, luminal, cN0" (Choosing Wisely). Bancas atualizadas já cobram SOUND e INSEMA como resposta certa para omissão.</p></div>
+</div>
+</section>
+
+<!-- ============ CAP 5 ============ -->
+<section class="ch" id="c5">
+<header><span class="num">CAPÍTULO 05</span><h2>Radioterapia: mama toda, parte dela ou nenhuma</h2>
+<p class="lede">Depois da conservadora, a pergunta não é se o padrão é irradiar, mas quem pode irradiar menos.</p></header>
+<div class="howto"><b class="t">Como usar este instrumento</b>
+<ol><li>Os campos vêm com o perfil provável de M.; ajuste o tamanho e a idade quando o dado real chegar.</li>
+<li>Leia, à direita, cada opção de radioterapia: as marcadas em preto ela cumpre; as em cinza mostram o critério que falhou.</li>
+<li>Desmarque "aceita 5 anos de hormonioterapia" e veja quais opções de omissão desaparecem.</li></ol>
+<div class="ex"><b>Exercício:</b> com o perfil de M., mude apenas o Ki-67 para 15%. Qual opção ela perde e qual mantém? Depois volte a 10% e mude a idade para 53.</div></div>
+<div class="plate"><div class="cap"><span>Seletor de critérios de radioterapia pós-conservadora</span><span>ASTRO · LUMINA · PRIME II · CALGB 9343</span></div>
+<div class="body">
+<div class="ctl">
+<div class="two">
+<div><label>Idade</label><input type="number" id="rAge" value="55" min="20" max="95"></div>
+<div><label>Tamanho (mm)</label><input type="number" id="rSz" value="12" min="1" max="80"></div>
+<div><label>Grau histológico</label><select id="rGr"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option></select></div>
+<div><label>Ki-67 (%)</label><input type="number" id="rKi" value="10" min="0" max="90"></div>
+<div><label>RP (%)</label><input type="number" id="rPr" value="95" min="0" max="100"></div>
+</div>
+<label class="chk"><input type="checkbox" id="rEr" checked> RE positivo</label>
+<label class="chk"><input type="checkbox" id="rHer" checked> HER2 negativo</label>
+<label class="chk"><input type="checkbox" id="rN0" checked> Axila pN0</label>
+<label class="chk"><input type="checkbox" id="rMg" checked> Margem livre (no ink on tumor)</label>
+<label class="chk"><input type="checkbox" id="rMg2" checked> Margem ≥ 2 mm</label>
+<label class="chk"><input type="checkbox" id="rLvi"> Invasão linfovascular</label>
+<label class="chk"><input type="checkbox" id="rAd" checked> Aceita 5 anos de hormonioterapia</label>
+</div>
+<div class="ctl" style="border-left:1px solid var(--line)"><div class="crit" id="rtOut"></div></div>
+</div></div>
+<div class="prose">
+<h3>O que a radioterapia faz depois da conservadora</h3>
+<p>Mesmo com margem livre, a mama operada guarda focos microscópicos de doença em parte das pacientes. A radioterapia esteriliza esses focos. A metanálise do EBCTCG (2011) mostrou que ela reduz à metade o risco de qualquer recorrência em 10 anos e evita cerca de uma morte por câncer de mama para cada quatro recorrências evitadas. Por isso ela é o padrão, e omiti-la é uma exceção que precisa de critério.</p>
+<h3>Mecanismo: por que menos sessões funcionam</h3>
+<p>O câncer de mama tem baixa razão α/β (em torno de 3–4 Gy), parecida com a dos tecidos normais de reação tardia. Em termos práticos, ele é tão sensível ao tamanho da dose por sessão quanto a pele e o tecido mamário; dar doses maiores em menos sessões não dá vantagem ao tecido sadio, e o fracionamento longo de 50 Gy em 25 sessões deixou de se justificar. START B (40 Gy em 15 frações) e FAST-Forward (26 Gy em 5 frações, em uma semana) mostraram controle local igual com toxicidade igual ou menor. Para quem mora longe do centro de radioterapia, uma semana de tratamento em vez de cinco é uma diferença real de adesão.</p>
+<h3>Os números de cada opção</h3>
+<div class="num-table">
+<span class="k">40 Gy / 15 fr</span><span>Mama total hipofracionada (START B): padrão.</span>
+<span class="k">26 Gy / 5 fr</span><span>FAST-Forward: alternativa de 1 semana, equivalente em 10 anos.</span>
+<span class="k">boost</span><span>Reforço no leito (10–16 Gy): reduz recidiva local, maior benefício em ≤ 50 anos, grau 3 ou margem exígua; em 55 anos, grau 1–2, geralmente dispensável.</span>
+<span class="k">PBI · ASTRO</span><span>"Adequada": ≥ 50 anos, ≤ 2 cm, margens ≥ 2 mm, N0, RE+, sem invasão linfovascular. A diretriz de 2023 ampliou para grau 1–2, RE+, ≥ 40 anos.</span>
+<span class="k">CALGB 9343</span><span>≥ 70 anos, T1N0, RE+: omitir RT aumenta recidiva local (10% vs 2% em 10 anos) sem mudar sobrevida.</span>
+<span class="k">PRIME II</span><span>≥ 65 anos, até 3 cm, N0, RH+: recidiva local em 10 anos 9,5% sem RT vs 0,9% com RT, sobrevida igual.</span>
+<span class="k">LUMINA</span><span>≥ 55 anos, T1N0, grau 1–2, luminal A (RE ≥ 1%, RP &gt; 20%, HER2–, Ki-67 ≤ 13,25%): só hormonioterapia, recidiva local em 5 anos 2,3%.</span>
+</div>
+<p>A regra que cai é a da omissão: ela só se considera em pacientes mais velhas, com tumor pequeno, N0, receptor positivo e que farão hormonioterapia, e o preço é sempre o mesmo: mais recidiva na mama, mesma sobrevida. O LUMINA é o estudo que trouxe a idade para 55 anos, usando o Ki-67 como filtro biológico.</p>
+<h3>Como aparece na paciente M.</h3>
+<p>Com 55 anos, RE e RP em 95%, HER2 negativo e Ki-67 de 10%, M. cumpre os critérios biológicos do LUMINA. Falta confirmar os anatômicos e patológicos: tumor de até 2 cm, grau 1–2, margens livres e axila pN0. Se todos se confirmarem, ela tem três caminhos legítimos: mama total hipofracionada (o padrão), PBI (menos volume irradiado) ou omissão da radioterapia com hormonioterapia exclusiva.</p>
+<p>A troca precisa ser explicada com clareza. Omitir a radioterapia só é seguro porque a hormonioterapia faz o controle local; quem abandona o comprimido, e a adesão a 5 anos de hormonioterapia gira em torno de 50–70% na vida real, fica sem nenhuma das duas proteções. Se M. tem dúvida sobre tomar remédio por 5 anos, o raciocínio se inverte: alguns serviços preferem a radioterapia curta (FAST-Forward ou PBI) e discutem a hormonioterapia. A decisão é compartilhada.</p>
+<div class="key"><b>Guarde isto</b>Depois da conservadora, o padrão é mama total 40 Gy em 15 frações ou 26 Gy em 5. M. é candidata a PBI e, se confirmados T1, grau 1–2, pN0 e margens livres, ao LUMINA: omitir a RT com hormonioterapia obrigatória, recidiva local de ~2,3% em 5 anos.</div>
+<div class="divg"><b>Como a banca cobra</b><span class="chance">chance ~50%</span><p>"Senhora de 72 anos, tumor de 1,2 cm, RE+, linfonodo sentinela negativo, margens livres; qual conduta adjuvante é aceitável?" (hormonioterapia com ou sem RT; CALGB 9343 / PRIME II). Gatilhos novos: "55 anos, luminal A, Ki-67 ≤ 13%" (LUMINA) e "esquema de radioterapia em 5 frações" (FAST-Forward). Distrator clássico: dizer que omitir a RT piora a sobrevida.</p></div>
+</div>
+</section>
+
+<!-- ============ CAP 6 ============ -->
+<section class="ch" id="c6">
+<header><span class="num">CAPÍTULO 06</span><h2>Terapia sistêmica: o comprimido de cinco anos</h2>
+<p class="lede">A droga depende de um dado que ainda não temos: ela já entrou na menopausa?</p></header>
+<div class="howto"><b class="t">Como usar este instrumento</b>
+<ol><li>Preencha a história ginecológica: cirurgia prévia, tempo de amenorreia e uso de quimioterapia ou tamoxifeno.</li>
+<li>Se o instrumento pedir, informe o resultado de FSH e estradiol.</li>
+<li>Leia o status menopausal, a droga, a dose e os cuidados ósseos correspondentes.</li></ol>
+<div class="ex"><b>Exercício:</b> M. tem 55 anos. Qual é o status se ela relatar 14 meses sem menstruar e nunca tiver usado tamoxifeno? E se ela fez histerectomia com ovários preservados aos 45 anos?</div></div>
+<div class="plate"><div class="cap"><span>Confirmação da menopausa e escolha da hormonioterapia</span><span>critérios NCCN</span></div>
+<div class="body">
+<div class="ctl">
+<label>Idade</label><input type="number" id="mAge" value="55" min="20" max="95">
+<label>Ooforectomia bilateral</label><select id="mOof"><option value="n">não</option><option value="s">sim</option></select>
+<label>Histerectomia (ovários preservados)</label><select id="mHist"><option value="n">não</option><option value="s">sim</option></select>
+<label>Amenorreia (meses) <span class="val" id="vAm">14</span></label><input type="range" id="mAm" min="0" max="60" value="14">
+<label>Quimioterapia, tamoxifeno ou supressão ovariana no último ano</label><select id="mTx"><option value="n">não</option><option value="s">sim</option></select>
+<label>FSH e estradiol</label><select id="mLab"><option value="nd">não dosados</option><option value="pos">faixa pós-menopausa</option><option value="pre">faixa pré-menopausa</option></select>
+</div>
+<div class="ctl" style="border-left:1px solid var(--line)"><div class="out" id="menoOut" style="margin-top:0"></div></div>
+</div></div>
+<div class="prose">
+<h3>Por que um comprimido trata câncer</h3>
+<p>O tumor de M. tem 95% das células com receptor de estrogênio: ele cresce quando o estrogênio se liga a esse receptor. Hormonioterapia é privar o tumor desse estímulo, seja bloqueando o receptor (tamoxifeno), seja retirando o estrogênio (inibidores de aromatase). Cinco anos de tratamento reduzem a recorrência em cerca de 40% e a mortalidade por câncer de mama em cerca de um terço (EBCTCG). Para um tumor luminal A, ela é o tratamento sistêmico mais importante.</p>
+<h3>Mecanismo: de onde vem o estrogênio em cada fase da vida</h3>
+<p>Antes da menopausa, quase todo o estrogênio vem do ovário, comandado pela hipófise. Se se bloqueia só a aromatase periférica, a queda de estrogênio é percebida pelo hipotálamo, que aumenta o FSH e estimula ainda mais o ovário, como um termostato que liga o aquecedor quando a sala esfria. Por isso inibidor de aromatase isolado não funciona na pré-menopausa. Depois da menopausa o ovário para, e o estrogênio residual vem da aromatização de androgênios no tecido adiposo; aí o inibidor de aromatase é mais eficaz que o tamoxifeno (redução adicional de ~30% de recorrência).</p>
+<div class="num-table">
+<span class="k">anastrozol 1 mg</span><span>IA não esteroidal, 1×/dia, 5 anos (pós-menopausa).</span>
+<span class="k">letrozol 2,5 mg</span><span>IA não esteroidal, 1×/dia.</span>
+<span class="k">exemestano 25 mg</span><span>IA esteroidal (inativador irreversível), 1×/dia.</span>
+<span class="k">tamoxifeno 20 mg</span><span>Pré-menopausa, ou pós-menopausa que não tolera IA; 5 anos (até 10 em maior risco).</span>
+<span class="k">≥ 12 meses</span><span>Amenorreia sem quimioterapia, tamoxifeno ou supressão: define pós-menopausa se &lt; 60 anos, com FSH/estradiol na faixa pós.</span>
+<span class="k">≥ 60 anos</span><span>Pós-menopausa por definição.</span>
+<span class="k">RS ≤ 25 · &gt; 50 a</span><span>TAILORx: N0, RE+, HER2–: sem benefício de quimioterapia.</span>
+<span class="k">RS ≥ 26</span><span>Quimioterapia indicada.</span>
+<span class="k">RS 16–25 · ≤ 50 a</span><span>Algum benefício (provavelmente por efeito de castração química).</span>
+</div>
+<p>A regra que cai é a da menopausa: inibidor de aromatase só na pós-menopausa confirmada; na dúvida, ou na mulher que menstruava até a quimioterapia, dosar FSH e estradiol seriados, porque a amenorreia induzida por quimioterapia ou tamoxifeno pode reverter, e um IA dado a um ovário ainda funcionante estimula a ovulação.</p>
+<h3>Quimioterapia: em geral, não</h3>
+<p>O benefício da quimioterapia é proporcional à proliferação do tumor. Em um luminal A-like pequeno, N0, com Ki-67 de 10%, a redução absoluta de risco é mínima e não compensa a toxicidade. Quando há dúvida (tumor maior, grau 3, Ki-67 intermediário), a assinatura genômica decide: no TAILORx, mulheres N0 acima de 50 anos com RS até 25 não ganharam nada com quimioterapia. No SUS, o Oncotype DX geralmente não está disponível, e a decisão se faz por critérios clínico-patológicos: tamanho, grau, Ki-67, RP, invasão linfovascular, idade e status linfonodal. Para M., nenhum desses critérios aponta para quimioterapia.</p>
+<h3>Osso, efeitos adversos e adesão</h3>
+<p>O inibidor de aromatase acelera a perda óssea e dá artralgia (até metade das pacientes), secura vaginal e fogachos. Antes de começar se pede densitometria (DXA), se orienta cálcio, vitamina D e exercício resistido, e se repete a DXA a cada 1–2 anos. O tamoxifeno, ao contrário, protege o osso na pós-menopausa, mas aumenta o risco de tromboembolismo e de câncer de endométrio (sangramento vaginal precisa ser investigado). Na pós-menopausa, o ácido zoledrônico adjuvante (4 mg IV a cada 6 meses por 3 anos) reduz metástase óssea e mortalidade por câncer de mama (EBCTCG 2015), e é considerado sobretudo quando o risco de recorrência justifica; em tumor de risco muito baixo como o de M., o benefício absoluto é pequeno, e o principal motivo para usá-lo seria a proteção óssea.</p>
+<h3>Como aparece na paciente M.</h3>
+<p>Aos 55 anos, a maioria das mulheres já está na pós-menopausa, mas isso precisa ser perguntado e documentado. Se ela estiver há mais de 12 meses sem menstruar, sem tratamento hormonal, e FSH/estradiol confirmarem a pós-menopausa, ela recebe anastrozol 1 mg por 5 anos (ou letrozol), com DXA basal, cálcio e vitamina D. Se ainda menstruar, tamoxifeno 20 mg por 5 anos; supressão ovariana não se justifica nesse perfil de baixo risco. A dispensação no SUS é feita por APAC de hormonioterapia, renovada periodicamente.</p>
+<div class="key"><b>Guarde isto</b>Pós-menopausa: inibidor de aromatase por 5 anos (anastrozol 1 mg, letrozol 2,5 mg, exemestano 25 mg). Pré-menopausa: tamoxifeno 20 mg. Luminal A-like pequeno N0 não faz quimioterapia; na dúvida, RS ≤ 25 acima de 50 anos dispensa.</div>
+<div class="divg"><b>Como a banca cobra</b><span class="chance">chance ~65%</span><p>"Mulher de 48 anos, menstruando, RE+... indicar anastrozol" (errado: pré-menopausa); "qual exame antes de iniciar inibidor de aromatase?" (densitometria); "sangramento vaginal em uso de tamoxifeno" (avaliar endométrio); "Oncotype com RS 18 em mulher de 60 anos, N0" (sem quimioterapia). Divergência frequente: alguns gabaritos ainda aceitam tamoxifeno como primeira linha na pós-menopausa; a melhor resposta atual é o IA.</p></div>
+</div>
+</section>
+
+<!-- ============ CAP 7 ============ -->
+<section class="ch" id="c7">
+<header><span class="num">CAPÍTULO 07</span><h2>Seguimento e genética: vigiar sem exagerar</h2>
+<p class="lede">O que se faz, o que não se faz e quem deve ser testada para mutação germinativa.</p></header>
+<div class="howto"><b class="t">Como usar este instrumento</b>
+<ol><li>A linha do tempo vai do diagnóstico ao 6º ano. Cada marca é um evento do seguimento.</li>
+<li>Clique em uma marca para ler o que se faz naquele momento e por quê.</li>
+<li>Repare na faixa "não fazer", embaixo: exames que não entram em momento nenhum.</li></ol>
+<div class="ex"><b>Exercício:</b> se M. fizer radioterapia em março, em que intervalo cai a primeira mamografia pós-tratamento? E em que ponto do calendário a densitometria precisa ser repetida?</div></div>
+<div class="plate"><div class="cap"><span>Linha do tempo do seguimento · ASCO / NCCN</span><span>clique nas marcas</span></div>
+<div class="body one"><div class="fig" style="border-right:none"><svg id="tlSvg" viewBox="0 0 900 230" role="img" aria-label="Linha do tempo do seguimento"></svg></div></div>
+<div style="padding:0 14px 14px"><div class="out tl-info" id="tlOut"><div class="big">Clique em uma marca</div></div></div>
+</div>
+<div class="prose">
+<h3>O que é seguimento</h3>
+<p>Seguimento é o acompanhamento depois do tratamento, com três objetivos: detectar cedo a recidiva local ou um novo câncer na mama oposta, que ainda podem ser curados; manejar os efeitos colaterais e a adesão à hormonioterapia; e cuidar da saúde geral da sobrevivente. Não é procurar metástase em pessoa assintomática.</p>
+<h3>Mecanismo: por que não se procura metástase</h3>
+<p>Ensaios italianos dos anos 1990 (GIVIO, Rosselli Del Turco) compararam seguimento intensivo, com radiografia, cintilografia, ultrassom de fígado e exames de sangue, ao seguimento clínico com mamografia. A sobrevida foi igual. Detectar a metástase alguns meses antes não a torna curável e só antecipa o tratamento paliativo e a ansiedade. Marcadores tumorais (CA 15-3, CEA) também não têm papel no seguimento assintomático.</p>
+<div class="num-table">
+<span class="k">3–6 meses</span><span>Consulta com exame clínico nos 3 primeiros anos.</span>
+<span class="k">6–12 meses</span><span>Consulta do 4º ao 5º ano; depois, anual.</span>
+<span class="k">6–12 m pós-RT</span><span>Primeira mamografia da mama tratada; depois, mamografia bilateral anual.</span>
+<span class="k">1–2 anos</span><span>DXA em uso de inibidor de aromatase.</span>
+<span class="k">anual</span><span>Exame ginecológico em uso de tamoxifeno; investigar qualquer sangramento.</span>
+<span class="k">≤ 65 anos</span><span>ASCO 2024: oferecer teste genético germinativo a toda paciente diagnosticada com até 65 anos.</span>
+</div>
+<p>A regra que cai é a negativa: no seguimento de paciente assintomática não se pedem marcadores tumorais, tomografia, cintilografia nem PET. Exame clínico periódico e mamografia anual são suficientes.</p>
+<h3>Genética: quem testar</h3>
+<p>Cerca de 5–10% dos cânceres de mama decorrem de variante germinativa, sobretudo em BRCA1, BRCA2 e PALB2. Saber disso muda a cirurgia (considerar mastectomia redutora de risco), o rastreio da mama contralateral (ressonância), a prevenção de câncer de ovário e o teste de familiares, e abre a indicação de olaparibe em alto risco. Os critérios clássicos (NCCN) incluem diagnóstico antes dos 50 anos, câncer triplo-negativo, câncer de mama masculino, bilateralidade, ascendência judia asquenaze e história familiar significativa. A diretriz ASCO/SSO de 2024 simplificou: oferecer teste germinativo a todas as diagnosticadas com 65 anos ou menos, e acima disso conforme critérios.</p>
+<h3>Como aparece na paciente M.</h3>
+<p>M. nega história familiar de câncer de mama e ovário e tem tumor luminal, aos 55 anos: pelos critérios antigos, não seria testada. Pela recomendação ASCO de 2024, como foi diagnosticada com menos de 65 anos, o teste deve ser oferecido. No SUS, o acesso ao painel genético é limitado e costuma depender de serviços de referência, mas a recomendação deve ser registrada e a paciente encaminhada ao aconselhamento genético quando possível. O seguimento dela será clínico, com mamografia anual, DXA se estiver em IA e nenhuma imagem sistêmica de rotina.</p>
+<div class="key"><b>Guarde isto</b>Seguimento é exame clínico a cada 3–6 meses no início e mamografia anual (a primeira 6–12 meses após a RT); sem marcador tumoral nem imagem sistêmica de rotina. Teste germinativo: oferecer a toda diagnosticada até 65 anos (ASCO 2024).</div>
+<div class="divg"><b>Como a banca cobra</b><span class="chance">chance ~40%</span><p>"Paciente assintomática, 2 anos após tratamento, pede CA 15-3 e tomografia. Conduta?" (não indicar). "Quando fazer a primeira mamografia após conservadora e radioterapia?" (6–12 meses após a RT). A questão de genética costuma vir como "qual paciente tem indicação de teste para BRCA?", e bancas atualizadas já aceitam o corte de 65 anos.</p></div>
+</div>
+</section>
+
+<!-- ============ CAP 8 ============ -->
+<section class="ch" id="c8">
+<header><span class="num">CAPÍTULO 08</span><h2>Tabela-mãe e forja de questões</h2>
+<p class="lede">O caso inteiro numa tabela; depois, seis questões para testar se ficou.</p></header>
+<div class="howto"><b class="t">Como usar a tabela e a forja</b>
+<ol><li>Leia a tabela uma vez inteira. Depois clique em "Cobrir condutas" e, linha a linha, recite a conduta a partir do gatilho; clique na célula coberta para conferir.</li>
+<li>Na forja, ache primeiro o dado que muda a resposta (idade, tipo de cirurgia, número de sentinelas, Ki-67) antes de ler as alternativas.</li>
+<li>Clique na alternativa escolhida: a certa fica destacada e o comentário explica o porquê e a pegadinha.</li></ol>
+<div class="ex"><b>Exercício:</b> cubra as condutas e recite as linhas "axila" e "radioterapia" para dois cenários: M. com 21 mm e M. com 12 mm.</div></div>
+<div class="tblwrap"><table class="mae" id="mae">
+<thead><tr><th>Decisão</th><th>Gatilho (dado da paciente M.)</th><th>Conduta</th></tr></thead>
+<tbody>
+<tr><td>Diagnóstico</td><td>p63 negativo, E-caderina positiva</td><td class="c3">Carcinoma invasor de tipo não especial</td></tr>
+<tr><td>Subtipo</td><td>RE 95%, RP 95%, HER2 1+, Ki-67 10%</td><td class="c3">Luminal A-like; HER2-low sem implicação na doença inicial</td></tr>
+<tr><td>Dados a obter</td><td>Tamanho na imagem e menopausa não informados</td><td class="c3">Laudo de mamografia/US com medida, US axilar, história menstrual (± FSH/E2)</td></tr>
+<tr><td>Estadiamento</td><td>Assintomática, cN0, provável T1</td><td class="c3">Mamografia bilateral, US mama/axila, exames de rotina; sem TC, cintilografia ou PET</td></tr>
+<tr><td>Mama</td><td>Lesão única, não palpável, QSL</td><td class="c3">Localização (ROLL/fio/semente) + setorectomia; radiografia da peça; clipes no leito; oncoplastia nível I se necessário</td></tr>
+<tr><td>Margem</td><td>Invasor</td><td class="c3">"No ink on tumor"; se tinta tocando, reabordagem</td></tr>
+<tr><td>Axila</td><td>cN0 + US negativo, ≤ 2 cm</td><td class="c3">BLS (padrão); omissão discutível (ASCO 2025: ≥ 50 a pós-menopausa, grau 1–2, RH+/HER2−) se sem plano de omitir RT</td></tr>
+<tr><td>Axila (se +)</td><td>1–2 sentinelas positivos + conservadora + RT mama total</td><td class="c3">Sem esvaziamento (Z0011)</td></tr>
+<tr><td>Radioterapia</td><td>Pós-conservadora</td><td class="c3">Mama total 40 Gy/15 ou 26 Gy/5; PBI se critérios ASTRO</td></tr>
+<tr><td>Omissão de RT</td><td>≥ 55 a, T1, pN0, grau 1–2, Ki-67 ≤ 13,25%, adesão</td><td class="c3">Hormonioterapia exclusiva aceitável (LUMINA)</td></tr>
+<tr><td>Hormonioterapia</td><td>Pós-menopausa confirmada</td><td class="c3">Anastrozol 1 mg (ou letrozol 2,5 / exemestano 25) por 5 anos; DXA, cálcio, vit. D</td></tr>
+<tr><td>Hormonioterapia</td><td>Pré-menopausa</td><td class="c3">Tamoxifeno 20 mg por 5 anos</td></tr>
+<tr><td>Quimioterapia</td><td>Luminal A-like, pequeno, N0</td><td class="c3">Não; na dúvida, assinatura genômica (TAILORx RS ≤ 25 dispensa &gt; 50 a)</td></tr>
+<tr><td>Osso</td><td>Pós-menopausa em IA</td><td class="c3">Ácido zoledrônico se risco justificar; em risco muito baixo, guiar pela DXA</td></tr>
+<tr><td>Genética</td><td>Diagnóstico aos 55 anos (≤ 65)</td><td class="c3">Oferecer teste germinativo (ASCO 2024)</td></tr>
+<tr><td>Seguimento</td><td>Assintomática</td><td class="c3">Exame clínico 3–6 m; mamografia anual (1ª 6–12 m pós-RT); sem marcadores nem imagem sistêmica</td></tr>
+</tbody></table></div>
+<p><button class="btn sm" type="button" id="maeBtn">Cobrir condutas</button></p>
+<h3 style="font-size:1.2rem;margin-top:1.6em">Forja · 6 questões</h3>
+<p class="score" id="score">0 / 6 respondidas · 0 acertos</p>
+<div id="forja"></div>
+<div class="prose">
+<div class="key"><b>Guarde isto</b>Luminal A-like pequeno é a doença do desescalonamento: conservadora com margem "no ink", axila com sentinela (ou sem cirurgia em casos selecionados), radioterapia curta, parcial ou omitida, e cinco anos de hormonioterapia, sem quimioterapia.</div>
+<div class="divg"><b>Como a banca cobra</b><span class="chance">chance ~85%</span><p>Em prova de R+ de cirurgia, quase toda questão de mama inicial é um caso como o de M. com uma variável alterada: o tipo de cirurgia (Z0011), o número de sentinelas, a idade (omissão de RT, Choosing Wisely), o RP ou o Ki-67 (luminal A vs B), a menopausa (IA vs tamoxifeno) ou a margem (invasor vs CDIS).</p></div>
+</div>
+</section>
+<footer>Material didático para residentes. Caso real anonimizado; dados pessoais omitidos. Conduta individual sempre em discussão multidisciplinar. Referências centrais: St. Gallen 2013; AJCC 8ª ed.; NSABP B-06; Veronesi (Milão); SSO-ASTRO 2014 e 2016; ACOSOG Z0011; AMAROS; SOUND (2023); INSEMA (2024); ASCO SLNB 2025; START B; FAST-Forward; ASTRO PBI 2016/2023; CALGB 9343; PRIME II; LUMINA (Whelan, NEJM 2023); TAILORx; EBCTCG; DESTINY-Breast04; ASCO/SSO germline 2024.</footer>
+</main>
+</div>
+<script>
+(function(){
+"use strict";
+var $=function(id){return document.getElementById(id);};
+var NS="http://www.w3.org/2000/svg";
+function el(tag,attrs,parent,text){var e=document.createElementNS(NS,tag);for(var k in attrs){e.setAttribute(k,attrs[k]);}if(text!==undefined)e.textContent=text;if(parent)parent.appendChild(e);return e;}
+
+/* theme */
+$("themeBtn").addEventListener("click",function(){
+  var r=document.documentElement;var cur=r.getAttribute("data-theme");
+  var dark=cur?cur==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;
+  r.setAttribute("data-theme",dark?"light":"dark");
+  try{localStorage.setItem("mama-theme",dark?"light":"dark");}catch(e){}
+});
+try{var t=localStorage.getItem("mama-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}
+
+/* rail */
+var links=[].slice.call(document.querySelectorAll("nav.rail a"));
+var secs=links.map(function(a){return document.querySelector(a.getAttribute("href"));});
+function onScroll(){var y=window.scrollY+140,idx=0;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)idx=i;});links.forEach(function(a,i){a.classList.toggle("on",i===idx);});}
+window.addEventListener("scroll",onScroll,{passive:true});onScroll();
+
+/* ===== CAP 1: classifier ===== */
+function classify(er,pr,her,ki){
+  var why=[],tags=[];
+  var herPos=(her==="3"||her==="2p");
+  var herLow=(her==="1"||her==="2n");
+  var hr=(er>=1||pr>=1);
+  if(her==="2n")why.push("HER2 2+ é duvidoso na IHQ; o ISH negativo (sem amplificação) o torna HER2-negativo.");
+  if(her==="2p")why.push("HER2 2+ com ISH positivo (gene amplificado) é HER2-positivo.");
+  if(her==="3")why.push("HER2 3+ é positivo sem necessidade de ISH.");
+  if(er>=1&&er<=10)why.push("RE entre 1% e 10% é \"RE baixo\": hormonioterapia pode ser oferecida, mas o comportamento se aproxima do triplo-negativo.");
+  var name;
+  if(hr&&herPos){name="Luminal B-like HER2-positivo";why.push("Receptor hormonal positivo com HER2 positivo: hormonioterapia mais terapia anti-HER2 (e quimioterapia).");}
+  else if(!hr&&herPos){name="HER2-enriquecido (não luminal)";why.push("RE e RP negativos com HER2 positivo: quimioterapia mais anti-HER2; não há alvo hormonal.");}
+  else if(!hr&&!herPos){name="Triplo-negativo";why.push("RE, RP e HER2 negativos: quimioterapia é a base; considerar teste germinativo.");}
+  else{
+    var prOk=pr>=20,kiLow=ki<14,kiGray=(ki>=14&&ki<20);
+    if(prOk&&kiLow){name="Luminal A-like";why.push("RE positivo ("+er+"%), RP ≥ 20% ("+pr+"%), HER2 negativo e Ki-67 baixo ("+ki+"% < 14%): todos os critérios de St. Gallen.");}
+    else if(prOk&&kiGray){name="Luminal A-like (zona cinzenta de Ki-67)";why.push("Ki-67 de "+ki+"% fica entre o corte clássico de 14% (2011) e o de ~20% aceito em 2013: depende do laboratório; grau e assinatura genômica ajudam.");}
+    else{name="Luminal B-like HER2-negativo";
+      if(!prOk)why.push("RP "+pr+"% está abaixo de 20%: mesmo com Ki-67 baixo, o tumor é luminal B-like.");
+      if(ki>=20)why.push("Ki-67 "+ki+"% é alto (≥ 20%): proliferação de luminal B.");}
+  }
+  if(herLow&&!herPos)tags.push("HER2-low: relevante só no metastático (T-DXd)");
+  if(her==="0")tags.push("HER2 0");
+  return {name:name,why:why,tags:tags};
+}
+function drawCls(er,pr,her,ki){
+  var s=$("clsSvg");while(s.firstChild)s.removeChild(s.firstChild);
+  var rows=[["RE",er,100,1,"≥1%"],["RP",pr,100,20,"≥20%"],["Ki-67",ki,80,14,"<14%"]];
+  rows.forEach(function(r,i){
+    var y=30+i*70,x0=80,w=400;
+    el("text",{x:10,y:y+20,"font-size":15,fill:"var(--ink)"},s,r[0]);
+    el("rect",{x:x0,y:y,width:w,height:28,fill:"var(--panel)",stroke:"var(--line)"},s);
+    el("rect",{x:x0,y:y,width:w*r[1]/r[2],height:28,fill:"var(--ink)"},s);
+    var cx=x0+w*r[3]/r[2];
+    el("line",{x1:cx,y1:y-6,x2:cx,y2:y+34,stroke:"var(--w)","stroke-width":2,"stroke-dasharray":"4 3"},s);
+    el("text",{x:cx+4,y:y-8,"font-size":11,fill:"var(--w)","class":"mono"},s,"corte "+r[4]);
+    el("text",{x:x0+w+6,y:y+19,"font-size":12,fill:"var(--ink)","class":"mono"},s,r[1]+"%");
+  });
+  var y=240;el("text",{x:10,y:y+20,"font-size":15,fill:"var(--ink)"},s,"HER2");
+  var lv=["0","1+","2+","3+"],cur={"0":0,"1":1,"2n":2,"2p":2,"3":3}[her];
+  lv.forEach(function(l,i){
+    var x=80+i*100;
+    el("rect",{x:x,y:y,width:96,height:30,fill:i===cur?"var(--ink)":"var(--bg)",stroke:"var(--ink)"},s);
+    el("text",{x:x+48,y:y+20,"font-size":13,"text-anchor":"middle",fill:i===cur?"var(--bg)":"var(--ink)","class":"mono"},s,l+(i===2?(her==="2p"?" ISH+":her==="2n"?" ISH−":""):""));
+  });
+  el("text",{x:80,y:y+48,"font-size":11,fill:"var(--mute)"},s,"negativo · low (1+ e 2+/ISH−) · positivo (3+ e 2+/ISH+)");
+}
+function updCls(){
+  var er=+$("iEr").value,pr=+$("iPr").value,her=$("iHer").value,ki=+$("iKi").value;
+  $("vEr").textContent=er;$("vPr").textContent=pr;$("vKi").textContent=ki;
+  var r=classify(er,pr,her,ki);
+  $("clsOut").innerHTML='<div class="big" id="clsName">'+r.name+'</div><div class="why">'+r.why.map(function(w){return"<p>"+w+"</p>";}).join("")+'</div>'+r.tags.map(function(t){return'<span class="tag">'+t+'</span>';}).join("");
+  drawCls(er,pr,her,ki);
+}
+["iEr","iPr","iHer","iKi"].forEach(function(id){$(id).addEventListener("input",updCls);});
+$("clsReset").addEventListener("click",function(){$("iEr").value=95;$("iPr").value=95;$("iHer").value="1";$("iKi").value=10;updCls();});
+updCls();
+window.__classify=classify;
+
+/* ===== CAP 2: ruler ===== */
+function tcat(mm){if(mm<=1)return"T1mi";if(mm<=5)return"T1a";if(mm<=10)return"T1b";if(mm<=20)return"T1c";if(mm<=50)return"T2";return"T3";}
+function drawRuler(mm){
+  var s=$("rulerSvg");while(s.firstChild)s.removeChild(s.firstChild);
+  var x0=20,px=6.8;
+  var bands=[[0,5,"T1a"],[5,10,"T1b"],[10,20,"T1c"],[20,50,"T2"],[50,70,"T3"]];
+  bands.forEach(function(b,i){
+    el("rect",{x:x0+b[0]*px,y:150,width:(b[1]-b[0])*px,height:26,fill:i%2?"var(--panel2)":"var(--panel)",stroke:"var(--line)"},s);
+    el("text",{x:x0+(b[0]+b[1])/2*px,y:168,"font-size":12,"text-anchor":"middle",fill:"var(--ink)","class":"mono"},s,b[2]);
+  });
+  for(var m=0;m<=70;m+=5){
+    el("line",{x1:x0+m*px,y1:176,x2:x0+m*px,y2:m%10===0?192:186,stroke:"var(--ink)"},s);
+    if(m%10===0)el("text",{x:x0+m*px,y:206,"font-size":11,"text-anchor":"middle",fill:"var(--ink)","class":"mono"},s,m);
+  }
+  el("text",{x:x0+70*px,y:224,"font-size":11,"text-anchor":"end",fill:"var(--mute)"},s,"mm");
+  /* tissue + tumor */
+  el("rect",{x:x0,y:14,width:70*px,height:128,fill:"var(--tissue)",stroke:"var(--line)"},s);
+  for(var i=0;i<16;i++){el("path",{d:"M"+(x0+i*30)+" 142 q 12 -60 "+(i%2?18:-6)+" -128",stroke:"var(--tissue2)","stroke-width":1.2,fill:"none"},s);}
+  var cx=x0+mm*px/2+4,r=Math.max(mm*px/2,2);
+  el("circle",{cx:cx,cy:78,r:r,fill:"var(--tumor)","fill-opacity":.85,stroke:"var(--ink)"},s);
+  el("line",{x1:x0+4,y1:78+Math.min(r+8,60),x2:x0+4+mm*px,y2:78+Math.min(r+8,60),stroke:"var(--w)","stroke-width":2},s);
+  el("line",{x1:x0+mm*px+4,y1:142,x2:x0+mm*px+4,y2:176,stroke:"var(--w)","stroke-width":2},s);
+}
+function updRuler(){
+  var mm=+$("iSz").value;$("vSz").textContent=mm;drawRuler(mm);
+  var T=tcat(mm),items=[];
+  var y=function(c,t){items.push('<p>'+(c?"<b>Sim</b> · ":"<b>Não</b> · ")+t+'</p>');};
+  y(mm<=20,"SOUND (omitir BLS): exige ≤ 20 mm.");
+  y(mm<=20,"LUMINA (omitir RT) e PBI-ASTRO: exigem ≤ 20 mm (T1).");
+  y(mm<=50,"Z0011 e INSEMA: cT1–2 (≤ 50 mm).");
+  y(mm<=50,"Conservadora direta: possível se a relação tumor/mama permitir.");
+  var extra=mm>50?"<p>T3N0 = estádio IIB: considerar neoadjuvância e estadiamento sistêmico.</p>":(mm<=5?"<p>T1a N0 luminal: quimioterapia praticamente nunca.</p>":"");
+  $("rulerOut").innerHTML='<div class="big" id="rulerT">'+mm+' mm → c'+T+'N0</div><div class="why">'+items.join("")+extra+'</div>';
+}
+$("iSz").addEventListener("input",updRuler);updRuler();
+
+/* ===== CAP 3: breast ===== */
+var bInfo={
+  qsl:["Quadrante superolateral (QSL)","Onde está a lesão de M. Concentra cerca de 50% do tecido glandular e a maioria dos carcinomas. Continua-se, em cima e lateralmente, com o prolongamento axilar. É o quadrante que mais tolera ressecção: retalhos glandulares fecham a cavidade sem deformidade visível. Incisão curvilínea (paralela às linhas de Langer) ou radial; lesões altas permitem retirar o sentinela pela mesma via."],
+  qsm:["Quadrante superomedial (QSM)","Área do decote: qualquer retração ou assimetria fica visível. Pouco volume glandular, ressecções grandes deformam; incisões sempre discretas, evitando a pele pré-esternal (cicatriz hipertrófica). Drena também para a cadeia mamária interna, ao longo do esterno. Nunca dá acesso à axila."],
+  qil:["Quadrante inferolateral (QIL)","Próximo ao sulco inframamário e à linha axilar anterior. Ressecções aqui puxam o complexo areolopapilar para baixo e para fora; a oncoplastia (padrão de redução com pedículo superior) corrige."],
+  qim:["Quadrante inferomedial (QIM)","O mais difícil esteticamente: pouco tecido, e a retração produz o 'bico de pássaro' (deformidade em que a mama aponta para baixo). Frequentemente exige mamoplastia terapêutica com pedículo superior."],
+  cen:["Região central (retroareolar)","Complexo areolopapilar e ductos principais. Tumores aqui exigem ressecção do mamilo e aréola (cirurgia central, tipo Grisotti) com reconstrução; a conservadora ainda é possível."],
+  tail:["Prolongamento axilar (cauda de Spence)","Extensão do tecido mamário do QSL que atravessa a fáscia em direção à axila, ao longo da borda do peitoral maior. É contínuo com o QSL: lesões nessa região ficam a poucos centímetros dos linfonodos do nível I, e uma única incisão pode servir para setorectomia e sentinela."],
+  ax:["Axila","Pirâmide entre peitoral maior (anterior), grande dorsal (posterior) e parede torácica (medial). Linfonodos nível I (laterais ao peitoral menor), II (atrás dele) e III (mediais). O sentinela costuma estar no nível I, logo abaixo da veia axilar e ao lado do nervo intercostobraquial, acessado por incisão transversa na linha de implantação dos pelos."]
+};
+function drawBreast(){
+  var s=$("breastSvg");while(s.firstChild)s.removeChild(s.firstChild);
+  var defs=el("defs",{},s);
+  var pt=el("pattern",{id:"gl",width:9,height:9,patternUnits:"userSpaceOnUse"},defs);
+  el("circle",{cx:2,cy:2,r:1.1,fill:"var(--gland)"},pt);el("circle",{cx:6.5,cy:6,r:.8,fill:"var(--gland)"},pt);
+  var cx=300,cy=285,R=135;
+  /* torso */
+  el("path",{d:"M40 470 L40 120 Q 60 70 150 58 L 470 58",fill:"none",stroke:"var(--skin)","stroke-width":1.2},s);
+  el("path",{d:"M150 60 Q 300 40 470 70",fill:"none",stroke:"var(--skin)","stroke-width":1.6},s); /* clavicle */
+  el("text",{x:300,y:42,"font-size":12,"text-anchor":"middle",fill:"var(--mute)"},s,"clavícula esquerda");
+  el("line",{x1:70,y1:90,x2:70,y2:465,stroke:"var(--skin)","stroke-width":1,"stroke-dasharray":"6 4"},s);
+  el("text",{x:58,y:270,"font-size":12,fill:"var(--mute)",transform:"rotate(-90 58 270)","text-anchor":"middle"},s,"linha média · esterno");
+  /* arm abducted */
+  el("path",{d:"M470 58 Q 540 60 598 70 M 470 150 Q 540 150 598 150",fill:"none",stroke:"var(--skin)","stroke-width":1.4},s);
+  el("text",{x:590,y:80,"font-size":12,"text-anchor":"end",fill:"var(--mute)"},s,"braço E abduzido 90° →");
+  /* pectoral contour */
+  el("path",{d:"M100 100 Q 300 90 455 150",fill:"none",stroke:"var(--tissue2)","stroke-width":8,"stroke-linecap":"round"},s);
+  el("path",{d:"M470 160 Q 470 300 440 470",fill:"none",stroke:"var(--skin)","stroke-width":1,"stroke-dasharray":"3 4"},s);
+  el("text",{x:478,y:330,"font-size":11,fill:"var(--mute)"},s,"linha axilar anterior");
+  /* axilla */
+  var gAx=el("g",{"class":"qhit","data-k":"ax"},s);
+  el("ellipse",{cx:505,cy:155,rx:52,ry:34,fill:"var(--panel2)",stroke:"var(--ink)","stroke-width":1,"class":"qfill"},gAx);
+  [[490,150],[512,146],[522,163],[498,166]].forEach(function(p){el("ellipse",{cx:p[0],cy:p[1],rx:5,ry:3.5,fill:"var(--bg)",stroke:"var(--ink)","stroke-width":.8},gAx);});
+  /* tail */
+  var gT=el("g",{"class":"qhit","data-k":"tail"},s);
+  el("path",{d:"M"+(cx+R*0.55)+" "+(cy-R*0.84)+" Q 420 140 470 150 Q 470 190 "+(cx+R*0.9)+" "+(cy-R*0.44)+" Z",fill:"url(#gl)",stroke:"var(--ink)","stroke-width":1,"class":"qfill"},gT);
+  el("path",{d:"M"+(cx+R*0.55)+" "+(cy-R*0.84)+" Q 420 140 470 150 Q 470 190 "+(cx+R*0.9)+" "+(cy-R*0.44)+" Z",fill:"var(--tissue)","fill-opacity":.4,stroke:"none","class":"qfill"},gT);
+  /* quadrants */
+  function sector(a0,a1){var r=function(a){return [cx+R*Math.cos(a),cy+R*Math.sin(a)];};var p0=r(a0),p1=r(a1);return "M"+cx+" "+cy+" L"+p0[0]+" "+p0[1]+" A"+R+" "+R+" 0 0 1 "+p1[0]+" "+p1[1]+" Z";}
+  var P=Math.PI;
+  var qs=[["qsl",-P/2,0],["qil",0,P/2],["qim",P/2,P],["qsm",P,1.5*P]];
+  qs.forEach(function(q){
+    var g=el("g",{"class":"qhit","data-k":q[0]},s);
+    el("path",{d:sector(q[1],q[2]),fill:"var(--tissue)",stroke:"var(--ink)","stroke-width":1,"class":"qfill"},g);
+    el("path",{d:sector(q[1],q[2]),fill:"url(#gl)",stroke:"none","pointer-events":"none"},g);
+  });
+  /* ducts radiating */
+  for(var k=0;k<12;k++){var a=k*P/6;el("path",{d:"M"+cx+" "+cy+" L"+(cx+R*0.8*Math.cos(a))+" "+(cy+R*0.8*Math.sin(a)),stroke:"var(--gland)","stroke-width":1,"pointer-events":"none"},s);}
+  /* outline */
+  el("circle",{cx:cx,cy:cy,r:R,fill:"none",stroke:"var(--ink)","stroke-width":1.6,"pointer-events":"none"},s);
+  el("path",{d:"M"+(cx-R)+" "+(cy+30)+" Q "+cx+" "+(cy+R+38)+" "+(cx+R)+" "+(cy+30),fill:"none",stroke:"var(--skin)","stroke-width":1,"stroke-dasharray":"4 3","pointer-events":"none"},s);
+  el("text",{x:cx,y:cy+R+30,"font-size":11,"text-anchor":"middle",fill:"var(--mute)"},s,"sulco inframamário");
+  /* center */
+  var gC=el("g",{"class":"qhit","data-k":"cen"},s);
+  el("circle",{cx:cx,cy:cy,r:34,fill:"var(--panel2)",stroke:"var(--ink)","stroke-width":1,"class":"qfill"},gC);
+  el("circle",{cx:cx,cy:cy,r:9,fill:"var(--skin)",stroke:"var(--ink)","stroke-width":.8},gC);
+  /* tumor star */
+  var tx=cx+62,ty=cy-70,st="";for(var i=0;i<10;i++){var rr=i%2?5:12,aa=-P/2+i*P/5;st+=(i?"L":"M")+(tx+rr*Math.cos(aa))+" "+(ty+rr*Math.sin(aa));}
+  el("path",{d:st+"Z",fill:"var(--tumor)",stroke:"var(--bg)","stroke-width":1,"pointer-events":"none"},s);
+  el("rect",{x:tx+8,y:ty+6,width:6,height:2.5,fill:"var(--w)","pointer-events":"none"},s);
+  /* incisions */
+  var gi=el("g",{id:"incG",style:"display:"+($("iInc").checked?"inline":"none"),"pointer-events":"none"},s);
+  el("path",{d:"M"+(tx-30)+" "+(ty-22)+" Q "+tx+" "+(ty-38)+" "+(tx+32)+" "+(ty-18),fill:"none",stroke:"var(--w)","stroke-width":2.4},gi);
+  el("text",{x:tx-36,y:ty-30,"font-size":11,fill:"var(--w)","text-anchor":"end"},gi,"incisão curvilínea sobre a lesão");
+  el("path",{d:"M482 182 Q 505 190 530 182",fill:"none",stroke:"var(--w)","stroke-width":2.4},gi);
+  el("text",{x:560,y:206,"font-size":11,fill:"var(--w)","text-anchor":"end"},gi,"incisão axilar (BLS)");
+  el("path",{d:"M"+(cx-34)+" "+cy+" A34 34 0 0 1 "+(cx+34)+" "+cy,fill:"none",stroke:"var(--w)","stroke-width":1.6,"stroke-dasharray":"5 3"},gi);
+  el("text",{x:cx-38,y:cy-40,"font-size":10,fill:"var(--w)","text-anchor":"end"},gi,"periareolar (round block)");
+  /* labels */
+  var gl=el("g",{id:"labG",style:"display:"+($("iLab").checked?"inline":"none"),"pointer-events":"none"},s);
+  [["QSL",cx+70,cy-28],["QSM",cx-72,cy-28],["QIL",cx+70,cy+70],["QIM",cx-72,cy+70]].forEach(function(l){
+    el("text",{x:l[1],y:l[2],"font-size":17,"text-anchor":"middle",fill:"var(--ink)","font-weight":600},gl,l[0]);});
+  el("text",{x:484,y:236,"font-size":11,fill:"var(--ink)","text-anchor":"start"},gl,"↖ cauda de Spence");
+  el("text",{x:505,y:112,"font-size":12,fill:"var(--ink)","text-anchor":"middle","font-weight":600},gl,"axila");
+  el("text",{x:100,y:455,"font-size":11,fill:"var(--mute)"},gl,"← medial");
+  el("text",{x:420,y:455,"font-size":11,fill:"var(--mute)"},gl,"lateral →");
+  /* click */
+  [].slice.call(s.querySelectorAll(".qhit")).forEach(function(g){
+    g.addEventListener("click",function(){var k=g.getAttribute("data-k");var inf=bInfo[k];
+      $("breastOut").innerHTML='<div class="big" id="bName">'+inf[0]+'</div><div class="why"><p>'+inf[1]+'</p></div>';
+      [].slice.call(s.querySelectorAll(".qhit .qfill")).forEach(function(f){f.setAttribute("stroke-width",1);});
+      [].slice.call(g.querySelectorAll(".qfill")).forEach(function(f){f.setAttribute("stroke-width",3);});
+    });
+  });
+}
+$("iInc").addEventListener("change",function(){$("incG").style.display=this.checked?"inline":"none";});
+$("iLab").addEventListener("change",function(){$("labG").style.display=this.checked?"inline":"none";});
+drawBreast();
+
+/* ===== CAP 4: tree ===== */
+var T={
+  start:{q:"Exame físico e ultrassom da axila",o:[["cN0: exame normal e US sem linfonodo suspeito","omit"],["Linfonodo suspeito ao US, sem palpação","usbx"],["Linfonodo palpável","palp"]]},
+  usbx:{q:"Biópsia (PAAF ou core) do linfonodo suspeito",o:[["Negativa","omit"],["Positiva (cN1 comprovado)","cn1"]]},
+  palp:{q:"Biópsia do linfonodo palpável",o:[["Negativa: tratar como cN0","omit"],["Positiva (cN1 comprovado)","cn1"]]},
+  cn1:{end:"Axila comprovadamente positiva: não é candidata a BLS de entrada. Em luminal de baixo risco, cirurgia com esvaziamento axilar; alternativa, neoadjuvância e reestadiamento (BLS com marcação do linfonodo após resposta).",ref:"NCCN; ACOSOG Z1071 / SENTINA para pós-neoadjuvância"},
+  omit:{q:"cN0. A paciente preenche critérios para omitir a cirurgia axilar?",o:[["≥ 50 a pós-menopausa, ≤ 2 cm, grau 1–2, RH+/HER2−, US axilar negativo, conservadora","omitok"],["≥ 70 anos, RE+, HER2–, fará hormonioterapia","cw"],["Não (ou pN influenciará quimio/RT)","bls"]]},
+  omitok:{q:"Decisão compartilhada após discussão",o:[["Omitir a BLS","endOmit"],["Fazer a BLS","bls"]]},
+  endOmit:{end:"Omitir a biópsia do sentinela: não inferior em sobrevida livre de metástase a distância (SOUND) e de doença invasiva (INSEMA). No SOUND, recidiva axilar de 0,4% em 5 anos nos dois braços. Perde-se o pN.",ref:"ASCO SLNB 2025, baseada em SOUND (Gentilini, JAMA Oncol 2023) e INSEMA (Reimer, NEJM 2024)"},
+  cw:{end:"Não fazer BLS de rotina: o resultado raramente muda o tratamento nessa idade e perfil.",ref:"Choosing Wisely (SSO 2016); CALGB 9343"},
+  bls:{q:"Resultado da biópsia do linfonodo sentinela",o:[["Sentinelas negativos (incluindo células tumorais isoladas)","endNeg"],["Micrometástase (0,2–2 mm)","endMic"],["1–2 sentinelas com macrometástase","mac12"],["≥ 3 sentinelas com macrometástase","end3"]]},
+  endNeg:{end:"pN0: nenhum tratamento axilar adicional.",ref:"NSABP B-32"},
+  endMic:{end:"Micrometástase: sem esvaziamento.",ref:"IBCSG 23-01, AATRM; dados majoritariamente de conservadora"},
+  mac12:{q:"Qual cirurgia foi feita na mama?",o:[["Conservadora, com RT de mama total planejada","endZ"],["Mastectomia","endMx"]]},
+  endZ:{end:"Sem esvaziamento axilar: seguir para RT de mama total. Sobrevida igual em 10 anos.",ref:"ACOSOG Z0011 (Giuliano, JAMA 2017)"},
+  endMx:{end:"Z0011 não se aplica. Radioterapia axilar/drenagens (AMAROS) ou esvaziamento; dados de SENOMAC apoiam omitir o esvaziamento também nesse cenário em pacientes selecionadas.",ref:"AMAROS (Donker, Lancet Oncol 2014; 10 anos 2023); SENOMAC (NEJM 2024)"},
+  end3:{end:"Três ou mais sentinelas positivos: esvaziamento axilar (nível I–II), seguido de RT de drenagens.",ref:"Fora dos critérios de Z0011 e AMAROS"}
+};
+var trail=[];
+function renderTree(node){
+  var n=T[node],box=$("tree");
+  var path=trail.length?'<div class="path" id="treePath">'+trail.join(" → ")+'</div>':'<div class="path" id="treePath">início</div>';
+  $("treeStep").textContent=n.end?"conduta":("passo "+(trail.length+1));
+  if(n.end){box.innerHTML=path+'<div class="out" style="margin-top:0"><div class="big" id="treeEnd">Conduta</div><div class="why"><p>'+n.end+'</p><p><span class="tag">'+n.ref+'</span></p></div></div><p><button class="btn sm" type="button" id="treeReset">Recomeçar</button></p>';
+    $("treeReset").addEventListener("click",function(){trail=[];renderTree("start");});return;}
+  box.innerHTML=path+'<div class="q">'+n.q+'</div><div class="opts">'+n.o.map(function(o,i){return'<button class="btn" type="button" data-i="'+i+'">'+o[0]+'</button>';}).join("")+'</div>'+(trail.length?'<p><button class="btn sm" type="button" id="treeReset">Recomeçar</button></p>':'');
+  [].slice.call(box.querySelectorAll(".opts .btn")).forEach(function(b){b.addEventListener("click",function(){var o=n.o[+b.getAttribute("data-i")];trail.push(o[0].split(":")[0].split(",")[0]);renderTree(o[1]);});});
+  if($("treeReset"))$("treeReset").addEventListener("click",function(){trail=[];renderTree("start");});
+}
+renderTree("start");
+
+/* ===== CAP 5: RT selector ===== */
+function updRT(){
+  var a=+$("rAge").value,sz=+$("rSz").value,gr=+$("rGr").value,ki=+$("rKi").value,pr=+$("rPr").value;
+  var er=$("rEr").checked,her=$("rHer").checked,n0=$("rN0").checked,mg=$("rMg").checked,mg2=$("rMg2").checked,lvi=$("rLvi").checked,ad=$("rAd").checked;
+  function chk(list){var f=list.filter(function(c){return !c[0];}).map(function(c){return c[1];});return f;}
+  var opts=[
+    ["Mama total hipofracionada · 40 Gy / 15 fr","Padrão após conservadora (START B).",chk([[mg,"margens livres"]])],
+    ["FAST-Forward · 26 Gy / 5 fr","Uma semana; equivalente em 10 anos.",chk([[mg,"margens livres"]])],
+    ["Boost no leito","Reforço indicado em ≤ 50 anos, grau 3 ou margem exígua.",(a<=50||gr===3)?[]:["sem fator de risco (≤ 50 a ou grau 3): dispensável"]],
+    ["PBI · irradiação parcial (ASTRO 2016)","Só o leito tumoral.",chk([[a>=50,"idade ≥ 50"],[sz<=20,"≤ 20 mm"],[n0,"pN0"],[mg2,"margem ≥ 2 mm"],[er,"RE+"],[!lvi,"sem invasão linfovascular"]])],
+    ["Omitir RT · LUMINA","Hormonioterapia exclusiva; recidiva local 5 a ≈ 2,3%.",chk([[a>=55,"idade ≥ 55"],[sz<=20,"T1 (≤ 20 mm)"],[n0,"pN0"],[gr<=2,"grau 1–2"],[er,"RE ≥ 1%"],[pr>20,"RP > 20%"],[her,"HER2–"],[ki<=13.25,"Ki-67 ≤ 13,25%"],[mg,"margens livres"],[ad,"adesão a 5 anos de HT"]])],
+    ["Omitir RT · PRIME II","Recidiva local 10 a 9,5% vs 0,9%; sobrevida igual.",chk([[a>=65,"idade ≥ 65"],[sz<=30,"≤ 30 mm"],[n0,"pN0"],[er,"RH+"],[mg,"margens livres"],[!(gr===3&&lvi),"não grau 3 com invasão linfovascular"],[ad,"adesão a HT"]])],
+    ["Omitir RT · CALGB 9343","Recidiva local 10 a 10% vs 2%; sobrevida igual.",chk([[a>=70,"idade ≥ 70"],[sz<=20,"T1"],[n0,"N0"],[er,"RE+"],[ad,"adesão a HT"]])]
+  ];
+  $("rtOut").innerHTML=opts.map(function(o,i){var ok=!o[2].length;
+    return '<div class="row '+(ok?"yes":"no")+'" data-ok="'+(ok?1:0)+'" id="rt'+i+'"><b>'+(ok?"Cumpre · ":"Não cumpre · ")+o[0]+'</b><small>'+o[1]+(ok?"":" Falta: "+o[2].join(", ")+".")+'</small></div>';}).join("");
+}
+["rAge","rSz","rGr","rKi","rPr","rEr","rHer","rN0","rMg","rMg2","rLvi","rAd"].forEach(function(id){$(id).addEventListener("input",updRT);$(id).addEventListener("change",updRT);});
+updRT();
+
+/* ===== CAP 6: menopause ===== */
+function updMeno(){
+  var a=+$("mAge").value,oof=$("mOof").value==="s",hist=$("mHist").value==="s",am=+$("mAm").value,tx=$("mTx").value==="s",lab=$("mLab").value;
+  $("vAm").textContent=am;
+  var st,why,drug;
+  if(oof){st="Pós-menopausa";why="Ooforectomia bilateral define pós-menopausa em qualquer idade.";}
+  else if(a>=60){st="Pós-menopausa";why="Idade ≥ 60 anos define pós-menopausa.";}
+  else if(hist||tx){
+    if(lab==="pos"){st="Pós-menopausa (laboratorial)";why=(hist?"Sem útero, a menstruação não serve de marcador":"Quimioterapia, tamoxifeno ou supressão podem causar amenorreia reversível")+"; FSH e estradiol na faixa pós-menopausa confirmam. Repetir a dosagem nos primeiros meses de IA.";}
+    else if(lab==="pre"){st="Pré-menopausa";why="FSH e estradiol na faixa pré-menopausa: ovário funcionante.";}
+    else{st="Indeterminado";why=(hist?"Histerectomia com ovários preservados: a amenorreia não informa nada.":"Amenorreia sob quimioterapia, tamoxifeno ou supressão pode ser reversível.")+" Dosar FSH e estradiol (seriados).";}
+  }
+  else if(am>=12){
+    if(lab==="pre"){st="Pré/perimenopausa";why="Apesar da amenorreia, FSH e estradiol na faixa pré-menopausa.";}
+    else if(lab==="pos"){st="Pós-menopausa";why="Amenorreia ≥ 12 meses sem quimioterapia, tamoxifeno ou supressão, confirmada por FSH e estradiol na faixa pós-menopausa.";}
+    else{st="Provável pós-menopausa";why="Amenorreia ≥ 12 meses, mas abaixo de 60 anos, o NCCN exige FSH e estradiol na faixa pós-menopausa antes do IA; até lá, tamoxifeno é seguro.";}
+  }
+  else{st="Pré-menopausa";why="Menos de 12 meses de amenorreia: ovário potencialmente ativo.";}
+  if(st.indexOf("Pós")===0)drug="<p><b>Inibidor de aromatase por 5 anos:</b> anastrozol 1 mg, letrozol 2,5 mg ou exemestano 25 mg/dia. DXA basal, cálcio, vitamina D; considerar ácido zoledrônico se o risco de recorrência justificar ou para proteção óssea.</p>";
+  else if(st==="Indeterminado"||st==="Provável pós-menopausa")drug="<p><b>Até esclarecer:</b> tamoxifeno 20 mg/dia é seguro em qualquer status. IA só com pós-menopausa confirmada.</p>";
+  else drug="<p><b>Tamoxifeno 20 mg/dia por 5 anos.</b> Supressão ovariana + IA ou tamoxifeno fica para alto risco (SOFT/TEXT), não para o perfil de M. Exame ginecológico anual.</p>";
+  $("menoOut").innerHTML='<div class="big" id="menoSt">'+st+'</div><div class="why"><p>'+why+'</p>'+drug+'</div>';
+}
+["mAge","mOof","mHist","mAm","mTx","mLab"].forEach(function(id){$(id).addEventListener("input",updMeno);$(id).addEventListener("change",updMeno);});
+updMeno();
+
+/* ===== CAP 7: timeline ===== */
+var tlEv=[
+  [0,"Diagnóstico","Aconselhamento genético e oferta de teste germinativo (≤ 65 anos, ASCO 2024). DXA basal se for usar IA. Exames de rotina; sem imagem sistêmica."],
+  [0.25,"Cirurgia","Setorectomia + BLS. Clipes no leito para guiar a RT."],
+  [0.4,"Radioterapia","Mama total (3 semanas ou 1 semana) ou PBI, salvo omissão pelo LUMINA. Início da hormonioterapia, em geral após a RT."],
+  [1.0,"1ª mamografia pós-RT","6 a 12 meses após o fim da RT, quando o edema actínico já diminuiu: vira a nova imagem de base da mama tratada."],
+  [0.75,"Consultas 3–6 meses","Exame clínico, efeitos adversos, adesão à hormonioterapia (perguntar sempre)."],
+  [2,"DXA de controle","Em uso de IA, a cada 1–2 anos; tratar osteopenia/osteoporose (bisfosfonato, denosumabe)."],
+  [3,"Fim das consultas trimestrais","Do 4º ao 5º ano, consulta a cada 6–12 meses; mamografia bilateral anual."],
+  [5,"Fim da hormonioterapia","Avaliar extensão (até 10 anos) só se risco residual alto; em luminal A pequeno N0, 5 anos bastam."],
+  [6,"Após o 5º ano","Consulta anual e mamografia anual por toda a vida; pode ser compartilhada com a atenção primária."]
+];
+function drawTL(){
+  var s=$("tlSvg");while(s.firstChild)s.removeChild(s.firstChild);
+  var x0=40,w=820,px=w/6;
+  el("line",{x1:x0,y1:100,x2:x0+w,y2:100,stroke:"var(--ink)","stroke-width":2},s);
+  for(var y=0;y<=6;y++){el("line",{x1:x0+y*px,y1:94,x2:x0+y*px,y2:106,stroke:"var(--ink)"},s);el("text",{x:x0+y*px,y:124,"font-size":13,"text-anchor":"middle",fill:"var(--ink)","class":"mono"},s,"ano "+y);}
+  el("rect",{x:x0,y:62,width:5*px,height:10,fill:"var(--panel2)",stroke:"var(--line)"},s);
+  el("text",{x:x0+2.5*px,y:56,"font-size":12,"text-anchor":"middle",fill:"var(--mute)"},s,"hormonioterapia 5 anos");
+  for(var m=0;m<3;m+=0.25){el("circle",{cx:x0+m*px,cy:100,r:2.5,fill:"var(--mute)"},s);}
+  tlEv.forEach(function(e,i){
+    var g=el("g",{"class":"qhit tlm","data-i":i},s),x=x0+e[0]*px,up=i%2===0;
+    el("line",{x1:x,y1:100,x2:x,y2:up?28:150,stroke:"var(--ink)","stroke-dasharray":"2 2"},g);
+    el("rect",{x:x-7,y:93,width:14,height:14,fill:"var(--bg)",stroke:"var(--ink)","stroke-width":2,"class":"qfill"},g);
+    el("text",{x:x+4,y:up?24:164,"font-size":12,fill:"var(--ink)","text-anchor":i===tlEv.length-1?"end":"start"},g,e[1]);
+    el("rect",{x:x-14,y:up?10:86,width:120,height:up?96:84,fill:"transparent"},g);
+    g.addEventListener("click",function(){$("tlOut").innerHTML='<div class="big" id="tlName">'+e[1]+'</div><div class="why"><p>'+e[2]+'</p></div>';});
+  });
+  el("rect",{x:x0,y:186,width:w,height:30,fill:"var(--w-soft)",stroke:"var(--w)"},s);
+  el("text",{x:x0+w/2,y:206,"font-size":13,"text-anchor":"middle",fill:"var(--w)"},s,"Não fazer em assintomática: CA 15-3, CEA, TC, cintilografia, PET-CT, US de fígado");
+}
+drawTL();
+
+/* ===== CAP 8: table + forja ===== */
+$("maeBtn").addEventListener("click",function(){var t=$("mae");t.classList.toggle("hide");this.textContent=t.classList.contains("hide")?"Mostrar condutas":"Cobrir condutas";});
+[].slice.call(document.querySelectorAll("#mae td.c3")).forEach(function(td){td.addEventListener("click",function(){if($("mae").classList.contains("hide")){td.style.color="var(--ink)";td.style.background="var(--bg)";}});});
+var Q=[
+ {s:"Mulher de 58 anos, pós-menopausada, com nódulo de 1,4 cm no QSL da mama direita. Core biopsy: carcinoma invasor de tipo não especial, RE 90% forte, RP 8%, HER2 2+ com ISH não amplificado, Ki-67 12%. A classificação substituta (St. Gallen) e a implicação terapêutica do HER2 são:",
+  o:["Luminal A-like; trastuzumabe adjuvante por HER2-low","Luminal A-like; HER2 sem implicação na doença inicial","Luminal B-like HER2-positivo; trastuzumabe por 1 ano","Luminal B-like HER2-negativo; HER2-low sem implicação na doença inicial","HER2-enriquecido; repetir ISH antes de definir"],a:3,
+  c:"O RP abaixo de 20% derruba o rótulo luminal A-like mesmo com Ki-67 baixo: é luminal B-like HER2-negativo. HER2 2+ com ISH negativo é HER2-negativo (categoria HER2-low), que só importa no metastático (T-DXd, DESTINY-Breast04). A pegadinha é o RE alto e o Ki-67 baixo, que levam a marcar luminal A (alternativas A e B)."},
+ {s:"Paciente de 61 anos, tumor de 1,8 cm, cN0 com ultrassom axilar normal, submetida a setorectomia com margens livres e biópsia do linfonodo sentinela. Dois de três sentinelas têm macrometástase, sem extensão extranodal macroscópica. Será feita radioterapia de mama total hipofracionada. A conduta axilar é:",
+  o:["Nenhum tratamento cirúrgico adicional da axila","Esvaziamento axilar níveis I e II","Esvaziamento axilar níveis I a III","Converter para mastectomia e esvaziar a axila","PET-CT para decidir o esvaziamento"],a:0,
+  c:"É o cenário exato do ACOSOG Z0011: cT1–2, cN0, 1–2 sentinelas positivos, cirurgia conservadora e RT de mama total. O esvaziamento não melhora sobrevida nem controle regional em 10 anos. Se a mesma paciente tivesse feito mastectomia, o Z0011 não se aplicaria (RT axilar pelo AMAROS ou esvaziamento)."},
+ {s:"Mulher de 57 anos, após setorectomia por carcinoma invasor de 1,5 cm, grau 1, margens livres, sentinela negativo, RE 95%, RP 80%, HER2 0, Ki-67 18%. Ela pergunta se pode dispensar a radioterapia, já que fará hormonioterapia. Segundo o estudo prospectivo LUMINA, a resposta correta é:",
+  o:["Sim, pois tem mais de 55 anos e tumor T1N0","Sim, pois tumores luminais não se beneficiam de radioterapia","Não, pois a omissão só é avaliada a partir de 70 anos","Não, pois a omissão exige grau 3 e invasão linfovascular ausentes","Não, pois o Ki-67 acima de 13,25% a exclui dos critérios do estudo"],a:4,
+  c:"O estudo prospectivo LUMINA exigiu idade ≥ 55, T1N0, grau 1–2 e luminal A definido por RE ≥ 1%, RP > 20%, HER2 negativo e Ki-67 ≤ 13,25%. Com Ki-67 de 18%, ela está fora. O padrão continua sendo a radioterapia (40 Gy/15 ou 26 Gy/5). A alternativa C confunde com o CALGB 9343 (≥ 70) e não é o critério do LUMINA."},
+ {s:"Setorectomia por lesão não palpável de mama esquerda, localizada por ROLL. O anatomopatológico mostra carcinoma invasor de tipo não especial de 1,1 cm, com o tumor a 1 mm da margem pintada superior; demais margens > 5 mm. Não há componente in situ extenso. A conduta é:",
+  o:["Ampliação da margem superior, por ser inferior a 2 mm","Seguir para radioterapia, sem reabordagem","Mastectomia, por margem exígua","Ampliar a margem para pelo menos 10 mm","Aumentar a dose do boost e omitir a reabordagem apenas se a paciente tiver mais de 70 anos"],a:1,
+  c:"No carcinoma invasor, margem adequada é 'no ink on tumor' (SSO-ASTRO 2014): 1 mm é margem livre, e margens maiores não reduzem a recidiva. O número 2 mm é a recomendação para CDIS puro com RT de mama total (2016), daí a pegadinha da alternativa A."},
+ {s:"Mulher de 55 anos, carcinoma invasor luminal A-like de 1,3 cm, pN0, após conservadora. Relata 14 meses sem menstruar, sem uso prévio de hormônios, tamoxifeno ou quimioterapia; FSH e estradiol na faixa pós-menopausa. Assinatura genômica (21 genes) com RS 22. A terapia sistêmica adjuvante indicada é:",
+  o:["Quimioterapia seguida de tamoxifeno, pois RS > 18","Tamoxifeno 20 mg por 5 anos, sem quimioterapia","Inibidor de aromatase por 5 anos, sem quimioterapia","Quimioterapia seguida de inibidor de aromatase, pois RS > 16","Supressão ovariana com exemestano por 5 anos"],a:2,
+  c:"Pós-menopausa confirmada (amenorreia ≥ 12 meses sem tratamento, com FSH e estradiol compatíveis): inibidor de aromatase, superior ao tamoxifeno. No TAILORx, mulheres N0 com mais de 50 anos e RS até 25 não têm benefício de quimioterapia. O benefício com RS 16–25 existe apenas em ≤ 50 anos, distrator da alternativa D; RS > 18 (A) é o corte antigo de risco intermediário."},
+ {s:"Mulher de 53 anos, assintomática, com carcinoma invasor de 1,6 cm na mama esquerda, cN0 ao exame e ao ultrassom axilar, hemograma e função hepática normais. Antes da cirurgia, qual exame NÃO está indicado de rotina?",
+  o:["Cintilografia óssea, tomografia de tórax e abdome ou PET-CT","Mamografia bilateral","Ultrassom de axila","Fosfatase alcalina","Revisão da imuno-histoquímica com RE, RP, HER2 e Ki-67"],a:0,
+  c:"Estádio I assintomático: a chance de metástase oculta é < 1–2% e o rastreio sistêmico gera falso-positivos sem benefício (NCCN, Choosing Wisely). Pedem-se mamografia bilateral, ultrassom de axila e exames de rotina, incluindo fosfatase alcalina. Imagem sistêmica só com sintoma, alteração laboratorial ou doença localmente avançada."}
+];
+var L="ABCDE",ans=0,hit=0;
+var fz=$("forja");
+Q.forEach(function(q,qi){
+  var d=document.createElement("div");d.className="qz";d.id="q"+(qi+1);
+  d.innerHTML='<div class="qh">QUESTÃO '+(qi+1)+'</div><p class="st">'+q.s+'</p><div class="alts">'+q.o.map(function(o,i){return'<button class="alt" type="button" data-i="'+i+'"><span class="L">'+L[i]+'</span><span>'+o+'</span></button>';}).join("")+'</div><div class="com"><b>Gabarito: '+L[q.a]+'.</b> '+q.c+'</div>';
+  fz.appendChild(d);
+  [].slice.call(d.querySelectorAll(".alt")).forEach(function(b){b.addEventListener("click",function(){
+    if(d.classList.contains("done"))return;
+    var i=+b.getAttribute("data-i");d.classList.add("done");ans++;if(i===q.a)hit++;else b.classList.add("wrong");
+    d.querySelectorAll(".alt")[q.a].classList.add("right");
+    $("score").textContent=ans+" / 6 respondidas · "+hit+" acertos";
+  });});
+});
+window.__gabarito=Q.map(function(q){return L[q.a];}).join("");
+})();
+</script>
+</body>
+</html>
+
+</body></html>

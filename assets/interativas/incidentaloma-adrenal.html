@@ -1,0 +1,669 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
+<title>Atlas do Incidentaloma Adrenal</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F2F4F7; --surface:#FFFFFF; --surface-2:#E9EDF2; --ink:#16202B; --muted:#5B6875; --line:#D3DAE2; --line-strong:#AEB9C5;
+  --accent:#2457C5; --accent-soft:#E3EBFA; --accent-ink:#173B87;
+  --benign:#0B8A7A; --benign-soft:#DDF3EF; --benign-ink:#075C52;
+  --danger:#C4302B; --danger-soft:#FBE4E2; --danger-ink:#8A1F1C;
+  --warn:#C98A12; --warn-soft:#FBF0D6; --warn-ink:#7A5208;
+  --macs:#6C4DB8; --macs-soft:#ECE6F9; --macs-ink:#452E86;
+  --display:'Fraunces',Georgia,'Times New Roman',serif; --body:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif; --mono:'IBM Plex Mono','SF Mono',Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E1319; --surface:#161D26; --surface-2:#1E2731; --ink:#E7ECF2; --muted:#9AA7B4; --line:#2B3642; --line-strong:#3F4C5A;
+  --accent:#6C95E8; --accent-soft:#1C2A45; --accent-ink:#B9CCF5;
+  --benign:#3FBFAE; --benign-soft:#123A35; --benign-ink:#9BE3D8;
+  --danger:#E5665F; --danger-soft:#43201E; --danger-ink:#F5B3AE;
+  --warn:#E0A63A; --warn-soft:#3F3116; --warn-ink:#F3D28E;
+  --macs:#A08BE0; --macs-soft:#2B2346; --macs-ink:#D2C6F3;
+}}
+:root[data-theme="dark"]{
+  --bg:#0E1319; --surface:#161D26; --surface-2:#1E2731; --ink:#E7ECF2; --muted:#9AA7B4; --line:#2B3642; --line-strong:#3F4C5A;
+  --accent:#6C95E8; --accent-soft:#1C2A45; --accent-ink:#B9CCF5;
+  --benign:#3FBFAE; --benign-soft:#123A35; --benign-ink:#9BE3D8;
+  --danger:#E5665F; --danger-soft:#43201E; --danger-ink:#F5B3AE;
+  --warn:#E0A63A; --warn-soft:#3F3116; --warn-ink:#F3D28E;
+  --macs:#A08BE0; --macs-soft:#2B2346; --macs-ink:#D2C6F3;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.01em;text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,5vw,52px);line-height:1.05}
+h2{font-size:clamp(24px,3vw,32px);line-height:1.15}
+h3{font-size:18px;font-family:var(--body);font-weight:600}
+p{margin:0 0 1em;max-width:66ch}
+strong{font-weight:600}
+code,.mono{font-family:var(--mono);font-size:0.92em}
+a{color:var(--accent)}
+.rail{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.rail nav{max-width:1120px;margin:0 auto;padding:10px 20px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.rail nav a{white-space:nowrap;text-decoration:none;color:var(--muted);font-size:13px;font-weight:500;padding:6px 10px;border-radius:6px;letter-spacing:0.01em}
+.rail nav a:hover,.rail nav a:focus-visible{color:var(--ink);background:var(--surface-2);outline:none}
+.rail nav a .n{font-family:var(--mono);color:var(--accent);margin-right:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header.hero{padding:56px 0 24px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.lede{font-size:18px;color:var(--muted);max-width:62ch;margin-top:16px}
+section.ch{padding:48px 0;border-top:1px solid var(--line)}
+.ch-head{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:baseline;margin-bottom:20px}
+.ch-num{font-family:var(--mono);font-size:13px;color:var(--accent);padding-top:6px}
+.ch-head p{color:var(--muted);margin:8px 0 0}
+.plate{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,0.9fr);gap:24px;align-items:start}
+@media (max-width:860px){.plate{grid-template-columns:1fr}}
+.fig{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.fig .cap{padding:10px 14px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);font-family:var(--mono)}
+.panel{display:flex;flex-direction:column;gap:14px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.box h3{margin-bottom:8px}
+.lbl{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);font-weight:500;font-family:var(--mono)}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button,.btn{font:inherit;font-size:13.5px;font-weight:500;color:var(--ink);background:var(--surface);border:1px solid var(--line-strong);border-radius:6px;padding:7px 11px;cursor:pointer;transition:background .15s,border-color .15s}
+.seg button:hover,.btn:hover{background:var(--surface-2)}
+.seg button:focus-visible,.btn:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.seg button.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-ink)}
+.seg button.on.b{background:var(--benign-soft);border-color:var(--benign);color:var(--benign-ink)}
+.seg button.on.d{background:var(--danger-soft);border-color:var(--danger);color:var(--danger-ink)}
+.seg button.on.w{background:var(--warn-soft);border-color:var(--warn);color:var(--warn-ink)}
+.seg button.on.m{background:var(--macs-soft);border-color:var(--macs);color:var(--macs-ink)}
+input[type=range]{width:100%;accent-color:var(--accent);margin:6px 0}
+.kv{display:grid;grid-template-columns:1fr auto;gap:4px 12px;font-size:14px}
+.kv dt{color:var(--muted)}.kv dd{margin:0;font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums}
+.tag{display:inline-block;font-size:12px;font-weight:500;padding:3px 9px;border-radius:999px;font-family:var(--mono)}
+.tag.b{background:var(--benign-soft);color:var(--benign-ink)}.tag.d{background:var(--danger-soft);color:var(--danger-ink)}.tag.w{background:var(--warn-soft);color:var(--warn-ink)}.tag.m{background:var(--macs-soft);color:var(--macs-ink)}.tag.a{background:var(--accent-soft);color:var(--accent-ink)}
+.verdict{border-left:4px solid var(--accent);padding:10px 14px;border-radius:0;background:var(--surface-2);font-size:14.5px;line-height:1.55}
+.verdict.b{border-color:var(--benign)}.verdict.d{border-color:var(--danger)}.verdict.w{border-color:var(--warn)}.verdict.m{border-color:var(--macs)}
+.note{font-size:14px;color:var(--muted);line-height:1.55}
+.prose{max-width:70ch;margin-top:22px}
+.prose p{font-size:16px}
+svg{max-width:100%;height:auto;display:block}
+canvas{display:block;width:100%;height:auto}
+.steps{display:grid;gap:8px;margin-top:10px}
+.step{display:grid;grid-template-columns:26px 1fr;gap:10px;font-size:14px;line-height:1.5}
+.step .i{width:24px;height:24px;border-radius:50%;background:var(--surface-2);font-family:var(--mono);font-size:12px;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+.forbid{margin-top:10px;padding:10px 12px;border-radius:6px;background:var(--danger-soft);color:var(--danger-ink);font-size:13.5px}
+.gauge{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gauge div{background:var(--surface-2);border-radius:8px;padding:10px 12px}
+.gauge .v{font-family:var(--mono);font-size:22px;font-weight:500;font-variant-numeric:tabular-nums}
+.gauge .k{font-size:12px;color:var(--muted)}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2px 18px;font-size:13.5px;padding:12px 14px}
+.legend div{display:grid;grid-template-columns:22px 1fr;gap:8px;padding:3px 0}
+.legend .m{width:20px;height:20px;border-radius:50%;background:#fff;border:1px solid #3A2A20;color:#3A2A20;font:500 11px var(--mono);display:flex;align-items:center;justify-content:center}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin-bottom:14px}
+.q .stem{font-size:15.5px;line-height:1.6;margin-bottom:12px}
+.q .stem mark{background:var(--accent-soft);color:var(--accent-ink);padding:1px 5px;border-radius:4px;font-weight:500}
+.opts{display:grid;gap:6px}
+.opts button{text-align:left;font:inherit;font-size:14.5px;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:9px 12px;cursor:pointer;color:var(--ink);display:grid;grid-template-columns:24px 1fr;gap:8px}
+.opts button .L{font-family:var(--mono);color:var(--muted)}
+.opts button:hover{border-color:var(--line-strong)}
+.opts button.ok{background:var(--benign-soft);border-color:var(--benign);color:var(--benign-ink)}
+.opts button.no{background:var(--danger-soft);border-color:var(--danger);color:var(--danger-ink)}
+.q .exp{margin-top:12px;font-size:14px;line-height:1.6;color:var(--ink);border-top:1px dashed var(--line);padding-top:12px}
+.q .exp[hidden]{display:none}
+.pivot{font-size:12.5px;color:var(--muted);font-family:var(--mono);margin-bottom:8px}
+.mother{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.mother .cell{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;border-top:4px solid var(--line-strong)}
+.mother .cell.b{border-top-color:var(--benign)}.mother .cell.d{border-top-color:var(--danger)}.mother .cell.w{border-top-color:var(--warn)}.mother .cell.m{border-top-color:var(--macs)}
+.mother .cell h3{font-size:15px;margin-bottom:6px}
+.mother .cell p{font-size:13.5px;color:var(--muted);margin:0 0 6px}
+.mother .cell .act{font-size:13.5px;color:var(--ink);font-weight:500}
+footer{padding:36px 0 60px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@keyframes flow{to{stroke-dashoffset:-40}}
+.flow{stroke-dasharray:6 8;animation:flow 1.2s linear infinite}
+.flow.slow{animation-duration:3.2s}
+</style>
+
+<div class="rail"><nav>
+<a href="#ct"><span class="n">1</span>A tomografia</a>
+<a href="#celula"><span class="n">2</span>Por que lava</a>
+<a href="#camadas"><span class="n">3</span>As camadas</a>
+<a href="#maquina"><span class="n">4</span>A máquina</a>
+<a href="#feo"><span class="n">5</span>Alfa antes do beta</a>
+<a href="#mesa"><span class="n">6</span>Na mesa</a>
+<a href="#forja"><span class="n">7</span>Forja</a>
+<a href="#tabela"><span class="n">8</span>Tabela-mãe</a>
+</nav></div>
+
+<div class="wrap">
+<header class="hero">
+<div class="eyebrow">Seu Osmar, 54 anos · lombalgia · TC de abdome</div>
+<h1>Atlas do Incidentaloma Adrenal</h1>
+<p class="lede">Um nódulo que ninguém procurou. Duas perguntas decidem tudo: parece benigno? funciona? Cada capítulo abaixo é um instrumento — mexa nele até a resposta ficar óbvia antes de ler o texto.</p>
+</header>
+
+<section class="ch" id="ct">
+<div class="ch-head"><div class="ch-num">01</div><div><h2>A tomografia que o radiologista viu</h2><p>Corte axial em T12–L1, janela de partes moles (L 40 / W 400). Troque a lesão, arraste a fase e observe o nódulo — só ele muda de lesão para lesão; o resto do abdome realça igual.</p></div></div>
+<div class="plate">
+<div class="fig">
+<canvas id="ct-canvas" width="640" height="560" aria-label="Simulação de corte axial de tomografia com nódulo adrenal direito"></canvas>
+<div class="cap" id="ct-cap">Sem contraste · nódulo 6 UH · adrenal direita, posterior à VCI</div>
+</div>
+<div class="panel">
+<div class="box">
+<div class="lbl">Lesão</div>
+<div class="seg" id="lesion-seg" style="margin-top:8px">
+<button data-l="rico" class="on b">Adenoma rico em lipídio</button>
+<button data-l="pobre" class="b">Adenoma pobre em lipídio</button>
+<button data-l="feo" class="d">Feocromocitoma</button>
+<button data-l="acc" class="d">Carcinoma adrenocortical</button>
+<button data-l="meta" class="w">Metástase</button>
+<button data-l="mielo" class="b">Mielolipoma</button>
+<button data-l="cisto" class="b">Cisto</button>
+</div>
+</div>
+<div class="box">
+<div class="lbl">Fase do contraste</div>
+<input type="range" id="phase" min="0" max="2" step="1" value="0" aria-label="Fase do contraste">
+<div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-family:var(--mono)"><span>sem contraste</span><span>portal · 60 s</span><span>tardia · 15 min</span></div>
+<dl class="kv" style="margin-top:12px">
+<dt>Nódulo nesta fase</dt><dd id="hu-now">6 UH</dd>
+<dt>Tamanho</dt><dd id="size-now">2,8 cm</dd>
+<dt>Aspecto</dt><dd id="asp-now">homogêneo</dd>
+</dl>
+</div>
+<div class="box">
+<div class="lbl">Curva de realce</div>
+<svg id="curve" viewBox="0 0 320 170" role="img" aria-label="Curva de atenuação do nódulo nas três fases"></svg>
+<dl class="kv" style="margin-top:6px">
+<dt>Washout absoluto (E−D)/(E−U)</dt><dd id="apw">70 %</dd>
+<dt>Washout relativo (E−D)/E</dt><dd id="rpw">65 %</dd>
+</dl>
+<div class="verdict b" id="ct-verdict" style="margin-top:12px"></div>
+</div>
+</div>
+</div>
+<div class="prose">
+<p>A regra tem duas portas. A primeira é a fase sem contraste: um nódulo homogêneo com <strong>≤ 10 UH</strong> é adenoma com especificidade de 98 %, e o exame pode parar aí — Seu Osmar, com 6 UH, nem precisava do washout. A segunda porta existe para os 30 % de adenomas pobres em lipídio, que medem 20–30 UH e se confundem com tudo o mais: neles o <strong>washout absoluto ≥ 60 %</strong> (ou relativo ≥ 40 %) aos 15 minutos resgata o diagnóstico. O que nenhuma das duas portas resolve — realce forte que não lava, heterogeneidade, necrose, mais de 4 cm — segue para o capítulo 4 como lesão indeterminada, com feocromocitoma, carcinoma e metástase ainda na mesa.</p>
+</div>
+</section>
+
+<section class="ch" id="celula">
+<div class="ch-head"><div class="ch-num">02</div><div><h2>Por que o adenoma é escuro e por que ele lava</h2><p>Dois campos microscópicos, mesma escala. À esquerda, adenoma adrenocortical; à direita, carcinoma. Arraste a fase e veja para onde o contraste vai — e de onde ele não sai.</p></div></div>
+<div class="plate">
+<div class="fig">
+<svg id="micro" viewBox="0 0 640 330" role="img" aria-label="Comparação microscópica: adenoma rico em lipídio com capilares fenestrados regulares versus carcinoma com neovasos permeáveis e contraste retido no interstício">
+<rect x="0" y="0" width="640" height="330" fill="#F7F3EC"/>
+<line x1="320" y1="18" x2="320" y2="312" stroke="#B9A692" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="20" y="30" font-family="IBM Plex Mono, monospace" font-size="12" fill="#6B5647">adenoma</text>
+<text x="340" y="30" font-family="IBM Plex Mono, monospace" font-size="12" fill="#6B5647">carcinoma</text>
+<g id="ad-cells">
+<g fill="#E8C9A8" stroke="#B98A66" stroke-width="1">
+<ellipse cx="70" cy="90" rx="42" ry="34"/><ellipse cx="160" cy="80" rx="44" ry="34"/><ellipse cx="250" cy="95" rx="42" ry="34"/>
+<ellipse cx="70" cy="170" rx="42" ry="34"/><ellipse cx="160" cy="165" rx="44" ry="34"/><ellipse cx="250" cy="175" rx="42" ry="34"/>
+<ellipse cx="70" cy="250" rx="42" ry="34"/><ellipse cx="160" cy="250" rx="44" ry="34"/><ellipse cx="250" cy="255" rx="42" ry="34"/>
+</g>
+<g fill="#FBF6EE" stroke="#D8B48F" stroke-width="0.8">
+<circle cx="58" cy="82" r="7"/><circle cx="80" cy="96" r="9"/><circle cx="66" cy="106" r="5"/><circle cx="86" cy="78" r="5"/>
+<circle cx="148" cy="72" r="8"/><circle cx="172" cy="86" r="9"/><circle cx="156" cy="96" r="5"/><circle cx="178" cy="68" r="5"/>
+<circle cx="238" cy="86" r="7"/><circle cx="262" cy="100" r="9"/><circle cx="246" cy="110" r="5"/><circle cx="266" cy="82" r="5"/>
+<circle cx="58" cy="162" r="7"/><circle cx="80" cy="176" r="9"/><circle cx="66" cy="186" r="5"/><circle cx="86" cy="158" r="5"/>
+<circle cx="148" cy="157" r="8"/><circle cx="172" cy="171" r="9"/><circle cx="156" cy="181" r="5"/><circle cx="178" cy="153" r="5"/>
+<circle cx="238" cy="166" r="7"/><circle cx="262" cy="180" r="9"/><circle cx="246" cy="190" r="5"/><circle cx="266" cy="162" r="5"/>
+<circle cx="58" cy="242" r="7"/><circle cx="80" cy="256" r="9"/><circle cx="66" cy="266" r="5"/><circle cx="86" cy="238" r="5"/>
+<circle cx="148" cy="242" r="8"/><circle cx="172" cy="256" r="9"/><circle cx="156" cy="266" r="5"/><circle cx="178" cy="238" r="5"/>
+<circle cx="238" cy="246" r="7"/><circle cx="262" cy="260" r="9"/><circle cx="246" cy="270" r="5"/><circle cx="266" cy="242" r="5"/>
+</g>
+<g fill="#6B3A2E"><circle cx="70" cy="90" r="4"/><circle cx="160" cy="80" r="4"/><circle cx="250" cy="95" r="4"/><circle cx="70" cy="170" r="4"/><circle cx="160" cy="165" r="4"/><circle cx="250" cy="175" r="4"/><circle cx="70" cy="250" r="4"/><circle cx="160" cy="250" r="4"/><circle cx="250" cy="255" r="4"/></g>
+</g>
+<g fill="none" stroke="#C0392B" stroke-width="7" stroke-linecap="round">
+<path d="M20 130 C 90 128, 130 132, 300 128"/><path d="M20 212 C 90 210, 130 214, 300 210"/><path d="M115 40 C 113 120, 117 200, 115 300"/><path d="M205 40 C 203 120, 207 200, 205 300"/>
+</g>
+<g fill="none" stroke="#FFFFFF" stroke-width="2.4" class="flow" id="ad-flow">
+<path d="M20 130 C 90 128, 130 132, 300 128"/><path d="M20 212 C 90 210, 130 214, 300 210"/><path d="M115 40 C 113 120, 117 200, 115 300"/><path d="M205 40 C 203 120, 207 200, 205 300"/>
+</g>
+<g id="ca-cells" fill="#B7708A" stroke="#7A3F5C" stroke-width="1">
+<path d="M345 60 l38 -12 l30 22 l-8 34 l-40 10 l-26 -24 z"/><path d="M420 52 l44 -6 l22 30 l-16 30 l-42 2 l-14 -28 z"/><path d="M492 70 l40 -16 l30 26 l-6 36 l-44 4 l-24 -26 z"/><path d="M566 56 l40 4 l14 30 l-20 26 l-38 -6 l-6 -30 z"/>
+<path d="M350 140 l36 -8 l30 24 l-10 32 l-38 6 l-24 -22 z"/><path d="M426 128 l42 -10 l24 30 l-14 32 l-44 4 l-12 -30 z"/><path d="M500 150 l42 -12 l26 24 l-10 34 l-44 2 l-20 -26 z"/><path d="M572 132 l38 6 l12 30 l-24 26 l-36 -8 l-4 -30 z"/>
+<path d="M348 220 l40 -10 l28 26 l-12 32 l-40 6 l-20 -24 z"/><path d="M430 212 l40 -8 l26 28 l-16 30 l-44 4 l-12 -30 z"/><path d="M506 230 l40 -14 l26 26 l-8 32 l-44 4 l-20 -24 z"/><path d="M576 214 l36 6 l14 28 l-22 26 l-36 -6 l-6 -30 z"/>
+</g>
+<g fill="#3E1B2E"><circle cx="372" cy="80" r="8"/><circle cx="452" cy="74" r="9"/><circle cx="524" cy="92" r="8"/><circle cx="592" cy="80" r="9"/><circle cx="376" cy="160" r="9"/><circle cx="456" cy="150" r="8"/><circle cx="530" cy="170" r="9"/><circle cx="596" cy="158" r="8"/><circle cx="374" cy="242" r="8"/><circle cx="458" cy="232" r="9"/><circle cx="534" cy="250" r="8"/><circle cx="598" cy="240" r="9"/></g>
+<g id="ca-pool" fill="#F2B8AE" opacity="0">
+<circle cx="404" cy="110" r="14"/><circle cx="486" cy="118" r="18"/><circle cx="556" cy="120" r="12"/><circle cx="412" cy="196" r="16"/><circle cx="494" cy="200" r="12"/><circle cx="560" cy="204" r="18"/><circle cx="440" cy="280" r="14"/><circle cx="522" cy="286" r="16"/>
+</g>
+<g fill="none" stroke="#C0392B" stroke-width="5" stroke-linecap="round" stroke-dasharray="14 5">
+<path d="M336 118 C 380 100, 400 140, 440 118 S 500 100, 540 122 S 600 110, 626 124"/><path d="M340 200 C 380 184, 410 222, 450 198 S 510 184, 552 206 S 604 190, 628 204"/><path d="M440 40 C 428 90, 452 150, 436 210 S 452 270, 442 300"/>
+</g>
+<g fill="none" stroke="#FFFFFF" stroke-width="2" class="flow slow" id="ca-flow">
+<path d="M336 118 C 380 100, 400 140, 440 118 S 500 100, 540 122 S 600 110, 626 124"/><path d="M340 200 C 380 184, 410 222, 450 198 S 510 184, 552 206 S 604 190, 628 204"/><path d="M440 40 C 428 90, 452 150, 436 210 S 452 270, 442 300"/>
+</g>
+<text x="20" y="316" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B5647">gotas de lipídio · núcleo · capilares fenestrados regulares</text>
+<text x="340" y="316" font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B5647">neovasos tortuosos e permeáveis · contraste extravasado</text>
+</svg>
+<div class="cap">Campo histológico esquemático · 20× · cores físicas, sem inversão em tema escuro</div>
+</div>
+<div class="panel">
+<div class="box">
+<div class="lbl">Fase do contraste</div>
+<input type="range" id="phase2" min="0" max="2" step="1" value="0" aria-label="Fase do contraste no campo microscópico">
+<div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-family:var(--mono)"><span>sem</span><span>60 s</span><span>15 min</span></div>
+<div class="verdict b" id="micro-verdict" style="margin-top:12px">Sem contraste. À esquerda, a célula do adenoma está cheia de gotas de lipídio — colesterol esterificado, matéria-prima do cortisol. Gordura atenua pouco o feixe: por isso o nódulo mede 6 UH. À direita, células densas, sem lipídio, próximas de 35 UH.</div>
+</div>
+<div class="box">
+<h3>Os dois mecanismos, separados</h3>
+<p class="note" style="margin:0 0 8px"><span class="tag b">densidade</span> é um fato de <strong>composição</strong>: lipídio intracelular abaixa as unidades Hounsfield. Adenoma pobre em lipídio perde esse sinal e passa de 10 UH.</p>
+<p class="note" style="margin:0"><span class="tag b">washout</span> é um fato de <strong>vasculatura</strong>: capilares maduros e fenestrados enchem e esvaziam rápido. Carcinoma, metástase e feocromocitoma têm neovasos permeáveis e interstício largo — o contraste entra, extravasa e fica.</p>
+</div>
+</div>
+</div>
+<div class="prose">
+<p>Por isso a prova cobra os dois números como se fossem independentes: são. Um nódulo pode ser pobre em lipídio (28 UH) e ainda assim ser adenoma pelo washout de 75 %; e um feocromocitoma pode ter washout alto em uma minoria dos casos — motivo pelo qual a imagem nunca dispensa as metanefrinas. A física é simples: o que você mede em 15 minutos é a fração de contraste que já saiu do interstício, e isso depende só da parede dos vasos.</p>
+</div>
+</section>
+
+<section class="ch" id="camadas">
+<div class="ch-head"><div class="ch-num">03</div><div><h2>As camadas, e o que cada uma faz quando se rebela</h2><p>Corte da glândula da cápsula à medula. Clique em uma camada: o hormônio que ela produz, a doença quando vira autônoma, o teste que a acusa e a conduta.</p></div></div>
+<div class="plate">
+<div class="fig">
+<svg id="gland" viewBox="0 0 640 300" role="img" aria-label="Corte da glândula adrenal mostrando cápsula, zona glomerulosa, fasciculada, reticulada e medula, cada uma clicável">
+<rect width="640" height="300" fill="#F7F3EC"/>
+<g id="layer-caps" class="layer" style="cursor:pointer"><path d="M60 40 Q320 -20 580 40 L580 62 Q320 4 60 62 Z" fill="#D8C6AE" stroke="#8C7A66" stroke-width="1.2"/></g>
+<g id="layer-glom" class="layer" style="cursor:pointer"><path d="M60 62 Q320 4 580 62 L580 106 Q320 48 60 106 Z" fill="#F1C77A" stroke="#B98A3A" stroke-width="1.2"/>
+<g fill="none" stroke="#B98A3A" stroke-width="1"><ellipse cx="120" cy="82" rx="14" ry="9"/><ellipse cx="200" cy="72" rx="14" ry="9"/><ellipse cx="280" cy="64" rx="14" ry="9"/><ellipse cx="360" cy="64" rx="14" ry="9"/><ellipse cx="440" cy="70" rx="14" ry="9"/><ellipse cx="520" cy="80" rx="14" ry="9"/></g></g>
+<g id="layer-fasc" class="layer" style="cursor:pointer"><path d="M60 106 Q320 48 580 106 L580 196 Q320 138 60 196 Z" fill="#E9B68A" stroke="#B0764A" stroke-width="1.2"/>
+<g stroke="#C89066" stroke-width="1" fill="none"><line x1="120" y1="126" x2="120" y2="178"/><line x1="180" y1="116" x2="180" y2="168"/><line x1="240" y1="108" x2="240" y2="160"/><line x1="300" y1="104" x2="300" y2="156"/><line x1="360" y1="104" x2="360" y2="156"/><line x1="420" y1="108" x2="420" y2="160"/><line x1="480" y1="116" x2="480" y2="168"/><line x1="540" y1="126" x2="540" y2="178"/></g>
+<g fill="#FBF6EE" stroke="#C89066" stroke-width="0.6"><circle cx="150" cy="140" r="4"/><circle cx="210" cy="132" r="4"/><circle cx="270" cy="126" r="4"/><circle cx="330" cy="122" r="4"/><circle cx="390" cy="124" r="4"/><circle cx="450" cy="130" r="4"/><circle cx="510" cy="140" r="4"/><circle cx="150" cy="160" r="3"/><circle cx="270" cy="146" r="3"/><circle cx="390" cy="144" r="3"/><circle cx="510" cy="160" r="3"/></g></g>
+<g id="layer-ret" class="layer" style="cursor:pointer"><path d="M60 196 Q320 138 580 196 L580 232 Q320 174 60 232 Z" fill="#C98A7A" stroke="#8E5546" stroke-width="1.2"/>
+<g fill="none" stroke="#8E5546" stroke-width="0.9"><path d="M100 214 l20 -8 l20 8 l20 -8 l20 8 l20 -8 l20 8 l20 -8 l20 8 l20 -8 l20 8 l20 -8 l20 8 l20 -8 l20 8 l20 -8 l20 8 l20 -8 l20 8 l20 -8 l20 8 l20 -8"/></g></g>
+<g id="layer-med" class="layer" style="cursor:pointer"><path d="M60 232 Q320 174 580 232 L580 290 L60 290 Z" fill="#9E7FA6" stroke="#5E4468" stroke-width="1.2"/>
+<g fill="#5E4468"><circle cx="140" cy="258" r="3"/><circle cx="200" cy="248" r="3"/><circle cx="260" cy="242" r="3"/><circle cx="320" cy="240" r="3"/><circle cx="380" cy="242" r="3"/><circle cx="440" cy="248" r="3"/><circle cx="500" cy="258" r="3"/><circle cx="170" cy="274" r="3"/><circle cx="290" cy="268" r="3"/><circle cx="410" cy="268" r="3"/></g></g>
+<g id="gland-hl" fill="none" stroke="#2457C5" stroke-width="3" pointer-events="none"></g>
+<g font-family="IBM Plex Mono, monospace" font-size="12" fill="#3A2A20" pointer-events="none">
+<text x="596" y="56">cápsula</text><text x="596" y="90">glomerulosa</text><text x="596" y="156">fasciculada</text><text x="596" y="218">reticulada</text><text x="596" y="266">medula</text>
+</g>
+<g font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B5647" pointer-events="none">
+<text x="16" y="90">sal</text><text x="16" y="156">açúcar</text><text x="16" y="218">sexo</text><text x="16" y="266">estresse</text>
+</g>
+</svg>
+<div class="cap">Corte histológico esquemático, cápsula para cima · córtex mesodérmico, medula da crista neural</div>
+</div>
+<div class="panel">
+<div class="box" id="layer-box">
+<div class="lbl" id="ly-name">Zona fasciculada</div>
+<h3 id="ly-h">Cortisol</h3>
+<dl class="kv" id="ly-kv"></dl>
+<div class="verdict" id="ly-v" style="margin-top:12px"></div>
+</div>
+</div>
+</div>
+<div class="prose">
+<p>A ordem das camadas é a ordem dos três testes obrigatórios. A glomerulosa responde à angiotensina II e ao potássio, não ao ACTH — por isso o aldosteronoma é pequeno, quase sempre menor que 2 cm, e o rastreio é a relação aldosterona/renina em quem tem hipertensão ou hipocalemia. A fasciculada responde ao ACTH — por isso o teste é dar 1 mg de dexametasona e ver se a glândula obedece ao freio; um cortisol acima de 1,8 µg/dL na manhã seguinte significa que ela não obedeceu. A medula não tem eixo a suprimir: ela é acusada pelo produto, as metanefrinas, que são metabólitos intratumorais contínuos e por isso mais sensíveis que as catecolaminas em si, liberadas em pulsos.</p>
+</div>
+</section>
+
+<section class="ch" id="maquina">
+<div class="ch-head"><div class="ch-num">04</div><div><h2>A máquina de duas perguntas</h2><p>Todo enunciado de incidentaloma é uma linha desta máquina. Ajuste imagem e hormônios e veja em que ponto exato a conduta vira — e qual alternativa da questão-mãe ela corresponde.</p></div></div>
+<div class="plate">
+<div class="panel">
+<div class="box">
+<div class="lbl">Pergunta 1 — parece benigno?</div>
+<div class="kv" style="margin-top:10px"><span style="color:var(--muted)">Tamanho</span><span class="mono" id="m-size-o">2,8 cm</span></div>
+<input type="range" id="m-size" min="1" max="10" step="0.1" value="2.8" aria-label="Tamanho em centímetros">
+<div class="kv"><span style="color:var(--muted)">Densidade sem contraste</span><span class="mono" id="m-hu-o">6 UH</span></div>
+<input type="range" id="m-hu" min="-60" max="60" step="1" value="6" aria-label="Densidade em unidades Hounsfield">
+<div class="kv"><span style="color:var(--muted)">Washout absoluto</span><span class="mono" id="m-wo-o">70 %</span></div>
+<input type="range" id="m-wo" min="0" max="100" step="1" value="70" aria-label="Washout absoluto">
+<div class="seg" style="margin-top:8px" data-k="het"><button data-v="0" class="on">Homogêneo, liso</button><button data-v="1" class="d">Heterogêneo · necrose · irregular</button></div>
+<div class="verdict b" id="m-g1" style="margin-top:12px"></div>
+</div>
+<div class="box">
+<div class="lbl">Pergunta 2 — funciona?</div>
+<div class="note" style="margin:8px 0 4px">Metanefrinas</div>
+<div class="seg" data-k="met"><button data-v="0" class="on">Normais</button><button data-v="1" class="d">Elevadas</button></div>
+<div class="note" style="margin:10px 0 4px">Cortisol após 1 mg de dexametasona</div>
+<div class="seg" data-k="dst"><button data-v="0" class="on">≤ 1,8</button><button data-v="1" class="m">1,9 – 5,0</button><button data-v="2" class="m">&gt; 5,0 µg/dL</button></div>
+<div class="note" style="margin:10px 0 4px">Aldosterona / renina</div>
+<div class="seg" data-k="arr"><button data-v="0" class="on">Normal</button><button data-v="1" class="w">Elevada, HAS ou hipoK</button></div>
+<div class="note" style="margin:10px 0 4px">Contexto</div>
+<div class="seg" data-k="ca"><button data-v="0" class="on">Sem câncer conhecido</button><button data-v="1" class="w">Câncer extra-adrenal ativo</button></div>
+<div class="verdict b" id="m-g2" style="margin-top:12px"></div>
+</div>
+</div>
+<div class="panel">
+<div class="box" style="border-color:var(--accent)">
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap"><div class="lbl">Conduta</div><span class="tag a" id="m-letter"></span></div>
+<h3 id="m-dx" style="font-family:var(--display);font-size:24px;font-weight:600;margin:6px 0 4px"></h3>
+<p class="note" id="m-why" style="margin:0 0 4px"></p>
+<div class="steps" id="m-steps"></div>
+<div class="forbid" id="m-bio"></div>
+</div>
+<div class="box">
+<div class="lbl">Cenários de prova</div>
+<div class="seg" id="m-presets" style="margin-top:8px">
+<button data-p="osmar">Seu Osmar</button><button data-p="feo">Metanefrinas 4×</button><button data-p="hap">HAS + K 2,9</button><button data-p="macs">Cortisol pós-dexa 7</button><button data-p="acc">7 cm heterogênea</button><button data-p="meta">Melanoma tratado</button><button data-p="mielo">−40 UH</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="ch" id="feo">
+<div class="ch-head"><div class="ch-num">05</div><div><h2>Alfa antes do beta: o vaso explica</h2><p>Uma arteríola em corte, com a musculatura lisa sob receptores alfa-1 e o coração sob beta-1. Avance os passos do preparo e, depois, tente o caminho errado.</p></div></div>
+<div class="plate">
+<div class="fig">
+<svg id="vessel" viewBox="0 0 640 330" role="img" aria-label="Arteríola em corte transversal cujo diâmetro muda com o alfabloqueio, ao lado de um tanque de volume e de um coração">
+<rect width="640" height="330" fill="#F7F3EC"/>
+<text x="20" y="30" font-family="IBM Plex Mono, monospace" font-size="12" fill="#6B5647">arteríola · receptores α1</text>
+<text x="330" y="30" font-family="IBM Plex Mono, monospace" font-size="12" fill="#6B5647">volume circulante</text>
+<text x="500" y="30" font-family="IBM Plex Mono, monospace" font-size="12" fill="#6B5647">coração · β1</text>
+<g id="v-catec"></g>
+<circle id="v-wall" cx="160" cy="180" r="110" fill="#A8483E" stroke="#6B2E27" stroke-width="2"/>
+<circle id="v-lumen" cx="160" cy="180" r="34" fill="#F2B8AE" stroke="#C0392B" stroke-width="2"/>
+<g id="v-rec" fill="#E0B93C" stroke="#8C6E12" stroke-width="1"></g>
+<g id="v-block" fill="#2457C5" stroke="#173B87" stroke-width="1" opacity="0"></g>
+<rect x="340" y="60" width="110" height="230" rx="8" fill="#FFFFFF" stroke="#B9A692" stroke-width="1.5"/>
+<rect id="v-fill" x="342" y="128" width="106" height="160" rx="6" fill="#D96455"/>
+<text x="395" y="312" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#6B5647" id="v-fill-t">70 %</text>
+<g id="v-heart" transform="translate(560 175)">
+<path d="M0 40 C -60 0, -30 -50, 0 -22 C 30 -50, 60 0, 0 40 Z" fill="#C0392B" stroke="#7A1F1A" stroke-width="2"/>
+</g>
+<text x="560" y="250" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#6B5647" id="v-hr-t">105 bpm</text>
+<text x="160" y="312" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#6B5647" id="v-lumen-t">lúmen contraído</text>
+</svg>
+<div class="cap" id="v-cap">Passo 0 · tumor secretando catecolaminas · vaso fechado, tanque cronicamente vazio</div>
+</div>
+<div class="panel">
+<div class="box">
+<div class="lbl">Preparo, na ordem</div>
+<div class="seg" id="v-steps" style="margin-top:8px">
+<button data-s="0" class="on">0 · Diagnóstico</button><button data-s="1">1 · Alfabloqueio</button><button data-s="2">2 · Sal e volume</button><button data-s="3">3 · Beta, se precisar</button><button data-s="4">4 · Mesa: manipulação</button><button data-s="5">5 · Veia clampeada</button>
+</div>
+<div class="seg" style="margin-top:8px"><button data-s="9" class="d" id="v-wrong">Caminho errado: beta primeiro</button></div>
+</div>
+<div class="box">
+<div class="gauge"><div><div class="v" id="g-pa">190/110</div><div class="k">PA sentado</div></div><div><div class="v" id="g-orto">−4</div><div class="k">queda ortostática</div></div><div><div class="v" id="g-hr">105</div><div class="k">FC</div></div></div>
+<div class="verdict d" id="v-text" style="margin-top:12px"></div>
+</div>
+</div>
+</div>
+<div class="prose">
+<p>A lógica cabe numa frase: o feocromocitoma mantém o paciente com o leito arterial fechado e o tanque vazio. O alfabloqueio abre o leito — e o tanque, que já era pequeno, agora é insuficiente; por isso o preparo exige sal e volume, e por isso a hipotensão ortostática leve é meta, não complicação. O betabloqueador entra só depois, para a taquicardia reflexa: dado antes, ele tira o único freio vasodilatador (β2) e deixa o alfa sem oposição — a crise hipertensiva que a banca chama de "erro clássico". Na mesa, a manipulação do tumor faz a pressão subir, e o clampeamento da veia adrenal a faz cair no segundo seguinte: o anestesista precisa de nitroprussiato numa mão e volume na outra.</p>
+</div>
+</section>
+
+<section class="ch" id="mesa">
+<div class="ch-head"><div class="ch-num">06</div><div><h2>Na mesa: as duas veias que decidem a cirurgia</h2><p>Vista anterior do retroperitônio superior com fígado, baço, estômago e pâncreas removidos. Direita do paciente à esquerda da prancha. As veias adrenais não são simétricas — e isso muda tudo na laparoscopia.</p></div></div>
+<div class="fig">
+<svg id="plate-svg" viewBox="0 0 680 500" role="img" aria-label="Prancha anatômica coronal do retroperitônio superior: aorta, veia cava inferior, rins, veias renais, adrenais, veia adrenal direita curta entrando na face posterior da cava e veia adrenal esquerda longa drenando na veia renal esquerda">
+<rect width="680" height="500" fill="#F3EBE1"/>
+<rect x="20" y="20" width="640" height="420" fill="none" stroke="#B9A692" stroke-width="1"/>
+<g fill="#EBD9B8" opacity="0.6"><rect x="21" y="21" width="638" height="418"/></g>
+<g fill="#A8483E" opacity="0.55"><path d="M300 22 Q 310 90, 330 150 L 345 150 Q 335 90, 332 22 Z"/><path d="M380 22 Q 372 90, 352 150 L 338 150 Q 350 90, 350 22 Z"/></g>
+<g fill="#9E5B47" stroke="#7A4032" stroke-width="1.6">
+<path d="M120 230 C 60 250, 60 400, 130 420 C 190 435, 215 380, 205 320 C 198 270, 165 220, 120 230 Z"/>
+<path d="M560 222 C 620 242, 620 392, 550 412 C 490 427, 465 372, 475 312 C 482 262, 515 212, 560 222 Z"/>
+</g>
+<g fill="#7A4032" opacity="0.5"><path d="M200 300 C 190 320, 190 350, 202 370 C 210 350, 210 320, 200 300 Z"/><path d="M480 292 C 490 312, 490 342, 478 362 C 470 342, 470 312, 480 292 Z"/></g>
+<g fill="none" stroke="#C0392B" stroke-width="6" stroke-linecap="round"><path d="M340 300 C 300 300, 240 305, 205 330"/><path d="M360 296 C 400 296, 450 300, 480 322"/></g>
+<g fill="none" stroke="#C0392B" stroke-width="3.5" stroke-linecap="round">
+<path d="M340 118 C 300 112, 270 120, 245 140"/><path d="M340 186 C 310 186, 280 188, 262 190"/><path d="M262 325 C 262 300, 258 260, 250 232"/>
+<path d="M360 116 C 400 110, 425 118, 448 136"/><path d="M360 182 C 390 182, 420 184, 442 188"/><path d="M445 318 C 445 296, 450 262, 456 236"/>
+</g>
+<g fill="#E9B68A" stroke="#B0764A" stroke-width="1.6">
+<path d="M210 140 L 268 128 L 274 232 L 236 246 L 204 226 Z"/>
+<path d="M452 122 L 494 134 L 496 196 L 476 258 L 448 236 L 438 168 Z"/>
+</g>
+<g fill="#F1C77A" opacity="0.55"><path d="M216 146 L 262 136 L 267 226 L 240 238 L 212 220 Z"/><path d="M458 130 L 488 140 L 490 194 L 474 250 L 454 232 L 446 172 Z"/></g>
+<rect x="336" y="22" width="26" height="418" rx="13" fill="#C0392B" stroke="#8E2419" stroke-width="1.2"/>
+<path d="M262 190 C 270 188, 278 186, 286 186" fill="none" stroke="#3E5F8A" stroke-width="7" stroke-linecap="round" stroke-dasharray="5 4"/>
+<rect x="276" y="22" width="30" height="418" rx="15" fill="#3E5F8A" stroke="#2A4467" stroke-width="1.2"/>
+<path d="M205 312 C 240 300, 260 298, 278 298" fill="none" stroke="#3E5F8A" stroke-width="12" stroke-linecap="round"/>
+<path d="M480 300 C 440 292, 400 290, 366 290 C 340 290, 320 292, 280 294" fill="none" stroke="#3E5F8A" stroke-width="13" stroke-linecap="round"/>
+<path d="M470 254 C 470 266, 468 278, 466 290" fill="none" stroke="#3E5F8A" stroke-width="7" stroke-linecap="round"/>
+<path d="M420 110 C 436 150, 456 210, 469 252" fill="none" stroke="#3E5F8A" stroke-width="5" stroke-linecap="round"/>
+<g fill="none" stroke="#3A2A20" stroke-width="2" marker-end="url(#arrow-m)"><path d="M120 120 C 130 100, 140 84, 150 70"/><path d="M268 336 C 268 310, 269 280, 270 250"/></g>
+<defs><marker id="arrow-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#3A2A20"/></marker></defs>
+<text x="72" y="66" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#3A2A20">fígado afastado</text>
+<text x="86" y="80" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#3A2A20">para cima</text>
+<text x="214" y="354" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#3A2A20">dissecção</text>
+<text x="214" y="368" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#3A2A20">junto à VCI</text>
+<g stroke="#6B5647" stroke-width="0.8" fill="none">
+<line x1="291" y1="60" x2="291" y2="60"/><line x1="349" y1="60" x2="349" y2="60"/>
+<line x1="400" y1="286" x2="396" y2="244"/><line x1="272" y1="189" x2="248" y2="204"/>
+<line x1="468" y1="272" x2="512" y2="282"/><line x1="440" y1="180" x2="404" y2="150"/>
+<line x1="240" y1="180" x2="180" y2="160"/><line x1="470" y1="170" x2="540" y2="150"/>
+<line x1="256" y1="140" x2="230" y2="100"/><line x1="130" y1="330" x2="90" y2="360"/>
+</g>
+<g font-family="Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="500" fill="#3A2A20">
+<g><circle cx="291" cy="52" r="10" fill="#fff" stroke="#3A2A20"/><text x="291" y="56" text-anchor="middle">1</text></g>
+<g><circle cx="349" cy="52" r="10" fill="#fff" stroke="#3A2A20"/><text x="349" y="56" text-anchor="middle">2</text></g>
+<g><circle cx="394" cy="234" r="10" fill="#fff" stroke="#3A2A20"/><text x="394" y="238" text-anchor="middle">3</text></g>
+<g><circle cx="240" cy="210" r="10" fill="#fff" stroke="#3A2A20"/><text x="240" y="214" text-anchor="middle">4</text></g>
+<g><circle cx="520" cy="284" r="10" fill="#fff" stroke="#3A2A20"/><text x="520" y="288" text-anchor="middle">5</text></g>
+<g><circle cx="398" cy="144" r="10" fill="#fff" stroke="#3A2A20"/><text x="398" y="148" text-anchor="middle">6</text></g>
+<g><circle cx="172" cy="158" r="10" fill="#fff" stroke="#3A2A20"/><text x="172" y="162" text-anchor="middle">7</text></g>
+<g><circle cx="548" cy="148" r="10" fill="#fff" stroke="#3A2A20"/><text x="548" y="152" text-anchor="middle">8</text></g>
+<g><circle cx="226" cy="92" r="10" fill="#fff" stroke="#3A2A20"/><text x="226" y="96" text-anchor="middle">9</text></g>
+<g><circle cx="84" cy="366" r="10" fill="#fff" stroke="#3A2A20"/><text x="84" y="370" text-anchor="middle">10</text></g>
+</g>
+<g font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#6B5647">
+<text x="24" y="458">Vista anterior coronal do retroperitônio superior, fígado, baço, estômago e pâncreas removidos · paciente em decúbito dorsal · observador de frente para o paciente (direita do paciente à esquerda)</text>
+<text x="24" y="476">Âncoras: aorta, VCI, veia renal esquerda cruzando anterior à aorta, polos superiores renais · cabeça para cima · setas = manobra da adrenalectomia direita laparoscópica</text>
+</g>
+</svg>
+<div class="legend">
+<div><span class="m">1</span><span>Veia cava inferior</span></div>
+<div><span class="m">2</span><span>Aorta abdominal, entre os pilares do diafragma</span></div>
+<div><span class="m">3</span><span>Veia renal esquerda, anterior à aorta</span></div>
+<div><span class="m">4</span><span>Veia adrenal direita — curta, entra na face posterior da VCI (tracejado = plano posterior)</span></div>
+<div><span class="m">5</span><span>Veia adrenal esquerda — longa, drena na veia renal esquerda</span></div>
+<div><span class="m">6</span><span>Veia frênica inferior esquerda, une-se à veia adrenal esquerda</span></div>
+<div><span class="m">7</span><span>Adrenal direita, piramidal, posterolateral à VCI</span></div>
+<div><span class="m">8</span><span>Adrenal esquerda, semilunar, medial ao polo superior</span></div>
+<div><span class="m">9</span><span>Artérias adrenais superior (frênica inferior), média (aorta) e inferior (renal)</span></div>
+<div><span class="m">10</span><span>Rim, polo superior — a adrenal não o toca por baixo da fáscia de Gerota</span></div>
+</div>
+<div class="cap">Prancha vetorial · cores físicas fixas · calibres das artérias adrenais reduzidos para legibilidade</div>
+</div>
+<div class="prose">
+<p>À direita, a veia adrenal tem meio centímetro e desemboca na face posterior da cava: é o passo mais perigoso da adrenalectomia laparoscópica direita, porque uma avulsão sangra de onde você não vê. Por isso a sequência é sempre a mesma — decúbito lateral esquerdo, fígado afastado cranialmente, peritônio posterior aberto ao longo da borda lateral da VCI, e a veia identificada e clipada antes de qualquer tração sobre a glândula. À esquerda, a veia é longa e drena na veia renal esquerda, recebendo a frênica inferior no caminho; ela é encontrada descendo pela borda medial da glândula até a renal, com o pâncreas e o baço rebatidos medialmente. No feocromocitoma essa ordem não é só técnica: clipar a veia cedo interrompe a descarga de catecolaminas na manipulação. No carcinoma, é o contrário que importa — a cápsula não pode ser violada, e por isso a via é aberta e a peça sai em bloco com a gordura periadrenal.</p>
+</div>
+</section>
+
+<section class="ch" id="forja">
+<div class="ch-head"><div class="ch-num">07</div><div><h2>Forja: a mesma questão, oito pivôs</h2><p>Cada item é a questão-mãe com um dado trocado. O dado trocado está marcado. Responda antes de abrir — o objetivo é sentir a conduta virar.</p></div></div>
+<div id="forja-list"></div>
+<div class="box" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px"><span class="note" id="forja-score">0 respondidas</span><button class="btn" id="forja-reset">Recomeçar</button></div>
+</section>
+
+<section class="ch" id="tabela">
+<div class="ch-head"><div class="ch-num">08</div><div><h2>Tabela-mãe</h2><p>As linhas que a banca combina. Cada cartão é uma resposta possível; o que muda de um para outro é o que a questão vai trocar.</p></div></div>
+<div class="mother">
+<div class="cell b"><h3>Adenoma típico, não funcionante</h3><p>≤ 10 UH homogêneo, ou washout ≥ 60 %, &lt; 4 cm · tríade hormonal negativa</p><div class="act">Seguimento (Sabiston: imagem 6–12 m, hormônios 4–5 anos · ESE 2023: sem repetir imagem se ≤ 10 UH)</div></div>
+<div class="cell d"><h3>Feocromocitoma</h3><p>Metanefrinas elevadas, qualquer imagem · hipervascular, cístico, &gt; 10 UH</p><div class="act">Alfa 10–14 d → sal e volume → beta se taquicardia → adrenalectomia laparoscópica</div></div>
+<div class="cell w"><h3>Hiperaldosteronismo primário</h3><p>ARR elevada + confirmação por salina · adenoma pequeno</p><div class="act">AVS para lateralizar → adrenalectomia lap.; bilateral → espironolactona</div></div>
+<div class="cell m"><h3>MACS</h3><p>Cortisol pós-dexa &gt; 5 (1,9–5 = possível) · ACTH e DHEA-S baixos · sem Cushing clínico</p><div class="act">Comorbidade atribuível + jovem → cirurgia; senão vigilância. Hidrocortisona perioperatória</div></div>
+<div class="cell d"><h3>Carcinoma adrenocortical</h3><p>&gt; 4 cm heterogênea, &gt; 10 UH, washout &lt; 60 %, virilização, DHEA-S alto</p><div class="act">Adrenalectomia aberta em bloco, sem violar cápsula · ENSAT, Weiss, Ki-67, mitotano</div></div>
+<div class="cell w"><h3>Metástase</h3><p>Câncer extra-adrenal ativo + lesão indeterminada</p><div class="act">PET-CT; biópsia só aqui, e só depois de metanefrinas normais</div></div>
+<div class="cell b"><h3>Mielolipoma / cisto</h3><p>Gordura macroscópica (UH negativo) ou densidade de água sem realce</p><div class="act">Sem seguimento oncológico; cirurgia só por sintoma ou hemorragia</div></div>
+<div class="cell w"><h3>Indeterminada, silenciosa</h3><p>&gt; 10 UH, washout &lt; 60 %, &lt; 4 cm, hormônios normais</p><div class="act">RM chemical shift ou PET; repetir 6–12 m; crescimento &gt; 1 cm ou &gt; 20 % → cirurgia</div></div>
+</div>
+</section>
+
+<footer><div>Fontes: Sabiston Textbook of Surgery 21ª ed. (adrenal) · Fassnacht M et al., ESE/ENSAT Guidelines on adrenal incidentalomas, Eur J Endocrinol 2023 · Endocrine Society, pheochromocytoma 2014 e primary aldosteronism 2016 · Atlas construído para o ENARE 2027 R+ Cirurgia, prova de 13/09/2026.</div></footer>
+</div>
+
+<script>
+(function(){
+var $=function(s,r){return (r||document).querySelector(s);};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));};
+var fmt=function(v,d){return Number(v).toFixed(d==null?0:d).replace('.',',');};
+
+/* ---------- 01 TC ---------- */
+var LES={
+ rico:{n:'Adenoma rico em lipídio',hu:[6,80,28],cm:2.8,het:0,cls:'b',v:'Homogêneo, 6 UH sem contraste: adenoma rico em lipídio. A porta 1 já fechou o diagnóstico; o washout de 70 % apenas confirma. Não funcionante → seguimento.'},
+ pobre:{n:'Adenoma pobre em lipídio',hu:[26,96,42],cm:2.6,het:0,cls:'b',v:'26 UH sem contraste: a porta 1 não fecha. Realça forte e lava 77 % aos 15 min: adenoma pobre em lipídio. O washout existe para exatamente este nódulo.'},
+ feo:{n:'Feocromocitoma',hu:[34,138,98],cm:4.2,het:1,cls:'d',v:'34 UH, realce intenso (138 UH) com áreas císticas que não realçam, washout de 38 %. Hipervascular e retentor: feocromocitoma até as metanefrinas dizerem o contrário. Nunca puncionar.'},
+ acc:{n:'Carcinoma adrenocortical',hu:[36,84,68],cm:7.5,het:1,cls:'d',v:'7,5 cm, contornos irregulares, necrose central, 36 UH e washout de 33 %. Cada dado isolado já bastaria; juntos, a imagem indica cirurgia aberta em bloco antes de qualquer hormônio.'},
+ meta:{n:'Metástase',hu:[30,72,60],cm:3.2,het:1,cls:'w',v:'30 UH, realce moderado, washout de 29 %: lesão indeterminada. Sozinha não tem diagnóstico — o que a chama de metástase é o câncer extra-adrenal na história. Aqui, e só aqui, a biópsia entra depois de excluir feocromocitoma.'},
+ mielo:{n:'Mielolipoma',hu:[-45,-30,-32],cm:4.5,het:1,cls:'b',v:'Densidade negativa (−45 UH) com traves de partes moles: gordura macroscópica. Mielolipoma, benigno por definição; 4,5 cm não muda nada. Nenhum washout a calcular.'},
+ cisto:{n:'Cisto adrenal',hu:[8,9,9],cm:3.0,het:0,cls:'b',v:'8 UH homogêneo — e nenhum realce em fase alguma. A ausência de realce é o que separa cisto de adenoma; o washout aqui é indefinido, não "baixo". Benigno; conduta expectante.'}
+};
+var lesion='rico', phase=0;
+var cv=$('#ct-canvas'), ctx=cv.getContext('2d');
+var W=cv.width,H=cv.height;
+function g(hu){var t=(hu+160)/400; if(t<0)t=0; if(t>1)t=1; var v=Math.round(t*255); return 'rgb('+v+','+v+','+v+')';}
+var ORG={ fat:[-100,-100,-100], musc:[50,60,62], liver:[56,112,78], spleen:[46,122,82], kid:[32,150,95], pelvis:[10,20,200], aorta:[42,190,92], ivc:[40,130,90], stomach:[38,80,60], panc:[42,100,70], bone:[320,320,320], canal:[18,18,18], adren:[36,80,52], crus:[48,58,60] };
+function P(k){return g(ORG[k][phase]);}
+function ell(x,y,rx,ry,rot,fill){ctx.beginPath();ctx.ellipse(x,y,rx,ry,rot||0,0,Math.PI*2);ctx.fillStyle=fill;ctx.fill();}
+function seeded(s){return function(){s=(s*9301+49297)%233280;return s/233280;};}
+function drawCT(){
+ var L=LES[lesion];
+ ctx.fillStyle='rgb(0,0,0)';ctx.fillRect(0,0,W,H);
+ ell(320,290,300,238,0,P('fat'));
+ ctx.lineWidth=14;ctx.strokeStyle=P('musc');ctx.beginPath();ctx.ellipse(320,290,282,222,0,0,Math.PI*2);ctx.stroke();
+ ell(320,290,275,215,0,P('fat'));
+ ctx.fillStyle=P('liver');ctx.beginPath();ctx.moveTo(62,300);ctx.bezierCurveTo(70,190,150,130,300,132);ctx.bezierCurveTo(340,140,340,230,300,300);ctx.bezierCurveTo(270,350,180,395,110,385);ctx.bezierCurveTo(75,370,58,340,62,300);ctx.closePath();ctx.fill();
+ ell(430,205,78,52,0.1,P('stomach')); ell(415,180,30,16,0,'rgb(0,0,0)');
+ ell(545,350,44,82,-0.35,P('spleen'));
+ ctx.fillStyle=P('panc');ctx.beginPath();ctx.moveTo(250,318);ctx.bezierCurveTo(320,300,400,296,458,308);ctx.lineTo(452,332);ctx.bezierCurveTo(400,322,320,326,258,342);ctx.closePath();ctx.fill();
+ ell(200,438,38,42,0,P('kid')); ell(470,440,38,42,0,P('kid'));
+ if(phase>0){ell(200,438,12,14,0,P('pelvis'));ell(470,440,12,14,0,P('pelvis'));}
+ ell(320,472,42,36,0,P('bone')); ell(320,472,11,9,0,P('canal')); ctx.fillStyle=P('bone');ctx.fillRect(310,500,20,40);
+ ell(250,512,48,30,0,P('musc')); ell(390,512,48,30,0,P('musc'));
+ ctx.strokeStyle=P('crus');ctx.lineWidth=9;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(326,425);ctx.lineTo(318,462);ctx.moveTo(376,425);ctx.lineTo(384,462);ctx.stroke();
+ ell(352,408,16,16,0,P('aorta'));
+ ctx.strokeStyle=P('adren');ctx.lineWidth=7;ctx.beginPath();ctx.moveTo(442,370);ctx.lineTo(428,412);ctx.moveTo(442,370);ctx.lineTo(458,410);ctx.stroke();
+ ctx.beginPath();ctx.moveTo(256,352);ctx.lineTo(268,398);ctx.stroke();
+ var r=L.cm*9, cx=248, cy=372, hu=L.hu[phase];
+ var rnd=seeded(7);
+ if(lesion==='acc'){ctx.fillStyle=g(hu);ctx.beginPath();for(var i=0;i<24;i++){var a=i/24*Math.PI*2, rr=r*(0.86+rnd()*0.28);ctx.lineTo(cx+Math.cos(a)*rr,cy+Math.sin(a)*rr);}ctx.closePath();ctx.fill();
+   ell(cx-4,cy+6,r*0.42,r*0.3,0.4,g([22,26,30][phase])); ell(cx+r*0.3,cy-r*0.3,r*0.18,r*0.14,0,g([24,28,32][phase]));}
+ else if(lesion==='feo'){ell(cx,cy,r,r*0.94,0.2,g(hu)); ell(cx-r*0.3,cy+r*0.2,r*0.32,r*0.28,0,g([12,16,18][phase])); ell(cx+r*0.35,cy-r*0.25,r*0.2,r*0.18,0,g([12,16,18][phase]));}
+ else if(lesion==='meta'){ctx.fillStyle=g(hu);ctx.beginPath();for(var j=0;j<16;j++){var b=j/16*Math.PI*2, r2=r*(0.9+rnd()*0.2);ctx.lineTo(cx+Math.cos(b)*r2,cy+Math.sin(b)*r2);}ctx.closePath();ctx.fill(); ell(cx+3,cy-2,r*0.35,r*0.28,0.5,g([20,44,40][phase]));}
+ else if(lesion==='mielo'){ell(cx,cy,r,r*0.92,0,g(hu));ctx.strokeStyle=g([30,60,45][phase]);ctx.lineWidth=2.5;for(var k=0;k<6;k++){var a1=rnd()*Math.PI*2,a2=a1+1.2+rnd();ctx.beginPath();ctx.moveTo(cx+Math.cos(a1)*r*0.8,cy+Math.sin(a1)*r*0.8);ctx.quadraticCurveTo(cx+(rnd()-0.5)*r,cy+(rnd()-0.5)*r,cx+Math.cos(a2)*r*0.8,cy+Math.sin(a2)*r*0.8);ctx.stroke();}}
+ else {ell(cx,cy,r,r,0,g(hu));}
+ ell(276,400,21,14,0,P('ivc'));
+ var img=ctx.getImageData(0,0,W,H),d=img.data;
+ for(var p=0;p<d.length;p+=4){var nz=(Math.random()+Math.random()-1)*14;var v=d[p]+nz;if(v<0)v=0;if(v>255)v=255;d[p]=d[p+1]=d[p+2]=v;}
+ ctx.putImageData(img,0,0);
+ ctx.fillStyle='rgba(255,255,255,0.85)';ctx.font='12px IBM Plex Mono, monospace';ctx.fillText('D',14,290);ctx.fillText('E',616,290);ctx.fillText('A',316,18);ctx.fillText('P',316,552);
+ ctx.strokeStyle='rgba(255,255,255,0.9)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(24,540);ctx.lineTo(114,540);ctx.stroke();ctx.fillText('10 cm',34,532);
+ ctx.strokeStyle='rgba(120,200,255,0.9)';ctx.setLineDash([4,4]);ctx.beginPath();ctx.arc(cx,cy,r+8,0,Math.PI*2);ctx.stroke();ctx.setLineDash([]);
+ ctx.fillStyle='rgba(120,200,255,0.95)';ctx.fillText(Math.round(hu)+' UH',cx+r+14,cy+4);
+ var ph=['Sem contraste','Portal · 60 s','Tardia · 15 min'][phase];
+ $('#ct-cap').textContent=ph+' · '+L.n+' · '+fmt(L.cm,1)+' cm · '+Math.round(hu)+' UH · adrenal direita, posterior à VCI';
+ $('#hu-now').textContent=Math.round(hu)+' UH'; $('#size-now').textContent=fmt(L.cm,1)+' cm'; $('#asp-now').textContent=L.het?'heterogêneo':'homogêneo';
+ drawCurve(L); var vd=$('#ct-verdict'); vd.className='verdict '+L.cls; vd.textContent=L.v;
+}
+function drawCurve(L){
+ var u=L.hu[0],e=L.hu[1],dd=L.hu[2];
+ var xs=[50,165,280]; var y=function(h){return 150-((h+60)/260)*135;};
+ var apw=(e-u)>0?Math.round((e-dd)/(e-u)*100):null, rpw=e>0?Math.round((e-dd)/e*100):null;
+ var s='<g font-family="IBM Plex Mono, monospace" font-size="10" fill="currentColor" opacity="0.7">';
+ [200,100,0].forEach(function(h){s+='<line x1="40" x2="300" y1="'+y(h)+'" y2="'+y(h)+'" stroke="currentColor" stroke-opacity="0.15"/><text x="34" y="'+(y(h)+3)+'" text-anchor="end">'+h+'</text>';});
+ s+='<line x1="40" x2="300" y1="'+y(10)+'" y2="'+y(10)+'" stroke="#0B8A7A" stroke-dasharray="3 3"/><text x="302" y="'+(y(10)+3)+'" fill="#0B8A7A">10</text>';
+ s+='<text x="50" y="165" text-anchor="middle">0</text><text x="165" y="165" text-anchor="middle">60 s</text><text x="280" y="165" text-anchor="middle">15 min</text></g>';
+ var col=L.cls==='d'?'#C4302B':L.cls==='w'?'#C98A12':'#0B8A7A';
+ s+='<polyline fill="none" stroke="'+col+'" stroke-width="2.5" points="'+xs[0]+','+y(u)+' '+xs[1]+','+y(e)+' '+xs[2]+','+y(dd)+'"/>';
+ [u,e,dd].forEach(function(h,i){s+='<circle cx="'+xs[i]+'" cy="'+y(h)+'" r="'+(i===phase?6:4)+'" fill="'+col+'" stroke="#fff" stroke-width="1.5"/><text x="'+xs[i]+'" y="'+(y(h)-11)+'" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="currentColor">'+h+'</text>';});
+ $('#curve').innerHTML=s;
+ $('#apw').textContent=apw==null?'—':apw+' %'; $('#rpw').textContent=rpw==null?'—':rpw+' %';
+}
+$$('#lesion-seg button').forEach(function(b){b.addEventListener('click',function(){lesion=b.dataset.l;$$('#lesion-seg button').forEach(function(x){x.classList.toggle('on',x===b);});drawCT();});});
+$('#phase').addEventListener('input',function(){phase=+this.value;drawCT();});
+drawCT();
+
+/* ---------- 02 micro ---------- */
+var MV=[
+ 'Sem contraste. À esquerda, a célula do adenoma está cheia de gotas de lipídio — colesterol esterificado, matéria-prima do cortisol. Gordura atenua pouco o feixe: por isso o nódulo mede 6 UH. À direita, células densas, sem lipídio, próximas de 35 UH.',
+ 'Portal, 60 s. Os dois realçam — o adenoma até mais, porque é muito vascularizado. Mas repare na direita: o contraste já começa a sair pela parede dos neovasos e a se acumular no interstício.',
+ 'Tardia, 15 min. Nos capilares maduros do adenoma o contraste entrou e saiu: o nódulo voltou quase à densidade basal. No carcinoma o interstício está cheio e a parede não devolve — é isso que o washout baixo mede.'];
+$('#phase2').addEventListener('input',function(){var p=+this.value;var pool=$('#ca-pool');pool.setAttribute('opacity',[0,0.55,0.95][p]);
+ $('#ad-flow').style.opacity=[0.25,1,0.35][p];$('#ca-flow').style.opacity=[0.25,1,0.8][p];
+ var v=$('#micro-verdict');v.className='verdict '+(p===2?'d':'b');v.textContent=MV[p];});
+$('#ad-flow').style.opacity=0.25;$('#ca-flow').style.opacity=0.25;
+
+/* ---------- 03 camadas ---------- */
+var LAY={
+ caps:{name:'Cápsula',h:'Sem hormônio — mas com significado cirúrgico',kv:[['Origem','mesoderma (córtex) + crista neural (medula)'],['Na cirurgia','plano de dissecção na gordura periadrenal'],['No carcinoma','não pode ser violada: peça em bloco']],cls:'',v:'A cápsula é o limite que separa a adrenalectomia oncológica da simples. Romper a cápsula de um carcinoma converte um estágio II em recidiva local quase certa — é o argumento contra a laparoscopia na suspeita de carcinoma.'},
+ glom:{name:'Zona glomerulosa',h:'Aldosterona',kv:[['Regulador','angiotensina II e potássio — não ACTH'],['Doença autônoma','hiperaldosteronismo primário (Conn)'],['Teste','relação aldosterona/renina; confirmar com salina'],['Gatilho do enunciado','HAS resistente, hipocalemia, adenoma < 2 cm'],['Conduta','AVS para lateralizar → adrenalectomia laparoscópica']],cls:'w',v:'Como não depende de ACTH, o aldosteronoma é minúsculo e a imagem lateraliza mal: um adenoma visível de um lado pode ser inocente enquanto hiperplasia do outro produz o hormônio. A amostragem venosa adrenal existe para isso — e a banca cobra exatamente esse passo.'},
+ fasc:{name:'Zona fasciculada',h:'Cortisol',kv:[['Regulador','ACTH — obedece à dexametasona'],['Doença autônoma','MACS; Cushing adrenal quando há clínica'],['Teste','cortisol às 8 h após 1 mg de dexa às 23 h'],['Corte','≤ 1,8 normal · 1,9–5 possível · > 5 confirmado'],['Conduta','comorbidade + jovem → cirurgia; senão vigilância']],cls:'m',v:'O teste é uma pergunta ao eixo: "se eu frear o ACTH, você para?". Um adenoma autônomo não para. Detalhe que decide a prova: a adrenal contralateral está suprimida, então quem opera MACS ou Cushing sai da sala com hidrocortisona.'},
+ ret:{name:'Zona reticulada',h:'Andrógenos — DHEA e DHEA-S',kv:[['Regulador','ACTH'],['Doença','virilização na mulher; sinal de carcinoma'],['Teste','DHEA-S, 17-OH-progesterona, testosterona'],['Gatilho do enunciado','hirsutismo, amenorreia + massa grande'],['Conduta','tratar como carcinoma: cirurgia aberta']],cls:'d',v:'Adenoma quase nunca viriliza; carcinoma frequentemente sim, porque é ineficiente e secreta precursores. DHEA-S alto em massa adrenal é um dado de malignidade — e o DHEA-S baixo, ao contrário, ajuda a confirmar MACS (o ACTH suprimido apaga a reticulada).'},
+ med:{name:'Medula',h:'Adrenalina e noradrenalina',kv:[['Origem','crista neural — células cromafins'],['Doença','feocromocitoma (regra dos 10 %, hoje ~30 % hereditário)'],['Teste','metanefrinas fracionadas plasmáticas ou urinárias'],['Gatilho do enunciado','tríade cefaleia-sudorese-palpitação, HAS paroxística'],['Conduta','alfa 10–14 d → volume → beta → laparoscopia']],cls:'d',v:'Não há eixo a suprimir: a medula é acusada pelo produto. As metanefrinas são geradas dentro do tumor, continuamente, pela COMT — por isso são mais sensíveis que as catecolaminas, liberadas em pulsos. Metanefrinas elevadas mandam sobre qualquer imagem.'}
+};
+var LAYPATH={caps:'M60 40 Q320 -20 580 40 L580 62 Q320 4 60 62 Z',glom:'M60 62 Q320 4 580 62 L580 106 Q320 48 60 106 Z',fasc:'M60 106 Q320 48 580 106 L580 196 Q320 138 60 196 Z',ret:'M60 196 Q320 138 580 196 L580 232 Q320 174 60 232 Z',med:'M60 232 Q320 174 580 232 L580 290 L60 290 Z'};
+function showLayer(k){var L=LAY[k];$('#ly-name').textContent=L.name;$('#ly-h').textContent=L.h;$('#ly-kv').innerHTML=L.kv.map(function(p){return '<dt>'+p[0]+'</dt><dd style="font-family:var(--body);text-align:right;max-width:60%">'+p[1]+'</dd>';}).join('');var v=$('#ly-v');v.className='verdict '+L.cls;v.textContent=L.v;$('#gland-hl').innerHTML='<path d="'+LAYPATH[k]+'"/>';}
+Object.keys(LAY).forEach(function(k){$('#layer-'+k).addEventListener('click',function(){showLayer(k);});});
+showLayer('fasc');
+
+/* ---------- 04 máquina ---------- */
+var S={het:0,met:0,dst:0,arr:0,ca:0};
+var PRE={osmar:{size:2.8,hu:6,wo:70,het:0,met:0,dst:0,arr:0,ca:0},feo:{size:3.5,hu:32,wo:45,het:1,met:1,dst:0,arr:0,ca:0},hap:{size:1.4,hu:4,wo:75,het:0,met:0,dst:0,arr:1,ca:0},macs:{size:3.2,hu:8,wo:68,het:0,met:0,dst:2,arr:0,ca:0},acc:{size:7,hu:38,wo:30,het:1,met:0,dst:0,arr:0,ca:0},meta:{size:3.2,hu:30,wo:29,het:1,met:0,dst:0,arr:0,ca:1},mielo:{size:4.5,hu:-40,wo:20,het:0,met:0,dst:0,arr:0,ca:0}};
+function segSync(){$$('#maquina .seg[data-k]').forEach(function(sg){var k=sg.dataset.k;$$('button',sg).forEach(function(b){b.classList.toggle('on',String(S[k])===b.dataset.v);});});}
+$$('#maquina .seg[data-k] button').forEach(function(b){b.addEventListener('click',function(){S[b.parentNode.dataset.k]=+b.dataset.v;segSync();machine();});});
+$$('#m-presets button').forEach(function(b){b.addEventListener('click',function(){var p=PRE[b.dataset.p];$('#m-size').value=p.size;$('#m-hu').value=p.hu;$('#m-wo').value=p.wo;['het','met','dst','arr','ca'].forEach(function(k){S[k]=p[k];});$$('#m-presets button').forEach(function(x){x.classList.toggle('on',x===b);});segSync();machine();});});
+['m-size','m-hu','m-wo'].forEach(function(id){$('#'+id).addEventListener('input',function(){$$('#m-presets button').forEach(function(x){x.classList.remove('on');});machine();});});
+function machine(){
+ var size=+$('#m-size').value,hu=+$('#m-hu').value,wo=+$('#m-wo').value;
+ $('#m-size-o').textContent=fmt(size,1)+' cm';$('#m-hu-o').textContent=Math.round(hu)+' UH';$('#m-wo-o').textContent=Math.round(wo)+' %';
+ var g1=$('#m-g1'),g2=$('#m-g2'),img,fn;
+ if(hu<=-20){img='mielo';g1.className='verdict b';g1.textContent='Densidade negativa: gordura macroscópica. Mielolipoma — benigno por definição, tamanho não muda a natureza.';}
+ else if(size>=6||(size>=4&&(S.het||hu>10))){img='acc';g1.className='verdict d';g1.textContent='Fenótipo maligno: '+(size>=4?'≥ 4 cm':'')+(S.het?' + heterogêneo':'')+(hu>10?' + > 10 UH':'')+'. Suspeita de carcinoma adrenocortical.';}
+ else if(hu<=10&&!S.het){img='aden';g1.className='verdict b';g1.textContent='≤ 10 UH homogêneo: adenoma rico em lipídio. A fase sem contraste já fechou; o washout nem precisava ser feito.';}
+ else if(wo>=60&&!S.het){img='aden';g1.className='verdict b';g1.textContent='> 10 UH, mas washout absoluto ≥ 60 %: adenoma pobre em lipídio. O washout resgata o diagnóstico.';}
+ else{img='indet';g1.className='verdict w';g1.textContent='Indeterminado: '+(hu>10?'> 10 UH':'')+(wo<60?', washout < 60 %':'')+(S.het?', heterogêneo':'')+'. Feocromocitoma, metástase e carcinoma seguem na mesa.';}
+ if(S.met){fn='feo';g2.className='verdict d';g2.textContent='Metanefrinas elevadas: feocromocitoma até prova em contrário. Isso decide antes de qualquer outro dado.';}
+ else if(S.arr){fn='hap';g2.className='verdict w';g2.textContent='Relação aldosterona/renina elevada em hipertenso ou hipocalêmico: hiperaldosteronismo primário provável. Confirmar e lateralizar.';}
+ else if(S.dst===2){fn='macs';g2.className='verdict m';g2.textContent='Cortisol > 5 µg/dL após 1 mg: secreção autônoma de cortisol (MACS) confirmada.';}
+ else if(S.dst===1){fn='macsp';g2.className='verdict m';g2.textContent='Cortisol 1,9–5: MACS possível. Reforçar com ACTH, DHEA-S e cortisol salivar noturno.';}
+ else{fn='nf';g2.className='verdict b';g2.textContent='Tríade negativa: lesão não funcionante.';}
+ var dx,why,letter,steps,bio,cls;
+ if(fn==='feo'){cls='d';dx='Feocromocitoma';letter='Alternativa A';why='Hormônio manda sobre imagem: qualquer aspecto tomográfico com metanefrinas altas é feocromocitoma até a peça dizer o contrário.';steps=['Alfabloqueio 10–14 dias (fenoxibenzamina ou doxazosina) até PA sentada < 130/80 e ortostatismo leve','Dieta rica em sal e volume: o leito reabre e precisa ser preenchido','Beta só depois do alfa, e só se taquicardia','Adrenalectomia laparoscópica com ligadura precoce da veia adrenal'];bio='Biópsia proibida: a punção pode desencadear crise adrenérgica.';}
+ else if(img==='acc'){cls='d';dx='Suspeita de carcinoma adrenocortical';letter='Alternativa E';why='Tamanho e heterogeneidade pesam mais que a função. Mesmo silenciosa, uma massa dessas não se observa.';steps=['Completar o rastreio hormonal antes de operar (inclui DHEA-S e andrógenos)','Estadiar: TC de tórax, invasão de veia renal e cava','Adrenalectomia aberta, em bloco, sem violar a cápsula','Peça: Weiss, Ki-67, ENSAT; discutir mitotano'];bio='Biópsia proibida: semeadura de trajeto e resultado que não muda a conduta.';}
+ else if(S.ca&&img==='indet'){cls='w';dx='Provável metástase adrenal';letter='Alternativa D — a única janela';why='Com câncer extra-adrenal ativo e lesão indeterminada, a adrenal é o quarto sítio mais comum de metástase.';steps=['Excluir feocromocitoma primeiro (metanefrinas)','PET-CT com FDG','Biópsia só se o resultado mudar estadiamento ou linha de tratamento'];bio='Única situação em que a biópsia entra — e só depois de metanefrinas normais.';}
+ else if(fn==='hap'){cls='w';dx='Hiperaldosteronismo primário';letter='Alternativa B';why='Imagem lateraliza mal: o adenoma visível pode ser inocente e a hiperplasia contralateral, a culpada.';steps=['Confirmar: infusão salina ou sobrecarga oral de sódio','Amostragem venosa adrenal bilateral se candidato a cirurgia','Pular a AVS: < 35 anos, hipocalemia espontânea, adenoma unilateral nítido, contralateral normal','Lateralizou → adrenalectomia laparoscópica; bilateral → espironolactona'];bio='Biópsia não tem papel algum.';}
+ else if(fn==='macs'){cls='m';dx='Secreção autônoma de cortisol (MACS)';letter='Fora das alternativas — individualizar';why='Sem estigmas de Cushing, mas com custo metabólico. A cirurgia é decidida pela comorbidade, não pelo número.';steps=['Confirmar autonomia: ACTH suprimido, DHEA-S baixo','Comorbidade atribuível + paciente jovem → adrenalectomia laparoscópica','Sem comorbidade → seguimento clínico anual','Se operar: hidrocortisona perioperatória — o eixo contralateral está suprimido'];bio='Biópsia não tem papel algum.';}
+ else if(fn==='macsp'){cls='m';dx='MACS possível';letter='Fora das alternativas';why='Zona cinzenta do teste de 1 mg. Nem ignora, nem opera: caracteriza melhor.';steps=['ACTH, DHEA-S, cortisol salivar às 23 h','Reavaliação em 6–12 meses','Tratar as comorbidades metabólicas enquanto isso'];bio='Biópsia não tem papel algum.';}
+ else if(img==='mielo'){cls='b';dx='Mielolipoma';letter='Alternativa C (ou alta)';why='Gordura macroscópica encerra a discussão. Só se opera por sintoma compressivo ou hemorragia.';steps=['Sem seguimento oncológico','Rastreio hormonal negativo: nada mais a dosar'];bio='Biópsia não tem papel algum.';}
+ else if(img==='aden'){cls='b';dx='Adenoma não funcionante';letter='Alternativa C';why='As duas perguntas responderam benigno e silencioso. Operar aqui é o excesso que a banca pune.';steps=['Sabiston / banca: nova imagem em 6–12 meses; hormônios anuais por 4–5 anos','ESE-ENSAT 2023: se ≤ 10 UH, homogêneo e < 4 cm, nenhuma imagem de repetição','Crescimento > 1 cm ou > 20 % → adrenalectomia','Cirurgia se virar funcionante no caminho'];bio='Biópsia não tem papel algum — o distrator-armadilha da prova.';}
+ else{cls='w';dx='Indeterminada, não funcionante';letter='Fora das alternativas';why='Imagem não fechou benigno e hormônios não acusam nada. A decisão é por caracterização adicional ou tempo.';steps=['RM com chemical shift (queda de sinal fora de fase = lipídio) ou PET-CT','Sem resposta: repetir TC em 6–12 meses; crescimento → cirurgia','≥ 4 cm ou paciente jovem: pende para adrenalectomia laparoscópica'];bio='Biópsia só com câncer conhecido e depois de excluir feocromocitoma.';}
+ $('#m-dx').textContent=dx;$('#m-why').textContent=why;var lt=$('#m-letter');lt.textContent=letter;lt.className='tag '+cls;
+ $('#m-steps').innerHTML=steps.map(function(s,i){return '<div class="step"><div class="i">'+(i+1)+'</div><div>'+s+'</div></div>';}).join('');
+ $('#m-bio').textContent=bio;
+}
+$$('#m-presets button')[0].classList.add('on');machine();
+
+/* ---------- 05 vaso ---------- */
+var VS={
+ 0:{lr:34,fill:70,hr:105,pa:'190/110',orto:'−4',cls:'d',blk:0,cat:1,lum:'lúmen contraído',cap:'Passo 0 · tumor secretando catecolaminas · vaso fechado, tanque cronicamente vazio',t:'Diagnóstico feito: metanefrinas 4× o limite. Noradrenalina ocupa os receptores α1 e mantém a arteríola fechada há meses. O volume circulante caiu porque o leito é pequeno. Nada de biópsia, nada de beta.'},
+ 1:{lr:74,fill:70,hr:112,pa:'118/72',orto:'−28',cls:'w',blk:1,cat:1,lum:'lúmen aberto',cap:'Passo 1 · alfabloqueio · vaso aberto, tanque ainda vazio',t:'Fenoxibenzamina (ou doxazosina) ocupou os α1. A arteríola abriu — e o volume de 70 % agora é insuficiente para o leito novo: hipotensão ortostática marcada e taquicardia reflexa. A meta de Roizen é PA sentado < 130/80 e ortostatismo leve, não grave.'},
+ 2:{lr:74,fill:100,hr:96,pa:'126/78',orto:'−12',cls:'b',blk:1,cat:1,lum:'lúmen aberto',cap:'Passo 2 · sal e volume · tanque cheio para o leito novo',t:'Dieta rica em sódio (5 g/dia) e líquidos, às vezes cristaloide venoso na véspera. O tanque enche o leito que o alfa abriu. É isso que impede a hipotensão catastrófica quando a veia adrenal for clipada na mesa.'},
+ 3:{lr:74,fill:100,hr:72,pa:'124/76',orto:'−10',cls:'b',blk:1,cat:1,lum:'lúmen aberto',cap:'Passo 3 · betabloqueio, só agora e só se precisar',t:'Com o alfa completo, o propranolol ou atenolol entra apenas para a taquicardia. A ordem importa: o β2 vasodilata; bloqueá-lo antes do α1 deixa a vasoconstrição sem freio.'},
+ 4:{lr:52,fill:100,hr:98,pa:'168/96',orto:'—',cls:'w',blk:1,cat:2,lum:'reação à manipulação',cap:'Passo 4 · mesa · manipulação do tumor libera catecolaminas',t:'Cada toque no tumor despeja catecolaminas. Com os α1 parcialmente ocupados a subida é amortecida, e o anestesista responde com nitroprussiato ou fentolamina. Sem preparo, isso seria 260/140 e edema pulmonar.'},
+ 5:{lr:78,fill:100,hr:104,pa:'92/58',orto:'—',cls:'d',blk:1,cat:0,lum:'lúmen máximo',cap:'Passo 5 · veia adrenal clipada · catecolaminas caem a zero',t:'A veia foi clipada; a fonte sumiu num segundo, mas o alfabloqueio continua ocupando os receptores. O vaso está no máximo e a pressão despenca: volume rápido e noradrenalina. Sem o passo 2, este é o momento que mata.'},
+ 9:{lr:18,fill:70,hr:60,pa:'236/132',orto:'—',cls:'d',blk:0,cat:1,lum:'crise: alfa sem oposição',cap:'Caminho errado · beta antes do alfa · crise hipertensiva',t:'Beta primeiro: a frequência caiu, mas o β2 vasodilatador foi bloqueado e o α1 ficou sozinho. Vasoconstrição máxima, débito baixo, pressão de 236/132, risco de edema agudo e AVC. É o erro clássico que a banca pune em uma alternativa inteira.'}
+};
+function drawVessel(k){var v=VS[k];$('#v-lumen').setAttribute('r',v.lr);$('#v-wall').setAttribute('r',Math.max(110,v.lr+40));
+ var rec='',blk='',cat='',R=Math.max(110,v.lr+40);
+ for(var i=0;i<14;i++){var a=i/14*Math.PI*2,x=160+Math.cos(a)*(R+2),y=180+Math.sin(a)*(R+2);rec+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="6"/>';blk+='<rect x="'+(x-5).toFixed(1)+'" y="'+(y-5).toFixed(1)+'" width="10" height="10" rx="2"/>';
+  if(v.cat){var n=v.cat===2?3:1;for(var j=0;j<n;j++){var d=R+16+j*9,xx=160+Math.cos(a+0.12*j)*d,yy=180+Math.sin(a+0.12*j)*d;cat+='<circle cx="'+xx.toFixed(1)+'" cy="'+yy.toFixed(1)+'" r="3" fill="#6C4DB8"/>';}}}
+ $('#v-rec').innerHTML=rec;$('#v-block').innerHTML=blk;$('#v-block').setAttribute('opacity',v.blk?1:0);$('#v-catec').innerHTML=cat;
+ var h=v.fill/100*228;$('#v-fill').setAttribute('y',290-h);$('#v-fill').setAttribute('height',h);$('#v-fill-t').textContent=v.fill+' %';
+ $('#v-hr-t').textContent=v.hr+' bpm';$('#v-lumen-t').textContent=v.lum;$('#v-cap').textContent=v.cap;
+ $('#g-pa').textContent=v.pa;$('#g-orto').textContent=v.orto;$('#g-hr').textContent=v.hr;var t=$('#v-text');t.className='verdict '+v.cls;t.textContent=v.t;
+ $('#v-heart').style.transformOrigin='560px 175px';$('#v-heart').style.animation='none';}
+$$('#feo .seg button').forEach(function(b){b.addEventListener('click',function(){$$('#feo .seg button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');drawVessel(b.dataset.s);});});
+drawVessel(0);
+
+/* ---------- 07 forja ---------- */
+var Q=[
+ {p:'Questão-mãe · nada trocado',s:'Seu Osmar, 54 anos, investigando lombalgia, faz TC de abdome: nódulo de 2,8 cm, homogêneo, 6 UH, washout absoluto de 70 % na adrenal direita. Metanefrinas, cortisol pós-dexametasona e relação aldosterona/renina normais. Conduta:',o:['Alfabloqueio 10–14 dias, expansão volêmica e adrenalectomia laparoscópica','Amostragem venosa adrenal bilateral','Seguimento com imagem e reavaliação funcional','Biópsia percutânea da massa','Adrenalectomia aberta em bloco, sem violação da cápsula'],a:2,e:'Duas perguntas, duas respostas benignas. ≤ 10 UH homogêneo fecha adenoma; tríade negativa fecha não funcionante. Sabiston: imagem em 6–12 meses e hormônios anuais por 4–5 anos. Cada outra alternativa é a conduta correta de outra linha da tabela — a banca as espalha para ver se você troca de linha sem motivo.'},
+ {p:'Pivô · metanefrinas',s:'Mesmo nódulo de 2,8 cm, 6 UH, washout 70 %. Cortisol pós-dexa e ARR normais, mas <mark>metanefrinas urinárias fracionadas 4 vezes o limite superior</mark>, com episódios de cefaleia e sudorese. Conduta:',o:['Alfabloqueio 10–14 dias, expansão volêmica e adrenalectomia laparoscópica','Betabloqueio imediato pela taquicardia, depois alfa','Seguimento com imagem em 6 meses, pois a imagem é de adenoma','Biópsia guiada por TC para confirmar antes de operar','Adrenalectomia aberta por se tratar de tumor secretor'],a:0,e:'Hormônio manda sobre imagem: feocromocitoma pode imitar adenoma na TC (uma minoria tem baixa densidade e washout alto). Alfa sempre antes de beta; volume junto; laparoscopia é a via padrão. Biópsia desencadeia crise. A alternativa B é o erro clássico que a banca escreve para ser marcado por quem decorou "preparar antes de operar" sem a ordem.'},
+ {p:'Pivô · aldosterona/renina, 48 anos',s:'Mulher de <mark>48 anos</mark>, hipertensa em 3 fármacos, <mark>K 3,1</mark>. TC: nódulo de <mark>1,4 cm</mark>, 4 UH, na adrenal esquerda. Metanefrinas e cortisol pós-dexa normais; <mark>relação aldosterona/renina elevada, confirmada por infusão salina</mark>. Próximo passo:',o:['Adrenalectomia laparoscópica esquerda, pois o adenoma é visível','Amostragem venosa adrenal bilateral','Espironolactona e seguimento com imagem','Biópsia do nódulo para confirmar aldosteronoma','RM com chemical shift para caracterizar a lesão'],a:1,e:'Hiperaldosteronismo confirmado, candidata a cirurgia, 48 anos: a imagem não pode lateralizar sozinha, porque adenomas não funcionantes são comuns nessa idade e a produção pode vir de hiperplasia contralateral. AVS antes de indicar adrenalectomia. Operar pelo nódulo visível é o erro que a banca de 2026 puniu.'},
+ {p:'Pivô · a mesma paciente, 29 anos',s:'Mulher de <mark>29 anos</mark>, HAS de difícil controle, <mark>K 2,8 espontâneo</mark>. TC: adenoma de 1,6 cm, 3 UH, <mark>unilateral, com adrenal contralateral normal</mark>. ARR elevada, confirmada por salina. Conduta:',o:['Amostragem venosa adrenal obrigatória antes de qualquer cirurgia','Espironolactona em dose alta como tratamento definitivo','Seguimento com imagem, pois adenomas < 2 cm não se operam','Adrenalectomia laparoscópica unilateral sem amostragem venosa','Adrenalectomia bilateral pela possibilidade de hiperplasia'],a:3,e:'A exceção da Endocrine Society: menos de 35 anos, hipocalemia espontânea, aldosterona muito elevada e adenoma unilateral nítido com contralateral normal — a chance de o nódulo visível ser o culpado é alta o bastante para dispensar a AVS. É o mesmo diagnóstico da questão anterior com o modificador ligado; o seu padrão de erro é resolver o diagnóstico e não o modificador.'},
+ {p:'Pivô · tamanho, heterogeneidade e andrógenos',s:'Mulher de 41 anos com <mark>hirsutismo e amenorreia de 6 meses</mark>. TC: massa adrenal esquerda de <mark>7,5 cm, heterogênea, com necrose central, 36 UH, washout absoluto de 28 %</mark>. Metanefrinas normais; <mark>DHEA-S muito elevado</mark>. Conduta:',o:['Adrenalectomia laparoscópica esquerda com ligadura precoce da veia adrenal','Biópsia percutânea para definir histologia antes de operar','Mitotano neoadjuvante e reavaliação em 3 meses','Seguimento com imagem em 3 meses, pois é não funcionante para cortisol','Adrenalectomia aberta em bloco, sem violação da cápsula, com linfadenectomia regional'],a:4,e:'Tudo aponta para carcinoma adrenocortical: mais de 4 cm (aqui 7,5), heterogênea com necrose, mais de 10 UH, washout baixo e virilização com DHEA-S alto, que adenoma quase nunca produz. A cirurgia é aberta e em bloco porque a violação capsular e a laparoscopia aumentam recidiva peritoneal. Biópsia semeia trajeto. Mitotano é adjuvante ou para doença irressecável, não substitui a ressecção R0.'},
+ {p:'Pivô · câncer extra-adrenal conhecido',s:'Homem de 63 anos, <mark>melanoma cutâneo tratado há 2 anos</mark>. TC de vigilância: nódulo adrenal direito de <mark>3,0 cm, 25 UH, washout absoluto de 40 %</mark>, sem outras lesões. <mark>Metanefrinas normais</mark>, cortisol pós-dexa e ARR normais; PET-CT hipermetabólico apenas na adrenal. Conduta:',o:['Adrenalectomia aberta em bloco por suspeita de carcinoma adrenocortical','Seguimento com imagem em 6 meses, pois a lesão é menor que 4 cm','Alfabloqueio e adrenalectomia laparoscópica','Biópsia percutânea guiada por imagem','Amostragem venosa adrenal bilateral'],a:3,e:'A única janela em que a biópsia entra: câncer extra-adrenal conhecido, lesão indeterminada (mais de 10 UH e washout menor que 60 %) e feocromocitoma já excluído pelas metanefrinas. O resultado muda o estadiamento — metástase única de melanoma pode ir para metastasectomia ou imunoterapia. Sem as metanefrinas normais no enunciado, a alternativa D seria a armadilha.'},
+ {p:'Pivô · cortisol pós-dexa com comorbidade',s:'Homem de 47 anos, <mark>diabetes tipo 2 mal controlado, HAS e osteoporose</mark>, sem fácies cushingoide. TC: nódulo de 2,5 cm, 5 UH. Metanefrinas e ARR normais; <mark>cortisol pós-dexa 6,2 µg/dL, ACTH suprimido, DHEA-S baixo</mark>. Conduta:',o:['Seguimento clínico anual, pois não há Cushing clínico','Adrenalectomia laparoscópica com reposição perioperatória de hidrocortisona','Cetoconazol e reavaliação em 6 meses','Adrenalectomia aberta pela possibilidade de carcinoma','Amostragem venosa adrenal para confirmar lateralidade'],a:1,e:'MACS confirmado (cortisol maior que 5, ACTH suprimido, DHEA-S baixo) em paciente jovem com três comorbidades atribuíveis ao cortisol: a ESE-ENSAT indica cirurgia individualizada, e a laparoscopia é a via porque a imagem é de adenoma. O detalhe que fecha a alternativa é a hidrocortisona — a adrenal contralateral está suprimida e a insuficiência pós-operatória é a complicação previsível.'},
+ {p:'Pivô · densidade negativa',s:'Mulher de 58 anos, assintomática. TC: massa adrenal direita de <mark>5,2 cm, homogênea, com densidade de −45 UH</mark> e finas traves de partes moles, sem realce significativo. Metanefrinas, cortisol pós-dexa e ARR normais. Conduta:',o:['Conduta expectante: não requer seguimento oncológico','Adrenalectomia laparoscópica por ser maior que 4 cm','Adrenalectomia aberta por ser maior que 4 cm e potencial carcinoma','Biópsia percutânea para descartar lipossarcoma retroperitoneal','RM com chemical shift para confirmar lipídio intracelular'],a:0,e:'Densidade francamente negativa é gordura macroscópica: mielolipoma. O reflexo "mais de 4 cm = cirurgia" vale para lesão sólida indeterminada, não para gordura. Chemical shift detecta lipídio intracelular (adenoma), não gordura macroscópica — aqui é redundante. Só se opera por sintoma compressivo ou hemorragia espontânea.'}
+];
+var answered=0,right=0;
+function renderForja(){answered=0;right=0;$('#forja-list').innerHTML=Q.map(function(q,i){return '<div class="q" data-i="'+i+'"><div class="pivot">'+(i+1)+' / '+Q.length+' · '+q.p+'</div><div class="stem">'+q.s+'</div><div class="opts">'+q.o.map(function(o,j){return '<button data-j="'+j+'"><span class="L">'+'ABCDE'[j]+'</span><span>'+o+'</span></button>';}).join('')+'</div><div class="exp" hidden>'+q.e+'</div></div>';}).join('');
+ $$('#forja-list .q').forEach(function(card){var i=+card.dataset.i;$$('.opts button',card).forEach(function(b){b.addEventListener('click',function(){if(card.dataset.done)return;card.dataset.done=1;var j=+b.dataset.j;answered++;if(j===Q[i].a)right++;$$('.opts button',card).forEach(function(x){var jj=+x.dataset.j;if(jj===Q[i].a)x.classList.add('ok');else if(jj===j)x.classList.add('no');});$('.exp',card).hidden=false;$('#forja-score').textContent=answered+' respondidas · '+right+' certas';});});});
+ $('#forja-score').textContent='0 respondidas';}
+$('#forja-reset').addEventListener('click',renderForja);renderForja();
+})();
+</script>
+
+</body></html>

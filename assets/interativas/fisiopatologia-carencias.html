@@ -1,0 +1,802 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}</style></head><body>
+<title>Fisiopatologia das Carências</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#E8ECEA; --surface:#FBFCFB; --surface-2:#F1F4F2;
+  --ink:#14201D; --ink-2:#3E4D49; --muted:#6E7F7A; --line:#CFD8D5;
+  --accent:#9A5A26; --accent-soft:#F0E3D4; --accent-line:#D9B792;
+  --bad:#A83232; --ok:#1E6F52;
+  --serif:'Spectral', Georgia, 'Times New Roman', serif;
+  --sans:'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono:'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0E1614; --surface:#16211E; --surface-2:#1C2723;
+    --ink:#E6EDEA; --ink-2:#BDCBC6; --muted:#859893; --line:#2B3B36;
+    --accent:#D08C4E; --accent-soft:#33251A; --accent-line:#5C4229;
+    --bad:#E5837B; --ok:#57C097;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0E1614; --surface:#16211E; --surface-2:#1C2723;
+  --ink:#E6EDEA; --ink-2:#BDCBC6; --muted:#859893; --line:#2B3B36;
+  --accent:#D08C4E; --accent-soft:#33251A; --accent-line:#5C4229;
+  --bad:#E5837B; --ok:#57C097;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--serif); font-size:17.5px; line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:760px; margin:0 auto; padding:0 22px 110px}
+p{margin:0 0 17px; color:var(--ink-2)}
+p b, li b{color:var(--ink); font-weight:600}
+em{font-style:italic}
+
+/* masthead */
+header.mast{padding:60px 0 30px}
+.eyebrow{
+  font-family:var(--mono); font-size:11.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--accent); margin:0 0 15px; display:flex; align-items:center; gap:10px;
+}
+.eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+h1{
+  font-family:var(--sans); font-weight:600; font-size:clamp(32px,5.6vw,46px);
+  line-height:1.08; letter-spacing:-.02em; margin:0 0 16px; text-wrap:balance; color:var(--ink);
+}
+.dek{font-size:19px; line-height:1.62; color:var(--ink-2); margin:0}
+.dek em{color:var(--accent)}
+
+/* toc */
+nav.toc{
+  margin:30px 0 8px; padding:20px 22px; background:var(--surface);
+  border:1px solid var(--line); border-radius:3px;
+}
+nav.toc h2{font-family:var(--mono); font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); margin:0 0 12px; font-weight:500}
+nav.toc ol{margin:0; padding:0; list-style:none; columns:2; column-gap:26px}
+nav.toc li{font-family:var(--sans); font-size:14px; line-height:1.75; break-inside:avoid}
+nav.toc a{color:var(--ink-2); text-decoration:none; border-bottom:1px solid transparent}
+nav.toc a:hover{color:var(--accent); border-bottom-color:var(--accent-line)}
+nav.toc a:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+nav.toc .num{font-family:var(--mono); font-size:11.5px; color:var(--muted); margin-right:7px}
+@media (max-width:560px){nav.toc ol{columns:1}}
+
+/* part + section */
+.part{
+  margin:64px 0 8px; padding-top:22px; border-top:2px solid var(--accent-line);
+  font-family:var(--mono); font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent);
+}
+h2.sec{
+  font-family:var(--sans); font-weight:600; font-size:26px; line-height:1.2; letter-spacing:-.012em;
+  margin:34px 0 6px; color:var(--ink); text-wrap:balance; scroll-margin-top:20px;
+}
+h2.sec .n{font-family:var(--mono); font-size:14px; color:var(--accent); font-weight:500; margin-right:10px; letter-spacing:0}
+.sub{font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin:0 0 16px}
+h3{font-family:var(--sans); font-weight:600; font-size:16.5px; margin:26px 0 8px; color:var(--ink); letter-spacing:-.005em}
+
+ul{margin:0 0 17px; padding-left:20px}
+li{margin:0 0 7px; color:var(--ink-2)}
+li::marker{color:var(--accent)}
+
+/* key line */
+.key{
+  margin:22px 0; padding:15px 18px; background:var(--surface); border-left:3px solid var(--accent);
+  border-top:1px solid var(--line); border-right:1px solid var(--line); border-bottom:1px solid var(--line);
+  border-radius:0 3px 3px 0;
+}
+.key p{margin:0; font-size:16.5px; color:var(--ink)}
+.key .tag{font-family:var(--mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:6px}
+
+/* figure */
+figure{margin:30px 0; padding:0}
+figure svg{display:block; width:100%; max-width:100%; height:auto; background:var(--surface); border:1px solid var(--line); border-radius:3px}
+figcaption{
+  margin-top:10px; font-family:var(--sans); font-size:13.5px; line-height:1.6; color:var(--muted);
+}
+figcaption b{color:var(--ink-2); font-weight:600}
+.dg{color:var(--ink-2)}
+.dg .bx{fill:var(--surface-2); stroke:currentColor; stroke-width:1.1; opacity:1}
+.dg .bx-a{fill:var(--accent-soft); stroke:var(--accent-line); stroke-width:1.2}
+.dg .bx-p{fill:none; stroke:currentColor; stroke-width:1; stroke-dasharray:3 3; opacity:.55}
+.dg .t{fill:var(--ink); font-family:var(--sans); font-size:12.5px}
+.dg .ts{fill:var(--ink-2); font-family:var(--sans); font-size:11.5px}
+.dg .tm{fill:var(--muted); font-family:var(--mono); font-size:10px; letter-spacing:.07em}
+.dg .ta{fill:var(--accent); font-family:var(--mono); font-size:10.5px; letter-spacing:.07em}
+.dg .ln{stroke:currentColor; stroke-width:1.2; fill:none; opacity:.62}
+.dg .ln-a{stroke:var(--accent); stroke-width:1.8; fill:none}
+.dg .ln-x{stroke:var(--bad); stroke-width:2; fill:none}
+.dg .ah{fill:var(--ink-2)}
+.dg .ah-a{fill:var(--accent)}
+
+/* table */
+.tbl-scroll{overflow-x:auto; margin:26px 0; border:1px solid var(--line); border-radius:3px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; min-width:640px; font-family:var(--sans); font-size:13.5px}
+thead th{
+  font-family:var(--mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted);
+  text-align:left; padding:11px 13px; background:var(--surface-2); border-bottom:1px solid var(--line); font-weight:500; white-space:nowrap;
+}
+tbody td{padding:10px 13px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ink-2); line-height:1.5}
+tbody tr:last-child td{border-bottom:none}
+tbody td:first-child{color:var(--ink); font-weight:600; white-space:nowrap}
+tbody td b{color:var(--ink); font-weight:600}
+tbody tr:nth-child(even) td{background:var(--surface-2)}
+
+footer.foot{margin-top:60px; padding-top:22px; border-top:1px solid var(--line); font-family:var(--sans); font-size:13.5px; color:var(--muted); line-height:1.7}
+footer.foot b{color:var(--ink-2); font-weight:500}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<div class="wrap">
+
+<header class="mast">
+  <p class="eyebrow">ENARE R+ Cirurgia · Companheiro teórico</p>
+  <h1>Da molécula ao sintoma</h1>
+  <p class="dek">Por que a falta de tiamina escolhe os corpos mamilares, por que a falta de cobre imita a falta de B12, e por que repor folato sozinho conserta o hemograma enquanto a medula do paciente continua a se desfazer. <em>Cada sintoma das carências pós-bariátricas é uma reação bioquímica que parou de acontecer.</em></p>
+</header>
+
+<nav class="toc">
+  <h2>Neste texto</h2>
+  <ol>
+    <li><span class="num">I</span><a href="#taxonomia">A taxonomia e seus critérios</a></li>
+    <li><span class="num">1</span><a href="#s1">O que faz de algo uma vitamina</a></li>
+    <li><span class="num">2</span><a href="#s2">O eixo que organiza tudo: solubilidade</a></li>
+    <li><span class="num">3</span><a href="#s3">Por que existe um “complexo B”</a></li>
+    <li><span class="num">4</span><a href="#s4">B1 e B12: o que as une e o que as separa</a></li>
+    <li><span class="num">II</span><a href="#mecanismos">Os mecanismos, um a um</a></li>
+    <li><span class="num">5</span><a href="#s5">Tiamina (B1)</a></li>
+    <li><span class="num">6</span><a href="#s6">Vitamina B12</a></li>
+    <li><span class="num">7</span><a href="#s7">Folato (B9)</a></li>
+    <li><span class="num">8</span><a href="#s8">Ferro</a></li>
+    <li><span class="num">9</span><a href="#s9">Cobre</a></li>
+    <li><span class="num">10</span><a href="#s10">Zinco</a></li>
+    <li><span class="num">11</span><a href="#s11">Vitamina A</a></li>
+    <li><span class="num">12</span><a href="#s12">Vitamina E</a></li>
+    <li><span class="num">13</span><a href="#s13">Vitamina K</a></li>
+    <li><span class="num">14</span><a href="#s14">Vitamina D e cálcio</a></li>
+    <li><span class="num">15</span><a href="#s15">Magnésio</a></li>
+    <li><span class="num">16</span><a href="#s16">Selênio</a></li>
+    <li><span class="num">17</span><a href="#s17">Proteína</a></li>
+    <li><span class="num">18</span><a href="#s18">Oxalato: a carência que vira cálculo</a></li>
+    <li><span class="num">III</span><a href="#sintese">Síntese: os quatro eixos</a></li>
+  </ol>
+</nav>
+
+<p class="part" id="taxonomia">Parte I — A taxonomia e seus critérios</p>
+
+<h2 class="sec" id="s1"><span class="n">1</span>O que faz de algo uma vitamina</h2>
+<p class="sub">definição por exclusão, não por estrutura</p>
+
+<p>Vitaminas não formam uma família química. Não há nada de estrutural que uma molécula precise ter para ser vitamina — a definição é <b>funcional e negativa</b>, e tem quatro exigências: (a) ser um <b>composto orgânico</b>; (b) ser <b>essencial</b>, isto é, o organismo não a sintetiza em quantidade suficiente; (c) ser necessária em <b>quantidades-traço</b>, miligramas ou microgramas por dia, o que a separa de macronutrientes; e (d) sua ausência produzir uma <b>síndrome específica e reprodutível</b>, revertida pela reposição daquela substância e de nenhuma outra.</p>
+
+<p>Repare no que essa definição implica. A vitamina D, sintetizada na pele a partir do 7-deidrocolesterol sob luz ultravioleta, só é vitamina porque a exposição solar moderna é insuficiente — em rigor bioquímico, ela é um <b>pró-hormônio esteroide</b>. A niacina (B3) pode ser produzida a partir do triptofano, e por isso sua carência exige simultaneamente dieta pobre em niacina <i>e</i> pobre em triptofano. A vitamina C é vitamina para humanos, primatas e cobaias, e não é para o rato — perdemos a L-gulonolactona oxidase por mutação há uns 60 milhões de anos. A categoria descreve <b>a nossa incapacidade</b>, não uma propriedade da molécula.</p>
+
+<p>E há um segundo corte, que a lista de carências pós-bariátricas obriga a fazer: <b>ferro, cobre, zinco, selênio e magnésio não são vitaminas.</b> São <b>oligoelementos</b> — minerais-traço, inorgânicos, elementos da tabela periódica. Não são sintetizados nem degradados por ninguém; são apenas incorporados a proteínas e depois liberados. Isso muda a lógica inteira: uma vitamina pode ser destruída pelo calor, oxidada, metabolizada e excretada como produto de degradação; um metal só pode ser perdido fisicamente — pela urina, pelas fezes, pelo sangue, pela descamação epitelial.</p>
+
+<h2 class="sec" id="s2"><span class="n">2</span>O eixo que organiza tudo: solubilidade</h2>
+<p class="sub">uma propriedade físico-química que prediz seis coisas clínicas</p>
+
+<p>A divisão entre lipossolúveis e hidrossolúveis parece uma curiosidade de química orgânica. Não é. Ela é o <b>melhor preditor isolado</b> do comportamento clínico de uma vitamina, porque a polaridade da molécula determina, em cadeia: como ela é absorvida, como circula, se pode ser estocada, quanto tempo a carência demora para aparecer, se há risco de intoxicação e por qual via ela se perde.</p>
+
+<h3>Lipossolúveis — A, D, E, K</h3>
+<p>São apolares. Não se dissolvem no conteúdo aquoso do intestino, e por isso dependem do mesmo aparato que digere a gordura: <b>lipase pancreática</b> para liberar a vitamina da matriz alimentar, <b>sais biliares</b> para formar micelas mistas que a carregam até a borda em escova, e <b>quilomícrons</b> para transportá-la do enterócito. Repare no destino: o quilomícron é grande demais para o capilar sanguíneo, então entra no <b>lácteo</b>, sobe pelo ducto torácico e só depois cai na circulação sistêmica, na veia subclávia. A vitamina lipossolúvel é a única classe de nutriente que <b>não passa pelo fígado antes de circular</b>.</p>
+
+<p>Disso decorre quase tudo. Primeiro: <b>qualquer condição que atrapalhe a gordura derruba as quatro juntas</b> — insuficiência pancreática, colestase, ressecção ileal com perda de sais biliares e, no nosso caso, a derivação biliopancreática, em que a bile e o suco pancreático só encontram o alimento nos últimos centímetros de intestino. Segundo: como são apolares, <b>acumulam-se no tecido adiposo e no fígado</b>, o que cria estoques de meses a anos e torna a carência tardia. Terceiro: o que não pode ser excretado pelo rim <b>pode intoxicar</b> — hipervitaminose A e D são doenças reais, hipervitaminose de complexo B praticamente não existe. Quarto: a excreção é <b>biliar</b>, o que fecha o círculo com a absorção.</p>
+
+<h3>Hidrossolúveis — complexo B e vitamina C</h3>
+<p>São polares. Dissolvem-se no quimo e são absorvidas por <b>transportadores específicos e saturáveis</b> na borda em escova — cada uma com o seu (ThTR-1 e ThTR-2 para a tiamina, RFC e PCFT para o folato, SVCT1 para o ascorbato). Circulam livres ou frouxamente ligadas, distribuem-se na água corporal, e o excesso é <b>filtrado e excretado na urina</b>. Sem depósito significativo, a carência aparece em <b>semanas a poucos meses</b>. É o outro extremo do espectro.</p>
+
+<div class="key">
+  <span class="tag">A exceção que confirma a regra</span>
+  <p>A <b>vitamina B12 é hidrossolúvel e, ainda assim, tem estoque para 3 a 5 anos.</b> Ela consegue isso porque não se comporta como uma molécula solta em solução: circula ligada a proteínas dedicadas (haptocorrina, transcobalamina), é armazenada no fígado ligada a proteína, é excretada na bile e <b>reabsorvida no íleo terminal</b> num ciclo êntero-hepático eficientíssimo. É a única vitamina hidrossolúvel com logística de lipossolúvel — e é exatamente por isso que a deficiência de B12 pós-bariátrica leva anos para dar as caras, enquanto a de tiamina leva semanas.</p>
+</div>
+<figure>
+<svg viewBox="0 0 960 420" role="img" aria-label="Árvore de classificação dos micronutrientes: orgânicos (vitaminas, subdivididas em lipossolúveis e hidrossolúveis) e inorgânicos (oligoelementos), com o que cada ramo prediz sobre absorção, estoque, latência da carência e mecanismo de ação" class="dg">
+  <defs>
+    <marker id="a1" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+      <polygon class="ah" points="0,0 8,4 0,8"/>
+    </marker>
+  </defs>
+
+  <rect class="bx" x="380" y="16" width="200" height="34" rx="2"/>
+  <text class="t" x="480" y="38" text-anchor="middle">Micronutriente essencial</text>
+
+  <path class="ln" d="M480 50 L480 72 M250 72 L790 72 M115 72 L115 72"/>
+  <path class="ln" d="M250 72 L250 88" marker-end="url(#a1)"/>
+  <path class="ln" d="M790 72 L790 88" marker-end="url(#a1)"/>
+
+  <rect class="bx" x="150" y="90" width="200" height="34" rx="2"/>
+  <text class="t" x="250" y="112" text-anchor="middle">Orgânico — vitamina</text>
+  <rect class="bx" x="680" y="90" width="200" height="34" rx="2"/>
+  <text class="t" x="780" y="112" text-anchor="middle">Inorgânico — oligoelemento</text>
+
+  <path class="ln" d="M250 124 L250 146 M115 146 L430 146"/>
+  <path class="ln" d="M115 146 L115 162" marker-end="url(#a1)"/>
+  <path class="ln" d="M430 146 L430 162" marker-end="url(#a1)"/>
+  <path class="ln" d="M780 124 L780 162" marker-end="url(#a1)"/>
+
+  <rect class="bx-a" x="30" y="164" width="170" height="32" rx="2"/>
+  <text class="t" x="115" y="185" text-anchor="middle">Lipossolúvel</text>
+  <rect class="bx-a" x="340" y="164" width="180" height="32" rx="2"/>
+  <text class="t" x="430" y="185" text-anchor="middle">Hidrossolúvel</text>
+  <rect class="bx-a" x="680" y="164" width="200" height="32" rx="2"/>
+  <text class="t" x="780" y="185" text-anchor="middle">Metal-traço</text>
+
+  <text class="t" x="30" y="228">A · D · E · K</text>
+  <text class="ts" x="30" y="250">micela + quilomícron + linfa</text>
+  <text class="ts" x="30" y="270">estoque hepático e adiposo grande</text>
+  <text class="ts" x="30" y="290">carência em anos · pode intoxicar</text>
+  <text class="ts" x="30" y="310">papel: hormônio (A, D), antioxidante (E),</text>
+  <text class="ts" x="30" y="328">cofator de carboxilação (K)</text>
+
+  <text class="t" x="340" y="228">B1 B2 B3 B5 B6 B7 B9 B12 · C</text>
+  <text class="ts" x="340" y="250">transportador específico e saturável</text>
+  <text class="ts" x="340" y="270">estoque pequeno · excreção renal</text>
+  <text class="ts" x="340" y="290">carência em semanas a meses</text>
+  <text class="ts" x="340" y="310">papel: precursor de coenzima (complexo B);</text>
+  <text class="ts" x="340" y="328">doador de elétrons (C)</text>
+
+  <text class="t" x="680" y="228">Fe · Cu · Zn · Se · Mg</text>
+  <text class="ts" x="680" y="250">transportadores de metal (DMT1, ZIP)</text>
+  <text class="ts" x="680" y="270">estocado em proteína — ferritina,</text>
+  <text class="ts" x="680" y="290">metalotioneína · não é degradado</text>
+  <text class="ts" x="680" y="310">papel: centro catalítico ou estrutural</text>
+  <text class="ts" x="680" y="328">de metaloenzimas</text>
+
+  <rect class="bx-p" x="30" y="356" width="900" height="46" rx="2" stroke="var(--accent)" opacity="1"/>
+  <text class="ta" x="46" y="376">EXCEÇÃO</text>
+  <text class="ts" x="118" y="376">B12 é hidrossolúvel e mesmo assim tem estoque para 3 a 5 anos: circula e é armazenada ligada a proteínas</text>
+  <text class="ts" x="118" y="393">dedicadas e volta pelo ciclo êntero-hepático. Logística de lipossolúvel numa molécula hidrossolúvel.</text>
+</svg>
+<figcaption><b>Os critérios da taxonomia, e o que cada um prediz.</b> O primeiro corte é orgânico contra inorgânico; o segundo, dentro das vitaminas, é a solubilidade — e é ela que determina a via de absorção, o tamanho do estoque, a latência da carência e o risco de intoxicação. O mecanismo de ação segue o ramo, com uma exceção que vale decorar.</figcaption>
+</figure>
+
+<h2 class="sec" id="s3"><span class="n">3</span>Por que existe um “complexo B”</h2>
+<p class="sub">a única classe agrupada por função, e não por química</p>
+
+<p>As vitaminas do complexo B não se parecem. A tiamina é um anel tiazólico ligado a uma pirimidina; a riboflavina é uma flavina com um açúcar; a cobalamina é um anel corrina com um átomo de cobalto no centro. Estruturalmente, não têm nada em comum. O nome coletivo é um <b>acidente histórico</b>: no início do século XX acreditava-se que o “fator hidrossolúvel B” era uma substância única, responsável por prevenir o beribéri. Quando a fração foi purificada, descobriu-se que era uma mistura, e os componentes foram numerados na ordem em que foram isolados. Os buracos na numeração — não existe B4, B8, B10, B11 no uso corrente — são substâncias que foram descritas, numeradas e depois <b>desqualificadas</b>, por serem sintetizáveis pelo organismo ou por não produzirem síndrome carencial.</p>
+
+<p>Mas o agrupamento sobreviveu porque acabou revelando uma verdade funcional: <b>toda vitamina do complexo B é precursora de uma coenzima do metabolismo intermediário</b>. Nenhuma delas age sozinha. Cada uma é convertida numa coenzima que se acopla a uma apoenzima e permite uma classe de reação química que a proteína, sozinha, não conseguiria catalisar — transferir um grupo acila, mover um carbono, arrancar um hidrogênio, rearranjar um esqueleto carbônico.</p>
+
+<div class="tbl-scroll">
+<table>
+<thead><tr><th>Vitamina</th><th>Coenzima</th><th>Tipo de reação que viabiliza</th></tr></thead>
+<tbody>
+<tr><td>B1 tiamina</td><td>Tiamina pirofosfato (TPP)</td><td>Descarboxilação oxidativa de α-cetoácidos; transferência de unidades de dois carbonos</td></tr>
+<tr><td>B2 riboflavina</td><td>FAD e FMN</td><td>Óxido-redução — transferência de hidrogênio e elétrons</td></tr>
+<tr><td>B3 niacina</td><td>NAD⁺ e NADP⁺</td><td>Óxido-redução — transferência de hidreto</td></tr>
+<tr><td>B5 ácido pantotênico</td><td>Coenzima A</td><td>Transferência de grupos acila</td></tr>
+<tr><td>B6 piridoxina</td><td>Piridoxal-5-fosfato (PLP)</td><td>Transaminação, descarboxilação e racemização de aminoácidos</td></tr>
+<tr><td>B7 biotina</td><td>Biocitina</td><td>Carboxilação dependente de ATP — fixação de CO₂</td></tr>
+<tr><td>B9 folato</td><td>Tetraidrofolato (THF)</td><td>Transferência de unidades de <b>um carbono</b></td></tr>
+<tr><td>B12 cobalamina</td><td>Metilcobalamina e adenosilcobalamina</td><td>Transferência de grupo metila; rearranjo intramolecular de esqueleto carbônico</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>É por essa razão que as carências de complexo B batem primeiro nos tecidos de <b>maior demanda metabólica ou maior velocidade de renovação</b> — sistema nervoso, medula óssea, epitélios, pele. Não é que essas vitaminas "gostem" desses tecidos: é que qualquer gargalo no metabolismo intermediário aparece primeiro onde o metabolismo é mais intenso.</p>
+
+<h2 class="sec" id="s4"><span class="n">4</span>B1 e B12: o que as une e o que as separa</h2>
+<p class="sub">a pergunta certa, respondida em três níveis</p>
+
+<p>O que <b>B1 e B12 têm em comum</b>, e que as separa de A e de C, são três coisas. Primeira: são <b>hidrossolúveis</b>, absorvidas por transportadores dedicados e não pela via da gordura — a vitamina A depende de micelas e sais biliares, elas não. Segunda: agem como <b>precursoras de coenzimas do metabolismo intermediário</b>, montando-se sobre apoenzimas — enquanto a vitamina A age como <b>ligante de receptor nuclear</b>, ou seja, como um hormônio que muda a transcrição gênica, e a vitamina C age como um <b>doador de elétrons</b>, que não se acopla a apoenzima nenhuma. Terceira, e é a mais útil clinicamente: sua carência produz síndromes <b>metabólico-neurológicas</b>, de falência energética ou de manutenção de mielina, e não síndromes <b>estruturais</b> como a metaplasia queratinizante da hipovitaminose A ou o colágeno defeituoso do escorbuto.</p>
+
+<p>Vale explicitar o contraste com a vitamina C, porque ela é hidrossolúvel como elas e ainda assim pertence a outra lógica. O ascorbato não vira coenzima: ele é um <b>redutor</b> que mantém metais de transição no estado reduzido dentro do sítio catalítico de certas enzimas. Nas prolil e lisil hidroxilases do colágeno, mantém o ferro como Fe²⁺; na dopamina β-hidroxilase, mantém o cobre como Cu⁺. Sem ascorbato, essas enzimas oxidam-se e param. É por isso que o escorbuto é uma <b>doença do tecido conjuntivo</b> — colágeno sem hidroxiprolina não forma tripla hélice estável — com sangramento gengival, hemorragia perifolicular e má cicatrização, e não uma doença neurológica.</p>
+
+<p>Agora o que <b>separa B1 de B12</b>, que é onde mora a diferença clínica:</p>
+
+<div class="tbl-scroll">
+<table>
+<thead><tr><th></th><th>Tiamina (B1)</th><th>Cobalamina (B12)</th></tr></thead>
+<tbody>
+<tr><td>Química</td><td>Molécula pequena e simples, sem metal</td><td>Anel corrina com <b>cobalto</b> central — a única vitamina que contém metal, e a maior molécula de todas</td></tr>
+<tr><td>Origem</td><td>Plantas e leveduras; ampla na dieta</td><td>Sintetizada <b>exclusivamente por procariontes</b>. Só chega ao homem por alimento de origem animal</td></tr>
+<tr><td>Absorção</td><td>Transportadores ThTR-1 e ThTR-2 no <b>jejuno</b>; nenhuma proteína acessória</td><td>A cascata mais elaborada da fisiologia humana: haptocorrina salivar → ácido e pepsina liberam da proteína alimentar → tripsina degrada a haptocorrina → <b>fator intrínseco</b> das células parietais → receptor cubam-amnionless no <b>íleo terminal</b> → transcobalamina II</td></tr>
+<tr><td>Estoque</td><td>Cerca de 30 mg no corpo · <b>2 a 4 semanas</b></td><td>2 a 5 mg, quase tudo no fígado · <b>3 a 5 anos</b>, com reciclagem êntero-hepática</td></tr>
+<tr><td>Coenzimas</td><td>Uma só, o TPP, em quatro enzimas</td><td>Duas — metilcobalamina no citosol, adenosilcobalamina na mitocôndria — em duas enzimas apenas</td></tr>
+<tr><td>Lesão predominante</td><td><b>Falência energética</b> aguda de estruturas de alto consumo (encefalopatia de Wernicke, beribéri)</td><td><b>Falência de manutenção da mielina</b>, lenta e cumulativa (degeneração combinada subaguda), somada à anemia megaloblástica</td></tr>
+<tr><td>O que a cirurgia quebra</td><td>A <b>ingestão</b> — vômitos, intolerância alimentar. É um problema de aporte, e por isso reversível e recorrente</td><td>A <b>maquinaria gástrica</b> — ácido, pepsina, células parietais, fator intrínseco. É um problema estrutural e <b>permanente</b></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="key">
+  <span class="tag">A frase que resume</span>
+  <p>Depois de uma bariátrica, <b>falta tiamina porque o paciente parou de comer; falta B12 porque o estômago parou de existir</b>. A primeira volta assim que a alimentação se restabelece; a segunda exige suplementação para o resto da vida.</p>
+</div>
+<p class="part" id="mecanismos">Parte II — Os mecanismos, um a um</p>
+
+<h2 class="sec" id="s5"><span class="n">5</span>Tiamina (B1)</h2>
+<p class="sub">a carência que é uma falta de energia, não uma falta de estrutura</p>
+
+<p><b>O que a molécula faz.</b> A tiamina é fosforilada em <b>tiamina pirofosfato (TPP)</b>, e o TPP serve a quatro enzimas: a <b>piruvato desidrogenase</b>, que é a porta de entrada do piruvato no ciclo de Krebs; a <b>α-cetoglutarato desidrogenase</b>, que é o passo limitante do próprio ciclo; a desidrogenase dos α-cetoácidos de cadeia ramificada; e a <b>transcetolase</b>, do braço não oxidativo da via das pentoses-fosfato, que fabrica ribose para os ácidos nucleicos e NADPH para a defesa antioxidante.</p>
+
+<p>Note o que isso significa. Sem TPP, a glicose entra na glicólise normalmente, gera piruvato — e <b>para ali</b>. Não atravessa a membrana mitocondrial funcionalmente, não abastece o Krebs, não alimenta a cadeia respiratória. O rendimento energético despenca de cerca de 32 ATP por glicose para 2. E o piruvato acumulado é desviado para lactato.</p>
+
+<p><b>Por que o cérebro, e por que aquelas estruturas.</b> O neurônio é o pior tecido possível para essa falha: depende quase exclusivamente da oxidação aeróbia da glicose, praticamente não usa ácidos graxos, e não tem estoque energético. Mas a carência não atinge o cérebro inteiro de forma homogênea — ela escolhe uma lista curta e sempre a mesma: <b>corpos mamilares, núcleos talâmicos mediodorsais, substância cinzenta periaquedutal, núcleos oculomotores e vestibulares, vermis cerebelar</b>. Essas estruturas periventriculares compartilham duas propriedades: têm a <b>maior taxa metabólica dependente de tiamina</b> do encéfalo, com o turnover mais rápido de TPP, e são intensamente <b>glutamatérgicas</b>.</p>
+
+<p>A cadeia é esta: TPP cai → α-cetoglutarato desidrogenase para → ATP cai → a <b>bomba Na⁺/K⁺-ATPase</b> não sustenta o gradiente → despolarização parcial e edema citotóxico → o transportador de glutamato, que também é dependente de gradiente de sódio, <b>deixa de recaptar glutamato da fenda</b> → glutamato acumula → estimulação contínua de receptores NMDA → entrada de cálcio → ativação de proteases e de óxido nítrico sintase → morte celular. É falência energética que termina em <b>excitotoxicidade</b>. Some-se a isso que a α-cetoglutarato desidrogenase parada é ela própria uma fonte de radicais livres, e que a transcetolase parada reduz o NADPH necessário para neutralizá-los.</p>
+
+<figure>
+<svg viewBox="0 0 960 276" role="img" aria-label="Cascata da deficiência de tiamina: queda de TPP bloqueia piruvato desidrogenase, alfa-cetoglutarato desidrogenase e transcetolase, produzindo falência energética e excitotoxicidade nas estruturas periventriculares, cada uma responsável por um sinal clínico da encefalopatia de Wernicke" class="dg">
+  <defs>
+    <marker id="a2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+      <polygon class="ah" points="0,0 8,4 0,8"/>
+    </marker>
+  </defs>
+
+  <rect class="bx-a" x="20" y="122" width="150" height="44" rx="2"/>
+  <text class="t" x="95" y="141" text-anchor="middle">Tiamina ↓</text>
+  <text class="ts" x="95" y="157" text-anchor="middle">TPP indisponível</text>
+
+  <path class="ln" d="M170 144 L185 144 L185 56 L200 56" marker-end="url(#a2)"/>
+  <path class="ln" d="M170 144 L200 144" marker-end="url(#a2)"/>
+  <path class="ln" d="M170 144 L185 144 L185 232 L200 232" marker-end="url(#a2)"/>
+
+  <rect class="bx" x="200" y="34" width="200" height="44" rx="2"/>
+  <text class="ts" x="300" y="53" text-anchor="middle">piruvato desidrogenase</text>
+  <text class="tm" x="300" y="69" text-anchor="middle">ENTRADA NO KREBS</text>
+
+  <rect class="bx" x="200" y="122" width="200" height="44" rx="2"/>
+  <text class="ts" x="300" y="141" text-anchor="middle">α-cetoglutarato desidrogenase</text>
+  <text class="tm" x="300" y="157" text-anchor="middle">A MAIS SENSÍVEL DE TODAS</text>
+
+  <rect class="bx" x="200" y="210" width="200" height="44" rx="2"/>
+  <text class="ts" x="300" y="229" text-anchor="middle">transcetolase</text>
+  <text class="tm" x="300" y="245" text-anchor="middle">PENTOSES · NADPH</text>
+
+  <path class="ln" d="M400 56 L425 56 L425 144 L450 144" marker-end="url(#a2)"/>
+  <path class="ln" d="M400 144 L450 144" marker-end="url(#a2)"/>
+  <path class="ln" d="M400 232 L425 232 L425 144 L450 144" marker-end="url(#a2)"/>
+
+  <rect class="bx-a" x="450" y="100" width="180" height="90" rx="2"/>
+  <text class="ts" x="540" y="126" text-anchor="middle">queda de ATP</text>
+  <text class="ts" x="540" y="146" text-anchor="middle">falha da Na⁺/K⁺-ATPase</text>
+  <text class="ts" x="540" y="166" text-anchor="middle">glutamato não recaptado</text>
+
+  <path class="ln" d="M630 145 L655 145 L655 48 L676 48" marker-end="url(#a2)"/>
+  <path class="ln" d="M630 145 L655 145 L655 106 L676 106" marker-end="url(#a2)"/>
+  <path class="ln" d="M630 145 L655 145 L655 164 L676 164" marker-end="url(#a2)"/>
+  <path class="ln" d="M630 145 L655 145 L655 222 L676 222" marker-end="url(#a2)"/>
+
+  <text class="tm" x="686" y="44">CORPOS MAMILARES</text>
+  <text class="ts" x="686" y="62">amnésia de Korsakoff — irreversível</text>
+  <text class="tm" x="686" y="102">TÁLAMO MEDIODORSAL</text>
+  <text class="ts" x="686" y="120">confusão, desatenção</text>
+  <text class="tm" x="686" y="160">NÚCLEOS III · IV · VI</text>
+  <text class="ts" x="686" y="178">oftalmoplegia, diplopia</text>
+  <text class="tm" x="686" y="218">VESTIBULARES E VERMIS</text>
+  <text class="ts" x="686" y="236">nistagmo, ataxia</text>
+</svg>
+<figcaption><b>Por que a falta de tiamina escolhe exatamente essas quatro estruturas.</b> Não há tropismo: há seleção pela demanda. As estruturas periventriculares têm o maior consumo de TPP e a maior atividade glutamatérgica do encéfalo, e por isso são as primeiras a cruzar o limiar de falência energética. A tríade clássica é o mapa anatômico dessa vulnerabilidade.</figcaption>
+</figure>
+
+<p><b>Por que a amnésia é irreversível e o resto não.</b> Oftalmoplegia, nistagmo e ataxia respondem à tiamina em horas a dias, porque são <b>disfunção</b> de neurônios ainda vivos. A amnésia da síndrome de Korsakoff não responde, porque a essa altura os corpos mamilares e o circuito de Papez já sofreram <b>necrose</b> — não há o que reativar. Essa é a razão pela qual se trata pela suspeita, sem esperar dosagem: a janela entre disfunção reversível e destruição é de dias.</p>
+
+<p><b>O beribéri úmido.</b> A mesma falha de metabolismo oxidativo, no músculo liso arteriolar, produz acúmulo local de lactato e piruvato, que são <b>vasodilatadores potentes</b>. A resistência vascular sistêmica despenca. O coração compensa elevando o débito, o rim interpreta a queda de pressão efetiva como hipovolemia e ativa o sistema renina-angiotensina-aldosterona, retendo sódio e água. O resultado é uma insuficiência cardíaca <b>de alto débito</b>: congestão pulmonar e edema, mas com <b>extremidades quentes e pressão de pulso alargada</b>, porque o problema é vasodilatação, não falência de bomba. Esse é o achado que separa, à beira do leito, o beribéri da cardiomiopatia do selênio.</p>
+
+<p><b>O beribéri seco.</b> Nos nervos periféricos, o alvo são os <b>axônios mais longos</b> — os que precisam sustentar o maior volume de citoplasma e o maior transporte axonal por unidade de corpo celular. A degeneração é do tipo <i>dying-back</i>, distal para proximal, e por isso o quadro começa em pés e panturrilhas, em distribuição em bota, com o reflexo aquileu sendo o primeiro a se perder.</p>
+
+<div class="key">
+  <span class="tag">Três consequências práticas do mecanismo</span>
+  <p><b>(a)</b> A glicose precipita Wernicke porque uma carga de glicose eleva instantaneamente a demanda das três enzimas TPP-dependentes e consome o resíduo de coenzima — por isso <b>tiamina antes do soro</b>. <b>(b)</b> O magnésio é o cofator que ancora o TPP na apoenzima; hipomagnesemia produz deficiência funcional de tiamina refratária à reposição — por isso <b>repor magnésio junto</b>. <b>(c)</b> A dosagem de escolha é a tiamina em sangue total ou a atividade da transcetolase eritrocitária, não a tiamina sérica.</p>
+</div>
+<h2 class="sec" id="s6"><span class="n">6</span>Vitamina B12</h2>
+<p class="sub">duas reações no corpo inteiro, e as duas explicam tudo</p>
+
+<p><b>A absorção, passo a passo — porque é ali que a cirurgia age.</b> A B12 alimentar chega ligada a proteínas. Na boca, a <b>haptocorrina</b> salivar se liga a ela. No estômago, o <b>ácido clorídrico e a pepsina</b> liberam a cobalamina da proteína alimentar, e ela é capturada pela haptocorrina, que a protege do pH ácido. No duodeno, a <b>tripsina</b> pancreática degrada a haptocorrina e transfere a B12 para o <b>fator intrínseco</b>, glicoproteína secretada pelas mesmas células parietais que produzem o ácido. O complexo B12-fator intrínseco percorre todo o intestino delgado até o <b>íleo terminal</b>, onde é reconhecido pelo receptor <b>cubilina-amnionless</b>. Dentro do enterócito, a B12 é entregue à <b>transcobalamina II</b>, que a leva a todas as células do corpo.</p>
+
+<p>Agora superponha a anatomia do bypass: a bolsa gástrica tem poucos mililitros e quase nenhuma célula parietal; o restante do estômago fica excluído do trânsito; o duodeno também. O íleo terminal continua no lugar, e o receptor continua funcionando. <b>O problema não é o sítio de absorção — é a etapa gástrica.</b> Daí decorre um fato terapêutico elegante: a B12 dos suplementos é <b>cristalina</b>, já livre de proteína, e cerca de 1% dela é absorvido por <b>difusão passiva</b> ao longo de toda a mucosa, sem depender de fator intrínseco. Por isso 350 a 500 mcg por via oral funcionam — está-se explorando 1% de uma dose cinquenta vezes maior que a necessidade.</p>
+
+<p><b>As duas reações.</b> No corpo humano inteiro, a cobalamina participa de apenas duas:</p>
+
+<ul>
+<li><b>Metionina sintase</b>, no citosol, usando <b>metilcobalamina</b>. Ela pega o grupo metila do 5-metil-tetraidrofolato e o entrega à homocisteína, gerando <b>metionina</b> e devolvendo <b>THF</b> ao pool de folato.</li>
+<li><b>Metilmalonil-CoA mutase</b>, na mitocôndria, usando <b>adenosilcobalamina</b>. Ela converte L-metilmalonil-CoA em <b>succinil-CoA</b>, permitindo que o propionato — vindo de aminoácidos e de ácidos graxos de cadeia ímpar — entre no ciclo de Krebs.</li>
+</ul>
+
+<p><b>Da primeira reação saem duas consequências.</b> A metionina gerada é o precursor da <b>S-adenosilmetionina (SAM)</b>, o doador universal de grupos metila do organismo — inclusive para a metilação da <b>proteína básica da mielina</b> e dos fosfolípides de membrana. Sem SAM, a mielina é sintetizada e mantida de forma defeituosa. E, do outro lado, o folato fica <b>preso na forma de 5-metil-THF</b>, porque a única saída dessa forma é justamente a reação da metionina sintase. É a <b>armadilha do metilfolato</b>: há folato no sangue, dosável e até elevado, mas ele é funcionalmente inútil, e a síntese de timidilato para no mesmo lugar em que pararia numa carência real de folato. Daí a anemia megaloblástica indistinguível.</p>
+
+<p><b>Da segunda reação sai o resto.</b> Com a mutase parada, acumulam-se metilmalonil-CoA e seu produto, o <b>ácido metilmalônico</b> — que é o marcador laboratorial, e é específico porque nenhuma outra carência mexe nessa via. Acumula-se também propionil-CoA, que é desviado para a síntese de <b>ácidos graxos de cadeia ímpar e ramificada</b>, incorporados à bainha de mielina no lugar dos ácidos graxos normais. Mielina construída com o lipídio errado é instável.</p>
+
+<p><b>Por que os cordões posteriores primeiro.</b> As duas vias convergem sobre a mielina. Os fascículos grácil e cuneiforme carregam os axônios <b>mais longos, mais calibrosos e mais densamente mielinizados</b> do sistema nervoso — o que significa a maior massa de mielina por neurônio e o maior turnover. São os primeiros a falhar. Daí a perda de propriocepção e de sensibilidade vibratória e o sinal de Romberg. Quando a doença progride para os <b>tratos corticoespinhais laterais</b>, somam-se espasticidade, hiper-reflexia e Babinski — e é a coexistência de acometimento sensitivo e motor que dá o nome de <b>degeneração combinada subaguda</b>. A combinação bizarra de hiper-reflexia com reflexos abolidos, quando há neuropatia periférica associada, é característica.</p>
+
+<figure>
+<svg viewBox="0 0 960 400" role="img" aria-label="As duas reações dependentes de B12: a metionina sintase no citosol, cujo bloqueio prende o folato na forma de metil-THF e interrompe a metilação da mielina, e a metilmalonil-CoA mutase na mitocôndria, cujo bloqueio eleva o ácido metilmalônico e incorpora ácidos graxos ímpares à mielina. O folato em dose alta entra apenas no braço da síntese de DNA." class="dg">
+  <defs>
+    <marker id="a3" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+      <polygon class="ah" points="0,0 8,4 0,8"/>
+    </marker>
+    <marker id="a3a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+      <polygon class="ah-a" points="0,0 8,4 0,8"/>
+    </marker>
+  </defs>
+
+  <text class="tm" x="20" y="18">VIA 1 · CITOSOL — METIONINA SINTASE (METILCOBALAMINA)</text>
+
+  <rect class="bx" x="430" y="30" width="170" height="38" rx="2"/>
+  <text class="ts" x="515" y="54" text-anchor="middle">metionina → SAM</text>
+  <rect class="bx" x="640" y="30" width="300" height="38" rx="2"/>
+  <text class="ts" x="790" y="54" text-anchor="middle">metilação da mielina e dos fosfolípides</text>
+
+  <rect class="bx" x="20" y="88" width="160" height="40" rx="2"/>
+  <text class="ts" x="100" y="113" text-anchor="middle">5-metil-THF</text>
+
+  <rect class="bx-a" x="220" y="88" width="170" height="40" rx="2"/>
+  <text class="ts" x="322" y="113" text-anchor="middle">metionina sintase</text>
+
+  <rect class="bx" x="430" y="88" width="170" height="40" rx="2"/>
+  <text class="ts" x="515" y="113" text-anchor="middle">THF</text>
+  <rect class="bx" x="640" y="88" width="150" height="40" rx="2"/>
+  <text class="ts" x="715" y="113" text-anchor="middle">dTMP → DNA</text>
+  <rect class="bx" x="820" y="88" width="120" height="40" rx="2"/>
+  <text class="ts" x="880" y="113" text-anchor="middle">eritropoese</text>
+
+  <path class="ln" d="M180 108 L216 108" marker-end="url(#a3)"/>
+  <path class="ln" d="M390 108 L410 108 L410 49 L426 49" marker-end="url(#a3)"/>
+  <path class="ln" d="M390 108 L426 108" marker-end="url(#a3)"/>
+  <path class="ln" d="M600 49 L636 49" marker-end="url(#a3)"/>
+  <path class="ln" d="M600 108 L636 108" marker-end="url(#a3)"/>
+  <path class="ln" d="M790 108 L816 108" marker-end="url(#a3)"/>
+  <path class="ln-x" d="M234 99 L252 117 M252 99 L234 117"/>
+  <text class="tm" x="305" y="146" text-anchor="middle">BLOQUEADA · o folato fica preso como 5-metil-THF</text>
+
+  <rect class="bx-p" x="430" y="164" width="170" height="34" rx="2" stroke="var(--accent)" opacity="1"/>
+  <text class="ta" x="515" y="185" text-anchor="middle">FOLATO EM DOSE ALTA</text>
+  <path class="ln-a" d="M515 164 L515 132" marker-end="url(#a3a)"/>
+  <text class="ts" x="620" y="178">entra só aqui: restaura o dTMP por ação de massa</text>
+  <text class="ts" x="620" y="195">e normaliza o hemograma — nada mais.</text>
+
+  <path class="ln" d="M20 224 L940 224" stroke-dasharray="4 4" opacity=".35"/>
+  <text class="tm" x="20" y="252">VIA 2 · MITOCÔNDRIA — METILMALONIL-CoA MUTASE (ADENOSILCOBALAMINA)</text>
+
+  <rect class="bx" x="20" y="264" width="180" height="40" rx="2"/>
+  <text class="ts" x="110" y="289" text-anchor="middle">L-metilmalonil-CoA</text>
+  <rect class="bx-a" x="240" y="264" width="150" height="40" rx="2"/>
+  <text class="ts" x="332" y="289" text-anchor="middle">mutase</text>
+  <rect class="bx" x="430" y="264" width="190" height="40" rx="2"/>
+  <text class="ts" x="525" y="289" text-anchor="middle">succinil-CoA → Krebs</text>
+  <path class="ln" d="M200 284 L236 284" marker-end="url(#a3)"/>
+  <path class="ln" d="M390 284 L426 284" marker-end="url(#a3)"/>
+  <path class="ln-x" d="M254 275 L272 293 M272 275 L254 293"/>
+
+  <path class="ln" d="M315 304 L315 322 L200 322 L200 336" marker-end="url(#a3)"/>
+  <path class="ln" d="M315 322 L640 322 L640 336" marker-end="url(#a3)"/>
+
+  <rect class="bx" x="60" y="338" width="280" height="44" rx="2"/>
+  <text class="ts" x="200" y="357" text-anchor="middle">ácido metilmalônico ↑</text>
+  <text class="tm" x="200" y="373" text-anchor="middle">O MARCADOR ESPECÍFICO</text>
+  <rect class="bx" x="420" y="338" width="440" height="44" rx="2"/>
+  <text class="ts" x="640" y="357" text-anchor="middle">ácidos graxos de cadeia ímpar entram na mielina</text>
+  <text class="tm" x="640" y="373" text-anchor="middle">MIELINA ESTRUTURALMENTE INSTÁVEL</text>
+</svg>
+<figcaption><b>Por que repor folato conserta o hemograma e deixa a neurologia piorar.</b> O folato em dose alta força a síntese de timidilato por ação de massa e a anemia desaparece — mas ele não toca a via da mutase nem repõe a SAM. Os dois braços que destroem a mielina continuam ativos, agora sem o sinal hematológico que denunciaria a carência. É a razão mecanística da regra de nunca repor folato numa macrocitose não investigada.</figcaption>
+</figure>
+
+<h2 class="sec" id="s7"><span class="n">7</span>Folato (B9)</h2>
+<p class="sub">o doador de um carbono, e a doença da célula que não consegue se dividir</p>
+
+<p><b>O que a molécula faz.</b> O tetraidrofolato carrega <b>unidades de um carbono</b> em diferentes estados de oxidação e as entrega a três destinos: a síntese de <b>purinas</b>, a conversão de <b>dUMP em dTMP</b> pela timidilato sintase, e a regeneração de metionina a partir de homocisteína — esta última em parceria com a B12.</p>
+
+<p><b>Absorção.</b> O folato dos alimentos é um poliglutamato e precisa ser desconjugado a monoglutamato pela <b>glutamato carboxipeptidase II</b> da borda em escova, antes de ser absorvido pelo transportador PCFT — que funciona melhor em pH ácido. Ambos vivem no <b>jejuno proximal</b>. Ou seja: o bypass remove a enzima, o transportador e o pH ao mesmo tempo.</p>
+
+<p><b>Da bioquímica ao sintoma.</b> O gargalo decisivo é o dTMP. Sem timidina, a DNA polimerase incorpora <b>uracila</b> no lugar da timina. O sistema de reparo por excisão de bases reconhece o erro, retira a uracila — e recoloca outra uracila, porque não há timidina disponível. O ciclo se repete até que os cortes simultâneos nas duas fitas produzam <b>quebras de dupla hélice</b> e a célula pare em G1/S ou entre em apoptose.</p>
+
+<p>A consequência morfológica tem nome: <b>assincronia núcleo-citoplasmática</b>. O citoplasma do eritroblasto amadurece normalmente, porque a síntese de hemoglobina não depende de folato; o núcleo não consegue se dividir. O resultado é uma célula grande, com núcleo imaturo e citoplasma maduro — o megaloblasto. Muitos deles morrem ainda na medula: é a <b>eritropoese ineficaz</b>, que explica o conjunto laboratorial clássico de <b>LDH alta, bilirrubina indireta alta, haptoglobina baixa e reticulócitos baixos</b> — o padrão de uma "hemólise intramedular". Nos granulócitos, a mesma dificuldade de divisão produz o <b>neutrófilo hipersegmentado</b>, com cinco ou mais lobos.</p>
+
+<p>E como o mecanismo é "célula que não consegue se dividir", os demais alvos são previsíveis: as <b>mucosas de renovação rápida</b>, com glossite e diarreia; e o <b>embrião</b>. O tubo neural se fecha entre a terceira e a quarta semana de gestação, quando a maioria das mulheres ainda não sabe que está grávida — daí a suplementação ser <b>pré-concepcional</b>, e daí a recomendação de 800 a 1.000 mcg diários em mulheres em idade fértil após bariátrica, junto à orientação de evitar gestação por 12 a 18 meses.</p>
+
+<div class="key">
+  <span class="tag">Por que folato não dá doença neurológica</span>
+  <p>Porque o dano à mielina na carência de B12 vem de <b>dois</b> braços — a queda de SAM e a incorporação de ácidos graxos ímpares —, e a carência de folato só afeta o primeiro, de forma mais branda. Sem a via da metilmalonil-CoA mutase comprometida, não há lipídio anômalo sendo incorporado à bainha. É por isso que <b>MMA normal com homocisteína alta</b> aponta folato, e é a mesma razão pela qual a carência de folato praticamente não cursa com mielopatia.</p>
+</div>
+<h2 class="sec" id="s8"><span class="n">8</span>Ferro</h2>
+<p class="sub">o metal do heme, e três golpes simultâneos da cirurgia</p>
+
+<p><b>A absorção.</b> O ferro heme, da carne, é absorvido inteiro, como porfirina, e é a fração mais eficiente. O ferro não heme, dos vegetais e dos suplementos, chega como <b>Fe³⁺</b>, que é insolúvel em pH neutro — precisa ser <b>solubilizado pelo ácido gástrico</b> e depois <b>reduzido a Fe²⁺</b> pela citocromo b duodenal, com auxílio do ascorbato, para então atravessar a membrana pelo transportador <b>DMT1</b>. Dentro do enterócito, o ferro sai pela <b>ferroportina</b> e precisa ser <b>reoxidado a Fe³⁺</b> pela hefaestina — uma ferroxidase <b>dependente de cobre</b> — para se ligar à transferrina.</p>
+
+<p>O DMT1 e a citocromo b duodenal são expressos essencialmente no <b>duodeno e no jejuno proximal</b>. Some: a hipocloridria da bolsa gástrica impede a solubilização; a exclusão duodenojejunal remove o transportador; e a intolerância à carne vermelha, muito comum após a cirurgia, corta a fração heme. Três mecanismos independentes, o que explica a deficiência de ferro ser a mais frequente de todas — 20 a 55% após bypass.</p>
+
+<p><b>Da bioquímica ao sintoma.</b> O ferro é o átomo central do <b>grupo heme</b>: hemoglobina, mioglobina, citocromos da cadeia respiratória, catalase, peroxidases. É também cofator de enzimas ferro-enxofre do Krebs e da <b>tirosina hidroxilase</b>, passo limitante da síntese de dopamina.</p>
+
+<ul>
+<li><b>Anemia microcítica hipocrômica</b> — e a microcitose tem uma explicação bonita: o <b>heme é o sinal que interrompe as divisões</b> do eritroblasto. Sem heme suficiente, o precursor faz uma ou duas mitoses a mais antes de expulsar o núcleo, e cada divisão extra reduz o volume celular. A célula fica pequena <i>porque</i> se dividiu demais.</li>
+<li><b>Fadiga desproporcional à anemia</b>, porque os citocromos mitocondriais e as enzimas do Krebs também estão comprometidos no músculo — o paciente cansa antes de a hemoglobina justificar.</li>
+<li><b>Síndrome das pernas inquietas</b>, pela via dopaminérgica dependente de tirosina hidroxilase.</li>
+<li><b>Coiloníquia, queilite angular, glossite atrófica e disfagia de Plummer-Vinson</b>, todos em <b>epitélios de renovação rápida</b>, que dependem de citocromos e de ribonucleotídeo redutase.</li>
+<li><b>Picamalácia</b> — a compulsão por gelo, terra ou amido, cujo mecanismo não é bem compreendido mas é altamente específica.</li>
+</ul>
+
+<div class="key">
+  <span class="tag">O elo com o cobre</span>
+  <p>A hefaestina e a ceruloplasmina são <b>ferroxidases dependentes de cobre</b>, e sem elas o ferro <b>não consegue sair</b> do enterócito nem dos macrófagos para se ligar à transferrina. O paciente com deficiência de cobre tem ferro no corpo — ferritina normal ou alta — e mesmo assim é funcionalmente ferropênico. É o mecanismo exato por trás da anemia microcítica que não responde a meses de sulfato ferroso.</p>
+</div>
+
+<h2 class="sec" id="s9"><span class="n">9</span>Cobre</h2>
+<p class="sub">seis cuproenzimas, e cada sintoma é uma delas</p>
+
+<p><b>Absorção.</b> Estômago e duodeno proximal — exatamente a região excluída. E há um segundo mecanismo, iatrogênico e frequente: o <b>zinco em excesso induz metalotioneína</b> no enterócito. A metalotioneína liga cobre com afinidade muito maior do que liga zinco, então sequestra o cobre dentro da célula, que é depois <b>descamada e eliminada nas fezes</b>. O zinco não "compete" pelo transportador: ele constrói a armadilha que retém o cobre.</p>
+
+<p><b>Da bioquímica ao sintoma.</b> Cada manifestação corresponde a uma cuproenzima específica:</p>
+
+<div class="tbl-scroll">
+<table>
+<thead><tr><th>Cuproenzima</th><th>Função</th><th>O que a falta produz</th></tr></thead>
+<tbody>
+<tr><td>Ceruloplasmina e hefaestina</td><td>Ferroxidases — oxidam Fe²⁺ a Fe³⁺ para a transferrina</td><td><b>Anemia</b> com ferro estocado normal ou alto; refratária ao ferro oral</td></tr>
+<tr><td>Citocromo c oxidase</td><td>Complexo IV da cadeia respiratória</td><td><b>Mielopatia</b> dos tratos de maior demanda energética; miopatia</td></tr>
+<tr><td>Superóxido dismutase Cu/Zn</td><td>Defesa antioxidante citosólica</td><td>Dano oxidativo aos precursores medulares</td></tr>
+<tr><td>Lisil oxidase</td><td>Ligações cruzadas de colágeno e elastina</td><td>Fragilidade vascular e óssea, alterações do conjuntivo</td></tr>
+<tr><td>Dopamina β-hidroxilase</td><td>Converte dopamina em noradrenalina</td><td>Disautonomia, hipotensão ortostática</td></tr>
+<tr><td>Tirosinase</td><td>Síntese de melanina</td><td>Hipopigmentação de pele e cabelos</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><b>A neutropenia, que é o achado que salva a questão.</b> O cobre é necessário à maturação dos precursores granulocíticos, e sua falta produz uma <b>parada de maturação no estágio de mielócito</b>, com <b>vacuolização dos precursores eritroides e mieloides</b> na medula — um achado morfológico bastante característico. Some-se a falência da superóxido dismutase, que deixa os precursores expostos ao estresse oxidativo. A B12, por comparação, praticamente não causa neutropenia isolada: ela dá hipersegmentação, não parada de maturação. Guarde a assimetria — <b>mielopatia com neutropenia é cobre; mielopatia com hipersegmentação e macrocitose é B12</b>.</p>
+
+<p><b>Por que a mielopatia é idêntica à da B12.</b> Os mecanismos propostos são a falência da citocromo c oxidase nos tratos longos e altamente mielinizados, que são os de maior demanda energética por unidade de corpo celular, somada a prejuízo das reações de metilação dependentes de SAM. O resultado anatômico é o mesmo — degeneração de cordões posteriores com hipersinal em T2 na ressonância cervical. <b>O que separa as duas bioquimicamente é que a via da metilmalonil-CoA mutase permanece intacta na carência de cobre</b>, e por isso o <b>MMA é normal</b>. Esse é o exame que desempata quando a clínica e a imagem não desempatam.</p>
+
+<p>Clinicamente, vale registrar: a parte hematológica responde à reposição em semanas; <b>o déficit neurológico frequentemente não responde</b>. É uma carência que se previne, não que se remedeia.</p>
+
+<h2 class="sec" id="s10"><span class="n">10</span>Zinco</h2>
+<p class="sub">estrutural antes de catalítico — e é isso que explica a pele</p>
+
+<p><b>O que a molécula faz.</b> O zinco tem dois papéis distintos. É <b>cofator catalítico</b> de mais de trezentas enzimas — anidrase carbônica, fosfatase alcalina, DNA e RNA polimerases, metaloproteinases de matriz, álcool desidrogenase, superóxido dismutase Cu/Zn. E é <b>elemento estrutural</b> de cerca de dois mil e quinhentos fatores de transcrição, os <b>dedos de zinco</b>, em que dois pares de cisteína e histidina se coordenam a um íon de zinco para formar o dobramento que se encaixa no sulco do DNA. Sem zinco, o dedo não se dobra e o fator de transcrição não se liga.</p>
+
+<p><b>Da bioquímica ao sintoma.</b> Como as polimerases e os dedos de zinco governam a proliferação celular, os alvos são os <b>tecidos de renovação mais rápida</b>:</p>
+
+<ul>
+<li><b>Dermatite periorificial e acral</b> — o padrão da acrodermatite enteropática, que é a doença genética do transportador ZIP4 e serve de modelo perfeito da carência adquirida: placas eritemato-descamativas ao redor da boca, das narinas, do períneo e nas extremidades.</li>
+<li><b>Alopecia difusa</b>, porque o folículo piloso é o tecido de maior índice mitótico do organismo.</li>
+<li><b>Má cicatrização</b>, por três motivos somados: proliferação de fibroblastos, síntese de colágeno e atividade das metaloproteinases de matriz, todas zinco-dependentes.</li>
+<li><b>Diarreia</b>, por atrofia da mucosa — que agrava a própria carência num círculo vicioso.</li>
+<li><b>Disgeusia</b>, o sinal mais específico: a <b>gustina</b>, uma isoforma de anidrase carbônica salivar, é uma metaloproteína de zinco necessária à maturação dos botões gustativos. Sem zinco, os botões não se renovam.</li>
+<li><b>Imunodeficiência</b>, porque a <b>timulina</b>, hormônio tímico, precisa de zinco para ser ativa — daí linfopenia T e infecções de repetição.</li>
+<li><b>Hipogonadismo</b> e atraso puberal, pela alta taxa de divisão da linhagem germinativa.</li>
+<li><b>Cegueira noturna</b>, por dois caminhos: a <b>retinol desidrogenase</b>, que converte retinol em retinal, é uma enzima de zinco; e a síntese hepática da proteína ligadora de retinol também depende dele.</li>
+</ul>
+
+<div class="key">
+  <span class="tag">A diferenciação da alopecia</span>
+  <p><b>Zinco</b> traz junto disgeusia, dermatite periorificial e má cicatrização. <b>Ferro</b> traz anemia microcítica e ferritina baixa. <b>Biotina</b> traz dermatite e alopecia, mas <b>nunca disgeusia</b>, e é rara. <b>Proteína</b> traz edema e hipoalbuminemia. Quatro carências, o mesmo cabelo caindo, e quatro companhias diferentes.</p>
+</div>
+
+<h2 class="sec" id="s11"><span class="n">11</span>Vitamina A</h2>
+<p class="sub">duas moléculas com dois trabalhos: enxergar e diferenciar epitélio</p>
+
+<p><b>A forma que enxerga.</b> O <b>11-cis-retinal</b> se liga à opsina formando a <b>rodopsina</b>, o pigmento dos bastonetes. Quando um fóton atinge a rodopsina, o 11-cis-retinal se isomeriza a all-trans-retinal; a mudança de forma ativa a <b>transducina</b>, que ativa a fosfodiesterase, que degrada o GMP cíclico, que fecha os canais de sódio da membrana do fotorreceptor, que hiperpolariza a célula — e isso é o sinal visual. O bastonete é responsável pela <b>visão escotópica</b> e tem o maior turnover de rodopsina da retina.</p>
+
+<p>Por isso a <b>cegueira noturna é o primeiro sintoma</b>, e é puramente funcional: acontece antes de qualquer lesão anatômica e reverte em dias com a reposição. Ela é o marcador mais precoce e mais sensível da hipovitaminose A.</p>
+
+<p><b>A forma que diferencia tecido.</b> O <b>ácido retinoico</b> é ligante dos receptores nucleares <b>RAR e RXR</b>, que se ligam ao DNA e comandam a transcrição dos genes de <b>diferenciação epitelial</b>, sobretudo do epitélio mucossecretor. Sem ele, o epitélio segue o programa padrão: <b>metaplasia escamosa e queratinização</b>.</p>
+
+<p>A sequência ocular decorre disso, e é uma escalada anatômica: a conjuntiva perde as células caliciformes → o filme lacrimal não se sustenta → <b>xerose conjuntival</b> → queratina se acumula em placas espumosas, colonizadas por <i>Corynebacterium xerosis</i>, formando as <b>manchas de Bitot</b> → a córnea segue o mesmo caminho, com xerose e depois <b>ceratomalácia</b>, amolecimento e perfuração. A partir da ceratomalácia a lesão é irreversível — e é por isso que ela é uma das poucas emergências carenciais.</p>
+
+<p>O mesmo mecanismo, em outros epitélios, dá <b>hiperceratose folicular</b> na pele (a “pele de sapo”) e, por perda da barreira mucosa respiratória e intestinal, aumenta a susceptibilidade a infecções e a diarreia — a razão pela qual a suplementação de vitamina A reduz a mortalidade infantil em populações carentes.</p>
+
+<div class="key">
+  <span class="tag">Por que a reposição às vezes falha</span>
+  <p>A vitamina A é estocada nas <b>células estreladas hepáticas</b> (de Ito), que guardam cerca de 90% do total, e circula ligada à <b>proteína ligadora de retinol (RBP4)</b> em complexo com a transtirretina. A síntese de RBP depende de <b>zinco</b> e de aporte <b>proteico</b> adequado; e a deficiência de <b>ferro</b> prejudica a mobilização dos estoques hepáticos. Hipovitaminose A que não responde à vitamina A é, quase sempre, hipovitaminose A com zinco ou proteína no chão.</p>
+</div>
+
+<h2 class="sec" id="s12"><span class="n">12</span>Vitamina E</h2>
+<p class="sub">um antioxidante de membrana — e o sistema nervoso é feito de membrana</p>
+
+<p><b>O que a molécula faz.</b> O α-tocoferol se insere na bicamada lipídica e interrompe a <b>peroxidação lipídica em cadeia</b>. Quando um radical livre arranca um hidrogênio de um ácido graxo poli-insaturado, gera um radical peroxil que ataca o vizinho, e assim por diante — uma reação em cadeia que desmonta a membrana. O tocoferol doa seu hidrogênio ao radical peroxil, encerrando a cadeia, e o radical tocoferil resultante é <b>regenerado pelo ascorbato</b>. Vitaminas E e C trabalham em série: uma na fase lipídica, outra na aquosa.</p>
+
+<p><b>Da bioquímica ao sintoma.</b> O alvo é o tecido com maior área de membrana rica em ácidos graxos poli-insaturados por unidade de volume e com alta atividade oxidativa — o <b>axônio longo e mielinizado</b> e o <b>segmento externo do fotorreceptor</b>, que é literalmente uma pilha de discos de membrana e o tecido mais rico em PUFA do corpo humano.</p>
+
+<ul>
+<li><b>Ataxia sensitiva e cerebelar</b>, por degeneração dos cordões posteriores e dos tratos espinocerebelares.</li>
+<li><b>Arreflexia global</b>, porque as fibras Ia — as maiores e mais mielinizadas — são as primeiras a degenerar; é o sinal mais marcante e o que mais chama atenção.</li>
+<li><b>Perda de propriocepção e de vibratória</b>, pela mesma via de cordão posterior.</li>
+<li><b>Retinopatia pigmentar</b>, pela peroxidação dos discos do fotorreceptor.</li>
+<li><b>Oftalmoparesia</b> e, em quadros prolongados, miopatia.</li>
+<li><b>Hemólise</b>, por peroxidação da membrana eritrocitária — clássica no prematuro, discreta no adulto.</li>
+</ul>
+
+<p>Note a arquitetura do diagnóstico diferencial: <b>B12, cobre e vitamina E</b> produzem a mesma síndrome de cordão posterior. O hemograma é o árbitro — <b>macrocitose com MMA alto é B12; anemia com neutropenia é cobre; hemograma normal com arreflexia marcante e retinopatia pigmentar é vitamina E</b>.</p>
+
+<h2 class="sec" id="s13"><span class="n">13</span>Vitamina K</h2>
+<p class="sub">uma única modificação química, feita em dez proteínas</p>
+
+<p><b>O que a molécula faz.</b> A vitamina K é cofator de uma só enzima, a <b>γ-glutamil carboxilase</b>, que executa uma única modificação pós-traducional: converte resíduos de <b>glutamato</b> em <b>γ-carboxiglutamato (Gla)</b>. A reação consome vitamina K reduzida, gerando o epóxido, que é reciclado pela <b>epóxido redutase</b> — a enzima inibida pela varfarina.</p>
+
+<p><b>Por que isso importa.</b> O resíduo Gla tem duas carboxilas adjacentes, e essa pinça <b>quela cálcio</b>. O cálcio, por sua vez, ancora a proteína à superfície de <b>fosfolípides aniônicos</b> expostos na membrana da plaqueta ativada e do endotélio lesado. É esse ancoramento que permite montar os complexos <b>tenase</b> e <b>protrombinase</b> na superfície certa, concentrando os fatores no lugar da lesão e acelerando a coagulação em ordens de magnitude.</p>
+
+<p>Sem carboxilação, os fatores <b>II, VII, IX e X</b> e as proteínas <b>C, S e Z</b> continuam a ser sintetizados e circulam normalmente — são as chamadas <b>PIVKA</b>, proteínas induzidas pela ausência de vitamina K. Estão presentes à dosagem imunológica e são <b>funcionalmente inertes</b>, porque não conseguem se ancorar. A coagulação falha não por falta de proteína, mas por falta de endereço.</p>
+
+<ul>
+<li><b>Por que o TP alarga primeiro:</b> o <b>fator VII</b> tem a meia-vida mais curta de todos, de quatro a seis horas, e é o fator da via extrínseca, medida pelo tempo de protrombina. O TTPa alarga depois, quando IX e X caem.</li>
+<li><b>Por que o fator V desempata:</b> o fator V é sintetizado pelo fígado, mas <b>não é Gla-dependente</b>. Na carência de vitamina K ele está <b>normal</b>; na insuficiência hepática, em que a síntese proteica inteira falha, ele está <b>baixo</b>. Um único exame separa duas causas de INR alargado.</li>
+<li><b>Fora da coagulação:</b> a <b>osteocalcina</b> e a <b>proteína Gla da matriz</b> também precisam de carboxilação. Osteocalcina não carboxilada compromete a mineralização; proteína Gla da matriz não carboxilada perde a capacidade de <b>inibir a calcificação vascular</b>. São efeitos silenciosos, de longo prazo, relevantes num paciente com décadas de má absorção pela frente.</li>
+</ul>
+
+<p>Uma nota sobre a flora: bactérias colônicas produzem menaquinonas, mas o cólon absorve mal essas formas, e a contribuição é modesta. Por isso a carência é possível mesmo com flora intacta, e o antibiótico de largo espectro num paciente já disabsortivo pode ser o gatilho que faltava.</p>
+<h2 class="sec" id="s14"><span class="n">14</span>Vitamina D e cálcio</h2>
+<p class="sub">um hormônio esteroide, e um circuito de retroalimentação que explica quatro exames</p>
+
+<p><b>A cadeia de ativação.</b> O 7-deidrocolesterol na pele absorve UVB e se converte em <b>colecalciferol</b>. No fígado, a CYP2R1 faz a <b>25-hidroxilação</b>, gerando a <b>25-OH-vitamina D</b> — que tem meia-vida de duas a três semanas e é, por isso, <b>o marcador do estoque</b>. No rim, a CYP27B1 faz a <b>1α-hidroxilação</b>, gerando a <b>1,25-di-hidroxivitamina D</b>, que é o hormônio ativo, com meia-vida de horas, e cuja produção é <b>estimulada pelo PTH</b> e pela hipofosfatemia.</p>
+
+<div class="key">
+  <span class="tag">Por que não se dosa a 1,25</span>
+  <p>Justamente porque ela é regulada. Num paciente com carência real de vitamina D, o hiperparatireoidismo secundário <b>estimula a 1α-hidroxilase</b>, e a 1,25-D pode vir <b>normal ou até elevada</b>. Dosá-la é a maneira mais confiável de deixar de diagnosticar a deficiência. Dosa-se a <b>25-OH</b>, que reflete o depósito e não sofre esse contra-regulação.</p>
+</div>
+
+<p><b>O que o hormônio faz.</b> A 1,25-D se liga ao <b>receptor VDR</b>, um receptor nuclear, e induz no enterócito a maquinaria de <b>absorção ativa de cálcio</b>: o canal apical <b>TRPV6</b>, a <b>calbindina</b> citosólica que transporta o cálcio pela célula sem elevar o cálcio livre, e a bomba basolateral <b>PMCA</b>. Essa absorção ativa acontece sobretudo no <b>duodeno e jejuno proximal</b> — precisamente o segmento excluído pelo bypass. E o cálcio, para ser absorvido, precisa estar <b>ionizado</b>, o que exige meio ácido: outro golpe.</p>
+
+<figure>
+<svg viewBox="0 0 960 380" role="img" aria-label="Circuito do hiperparatireoidismo secundário após bypass: exclusão duodenojejunal e hipocloridria reduzem a absorção de cálcio, o cálcio iônico cai, o receptor de cálcio da paratireoide eleva o PTH, e o PTH produz quatro efeitos que explicam os achados laboratoriais — cálcio normal às custas do osso, calciúria baixa, fósforo baixo e 1,25-D normal ou alta" class="dg">
+  <defs>
+    <marker id="a4" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+      <polygon class="ah" points="0,0 8,4 0,8"/>
+    </marker>
+  </defs>
+
+  <rect class="bx" x="20" y="24" width="230" height="52" rx="2"/>
+  <text class="ts" x="135" y="45" text-anchor="middle">duodeno e jejuno proximal excluídos</text>
+  <text class="ts" x="135" y="63" text-anchor="middle">+ hipocloridria da bolsa gástrica</text>
+
+  <path class="ln" d="M135 76 L135 106" marker-end="url(#a4)"/>
+  <rect class="bx" x="20" y="108" width="230" height="40" rx="2"/>
+  <text class="ts" x="135" y="133" text-anchor="middle">absorção de cálcio ↓</text>
+
+  <path class="ln" d="M135 148 L135 178" marker-end="url(#a4)"/>
+  <rect class="bx" x="20" y="180" width="230" height="40" rx="2"/>
+  <text class="ts" x="135" y="205" text-anchor="middle">cálcio iônico ↓ (transitório)</text>
+
+  <path class="ln" d="M250 200 L296 200" marker-end="url(#a4)"/>
+  <rect class="bx-a" x="298" y="180" width="190" height="40" rx="2"/>
+  <text class="ts" x="393" y="198" text-anchor="middle">CaSR da paratireoide</text>
+  <text class="ts" x="393" y="214" text-anchor="middle">PTH ↑</text>
+
+  <path class="ln" d="M488 200 L516 200 L516 87 L556 87" marker-end="url(#a4)"/>
+  <path class="ln" d="M488 200 L516 200 L516 167 L556 167" marker-end="url(#a4)"/>
+  <path class="ln" d="M488 200 L516 200 L516 247 L556 247" marker-end="url(#a4)"/>
+  <path class="ln" d="M488 200 L516 200 L516 327 L556 327" marker-end="url(#a4)"/>
+
+  <rect class="bx" x="558" y="60" width="382" height="54" rx="2"/>
+  <text class="ts" x="574" y="80">Osso — RANKL ativa osteoclastos</text>
+  <text class="tm" x="574" y="100">CÁLCIO SÉRICO NORMAL ÀS CUSTAS DO ESQUELETO</text>
+
+  <rect class="bx" x="558" y="140" width="382" height="54" rx="2"/>
+  <text class="ts" x="574" y="160">Rim — reabsorção tubular de cálcio ↑</text>
+  <text class="tm" x="574" y="180">CALCIÚRIA BAIXA · SEPARA DO HIPERPARA PRIMÁRIO</text>
+
+  <rect class="bx" x="558" y="220" width="382" height="54" rx="2"/>
+  <text class="ts" x="574" y="240">Rim — fosfatúria ↑</text>
+  <text class="tm" x="574" y="260">FÓSFORO SÉRICO BAIXO</text>
+
+  <rect class="bx" x="558" y="300" width="382" height="54" rx="2"/>
+  <text class="ts" x="574" y="320">Rim — 1α-hidroxilase estimulada</text>
+  <text class="tm" x="574" y="340">1,25-D NORMAL OU ALTA · POR ISSO SE DOSA A 25-OH</text>
+
+  <rect class="bx-p" x="20" y="254" width="470" height="100" rx="2" stroke="var(--accent)" opacity="1"/>
+  <text class="ta" x="40" y="280">A ARMADILHA</text>
+  <text class="ts" x="40" y="306">O PTH consegue manter o cálcio sérico normal.</text>
+  <text class="ts" x="40" y="326">Por isso um cálcio normal não afasta a carência —</text>
+  <text class="ts" x="40" y="346">quem a denuncia é o PTH alto com calciúria baixa.</text>
+</svg>
+<figcaption><b>Um circuito, quatro achados de laboratório.</b> O PTH sobe <i>para</i> manter o cálcio, e consegue — por isso o cálcio sérico costuma estar normal ou apenas discretamente baixo. Os três achados que denunciam a origem secundária são a <b>calciúria baixa</b>, o <b>fósforo baixo</b> e a <b>fosfatase alcalina alta</b>. No hiperparatireoidismo primário o cálcio estaria alto e a calciúria elevada.</figcaption>
+</figure>
+
+<p><b>Osteomalácia, e por que não é osteoporose.</b> Com cálcio e fósforo insuficientes, o osteoblasto continua produzindo matriz osteoide normalmente — mas o produto cálcio × fósforo não atinge o limiar de precipitação da hidroxiapatita, e a matriz <b>não mineraliza</b>. O osso resultante é volumoso e mole. A dor óssea difusa vem da tensão do periósteo sobre osteoide não mineralizado; a <b>fraqueza proximal</b> vem do VDR do próprio músculo esquelético; a <b>fosfatase alcalina alta</b> vem do osteoblasto hiperativo tentando compensar.</p>
+
+<p>A distinção conceitual: <b>osteoporose é massa óssea reduzida com mineralização normal</b>; <b>osteomalácia é massa preservada com mineralização defeituosa</b>. O paciente pós-bariátrico costuma ter as duas, porque a reabsorção crônica dirigida pelo PTH corrói a massa enquanto a falta de substrato compromete a mineralização.</p>
+
+<p><b>Por que citrato e não carbonato.</b> O carbonato de cálcio precisa de <b>íons H⁺</b> para dissociar e liberar o cálcio ionizado — em uma bolsa gástrica pequena, com pouca célula parietal e frequentemente sob inibidor de bomba, essa dissociação não acontece. O <b>citrato de cálcio</b> já é um sal solúvel e absorve independentemente do pH e da presença de alimento. E a absorção satura acima de 500 a 600 mg por tomada, o que obriga a <b>fracionar</b> a dose.</p>
+
+<h2 class="sec" id="s15"><span class="n">15</span>Magnésio</h2>
+<p class="sub">o cofator do cofator</p>
+
+<p><b>O que o íon faz.</b> Praticamente todo ATP intracelular existe como <b>complexo Mg-ATP</b> — o magnésio neutraliza a carga negativa dos fosfatos e é o que torna o ATP um substrato utilizável. São mais de seiscentas enzimas dependentes. Além disso, o magnésio é cofator da <b>transcetolase</b>, o que o liga diretamente à tiamina, e estabiliza a estrutura de DNA, RNA e ribossomos.</p>
+
+<p><b>Por que a hipocalcemia fica refratária.</b> Duas razões simultâneas. Primeira: a <b>exocitose do PTH</b> pela paratireoide é um processo dependente de magnésio; na hipomagnesemia grave, a secreção de PTH é <b>paradoxalmente inibida</b>. Segunda: o receptor de PTH no osso e no rim é acoplado a proteína G, e a adenilato ciclase que ele ativa requer magnésio — de modo que, mesmo o pouco PTH que sai, encontra <b>resistência periférica</b>. O resultado é uma hipocalcemia com <b>PTH inapropriadamente baixo ou normal</b>, um padrão que não faz sentido nenhum até você lembrar do magnésio.</p>
+
+<p><b>Por que a hipopotassemia também não corrige.</b> O canal <b>ROMK</b> da célula principal do túbulo coletor secreta potássio para a urina, e é normalmente <b>bloqueado por dentro pelo magnésio intracelular</b>. Sem magnésio, o bloqueio desaparece, o canal fica permanentemente aberto e o potássio vaza para a urina tão rápido quanto se repõe. É perda renal obrigatória, e só cessa quando o magnésio é reposto.</p>
+
+<div class="key">
+  <span class="tag">O padrão a reconhecer</span>
+  <p><b>Hipocalcemia refratária + hipopotassemia refratária + PTH baixo para o grau de hipocalcemia.</b> Repor cálcio e potássio nesse cenário é enxugar gelo. Repõe-se magnésio primeiro, e os outros dois se corrigem sozinhos.</p>
+</div>
+
+<h2 class="sec" id="s16"><span class="n">16</span>Selênio</h2>
+<p class="sub">o vigésimo primeiro aminoácido, e o coração como órgão-alvo</p>
+
+<p><b>O que o elemento faz.</b> O selênio não age como íon livre: é incorporado a proteínas na forma de <b>selenocisteína</b>, considerada o vigésimo primeiro aminoácido, codificada por um códon UGA reinterpretado graças a um elemento de sequência no RNA mensageiro. São cerca de vinte e cinco selenoproteínas humanas. Três famílias importam clinicamente:</p>
+
+<ul>
+<li><b>Glutationa peroxidases (GPx1 a GPx4)</b> — reduzem peróxido de hidrogênio e <b>hidroperóxidos lipídicos</b>, usando glutationa como doador de elétrons. A GPx4 é a única enzima capaz de reduzir peróxidos <i>dentro</i> da membrana.</li>
+<li><b>Tiorredoxina redutases</b> — mantêm o estado redox do citosol e regeneram outros antioxidantes.</li>
+<li><b>Iodotironina desiodases</b> — convertem T4 em T3, razão pela qual a carência grave pode reduzir o T3 circulante.</li>
+</ul>
+
+<p><b>Da bioquímica ao sintoma.</b> O cardiomiócito e a fibra muscular esquelética têm a maior densidade mitocondrial e a maior produção basal de espécies reativas de oxigênio do organismo. Sem glutationa peroxidase, os peróxidos lipídicos se acumulam nas membranas mitocondriais e no sarcolema, a peroxidação progride, e o resultado é <b>necrose miocárdica multifocal</b> que evolui para <b>cardiomiopatia dilatada</b> — a doença de Keshan, descrita em regiões da China com solo pobre em selênio, e reproduzida em pacientes com nutrição parenteral prolongada sem selênio e em disabsortivos graves. No músculo esquelético, o mesmo mecanismo produz <b>miopatia proximal com elevação de CPK</b>.</p>
+
+<p>Os outros achados: <b>leitos ungueais esbranquiçados</b> e despigmentação de pele e cabelos, por alteração da queratinização, e <b>macrocitose</b> sem megaloblastose. Note o par que precisa ser separado: <b>tiamina e selênio são as duas carências que dão insuficiência cardíaca</b>, e a hemodinâmica as distingue — tiamina produz <b>alto débito com extremidades quentes e pressão de pulso alargada</b>; selênio produz <b>baixo débito com ventrículo dilatado e extremidades frias</b>.</p>
+
+<p>Vale registrar a cooperação com a vitamina E: a glutationa peroxidase neutraliza os hidroperóxidos já formados, o tocoferol impede que a cadeia se propague. As duas carências se somam e se agravam.</p>
+
+<h2 class="sec" id="s17"><span class="n">17</span>Proteína</h2>
+<p class="sub">Starling explica o edema; a queratina explica o cabelo</p>
+
+<p><b>Por que acontece no duodenal switch.</b> Nessa técnica o <b>canal comum</b> — o segmento em que a bile e o suco pancreático finalmente encontram o alimento — tem entre cinquenta e cem centímetros. A digestão de proteína depende da tripsina, da quimotripsina e da carboxipeptidase, e a de gordura depende da lipase com sais biliares; em um trecho tão curto, as duas ficam <b>incompletas</b>. A esteatorreia resultante arrasta consigo vitaminas lipossolúveis e cálcio.</p>
+
+<p><b>Da bioquímica ao sintoma.</b> A <b>albumina</b> responde por cerca de 75 a 80% da pressão coloidosmótica do plasma. Quando cai abaixo de 2,5 g/dL, a força que retém água no capilar não vence a pressão hidrostática, e o equilíbrio de Starling se desloca para fora: <b>edema periférico</b>, e com albumina mais baixa ainda, <b>ascite</b>. É o mesmo mecanismo da síndrome nefrótica e da cirrose, por caminhos diferentes.</p>
+
+<p>O restante segue a lógica de “faltou matéria-prima para construir proteína”: <b>alopecia</b>, porque o pelo é queratina; <b>fraqueza e perda de massa magra</b>, com o músculo sendo catabolizado como fonte de aminoácidos; <b>linfopenia</b> e imunodepressão, porque o linfócito depende de síntese proteica intensa; <b>má cicatrização</b>; e <b>INR alargado</b>, aqui por dois motivos somados — falta de substrato para os fatores e má absorção de vitamina K.</p>
+
+<p>É a complicação que a diretriz de 2019 tem em mente quando recomenda <b>cautela específica com BPD e BPD/DS</b> pelo risco nutricional proporcional ao intestino excluído, e é a razão pela qual a meta proteica sobe de 60 g/dia para até 1,5 g/kg de peso ideal nessas técnicas.</p>
+
+<h2 class="sec" id="s18"><span class="n">18</span>Oxalato: a carência que vira cálculo</h2>
+<p class="sub">um mecanismo que inverte a intuição clínica</p>
+
+<p>Este não é um nutriente em falta, mas é consequência direta da má absorção de gordura, e o mecanismo é tão contraintuitivo que vale explicitar.</p>
+
+<p>Em condições normais, o <b>cálcio da dieta liga o oxalato dentro do lúmen intestinal</b>, formando oxalato de cálcio insolúvel que é eliminado nas fezes. É uma armadilha fisiológica: o oxalato nunca chega a ser absorvido.</p>
+
+<p>Depois de um bypass ou de um duodenal switch, os ácidos graxos não absorvidos se acumulam no lúmen e <b>saponificam o cálcio</b> — quimicamente, formam sabões de cálcio. O cálcio fica ocupado com a gordura e <b>deixa o oxalato livre</b>. Livre, o oxalato é absorvido no cólon, cuja permeabilidade a ele ainda está <b>aumentada</b> pela ação detergente dos ácidos biliares não reabsorvidos sobre a mucosa. Contribui também a redução da <i>Oxalobacter formigenes</i>, a bactéria colônica que degrada oxalato. O oxalato absorvido é filtrado e excretado — <b>hiperoxalúria entérica</b> — e precipita com o cálcio urinário formando cálculos.</p>
+
+<div class="key">
+  <span class="tag">A conduta que parece errada e é a certa</span>
+  <p>Diante de um cálculo de <b>oxalato de cálcio</b>, a intuição manda cortar o cálcio da dieta. Aqui isso <b>piora</b> o problema, porque remove justamente o parceiro que mantinha o oxalato insolúvel no intestino. A conduta é <b>oferecer cálcio junto às refeições</b>, reduzir gordura e oxalato da dieta, hidratar para diurese acima de 2 a 2,5 litros e acrescentar <b>citrato de potássio</b>, que inibe a nucleação do cristal na urina.</p>
+</div>
+<p class="part" id="sintese">Parte III — Síntese</p>
+
+<h2 class="sec"><span class="n">19</span>Os quatro eixos que organizam todos os sintomas</h2>
+<p class="sub">por que carências diferentes produzem quadros parecidos</p>
+
+<p>Se você olhar as dezoito seções acima de longe, verá que os sintomas não se distribuem ao acaso. Eles se agrupam em quatro eixos, e cada eixo corresponde a uma <b>propriedade do tecido</b>, não a uma propriedade do nutriente. É por isso que carências de moléculas completamente diferentes convergem para quadros semelhantes.</p>
+
+<div class="tbl-scroll">
+<table>
+<thead><tr><th>Eixo</th><th>Propriedade do tecido</th><th>Nutrientes que o atingem</th><th>Como se apresenta</th></tr></thead>
+<tbody>
+<tr><td>Hematopoético</td><td>Altíssima taxa de divisão celular e de síntese de heme</td><td>Folato, B12, ferro, cobre</td><td>Anemia. Macrocítica se o gargalo é a divisão nuclear (folato, B12); microcítica se é o heme (ferro); variável e com <b>neutropenia</b> se é cobre</td></tr>
+<tr><td>Neurológico de fibra longa</td><td>Grande massa de mielina e de membrana por corpo celular; alta demanda energética distal</td><td>B12, cobre, vitamina E, tiamina, B6</td><td>Cordão posterior e trato corticoespinhal (B12, cobre, E); encefalopatia periventricular e neuropatia distal (tiamina)</td></tr>
+<tr><td>Epitelial de renovação rápida</td><td>Ciclo celular curto; dependência de fatores de transcrição e de diferenciação</td><td>Zinco, vitamina A, ferro, B2, B3, proteína</td><td>Dermatite, alopecia, glossite, queilite, diarreia, má cicatrização, metaplasia queratinizante</td></tr>
+<tr><td>Energético-mitocondrial</td><td>Densidade mitocondrial máxima e maior produção de radicais livres</td><td>Tiamina, selênio, cobre, riboflavina</td><td>Cardiomiopatia e miopatia; encefalopatia; fadiga desproporcional</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Duas leituras práticas saem dessa tabela. A primeira: quando um paciente pós-bariátrico aparece com <b>anemia e alteração neurológica juntas</b>, os candidatos são exatamente três — B12, cobre e, mais raramente, folato com neuropatia associada —, e o hemograma diferencial resolve. A segunda: quando aparece com <b>pele, cabelo e mucosa</b>, os candidatos são zinco, vitamina A, ferro e proteína, e o que decide é a companhia: disgeusia aponta zinco, cegueira noturna aponta vitamina A, ferritina baixa aponta ferro, edema aponta proteína.</p>
+
+<h2 class="sec"><span class="n">20</span>O relógio de cada carência</h2>
+<p class="sub">estoque, sítio de absorção e o que a cirurgia quebra</p>
+
+<div class="tbl-scroll">
+<table>
+<thead><tr><th>Nutriente</th><th>Sítio de absorção</th><th>Estoque · latência</th><th>O que a cirurgia quebra</th></tr></thead>
+<tbody>
+<tr><td>Tiamina</td><td>Jejuno (ThTR-1/2)</td><td>~30 mg · <b>2 a 4 semanas</b></td><td>A ingestão — vômitos e intolerância alimentar</td></tr>
+<tr><td>Folato</td><td>Jejuno proximal (PCFT, pH ácido)</td><td>3 a 4 meses</td><td>Enzima de desconjugação, transportador e pH, todos no segmento excluído</td></tr>
+<tr><td>Ferro</td><td>Duodeno e jejuno proximal (DMT1)</td><td>Meses a 1 ano</td><td>Ácido para solubilizar, segmento para absorver, carne para ingerir</td></tr>
+<tr><td>Zinco</td><td>Jejuno</td><td>Meses</td><td>Segmento, esteatorreia e competição com o cobre</td></tr>
+<tr><td>Cálcio e vitamina D</td><td>Duodeno e jejuno proximal (TRPV6)</td><td>Meses a anos</td><td>Segmento, ácido para ionizar, gordura para carrear a vitamina D</td></tr>
+<tr><td>Vitamina B12</td><td>Íleo terminal (cubilina-amnionless)</td><td>2 a 5 mg · <b>3 a 5 anos</b></td><td>A etapa gástrica — ácido, pepsina, células parietais, fator intrínseco</td></tr>
+<tr><td>Cobre</td><td>Estômago e duodeno proximal</td><td>Anos</td><td>Segmento excluído; e a metalotioneína induzida pelo zinco</td></tr>
+<tr><td>Vitaminas A, E, K</td><td>Jejuno e íleo, via micelar</td><td>Anos (A é a maior de todas)</td><td>Encontro tardio entre bile, lipase e alimento — sobretudo no BPD/DS</td></tr>
+<tr><td>Selênio</td><td>Duodeno e jejuno</td><td>Anos</td><td>Segmento e má absorção global</td></tr>
+<tr><td>Magnésio</td><td>Jejuno, íleo e cólon</td><td>Semanas a meses</td><td>Segmento e perdas por diarreia e esteatorreia</td></tr>
+<tr><td>Proteína</td><td>Todo o delgado, com enzimas pancreáticas</td><td>Semanas a meses</td><td>Canal comum curto — a digestão nunca chega a se completar</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="key">
+  <span class="tag">O fechamento</span>
+  <p>Toda a lista se resume a três perguntas. <b>Onde esse nutriente é absorvido, e esse segmento ainda está no trânsito?</b> <b>De que ele depende para ser absorvido — ácido, bile, enzima, proteína carreadora — e isso ainda existe?</b> <b>Quanto tempo o estoque aguenta?</b> Respondidas essas três, o quadro clínico e o momento em que ele aparece deixam de ser lista para decorar e passam a ser dedução.</p>
+</div>
+
+<footer class="foot">
+  A fisiologia e a bioquímica deste texto seguem a literatura clássica de nutrição e neurologia clínica; as doses, os alvos laboratoriais e as recomendações de seguimento citadas ao longo do texto seguem a diretriz <b>AACE/TOS/ASMBS/OMA/ASA — 2019 Update</b> (Mechanick et al., <i>Obesity</i> 2020;28(4)) e as <b>ASMBS Integrated Health Nutritional Guidelines — 2016 Update: Micronutrients</b>. As indicações cirúrgicas mencionadas seguem a <b>Resolução CFM 2.429/2025</b>. Companheiro teórico do teste de trinta questões sobre carências pós-bariátricas.
+</footer>
+
+</div>
+
+</body></html>
