@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atlas da Hérnia Inguinal</title>
+<meta name="description" content="Aula-atlas interativa: orifício miopectíneo, triângulos de Hesselbach, da dor e do desastre, Nyhus/EHS, HerniaSurge, Lichtenstein, TEP e TAPP.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#121110; --bg-nav:#0e0d0c; --surface:#171614; --surface-2:#1c1a18; --surface-3:#22201d;
+  --ink:#f6f4f2; --ink-strong:#faf8f6;
+  --ink-body:rgba(243,242,242,.82); --ink-soft:rgba(243,242,242,.70); --ink-meta:rgba(243,242,242,.58);
+  --ink-faint:rgba(243,242,242,.38);
+  --rule:rgba(243,242,242,.10); --rule-2:rgba(243,242,242,.16); --rule-3:rgba(243,242,242,.28);
+  --accent:#b68235; --a300:#facb8d; --a400:#e1ad66; --a600:#8d6428; --a700:#6b4c1e;
+  --t1:rgba(194,141,65,.16); --t2:rgba(194,141,65,.34); --t3:rgba(194,141,65,.56); --t4:rgba(194,141,65,.82);
+  --fh:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --fb:"Lora",Georgia,"Times New Roman",serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink-body);font-family:var(--fb);font-size:15.5px;line-height:1.68;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--fh);color:var(--ink-strong);font-weight:500;margin:0;text-wrap:balance;letter-spacing:-.005em}
+a{color:var(--a300);text-decoration:none}
+::selection{background:var(--t2);color:var(--ink-strong)}
+:focus-visible{outline:2px solid var(--a400);outline-offset:2px;border-radius:3px}
+.num{font-variant-numeric:tabular-nums}
+h1,h2,h3,h4,.big,td:first-child,.verd .h,svg text{font-variant-numeric:lining-nums}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px 90px}
+@media (max-width:600px){.wrap{padding:0 16px 70px}}
+
+/* topo */
+header.hero{max-width:1140px;margin:0 auto;padding:54px 24px 26px}
+@media (max-width:600px){header.hero{padding:34px 16px 20px}}
+.kicker{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--a300)}
+h1{font-size:clamp(36px,6vw,64px);line-height:1.02;font-weight:400;margin:14px 0 0}
+h1 em{font-style:italic;color:var(--a300)}
+.lede{max-width:62ch;font-size:17px;color:var(--ink-soft);margin:18px 0 0}
+.stem{margin:26px 0 0;padding:18px 20px;border-left:2px solid var(--accent);background:var(--surface);
+  border-radius:0 8px 8px 0;max-width:78ch}
+.stem p{margin:0;font-size:15px}
+.stem b{color:var(--ink-strong);font-weight:600}
+.stem .src{display:block;margin-top:10px;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-meta)}
+
+/* trilho */
+nav.rail{position:sticky;top:0;z-index:40;background:rgba(14,13,12,.94);backdrop-filter:blur(8px);
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-top:30px}
+.rail-in{max-width:1140px;margin:0 auto;padding:8px 24px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.rail-in::-webkit-scrollbar{display:none}
+.rail a{flex:none;font-size:12.5px;color:var(--ink-soft);padding:6px 11px;border-radius:999px;white-space:nowrap;
+  border:1px solid transparent;transition:.15s}
+.rail a:hover,.rail a.on{color:var(--ink-strong);border-color:var(--rule-2);background:var(--surface-2)}
+.rail a .n{color:var(--a400);margin-right:6px;font-size:11px;font-variant-numeric:tabular-nums}
+@media (max-width:600px){.rail-in{padding:8px 16px}}
+
+/* capítulo */
+section.ch{padding-top:58px;scroll-margin-top:56px}
+.ch-head{display:flex;gap:16px;align-items:baseline;border-top:1px solid var(--rule-2);padding-top:20px}
+.ch-num{font-size:12px;color:var(--a400);letter-spacing:.14em;padding-top:6px;font-variant-numeric:tabular-nums}
+.ch-head h2{font-size:clamp(26px,3.4vw,36px);line-height:1.1}
+.ch-sub{color:var(--ink-meta);font-size:14.5px;margin:6px 0 0;max-width:72ch;font-style:italic}
+.plate{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr);gap:24px;margin-top:24px;align-items:start}
+@media (max-width:880px){.plate{grid-template-columns:minmax(0,1fr)}}
+.fig{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:12px;overflow:hidden;min-width:0}
+.fig svg{display:block;width:100%;height:auto}
+.figcap{font-size:12px;color:var(--ink-meta);margin:10px 2px 0;line-height:1.55}
+.panel{display:flex;flex-direction:column;gap:14px;min-width:0}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:15px 16px;min-width:0}
+.card h3{font-family:var(--fb);font-size:10.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-meta);margin-bottom:11px}
+.card h4{font-size:21px;line-height:1.15;margin-bottom:6px}
+.card p{margin:0 0 8px;font-size:14px}
+.card p:last-child{margin-bottom:0}
+.prose{margin-top:24px;max-width:70ch;font-size:15.5px}
+.prose p{margin:0 0 13px}
+.prose strong{color:var(--ink-strong);font-weight:600}
+.prose em{color:var(--ink)}
+
+/* controles */
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button,.btn{font:inherit;font-size:13px;padding:6px 11px;border-radius:4px;cursor:pointer;
+  border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-soft);transition:.15s;text-align:left}
+.seg button:hover,.btn:hover{border-color:var(--a600);color:var(--ink-strong)}
+.seg button[aria-pressed="true"]{background:var(--t2);border-color:var(--a400);color:var(--ink-strong)}
+.btn.prim{background:var(--accent);border-color:var(--accent);color:#17120b;font-weight:600}
+.btn.prim:hover{background:var(--a400);color:#17120b}
+.q-lbl{font-size:13px;color:var(--ink-soft);margin:12px 0 6px}
+.q-lbl:first-child{margin-top:0}
+.chk{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--ink-soft);cursor:pointer;padding:4px 0}
+.chk input{accent-color:var(--accent);width:16px;height:16px;margin-top:3px;flex:none}
+.chk .pt{margin-left:auto;color:var(--a400);font-variant-numeric:tabular-nums;font-size:12px;padding-left:8px}
+input[type=range]{width:100%;accent-color:var(--accent)}
+select{font:inherit;font-size:13px;background:var(--surface-2);color:var(--ink);border:1px solid var(--rule-2);
+  border-radius:4px;padding:5px 8px;max-width:100%}
+
+/* veredito — intensidade do ouro codifica gravidade */
+.verd{border-radius:6px;padding:13px 15px;border:1px solid var(--rule-2);font-size:14px;background:var(--surface-2)}
+.verd .t{font-size:10px;letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:4px;color:var(--ink-meta)}
+.verd .h{font-family:var(--fh);font-size:22px;line-height:1.15;display:block;margin-bottom:6px;color:var(--ink-strong)}
+.verd p{margin:0;color:var(--ink-soft)}
+.verd.g1{border-color:var(--rule-3)}
+.verd.g2{border-color:var(--a600);background:var(--t1)}
+.verd.g2 .t{color:var(--a400)}
+.verd.g3{border:1px solid var(--a300);background:var(--t2);box-shadow:inset 3px 0 0 var(--a300)}
+.verd.g3 .t{color:var(--a300)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.steps li{counter-increment:s;position:relative;padding-left:30px;font-size:14px;color:var(--ink-soft)}
+.steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;
+  border:1px solid var(--a600);color:var(--a300);font-size:11px;display:grid;place-items:center}
+.forbid{padding:11px 13px;border-radius:6px;border:1px dashed var(--a400);font-size:13.5px;color:var(--ink-soft)}
+.forbid b{color:var(--a300);font-weight:600}
+.note{padding:11px 13px;border-radius:6px;background:var(--surface-2);border:1px solid var(--rule);font-size:13.5px}
+.note b{color:var(--ink-strong);font-weight:600}
+.path{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center;font-size:12.5px}
+.path span{padding:3px 8px;border-radius:999px;border:1px solid var(--rule-2);color:var(--ink-soft)}
+.path span:last-child{border-color:var(--a400);color:var(--a300)}
+.path i{color:var(--ink-faint);font-style:normal}
+mark{background:var(--t2);color:var(--ink-strong);padding:0 3px;border-radius:2px}
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;font-size:13.5px;margin:0}
+.kv dt{color:var(--ink-meta);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding-top:3px}
+.kv dd{margin:0;color:var(--ink-body)}
+.big{font-family:var(--fh);font-size:52px;line-height:1;color:var(--a300);font-variant-numeric:tabular-nums}
+.big small{font-size:20px;color:var(--ink-meta)}
+
+/* tabelas */
+.tbl{overflow-x:auto;margin-top:22px;border:1px solid var(--rule);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
+th,td{text-align:left;vertical-align:top;padding:10px 13px;border-bottom:1px solid var(--rule)}
+th{font-weight:500;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-meta);background:var(--surface-2)}
+td:first-child{color:var(--a300);font-family:var(--fh);font-size:18px;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+tr.hl td{background:var(--t1)}
+tr[data-k]{cursor:pointer}
+tr[data-k]:hover td{background:var(--surface-2)}
+
+/* pegadinhas */
+.traps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin-top:24px}
+.trap{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:15px 16px}
+.trap .t{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--a400)}
+.trap h4{font-size:20px;margin:6px 0 8px;line-height:1.15}
+.trap p{margin:0;font-size:14px;color:var(--ink-soft)}
+.trap p b{color:var(--ink-strong);font-weight:600}
+
+/* forja */
+.quiz{margin-top:24px;display:flex;flex-direction:column;gap:16px}
+.qz{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:17px 18px}
+.qz .qn{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--a400)}
+.qz .qs{margin:8px 0 12px;font-size:15px;color:var(--ink-body)}
+.qz .qs b{color:var(--ink-strong);font-weight:600}
+.alts{display:flex;flex-direction:column;gap:7px}
+.alts button{font:inherit;font-size:14px;text-align:left;display:flex;gap:10px;align-items:flex-start;
+  padding:9px 12px;border-radius:5px;border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-soft);cursor:pointer}
+.alts button:hover:not(:disabled){border-color:var(--a600);color:var(--ink-strong)}
+.alts button .L{flex:none;width:22px;height:22px;border-radius:50%;border:1px solid var(--rule-3);display:grid;place-items:center;
+  font-size:11.5px;color:var(--ink-meta)}
+.alts button:disabled{cursor:default}
+.alts button.ok{border-color:var(--a300);background:var(--t2);color:var(--ink-strong)}
+.alts button.ok .L{background:var(--a300);border-color:var(--a300);color:#17120b}
+.alts button.no{border-style:dashed;border-color:var(--rule-3);color:var(--ink-faint);text-decoration:line-through;text-decoration-color:var(--rule-3)}
+.alts button.no .L{border-style:dashed}
+.alts button.dim{opacity:.55}
+.qexp{display:none;margin-top:12px;padding:12px 14px;border-left:2px solid var(--a400);background:var(--surface-2);
+  border-radius:0 6px 6px 0;font-size:14px;color:var(--ink-soft)}
+.qexp b{color:var(--ink-strong);font-weight:600}
+.qexp .res{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--a300);margin-bottom:5px}
+.qz.done .qexp{display:block}
+.score{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--rule);
+  border-radius:8px;padding:14px 16px;position:sticky;bottom:12px;z-index:5}
+.score .big{font-size:38px}
+.score .lab{font-size:13px;color:var(--ink-meta);flex:1;min-width:160px}
+
+/* tabela-mãe */
+.mom{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px;margin-top:24px}
+.mc{background:var(--surface);border:1px solid var(--rule);border-top:2px solid var(--rule-3);border-radius:6px;padding:13px 15px}
+.mc.g2{border-top-color:var(--a600)} .mc.g3{border-top-color:var(--a300)}
+.mc .gat{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-meta)}
+.mc h4{font-size:19px;margin:5px 0 6px;line-height:1.15}
+.mc p{margin:0;font-size:13.5px;color:var(--ink-soft)}
+.mc p b{color:var(--a300);font-weight:600}
+
+/* svg */
+.svgtxt{font-family:var(--fb)}
+.hot{cursor:pointer}
+.hot:hover .hl,.hot.on .hl{stroke:var(--a300);stroke-width:2.4}
+.leg{display:flex;flex-wrap:wrap;gap:6px 14px;margin:10px 2px 0;font-size:12px;color:var(--ink-meta)}
+.leg span{display:inline-flex;align-items:center;gap:6px}
+.leg svg{width:26px;height:10px;display:inline-block}
+footer.fim{max-width:1140px;margin:0 auto;padding:30px 24px 50px;border-top:1px solid var(--rule);font-size:12.5px;color:var(--ink-meta)}
+footer.fim p{margin:0 0 6px;max-width:90ch}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="kicker">Residência Max · Cirurgia Geral · Hérnias e parede abdominal</span>
+  <h1>Hérnia inguinal: <em>a mesma região</em> vista pelos dois lados</h1>
+  <p class="lede">O cirurgião que opera por via anterior enxerga o canal inguinal; o que opera por via
+  posterior enxerga o orifício miopectíneo. As duas visões descrevem o mesmo buraco — e quase toda
+  questão de prova sobre técnica, complicação ou recidiva depende de saber de que lado você está.</p>
+  <div class="stem">
+    <p><b>Caso-guia.</b> Homem de <b>58 anos</b>, hígido, com abaulamento <b>redutível</b> na região
+    inguinal direita há 8 meses, que desce ao escroto aos esforços e incomoda no trabalho. Ao exame,
+    há também um abaulamento <b>menor à esquerda</b>, assintomático. Sem sinais de encarceramento.
+    <span class="src">Pergunta que a página responde: qual técnica, por qual via, e por quê.</span></p>
+  </div>
+</header>
+
+<nav class="rail"><div class="rail-in">
+  <a href="#c1"><span class="n">01</span>Visão posterior</a>
+  <a href="#c2"><span class="n">02</span>Visão anterior</a>
+  <a href="#c3"><span class="n">03</span>Classificar</a>
+  <a href="#c4"><span class="n">04</span>Diagnóstico</a>
+  <a href="#c5"><span class="n">05</span>Fluxograma</a>
+  <a href="#c6"><span class="n">06</span>Técnicas</a>
+  <a href="#c7"><span class="n">07</span>Pegadinhas</a>
+  <a href="#c8"><span class="n">08</span>Forja</a>
+  <a href="#c9"><span class="n">09</span>Tabela-mãe</a>
+</div></nav>
+
+<div class="wrap">
+
+<section class="ch" id="c1">
+  <div class="ch-head"><span class="ch-num">01</span><div>
+    <h2>O orifício miopectíneo, visto de dentro</h2>
+    <p class="ch-sub">Região inguinal direita como aparece na TAPP: medial à esquerda da tela, cranial
+    em cima. Toque nos números ou nas áreas.</p>
+  </div></div>
+  <div class="plate">
+    <div class="fig">
+<svg id="svgPost" viewBox="0 0 640 500" role="img" aria-label="Visão laparoscópica posterior da região inguinal direita">
+  <defs>
+    <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="7" stroke="rgba(194,141,65,.30)" stroke-width="2"/></pattern>
+  </defs>
+  <rect x="0" y="0" width="640" height="500" fill="#1a1816"/>
+  <!-- reto abdominal / linha média -->
+  <rect x="0" y="0" width="215" height="330" fill="#201d1a"/>
+  <line x1="215" y1="0" x2="215" y2="330" stroke="rgba(243,242,242,.22)" stroke-width="2"/>
+  <text x="20" y="34" class="svgtxt" font-size="15" fill="rgba(243,242,242,.45)">MEDIAL · bexiga</text>
+  <text x="520" y="34" class="svgtxt" font-size="15" fill="rgba(243,242,242,.45)">LATERAL</text>
+  <!-- osso púbico -->
+  <path d="M40,350 Q140,335 300,372 L300,402 Q140,372 40,392 Z" fill="#2a2622" stroke="rgba(243,242,242,.18)"/>
+
+  <!-- regiões clicáveis -->
+  <g class="hot" data-k="mpo" id="mpoG" style="display:none">
+    <path class="hl" d="M215,95 Q420,70 600,140 L615,250 Q430,300 300,345 L215,345 Z" fill="none" stroke="rgba(250,203,141,.7)" stroke-width="2" stroke-dasharray="8 6"/>
+  </g>
+  <g class="hot" data-k="hesselbach">
+    <path class="hl" d="M392,296 L232,52 L217,52 L217,318 Z" fill="rgba(194,141,65,.10)" stroke="rgba(243,242,242,.25)" stroke-dasharray="5 5"/>
+  </g>
+  <g class="hot" data-k="doom">
+    <path class="hl" d="M428,268 L248,500 L545,500 Z" fill="url(#hatch)" stroke="rgba(243,242,242,.25)" stroke-dasharray="5 5"/>
+  </g>
+  <g class="hot" data-k="dor">
+    <path class="hl" d="M452,272 L612,234 L640,250 L640,500 L572,500 Z" fill="rgba(194,141,65,.10)" stroke="rgba(243,242,242,.25)" stroke-dasharray="5 5"/>
+  </g>
+
+  <!-- ligamento de Cooper -->
+  <g class="hot" data-k="cooper"><path class="hl" d="M70,346 Q180,340 298,370" fill="none" stroke="rgba(243,242,242,.55)" stroke-width="7" stroke-linecap="round"/></g>
+  <!-- trato iliopúbico -->
+  <g class="hot" data-k="tract"><path class="hl" d="M625,222 Q430,292 175,326" fill="none" stroke="rgba(243,242,242,.42)" stroke-width="9" stroke-linecap="round"/></g>
+
+  <!-- vasos ilíacos externos -->
+  <path d="M492,500 Q430,410 352,334" fill="none" stroke="#8d6428" stroke-width="12" stroke-linecap="round"/>
+  <path d="M540,500 Q470,400 400,326" fill="none" stroke="#e1ad66" stroke-width="8" stroke-linecap="round"/>
+  <!-- vasos epigástricos inferiores -->
+  <g class="hot" data-k="epig">
+    <path class="hl" d="M398,318 Q360,190 236,40" fill="none" stroke="#e1ad66" stroke-width="5" stroke-linecap="round"/>
+    <path d="M388,320 Q350,192 226,44" fill="none" stroke="#8d6428" stroke-width="3"/>
+    <path d="M408,316 Q370,188 246,36" fill="none" stroke="#8d6428" stroke-width="3"/>
+  </g>
+  <!-- corona mortis -->
+  <g class="hot" data-k="corona"><path class="hl" d="M318,320 Q268,345 256,400 Q252,430 236,470" fill="none" stroke="#e1ad66" stroke-width="3.5" stroke-dasharray="7 4"/></g>
+  <!-- anel interno -->
+  <g class="hot" data-k="anel"><circle class="hl" cx="432" cy="250" r="25" fill="#0e0d0c" stroke="rgba(243,242,242,.45)" stroke-width="2"/></g>
+  <!-- ducto deferente -->
+  <path d="M424,268 Q380,330 330,380 Q290,430 252,500" fill="none" stroke="rgba(246,244,242,.82)" stroke-width="6" stroke-linecap="round"/>
+  <!-- vasos espermáticos -->
+  <path d="M444,270 Q500,380 548,500" fill="none" stroke="#e1ad66" stroke-width="1.8"/>
+  <path d="M450,268 Q508,378 557,500" fill="none" stroke="#8d6428" stroke-width="2.5"/>
+  <path d="M438,272 Q492,382 540,500" fill="none" stroke="#8d6428" stroke-width="2.5"/>
+  <!-- nervos (triângulo da dor) -->
+  <path d="M556,300 Q566,400 580,500" fill="none" stroke="rgba(246,244,242,.75)" stroke-width="2" stroke-dasharray="2 5" stroke-linecap="round"/>
+  <path d="M586,286 Q600,390 610,500" fill="none" stroke="rgba(246,244,242,.75)" stroke-width="2" stroke-dasharray="2 5" stroke-linecap="round"/>
+  <path d="M615,272 Q628,380 636,480" fill="none" stroke="rgba(246,244,242,.75)" stroke-width="2" stroke-dasharray="2 5" stroke-linecap="round"/>
+  <!-- canal femoral -->
+  <g class="hot" data-k="femoral"><ellipse class="hl" cx="312" cy="342" rx="22" ry="13" fill="#0e0d0c" stroke="rgba(243,242,242,.45)" stroke-width="2"/></g>
+
+  <!-- marcadores numerados -->
+  <g font-family="Lora,Georgia,serif" font-size="18" text-anchor="middle" fill="#17120b">
+    <g class="hot" data-k="hesselbach"><circle cx="290" cy="225" r="17" fill="#facb8d"/><text x="290" y="230">1</text></g>
+    <g class="hot" data-k="anel"><circle cx="478" cy="218" r="17" fill="#facb8d"/><text x="478" y="223">2</text></g>
+    <g class="hot" data-k="femoral"><circle cx="276" cy="312" r="17" fill="#facb8d"/><text x="276" y="317">3</text></g>
+    <g class="hot" data-k="doom"><circle cx="420" cy="455" r="17" fill="#facb8d"/><text x="420" y="460">4</text></g>
+    <g class="hot" data-k="dor"><circle cx="602" cy="420" r="17" fill="#facb8d"/><text x="602" y="425">5</text></g>
+    <g class="hot" data-k="corona"><circle cx="222" cy="430" r="17" fill="#facb8d"/><text x="222" y="435">6</text></g>
+    <g class="hot" data-k="cooper"><circle cx="110" cy="318" r="17" fill="#facb8d"/><text x="110" y="323">7</text></g>
+    <g class="hot" data-k="tract"><circle cx="560" cy="212" r="17" fill="#facb8d"/><text x="560" y="217">8</text></g>
+    <g class="hot" data-k="epig"><circle cx="330" cy="120" r="17" fill="#facb8d"/><text x="330" y="125">9</text></g>
+  </g>
+</svg>
+      <div class="leg">
+<span><svg viewBox="0 0 26 10"><line x1="0" y1="5" x2="26" y2="5" stroke="#e1ad66" stroke-width="4"/></svg>artéria</span>
+<span><svg viewBox="0 0 26 10"><line x1="0" y1="5" x2="26" y2="5" stroke="#8d6428" stroke-width="6"/></svg>veia</span>
+<span><svg viewBox="0 0 26 10"><line x1="0" y1="5" x2="26" y2="5" stroke="rgba(246,244,242,.85)" stroke-width="2" stroke-dasharray="2 4"/></svg>nervo</span>
+<span><svg viewBox="0 0 26 10"><line x1="0" y1="5" x2="26" y2="5" stroke="rgba(243,242,242,.5)" stroke-width="6"/></svg>ligamento / trato</span>
+</div>
+      <p class="figcap">Esquema didático fora de escala. 1 triângulo de Hesselbach (espaço direto) ·
+      2 anel inguinal interno (espaço indireto) · 3 canal femoral · 4 triângulo do desastre ·
+      5 triângulo da dor · 6 corona mortis · 7 ligamento de Cooper · 8 trato iliopúbico ·
+      9 vasos epigástricos inferiores.</p>
+    </div>
+    <div class="panel">
+      <div class="card"><h3>Camada</h3>
+        <div class="seg" id="mpoBtn"><button type="button" aria-pressed="false">Mostrar o orifício miopectíneo de Fruchaud</button></div>
+      </div>
+      <div class="card" id="postOut" aria-live="polite"></div>
+      <div class="note"><b>Dois marcos dividem tudo.</b> Os vasos epigástricos inferiores separam
+      a hérnia indireta (lateral) da direta (medial); o trato iliopúbico separa as hérnias
+      inguinais (acima) da femoral (abaixo).</div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>Fruchaud descreveu uma única área fraca, o <strong>orifício miopectíneo</strong>, limitado
+    pelo arco do oblíquo interno e do transverso em cima, pela borda lateral do reto medialmente,
+    pelo iliopsoas lateralmente e pelo ligamento pectíneo (Cooper) embaixo. Indireta, direta e
+    femoral são três portas do mesmo buraco. É por isso que a tela posterior (TEP/TAPP) cobre as
+    três de uma vez, e a de Lichtenstein, colocada pela frente, não cobre o canal femoral.</p>
+    <p>Na via posterior, o perigo está <strong>abaixo do trato iliopúbico</strong>: medialmente aos
+    vasos espermáticos ficam os vasos ilíacos externos (triângulo do desastre); lateralmente, os
+    nervos (triângulo da dor). A regra prática da fixação é não grampear abaixo do trato
+    iliopúbico lateralmente aos vasos espermáticos, nem dentro do triângulo do desastre.</p>
+  </div>
+</section>
+
+<section class="ch" id="c2">
+  <div class="ch-head"><span class="ch-num">02</span><div>
+    <h2>O canal inguinal, visto pela frente</h2>
+    <p class="ch-sub">Região inguinal direita após abrir a aponeurose do oblíquo externo, como na
+    incisão de Lichtenstein: lateral à esquerda da tela. Escolha a hérnia e sobreponha a tela.</p>
+  </div></div>
+  <div class="plate">
+    <div class="fig">
+<svg id="svgAnt" viewBox="0 0 640 500" role="img" aria-label="Visão anterior do canal inguinal direito aberto">
+  <defs>
+    <pattern id="mesh" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M0,0 L10,10 M10,0 L0,10" stroke="rgba(250,203,141,.55)" stroke-width="1"/></pattern>
+  </defs>
+  <rect width="640" height="500" fill="#1a1816"/>
+  <text x="18" y="30" class="svgtxt" font-size="15" fill="rgba(243,242,242,.45)">LATERAL · EIAS</text>
+  <text x="510" y="30" class="svgtxt" font-size="15" fill="rgba(243,242,242,.45)">MEDIAL</text>
+  <!-- reto -->
+  <rect x="455" y="0" width="185" height="372" fill="#201d1a"/>
+  <line x1="455" y1="0" x2="455" y2="372" stroke="rgba(243,242,242,.22)" stroke-width="2"/>
+  <!-- triângulo de Hesselbach -->
+  <path id="hessA" d="M300,214 L452,40 L452,336 Z" fill="rgba(194,141,65,.10)" stroke="rgba(243,242,242,.25)" stroke-dasharray="5 5"/>
+  <!-- vasos epigástricos (posteriores à fáscia transversal: tracejado) -->
+  <path d="M312,232 Q360,140 440,30" fill="none" stroke="#e1ad66" stroke-width="4" stroke-dasharray="9 5"/>
+  <!-- ligamento inguinal -->
+  <path d="M60,110 Q300,300 540,392" fill="none" stroke="rgba(243,242,242,.55)" stroke-width="9" stroke-linecap="round"/>
+  <!-- vasos femorais abaixo do ligamento -->
+  <path d="M290,268 Q285,380 272,500" fill="none" stroke="#e1ad66" stroke-width="9" stroke-linecap="round"/>
+  <path d="M330,284 Q326,390 316,500" fill="none" stroke="#8d6428" stroke-width="12" stroke-linecap="round"/>
+  <path d="M250,250 Q244,380 232,500" fill="none" stroke="rgba(246,244,242,.75)" stroke-width="2.5" stroke-dasharray="2 5" stroke-linecap="round"/>
+  <ellipse cx="368" cy="328" rx="16" ry="11" fill="#0e0d0c" stroke="rgba(243,242,242,.45)" stroke-width="2"/>
+  <!-- tela de Lichtenstein -->
+  <g id="meshG" style="display:none">
+    <path d="M150,150 L470,60 L560,330 Q500,370 470,360 Q330,300 210,240 Z" fill="url(#mesh)" stroke="#facb8d" stroke-width="2"/>
+    <path d="M210,240 L268,206 M268,206 L230,180" stroke="#facb8d" stroke-width="2" fill="none"/>
+    <path d="M210,240 Q330,300 470,360" fill="none" stroke="#facb8d" stroke-width="2" stroke-dasharray="3 5"/>
+  </g>
+  <!-- cordão espermático -->
+  <path d="M262,198 Q380,280 480,345 Q510,380 520,500" fill="none" stroke="rgba(246,244,242,.6)" stroke-width="22" stroke-linecap="round"/>
+  <path d="M262,198 Q380,280 480,345 Q510,380 520,500" fill="none" stroke="#2b2620" stroke-width="17" stroke-linecap="round"/>
+  <text x="560" y="470" class="svgtxt" font-size="14" fill="rgba(243,242,242,.55)" text-anchor="end">cordão</text>
+  <!-- anel interno e externo -->
+  <circle cx="262" cy="198" r="20" fill="none" stroke="rgba(243,242,242,.6)" stroke-width="2.5"/>
+  <ellipse cx="482" cy="346" rx="18" ry="24" fill="none" stroke="rgba(243,242,242,.6)" stroke-width="2.5" transform="rotate(-30 482 346)"/>
+  <!-- nervos -->
+  <path d="M40,160 Q200,200 300,240 Q400,290 470,330 Q500,350 505,380" fill="none" stroke="rgba(246,244,242,.85)" stroke-width="2.5" stroke-dasharray="2 5" stroke-linecap="round"/>
+  <path d="M40,90 Q250,160 470,240" fill="none" stroke="rgba(246,244,242,.85)" stroke-width="2.5" stroke-dasharray="2 5" stroke-linecap="round"/>
+  <path d="M268,214 Q380,292 488,360" fill="none" stroke="rgba(250,203,141,.8)" stroke-width="2" stroke-dasharray="1 4" stroke-linecap="round"/>
+  <!-- hérnias -->
+  <g id="hInd" style="display:none"><path d="M248,186 Q300,210 380,262 Q470,320 488,372 Q470,392 450,372 Q380,300 270,226 Q240,210 248,186 Z" fill="rgba(250,203,141,.30)" stroke="#facb8d" stroke-width="2.5"/></g>
+  <g id="hDir" style="display:none"><ellipse cx="400" cy="230" rx="44" ry="38" fill="rgba(250,203,141,.30)" stroke="#facb8d" stroke-width="2.5"/></g>
+  <g id="hFem" style="display:none"><ellipse cx="372" cy="356" rx="28" ry="24" fill="rgba(250,203,141,.30)" stroke="#facb8d" stroke-width="2.5"/></g>
+  <!-- marcadores -->
+  <g font-family="Lora,Georgia,serif" font-size="18" text-anchor="middle" fill="#17120b">
+    <circle cx="222" cy="182" r="17" fill="#facb8d"/><text x="222" y="187">1</text>
+    <circle cx="520" cy="322" r="17" fill="#facb8d"/><text x="520" y="327">2</text>
+    <circle cx="410" cy="110" r="17" fill="#facb8d"/><text x="410" y="115">3</text>
+    <circle cx="90" cy="150" r="17" fill="#facb8d"/><text x="90" y="155">4</text>
+    <circle cx="160" cy="250" r="17" fill="#facb8d"/><text x="160" y="255">5</text>
+    <circle cx="70" cy="78" r="17" fill="#facb8d"/><text x="70" y="83">6</text>
+    <circle cx="560" cy="420" r="17" fill="#facb8d"/><text x="560" y="425">7</text>
+    <circle cx="210" cy="420" r="17" fill="#facb8d"/><text x="210" y="425">8</text>
+    <circle cx="402" cy="330" r="17" fill="#facb8d"/><text x="402" y="335">9</text>
+  </g>
+</svg>
+      <div class="leg">
+<span><svg viewBox="0 0 26 10"><line x1="0" y1="5" x2="26" y2="5" stroke="#e1ad66" stroke-width="4"/></svg>artéria</span>
+<span><svg viewBox="0 0 26 10"><line x1="0" y1="5" x2="26" y2="5" stroke="#8d6428" stroke-width="6"/></svg>veia</span>
+<span><svg viewBox="0 0 26 10"><line x1="0" y1="5" x2="26" y2="5" stroke="rgba(246,244,242,.85)" stroke-width="2" stroke-dasharray="2 4"/></svg>nervo</span>
+<span><svg viewBox="0 0 26 10"><line x1="0" y1="5" x2="26" y2="5" stroke="rgba(243,242,242,.5)" stroke-width="6"/></svg>ligamento / trato</span>
+</div>
+      <p class="figcap">1 anel inguinal interno (profundo) · 2 anel inguinal externo (superficial) ·
+      3 vasos epigástricos inferiores, atrás da fáscia transversal · 4 nervo ilioinguinal ·
+      5 ramo genital do genitofemoral, dentro do cordão · 6 nervo ílio-hipogástrico ·
+      7 ligamento inguinal · 8 nervo, artéria e veia femorais (lateral → medial) · 9 canal femoral.
+      Área tracejada: triângulo de Hesselbach.</p>
+    </div>
+    <div class="panel">
+      <div class="card"><h3>Hérnia</h3><div class="seg" id="antSeg"></div></div>
+      <div class="card"><h3>Tela</h3><div class="seg" id="meshBtn"><button type="button" aria-pressed="false">Sobrepor a tela de Lichtenstein</button></div></div>
+      <div class="card" id="antOut" aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>Parede do canal</th><th>Formada por</th><th>Por que importa</th></tr></thead>
+    <tbody>
+      <tr><td>Anterior</td><td>Aponeurose do oblíquo externo (reforçada lateralmente pelo oblíquo interno)</td><td>É aberta para acessar o canal e fechada por cima da tela no fim</td></tr>
+      <tr><td>Posterior</td><td>Fáscia transversal (reforçada medialmente pelo tendão conjunto, quando presente)</td><td>Sua fraqueza é a hérnia direta; é ela que a tela substitui</td></tr>
+      <tr><td>Teto</td><td>Fibras arqueadas do oblíquo interno e do transverso</td><td>Borda superior onde a tela é suturada</td></tr>
+      <tr><td>Assoalho</td><td>Ligamento inguinal e, medialmente, o lacunar</td><td>Borda inferior da tela (sutura contínua no ligamento inguinal)</td></tr>
+    </tbody>
+  </table></div>
+  <div class="prose">
+    <p>Pela frente, o cordão espermático carrega o <strong>ramo genital do genitofemoral</strong>
+    por dentro; o <strong>ilioinguinal</strong> corre sobre o cordão; o
+    <strong>ílio-hipogástrico</strong> fica mais acima, sobre o oblíquo interno. Os três precisam
+    ser vistos e preservados no Lichtenstein — são eles que explicam a dor crônica da via anterior.</p>
+    <p>A tela de Lichtenstein é de polipropileno, sem tensão: sobrepõe o tubérculo púbico em cerca
+    de 1,5 a 2 cm, é suturada de forma contínua ao ligamento inguinal embaixo e ao oblíquo interno
+    em cima, e tem uma fenda que abraça o cordão, com as caudas cruzadas lateralmente ao anel
+    interno para recriar um anel justo.</p>
+  </div>
+</section>
+
+<section class="ch" id="c3">
+  <div class="ch-head"><span class="ch-num">03</span><div>
+    <h2>Classificar o que se encontrou</h2>
+    <p class="ch-sub">Nyhus é a classificação que a prova brasileira mais cobra; a da European
+    Hernia Society (EHS) é a que a HerniaSurge usa.</p>
+  </div></div>
+  <div class="plate">
+    <div class="panel">
+      <div class="card"><h3>Classifique o achado</h3><div id="nyQ"></div></div>
+    </div>
+    <div class="panel"><div id="nyOut" aria-live="polite"></div></div>
+  </div>
+  <div class="tbl"><table id="nyTbl">
+    <thead><tr><th>Nyhus</th><th>Definição</th><th>Exemplo típico</th></tr></thead>
+    <tbody>
+      <tr data-k="I"><td>I</td><td>Indireta com anel interno de tamanho normal</td><td>Hérnia da criança e do adulto jovem</td></tr>
+      <tr data-k="II"><td>II</td><td>Indireta com anel interno dilatado, parede posterior íntegra</td><td>Indireta do adulto que não chega ao escroto</td></tr>
+      <tr data-k="IIIA"><td>IIIA</td><td>Direta (defeito da parede posterior)</td><td>Abaulamento medial aos epigástricos</td></tr>
+      <tr data-k="IIIB"><td>IIIB</td><td>Indireta grande que destrói a parede posterior</td><td>Inguinoescrotal, por deslizamento, em pantalona</td></tr>
+      <tr data-k="IIIC"><td>IIIC</td><td>Femoral</td><td>Abaulamento abaixo do ligamento inguinal</td></tr>
+      <tr data-k="IV"><td>IV</td><td>Recidivada: A direta, B indireta, C femoral, D combinada</td><td>Recidiva após qualquer técnica</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note" style="margin-top:12px"><b>Pantalona em Nyhus:</b> a hérnia em pantalona (direta + indireta, a cavaleiro dos vasos epigástricos) entra no tipo <b>IIIB</b>, não em IIIA.</div>
+  <div class="tbl"><table>
+    <thead><tr><th>EHS</th><th>Código</th><th>Significado</th></tr></thead>
+    <tbody>
+      <tr><td>P / R</td><td>Primária ou recidivada</td><td>Primeiro elemento da sigla</td></tr>
+      <tr><td>L · M · F</td><td>Lateral (indireta), medial (direta), femoral</td><td>Localização do defeito</td></tr>
+      <tr><td>0 · 1 · 2 · 3</td><td>0 sem hérnia · 1 até 1,5 cm (um dedo) · 2 até 3 cm (dois dedos) · 3 acima de 3 cm</td><td>Tamanho do defeito; x = não investigado</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="ch" id="c4">
+  <div class="ch-head"><span class="ch-num">04</span><div>
+    <h2>Diagnóstico: o exame físico decide quase sempre</h2>
+    <p class="ch-sub">A imagem entra quando o exame não fecha — não para confirmar o óbvio.</p>
+  </div></div>
+  <div class="plate">
+    <div class="panel">
+      <div class="card"><h3>Exame clínico</h3>
+        <p>Paciente <b>em pé</b>, com manobra de Valsalva ou tosse. Abaulamento redutível na região
+        inguinal acima do ligamento inguinal é hérnia inguinal; abaixo e lateral ao tubérculo púbico,
+        pense em femoral.</p>
+        <p>Distinguir direta de indireta pelo exame físico é pouco confiável — a distinção é
+        intraoperatória e, na prática, não muda a indicação.</p>
+      </div>
+      <div class="card"><h3>Quando pedir imagem</h3>
+        <p><b>Ultrassonografia</b> é o primeiro exame quando há dor inguinal sem abaulamento palpável
+        ou dúvida diagnóstica. Se inconclusiva, a ressonância dinâmica é a opção seguinte;
+        tomografia é alternativa.</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="card"><h3>Diagnóstico diferencial da massa inguinal</h3>
+        <dl class="kv">
+          <dt>Femoral</dt><dd>abaixo do ligamento inguinal; mais estrangulamento</dd>
+          <dt>Hidrocele</dt><dd>transiluminação; dá para palpar acima dela</dd>
+          <dt>Linfonodo</dt><dd>não redutível, sem impulso à tosse</dd>
+          <dt>Varicocele</dt><dd>"saco de vermes", mais à esquerda</dd>
+          <dt>Lipoma do cordão</dt><dd>não redutível; muitas vezes achado intraoperatório</dd>
+          <dt>Testículo ectópico</dt><dd>bolsa escrotal vazia do mesmo lado</dd>
+        </dl>
+      </div>
+      <div class="verd g2"><span class="t">Watchful waiting</span><span class="h">Homem com hérnia assintomática ou minimamente sintomática</span>
+      <p>A HerniaSurge aceita conduta expectante orientada, porque o risco de encarceramento é
+      baixo. Mas a maioria desses pacientes acaba operando em alguns anos por progressão dos
+      sintomas. Em mulheres e em hérnia femoral, essa opção não vale.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="ch" id="c5">
+  <div class="ch-head"><span class="ch-num">05</span><div>
+    <h2>Fluxograma de conduta (HerniaSurge)</h2>
+    <p class="ch-sub">Responda na ordem. O caminho percorrido aparece no painel; os cenários prontos
+    reproduzem os enunciados mais cobrados.</p>
+  </div></div>
+  <div class="plate">
+    <div class="panel">
+      <div class="card"><h3>Cenários de prova</h3><div class="seg" id="mqPre"></div></div>
+      <div class="card"><h3>Perguntas</h3><div id="mqQ"></div></div>
+    </div>
+    <div class="panel" id="mqOut" aria-live="polite"></div>
+  </div>
+  <div class="prose">
+    <p>A diretriz internacional (HerniaSurge, 2018; atualização das técnicas laparoendoscópicas em
+    2023) recomenda <strong>reparo com tela</strong> para a hérnia inguinal do adulto e coloca
+    <strong>Lichtenstein</strong> e <strong>laparoendoscopia (TEP ou TAPP)</strong> como as melhores
+    opções para a hérnia primária unilateral, desde que haja experiência. A via laparoendoscópica
+    tem menos dor pós-operatória e menos dor crônica; a anterior pode ser feita com anestesia local.</p>
+    <p>O que move a escolha para a via posterior é previsível: <strong>bilateralidade</strong>,
+    <strong>recidiva após via anterior</strong> e <strong>sexo feminino</strong> (pela hérnia
+    femoral oculta). O que move para a anterior também: <strong>recidiva após via posterior</strong>
+    e contraindicação à anestesia geral. Recidiva se opera pelo plano ainda virgem.</p>
+  </div>
+</section>
+
+<section class="ch" id="c6">
+  <div class="ch-head"><span class="ch-num">06</span><div>
+    <h2>As técnicas, lado a lado</h2>
+    <p class="ch-sub">Tecidual é a exceção (campo contaminado, recusa de tela, criança); tela é a regra no adulto.</p>
+  </div></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Técnica</th><th>O que faz</th><th>O que a prova cobra</th></tr></thead>
+    <tbody>
+      <tr><td>Bassini</td><td>Sutura do tendão conjunto (oblíquo interno, transverso e fáscia transversal) ao ligamento inguinal</td><td>Reparo tecidual clássico, com tensão; recidiva maior</td></tr>
+      <tr><td>Shouldice</td><td>Imbricação da fáscia transversal em camadas com sutura contínua</td><td>Melhor técnica sem tela segundo a HerniaSurge</td></tr>
+      <tr><td>McVay</td><td>Arco do transverso suturado ao ligamento de Cooper, com incisão relaxadora na bainha do reto</td><td>Única tecidual que fecha também o canal femoral</td></tr>
+      <tr><td>Lichtenstein</td><td>Tela de polipropileno anterior, sem tensão, sobre a parede posterior</td><td>Padrão da via anterior; pode ser feita com anestesia local; não cobre o femoral</td></tr>
+      <tr><td>TEP</td><td>Tela pré-peritoneal por via totalmente extraperitoneal, sem entrar na cavidade</td><td>Espaço de trabalho menor; curva de aprendizado longa</td></tr>
+      <tr><td>TAPP</td><td>Entra na cavidade, abre um retalho peritoneal, posiciona a tela e fecha o peritônio</td><td>Vê o conteúdo (útil se encarcerada) e o lado oposto; resultados semelhantes à TEP</td></tr>
+    </tbody>
+  </table></div>
+  <div class="traps" style="margin-top:16px">
+    <div class="trap"><span class="t">Detalhe técnico</span><h4>Tela da via posterior</h4>
+      <p>Pelo menos <b>10 × 15 cm</b>, cobrindo todo o orifício miopectíneo. A fixação é dispensável
+      na maioria dos casos; considere-a nos defeitos diretos grandes (EHS M3).</p></div>
+    <div class="trap"><span class="t">Detalhe técnico</span><h4>Antibiótico profilático</h4>
+      <p>Em reparo aberto de baixo risco, em ambiente de baixa taxa de infecção, a HerniaSurge não
+      recomenda profilaxia de rotina; na via laparoendoscópica, também não.</p></div>
+    <div class="trap"><span class="t">Detalhe técnico</span><h4>Criança</h4>
+      <p>Hérnia indireta por persistência do conduto peritoneovaginal: <b>herniotomia</b> (ligadura
+      alta do saco), sem tela e sem reforço da parede.</p></div>
+  </div>
+</section>
+
+<section class="ch" id="c7">
+  <div class="ch-head"><span class="ch-num">07</span><div>
+    <h2>Pegadinhas de prova</h2>
+    <p class="ch-sub">Frases curtas que a banca transforma em alternativa errada.</p>
+  </div></div>
+  <div class="traps">
+    <div class="trap"><span class="t">Epidemiologia</span><h4>A hérnia mais comum na mulher</h4><p>É a <b>inguinal indireta</b>, não a femoral. A femoral é <b>proporcionalmente</b> mais frequente na mulher do que no homem.</p></div>
+    <div class="trap"><span class="t">Femoral</span><h4>Não se observa hérnia femoral</h4><p>Risco alto de encarceramento e estrangulamento: a conduta é operar, e precocemente.</p></div>
+    <div class="trap"><span class="t">Epônimos</span><h4>Conteúdos com nome</h4><p><b>Richter</b>: só a borda antimesentérica pinçada (estrangula sem obstruir). <b>Littré</b>: divertículo de Meckel. <b>Amyand</b>: apêndice na hérnia inguinal. <b>De Garengeot</b>: apêndice na hérnia femoral.</p></div>
+    <div class="trap"><span class="t">Por deslizamento</span><h4>A víscera é parede do saco</h4><p>Ceco à direita, sigmoide à esquerda, ou bexiga. Abrir o saco sem reconhecer isso lesa a víscera.</p></div>
+    <div class="trap"><span class="t">Pantalona</span><h4>Direta + indireta</h4><p>Dois sacos a cavaleiro dos vasos epigástricos inferiores. Nyhus IIIB.</p></div>
+    <div class="trap"><span class="t">Via posterior</span><h4>Desastre × dor</h4><p>Desastre: entre ducto deferente e vasos espermáticos, vasos ilíacos externos. Dor: lateral aos vasos espermáticos e abaixo do trato iliopúbico, nervos cutâneo femoral lateral, ramo femoral do genitofemoral e femoral.</p></div>
+    <div class="trap"><span class="t">Corona mortis</span><h4>Sangra no Cooper</h4><p>Anastomose entre os sistemas obturatório e epigástrico/ilíaco externo que cruza o ligamento de Cooper. Lembrar ao fixar tela ou fazer McVay.</p></div>
+    <div class="trap"><span class="t">Recidiva</span><h4>Opera-se pelo plano virgem</h4><p>Após anterior → posterior. Após posterior → anterior.</p></div>
+    <div class="trap"><span class="t">Encarcerada</span><h4>Redução manual tem limite</h4><p>Só sem sinais de estrangulamento. Com dor intensa, sinais inflamatórios locais ou toxemia, cirurgia de urgência — e cuidado com a <b>redução em massa</b> (o saco volta inteiro com o anel constritor).</p></div>
+  </div>
+</section>
+
+<section class="ch" id="c8">
+  <div class="ch-head"><span class="ch-num">08</span><div>
+    <h2>Forja</h2>
+    <p class="ch-sub">Oito questões comentadas. Cada distrator é a conduta certa de outro cenário.</p>
+  </div></div>
+  <div class="quiz" id="quiz"></div>
+</section>
+
+<section class="ch" id="c9">
+  <div class="ch-head"><span class="ch-num">09</span><div>
+    <h2>Tabela-mãe: gatilho → conduta</h2>
+    <p class="ch-sub">A borda superior mais clara indica maior urgência ou maior chance de cair.</p>
+  </div></div>
+  <div class="mom">
+    <div class="mc g3"><span class="gat">Dor intensa, irredutível, toxemia</span><h4>Estrangulada</h4><p><b>Cirurgia de urgência</b>; avaliar viabilidade; tela se campo limpo, reparo tecidual se contaminado.</p></div>
+    <div class="mc g3"><span class="gat">Abaixo do ligamento inguinal</span><h4>Femoral</h4><p><b>Operar precocemente</b>; laparoendoscopia na eletiva, se houver experiência.</p></div>
+    <div class="mc g2"><span class="gat">Bilateral</span><h4>TEP ou TAPP</h4><p>Duas hérnias pelas mesmas incisões.</p></div>
+    <div class="mc g2"><span class="gat">Recidiva após Lichtenstein</span><h4>Via posterior</h4><p>Plano posterior virgem.</p></div>
+    <div class="mc g2"><span class="gat">Recidiva após TEP/TAPP</span><h4>Lichtenstein</h4><p>Plano anterior virgem.</p></div>
+    <div class="mc g2"><span class="gat">Mulher</span><h4>Laparoendoscopia</h4><p>Diagnostica e trata a femoral oculta.</p></div>
+    <div class="mc"><span class="gat">Unilateral primária, homem</span><h4>Lichtenstein ou TEP/TAPP</h4><p>Conforme experiência; local disponível na anterior.</p></div>
+    <div class="mc"><span class="gat">Homem assintomático</span><h4>Expectante orientada</h4><p>Aceitável; a maioria opera depois.</p></div>
+    <div class="mc"><span class="gat">Sem tela possível</span><h4>Shouldice</h4><p>Melhor tecidual; <b>McVay</b> se também femoral.</p></div>
+    <div class="mc"><span class="gat">Criança</span><h4>Herniotomia</h4><p>Ligadura alta do saco, sem tela.</p></div>
+  </div>
+</section>
+</div>
+
+<footer class="fim">
+  <p><b>Fontes de referência:</b> HerniaSurge Group. International guidelines for groin hernia management. Hernia 2018;22:1–165 ·
+  Stabilini C et al. Update of the international HerniaSurge guidelines for groin hernia management (laparoendoscopic). BJS Open 2023 ·
+  Nyhus LM. Classification of groin hernia; Miserez M et al. EHS groin hernia classification (2007) · Sabiston Textbook of Surgery.</p>
+  <p>Esquemas anatômicos didáticos, fora de escala. Atlas produzido para o Residência Max.</p>
+</footer>
+
+<script>
+(function(){
+  /* trilho: marca o capítulo visível */
+  var links=[].slice.call(document.querySelectorAll('.rail a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function spy(){var y=window.scrollY+120,idx=0;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)idx=i});
+    links.forEach(function(a,i){a.classList.toggle('on',i===idx)})}
+  window.addEventListener('scroll',spy,{passive:true});spy();
+})();
+
+function montarQuiz(alvo,QS){
+  var box=document.getElementById(alvo),feitas=0,acertos=0,L='ABCDE';
+  var sc=document.createElement('div');sc.className='score';
+  sc.innerHTML='<span class="big num" id="'+alvo+'-p">0<small>/'+QS.length+'</small></span>'+
+    '<span class="lab" id="'+alvo+'-l">Responda as questões; cada uma abre o comentário ao ser marcada.</span>'+
+    '<button class="btn" type="button" id="'+alvo+'-r">Recomeçar</button>';
+  function placar(){document.getElementById(alvo+'-p').innerHTML=acertos+'<small>/'+QS.length+'</small>';
+    document.getElementById(alvo+'-l').textContent=feitas<QS.length?(feitas+' de '+QS.length+' respondidas.'):
+      (acertos===QS.length?'Gabarito completo.':'Releia os comentários das que errou — cada distrator é a conduta certa de outro cenário.')}
+  function render(){
+    box.innerHTML='';feitas=0;acertos=0;
+    QS.forEach(function(q,i){
+      var d=document.createElement('div');d.className='qz';
+      var h='<div class="qn">Questão '+(i+1)+(q.tag?' · '+q.tag:'')+'</div><p class="qs">'+q.q+'</p><div class="alts">';
+      q.a.forEach(function(t,j){h+='<button type="button" data-j="'+j+'"><span class="L">'+L[j]+'</span><span>'+t+'</span></button>'});
+      h+='</div><div class="qexp"><span class="res"></span>'+q.e+'</div>';
+      d.innerHTML=h;
+      [].forEach.call(d.querySelectorAll('.alts button'),function(b){
+        b.addEventListener('click',function(){
+          if(d.classList.contains('done'))return;
+          var j=+b.getAttribute('data-j');d.classList.add('done');feitas++;
+          if(j===q.c)acertos++;
+          [].forEach.call(d.querySelectorAll('.alts button'),function(x){var k=+x.getAttribute('data-j');x.disabled=true;
+            if(k===q.c)x.classList.add('ok');else if(k===j)x.classList.add('no');else x.classList.add('dim')});
+          d.querySelector('.res').textContent=(j===q.c?'Acertou':'Errou')+' · gabarito '+L[q.c];
+          placar();
+        });
+      });
+      box.appendChild(d);
+    });
+    box.appendChild(sc);placar();
+  }
+  render();
+  document.addEventListener('click',function(e){if(e.target&&e.target.id===alvo+'-r'){render();box.scrollIntoView({behavior:'smooth'})}});
+}
+
+/* máquina de decisão genérica: Q = [{id,lbl,ops:[[valor,rótulo],...]}], f(estado) -> resultado */
+function montarMaquina(cfg){
+  var st={};cfg.Q.forEach(function(q){st[q.id]=q.ops[0][0]});
+  var qbox=document.getElementById(cfg.qbox);
+  function desenhar(){
+    qbox.innerHTML='';
+    cfg.Q.forEach(function(q){
+      if(q.se&&!q.se(st))return;
+      var l=document.createElement('div');l.className='q-lbl';l.textContent=q.lbl;qbox.appendChild(l);
+      var s=document.createElement('div');s.className='seg';
+      q.ops.forEach(function(o){var b=document.createElement('button');b.type='button';b.textContent=o[1];
+        b.setAttribute('aria-pressed',st[q.id]===o[0]?'true':'false');
+        b.onclick=function(){st[q.id]=o[0];desenhar()};s.appendChild(b)});
+      qbox.appendChild(s);
+    });
+    var r=cfg.f(st);
+    document.getElementById(cfg.out).innerHTML=
+      '<div class="verd g'+r.g+'"><span class="t">'+r.t+'</span><span class="h">'+r.h+'</span><p>'+r.p+'</p></div>'+
+      (r.path?'<div class="card"><h3>Caminho no fluxograma</h3><div class="path">'+r.path.map(function(x){return '<span>'+x+'</span>'}).join('<i>→</i>')+'</div></div>':'')+
+      '<div class="card"><h3>Conduta</h3><ol class="steps">'+r.s.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ol></div>'+
+      (r.x?'<div class="forbid"><b>Proibido / distrator:</b> '+r.x+'</div>':'');
+  }
+  if(cfg.presets){var pb=document.getElementById(cfg.presets);
+    cfg.presets_list.forEach(function(p){var b=document.createElement('button');b.type='button';b.textContent=p[0];
+      b.onclick=function(){for(var k in p[1])st[k]=p[1][k];desenhar()};pb.appendChild(b)})}
+  desenhar();
+}
+
+/* pontos clicáveis num SVG -> painel */
+function montarHot(svgId,outId,DATA,first){
+  var svg=document.getElementById(svgId),out=document.getElementById(outId);
+  function show(k){[].forEach.call(svg.querySelectorAll('.hot'),function(g){g.classList.toggle('on',g.getAttribute('data-k')===k)});
+    var d=DATA[k];out.innerHTML='<div class="t" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--a400)">'+(d.t||'')+'</div><h4>'+d.h+'</h4>'+d.b}
+  [].forEach.call(svg.querySelectorAll('.hot'),function(g){g.setAttribute('tabindex','0');g.setAttribute('role','button');
+    g.addEventListener('click',function(){show(g.getAttribute('data-k'))});
+    g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();show(g.getAttribute('data-k'))}})});
+  show(first);
+  return show;
+}
+
+
+var POST={
+ hesselbach:{t:'Espaço direto · 1',h:'Triângulo de Hesselbach',b:'<p>Limites (definição atual): <b>vasos epigástricos inferiores</b> lateralmente, <b>borda lateral do reto abdominal</b> medialmente e <b>ligamento inguinal</b> (trato iliopúbico, na visão posterior) inferiormente.</p><p>Hérnia que sai aqui é <b>direta</b>: adquirida, por fraqueza da fáscia transversal, medial aos epigástricos. Nyhus IIIA; EHS M.</p>'},
+ anel:{t:'Espaço indireto · 2',h:'Anel inguinal interno',b:'<p>Lateral aos vasos epigástricos inferiores. É por onde o ducto deferente e os vasos espermáticos entram no canal — e por onde sai a hérnia <b>indireta</b>, dentro do cordão, pela persistência do conduto peritoneovaginal.</p><p>Indireta é a hérnia mais comum em ambos os sexos. Nyhus I/II/IIIB; EHS L.</p>'},
+ femoral:{t:'Espaço femoral · 3',h:'Canal femoral',b:'<p>Abaixo do trato iliopúbico, <b>medial à veia femoral</b>, lateral ao ligamento lacunar, acima do Cooper. Colo estreito e rígido: por isso a hérnia femoral encarcera e estrangula mais.</p><p>A tela de Lichtenstein <b>não</b> cobre esse espaço; a tela posterior cobre. Nyhus IIIC; EHS F.</p>'},
+ doom:{t:'Zona proibida · 4',h:'Triângulo do desastre',b:'<p>Ápice no anel interno; <b>ducto deferente</b> medialmente e <b>vasos espermáticos</b> lateralmente.</p><p>Contém os <b>vasos ilíacos externos</b>. Grampo ou dissecção aqui significam hemorragia grave. Nunca fixar tela neste triângulo.</p>'},
+ dor:{t:'Zona proibida · 5',h:'Triângulo da dor',b:'<p>Lateral aos vasos espermáticos e abaixo do trato iliopúbico.</p><p>Contém o <b>nervo cutâneo femoral lateral</b>, o <b>ramo femoral do genitofemoral</b> e, mais profundamente, o <b>nervo femoral</b>. Grampo aqui = dor ou parestesia na face anterolateral da coxa (meralgia parestésica).</p>'},
+ corona:{t:'Variante vascular · 6',h:'Corona mortis',b:'<p>Anastomose entre os sistemas <b>obturatório</b> e <b>epigástrico inferior / ilíaco externo</b> que cruza o ligamento de Cooper.</p><p>Fonte de sangramento difícil de controlar ao fixar a tela no Cooper ou ao suturar na técnica de McVay.</p>'},
+ cooper:{t:'Ligamento · 7',h:'Ligamento pectíneo (Cooper)',b:'<p>Espessamento do periósteo do ramo superior do púbis. Ponto firme de ancoragem: na via posterior, a tela deve descer abaixo dele medialmente; na técnica de McVay, recebe a sutura do arco do transverso.</p>'},
+ tract:{t:'Marco · 8',h:'Trato iliopúbico',b:'<p>Banda aponeurótica que corre posterior e paralela ao ligamento inguinal. Na visão posterior é a <b>linha de segurança</b>: acima dela ficam os espaços direto e indireto; abaixo, o canal femoral, os vasos e os nervos. Não se grampeia abaixo dele lateralmente aos vasos espermáticos.</p>'},
+ epig:{t:'Marco · 9',h:'Vasos epigástricos inferiores',b:'<p>Ramo da artéria ilíaca externa, com duas veias satélites. Dividem o espaço indireto (lateral) do direto (medial). A hérnia em pantalona tem um saco de cada lado deles.</p>'},
+ mpo:{t:'Conceito',h:'Orifício miopectíneo de Fruchaud',b:'<p>Arco do oblíquo interno e transverso (em cima), borda lateral do reto (medial), iliopsoas (lateral) e ligamento de Cooper (embaixo), dividido em dois pelo ligamento inguinal / trato iliopúbico.</p><p>A tela laparoendoscópica deve cobri-lo inteiro, com pelo menos 10 × 15 cm.</p>'}
+};
+var showPost=montarHot('svgPost','postOut',POST,'hesselbach');
+document.querySelector('#mpoBtn button').onclick=function(){var b=this,on=b.getAttribute('aria-pressed')!=='true';
+  b.setAttribute('aria-pressed',on);document.getElementById('mpoG').style.display=on?'':'none';if(on)showPost('mpo');};
+
+/* visão anterior */
+var ANT={
+ nenhuma:{h:'Anatomia sem hérnia',p:'<p>Siga o cordão do anel interno (1) ao externo (2). O triângulo de Hesselbach está tracejado, medial aos vasos epigástricos (3). Abaixo do ligamento inguinal (7), de lateral para medial: nervo, artéria, veia femorais e o canal femoral (9).</p>'},
+ ind:{h:'Indireta',p:'<p>Sai pelo anel interno, <b>lateral</b> aos vasos epigástricos, e acompanha o cordão — pode chegar ao escroto. O saco fica anteromedial ao cordão e é dissecado dele.</p><p>Nyhus I, II ou IIIB conforme o anel e a parede posterior.</p>'},
+ dir:{h:'Direta',p:'<p>Abaula a parede posterior <b>medial</b> aos epigástricos, dentro do triângulo de Hesselbach. Raramente desce ao escroto; colo largo, encarcera menos.</p><p>Nyhus IIIA.</p>'},
+ fem:{h:'Femoral',p:'<p>Sai <b>abaixo</b> do ligamento inguinal, medial à veia femoral. Pela frente, a tela de Lichtenstein não alcança este espaço — quando operada por via anterior, exige abordagem específica (por exemplo, plug ou McVay).</p><p>Nyhus IIIC.</p>'}
+};
+var antSt='nenhuma';
+function antDraw(){['hInd','hDir','hFem'].forEach(function(id){document.getElementById(id).style.display='none'});
+  if(antSt==='ind')document.getElementById('hInd').style.display='';
+  if(antSt==='dir')document.getElementById('hDir').style.display='';
+  if(antSt==='fem')document.getElementById('hFem').style.display='';
+  var d=ANT[antSt];document.getElementById('antOut').innerHTML='<h4>'+d.h+'</h4>'+d.p;
+  [].forEach.call(document.querySelectorAll('#antSeg button'),function(b){b.setAttribute('aria-pressed',b.dataset.k===antSt)});}
+[['nenhuma','Sem hérnia'],['ind','Indireta'],['dir','Direta'],['fem','Femoral']].forEach(function(o){var b=document.createElement('button');b.type='button';b.textContent=o[1];b.dataset.k=o[0];b.onclick=function(){antSt=o[0];antDraw()};document.getElementById('antSeg').appendChild(b)});
+antDraw();
+document.querySelector('#meshBtn button').onclick=function(){var on=this.getAttribute('aria-pressed')!=='true';this.setAttribute('aria-pressed',on);
+  document.getElementById('meshG').style.display=on?'':'none';
+  if(on){document.getElementById('antOut').innerHTML='<h4>Tela de Lichtenstein</h4><p>Cobre a parede posterior inteira (Hesselbach e anel interno), sobrepondo o tubérculo púbico. Borda inferior suturada ao ligamento inguinal; superior, ao oblíquo interno; fenda ao redor do cordão com as caudas cruzadas lateralmente.</p><p>Repare que o canal femoral (9), abaixo do ligamento, fica <b>descoberto</b>.</p>'}else antDraw();};
+
+/* Nyhus */
+montarMaquina({qbox:'nyQ',out:'nyOut',
+ Q:[{id:'rec',lbl:'É recidiva?',ops:[['n','Primária'],['s','Recidivada']]},
+    {id:'tipo',lbl:'Onde está o defeito?',ops:[['ind','Lateral aos epigástricos (indireta)'],['dir','Medial aos epigástricos (direta)'],['fem','Abaixo do trato/ligamento (femoral)'],['comb','Direta + indireta']]},
+    {id:'anel',lbl:'Anel interno',ops:[['nl','Tamanho normal'],['dil','Dilatado']],se:function(s){return s.rec==='n'&&s.tipo==='ind'}},
+    {id:'par',lbl:'Parede posterior',ops:[['int','Íntegra'],['des','Destruída / hérnia escrotal grande']],se:function(s){return s.rec==='n'&&s.tipo==='ind'&&s.anel==='dil'}}],
+ f:function(s){var k,txt;
+   if(s.rec==='s'){k={ind:'IVB',dir:'IVA',fem:'IVC',comb:'IVD'}[s.tipo];txt='Recidivada: o tipo IV só registra a localização da recidiva.';}
+   else if(s.tipo==='dir'){k='IIIA';txt='Defeito da parede posterior, medial aos vasos epigástricos.';}
+   else if(s.tipo==='fem'){k='IIIC';txt='Defeito femoral primário.';}
+   else if(s.tipo==='comb'){k='IIIB';txt='Em pantalona: dois sacos a cavaleiro dos epigástricos — Nyhus IIIB.';}
+   else if(s.anel==='nl'){k='I';txt='Indireta com anel normal: típica da criança.';}
+   else if(s.par==='int'){k='II';txt='Indireta com anel dilatado, parede posterior preservada.';}
+   else{k='IIIB';txt='Indireta grande, que destruiu a parede posterior (inclui inguinoescrotal e por deslizamento).';}
+   [].forEach.call(document.querySelectorAll('#nyTbl tr[data-k]'),function(r){r.classList.toggle('hl',r.dataset.k===k||(k.indexOf('IV')===0&&r.dataset.k==='IV'))});
+   return {g:k.indexOf('III')===0||k.indexOf('IV')===0?2:1,t:'Classificação de Nyhus',h:'Nyhus '+k,p:txt,
+     s:[k==='I'?'Na criança: herniotomia (ligadura alta do saco).':'No adulto: reparo com tela (Lichtenstein ou TEP/TAPP).',
+        k==='IIIC'||k==='IVC'?'Femoral: operar precocemente; via posterior cobre o canal femoral.':'Escolher a via conforme bilateralidade, recidiva, sexo e experiência (capítulo 05).']};
+ }});
+[].forEach.call(document.querySelectorAll('#nyTbl tr[data-k]'),function(r){r.title='Classe '+r.dataset.k});
+
+/* fluxograma HerniaSurge */
+montarMaquina({qbox:'mqQ',out:'mqOut',presets:'mqPre',
+ presets_list:[['Caso-guia: bilateral',{urg:'n',sexo:'h',sint:'s',lado:'bi',rec:'n',ag:'s'}],
+   ['Recidiva pós-Lichtenstein',{urg:'n',sexo:'h',sint:'s',lado:'uni',rec:'ant',ag:'s'}],
+   ['Mulher, 42 anos',{urg:'n',sexo:'m',sint:'s',lado:'uni',rec:'n',ag:'s'}],
+   ['Idoso assintomático',{urg:'n',sexo:'h',sint:'n',lado:'uni',rec:'n',ag:'s'}],
+   ['Estrangulada',{urg:'s'}],
+   ['Cardiopata grave',{urg:'n',sexo:'h',sint:'s',lado:'uni',rec:'n',ag:'n'}]],
+ Q:[{id:'urg',lbl:'Sinais de encarceramento doloroso ou estrangulamento?',ops:[['n','Não'],['s','Sim']]},
+    {id:'cont',lbl:'Campo cirúrgico',ops:[['limpo','Limpo / sem contaminação grosseira'],['cont','Contaminado (necrose, perfuração)']],se:function(s){return s.urg==='s'}},
+    {id:'sexo',lbl:'Sexo',ops:[['h','Homem'],['m','Mulher']],se:function(s){return s.urg==='n'}},
+    {id:'sint',lbl:'Sintomas',ops:[['s','Sintomática'],['n','Assintomática / mínimos']],se:function(s){return s.urg==='n'&&s.sexo==='h'}},
+    {id:'lado',lbl:'Lateralidade',ops:[['uni','Unilateral'],['bi','Bilateral']],se:function(s){return s.urg==='n'&&!(s.sexo==='h'&&s.sint==='n')}},
+    {id:'rec',lbl:'Recidiva?',ops:[['n','Primária'],['ant','Após via anterior'],['post','Após via posterior']],se:function(s){return s.urg==='n'&&!(s.sexo==='h'&&s.sint==='n')}},
+    {id:'ag',lbl:'Tolera anestesia geral?',ops:[['s','Sim'],['n','Não / alto risco']],se:function(s){return s.urg==='n'&&!(s.sexo==='h'&&s.sint==='n')}}],
+ f:function(s){
+  if(s.urg==='s'){
+    if(s.cont==='cont')return {g:3,t:'Urgência',h:'Cirurgia de urgência, reparo tecidual',path:['Estrangulada','Campo contaminado','Reparo sem tela'],
+      p:'Com ressecção intestinal e contaminação grosseira, a tela sintética é evitada.',
+      s:['Reanimação, antibiótico terapêutico','Abordar o saco antes de soltar o anel (evitar redução do conteúdo sem inspeção)','Ressecar alça inviável','Reparo tecidual (Shouldice/Bassini; McVay se femoral)'],
+      x:'Redução manual (taxe) com sinais de estrangulamento — devolve alça necrótica à cavidade ou produz redução em massa.'};
+    return {g:3,t:'Urgência',h:'Cirurgia de urgência com tela',path:['Estrangulada / encarcerada dolorosa','Campo limpo','Reparo com tela'],
+      p:'Sem contaminação grosseira, a tela é segura também na urgência. A TAPP permite inspecionar a alça reduzida.',
+      s:['Reanimação, analgesia','Lichtenstein ou TAPP, conforme experiência','Avaliar viabilidade da alça (laparoscopia diagnóstica se reduziu na indução)','Ressecar se inviável'],
+      x:'Observar hérnia dolorosa irredutível "até amanhã".'};}
+  if(s.sexo==='h'&&s.sint==='n')return {g:1,t:'Eletiva',h:'Conduta expectante orientada',path:['Homem','Assintomático','Watchful waiting'],
+      p:'Aceitável no homem com hérnia assintomática ou minimamente sintomática. Risco de encarceramento baixo; a maioria acaba operando por progressão dos sintomas.',
+      s:['Explicar os sinais de encarceramento','Reavaliar periodicamente','Operar se sintomas aparecerem'],
+      x:'Aplicar conduta expectante a mulher ou a hérnia femoral.'};
+  var path=[s.sexo==='m'?'Mulher':'Homem sintomático',s.lado==='bi'?'Bilateral':'Unilateral',{n:'Primária',ant:'Recidiva pós-anterior',post:'Recidiva pós-posterior'}[s.rec]];
+  if(s.rec==='post'){path.push('Lichtenstein');return {g:2,t:'Recidiva',h:'Lichtenstein (via anterior)',path:path,p:'A recidiva após TEP/TAPP se opera pelo plano anterior, ainda virgem.',s:['Lichtenstein, de preferência com anestesia local','Identificar e preservar os três nervos'],x:'Repetir a via posterior sem experiência específica em reoperação.'};}
+  if(s.ag==='n'){path.push('Lichtenstein sob local');return {g:2,t:'Risco anestésico',h:'Lichtenstein com anestesia local',path:path,p:'Sem condição de anestesia geral, a via anterior sob anestesia local é a escolha. Em recidiva após via anterior nesse paciente, a decisão é individualizada.',s:['Anestesia local com sedação leve','Tela de polipropileno sem tensão'],x:'Indicar TEP/TAPP em quem não tolera anestesia geral.'};}
+  if(s.rec==='ant'){path.push('TEP / TAPP');return {g:2,t:'Recidiva',h:'Laparoendoscopia (TEP ou TAPP)',path:path,p:'Recidiva após Lichtenstein ou reparo tecidual: plano posterior virgem.',s:['TEP ou TAPP conforme experiência','Tela ≥ 10 × 15 cm cobrindo o orifício miopectíneo'],x:'Novo Lichtenstein no plano já cicatrizado.'};}
+  if(s.sexo==='m'){path.push('TEP / TAPP');return {g:2,t:'Mulher',h:'Laparoendoscopia (TEP ou TAPP)',path:path,p:'Na mulher, a via posterior revela e trata a hérnia femoral oculta, que passaria despercebida pela frente.',s:['TEP ou TAPP','Tela cobrindo também o canal femoral'],x:'Reparo tecidual ou conduta expectante como padrão na mulher.'};}
+  if(s.lado==='bi'){path.push('TEP / TAPP');return {g:2,t:'Bilateral',h:'Laparoendoscopia (TEP ou TAPP)',path:path,p:'As duas hérnias pelas mesmas incisões, com menos dor e retorno mais rápido. É a resposta do caso-guia.',s:['TEP ou TAPP bilateral','Uma tela para cada lado (≥ 10 × 15 cm)','Fixação só se defeito direto grande'],x:'Lichtenstein bilateral como primeira escolha, ou operar só o lado sintomático.'};}
+  path.push('Lichtenstein ou TEP/TAPP');
+  return {g:1,t:'Primária unilateral',h:'Lichtenstein ou TEP/TAPP',path:path,p:'Ambas recomendadas para a hérnia primária unilateral do homem, se houver experiência. Laparoendoscopia: menos dor aguda e crônica. Lichtenstein: anestesia local possível.',
+    s:['Reparo com tela','Escolher pela experiência do cirurgião e preferência do paciente'],x:'Reparo tecidual como padrão no adulto.'};
+ }});
+
+/* forja */
+montarQuiz('quiz',[
+ {tag:'Escolha da via',q:'Homem de 58 anos, hígido, com hérnias inguinais <b>bilaterais</b>, primárias e sintomáticas. Segundo a HerniaSurge, a melhor abordagem é:',
+  a:['Lichtenstein bilateral no mesmo tempo','Reparo laparoendoscópico (TEP ou TAPP)','Conduta expectante','Shouldice bilateral','McVay do lado maior e observação do outro'],c:1,
+  e:'<b>B.</b> Bilateralidade é indicação clássica da via posterior: as duas hérnias pelas mesmas incisões, com menos dor. Lichtenstein é a melhor opção para a unilateral sob anestesia local; Shouldice e McVay são técnicas teciduais, reservadas para quando não se usa tela; expectante só vale no homem assintomático.'},
+ {tag:'Recidiva',q:'Homem de 64 anos com <b>recidiva</b> de hérnia inguinal direita dois anos após <b>Lichtenstein</b>. A conduta mais adequada é:',
+  a:['Novo Lichtenstein','Bassini','Observação até ficar sintomático','Reparo laparoendoscópico (TEP ou TAPP)','Herniotomia'],c:3,
+  e:'<b>D.</b> Recidiva se opera pelo plano virgem: após via anterior, posterior. Novo Lichtenstein seria a resposta se a primeira cirurgia tivesse sido TEP/TAPP. Herniotomia é tratamento da criança.'},
+ {tag:'Mulher',q:'Mulher de 39 anos com hérnia inguinal direita primária, redutível e sintomática. A justificativa para preferir a via laparoendoscópica é:',
+  a:['Diagnosticar e tratar uma hérnia femoral oculta','Menor custo','Dispensar anestesia geral','Permitir reparo sem tela','Na mulher, a hérnia mais comum é a femoral'],c:0,
+  e:'<b>A.</b> A via posterior expõe o canal femoral, que o acesso anterior não vê. A afirmação E é a pegadinha clássica: mesmo na mulher, a hérnia mais comum é a inguinal indireta; a femoral é apenas proporcionalmente mais frequente do que no homem.'},
+ {tag:'Complicação',q:'Após TEP com fixação por grampos, o paciente refere queimação e parestesia na <b>face anterolateral da coxa</b>. O grampo foi provavelmente colocado:',
+  a:['Medial aos vasos epigástricos, no Hesselbach','No ligamento de Cooper','Lateral aos vasos espermáticos, abaixo do trato iliopúbico','Entre o ducto deferente e os vasos espermáticos','Acima do trato iliopúbico, lateral ao anel interno'],c:2,
+  e:'<b>C.</b> É o triângulo da dor: nervo cutâneo femoral lateral (face lateral da coxa), ramo femoral do genitofemoral e nervo femoral. D é o triângulo do desastre — o desfecho seria hemorragia dos vasos ilíacos externos, não dor. B pode sangrar pela corona mortis.'},
+ {tag:'Nyhus',q:'Na cirurgia, encontra-se hérnia <b>indireta</b> com <b>anel interno dilatado</b> e <b>parede posterior íntegra</b>. Pela classificação de Nyhus, é tipo:',
+  a:['I','IIIA','IIIB','IV','II'],c:4,
+  e:'<b>E (II).</b> I = indireta com anel normal; IIIA = direta; IIIB = indireta que já destruiu a parede posterior; IV = recidivada.'},
+ {tag:'Expectante',q:'Homem de 72 anos com pequena hérnia inguinal direita redutível, <b>assintomática</b>, achada em consulta de rotina. Sobre a conduta, é correto:',
+  a:['A conduta expectante orientada é aceitável','A cirurgia deve ser feita em até 30 dias pelo risco de estrangulamento','Deve-se usar funda até a cirurgia','Reparo tecidual é preferível pela idade','Está indicada TC para confirmar'],c:0,
+  e:'<b>A.</b> No homem com hérnia assintomática ou minimamente sintomática, a espera vigiada é segura (risco de encarceramento baixo), embora a maioria acabe operando. Imagem não é necessária com hérnia palpável. Esse raciocínio não vale para mulher ou hérnia femoral.'},
+ {tag:'Técnica tecidual',q:'Em reparo <b>sem tela</b>, a técnica que trata simultaneamente hérnia inguinal e <b>femoral</b> é:',
+  a:['Bassini','Shouldice','McVay','Lichtenstein','Herniotomia de Marcy'],c:2,
+  e:'<b>C.</b> McVay sutura o arco do transverso ao ligamento de Cooper, fechando o canal femoral; exige incisão relaxadora pela tensão. Shouldice é a melhor tecidual para a inguinal, mas não fecha o femoral. Lichtenstein usa tela.'},
+ {tag:'Anatomia',q:'Na TAPP, observa-se defeito <b>medial aos vasos epigástricos inferiores</b> e <b>acima do trato iliopúbico</b>. Trata-se de hérnia:',
+  a:['Indireta','Femoral','Obturatória','Direta','De Spiegel'],c:3,
+  e:'<b>D.</b> Medial aos epigástricos e acima do trato iliopúbico é o triângulo de Hesselbach — hérnia direta (Nyhus IIIA, EHS M). Lateral seria indireta; abaixo do trato, medial à veia femoral, seria femoral.'}
+]);
+
+</script>
+</body>
+</html>

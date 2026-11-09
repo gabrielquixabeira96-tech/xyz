@@ -1,0 +1,973 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atlas do Choque Hemorrágico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#121110; --bg-2:#0e0d0c; --surface:#171614; --surface-2:#1c1a18; --surface-3:#23201d;
+  --ink:#f6f4f2; --ink-strong:#faf8f6;
+  --ink-body:rgba(243,242,242,.82); --ink-soft:rgba(243,242,242,.70); --ink-meta:rgba(243,242,242,.56);
+  --rule:rgba(243,242,242,.10); --rule-2:rgba(243,242,242,.16); --rule-3:rgba(243,242,242,.28);
+  --accent:#b68235; --accent-300:#facb8d; --accent-400:#e1ad66; --accent-600:#8d6428; --accent-700:#6b4c1e;
+  --tint-1:rgba(194,141,65,.12); --tint-2:rgba(194,141,65,.26); --tint-3:rgba(194,141,65,.50); --tint-4:rgba(194,141,65,.82);
+  --f-head:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --f-body:"Lora",Georgia,"Times New Roman",serif;
+  --shadow:0 1px 2px rgba(0,0,0,.45),0 10px 28px -14px rgba(0,0,0,.75);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink-body);font-family:var(--f-body);font-size:15.5px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--f-head);font-weight:500;color:var(--ink-strong);margin:0;text-wrap:balance;letter-spacing:-.005em}
+a{color:var(--accent-300)}
+b,strong{color:var(--ink);font-weight:600}
+.num,.n{font-variant-numeric:tabular-nums lining-nums}
+:focus-visible{outline:2px solid var(--accent-400);outline-offset:2px;border-radius:3px}
+::selection{background:var(--tint-2);color:var(--ink-strong)}
+mark{background:var(--tint-2);color:var(--accent-300);padding:0 3px;border-radius:2px}
+svg text{font-family:var(--f-body)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px 80px}
+
+/* ---- topo ---- */
+header.hero{max-width:1120px;margin:0 auto;padding:56px 24px 30px;position:relative}
+.kicker{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-400)}
+h1{font-size:clamp(38px,6vw,66px);line-height:1;margin:14px 0 0;font-weight:500}
+h1 em{font-style:italic;color:var(--accent-300)}
+.lede{max-width:62ch;color:var(--ink-soft);font-size:17px;margin:18px 0 0}
+.stem{margin:28px 0 0;padding:20px 22px;border-left:2px solid var(--accent);background:var(--surface);border-radius:0 8px 8px 0;box-shadow:var(--shadow);max-width:76ch}
+.stem p{margin:0 0 8px;color:var(--ink-body)}
+.stem p:last-child{margin:0}
+.stem .src{display:block;margin-bottom:8px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-400)}
+.vitals{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.vitals span{font-size:12.5px;border:1px solid var(--rule-2);border-radius:999px;padding:3px 10px;color:var(--ink-soft)}
+.vitals span b{color:var(--accent-300);font-weight:500}
+
+/* ---- trilho ---- */
+nav.rail{position:sticky;top:0;z-index:40;background:rgba(14,13,12,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);border-top:1px solid var(--rule);margin-top:30px}
+.rail-in{max-width:1120px;margin:0 auto;padding:8px 24px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.rail-in::-webkit-scrollbar{display:none}
+.rail a{flex:none;font-size:13px;color:var(--ink-soft);text-decoration:none;padding:5px 11px;border-radius:999px;border:1px solid transparent;white-space:nowrap;transition:.15s}
+.rail a:hover{color:var(--ink);background:var(--surface-2)}
+.rail a.on{color:var(--accent-300);border-color:var(--tint-3);background:var(--tint-1)}
+.rail a .n{color:var(--accent-400);margin-right:6px;font-size:11.5px}
+
+/* ---- capítulo ---- */
+section.ch{padding-top:58px;scroll-margin-top:56px}
+.ch-head{display:flex;gap:18px;align-items:baseline;border-top:1px solid var(--rule-2);padding-top:22px}
+.ch-num{font-family:var(--f-head);font-size:30px;color:var(--accent);line-height:1;font-style:italic;min-width:34px}
+.ch-head h2{font-size:clamp(26px,3.4vw,36px);line-height:1.1}
+.ch-sub{color:var(--ink-meta);font-size:14.5px;margin:6px 0 0;max-width:72ch}
+.plate{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr);gap:24px;margin-top:24px;align-items:start}
+.plate.even{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+@media (max-width:880px){.plate,.plate.even{grid-template-columns:minmax(0,1fr)}}
+.fig{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:14px;box-shadow:var(--shadow);overflow:hidden;min-width:0}
+.fig svg{display:block;width:100%;height:auto}
+.figcap{font-size:12.5px;color:var(--ink-meta);margin:10px 2px 0;line-height:1.55}
+.panel{display:flex;flex-direction:column;gap:14px;min-width:0}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:16px 17px;box-shadow:var(--shadow);min-width:0}
+.card h3,.lbl{font-family:var(--f-body);font-size:11px;font-weight:500;letter-spacing:.17em;text-transform:uppercase;color:var(--accent-400);margin:0 0 10px}
+.card p{margin:0 0 8px}
+.card p:last-child{margin-bottom:0}
+.prose{margin-top:24px;max-width:70ch;color:var(--ink-body)}
+.prose p{margin:0 0 13px}
+.prose h3{font-size:23px;margin:22px 0 8px}
+
+/* ---- controles ---- */
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button,.btn{font:inherit;font-size:13px;padding:6px 12px;border-radius:4px;cursor:pointer;border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-soft);transition:.15s;line-height:1.35}
+.seg button:hover,.btn:hover{border-color:var(--accent-400);color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#17120b;font-weight:600}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#17120b;font-weight:600}
+.btn.ghost{background:transparent;border-style:dashed}
+.sl{margin-top:12px}
+.sl label{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--ink-soft);margin-bottom:4px}
+.sl label b{color:var(--accent-300);font-weight:500;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:var(--accent);height:22px;margin:0}
+.tog{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink-soft);cursor:pointer;padding:6px 0;border-bottom:1px solid var(--rule)}
+.tog:last-child{border-bottom:0}
+.tog input{accent-color:var(--accent);width:16px;height:16px;margin-top:3px;flex:none}
+.tog small{display:block;color:var(--ink-meta);font-size:12px}
+input[type=number]{font:inherit;width:100%;background:var(--surface-2);border:1px solid var(--rule-2);color:var(--ink);border-radius:4px;padding:6px 9px}
+
+/* ---- veredito: uma matiz, quatro intensidades ---- */
+.verd{border-radius:6px;padding:13px 15px;border:1px solid var(--rule-2);font-size:14px;background:var(--surface-2)}
+.verd .t{font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;display:block;margin-bottom:4px;color:var(--ink-meta)}
+.verd .h{font-family:var(--f-head);font-size:22px;line-height:1.15;display:block;margin-bottom:6px;color:var(--ink-strong)}
+.verd p{margin:0;color:var(--ink-body)}
+.verd.b{border-color:var(--rule-3)}
+.verd.w{border-color:var(--tint-3);background:var(--tint-1)}
+.verd.w .h{color:var(--accent-300)}
+.verd.d{border:1px solid var(--accent-400);border-left:4px solid var(--accent-400);background:var(--tint-2)}
+.verd.d .h{color:var(--accent-300)}
+.verd.d .t{color:var(--accent-300)}
+.verd.m{border-style:dashed;border-color:var(--accent-400)}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:2px 8px;border-radius:999px;border:1px solid var(--rule-3);color:var(--ink-soft);white-space:nowrap}
+.tag.w{border-color:var(--tint-3);color:var(--accent-400);background:var(--tint-1)}
+.tag.d{border-color:var(--accent-400);color:#17120b;background:var(--accent-400);font-weight:600}
+.tag.m{border-style:dashed;border-color:var(--accent-400);color:var(--accent-300)}
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;font-size:13.5px;margin:0}
+.kv dt{color:var(--ink-meta);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding-top:3px}
+.kv dd{margin:0;color:var(--ink-body)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.steps li{counter-increment:s;position:relative;padding-left:30px;font-size:14px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;border:1px solid var(--accent-400);color:var(--accent-300);font-size:11px;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+.no{margin-top:10px;padding:10px 12px;border:1px dashed var(--accent-600);border-radius:6px;font-size:13.5px}
+.no::before{content:"Proibido · ";color:var(--accent-300);font-weight:600;letter-spacing:.03em}
+.pearl{margin-top:10px;padding:10px 12px;border:1px dashed var(--accent-600);border-radius:6px;font-size:13.5px}
+.pearl::before{content:"Pegadinha · ";color:var(--accent-300);font-weight:600}
+.big{font-family:var(--f-head);font-size:44px;line-height:1;color:var(--accent-300);font-variant-numeric:tabular-nums lining-nums}
+.stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:8px}
+.stat div{background:var(--surface-2);border:1px solid var(--rule);border-radius:6px;padding:8px 10px}
+.stat small{display:block;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-meta)}
+.stat b{font-family:var(--f-head);font-size:25px;font-weight:500;color:var(--ink-strong);font-variant-numeric:tabular-nums lining-nums}
+.stat div.hot{border-color:var(--accent-400);background:var(--tint-1)}
+.stat div.hot b{color:var(--accent-300)}
+
+/* ---- tabelas ---- */
+.tblw{overflow-x:auto;margin-top:18px;border:1px solid var(--rule);border-radius:8px;background:var(--surface);-webkit-overflow-scrolling:touch}
+table.t{border-collapse:collapse;width:100%;font-size:13.5px;min-width:560px}
+table.t th,table.t td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule)}
+table.t thead th{font-family:var(--f-body);font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-400);background:var(--surface-2);position:sticky;top:0}
+table.t tbody th{color:var(--ink);font-weight:600;white-space:nowrap}
+table.t tr:last-child td,table.t tr:last-child th{border-bottom:0}
+table.t td.hi,table.t tr.hi td,table.t tr.hi th{background:var(--tint-1);color:var(--ink)}
+table.t tr.sel td,table.t tr.sel th{background:var(--tint-2)}
+.tblnote{font-size:12.5px;color:var(--ink-meta);margin:8px 2px 0}
+
+/* ---- divergência, pérola ---- */
+.divg{margin-top:18px;border:1px dashed var(--accent-400);border-radius:8px;padding:14px 16px;background:var(--surface);max-width:76ch}
+.divg .t{font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--accent-300);display:block;margin-bottom:4px}
+.divg p{margin:0 0 6px;font-size:14.5px}
+.divg p:last-child{margin:0}
+
+/* ---- fluxograma em escada (HTML, legível no celular) ---- */
+.ladder{display:flex;flex-direction:column;margin-top:4px}
+.rung{display:grid;grid-template-columns:minmax(0,1.15fr) 64px minmax(0,1fr);align-items:center}
+.fn{border:1px solid var(--rule-3);background:var(--surface-2);border-radius:6px;padding:9px 12px;font-size:13.5px;line-height:1.4;color:var(--ink);transition:.2s}
+.fn.q{border-color:var(--accent-600);background:var(--surface-3);color:var(--accent-300);font-family:var(--f-head);font-size:18px;line-height:1.2}
+.fn.act{background:var(--tint-1);border-color:var(--tint-3)}
+.fn.stop{background:var(--tint-2);border-color:var(--accent-400);font-weight:600}
+.fn small{display:block;color:var(--ink-meta);font-size:12px;font-weight:400;margin-top:2px;font-family:var(--f-body)}
+.arr{position:relative;height:100%;min-height:30px;display:flex;align-items:center;justify-content:center}
+.arr::before{content:"";position:absolute;left:4px;right:8px;top:50%;border-top:1.3px solid var(--ink-meta)}
+.arr::after{content:"";position:absolute;right:3px;top:calc(50% - 4px);border:4px solid transparent;border-left:6px solid var(--ink-meta)}
+.arr span,.down span{position:relative;z-index:1;background:var(--surface);padding:0 4px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-400)}
+.down{height:34px;width:calc((100% - 64px) * 1.15 / 2.15);display:flex;align-items:center;justify-content:center;position:relative}
+.down::before{content:"";position:absolute;top:2px;bottom:6px;left:50%;border-left:1.3px solid var(--ink-meta)}
+.down::after{content:"";position:absolute;bottom:0;left:calc(50% - 4px);border:4px solid transparent;border-top:6px solid var(--ink-meta)}
+.ends{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.fn.lit{border-color:var(--accent-300);box-shadow:0 0 0 1px var(--accent-300),0 0 18px -4px rgba(250,203,141,.55);color:var(--ink-strong)}
+.fn.q.lit{color:var(--accent-300)}
+.down.lit::before,.arr.lit::before{border-color:var(--accent-300);border-width:2px}
+.down.lit::after{border-top-color:var(--accent-300)}
+.arr.lit::after{border-left-color:var(--accent-300)}
+.ladder.dimmed .fn:not(.lit){opacity:.55}
+@media (max-width:600px){
+  .rung{grid-template-columns:minmax(0,1fr)}
+  .arr{height:30px;min-height:30px;justify-content:flex-start;padding-left:22px}
+  .arr::before{left:14px;right:auto;top:2px;bottom:6px;border-top:0;border-left:1.3px dashed var(--ink-meta)}
+  .arr::after{right:auto;left:10px;top:auto;bottom:0;border:4px solid transparent;border-top:6px solid var(--ink-meta)}
+  .arr.lit::after{border-left-color:transparent;border-top-color:var(--accent-300)}
+  .arr.lit::before{border-left:2px dashed var(--accent-300)}
+  .down{width:100%}
+}
+
+/* ---- pegadinhas ---- */
+.traps{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-top:22px}
+@media (max-width:420px){.traps{grid-template-columns:minmax(0,1fr)}}
+.trap{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:15px 16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px}
+.trap .say{font-family:var(--f-head);font-size:20px;line-height:1.2;color:var(--ink-strong)}
+.trap .say::before{content:"A banca diz: ";font-family:var(--f-body);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-meta);display:block;margin-bottom:3px}
+.trap .truth{font-size:14px;border-top:1px solid var(--rule);padding-top:8px}
+.trap .truth::before{content:"Na verdade";display:block;font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-400);margin-bottom:2px}
+.trap button{align-self:flex-start}
+.trap .truth[hidden]{display:none}
+
+/* ---- quiz ---- */
+.quizbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-top:22px;padding:12px 16px;border:1px solid var(--rule-2);border-radius:8px;background:var(--surface)}
+.quizbar .sc{font-family:var(--f-head);font-size:24px;color:var(--accent-300)}
+.qs{display:flex;flex-direction:column;gap:16px;margin-top:16px}
+.q{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:18px;box-shadow:var(--shadow)}
+.q .qn{font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--accent-400);margin-bottom:6px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.q .qt{font-size:15.5px;color:var(--ink);margin:0 0 12px}
+.q ol{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px}
+.q li button{font:inherit;font-size:14px;width:100%;text-align:left;display:flex;gap:11px;align-items:flex-start;padding:9px 12px;border-radius:6px;border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-body);cursor:pointer;transition:.15s}
+.q li button:hover:not([disabled]){border-color:var(--accent-400);color:var(--ink)}
+.q li button .l{flex:none;width:22px;height:22px;border-radius:50%;border:1px solid var(--rule-3);display:grid;place-items:center;font-size:12px;color:var(--ink-soft)}
+.q li button[disabled]{cursor:default}
+.q li button.ok{border-color:var(--accent-400);background:var(--tint-2);color:var(--ink-strong)}
+.q li button.ok .l{background:var(--accent-400);border-color:var(--accent-400);color:#17120b;font-weight:700}
+.q li button.bad{border-style:dashed;border-color:var(--ink-meta);opacity:.8;text-decoration:line-through;text-decoration-color:var(--ink-meta)}
+.q li button.bad .l{border-style:dashed}
+.q li button.dim{opacity:.5}
+.q .exp{margin-top:12px;padding:12px 14px;border-left:2px solid var(--accent-400);background:var(--surface-2);border-radius:0 6px 6px 0;font-size:14px}
+.q .exp .res{display:block;font-family:var(--f-head);font-size:19px;color:var(--accent-300);margin-bottom:3px}
+.q .exp p{margin:0 0 6px}
+.q .exp p:last-child{margin:0}
+
+/* ---- tabela-mãe ---- */
+.mother{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:22px}
+@media (max-width:420px){.mother{grid-template-columns:minmax(0,1fr)}}
+.mc{background:var(--surface);border:1px solid var(--rule);border-top:3px solid var(--rule-3);border-radius:6px;padding:13px 14px}
+.mc.w{border-top-color:var(--accent-600)}
+.mc.d{border-top-color:var(--accent-300)}
+.mc.m{border-top:3px dashed var(--accent-400)}
+.mc .g{font-size:13.5px;color:var(--ink-soft);margin:0 0 7px}
+.mc .g::before{content:"Gatilho · ";font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-meta)}
+.mc .a{font-family:var(--f-head);font-size:19px;line-height:1.2;color:var(--ink-strong);margin:0}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;font-size:12.5px;color:var(--ink-meta)}
+
+/* ---- rodapé ---- */
+footer.refs{max-width:1120px;margin:40px auto 0;padding:24px 24px 60px;border-top:1px solid var(--rule-2);font-size:13px;color:var(--ink-meta)}
+footer.refs h3{font-size:20px;margin-bottom:8px}
+footer.refs ol{padding-left:20px;margin:0}
+footer.refs li{margin:3px 0}
+
+/* ---- utilitários ---- */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:18px}
+@media (max-width:420px){.grid2{grid-template-columns:minmax(0,1fr)}}
+.muted{color:var(--ink-meta)}
+.small{font-size:13px}
+.mt{margin-top:14px}
+.hidden{display:none!important}
+.hot-svg{cursor:pointer}
+.hot-svg:hover .hl,.hot-svg.on .hl{stroke:var(--accent-300);stroke-width:2.6}
+@media (max-width:600px){
+  body{font-size:15px}
+  .wrap{padding:0 16px 64px}
+  header.hero{padding:36px 16px 20px}
+  .rail-in{padding:8px 16px}
+  footer.refs{padding:20px 16px 48px}
+  .ch-head{gap:12px}
+  .ch-num{font-size:24px;min-width:24px}
+  .fig{padding:10px}
+  .card{padding:14px}
+  .big{font-size:38px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+.barrow{margin:4px 0 14px}
+.blab{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;color:var(--ink-soft);margin-bottom:5px}
+.blab b{color:var(--accent-300);font-weight:500;font-variant-numeric:tabular-nums}
+.track{height:18px;background:var(--surface-2);border-radius:3px;overflow:hidden;border:1px solid var(--rule)}
+.fill{height:100%;background:var(--tint-4);transition:width .3s}
+.fill.cri{background:repeating-linear-gradient(45deg,var(--accent-600) 0 3px,transparent 3px 8px)}
+#bars{padding:8px 6px 0}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="kicker">Atlas · Trauma · Ressuscitação de controle de danos</div>
+  <h1>Choque hemorrágico e <em>transfusão maciça</em></h1>
+  <p class="lede">O paciente que sangra não precisa de volume: precisa de sangue, de coagulação e de alguém que feche a torneira. Este atlas segue um ferido do primeiro sinal vital até a reoperação programada, e mostra em cada etapa o número que muda a conduta.</p>
+  <div class="stem">
+    <span class="src">O caso que atravessa o atlas</span>
+    <p><b>Marcos, 32 anos</b>, ferimento por arma de fogo no flanco esquerdo há 40 minutos. Chega pálido, frio, confuso, sem hemorragia externa ativa. eFAST com líquido no espaço esplenorrenal.</p>
+    <div class="vitals"><span>FC <b>132</b> bpm</span><span>PA <b>82 × 48</b> mmHg</span><span>FR <b>28</b> irpm</span><span>Tax <b>35,4</b> °C</span><span>Peso <b>≈ 70</b> kg</span></div>
+  </div>
+</header>
+
+<nav class="rail" aria-label="Capítulos">
+  <div class="rail-in">
+    <a href="#c1"><span class="n">1</span>Classes de hemorragia</a>
+    <a href="#c2"><span class="n">2</span>Para onde foi o sangue</a>
+    <a href="#c3"><span class="n">3</span>Prever a transfusão maciça</a>
+    <a href="#c4"><span class="n">4</span>Protocolo 1:1:1</a>
+    <a href="#c5"><span class="n">5</span>Ácido tranexâmico</a>
+    <a href="#c6"><span class="n">6</span>Ressuscitação de controle de danos</a>
+    <a href="#c7"><span class="n">7</span>REBOA</a>
+    <a href="#c8"><span class="n">8</span>Cirurgia de controle de danos</a>
+    <a href="#c9"><span class="n">9</span>Pegadinhas</a>
+    <a href="#c10"><span class="n">10</span>Forja</a>
+    <a href="#c11"><span class="n">11</span>Tabela-mãe</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- 1 -->
+<section class="ch" id="c1">
+  <div class="ch-head"><span class="ch-num">1</span><div><h2>Classes de hemorragia: o corpo compensa até não compensar</h2>
+  <p class="ch-sub">Arraste a perda de volemia. Repare em qual sinal se altera primeiro e em qual só cai no fim — é essa ordem que a banca cobra.</p></div></div>
+  <div class="plate">
+    <div class="fig">
+      <svg viewBox="0 0 520 330" role="img" aria-label="Reservatório de volemia e monitor de sinais" id="tank">
+        <text x="20" y="22" font-size="11" fill="rgba(243,242,242,.56)" letter-spacing="2">VOLEMIA</text>
+        <rect x="40" y="36" width="120" height="260" rx="10" fill="#1c1a18" stroke="rgba(243,242,242,.28)"/>
+        <rect id="lvl" x="42" y="38" width="116" height="256" rx="8" fill="rgba(194,141,65,.62)"/>
+        <g stroke="rgba(243,242,242,.4)" stroke-dasharray="4 4" font-size="11" fill="rgba(243,242,242,.7)">
+          <line x1="34" y1="75" x2="168" y2="75"/><line x1="34" y1="114" x2="168" y2="114"/><line x1="34" y1="140" x2="168" y2="140"/>
+        </g>
+        <g font-size="12" fill="#e1ad66">
+          <text x="176" y="60">I · &lt; 15%</text><text x="176" y="98">II · 15–30%</text><text x="176" y="130">III · 31–40%</text><text x="176" y="170">IV · &gt; 40%</text>
+        </g>
+        <text id="lossml" x="100" y="318" font-size="13" fill="#facb8d" text-anchor="middle"></text>
+        <g transform="translate(290 36)">
+          <rect width="214" height="260" rx="10" fill="#0e0d0c" stroke="rgba(243,242,242,.2)"/>
+          <path id="ecg" d="" fill="none" stroke="#e1ad66" stroke-width="1.6"/>
+          <text x="14" y="102" font-size="10.5" fill="rgba(243,242,242,.56)" letter-spacing="1.5">FC</text>
+          <text id="m-fc" x="14" y="134" font-size="30" fill="#facb8d" font-family="Cormorant Garamond, serif"></text>
+          <text x="112" y="102" font-size="10.5" fill="rgba(243,242,242,.56)" letter-spacing="1.5">PA</text>
+          <text id="m-pa" x="112" y="134" font-size="30" fill="#f6f4f2" font-family="Cormorant Garamond, serif"></text>
+          <text x="14" y="168" font-size="10.5" fill="rgba(243,242,242,.56)" letter-spacing="1.5">FC ÷ PAS</text>
+          <text id="m-ic" x="14" y="200" font-size="30" fill="#f6f4f2" font-family="Cormorant Garamond, serif"></text>
+          <text x="112" y="168" font-size="10.5" fill="rgba(243,242,242,.56)" letter-spacing="1.5">FR</text>
+          <text id="m-fr" x="112" y="200" font-size="30" fill="#f6f4f2" font-family="Cormorant Garamond, serif"></text>
+          <text x="14" y="232" font-size="10.5" fill="rgba(243,242,242,.56)" letter-spacing="1.5">DIURESE</text>
+          <text id="m-ur" x="14" y="250" font-size="15" fill="#f6f4f2"></text>
+          <text x="112" y="232" font-size="10.5" fill="rgba(243,242,242,.56)" letter-spacing="1.5">MENTAL</text>
+          <text id="m-me" x="112" y="250" font-size="13" fill="#f6f4f2"></text>
+        </g>
+      </svg>
+      <p class="figcap">Adulto de 70 kg (volemia ≈ 7% do peso, cerca de 5 L). Os números do monitor são interpolação didática da tabela do ATLS, não valores medidos.</p>
+    </div>
+    <div class="panel">
+      <div class="card">
+        <h3>Perda</h3>
+        <div class="sl"><label for="loss">Perda da volemia <b id="loss-v">10%</b></label><input type="range" id="loss" min="0" max="50" step="1" value="10"></div>
+        <label class="tog mt"><input type="checkbox" id="bb"><span>Usa betabloqueador (ou idoso)<small>a taquicardia pode não aparecer</small></span></label>
+      </div>
+      <div class="verd" id="cls-verd" aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="tblw"><table class="t" id="cls-tab">
+    <thead><tr><th>Classe ATLS</th><th>I</th><th>II (leve)</th><th>III (moderada)</th><th>IV (grave)</th></tr></thead>
+    <tbody>
+      <tr><th>Perda de volemia</th><td>&lt; 15%</td><td>15–30%</td><td>31–40%</td><td>&gt; 40%</td></tr>
+      <tr><th>Frequência cardíaca</th><td>↔</td><td>↔ / ↑</td><td>↑</td><td>↑ / ↑↑</td></tr>
+      <tr><th>Pressão arterial</th><td>↔</td><td>↔</td><td>↔ / ↓</td><td>↓</td></tr>
+      <tr><th>Pressão de pulso</th><td>↔</td><td>↓</td><td>↓</td><td>↓</td></tr>
+      <tr><th>Frequência respiratória</th><td>↔</td><td>↔</td><td>↔ / ↑</td><td>↑</td></tr>
+      <tr><th>Débito urinário</th><td>↔</td><td>↔</td><td>↓</td><td>↓↓</td></tr>
+      <tr><th>Glasgow</th><td>↔</td><td>↔</td><td>↓</td><td>↓</td></tr>
+      <tr><th>Déficit de bases</th><td>0 a −2</td><td>−2 a −6</td><td>−6 a −10</td><td>−10 ou menos</td></tr>
+      <tr><th>Hemocomponentes</th><td>Monitorar</td><td>Possível</td><td>Sim</td><td>Protocolo de transfusão maciça</td></tr>
+    </tbody>
+  </table></div>
+  <p class="tblnote">Tabela no formato das edições recentes do ATLS (10ª em diante). A tabela numérica antiga — FC &lt; 100 / 100–120 / 120–140 / &gt; 140; perda &lt; 750 / 750–1.500 / 1.500–2.000 / &gt; 2.000 mL — ainda aparece em provas.</p>
+  <div class="prose">
+    <p>O primeiro sinal é a <strong>taquicardia</strong> e o estreitamento da <strong>pressão de pulso</strong> (a diastólica sobe por vasoconstrição); a pressão sistólica só cai na classe III, depois de perdidos cerca de 30% do volume. Hipotensão no trauma, portanto, não é sinal precoce: é sinal de que a compensação acabou.</p>
+    <p>O <strong>índice de choque</strong> (FC ÷ PAS) junta os dois números. Valores acima de 0,9–1,0 associam-se a choque significativo e à necessidade de transfusão. Marcos tem 132 ÷ 82 = 1,6.</p>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="ch" id="c2">
+  <div class="ch-head"><span class="ch-num">2</span><div><h2>Para onde foi o sangue: o chão e mais quatro</h2>
+  <p class="ch-sub">Cinco compartimentos comportam volume suficiente para matar. Cada um tem o exame da sala que o encontra.</p></div></div>
+  <div class="grid2">
+    <div class="card"><h3>Chão (externo)</h3><p>Exame do paciente e do chão, da maca, das roupas. Couro cabeludo sangra muito.</p><p class="muted small">Controle: compressão, torniquete.</p></div>
+    <div class="card"><h3>Tórax</h3><p>Exame físico, RX de tórax, eFAST.</p><p class="muted small">Controle: dreno; toracotomia se 1.500 mL imediatos ou 200 mL/h por 2–4 h.</p></div>
+    <div class="card"><h3>Abdome</h3><p>eFAST; lavado peritoneal se FAST indisponível ou inconclusivo no instável.</p><p class="muted small">Controle: laparotomia (ou angioembolização em casos selecionados).</p></div>
+    <div class="card"><h3>Pelve e retroperitônio</h3><p>RX de pelve AP; exame do anel.</p><p class="muted small">Controle: cinta pélvica nos trocânteres; packing pré-peritoneal, angioembolização, fixação.</p></div>
+    <div class="card"><h3>Ossos longos</h3><p>Deformidade, crepitação, aumento do diâmetro da coxa.</p><p class="muted small">Controle: alinhamento e tração; uma fratura de fêmur pode esconder 1–1,5 L em cada coxa.</p></div>
+  </div>
+  <div class="tblw"><table class="t">
+    <thead><tr><th>Choque não hemorrágico no trauma</th><th>Pista no enunciado</th><th>Conduta</th></tr></thead>
+    <tbody>
+      <tr><th>Pneumotórax hipertensivo</th><td>MV abolido, hipertimpanismo, traqueia desviada, jugulares túrgidas</td><td>Descompressão imediata</td></tr>
+      <tr><th>Tamponamento</th><td>Tríade de Beck, eFAST pericárdico positivo</td><td>Toracotomia/esternotomia</td></tr>
+      <tr><th>Neurogênico</th><td>Hipotensão <b>sem taquicardia</b>, pele quente, lesão medular alta (acima de T6)</td><td>Volume, depois vasopressor — após excluir hemorragia</td></tr>
+      <tr><th>Cardiogênico</th><td>Trauma torácico fechado, arritmia, disfunção ventricular</td><td>ECG, ecocardiograma, suporte</td></tr>
+    </tbody>
+  </table></div>
+  <div class="divg"><span class="t">Regra de prova</span><p>No politraumatizado em choque, a causa é <b>hemorrágica até prova em contrário</b> — mesmo com lesão medular. O choque neurogênico isolado é diagnóstico de exclusão.</p></div>
+</section>
+
+<!-- 3 -->
+<section class="ch" id="c3">
+  <div class="ch-head"><span class="ch-num">3</span><div><h2>Prever a transfusão maciça</h2>
+  <p class="ch-sub">O escore ABC usa quatro dados disponíveis nos primeiros minutos, sem laboratório. Marque os do enunciado.</p></div></div>
+  <div class="plate even">
+    <div class="card">
+      <h3>Escore ABC (Assessment of Blood Consumption)</h3>
+      <label class="tog"><input type="checkbox" class="abc" id="abc1" checked><span>Mecanismo penetrante</span></label>
+      <label class="tog"><input type="checkbox" class="abc" id="abc2" checked><span>PAS ≤ 90 mmHg na chegada</span></label>
+      <label class="tog"><input type="checkbox" class="abc" id="abc3" checked><span>FC ≥ 120 bpm na chegada</span></label>
+      <label class="tog"><input type="checkbox" class="abc" id="abc4" checked><span>FAST positivo</span></label>
+      <div class="mt" style="display:flex;gap:16px;align-items:center"><div class="big" id="abc-sc">4</div><div class="muted small">pontos (1 por item)<br>≥ 2 prevê transfusão maciça</div></div>
+    </div>
+    <div class="panel">
+      <div class="card">
+        <h3>Índice de choque</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <label class="small">FC (bpm)<input type="number" id="ic-fc" value="132" min="20" max="220"></label>
+          <label class="small">PAS (mmHg)<input type="number" id="ic-pas" value="82" min="30" max="250"></label>
+        </div>
+        <div class="mt" style="display:flex;gap:14px;align-items:baseline"><div class="big" id="ic-v">1,6</div><div class="muted small" id="ic-t"></div></div>
+      </div>
+      <div class="verd" id="abc-verd" aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="tblw"><table class="t">
+    <thead><tr><th>Definição de transfusão maciça</th><th>Uso</th></tr></thead>
+    <tbody>
+      <tr><th>≥ 10 concentrados de hemácias em 24 h</th><td>Definição clássica, retrospectiva — a que a prova mais cita</td></tr>
+      <tr><th>&gt; 4 concentrados em 1 hora</th><td>Definição dinâmica, mais útil na sala</td></tr>
+      <tr><th>Reposição de &gt; 50% da volemia em 3 h</th><td>Variante por volume</td></tr>
+      <tr><th>≥ 3 concentrados em 1 hora (CAT)</th><td>Limiar de administração crítica: marca quem está sangrando agora</td></tr>
+    </tbody>
+  </table></div>
+  <div class="prose">
+    <p>O escore ABC não precisa de exame laboratorial e se calcula na porta. Hemoglobina normal não tranquiliza: na perda aguda o sangue sai inteiro, com hemácias e plasma na mesma proporção, e o hematócrito só cai depois que líquido entra no vaso — inclusive o cristaloide que o próprio médico infundiu.</p>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="ch" id="c4">
+  <div class="ch-head"><span class="ch-num">4</span><div><h2>Protocolo de transfusão maciça: montar a geladeira</h2>
+  <p class="ch-sub">Some as unidades que chegam à sala. O painel calcula a proporção e diz o que está faltando. Experimente também o caminho errado.</p></div></div>
+  <div class="plate">
+    <div class="fig">
+      <div id="bars" aria-live="polite"></div>
+      <p class="figcap">Plaquetas contadas em unidades randômicas: uma aférese equivale a cerca de 6 unidades randômicas. Cristaloide em litros.</p>
+    </div>
+    <div class="panel">
+      <div class="card">
+        <h3>Adicionar</h3>
+        <div class="seg" id="ptm-add" style="gap:6px">
+          <button type="button" data-a="ch">+ 1 CH</button>
+          <button type="button" data-a="pfc">+ 1 PFC</button>
+          <button type="button" data-a="plq">+ 1 aférese</button>
+          <button type="button" data-a="cri">+ 1 L cristaloide</button>
+          <button type="button" data-a="pack">+ pacote 6:6:1</button>
+        </div>
+        <div class="seg mt">
+          <button type="button" class="btn ghost" id="ptm-wrong">Caminho errado: 4 L de cristaloide + 6 CH</button>
+          <button type="button" class="btn" id="ptm-reset">Zerar</button>
+        </div>
+      </div>
+      <div class="stat" id="ptm-stat"></div>
+      <div class="verd" id="ptm-verd" aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>O raciocínio do 1:1:1 é reconstituir sangue total: o paciente perde hemácias, plasma e plaquetas juntos, e repor só hemácias e cristaloide dilui fatores e plaquetas — a <strong>coagulopatia dilucional</strong> que se soma à coagulopatia induzida pelo trauma. O estudo <strong>PROPPR</strong> (2015) comparou plasma:plaquetas:hemácias 1:1:1 contra 1:1:2: não houve diferença de mortalidade em 24 h nem em 30 dias, mas o grupo 1:1:1 atingiu hemostasia com mais frequência e teve menos mortes por exsanguinação nas primeiras 24 h.</p>
+    <p>Cada pacote de sangue traz citrato, que quela cálcio. A <strong>hipocalcemia</strong> reduz a contratilidade e a coagulação; o cálcio iônico é monitorado e reposto durante o protocolo. Fibrinogênio baixo (≤ 1,5 g/L pela diretriz europeia) pede crioprecipitado ou concentrado de fibrinogênio, e testes viscoelásticos (TEG, ROTEM) permitem passar da proporção fixa para a reposição guiada por metas.</p>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="ch" id="c5">
+  <div class="ch-head"><span class="ch-num">5</span><div><h2>Ácido tranexâmico: a janela de três horas</h2>
+  <p class="ch-sub">Mova o relógio desde o trauma. O efeito do antifibrinolítico depende do momento em que chega.</p></div></div>
+  <div class="plate">
+    <div class="fig">
+      <svg viewBox="0 0 520 220" role="img" aria-label="Linha do tempo do ácido tranexâmico" id="txa">
+        <defs><pattern id="hx" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#e1ad66" stroke-width="1.2" opacity=".6"/></pattern></defs>
+        <rect x="40" y="70" width="88" height="40" fill="rgba(194,141,65,.7)"/>
+        <rect x="128" y="70" width="176" height="40" fill="rgba(194,141,65,.3)"/>
+        <rect x="304" y="70" width="176" height="40" fill="url(#hx)" stroke="rgba(225,173,102,.5)" stroke-dasharray="4 3"/>
+        <line x1="40" y1="110" x2="480" y2="110" stroke="rgba(243,242,242,.4)"/>
+        <g font-size="12" fill="rgba(243,242,242,.7)" text-anchor="middle">
+          <text x="40" y="130">0</text><text x="128" y="130">1 h</text><text x="216" y="130">2 h</text><text x="304" y="130">3 h</text><text x="392" y="130">4 h</text><text x="480" y="130">5 h</text>
+        </g>
+        <g font-size="12" fill="#facb8d"><text x="42" y="62">RR 0,68</text><text x="132" y="62">RR 0,79</text><text x="308" y="62">RR 1,44 · não iniciar</text></g>
+        <g id="txa-ptr"><line x1="0" y1="36" x2="0" y2="118" stroke="#f6f4f2" stroke-width="2"/><circle cx="0" cy="36" r="6" fill="#f6f4f2"/></g>
+        <text id="txa-lab" x="260" y="186" font-size="16" fill="#f6f4f2" text-anchor="middle"></text>
+      </svg>
+      <p class="figcap">Risco relativo de morte por sangramento com ácido tranexâmico × placebo, por faixa de tempo, na análise do CRASH-2. Na faixa hachurada o risco aumentou.</p>
+    </div>
+    <div class="panel">
+      <div class="card">
+        <div class="sl" style="margin-top:0"><label for="txa-t">Tempo desde o trauma <b id="txa-tv">40 min</b></label><input type="range" id="txa-t" min="0" max="300" step="5" value="40"></div>
+      </div>
+      <div class="verd" id="txa-verd" aria-live="polite"></div>
+      <div class="card"><h3>Dose (CRASH-2)</h3><p><b>1 g IV em 10 minutos</b>, seguido de <b>1 g em infusão por 8 horas</b>.</p></div>
+    </div>
+  </div>
+  <div class="tblw"><table class="t">
+    <thead><tr><th>CRASH-2 · morte por sangramento</th><th>Ácido tranexâmico</th><th>Placebo</th><th>Risco relativo</th></tr></thead>
+    <tbody>
+      <tr data-w="1"><th>Até 1 h do trauma</th><td>5,3%</td><td>7,7%</td><td>0,68</td></tr>
+      <tr data-w="2"><th>Entre 1 e 3 h</th><td>4,8%</td><td>6,1%</td><td>0,79</td></tr>
+      <tr data-w="3"><th>Após 3 h</th><td>4,4%</td><td>3,1%</td><td>1,44</td></tr>
+    </tbody>
+  </table></div>
+  <p class="tblnote">CRASH-2 (2010): mais de 20 mil adultos com trauma e sangramento significativo; mortalidade geral 14,5% × 16,0%. Análise por tempo publicada em 2011.</p>
+</section>
+
+<!-- 6 -->
+<section class="ch" id="c6">
+  <div class="ch-head"><span class="ch-num">6</span><div><h2>Ressuscitação de controle de danos</h2>
+  <p class="ch-sub">Os pilares da reanimação de quem sangra e a resposta ao primeiro volume, que separa quem vai para o centro cirúrgico.</p></div></div>
+  <div class="grid2">
+    <div class="card"><h3>1 · Hipotensão permissiva</h3><p>PAS 80–90 mmHg até o controle do sangramento, <b>sem TCE</b>. Pressão maior empurra coágulo e dilui fatores.</p><p class="muted small">Com TCE grave: PAM ≥ 80 mmHg (diretriz europeia); PAS ≥ 100 mmHg entre 50–69 anos e ≥ 110 mmHg entre 15–49 anos ou acima de 70 (Brain Trauma Foundation 2016, adotada pelo ATLS 10ª).</p></div>
+    <div class="card"><h3>2 · Cristaloide limitado</h3><p>A 10ª edição do ATLS fixou <b>1 L</b> de cristaloide aquecido como bolus inicial no adulto (20 mL/kg na criança) e transição precoce para sangue. A “regra 3:1” foi abandonada.</p></div>
+    <div class="card"><h3>3 · Hemocomponentes cedo e balanceados</h3><p>Plasma, plaquetas e hemácias em proporção próxima de 1:1:1; sangue O negativo (ou O positivo em homens) até a tipagem.</p></div>
+    <div class="card"><h3>4 · Ácido tranexâmico, cálcio, calor</h3><p>TXA nas primeiras 3 h; cálcio iônico monitorado; prevenção ativa de hipotermia.</p></div>
+  </div>
+  <div class="tblw"><table class="t">
+    <thead><tr><th>Resposta ao volume inicial</th><th>Resposta rápida</th><th>Resposta transitória</th><th>Resposta mínima ou ausente</th></tr></thead>
+    <tbody>
+      <tr><th>Sinais vitais</th><td>Normalizam</td><td>Melhoram e voltam a piorar</td><td>Continuam anormais</td></tr>
+      <tr><th>Perda estimada</th><td>Mínima (10–20%)</td><td>Moderada e contínua (20–40%)</td><td>Grave (&gt; 40%)</td></tr>
+      <tr><th>Necessidade de sangue</th><td>Baixa</td><td>Moderada a alta</td><td>Imediata</td></tr>
+      <tr><th>Preparo do sangue</th><td>Tipado e com prova cruzada</td><td>Tipo-específico</td><td>Sangue O (emergência)</td></tr>
+      <tr><th>Cirurgia</th><td>Possível</td><td>Provável</td><td>Altamente provável</td></tr>
+      <tr><th>Protocolo de transfusão maciça</th><td>—</td><td>Considerar</td><td>Acionar</td></tr>
+    </tbody>
+  </table></div>
+  <div class="prose">
+    <p>A <strong>tríade letal</strong> — hipotermia, acidose e coagulopatia — se retroalimenta: o frio inibe as enzimas da coagulação, a acidose reduz a atividade dos fatores, e o sangramento que continua aprofunda o choque. Parte da literatura acrescenta a hipocalcemia como quarto vértice. Ressuscitação de controle de danos é a reanimação desenhada para não alimentar nenhum dos três.</p>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="ch" id="c7">
+  <div class="ch-head"><span class="ch-num">7</span><div><h2>REBOA: um balão na aorta, uma decisão de zona</h2>
+  <p class="ch-sub">Toque nas zonas da aorta. Onde o balão é insuflado depende de onde está o sangramento.</p></div></div>
+  <div class="plate">
+    <div class="fig">
+      <svg viewBox="0 0 480 470" role="img" aria-label="Aorta com as três zonas de REBOA" id="aorta">
+        <path d="M150 40 C150 10 250 10 250 40 L250 70" fill="none" stroke="#6b4c1e" stroke-width="34" stroke-linecap="round"/>
+        <path d="M168 34 L150 4 M198 22 L196 0 M228 26 L240 2" stroke="#6b4c1e" stroke-width="10" stroke-linecap="round"/>
+        <g class="hot-svg zone" data-z="1"><rect class="hl" x="232" y="60" width="36" height="170" rx="6" fill="rgba(194,141,65,.55)" stroke="#e1ad66"/></g>
+        <g class="hot-svg zone" data-z="2"><rect class="hl" x="232" y="230" width="36" height="66" rx="4" fill="#3a3129" stroke="rgba(243,242,242,.3)"/></g>
+        <g class="hot-svg zone" data-z="3"><rect class="hl" x="232" y="296" width="36" height="92" rx="6" fill="rgba(194,141,65,.3)" stroke="#e1ad66"/></g>
+        <path d="M240 388 L196 456 M260 388 L304 456" stroke="#6b4c1e" stroke-width="20" stroke-linecap="round"/>
+        <path d="M268 240 L320 226" stroke="#8d6428" stroke-width="8" stroke-linecap="round"/>
+        <path d="M268 262 L318 262" stroke="#8d6428" stroke-width="7" stroke-linecap="round"/>
+        <path d="M232 282 L180 290 M268 286 L320 294" stroke="#8d6428" stroke-width="8" stroke-linecap="round"/>
+        <g stroke="rgba(243,242,242,.45)" fill="none"><path d="M128 18 L160 30"/><path d="M330 226 L352 226"/><path d="M330 262 L352 262"/><path d="M330 294 L352 294"/><path d="M180 456 L150 456"/></g>
+        <g font-size="12" fill="rgba(243,242,242,.8)">
+          <text x="20" y="22">a. subclávia esq.</text>
+          <text x="356" y="230">tronco celíaco</text>
+          <text x="356" y="266">a. mesentérica sup.</text>
+          <text x="356" y="298">aa. renais</text>
+          <text x="40" y="460">bifurcação</text>
+        </g>
+        <g font-family="Cormorant Garamond, serif" font-size="26" fill="#facb8d" text-anchor="end">
+          <text x="222" y="152">1</text><text x="222" y="272">2</text><text x="222" y="350">3</text>
+        </g>
+        <g id="balloon" opacity="0"><ellipse cx="250" cy="150" rx="22" ry="30" fill="#facb8d" opacity=".85"/></g>
+      </svg>
+      <p class="figcap"><b>Contrato de vista:</b> aorta torácica descendente e abdominal em vista anterior, esquemática; ramos encurtados e calibres fora de escala. Rótulos do lado direito da figura não seguem a lateralidade real dos ramos.</p>
+    </div>
+    <div class="panel">
+      <div class="card" id="aorta-out" aria-live="polite"></div>
+      <div class="divg" style="margin-top:0"><span class="t">Evidência</span><p>O ensaio <b>UK-REBOA</b> (2023), em pacientes com suspeita de hemorragia exsanguinante abdominal, pélvica ou de membros inferiores, não mostrou benefício e teve mortalidade maior no grupo REBOA (54% × 42% em 90 dias). Para a prova, REBOA é <b>ponte</b> até o controle definitivo, em centros com experiência — não substitui cirurgia.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section class="ch" id="c8">
+  <div class="ch-head"><span class="ch-num">8</span><div><h2>Cirurgia de controle de danos</h2>
+  <p class="ch-sub">Primeiro decida se a cirurgia deve ser abreviada; depois percorra as fases. A pergunta não é “o que repara a lesão”, é “o que o paciente aguenta hoje”.</p></div></div>
+  <div class="plate">
+    <div class="panel">
+      <div class="card">
+        <h3>Achados durante a laparotomia</h3>
+        <label class="tog"><input type="checkbox" class="dc" id="dc1" checked><span>Temperatura &lt; 35 °C</span></label>
+        <label class="tog"><input type="checkbox" class="dc" id="dc2" checked><span>pH &lt; 7,2 ou déficit de bases importante</span></label>
+        <label class="tog"><input type="checkbox" class="dc" id="dc3"><span>Coagulopatia: sangramento difuso, sem formação de coágulo</span></label>
+        <label class="tog"><input type="checkbox" class="dc" id="dc4"><span>Transfusão maciça (≈ 10 CH ou mais)</span></label>
+        <label class="tog"><input type="checkbox" class="dc" id="dc5"><span>Lesão de difícil acesso (veia cava retro-hepática, pelve) ou múltiplas cavidades</span></label>
+        <label class="tog"><input type="checkbox" class="dc" id="dc6"><span>Edema visceral impede fechar a parede sem tensão</span></label>
+      </div>
+      <div class="verd" id="dc-verd" aria-live="polite"></div>
+    </div>
+    <div class="card">
+      <h3>As fases</h3>
+      <div class="seg" data-seg="ph">
+        <button data-v="0" aria-pressed="true">0 · Sala de trauma</button><button data-v="1">I · Operação abreviada</button><button data-v="2">II · UTI</button><button data-v="3">III · Reoperação</button>
+      </div>
+      <div id="ph-out" class="mt" aria-live="polite"></div>
+    </div>
+  </div>
+  <p class="tblnote">Os limiares de temperatura, pH e volume transfundido variam entre autores; a prova pede reconhecer o paciente em que a fisiologia, e não a anatomia, decide a extensão da cirurgia.</p>
+</section>
+
+<!-- 9 -->
+<section class="ch" id="c9">
+  <div class="ch-head"><span class="ch-num">9</span><div><h2>Pegadinhas de prova</h2>
+  <p class="ch-sub">Decida antes de revelar.</p></div></div>
+  <div class="traps">
+    <div class="trap"><div class="say">“Hemoglobina de 13 g/dL na chegada exclui hemorragia importante.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>Na perda aguda a Hb inicial pode ser normal; ela cai com a hemodiluição. Decide-se pela clínica e pela resposta ao volume.</div></div>
+    <div class="trap"><div class="say">“A hipotensão é o primeiro sinal de choque.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>A PAS cai só por volta de 30% de perda (classe III). Antes vêm taquicardia, pressão de pulso estreita e vasoconstrição.</div></div>
+    <div class="trap"><div class="say">“Ácido tranexâmico é benéfico em qualquer momento do sangramento.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>Iniciar nas primeiras <b>3 horas</b>. Depois disso o CRASH-2 mostrou mais mortes por sangramento.</div></div>
+    <div class="trap"><div class="say">“Choque hemorrágico refratário: noradrenalina para PAM de 65.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>Vasopressor não trata hemorragia. Sangue, controle do sangramento e hipotensão permissiva.</div></div>
+    <div class="trap"><div class="say">“Hipotensão permissiva serve para todo politraumatizado.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>Contraindicada no <b>TCE</b>: um único episódio de hipotensão praticamente dobra a mortalidade no TCE grave.</div></div>
+    <div class="trap"><div class="say">“1:1:1 reduziu a mortalidade em 30 dias no PROPPR.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>Sem diferença em 24 h e 30 dias; melhor hemostasia e menos mortes por exsanguinação em 24 h.</div></div>
+    <div class="trap"><div class="say">“Controle de danos: aproveitar a laparotomia para fazer a anastomose.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>Na fase I a alça é grampeada e deixada em descontinuidade; a reconstrução fica para a reoperação.</div></div>
+    <div class="trap"><div class="say">“REBOA na zona 2 para sangramento renal.”</div><button class="btn">Revelar a verdade</button><div class="truth" hidden>A zona 2 (do tronco celíaco às renais) é a zona de <b>não oclusão</b>.</div></div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="ch" id="c10">
+  <div class="ch-head"><span class="ch-num">10</span><div><h2>Forja: uma questão-mãe e sete pivôs</h2>
+  <p class="ch-sub">Todas partem do Marcos. O dado marcado é o que muda; os distratores são condutas certas de outras linhas.</p></div></div>
+  <div class="quizbar"><div><div class="lbl" style="margin:0">Placar</div><span class="sc" id="quiz-score">0 / 8</span></div><span class="muted small" id="quiz-prog"></span><button class="btn" id="quiz-reset" type="button">Recomeçar</button></div>
+  <div class="qs" id="quiz"></div>
+</section>
+
+<!-- 11 -->
+<section class="ch" id="c11">
+  <div class="ch-head"><span class="ch-num">11</span><div><h2>Tabela-mãe: gatilho → conduta</h2>
+  <p class="ch-sub">Borda clara: conduta-padrão; dourada: ação imediata; tracejada: proibição ou exceção.</p></div></div>
+  <div class="mother">
+    <div class="mc d"><p class="g">Escore ABC ≥ 2 ou índice de choque &gt; 1</p><p class="a">Acionar o protocolo de transfusão maciça</p></div>
+    <div class="mc d"><p class="g">Choque com hemorragia ativa</p><p class="a">CH:PFC:plaquetas ≈ 1:1:1, sangue O até a tipagem</p></div>
+    <div class="mc d"><p class="g">Sangramento em até 3 h do trauma</p><p class="a">TXA 1 g em 10 min + 1 g em 8 h</p></div>
+    <div class="mc m"><p class="g">Mais de 3 h do trauma</p><p class="a">Não iniciar ácido tranexâmico</p></div>
+    <div class="mc w"><p class="g">Hemorragia sem TCE</p><p class="a">Hipotensão permissiva: PAS 80–90 mmHg</p></div>
+    <div class="mc m"><p class="g">TCE grave associado</p><p class="a">Sem hipotensão permissiva: PAM ≥ 80 / PAS ≥ 100–110</p></div>
+    <div class="mc w"><p class="g">Resposta transitória ao volume</p><p class="a">Sangramento contínuo: sangue e cirurgia provável</p></div>
+    <div class="mc d"><p class="g">Resposta ausente ao volume</p><p class="a">Sangue O, PTM, controle cirúrgico imediato</p></div>
+    <div class="mc"><p class="g">Transfusão em curso</p><p class="a">Monitorar e repor cálcio iônico</p></div>
+    <div class="mc"><p class="g">Fibrinogênio ≤ 1,5 g/L</p><p class="a">Crioprecipitado ou concentrado de fibrinogênio</p></div>
+    <div class="mc w"><p class="g">Hemorragia pélvica no instável, como ponte</p><p class="a">REBOA zona 3</p></div>
+    <div class="mc w"><p class="g">Hemorragia abdominal no instável, como ponte</p><p class="a">REBOA zona 1</p></div>
+    <div class="mc m"><p class="g">Sangramento torácico ou tamponamento</p><p class="a">REBOA contraindicado</p></div>
+    <div class="mc d"><p class="g">Hipotermia, acidose, coagulopatia na laparotomia</p><p class="a">Controle de danos: hemostasia, contaminação, fechamento temporário</p></div>
+    <div class="mc m"><p class="g">Hipotensão sem taquicardia, pele quente, lesão medular alta</p><p class="a">Choque neurogênico — só após excluir hemorragia</p></div>
+  </div>
+</section>
+</main>
+
+<footer class="refs">
+  <h3>Referências</h3>
+  <ol>
+    <li>American College of Surgeons. ATLS — Advanced Trauma Life Support. 11ª ed. Chicago: ACS; 2025. 10ª ed., 2018.</li>
+    <li>CRASH-2 trial collaborators. Effects of tranexamic acid on death, vascular occlusive events, and blood transfusion in trauma patients with significant haemorrhage. Lancet. 2010;376(9734):23-32.</li>
+    <li>CRASH-2 collaborators. The importance of early treatment with tranexamic acid in bleeding trauma patients. Lancet. 2011;377(9771):1096-101.</li>
+    <li>Holcomb JB, Tilley BC, Baraniuk S, et al. Transfusion of plasma, platelets, and red blood cells in a 1:1:1 vs a 1:1:2 ratio (PROPPR). JAMA. 2015;313(5):471-82.</li>
+    <li>Nunez TC, Voskresensky IV, Dossett LA, et al. Early prediction of massive transfusion in trauma: simple as ABC? J Trauma. 2009;66(2):346-52.</li>
+    <li>Rossaint R, Afshari A, Bouillon B, et al. The European guideline on management of major bleeding and coagulopathy following trauma: sixth edition. Crit Care. 2023;27(1):80.</li>
+    <li>Jansen JO, Hudson J, Cochran C, et al. Emergency department resuscitative endovascular balloon occlusion of the aorta in trauma patients with exsanguinating hemorrhage: the UK-REBOA randomized clinical trial. JAMA. 2023;330(19):1862-71.</li>
+    <li>Rotondo MF, Schwab CW, McGonigal MD, et al. “Damage control”: an approach for improved survival in exsanguinating penetrating abdominal injury. J Trauma. 1993;35(3):375-82.</li>
+  </ol>
+  <p class="mt">Atlas produzido para o Residência Max. Conteúdo de estudo; a conduta real segue o protocolo do serviço.</p>
+</footer>
+
+<script>
+/* ===== utilitários comuns do atlas ===== */
+var RM = (function(){
+  function $(s, r){ return (r || document).querySelector(s); }
+  function $$(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function fmt(n, d){ return Number(n).toFixed(d || 0).replace('.', ','); }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  /* grupo de botões exclusivos: <div class="seg" data-seg="nome"><button data-v="x"> */
+  function seg(name, cb){
+    var box = $('[data-seg="' + name + '"]');
+    if (!box) return;
+    var bs = $$('button', box);
+    function pick(b){
+      bs.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      cb(b.getAttribute('data-v'), b);
+    }
+    bs.forEach(function(b){ b.type = 'button'; b.addEventListener('click', function(){ pick(b); }); });
+    var ini = bs.filter(function(b){ return b.getAttribute('aria-pressed') === 'true'; })[0] || bs[0];
+    if (ini) pick(ini);
+    return { pick: function(v){ var b = bs.filter(function(x){ return x.getAttribute('data-v') === v; })[0]; if (b) pick(b); } };
+  }
+
+  /* realça nós e arestas de um fluxograma: ids separados por espaço */
+  function lightFlow(svg, ids){
+    if (!svg) return;
+    $$('.lit', svg).forEach(function(e){ e.classList.remove('lit'); });
+    (ids || '').split(/\s+/).forEach(function(id){ if (!id) return; var e = svg.querySelector('[data-k="' + id + '"]'); if (e) e.classList.add('lit'); });
+  }
+
+  /* trilho: capítulo ativo */
+  function rail(){
+    var links = $$('.rail a');
+    if (!('IntersectionObserver' in window) || !links.length) return;
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (!e.isIntersecting) return;
+        links.forEach(function(a){
+          var on = a.getAttribute('href') === '#' + e.target.id;
+          a.classList.toggle('on', on);
+          if (on && a.scrollIntoView && a.parentNode.scrollWidth > a.parentNode.clientWidth){
+            var p = a.parentNode; p.scrollLeft = a.offsetLeft - p.clientWidth / 2 + a.clientWidth / 2;
+          }
+        });
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    $$('section.ch').forEach(function(s){ io.observe(s); });
+  }
+
+  /* pegadinhas com revelação */
+  function traps(){
+    $$('.trap').forEach(function(t){
+      var b = $('button', t), tr = $('.truth', t);
+      if (!b || !tr) return;
+      b.type = 'button';
+      b.addEventListener('click', function(){
+        var h = tr.hasAttribute('hidden');
+        if (h) tr.removeAttribute('hidden'); else tr.setAttribute('hidden', '');
+        b.textContent = h ? 'Esconder' : 'Revelar a verdade';
+        b.setAttribute('aria-expanded', h ? 'true' : 'false');
+      });
+    });
+  }
+
+  /* quiz: Q = [{tag, q, o:[5], c: índice, e: html, pv: 'dado-pivô'}] */
+  function quiz(Q){
+    var box = $('#quiz'), sc = $('#quiz-score'), rs = $('#quiz-reset');
+    if (!box) return;
+    var L = 'ABCDE', state;
+    function upd(){
+      var n = 0, ok = 0;
+      state.forEach(function(s){ if (s !== null){ n++; if (s) ok++; } });
+      sc.textContent = ok + ' / ' + Q.length;
+      $('#quiz-prog').textContent = n === Q.length ? (ok === Q.length ? 'Gabaritou. Releia os comentários dos distratores — é deles que a próxima prova sai.' : 'Fim. Volte aos capítulos das que errou e refaça.') : (n + ' de ' + Q.length + ' respondidas');
+    }
+    function render(){
+      state = Q.map(function(){ return null; });
+      box.innerHTML = Q.map(function(x, i){
+        return '<article class="q" id="q' + i + '"><div class="qn"><span>Questão ' + (i + 1) + '</span>' + (x.tag ? '<span class="tag">' + x.tag + '</span>' : '') + '</div>' +
+          '<p class="qt">' + x.q + '</p><ol>' + x.o.map(function(o, j){
+            return '<li><button type="button" data-i="' + i + '" data-j="' + j + '"><span class="l">' + L[j] + '</span><span>' + o + '</span></button></li>';
+          }).join('') + '</ol><div class="exp hidden" aria-live="polite"></div></article>';
+      }).join('');
+      $$('button[data-i]', box).forEach(function(b){ b.addEventListener('click', answer); });
+      upd();
+    }
+    function answer(ev){
+      var b = ev.currentTarget, i = +b.getAttribute('data-i'), j = +b.getAttribute('data-j'), x = Q[i];
+      if (state[i] !== null) return;
+      state[i] = (j === x.c);
+      var art = $('#q' + i);
+      $$('button', art).forEach(function(bb){
+        var jj = +bb.getAttribute('data-j');
+        bb.disabled = true;
+        if (jj === x.c) bb.classList.add('ok');
+        else if (jj === j) bb.classList.add('bad');
+        else bb.classList.add('dim');
+      });
+      var ex = $('.exp', art);
+      ex.innerHTML = '<span class="res">' + (state[i] ? 'Certo — ' : 'Não. ') + 'Gabarito ' + L[x.c] + '.</span>' + x.e;
+      ex.classList.remove('hidden');
+      upd();
+    }
+    rs.addEventListener('click', function(){ render(); box.scrollIntoView({ block: 'start' }); });
+    render();
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){ rail(); traps(); });
+  return { $: $, $$: $$, fmt: fmt, esc: esc, seg: seg, lightFlow: lightFlow, quiz: quiz };
+})();
+
+function interp(pts, x){
+  for (var i = 1; i < pts.length; i++){
+    if (x <= pts[i][0]){ var a = pts[i-1], b = pts[i]; return a[1] + (b[1]-a[1]) * (x-a[0]) / (b[0]-a[0]); }
+  }
+  return pts[pts.length-1][1];
+}
+
+/* ===== 1. Classes ===== */
+(function(){
+  var HR = [[0,80],[15,100],[30,120],[40,140],[50,152]],
+      SBP = [[0,122],[30,116],[40,88],[50,66]],
+      PP = [[0,42],[15,36],[30,28],[40,22],[50,18]],
+      RR = [[0,16],[15,20],[30,28],[40,35],[50,40]],
+      UR = [[0,50],[15,32],[30,22],[40,10],[50,3]];
+  var sl = RM.$('#loss'), bb = RM.$('#bb');
+  function ecg(hr){
+    var n = Math.max(2, Math.round(hr / 22)), w = 190 / n, d = 'M10 50';
+    for (var i = 0; i < n; i++){
+      var x = 10 + i * w;
+      d += ' L' + (x + w*.18).toFixed(1) + ' 50 q' + (w*.05).toFixed(1) + ' -5 ' + (w*.1).toFixed(1) + ' 0 L' + (x + w*.38).toFixed(1) + ' 50 l3 6 l4 -34 l4 40 l3 -12 L' + (x + w*.66).toFixed(1) + ' 50 q' + (w*.08).toFixed(1) + ' -8 ' + (w*.16).toFixed(1) + ' 0 L' + (x + w).toFixed(1) + ' 50';
+    }
+    return d;
+  }
+  function upd(){
+    var L = +sl.value, hr = interp(HR, L), sbp = interp(SBP, L), pp = interp(PP, L);
+    if (bb.checked) hr = 66 + (hr - 80) * .15;
+    var dbp = sbp - pp, rr = interp(RR, L), ur = interp(UR, L), ic = hr / sbp;
+    var cls = L < 15 ? 'I' : L <= 30 ? 'II' : L <= 40 ? 'III' : 'IV';
+    var ment = L < 15 ? 'pouco ansioso' : L <= 30 ? 'ansioso' : L <= 40 ? 'ansioso, confuso' : 'confuso, letárgico';
+    RM.$('#loss-v').textContent = L + '%';
+    var h = 256 * (100 - L) / 100;
+    var lv = RM.$('#lvl'); lv.setAttribute('y', (38 + 256 - h).toFixed(1)); lv.setAttribute('height', h.toFixed(1));
+    RM.$('#lossml').textContent = '≈ ' + (Math.round(L * 49 / 50) * 50).toLocaleString('pt-BR') + ' mL perdidos';
+    RM.$('#m-fc').textContent = Math.round(hr);
+    RM.$('#m-pa').textContent = Math.round(sbp) + '/' + Math.round(dbp);
+    RM.$('#m-ic').textContent = RM.fmt(ic, 2);
+    RM.$('#m-ic').setAttribute('fill', ic >= 1 ? '#facb8d' : '#f6f4f2');
+    RM.$('#m-fr').textContent = Math.round(rr);
+    RM.$('#m-ur').textContent = Math.round(ur) + ' mL/h';
+    RM.$('#m-me').textContent = ment;
+    RM.$('#ecg').setAttribute('d', ecg(hr));
+    RM.$('#ecg').setAttribute('transform', 'translate(0 0)');
+    var col = { I:1, II:2, III:3, IV:4 }[cls];
+    RM.$$('#cls-tab td').forEach(function(td){ td.classList.toggle('hi', td.cellIndex === col); });
+    var v = RM.$('#cls-verd'), map = {
+      I:['b','Classe I: compensado','Sinais praticamente normais. Equivale a doar uma bolsa de sangue. Cristaloide mínimo e observação; hemocomponentes raramente necessários.'],
+      II:['w','Classe II: taquicardia e pressão de pulso estreita','A PAS ainda é normal — a diastólica sobe pela vasoconstrição. Possível necessidade de sangue; buscar a fonte.'],
+      III:['d','Classe III: a pressão começa a cair','Taquicardia franca, PAS em queda, oligúria, confusão. Precisa de sangue e quase sempre de controle cirúrgico da fonte.'],
+      IV:['d','Classe IV: risco imediato de morte','Hipotensão grave, diurese desprezível, letargia. Protocolo de transfusão maciça e controle imediato do sangramento.']
+    }[cls];
+    var extra = bb.checked && L >= 15 ? '<p class="mt"><b>Atenção:</b> com betabloqueador a FC quase não sobe — a taquicardia deixa de ser o alarme precoce.</p>' : '';
+    v.className = 'verd ' + map[0];
+    v.innerHTML = '<span class="t">Veredito · índice de choque ' + RM.fmt(ic, 2) + '</span><span class="h">' + map[1] + '</span><p>' + map[2] + '</p>' + extra;
+  }
+  sl.addEventListener('input', upd); bb.addEventListener('change', upd); upd();
+})();
+
+/* ===== 3. ABC e índice de choque ===== */
+(function(){
+  function upd(){
+    var s = RM.$$('.abc').filter(function(c){ return c.checked; }).length;
+    RM.$('#abc-sc').textContent = s;
+    var fc = +RM.$('#ic-fc').value || 0, pas = +RM.$('#ic-pas').value || 1, ic = fc / pas;
+    RM.$('#ic-v').textContent = RM.fmt(ic, 2);
+    RM.$('#ic-t').textContent = ic >= 1 ? 'acima de 1: choque provável, alto risco de transfusão maciça' : ic >= .9 ? 'zona limítrofe (0,9–1,0)' : 'abaixo de 0,9';
+    var v = RM.$('#abc-verd');
+    if (s >= 2){
+      v.className = 'verd d';
+      v.innerHTML = '<span class="t">Veredito</span><span class="h">ABC ' + s + ': acionar o protocolo de transfusão maciça</span><p>Avisar o banco de sangue agora: sangue O até a tipagem, plasma e plaquetas na mesma proporção; ácido tranexâmico se dentro de 3 h; controle da fonte.</p><div class="no">Esperar a hemoglobina ou o segundo litro de cristaloide para decidir.</div>';
+    } else {
+      v.className = 'verd ' + (ic >= 1 ? 'w' : 'b');
+      v.innerHTML = '<span class="t">Veredito</span><span class="h">ABC ' + s + ': risco menor pelo escore</span><p>O escore não indica transfusão maciça' + (ic >= 1 ? ', mas o índice de choque ≥ 1 pede vigilância e sangue disponível.' : '. Reavaliar a resposta ao volume e os sinais de sangramento contínuo.') + '</p>';
+    }
+  }
+  RM.$$('.abc').forEach(function(c){ c.addEventListener('change', upd); });
+  ['#ic-fc','#ic-pas'].forEach(function(s){ RM.$(s).addEventListener('input', upd); });
+  upd();
+})();
+
+/* ===== 4. Protocolo de transfusão maciça ===== */
+(function(){
+  var st = { ch:0, pfc:0, plq:0, cri:0 };
+  var svg = RM.$('#bars');
+  function draw(){
+    var items = [['ch','Concentrado de hemácias','un.',st.ch,st.ch],['pfc','Plasma fresco congelado','un.',st.pfc,st.pfc],['plq','Plaquetas (randômicas)','un.',st.plq*6,st.plq*6],['cri','Cristaloide','L',st.cri,st.cri*3]];
+    var max = Math.max(12, st.ch, st.pfc, st.plq*6, st.cri*3);
+    svg.innerHTML = items.map(function(it){
+      return '<div class="barrow"><div class="blab"><span>' + it[1] + '</span><b>' + it[3] + ' ' + it[2] + '</b></div><div class="track"><div class="fill ' + it[0] + '" style="width:' + (100 * it[4] / max).toFixed(1) + '%"></div></div></div>';
+    }).join('');
+    var rP = st.ch ? st.pfc / st.ch : 0, rQ = st.ch ? st.plq * 6 / st.ch : 0;
+    RM.$('#ptm-stat').innerHTML = '<div class="' + (st.ch && rP >= .8 ? 'hot' : '') + '"><small>PFC : CH</small><b>' + (st.ch ? RM.fmt(rP, 2) : '—') + '</b></div><div class="' + (st.ch && rQ >= .8 ? 'hot' : '') + '"><small>Plaq. : CH</small><b>' + (st.ch ? RM.fmt(rQ, 2) : '—') + '</b></div><div class="' + (st.cri > 1 ? 'hot' : '') + '"><small>Cristaloide</small><b>' + st.cri + ' L</b></div>';
+    var v = RM.$('#ptm-verd'), cls, hh, p;
+    if (!st.ch && !st.cri){ cls = 'b'; hh = 'Geladeira vazia'; p = 'Comece pelos pacotes do protocolo: cada pacote 6:6:1 traz 6 CH, 6 PFC e 1 aférese de plaquetas (≈ 6 randômicas).'; }
+    else if (st.cri >= 3 && rP < .5){ cls = 'd'; hh = 'Coagulopatia dilucional em formação'; p = 'Muito cristaloide e hemácias sem plasma e plaquetas: dilui fatores, esfria, acidifica e aumenta o edema. É exatamente o caminho que a ressuscitação de controle de danos evita.'; }
+    else if (!st.ch){ cls = 'w'; hh = 'Só cristaloide'; p = 'Aceitável apenas como bolus inicial limitado (até 1 L no adulto). O paciente que sangra precisa de sangue.'; }
+    else if (rP >= .8 && rQ >= .8){ cls = 'b'; hh = 'Proporção próxima de 1:1:1'; p = 'Reconstitui sangue total. Lembre-se do cálcio iônico, do aquecimento dos hemocomponentes e do fibrinogênio' + (st.cri > 1 ? ' — e pare o cristaloide.' : '.'); }
+    else if (rP >= .5){ cls = 'w'; hh = 'Aceitável, mas abaixo do alvo'; p = 'Plasma ou plaquetas abaixo da proporção 1:1:1 (o braço 1:1:2 do PROPPR). Complete o que falta.'; }
+    else { cls = 'd'; hh = 'Plasma insuficiente'; p = 'Menos de 1 PFC para cada 2 CH: a coagulopatia avança. Equilibre a proporção.'; }
+    v.className = 'verd ' + cls;
+    v.innerHTML = '<span class="t">Veredito</span><span class="h">' + hh + '</span><p>' + p + '</p>';
+  }
+  RM.$$('#ptm-add button').forEach(function(b){
+    b.addEventListener('click', function(){
+      var a = b.getAttribute('data-a');
+      if (a === 'pack'){ st.ch += 6; st.pfc += 6; st.plq += 1; } else st[a] += 1;
+      draw();
+    });
+  });
+  RM.$('#ptm-wrong').addEventListener('click', function(){ st = { ch:6, pfc:0, plq:0, cri:4 }; draw(); });
+  RM.$('#ptm-reset').addEventListener('click', function(){ st = { ch:0, pfc:0, plq:0, cri:0 }; draw(); });
+  draw();
+})();
+
+/* ===== 5. Ácido tranexâmico ===== */
+(function(){
+  var sl = RM.$('#txa-t');
+  function upd(){
+    var t = +sl.value, x = 40 + t / 300 * 440;
+    RM.$('#txa-ptr').setAttribute('transform', 'translate(' + x.toFixed(1) + ' 0)');
+    var hh = Math.floor(t / 60), mm = t % 60, lab = (hh ? hh + ' h ' : '') + (mm ? mm + ' min' : (hh ? '' : '0 min'));
+    RM.$('#txa-tv').textContent = lab.trim();
+    RM.$('#txa-lab').textContent = lab.trim() + ' desde o trauma';
+    var v = RM.$('#txa-verd'), w;
+    if (t <= 60){ w = 1; v.className = 'verd d'; v.innerHTML = '<span class="t">Veredito</span><span class="h">Fazer agora: maior benefício</span><p>Na primeira hora o CRASH-2 mostrou a maior redução de morte por sangramento (RR 0,68). Não espere a tomografia.</p>'; }
+    else if (t <= 180){ w = 2; v.className = 'verd w'; v.innerHTML = '<span class="t">Veredito</span><span class="h">Ainda indicado</span><p>Entre 1 e 3 h o benefício persiste, menor (RR 0,79). Cada minuto de atraso reduz o efeito.</p>'; }
+    else { w = 3; v.className = 'verd m'; v.innerHTML = '<span class="t">Veredito</span><span class="h">Não iniciar</span><p>Após 3 h o CRASH-2 registrou aumento das mortes por sangramento (RR 1,44). A janela fechou.</p><div class="no">Começar ácido tranexâmico na 4ª hora “porque ainda sangra”.</div>'; }
+    RM.$$('#c5 tr[data-w]').forEach(function(tr){ tr.classList.toggle('sel', +tr.getAttribute('data-w') === w); });
+  }
+  sl.addEventListener('input', upd); upd();
+})();
+
+/* ===== 7. REBOA ===== */
+(function(){
+  var Z = {
+    1:['Zona 1 — aorta torácica descendente','Da origem da artéria subclávia esquerda até o tronco celíaco.','Hemorragia intra-abdominal ou retroperitoneal grave no paciente em choque refratário, como ponte para laparotomia; também na parada por hipovolemia de causa abdominal/pélvica.','Isquemia visceral total abaixo do balão: tempo de oclusão o mais curto possível (alvo em geral abaixo de 30 minutos).','d'],
+    2:['Zona 2 — zona de não oclusão','Do tronco celíaco até a artéria renal mais baixa.','Nenhuma: não se insufla aqui.','Ocluir os ramos viscerais sem benefício adicional; o balão é posicionado na zona 1 ou na 3.','m'],
+    3:['Zona 3 — aorta infrarrenal','Da artéria renal mais baixa até a bifurcação aórtica.','Hemorragia pélvica ou juncional (raiz da coxa) com instabilidade, como ponte para packing, embolização ou fixação.','Tolera tempo de oclusão maior que a zona 1, mas ainda é ponte para o controle definitivo.','w']
+  };
+  var svg = RM.$('#aorta');
+  function pick(z){
+    RM.$$('.zone', svg).forEach(function(g){ g.classList.toggle('on', g.getAttribute('data-z') === String(z)); });
+    var b = RM.$('#balloon');
+    b.setAttribute('opacity', z == 2 ? 0 : 1);
+    RM.$('ellipse', b).setAttribute('cy', z == 1 ? 150 : 342);
+    var d = Z[z];
+    RM.$('#aorta-out').innerHTML = '<h3>Zona ' + z + '</h3><div style="font-family:var(--f-head);font-size:23px;color:var(--ink-strong);line-height:1.15;margin-bottom:8px">' + d[0] + '</div><dl class="kv"><dt>Limites</dt><dd>' + d[1] + '</dd><dt>Indicação</dt><dd>' + d[2] + '</dd><dt>Cuidado</dt><dd>' + d[3] + '</dd></dl><div class="no">Hemorragia torácica ou tamponamento: o balão aumenta a pós-carga e o sangramento acima dele.</div>';
+  }
+  RM.$$('.zone', svg).forEach(function(g){
+    g.setAttribute('tabindex', '0'); g.setAttribute('role', 'button');
+    g.addEventListener('click', function(){ pick(g.getAttribute('data-z')); });
+    g.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); pick(g.getAttribute('data-z')); } });
+  });
+  pick(1);
+})();
+
+/* ===== 8. Controle de danos ===== */
+(function(){
+  function upd(){
+    var c = RM.$$('.dc').map(function(x){ return x.checked; }), n = c.filter(Boolean).length;
+    var phys = c[0] || c[1] || c[2];
+    var v = RM.$('#dc-verd');
+    if (n === 0){ v.className = 'verd b'; v.innerHTML = '<span class="t">Veredito</span><span class="h">Reparo definitivo na mesma cirurgia</span><p>Fisiologia preservada e lesões abordáveis: resolver tudo agora, incluindo anastomoses e fechamento da parede.</p>'; }
+    else if (phys || n >= 2){ v.className = 'verd d'; v.innerHTML = '<span class="t">Veredito</span><span class="h">Abreviar: cirurgia de controle de danos</span><p>Controlar o sangramento (ligadura, packing, shunt vascular), controlar a contaminação (grampear as alças, sem anastomose), fechamento temporário do abdome e UTI.</p><div class="no">Prolongar a cirurgia para reconstruir com o paciente frio, ácido e sem coagular.</div>'; }
+    else { v.className = 'verd m'; v.innerHTML = '<span class="t">Veredito</span><span class="h">Considerar controle de danos</span><p>Um critério isolado de anatomia ou de fechamento não obriga, mas pesa. Reavaliar temperatura, pH e coagulação durante a operação.</p>'; }
+  }
+  RM.$$('.dc').forEach(function(x){ x.addEventListener('change', upd); }); upd();
+  var P = {
+    0:['Fase 0 — sala de trauma','Reconhecer cedo quem vai precisar de controle de danos; acionar o protocolo de transfusão maciça, ácido tranexâmico, aquecimento, hipotensão permissiva; transferência rápida ao centro cirúrgico.'],
+    1:['Fase I — operação abreviada','Controle do sangramento (ligaduras, packing hepático/pélvico, shunts vasculares temporários) e da contaminação (ressecção com grampeamento, alças deixadas em descontinuidade). Fechamento temporário do abdome (pressão negativa, bolsa).'],
+    2:['Fase II — UTI','Reaquecer, corrigir acidose e coagulopatia, otimizar a perfusão; vigiar a pressão intra-abdominal. É aqui que a fisiologia é restaurada.'],
+    3:['Fase III — reoperação programada','Em geral entre 24 e 48 h, com o paciente aquecido e sem coagulopatia: retirar compressas, reparo definitivo, anastomoses e, se possível, fechamento da parede.']
+  };
+  RM.seg('ph', function(v){ RM.$('#ph-out').innerHTML = '<div class="verd ' + (v === '1' ? 'd' : v === '0' ? 'w' : 'b') + '"><span class="t">Fase</span><span class="h">' + P[v][0] + '</span><p>' + P[v][1] + '</p></div>'; });
+})();
+
+/* ===== 10. Forja ===== */
+RM.quiz([
+  { tag:'Questão-mãe', c:2,
+    q:'Marcos, 32 anos, ferimento por arma de fogo no flanco esquerdo há 40 minutos: FC 132 bpm, PA 82 × 48 mmHg, confuso, eFAST positivo. Qual a melhor conduta?',
+    o:['Infundir 2 L de Ringer lactato aquecido e reavaliar antes de qualquer hemocomponente','Tomografia de abdome com contraste para localizar a lesão','Acionar o protocolo de transfusão maciça (CH:PFC:plaquetas ≈ 1:1:1), ácido tranexâmico e laparotomia imediata','Noradrenalina para PAM de 65 mmHg','Aguardar a hemoglobina para decidir sobre transfusão'],
+    e:'<p>Escore ABC 4 (penetrante, PAS ≤ 90, FC ≥ 120, FAST +), índice de choque 1,6 e instabilidade: transfusão balanceada, TXA dentro de 3 h e controle cirúrgico.</p><p><b>A</b> é a regra de cristaloide abandonada. <b>B</b>: instável não vai à tomografia. <b>D</b>: vasopressor não trata hemorragia. <b>E</b>: a Hb inicial engana na perda aguda.</p>' },
+  { tag:'Pivô · tempo', c:0,
+    q:'Mesmo paciente, mas <mark>chega ao hospital 4 horas após o trauma</mark>, ainda sangrando. Sobre o ácido tranexâmico:',
+    o:['Não iniciar: após 3 h o CRASH-2 mostrou aumento de mortes por sangramento','Iniciar 1 g em bolus e 1 g em 8 h, como em qualquer momento','Dobrar a dose para compensar o atraso','Iniciar apenas se houver TCE associado','Fazer só a dose de manutenção, sem bolus'],
+    e:'<p>A janela é de 3 h. Depois, o risco relativo de morte por sangramento foi 1,44.</p><p><b>B</b> é a conduta dentro da janela. <b>C</b> e <b>E</b> não têm respaldo. <b>D</b> confunde com o CRASH-3, que também respeita 3 h.</p>' },
+  { tag:'Pivô · TCE', c:3,
+    q:'Marcos também tem <mark>TCE grave (Glasgow 7) com hematoma subdural</mark>. Qual o alvo pressórico durante a reanimação?',
+    o:['PAS 80–90 mmHg, hipotensão permissiva','PAM de 50 mmHg até a laparotomia','O alvo pressórico é irrelevante; importa só a hemoglobina','Evitar hipotensão: PAM ≥ 80 mmHg (ou PAS ≥ 100–110 mmHg)','PAS acima de 160 mmHg para garantir perfusão cerebral'],
+    e:'<p>No TCE grave, um único episódio de hipotensão praticamente dobra a mortalidade: a hipotensão permissiva está contraindicada.</p><p><b>A</b> e <b>B</b> servem para o sangramento sem TCE. <b>C</b> ignora a perfusão cerebral. <b>E</b> extrapola sem base e aumenta o sangramento.</p>' },
+  { tag:'Pivô · classe', c:1,
+    q:'Outro paciente: <mark>FC 112 bpm, PAS 118 mmHg com pressão de pulso diminuída, FR 24, diurese 25 mL/h, ansioso</mark>. Classe de hemorragia?',
+    o:['Classe I (< 15%)','Classe II (15–30%)','Classe III (31–40%)','Classe IV (> 40%)','Não há hemorragia: os sinais são de ansiedade'],
+    e:'<p>Taquicardia leve e pressão de pulso estreita com PAS normal é a assinatura da classe II.</p><p><b>A</b>: a classe I não altera pressão de pulso. <b>C</b> e <b>D</b> exigem queda da PAS. <b>E</b> é o erro de atribuir à ansiedade o que é choque.</p>' },
+  { tag:'Pivô · resposta', c:4,
+    q:'Após o primeiro litro de cristaloide e duas unidades de CH, <mark>a PA sobe a 104 × 70 e, 15 minutos depois, volta a 84 × 50</mark>. O que isso indica?',
+    o:['Resposta rápida: perda mínima, observar','Choque neurogênico associado','Hipovolemia corrigida; a nova queda é efeito anestésico','Ausência de resposta: perda acima de 40%','Resposta transitória: sangramento contínuo, sangue e controle cirúrgico provável'],
+    e:'<p>Melhora seguida de piora é a resposta transitória: perda moderada e contínua (20–40%), sangue e cirurgia provável.</p><p><b>A</b> normaliza e se mantém. <b>D</b> não melhora nada. <b>B</b> e <b>C</b> inventam outra causa para hemorragia que continua.</p>' },
+  { tag:'Pivô · REBOA', c:3,
+    q:'Paciente com <mark>fratura de bacia instável e choque refratário</mark>, sem sangramento torácico ou abdominal. Em centro com experiência, se usado REBOA como ponte, em que zona?',
+    o:['Zona 1','Zona 2','Arco aórtico','Zona 3','REBOA é contraindicado em fratura de bacia'],
+    e:'<p>Hemorragia pélvica: zona 3, abaixo das renais e acima da bifurcação.</p><p><b>A</b> é para sangramento abdominal. <b>B</b> é a zona de não oclusão. <b>C</b> não é zona de REBOA. <b>E</b>: a contraindicação é o sangramento torácico.</p>' },
+  { tag:'Pivô · controle de danos', c:0,
+    q:'Na laparotomia: lesão hepática complexa e de cólon. <mark>Temperatura 33,8 °C, pH 7,08, sangramento difuso sem formação de coágulo</mark> após 12 CH. Conduta?',
+    o:['Packing hepático, grampear o cólon sem anastomose, fechamento temporário do abdome e UTI; reoperar em 24–48 h','Hepatectomia regrada e colectomia com anastomose primária','Colostomia e fechamento primário da aponeurose','Interromper a transfusão para evitar sobrecarga','Fechar a pele e reavaliar com tomografia'],
+    e:'<p>Tríade letal instalada: cirurgia de controle de danos.</p><p><b>B</b> e <b>C</b> são reparos definitivos que o paciente não suporta agora. <b>D</b> agrava a coagulopatia. <b>E</b> abandona o controle do sangramento.</p>' },
+  { tag:'Pivô · tipo de choque', c:1,
+    q:'Queda de moto com <mark>tetraplegia, PA 78 × 40, FC 54 bpm, pele quente</mark>. eFAST e RX de tórax e pelve sem alterações. Melhor interpretação?',
+    o:['Choque hemorrágico classe IV','Choque neurogênico: volume e, se necessário, vasopressor','Tamponamento cardíaco','Choque séptico precoce','Pneumotórax hipertensivo'],
+    e:'<p>Hipotensão com bradicardia e pele quente em lesão medular alta, com fontes de sangramento investigadas: choque neurogênico. Volume e vasopressor.</p><p><b>A</b> teria taquicardia e pele fria — e precisa ser excluída antes, como foi. <b>C</b> e <b>E</b> teriam jugulares túrgidas e eFAST/RX alterados. <b>D</b> não aparece na primeira hora.</p>' }
+]);
+
+</script>
+</body>
+</html>

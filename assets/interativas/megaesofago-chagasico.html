@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atlas do Megaesôfago Chagásico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{
+  color-scheme:dark;
+  --ground:#121110;--surface:#171614;--surface-2:#1c1a18;--surface-3:#23201d;
+  --ink:#f6f4f2;--ink-strong:#faf8f6;--ink-body:rgba(243,242,242,.82);--ink-soft:rgba(243,242,242,.70);
+  --ink-meta:rgba(243,242,242,.58);--rule:rgba(243,242,242,.10);--rule-2:rgba(243,242,242,.16);--rule-3:rgba(243,242,242,.28);
+  --accent:#b68235;--accent-300:#facb8d;--accent-400:#e1ad66;--accent-600:#8d6428;--accent-700:#6b4c1e;
+  --tint-1:rgba(194,141,65,.16);--tint-2:rgba(194,141,65,.34);--tint-3:rgba(194,141,65,.56);--tint-4:rgba(194,141,65,.82);
+  --fh:"Cormorant Garamond",Georgia,"Times New Roman",serif;--fb:"Lora",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:56px}
+body{margin:0;background:var(--ground);color:var(--ink-body);font-family:var(--fb);font-size:15.5px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--fh);font-weight:500;color:var(--ink-strong);margin:0;letter-spacing:-.005em;text-wrap:balance}
+p{margin:0 0 .8em}
+b,strong{color:var(--ink);font-weight:600}
+em{color:var(--accent-300)}
+a{color:var(--accent-300)}
+button{font-family:var(--fb);color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent-400);outline-offset:2px;border-radius:3px}
+::selection{background:var(--tint-2);color:var(--ink-strong)}
+.num{font-variant-numeric:tabular-nums}
+svg text{font-family:var(--fb)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px 80px}
+header.hero{max-width:1140px;margin:0 auto;padding:52px 20px 26px}
+.kicker{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-meta)}
+.kicker.g{color:var(--accent-300)}
+h1{font-size:clamp(34px,6vw,60px);line-height:1.02;margin:12px 0 0;font-weight:500}
+h1 i{color:var(--accent-400)}
+.lede{max-width:62ch;font-size:17px;color:var(--ink-soft);margin:16px 0 0}
+.caso{margin:24px 0 0;padding:18px 20px;border-left:2px solid var(--accent);background:var(--surface);border-radius:0 8px 8px 0;max-width:76ch}
+.caso p{margin:0;font-size:15px}
+.caso .src{display:block;margin-top:9px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-meta)}
+nav.rail{position:sticky;top:0;z-index:40;background:rgba(14,13,12,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);margin-top:28px}
+.rail-in{max-width:1140px;margin:0 auto;padding:8px 20px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.rail-in::-webkit-scrollbar{display:none}
+.rail a{flex:none;font-size:12.5px;color:var(--ink-soft);text-decoration:none;padding:5px 11px;border-radius:999px;border:1px solid var(--rule);white-space:nowrap;transition:.15s}
+.rail a .n{color:var(--accent-400);margin-right:6px;font-size:11px;font-variant-numeric:tabular-nums}
+.rail a:hover{border-color:var(--rule-3);color:var(--ink)}
+.rail a.on{background:var(--tint-1);border-color:var(--accent-600);color:var(--accent-300)}
+section.ch{padding-top:54px;scroll-margin-top:56px}
+.ch-head{display:flex;gap:16px;align-items:baseline;border-top:1px solid var(--rule-2);padding-top:18px}
+.ch-num{font-size:12px;color:var(--accent-400);letter-spacing:.12em;padding-top:6px;font-variant-numeric:tabular-nums;flex:none}
+.ch-head h2{font-size:clamp(25px,3.4vw,36px);line-height:1.12}
+.ch-sub{color:var(--ink-meta);font-size:14.5px;margin:6px 0 0;max-width:72ch}
+.plate{display:grid;grid-template-columns:1.2fr .95fr;gap:24px;margin-top:22px;align-items:start}
+.plate>*{min-width:0}
+@media (max-width:880px){.plate{grid-template-columns:1fr}}
+.fig{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:14px;min-width:0}
+.fig svg{display:block;width:100%;height:auto}
+.figcap{font-size:12px;color:var(--ink-meta);margin:10px 2px 0;line-height:1.55}
+.panel{display:flex;flex-direction:column;gap:14px;min-width:0}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:15px 16px}
+.card h3,.lbl{font-family:var(--fb);font-size:10.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-meta);margin:0 0 10px}
+.prose{margin-top:22px;max-width:70ch;font-size:15.5px}
+.prose p{margin:0 0 12px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{font-size:13px;padding:6px 11px;border-radius:4px;border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-soft);transition:.15s}
+.seg button:hover{border-color:var(--accent-600);color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#121110;font-weight:600}
+.sl{margin-top:10px}
+.sl label{display:flex;justify-content:space-between;gap:10px;font-size:13px;color:var(--ink-soft);margin-bottom:3px}
+.sl label b{font-variant-numeric:tabular-nums;color:var(--accent-300);font-weight:600}
+input[type=range]{width:100%;accent-color:var(--accent);height:22px;margin:0}
+.chk{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--ink-soft);cursor:pointer;padding:4px 0;line-height:1.45}
+.chk input{accent-color:var(--accent);width:16px;height:16px;margin-top:2px;flex:none}
+select,input[type=number]{font-family:var(--fb);font-size:13.5px;background:var(--surface-2);color:var(--ink);border:1px solid var(--rule-2);border-radius:4px;padding:6px 8px;width:100%}
+.verd{border-radius:8px;padding:13px 15px;border:1px solid var(--rule-2);font-size:14px}
+.verd .t{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:4px;color:var(--ink-meta)}
+.verd .h{font-family:var(--fh);font-size:23px;line-height:1.15;display:block;margin-bottom:6px;color:var(--ink-strong)}
+.verd p{margin:0 0 6px;color:var(--ink-body)}
+.verd p:last-child{margin:0}
+.v-1{background:var(--surface-2)}
+.v-2{background:var(--tint-1);border-color:var(--accent-600)}
+.v-2 .h,.v-3 .h{color:var(--accent-300)}
+.v-3{background:var(--tint-2);border-color:var(--accent-400)}
+.v-4{background:var(--accent);border-color:var(--accent)}
+.v-4 .t,.v-4 .h,.v-4 p,.v-4 b{color:#121110}
+.v-x{background:transparent;border:1px dashed var(--accent-400)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13.5px;margin:0}
+.kv dt{color:var(--ink-meta);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding-top:3px}
+.kv dd{margin:0;color:var(--ink)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.steps li{counter-increment:s;position:relative;padding-left:30px;font-size:14px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:var(--tint-2);color:var(--accent-300);font-size:11px;display:grid;place-items:center;font-weight:600}
+.forbid{margin-top:12px;padding:11px 13px;border-radius:6px;border:1px dashed var(--accent-400);font-size:13.5px}
+.forbid b{color:var(--accent-300)}
+.note{margin-top:12px;padding:11px 13px;border-radius:6px;background:var(--surface-2);border:1px solid var(--rule);font-size:13.5px}
+.divg{margin-top:16px;padding:13px 15px;border-left:2px solid var(--accent-400);background:var(--tint-1);border-radius:0 8px 8px 0;font-size:14px;max-width:76ch}
+.divg .t{display:block;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-300);margin-bottom:4px}
+mark{background:var(--tint-2);color:var(--accent-300);padding:0 3px;border-radius:3px}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:999px;border:1px solid var(--accent-600);color:var(--accent-300)}
+.tbl{width:100%;overflow-x:auto;margin-top:16px;border:1px solid var(--rule);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;vertical-align:top;padding:9px 11px;border-bottom:1px solid var(--rule)}
+th{font-weight:500;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-300);background:var(--surface-2)}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+tr.hl td{background:var(--tint-1)}
+@media (max-width:560px){table{font-size:12.5px}th,td{padding:7px 7px}}
+.traps{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px;margin-top:20px}
+.trap{background:var(--surface);border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.trap button{all:unset;box-sizing:border-box;display:block;width:100%;padding:14px 16px;cursor:pointer;font-family:var(--fh);font-size:19px;line-height:1.25;color:var(--ink-strong)}
+.trap button::after{content:"＋ ver a armadilha";display:block;font-family:var(--fb);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-400);margin-top:8px}
+.trap.open button::after{content:"− fechar"}
+.trap .ans{display:none;padding:0 16px 14px;font-size:14px}
+.trap.open .ans{display:block}
+.trap.open{border-color:var(--accent-600)}
+.score{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:18px;font-size:14px}
+.score b{font-family:var(--fh);font-size:28px;color:var(--accent-300);font-weight:500}
+.score button{font-size:12.5px;padding:6px 12px;border-radius:4px;border:1px solid var(--rule-2);background:var(--surface-2)}
+.q{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:18px;margin-top:16px}
+.q .qn{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-400)}
+.q .qs{margin:6px 0 12px;font-size:15.5px;color:var(--ink)}
+.alts{display:flex;flex-direction:column;gap:7px}
+.alts button{text-align:left;font-size:14.5px;padding:9px 12px;border-radius:6px;border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-body);display:flex;gap:10px;line-height:1.5}
+.alts button .L{flex:none;width:22px;height:22px;border-radius:50%;border:1px solid var(--rule-3);display:grid;place-items:center;font-size:12px;color:var(--ink-meta)}
+.alts button:hover:not([disabled]){border-color:var(--accent-600)}
+.alts button[disabled]{cursor:default}
+.alts button.right{background:var(--tint-2);border-color:var(--accent-400);color:var(--ink-strong)}
+.alts button.right .L{background:var(--accent);border-color:var(--accent);color:#121110}
+.alts button.wrong{border-style:dashed;border-color:var(--rule-3);opacity:.75;text-decoration:line-through;text-decoration-color:var(--rule-3)}
+.exp{display:none;margin-top:12px;padding:12px 14px;border-left:2px solid var(--accent);background:var(--surface-2);border-radius:0 6px 6px 0;font-size:14px}
+.exp .res{display:block;font-family:var(--fh);font-size:21px;color:var(--accent-300);margin-bottom:4px}
+.q.done .exp{display:block}
+.mother{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:20px}
+.mc{background:var(--surface);border:1px solid var(--rule);border-top:3px solid var(--rule-3);border-radius:6px;padding:13px 14px;font-size:13.5px}
+.mc.l2{border-top-color:var(--accent-600)}.mc.l3{border-top-color:var(--accent-400)}.mc.l4{border-top-color:var(--accent-300)}
+.mc .g{color:var(--ink-meta);font-size:12.5px}
+.mc .a{font-family:var(--fh);font-size:19px;color:var(--ink-strong);line-height:1.2;margin:4px 0}
+.mc p{margin:0;color:var(--ink-soft)}
+footer.fontes{margin-top:60px;border-top:1px solid var(--rule-2);padding-top:18px;font-size:12.5px;color:var(--ink-meta);max-width:90ch}
+footer.fontes ol{padding-left:18px;margin:8px 0 0}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--ink-meta);margin-top:8px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:2px;display:inline-block}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.big{font-family:var(--fh);font-size:40px;line-height:1;color:var(--accent-300)}
+@media (max-width:560px){.two{grid-template-columns:1fr}.wrap,header.hero{padding-left:16px;padding-right:16px}.rail-in{padding-left:16px;padding-right:16px}.card{padding:13px}.fig{padding:10px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+</style>
+</head>
+<body>
+<header class="hero">
+  <span class="kicker g">Residência Max · Cirurgia Geral · Esôfago</span>
+  <h1>O esôfago que <i>esqueceu</i> de abrir</h1>
+  <p class="lede">O Trypanosoma cruzi não obstrui nada: ele apaga os neurônios que mandam a cárdia relaxar e o corpo do esôfago contrair em onda. Tudo o que se vê depois — o bico de pássaro, o órgão que dilata e alonga, o grau de Rezende — é consequência dessa única lesão. E a conduta segue o grau.</p>
+  <div class="caso">
+    <p><b>O caso que vamos dissecar.</b> Homem de 48 anos, nascido no interior da Bahia, com disfagia progressiva para sólidos e depois para líquidos há seis anos, regurgitação noturna e perda de 6 kg. Sorologia para doença de Chagas reagente. O esofagograma mostra esôfago com <b>6 cm de diâmetro</b>, retenção de contraste, ondas terciárias e afilamento distal regular. A endoscopia não mostra lesão.</p>
+    <span class="src">A pergunta da prova: qual o grau e qual a conduta?</span>
+  </div>
+</header>
+
+<nav class="rail" aria-label="Capítulos"><div class="rail-in">
+  <a href="#c1"><span class="n">01</span>O defeito</a>
+  <a href="#c2"><span class="n">02</span>O esofagograma</a>
+  <a href="#c3"><span class="n">03</span>Diagnóstico</a>
+  <a href="#c4"><span class="n">04</span>Máquina de decisão</a>
+  <a href="#c5"><span class="n">05</span>Na mesa</a>
+  <a href="#c6"><span class="n">06</span>Doença avançada</a>
+  <a href="#c7"><span class="n">07</span>Pegadinhas</a>
+  <a href="#c8"><span class="n">08</span>Forja</a>
+  <a href="#c9"><span class="n">09</span>Tabela-mãe</a>
+</div></nav>
+
+<div class="wrap">
+
+<section class="ch" id="c1">
+  <div class="ch-head"><span class="ch-num">01</span><div>
+    <h2>O defeito: um plexo que deixou de existir</h2>
+    <p class="ch-sub">Compare a manometria de um esôfago normal com a da acalasia. O mesmo traçado serve para a forma chagásica e para a idiopática — o que as separa é a epidemiologia e a sorologia, não o exame.</p>
+  </div></div>
+  <div class="plate">
+    <div class="fig">
+      <svg id="mano" viewBox="0 0 520 330" role="img" aria-label="Traçado manométrico esquemático"></svg>
+      <p class="figcap">Manometria esquemática: três canais no corpo esofágico e um no esfíncter esofágico inferior (EEI). A seta marca a deglutição. Faixa tracejada no EEI: pressão de relaxamento integrada (IRP) — acima do limite, a cárdia não abriu.</p>
+    </div>
+    <div class="panel">
+      <div class="card"><h3>Traçado</h3><div class="seg" id="segMano"></div></div>
+      <div class="verd" id="vMano"></div>
+      <div class="card"><h3>Duas falhas, uma causa</h3>
+        <dl class="kv">
+          <dt>Corpo</dt><dd>aperistalse: sem onda propulsiva, o bolo depende da gravidade</dd>
+          <dt>EEI</dt><dd>relaxamento ausente ou incompleto à deglutição; pressão basal costuma estar normal ou alta</dd>
+          <dt>Lesão</dt><dd>destruição dos neurônios do plexo mioentérico (de Auerbach), sobretudo os inibitórios</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>Na doença de Chagas, a fase aguda destrói neurônios do plexo mioentérico ao longo de todo o tubo digestivo; os sintomas aparecem anos depois, quando a perda neuronal passa de um limiar. O esôfago e o cólon (sigmoide e reto) são os segmentos que mais adoecem — e o mesmo paciente pode ter cardiopatia chagásica, o que pesa na avaliação de risco cirúrgico.</p>
+    <p>Como no caso, a disfagia costuma <strong>começar para sólidos e evoluir para líquidos</strong> ao longo de anos, com regurgitação de alimento não digerido que piora em decúbito. O que a separa da obstrução mecânica (tumor, estenose péptica) não é a ordem dos sintomas, e sim a evolução longa, a regurgitação de estase e a ausência da perda de peso rápida do câncer — por isso a endoscopia vem antes de tudo.</p>
+  </div>
+</section>
+
+<section class="ch" id="c2">
+  <div class="ch-head"><span class="ch-num">02</span><div>
+    <h2>O esofagograma: Rezende pela forma, Mascarenhas pela régua</h2>
+    <p class="ch-sub">O esofagograma baritado não faz o diagnóstico de acalasia — ele mede o estrago. Mude o grau de Rezende e o diâmetro e observe o que a banca descreve no enunciado.</p>
+  </div></div>
+  <div class="plate">
+    <div class="fig">
+      <svg id="rx" viewBox="0 0 360 470" role="img" aria-label="Esofagograma simulado"></svg>
+      <p class="figcap">Esofagograma simulado em incidência frontal, contraste em branco. Linha clara inferior: cúpula diafragmática. O compasso mede o maior diâmetro transverso (na escala do desenho, 1 cm = 8 unidades).</p>
+    </div>
+    <div class="panel">
+      <div class="card"><h3>Grau de Rezende (morfologia)</h3><div class="seg" id="segRez"></div>
+        <div class="sl"><label><span>Maior diâmetro transverso</span><b id="lDiam">6 cm</b></label>
+          <input type="range" id="rDiam" min="2" max="14" step="0.5" value="6" aria-label="Diâmetro em centímetros"></div>
+      </div>
+      <div class="verd" id="vRx"></div>
+      <div class="card"><h3>Leitura do laudo</h3><dl class="kv" id="kvRx"></dl></div>
+    </div>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>Grau</th><th>Rezende — achados radiológicos</th><th>Mascarenhas — diâmetro</th></tr></thead>
+    <tbody>
+      <tr><td>I</td><td>Calibre normal ou pouco aumentado; trânsito lento, pequena retenção de contraste</td><td>até 4 cm</td></tr>
+      <tr><td>II</td><td>Dilatação discreta a moderada; retenção evidente; <b>ondas terciárias</b> (contrações não propulsivas); hipertonia do EEI</td><td>4 a 7 cm</td></tr>
+      <tr><td>III</td><td>Grande dilatação; hipotonia, pouca atividade contrátil; grande retenção com resíduo alimentar; afilamento distal em <b>bico de pássaro</b></td><td>7 a 10 cm</td></tr>
+      <tr><td>IV</td><td><b>Dolicomegaesôfago</b>: esôfago muito dilatado, alongado e tortuoso, que dobra sobre a cúpula diafragmática; atonia</td><td>acima de 10 cm</td></tr>
+    </tbody></table></div>
+  <div class="divg"><span class="t">Divergência de banca</span>As duas classificações coexistem e nem sempre coincidem: um esôfago de 6 cm pode ser descrito como Rezende III se já houver hipotonia e resíduo. Leia o enunciado — se ele dá <b>números</b>, a banca está usando Mascarenhas; se dá <b>adjetivos</b> (ondas terciárias, alongamento, dobra sobre o diafragma), está usando Rezende. Em ambas, I–II é a forma não avançada e III–IV a avançada.</div>
+</section>
+
+<section class="ch" id="c3">
+  <div class="ch-head"><span class="ch-num">03</span><div>
+    <h2>Diagnóstico: cada exame responde uma pergunta</h2>
+    <p class="ch-sub">Antes de qualquer tratamento, três perguntas em ordem: há obstrução por câncer? existe acalasia? quanto o esôfago dilatou?</p>
+  </div></div>
+  <div class="plate">
+    <div class="card">
+      <h3>Exame → pergunta que ele responde</h3>
+      <div class="seg" id="segExame"></div>
+      <div class="verd v-1" id="vExame" style="margin-top:12px"></div>
+    </div>
+    <div class="panel">
+      <div class="card"><h3>Pseudoacalasia — o diagnóstico que não se pode perder</h3>
+        <label class="chk"><input type="checkbox" class="ps"> Idade acima de 55–60 anos no início dos sintomas</label>
+        <label class="chk"><input type="checkbox" class="ps"> História curta (menos de 1 ano)</label>
+        <label class="chk"><input type="checkbox" class="ps"> Perda de peso desproporcional à disfagia</label>
+        <label class="chk"><input type="checkbox" class="ps"> Dificuldade de transpor a cárdia com o endoscópio</label>
+      </div>
+      <div class="verd" id="vPs"></div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>A <strong>endoscopia é obrigatória</strong> antes de tratar: exclui adenocarcinoma da cárdia e carcinoma epidermoide, avalia esofagite de estase e candidíase. Um tumor infiltrativo da junção esofagogástrica reproduz o bico de pássaro e até o traçado manométrico — é a pseudoacalasia, e operá-la como acalasia é o erro que a prova quer ver você evitar. Na dúvida, ecoendoscopia ou tomografia.</p>
+    <p>A <strong>manometria</strong> (de alta resolução, classificação de Chicago) é o padrão-ouro para o distúrbio motor; o <strong>esofagograma</strong> classifica o grau e orienta a conduta; a <strong>sorologia</strong> define a etiologia chagásica e manda procurar cardiopatia e megacólon.</p>
+  </div>
+</section>
+
+<section class="ch" id="c4">
+  <div class="ch-head"><span class="ch-num">04</span><div>
+    <h2>A máquina de decisão</h2>
+    <p class="ch-sub">Três entradas mudam a conduta: o grau, o risco cirúrgico e se é a primeira abordagem ou recidiva. Use os cenários prontos ou monte o seu.</p>
+  </div></div>
+  <div class="plate">
+    <div class="panel">
+      <div class="card"><h3>Cenários de prova</h3><div class="seg" id="segPreset"></div></div>
+      <div class="card"><h3>Grau (Rezende / Mascarenhas)</h3><div class="seg" id="dGrau"></div>
+        <h3 style="margin-top:14px">Risco cirúrgico</h3><div class="seg" id="dRisco"></div>
+        <h3 style="margin-top:14px">Momento</h3><div class="seg" id="dMom"></div>
+      </div>
+      <div class="card"><h3>Escore de Eckardt (resposta ao tratamento)</h3>
+        <div id="eck"></div>
+        <p style="margin:10px 0 0;font-size:14px">Total: <b class="big num" id="eckT" style="font-size:28px">0</b> <span id="eckV" style="color:var(--ink-meta)"></span></p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="verd" id="vDec"></div>
+      <div class="card"><h3>Passos</h3><ol class="steps" id="stDec"></ol>
+        <div class="forbid" id="fbDec"></div></div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>Todo tratamento da acalasia é <strong>paliativo</strong>: nenhum devolve a peristalse. O objetivo é baixar a resistência da cárdia o suficiente para a gravidade esvaziar o esôfago, sem abrir caminho para refluxo grave. Nitratos e bloqueadores de canal de cálcio sublinguais aliviam pouco e por pouco tempo; a toxina botulínica dura meses e fica para quem não pode ser operado.</p>
+  </div>
+</section>
+
+<section class="ch" id="c5">
+  <div class="ch-head"><span class="ch-num">05</span><div>
+    <h2>Na mesa: cardiomiotomia de Heller com fundoplicatura parcial</h2>
+    <p class="ch-sub">Avance pelos tempos da operação. Vista anterior da junção esofagogástrica, por via laparoscópica, com o lobo esquerdo do fígado afastado (fora do campo).</p>
+  </div></div>
+  <div class="plate">
+    <div class="fig">
+      <svg id="heller" viewBox="0 0 420 420" role="img" aria-label="Esquema da cardiomiotomia"></svg>
+      <p class="figcap">Esquema, sem escala anatômica fiel. Contrato de vista: anterior, cranial no topo, esquerda do paciente à direita da figura. Faixa clara = submucosa exposta pela miotomia.</p>
+    </div>
+    <div class="panel">
+      <div class="card"><h3>Tempo cirúrgico</h3><div class="seg" id="segHeller"></div></div>
+      <div class="verd v-2" id="vHeller"></div>
+    </div>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th></th><th>Heller laparoscópica + fundoplicatura parcial</th><th>POEM (miotomia endoscópica peroral)</th><th>Dilatação pneumática</th></tr></thead>
+    <tbody>
+      <tr><td>Acesso</td><td>abdominal; miotomia anterior por fora</td><td>túnel submucoso endoscópico; miotomia por dentro</td><td>balão na cárdia sob radioscopia/endoscopia</td></tr>
+      <tr><td>Antirrefluxo</td><td>sim — a válvula parcial é parte da operação</td><td>não há fundoplicatura; refluxo pós-procedimento é mais frequente</td><td>não</td></tr>
+      <tr><td>Evidência-chave</td><td colspan="2">Ensaio randomizado (Werner, NEJM 2019), em acalasia idiopática — sem pacientes chagásicos: sucesso em 2 anos ≈ 83% POEM vs ≈ 82% Heller + Dor; esofagite de refluxo 44% vs 29%</td><td>eficácia boa nos graus iniciais; costuma exigir sessões repetidas</td></tr>
+      <tr><td>Complicação temida</td><td>perfuração mucosa (reparar na hora)</td><td>perfuração, enfisema, sangramento no túnel</td><td>perfuração esofágica</td></tr>
+      <tr><td>Lugar</td><td>padrão cirúrgico nos graus II–III</td><td>alternativa em centros com experiência; útil quando se quer miotomia longa</td><td>grau I, alto risco, recidiva</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="ch" id="c6">
+  <div class="ch-head"><span class="ch-num">06</span><div>
+    <h2>Doença avançada e recidiva</h2>
+    <p class="ch-sub">Quando o esôfago dobrou sobre o diafragma, cortar a cárdia não resolve: o tubo atônico e tortuoso não esvazia. É aqui que entram as operações de ressecção e de derivação.</p>
+  </div></div>
+  <div class="plate">
+    <div class="card">
+      <h3>Opções no megaesôfago avançado (III–IV) ou na falha da miotomia</h3>
+      <div class="seg" id="segAv"></div>
+      <div class="verd v-1" id="vAv" style="margin-top:12px"></div>
+    </div>
+    <div class="panel">
+      <div class="verd v-3"><span class="t">Câncer</span><span class="h">O megaesôfago é lesão pré-maligna</span>
+        <p>A estase crônica inflama a mucosa e aumenta o risco de <b>carcinoma epidermoide</b> do esôfago, inclusive anos depois de tratado. Pacientes com megaesôfago, sobretudo de longa data, merecem vigilância endoscópica e investigação imediata de qualquer mudança no padrão da disfagia.</p></div>
+      <div class="card"><h3>Avaliação pré-operatória do chagásico</h3>
+        <ol class="steps"><li>ECG e ecocardiograma: cardiopatia chagásica (bloqueios, arritmias, disfunção ventricular)</li>
+        <li>Estado nutricional: perda de peso e desnutrição pioram o desfecho</li>
+        <li>Pesquisar megacólon: constipação crônica, fecaloma, volvo de sigmoide</li>
+        <li>Esvaziar o esôfago antes da indução (dieta líquida, lavagem) — risco de broncoaspiração</li></ol></div>
+    </div>
+  </div>
+</section>
+
+<section class="ch" id="c7">
+  <div class="ch-head"><span class="ch-num">07</span><div>
+    <h2>Pegadinhas de prova</h2>
+    <p class="ch-sub">Leia a frase, decida se é verdade e só então abra o cartão.</p>
+  </div></div>
+  <div class="traps">
+    <div class="trap"><button type="button">“O esofagograma é o padrão-ouro para o diagnóstico de acalasia.”</button><div class="ans">Falso. O padrão-ouro é a <b>manometria</b> (de alta resolução). O esofagograma classifica o grau (Rezende/Mascarenhas) e orienta a conduta; a endoscopia exclui câncer.</div></div>
+    <div class="trap"><button type="button">“Na cardiomiotomia, fundoplicatura total à Nissen dá melhor proteção contra refluxo.”</button><div class="ans">Armadilha. Sem peristalse, a válvula total de 360° vira obstáculo e devolve a disfagia. A fundoplicatura é <b>parcial</b> (anterior à Dor, posterior à Toupet, ou a de Pinotti), e ainda ajuda a manter as bordas da miotomia afastadas.</div></div>
+    <div class="trap"><button type="button">“Bico de pássaro no esofagograma de idoso com perda de peso rápida = acalasia, indicar Heller.”</button><div class="ans">Não antes de excluir <b>pseudoacalasia</b>: tumor da cárdia infiltrando o plexo dá imagem idêntica. Endoscopia com retrovisão, biópsias e, se houver dúvida, ecoendoscopia/TC.</div></div>
+    <div class="trap"><button type="button">“A miotomia deve ficar restrita ao esôfago, para não lesar o estômago.”</button><div class="ans">Falso. A miotomia insuficiente na vertente gástrica é a principal causa técnica de disfagia persistente. Estende-se cerca de <b>6 cm no esôfago e 2–3 cm no estômago</b>.</div></div>
+    <div class="trap"><button type="button">“Grau IV de Rezende é sinônimo de esôfago com mais de 10 cm.”</button><div class="ans">Quase. Mais de 10 cm é o grau IV de <b>Mascarenhas</b> (régua). O grau IV de <b>Rezende</b> é o dolicomegaesôfago — alongado, tortuoso, dobrando sobre o diafragma. Em geral coincidem, mas a definição é diferente.</div></div>
+    <div class="trap"><button type="button">“Tratada a acalasia, acaba o risco de câncer.”</button><div class="ans">Falso. O risco de <b>carcinoma epidermoide</b> persiste; a vigilância continua após o tratamento.</div></div>
+  </div>
+</section>
+
+<section class="ch" id="c8">
+  <div class="ch-head"><span class="ch-num">08</span><div>
+    <h2>Forja: um caso, oito versões</h2>
+    <p class="ch-sub">A primeira é a questão-mãe. Nas seguintes, só o dado <mark>marcado</mark> muda. O comentário diz por que a conduta virou e onde cada distrator seria certo.</p>
+  </div></div>
+  <div class="score" id="score"></div>
+  <div id="qs"></div>
+</section>
+
+<section class="ch" id="c9">
+  <div class="ch-head"><span class="ch-num">09</span><div>
+    <h2>Tabela-mãe: gatilho → conduta</h2>
+    <p class="ch-sub">A intensidade do ouro na borda sobe com a agressividade da conduta.</p>
+  </div></div>
+  <div class="mother">
+    <div class="mc"><div class="g">Disfagia de sólidos que evolui para líquidos, regurgitação</div><div class="a">EDA → manometria → esofagograma</div><p>EDA primeiro para excluir câncer; manometria confirma; esofagograma gradua.</p></div>
+    <div class="mc l2"><div class="g">Grau I (até 4 cm), bom risco</div><div class="a">Dilatação pneumática</div><p>Ou Heller laparoscópica. Reavaliar com Eckardt; falha → miotomia.</p></div>
+    <div class="mc l3"><div class="g">Grau II–III (4–10 cm)</div><div class="a">Heller + fundoplicatura parcial</div><p>Miotomia ≈ 6 cm no esôfago + 2–3 cm no estômago. POEM é alternativa.</p></div>
+    <div class="mc l4"><div class="g">Grau IV — dolicomegaesôfago</div><div class="a">Esofagectomia</div><p>Trans-hiatal, sem toracotomia, com tubo gástrico e anastomose cervical.</p></div>
+    <div class="mc"><div class="g">Qualquer grau, risco proibitivo</div><div class="a">Dilatação ou toxina botulínica</div><p>Nitrato/nifedipina sublingual como ponte. Toxina dura meses.</p></div>
+    <div class="mc l3"><div class="g">Recidiva após Heller</div><div class="a">Dilatação, POEM ou re-miotomia</div><p>Falhas repetidas: Serra-Dória ou esofagectomia.</p></div>
+    <div class="mc l2"><div class="g">Idoso, história curta, perda de peso</div><div class="a">Excluir pseudoacalasia</div><p>EDA com biópsias, ecoendoscopia, TC antes de tratar.</p></div>
+    <div class="mc"><div class="g">Megaesôfago de longa data</div><div class="a">Vigilância endoscópica</div><p>Risco aumentado de carcinoma epidermoide, mesmo após tratamento.</p></div>
+  </div>
+  <footer class="fontes">
+    <b>Referências usadas para o conteúdo</b>
+    <ol>
+      <li>Rezende JM, Lauar KM, Oliveira AR. Aspectos clínicos e radiológicos da aperistalsis do esôfago. Rev Bras Gastroenterol, 1960 — classificação radiológica de Rezende.</li>
+      <li>Classificação de Mascarenhas pelo diâmetro do esôfago (até 4; 4–7; 7–10; &gt;10 cm), como ensinada nos tratados brasileiros de cirurgia do aparelho digestivo.</li>
+      <li>Yadlapati R et al. Esophageal motility disorders on high-resolution manometry: Chicago Classification v4.0. Neurogastroenterol Motil, 2021.</li>
+      <li>Werner YB et al. Endoscopic or surgical myotomy in patients with idiopathic achalasia. N Engl J Med, 2019;381:2219–29.</li>
+      <li>Eckardt VF et al. Predictors of outcome in patients with achalasia treated by pneumatic dilation. Gastroenterology, 1992;103:1732–8 — escore de sintomas.</li>
+    </ol>
+    <p style="margin-top:10px">Figuras são esquemas didáticos em SVG, não imagens de pacientes.</p>
+  </footer>
+</section>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(s,r){return (r||document).querySelector(s)};
+  var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  window.$=$;window.$$=$$;
+  window.fmt=function(n,d){return Number(n).toFixed(d==null?0:d).replace(".",",")};
+  /* trilho: marca o capítulo visível */
+  var links=$$(".rail a");
+  if("IntersectionObserver" in window&&links.length){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id)})}
+    })},{rootMargin:"-45% 0px -50% 0px"});
+    $$("section.ch").forEach(function(s){io.observe(s)});
+  }
+  /* segmentados genéricos */
+  window.segmented=function(el,items,onPick,initial){
+    el.innerHTML="";
+    items.forEach(function(it,i){
+      var b=document.createElement("button");b.type="button";b.innerHTML=it.label;
+      b.setAttribute("aria-pressed",i===(initial||0)?"true":"false");
+      b.addEventListener("click",function(){
+        $$("button",el).forEach(function(x){x.setAttribute("aria-pressed","false")});
+        b.setAttribute("aria-pressed","true");onPick(it,i);
+      });
+      el.appendChild(b);
+    });
+    onPick(items[initial||0],initial||0);
+  };
+  /* pegadinhas */
+  $$(".trap button").forEach(function(b){
+    b.setAttribute("aria-expanded","false");
+    b.addEventListener("click",function(){
+      var t=b.parentNode;t.classList.toggle("open");
+      b.setAttribute("aria-expanded",t.classList.contains("open")?"true":"false");
+    });
+  });
+  /* forja */
+  window.buildQuiz=function(data){
+    var box=$("#qs"),score=$("#score");if(!box)return;
+    var ok=0,done=0,L="ABCDE";
+    function upd(){score.innerHTML="<span>Placar</span> <b class='num'>"+ok+"/"+done+"</b> <span class='num' style='color:var(--ink-meta)'>de "+data.length+" questões</span> <button type='button' id='qreset'>Recomeçar</button>";
+      $("#qreset").addEventListener("click",render)}
+    function render(){
+      ok=0;done=0;box.innerHTML="";
+      data.forEach(function(q,qi){
+        var d=document.createElement("div");d.className="q";
+        d.innerHTML="<div class='qn'>Questão "+(qi+1)+(qi===0?" · questão-mãe":" · pivô")+"</div><p class='qs'>"+q.s+"</p><div class='alts'></div><div class='exp'><span class='res'></span>"+q.e+"</div>";
+        var alts=$(".alts",d);
+        q.a.forEach(function(t,ai){
+          var b=document.createElement("button");b.type="button";
+          b.innerHTML="<span class='L'>"+L[ai]+"</span><span>"+t+"</span>";
+          b.addEventListener("click",function(){
+            if(d.classList.contains("done"))return;
+            d.classList.add("done");done++;
+            if(ai===q.c)ok++;
+            $$("button",alts).forEach(function(x,xi){x.disabled=true;if(xi===q.c)x.classList.add("right");else if(xi===ai)x.classList.add("wrong")});
+            $(".res",d).textContent=(ai===q.c?"Certo — ":"Não — ")+"gabarito "+L[q.c];
+            upd();
+          });
+          alts.appendChild(b);
+        });
+        box.appendChild(d);
+      });
+      upd();
+    }
+    render();
+  };
+  window.svgEl=function(tag,attrs,parent){
+    var e=document.createElementNS("http://www.w3.org/2000/svg",tag);
+    for(var k in attrs){e.setAttribute(k,attrs[k])}
+    if(parent)parent.appendChild(e);return e;
+  };
+})();
+
+(function(){
+"use strict";
+var NS="http://www.w3.org/2000/svg";
+function S(tag,a,p){return svgEl(tag,a,p)}
+function T(txt,a,p){var t=S("text",a,p);t.textContent=txt;return t}
+function clear(el){while(el.firstChild)el.removeChild(el.firstChild)}
+/* grupo de botões com estado */
+function group(el,labels,cb,ini){
+  var bs=[];el.innerHTML="";
+  labels.forEach(function(l,i){var b=document.createElement("button");b.type="button";b.innerHTML=l;
+    b.addEventListener("click",function(){set(i)});el.appendChild(b);bs.push(b)});
+  function set(i,silent){bs.forEach(function(b,j){b.setAttribute("aria-pressed",j===i?"true":"false")});g.v=i;if(!silent)cb(i)}
+  var g={v:ini||0,set:set};set(g.v,true);return g;
+}
+function verd(el,cls,t,h,body){el.className="verd "+cls;el.innerHTML="<span class='t'>"+t+"</span><span class='h'>"+h+"</span>"+body}
+
+/* ============ 01 manometria ============ */
+var mano=$("#mano");
+var CH=[{y:78,n:"Corpo proximal"},{y:146,n:"Corpo médio"},{y:214,n:"Corpo distal"},{y:296,n:"EEI"}];
+var MODES=[
+ {l:"Normal",body:[[205,34,16],[255,40,16],[305,46,16]],lesRelax:true,
+  v:["v-1","Referência","Peristalse normal","<p>Onda que desce em sequência pelos três canais; o EEI relaxa logo após a deglutição e só volta a fechar quando a onda chega.</p>"]},
+ {l:"Acalasia tipo I",body:[],lesRelax:false,
+  v:["v-3","Chicago v4.0","Acalasia tipo I — clássica","<p>IRP elevada e 100% de contrações falhas: o corpo não gera pressão. É o traçado típico do esôfago já dilatado.</p>"]},
+ {l:"Tipo II",body:[[255,20,52]],lesRelax:false,pan:true,
+  v:["v-3","Chicago v4.0","Acalasia tipo II — pressurização panesofágica","<p>IRP elevada, sem peristalse, com pressurização simultânea de todo o corpo em ≥ 20% das deglutições. É o subtipo que melhor responde a qualquer tratamento.</p>"]},
+ {l:"Tipo III",body:[[200,52,11],[203,54,11],[206,56,11]],lesRelax:false,
+  v:["v-3","Chicago v4.0","Acalasia tipo III — espástica","<p>IRP elevada com contrações prematuras (latência distal curta) em ≥ 20% das deglutições. Responde melhor a uma miotomia longa, o que favorece o POEM.</p>"]}
+];
+function bump(x,arr){var s=0;arr.forEach(function(b){s+=b[1]*Math.exp(-Math.pow((x-b[0])/b[2],2))});return s}
+function drawMano(i){
+  var m=MODES[i];clear(mano);
+  S("rect",{x:0,y:0,width:520,height:330,fill:"#151412"},mano);
+  // grade de tempo
+  for(var gx=150;gx<=500;gx+=50)S("line",{x1:gx,y1:30,x2:gx,y2:312,stroke:"rgba(243,242,242,.06)"},mano);
+  // seta da deglutição
+  S("path",{d:"M150 22 L150 40",stroke:"#e1ad66","stroke-width":2},mano);
+  S("path",{d:"M144 34 L150 42 L156 34",fill:"none",stroke:"#e1ad66","stroke-width":2},mano);
+  T("deglutição",{x:158,y:30,fill:"#e1ad66","font-size":13},mano);
+  CH.forEach(function(c,ci){
+    T(c.n,{x:10,y:c.y+4,fill:"rgba(243,242,242,.7)","font-size":13},mano);
+    S("line",{x1:140,y1:c.y,x2:505,y2:c.y,stroke:"rgba(243,242,242,.12)"},mano);
+    var d="";
+    for(var x=140;x<=505;x+=3){
+      var p;
+      if(ci<3){p=bump(x,m.body.map(function(b,bi){return m.pan?b:(m.body.length===3?(bi===ci?b:[b[0],0,1]):b)}));
+        if(m.body.length===0)p=1.5*Math.sin(x/9+ci);}
+      else{ // EEI
+        var base=28;
+        if(m.lesRelax){var rel=(x>158&&x<318)?Math.min(1,(x-158)/14,(318-x)/14):0;p=base-rel*25+bump(x,[[340,26,14]]);}
+        else{p=base-6*Math.exp(-Math.pow((x-220)/40,2));}
+      }
+      d+=(x===140?"M":"L")+x+" "+(c.y-p).toFixed(1);
+    }
+    S("path",{d:d,fill:"none",stroke:ci===3?"#facb8d":"#e1ad66","stroke-width":2.2,"stroke-linejoin":"round"},mano);
+  });
+  // limite de IRP
+  S("line",{x1:150,y1:296-15,x2:505,y2:296-15,stroke:"rgba(250,203,141,.55)","stroke-dasharray":"5 5"},mano);
+  T("limite da IRP",{x:425,y:298,fill:"rgba(250,203,141,.8)","font-size":12},mano);
+  T("tempo →",{x:455,y:325,fill:"rgba(243,242,242,.5)","font-size":12},mano);
+  verd.apply(null,[$("#vMano")].concat(m.v));
+}
+group($("#segMano"),MODES.map(function(m){return m.l}),drawMano,0);drawMano(0);
+
+/* ============ 02 esofagograma ============ */
+var rx=$("#rx");
+var REZ=[
+ {l:"I",pts:[[178,18],[180,140],[184,260],[193,350],[202,392]],lvl:330,diam:3.5,beak:.08,waves:0,res:false,
+  kv:[["Calibre","normal ou pouco aumentado"],["Trânsito","lento; pequena coluna residual de contraste"],["Contração","ainda presente, incoordenada"]]},
+ {l:"II",pts:[[178,18],[175,140],[176,260],[188,350],[202,392]],lvl:250,diam:6,beak:.1,waves:1,res:false,
+  kv:[["Calibre","dilatação discreta a moderada"],["Retenção","evidente"],["Contração","ondas terciárias (não propulsivas)"],["EEI","hipertônico, afilamento regular"]]},
+ {l:"III",pts:[[178,18],[168,130],[166,250],[178,335],[193,372],[201,394]],lvl:185,diam:8.5,beak:.24,waves:0,res:true,
+  kv:[["Calibre","grande dilatação"],["Retenção","grande, com resíduo alimentar"],["Contração","hipotonia, quase sem atividade"],["Distal","afilamento em bico de pássaro"]]},
+ {l:"IV",pts:[[178,18],[170,100],[152,190],[132,275],[128,340],[150,378],[196,384],[226,374],[244,392],[250,410]],lvl:165,diam:12,beak:.24,waves:0,res:true,
+  kv:[["Calibre","muito dilatado"],["Forma","alongado e tortuoso — dolicomegaesôfago"],["Relação","dobra sobre a cúpula diafragmática"],["Contração","atonia"]]}
+];
+var rez=1,diam=6;
+function cr(pts,n){ // Catmull-Rom
+  var out=[];var P=[pts[0]].concat(pts,[pts[pts.length-1]]);
+  var seg=P.length-3;
+  for(var s=0;s<seg;s++){
+    var p0=P[s],p1=P[s+1],p2=P[s+2],p3=P[s+3];
+    var steps=Math.ceil(n/seg);
+    for(var k=0;k<steps;k++){var t=k/steps,t2=t*t,t3=t2*t;
+      out.push([.5*((2*p1[0])+(-p0[0]+p2[0])*t+(2*p0[0]-5*p1[0]+4*p2[0]-p3[0])*t2+(-p0[0]+3*p1[0]-3*p2[0]+p3[0])*t3),
+                .5*((2*p1[1])+(-p0[1]+p2[1])*t+(2*p0[1]-5*p1[1]+4*p2[1]-p3[1])*t2+(-p0[1]+3*p1[1]-3*p2[1]+p3[1])*t3)]);}
+  }
+  out.push(pts[pts.length-1]);return out;
+}
+function sm(a,b,x){var t=Math.max(0,Math.min(1,(x-a)/(b-a)));return t*t*(3-2*t)}
+function drawRx(){
+  var g=REZ[rez];clear(rx);
+  var defs=S("defs",{},rx);
+  var rg=S("radialGradient",{id:"rxbg",cx:"50%",cy:"45%",r:"70%"},defs);
+  S("stop",{offset:"0","stop-color":"#3a3836"},rg);S("stop",{offset:"1","stop-color":"#141312"},rg);
+  S("rect",{x:0,y:0,width:360,height:470,fill:"url(#rxbg)"},rx);
+  // coluna e costelas tênues
+  S("rect",{x:166,y:0,width:34,height:470,fill:"rgba(255,255,255,.06)"},rx);
+  for(var r=30;r<380;r+=34){S("path",{d:"M196 "+r+" Q300 "+(r-12)+" 352 "+(r+30),fill:"none",stroke:"rgba(255,255,255,.05)","stroke-width":7},rx);
+    S("path",{d:"M170 "+r+" Q60 "+(r-12)+" 8 "+(r+30),fill:"none",stroke:"rgba(255,255,255,.05)","stroke-width":7},rx);}
+  // diafragma
+  S("path",{d:"M0 418 Q90 360 200 396 Q280 368 360 410",fill:"none",stroke:"rgba(255,255,255,.32)","stroke-width":3},rx);
+  // estômago
+  S("path",{d:"M236 410 Q300 400 318 440 Q324 470 300 470 L210 470 Q206 440 236 410Z",fill:rez<2?"rgba(236,230,220,.42)":"rgba(236,230,220,.14)",stroke:"rgba(236,230,220,.3)"},rx);
+  S("ellipse",{cx:282,cy:420,rx:24,ry:9,fill:"rgba(0,0,0,.35)"},rx);
+  // contorno do esôfago
+  var c=cr(g.pts,360),N=c.length,W=diam*(rez===3?3.4:4),WS=[],maxw=0,maxi=0,AL=[0];
+  for(var j=1;j<N;j++)AL.push(AL[j-1]+Math.hypot(c[j][0]-c[j-1][0],c[j][1]-c[j-1][1]));
+  for(var i=0;i<N;i++){
+    var t=AL[i]/AL[N-1];var a=c[Math.max(0,i-1)],b=c[Math.min(N-1,i+1)];
+    var dx=b[0]-a[0],dy=b[1]-a[1],len=Math.hypot(dx,dy)||1,nx=-dy/len,ny=dx/len;
+    var w=5+(W-5)*sm(.03,.33,t);
+    var tb=1-g.beak;if(t>tb){var u=(t-tb)/g.beak;w=2.5+(w-2.5)*Math.pow(1-u,1.35);}
+    if(g.waves&&t>.42&&t<.86)w*=1+.13*Math.sin(t*46);
+    if(w>maxw&&t<tb){maxw=w;maxi=i}
+    WS.push(w);
+  }
+  // união de círculos: contorno robusto mesmo quando o tubo dobra sobre si
+  var cp=S("clipPath",{id:"esoclip"},defs),gOut=S("g",{},rx),gIn=S("g",{},rx);
+  for(var q=0;q<N;q+=1){var cx=c[q][0].toFixed(1),cy=c[q][1].toFixed(1);
+    S("circle",{cx:cx,cy:cy,r:(WS[q]+1.5).toFixed(1),fill:"rgba(236,230,220,.5)"},gOut);
+    S("circle",{cx:cx,cy:cy,r:WS[q].toFixed(1),fill:"#3a3835"},gIn);
+    S("circle",{cx:cx,cy:cy,r:WS[q].toFixed(1)},cp);}
+  var lv=S("clipPath",{id:"lvclip"},defs);S("rect",{x:0,y:g.lvl,width:360,height:470},lv);
+  var gb=S("g",{"clip-path":"url(#esoclip)"},rx);
+  var gl=S("g",{"clip-path":"url(#lvclip)"},gb);
+  S("rect",{x:0,y:0,width:360,height:470,fill:"#ece6dc"},gl);
+  if(g.res){ // resíduo alimentar logo abaixo do nível
+    var seed=7;function rnd(){seed=(seed*16807)%2147483647;return seed/2147483647}
+    for(var k=0;k<90;k++){S("circle",{cx:(60+rnd()*220).toFixed(1),cy:(g.lvl+4+rnd()*70).toFixed(1),r:(2+rnd()*5).toFixed(1),fill:"rgba(40,36,32,"+(.25+rnd()*.35).toFixed(2)+")"},gl)}
+  }
+  if(rez>=1){S("line",{x1:0,y1:g.lvl,x2:360,y2:g.lvl,stroke:"#faf6ee","stroke-width":1.6},gb)}
+  // filete de contraste passando a cárdia
+  var e=g.pts[g.pts.length-1];
+  if(rez<2)S("path",{d:"M"+e[0]+" "+e[1]+" Q"+(e[0]+14)+" "+(e[1]+12)+" 248 418",fill:"none",stroke:"rgba(236,230,220,.7)","stroke-width":2},rx);
+  // compasso
+  var p=c[maxi],x1=p[0]-maxw,x2=p[0]+maxw,y=p[1];
+  S("line",{x1:x1,y1:y,x2:x2,y2:y,stroke:"#e1ad66","stroke-width":1.5},rx);
+  S("line",{x1:x1,y1:y-7,x2:x1,y2:y+7,stroke:"#e1ad66","stroke-width":1.5},rx);
+  S("line",{x1:x2,y1:y-7,x2:x2,y2:y+7,stroke:"#e1ad66","stroke-width":1.5},rx);
+  var lx=Math.min(x2+8,300);
+  S("rect",{x:lx-2,y:y-12,width:54,height:20,rx:3,fill:"rgba(18,17,16,.85)"},rx);
+  T(fmt(diam,1)+" cm",{x:lx+2,y:y+3,fill:"#facb8d","font-size":13},rx);
+  T("D",{x:12,y:22,fill:"rgba(255,255,255,.55)","font-size":13},rx);T("E",{x:340,y:22,fill:"rgba(255,255,255,.55)","font-size":13},rx);
+  if(rez>=2){var bp=g.pts[g.pts.length-1];
+    S("rect",{x:10,y:440,width:112,height:20,rx:3,fill:"rgba(18,17,16,.85)"},rx);
+    T("bico de pássaro",{x:16,y:455,fill:"#facb8d","font-size":13},rx);
+    S("line",{x1:122,y1:450,x2:bp[0]-2,y2:bp[1]+2,stroke:"rgba(250,203,141,.8)"},rx)}
+  // painel
+  var mg=diam<=4?1:diam<=7?2:diam<=10?3:4,R4=["I","II","III","IV"];
+  var adv=(rez>=2)||(mg>=3);
+  var conc=(mg-1)===rez;
+  verd($("#vRx"),adv?"v-3":"v-2","Rezende "+R4[rez]+" · Mascarenhas "+R4[mg-1],adv?"Megaesôfago avançado":"Megaesôfago não avançado",
+    "<p>"+(conc?"As duas classificações concordam.":"Classificações <b>discordantes</b>: a forma diz grau "+R4[rez]+", a régua diz grau "+R4[mg-1]+". Leia qual delas o enunciado está usando.")+"</p>");
+  $("#kvRx").innerHTML=g.kv.map(function(k){return "<dt>"+k[0]+"</dt><dd>"+k[1]+"</dd>"}).join("")+"<dt>Diâmetro</dt><dd>"+fmt(diam,1)+" cm → Mascarenhas "+R4[mg-1]+"</dd>";
+}
+var rDiam=$("#rDiam");
+rDiam.addEventListener("input",function(){diam=+rDiam.value;$("#lDiam").textContent=fmt(diam,1)+" cm";drawRx()});
+group($("#segRez"),["Grau I","Grau II","Grau III","Grau IV"],function(i){rez=i;diam=REZ[i].diam;rDiam.value=diam;$("#lDiam").textContent=fmt(diam,1)+" cm";drawRx()},1);
+drawRx();
+
+/* ============ 03 exames ============ */
+var EX=[
+ ["Endoscopia","Há câncer ou outra obstrução?","<p>Primeiro exame. Exclui neoplasia da cárdia e do esôfago, avalia esofagite de estase e candidíase. No megaesôfago, o esôfago tem resíduo e a cárdia oferece resistência, mas cede ao aparelho. Resistência que não cede levanta suspeita de pseudoacalasia.</p>"],
+ ["Manometria","Existe acalasia? Qual subtipo?","<p>Padrão-ouro diagnóstico: relaxamento incompleto do EEI (IRP elevada) e aperistalse do corpo. A alta resolução separa os tipos I, II e III de Chicago, que têm prognóstico diferente.</p>"],
+ ["Esofagograma","Quanto o esôfago dilatou?","<p>Classifica o grau (Rezende pela forma, Mascarenhas pelo diâmetro) e é o exame que decide entre dilatação, miotomia e esofagectomia. Mostra o afilamento distal regular em bico de pássaro.</p>"],
+ ["Sorologia","É Chagas?","<p>Define a etiologia. Positiva, obriga a procurar cardiopatia (ECG, ecocardiograma) e megacólon. Não muda a técnica da miotomia.</p>"],
+ ["TC / ecoendoscopia","A parede da cárdia está espessada?","<p>Reservadas para a suspeita de pseudoacalasia: espessamento assimétrico, massa, linfonodos. Não fazem parte da rotina da acalasia típica.</p>"]
+];
+group($("#segExame"),EX.map(function(e){return e[0]}),function(i){verd($("#vExame"),"v-1",EX[i][0],EX[i][1],EX[i][2])},0);
+verd($("#vExame"),"v-1",EX[0][0],EX[0][1],EX[0][2]);
+function ps(){var n=$$(".ps").filter(function(c){return c.checked}).length;
+  if(n===0)verd($("#vPs"),"v-1","Sem sinais de alarme","Perfil de acalasia primária","<p>Paciente jovem, história longa, sorologia positiva: o caso típico do megaesôfago chagásico. A EDA continua obrigatória.</p>");
+  else if(n===1)verd($("#vPs"),"v-2",n+" sinal","Atenção","<p>Um sinal isolado não fecha o diagnóstico, mas a EDA deve ser minuciosa, com retrovisão e biópsias da cárdia.</p>");
+  else verd($("#vPs"),"v-4",n+" sinais","Suspeite de pseudoacalasia","<p>Tumor infiltrando a junção esofagogástrica até prova em contrário. Ecoendoscopia e/ou TC antes de qualquer dilatação ou miotomia.</p>");}
+$$(".ps").forEach(function(c){c.addEventListener("change",ps)});ps();
+
+/* ============ 04 decisão ============ */
+var st={g:1,r:0,m:0};
+var gG=group($("#dGrau"),["I","II","III","IV"],function(i){st.g=i;dec()},1);
+var gR=group($("#dRisco"),["Aceitável","Proibitivo"],function(i){st.r=i;dec()},0);
+var gM=group($("#dMom"),["Primeira abordagem","Recidiva após miotomia"],function(i){st.m=i;dec()},0);
+var PRE=[["Caso da questão",1,0,0],["Dolicomegaesôfago",3,0,0],["Idoso cardiopata",2,1,0],["Recidiva",1,0,1],["Grau I",0,0,0]];
+group($("#segPreset"),PRE.map(function(p){return p[0]}),function(i){var p=PRE[i];st.g=p[1];st.r=p[2];st.m=p[3];gG.set(p[1],true);gR.set(p[2],true);gM.set(p[3],true);dec()},0);
+function dec(){
+  var R=["I","II","III","IV"][st.g],v,steps,fb;
+  if(st.r===1){
+    v=["v-1","Grau "+R+" · risco proibitivo","Dilatação endoscópica ou toxina botulínica","<p>Quem não tolera anestesia geral recebe o tratamento menos invasivo que alivia a disfagia. Toxina botulínica injetada no EEI dura meses e precisa ser repetida.</p>"];
+    steps=["EDA para excluir câncer","Dilatação pneumática se o risco permitir sedação; senão, toxina botulínica no EEI","Nitrato ou nifedipina sublingual antes das refeições como ponte","Reavaliar com escore de Eckardt"];
+    fb="<b>Errado aqui:</b> esofagectomia ou miotomia em quem não tem condição clínica — a cardiopatia chagásica é o motivo mais comum.";
+  }else if(st.m===1){
+    if(st.g===3){v=["v-4","Recidiva · grau IV","Esofagectomia","<p>Esôfago dolicomegálico que não esvazia após miotomia não melhora com nova abertura da cárdia.</p>"];
+      steps=["Reestudar: EDA, esofagograma, manometria","Preparo nutricional","Esofagectomia trans-hiatal com tubo gástrico e anastomose cervical"];}
+    else{v=["v-3","Recidiva · grau "+R,"Dilatação, POEM ou nova miotomia","<p>A causa técnica mais comum é miotomia curta na vertente gástrica; fibrose, válvula apertada e refluxo com estenose também entram no diferencial.</p>"];
+      steps=["Reestudar: EDA (câncer? esofagite?), esofagograma, manometria","Miotomia incompleta: dilatação pneumática ou POEM (pela parede posterior)","Válvula obstrutiva: revisão cirúrgica","Falhas repetidas: Serra-Dória ou esofagectomia"];}
+    fb="<b>Errado aqui:</b> repetir a mesma conduta sem reestudar — e esquecer que o megaesôfago tratado continua com risco de carcinoma epidermoide.";
+  }else if(st.g===0){
+    v=["v-2","Grau I · primeira abordagem","Dilatação pneumática","<p>No esôfago ainda de calibre normal, a dilatação com balão alivia a maioria. A cardiomiotomia laparoscópica também é resposta aceitável.</p>"];
+    steps=["EDA para excluir câncer","Dilatação com balão em sessões progressivas","Reavaliar com escore de Eckardt","Falha ou recidiva precoce: Heller laparoscópica"];
+    fb="<b>Errado aqui:</b> esofagectomia; fundoplicatura total isolada (Nissen) — não trata a acalasia e piora a disfagia.";
+  }else if(st.g<=2){
+    v=["v-3","Grau "+R+" · primeira abordagem","Heller laparoscópica + fundoplicatura parcial","<p>Cardiomiotomia anterior estendida à vertente gástrica, com válvula parcial (Dor, Toupet ou Pinotti) para conter o refluxo sem criar obstáculo num esôfago sem peristalse.</p>"+(st.g===2?"<p><b>Grau III:</b> a miotomia é a primeira opção na maioria dos serviços; parte dos autores considera esofagectomia quando há grande hipotonia e resíduo.</p>":"")];
+    steps=["Avaliação cardiológica e nutricional","Miotomia ≈ 6 cm no esôfago e 2–3 cm no estômago","Teste de integridade da mucosa","Fundoplicatura parcial","POEM é alternativa em centros com experiência"];
+    fb="<b>Errado aqui:</b> Nissen 360°; miotomia que poupa a vertente gástrica; esofagectomia de primeira linha no grau II.";
+  }else{
+    v=["v-4","Grau IV · primeira abordagem","Esofagectomia","<p>O dolicomegaesôfago é um tubo atônico, alongado e tortuoso: abrir a cárdia não faz a gravidade esvaziá-lo. A resposta clássica é ressecar.</p><p><b>Divergência:</b> há séries com miotomia primeiro mesmo no esôfago sigmoide, reservando a ressecção para a falha. Nas provas, grau IV aponta para esofagectomia.</p>"];
+    steps=["Preparo nutricional e avaliação cardiológica","Esofagectomia subtotal trans-hiatal, sem toracotomia","Tubo gástrico pelo mediastino posterior","Anastomose esofagogástrica cervical"];
+    fb="<b>Errado aqui:</b> dilatação ou miotomia isolada como resposta-padrão para o grau IV.";
+  }
+  verd.apply(null,[$("#vDec")].concat(v));
+  $("#stDec").innerHTML=steps.map(function(s){return "<li>"+s+"</li>"}).join("");
+  $("#fbDec").innerHTML=fb;
+}
+dec();
+// Eckardt
+var EK=[["Disfagia",["nenhuma","ocasional","diária","a cada refeição"]],["Regurgitação",["nenhuma","ocasional","diária","a cada refeição"]],["Dor retroesternal",["nenhuma","ocasional","diária","a cada refeição"]],["Perda de peso",["nenhuma","< 5 kg","5–10 kg","> 10 kg"]]];
+$("#eck").innerHTML=EK.map(function(e,i){return "<div class='sl'><label for='ek"+i+"'><span>"+e[0]+"</span></label><select id='ek"+i+"' class='ek'>"+e[1].map(function(o,j){return "<option value='"+j+"'>"+j+" — "+o+"</option>"}).join("")+"</select></div>"}).join("");
+function eck(){var t=$$(".ek").reduce(function(a,s){return a+(+s.value)},0);$("#eckT").textContent=t;
+  $("#eckV").textContent=t<=3?"≤ 3: remissão clínica":"> 3: sintomas persistentes — falha do tratamento"}
+$$(".ek").forEach(function(s){s.addEventListener("change",eck)});eck();
+
+/* ============ 05 Heller ============ */
+var hs=$("#heller");
+var HT=[
+ ["Exposição do hiato","<p>Abrir a membrana frenoesofágica, dissecar os pilares e trazer o esôfago abdominal para baixo. Identificar e preservar os dois vagos — o anterior corre sobre a face que será miotomizada. Retirar o coxim gorduroso da junção para enxergar onde o esôfago termina.</p>"],
+ ["Miotomia esofágica","<p>Secção das camadas longitudinal e circular da muscular, na face anterior, por cerca de <b>6 cm</b> acima da junção, até a submucosa abaular livremente. Fibras residuais são a causa de disfagia persistente.</p>"],
+ ["Vertente gástrica","<p>Prolongar a miotomia <b>2–3 cm</b> sobre o estômago, além das veias transversas da cárdia. É aqui que fica o componente mais forte do esfíncter, e é a extensão que mais falha.</p>"],
+ ["Teste da mucosa","<p>Insuflar ar pelo endoscópio (ou instilar azul de metileno pela sonda) com o campo submerso. Perfuração identificada na hora: sutura com fio absorvível e cobertura com a válvula anterior.</p>"],
+ ["Fundoplicatura parcial","<p>A válvula parcial reduz o refluxo que a miotomia cria sem obstruir um esôfago sem peristalse. A anterior (Dor) cobre a miotomia; a posterior (Toupet) mantém as bordas afastadas; a de Pinotti é a técnica parcial difundida no Brasil — daí o nome “Heller-Pinotti”.</p>"]
+];
+function drawHeller(k){
+  clear(hs);
+  S("rect",{x:0,y:0,width:420,height:420,fill:"#151412"},hs);
+  // pilares
+  S("path",{d:"M120 175 Q150 150 165 210 L170 260 Q140 250 120 175Z",fill:"#4a3a24"},hs);
+  S("path",{d:"M300 175 Q270 150 255 210 L250 260 Q280 250 300 175Z",fill:"#4a3a24"},hs);
+  T("pilar D",{x:62,y:178,fill:"rgba(243,242,242,.6)","font-size":13},hs);T("pilar E",{x:312,y:178,fill:"rgba(243,242,242,.6)","font-size":13},hs);
+  // estômago
+  S("path",{d:"M178 262 Q170 300 190 340 Q230 400 320 390 Q400 370 395 300 Q390 240 330 236 Q290 234 262 262Z",fill:"#7a5a2c",stroke:"#8d6428"},hs);
+  T("estômago",{x:318,y:340,fill:"rgba(250,203,141,.75)","font-size":13},hs);
+  // esôfago
+  S("path",{d:"M180 10 L180 262 L262 262 L242 10Z",fill:"#9b7038",stroke:"#8d6428"},hs);
+  for(var y=22;y<262;y+=14)S("line",{x1:181,y1:y,x2:241+(y/262)*20,y2:y,stroke:"rgba(18,17,16,.18)"},hs);
+  // veias transversas da cárdia
+  S("path",{d:"M190 270 Q220 262 252 272",fill:"none",stroke:"#c9a46a","stroke-width":2},hs);
+  S("path",{d:"M192 280 Q222 272 256 282",fill:"none",stroke:"#c9a46a","stroke-width":2},hs);
+  // vago anterior
+  S("path",{d:"M194 10 Q192 140 192 262 Q190 300 205 345",fill:"none",stroke:"#efe4cf","stroke-width":2.4},hs);
+  T("vago anterior",{x:60,y:64,fill:"rgba(243,242,242,.7)","font-size":13},hs);
+  S("line",{x1:146,y1:60,x2:192,y2:60,stroke:"rgba(243,242,242,.5)"},hs);
+  // miotomia
+  if(k>=1){
+    var bot=k>=2?300:262;
+    S("path",{d:"M214 "+(262-150)+" L232 "+(262-150)+" L"+(k>=2?240:236)+" "+bot+" L"+(k>=2?212:214)+" "+bot+"Z",fill:"#ead9b9",stroke:"#facb8d","stroke-width":1.2},hs);
+    if(k<4){S("path",{d:"M248 "+(262-150)+" l14 0 M248 262 l14 0",stroke:"#e1ad66","stroke-width":1.2},hs);
+    S("line",{x1:255,y1:262-150,x2:255,y2:262,stroke:"#e1ad66","stroke-width":1.2},hs);
+    T("≈ 6 cm",{x:266,y:195,fill:"#facb8d","font-size":14},hs);
+    if(k>=2&&k<4){S("path",{d:"M150 262 l14 0 M150 300 l14 0",stroke:"#e1ad66","stroke-width":1.2},hs);S("line",{x1:157,y1:262,x2:157,y2:300,stroke:"#e1ad66","stroke-width":1.2},hs);
+      T("2–3 cm",{x:96,y:286,fill:"#facb8d","font-size":14},hs);}}
+  }
+  if(k===3){S("circle",{cx:224,cy:230,r:12,fill:"none",stroke:"#facb8d","stroke-width":2,"stroke-dasharray":"3 3"},hs);
+    for(var b=0;b<5;b++)S("circle",{cx:228+b*4,cy:222-b*7,r:2+b*.5,fill:"none",stroke:"#faf6ee"},hs);
+    T("teste: sem bolhas",{x:40,y:232,fill:"#facb8d","font-size":13},hs);}
+  if(k===4){S("path",{d:"M262 248 Q300 210 296 150 Q260 120 200 140 Q186 200 196 262 Q230 290 262 248Z",fill:"rgba(182,130,53,.55)",stroke:"#facb8d","stroke-width":1.5},hs);
+    [[200,160],[200,195],[200,230],[285,165],[288,200],[275,232]].forEach(function(p){S("path",{d:"M"+(p[0]-5)+" "+(p[1]-4)+" l10 8 M"+(p[0]+5)+" "+(p[1]-4)+" l-10 8",stroke:"#faf6ee","stroke-width":1.4},hs)});
+    T("fundo gástrico",{x:24,y:120,fill:"#facb8d","font-size":13},hs);T("(válvula anterior)",{x:24,y:137,fill:"#facb8d","font-size":13},hs);}
+  T("cranial",{x:10,y:20,fill:"rgba(243,242,242,.45)","font-size":12},hs);
+  T("esquerda do paciente →",{x:270,y:412,fill:"rgba(243,242,242,.45)","font-size":12},hs);
+  verd($("#vHeller"),"v-2","Tempo "+(k+1)+" de 5",HT[k][0],HT[k][1]);
+}
+group(hs?$("#segHeller"):null,HT.map(function(h,i){return (i+1)+". "+h[0]}),drawHeller,0);drawHeller(0);
+
+/* ============ 06 avançado ============ */
+var AV=[
+ ["Esofagectomia trans-hiatal","Ressecar o órgão que não esvazia","<p>Dissecção do esôfago pelo hiato e pela região cervical, sem toracotomia; reconstrução com tubo gástrico pelo mediastino posterior e anastomose cervical. Indicada no dolicomegaesôfago e após falhas repetidas. Complicações típicas: fístula da anastomose cervical, lesão do nervo laríngeo recorrente, pneumotórax e sangramento mediastinal.</p>"],
+ ["Serra-Dória","Derivar sem ressecar","<p>Cardioplastia (anastomose laterolateral esôfago-gástrica à Gröndahl) associada a gastrectomia parcial com reconstrução em Y de Roux, para desviar o refluxo ácido e biliar da nova cárdia larga. Opção para recidiva após miotomia em quem se quer poupar da esofagectomia.</p>"],
+ ["POEM de resgate","Nova miotomia por dentro","<p>Após Heller, o POEM pode ser feito por um túnel na parede posterior, longe da fibrose da miotomia anterior. Útil quando a falha é miotomia incompleta.</p>"],
+ ["Re-miotomia","Completar o que ficou curto","<p>Revisão laparoscópica: completar a miotomia na vertente gástrica, desfazer válvula apertada ou mal posicionada.</p>"]
+];
+group($("#segAv"),AV.map(function(a){return a[0]}),function(i){verd($("#vAv"),"v-1",AV[i][0],AV[i][1],AV[i][2])},0);
+verd($("#vAv"),"v-1",AV[0][0],AV[0][1],AV[0][2]);
+
+/* ============ 08 forja ============ */
+var base="Homem de 48 anos, natural do interior da Bahia, com disfagia progressiva há seis anos, primeiro para sólidos e depois para líquidos, e sorologia positiva para doença de Chagas. Endoscopia sem lesões. ";
+buildQuiz([
+ {s:base+"Esofagograma: esôfago com 6 cm de diâmetro, retenção de contraste, ondas terciárias e afilamento distal regular. Risco cirúrgico habitual. A melhor conduta é:",
+  a:["Esofagectomia trans-hiatal","Nifedipina sublingual contínua","Cardiomiotomia à Heller laparoscópica com fundoplicatura parcial","Fundoplicatura total à Nissen","Injeção de toxina botulínica no esfíncter"],c:2,
+  e:"<p>Seis centímetros e ondas terciárias: grau II (Rezende e Mascarenhas). Forma não avançada em paciente operável → <b>Heller + fundoplicatura parcial</b>. Esofagectomia (A) é do grau IV; nifedipina (B) e toxina (E) são para quem não pode ser operado; Nissen isolada (D) não trata a cárdia e, sem peristalse, piora a disfagia.</p>"},
+ {s:base+"Esofagograma: <mark>esôfago com 12 cm, alongado, tortuoso, dobrando sobre a cúpula diafragmática</mark>, com grande resíduo. Risco cirúrgico habitual. A melhor conduta é:",
+  a:["Dilatação pneumática seriada","Cardiomiotomia à Heller isolada","POEM","Toxina botulínica","Esofagectomia, com reconstrução por tubo gástrico"],c:4,
+  e:"<p>Dolicomegaesôfago = grau IV. O órgão atônico e tortuoso não esvazia mesmo com a cárdia aberta: a resposta clássica é <b>esofagectomia</b> (trans-hiatal). Dilatação (A), Heller (B) e POEM (C) tratam a cárdia, que já não é o problema principal; toxina (D) é para risco proibitivo.</p>"},
+ {s:base+"Esofagograma com 8 cm de diâmetro e resíduo. O paciente tem <mark>82 anos e cardiopatia chagásica com fração de ejeção de 20%</mark>. A melhor conduta é:",
+  a:["Esofagectomia trans-hiatal","Dilatação endoscópica com balão ou toxina botulínica","Cardiomiotomia por toracotomia esquerda","Serra-Dória","Fundoplicatura à Toupet isolada"],c:1,
+  e:"<p>O grau pediria cirurgia, mas o paciente não suporta: risco proibitivo pela cardiopatia → <b>tratamento endoscópico</b> (dilatação se a sedação for segura; toxina botulínica nos mais frágeis). A, C e D são operações de grande porte; E não trata a cárdia.</p>"},
+ {s:"No mesmo paciente do caso-mãe, o exame considerado <mark>padrão-ouro para confirmar o distúrbio motor</mark> é:",
+  a:["Esofagograma baritado","Endoscopia digestiva alta","Tomografia de tórax","Manometria esofágica","Cintilografia de esvaziamento esofágico"],c:3,
+  e:"<p><b>Manometria</b> (de alta resolução): IRP elevada e aperistalse. O esofagograma (A) gradua; a endoscopia (B) exclui câncer e é feita antes; TC (C) entra na suspeita de pseudoacalasia; cintilografia (E) quantifica esvaziamento, sem papel diagnóstico de rotina.</p>"},
+ {s:"Mulher de <mark>68 anos, disfagia há 4 meses e perda de 12 kg</mark>, sorologia para Chagas negativa. Esofagograma com afilamento distal em bico de pássaro. O próximo passo é:",
+  a:["Endoscopia com biópsias da cárdia e, se necessário, ecoendoscopia","Dilatação pneumática","Cardiomiotomia à Heller laparoscópica","POEM","Nitrato sublingual e reavaliação em 3 meses"],c:0,
+  e:"<p>Idade avançada, história curta e emagrecimento importante: <b>pseudoacalasia</b> até prova em contrário. Investigar tumor da junção esofagogástrica antes de qualquer tratamento da cárdia. B, C, D e E tratariam como acalasia primária — e atrasariam o diagnóstico de câncer.</p>"},
+ {s:"Durante a cardiomiotomia do caso-mãe, o residente propõe uma <mark>fundoplicatura total de 360°</mark> para proteger contra refluxo. O argumento correto para recusar é:",
+  a:["A fundoplicatura aumenta o risco de perfuração da mucosa","Sem peristalse, a válvula total cria obstrução e devolve a disfagia","O refluxo não ocorre após miotomia","A fundoplicatura total exige toracotomia","A válvula total lesa o vago anterior"],c:1,
+  e:"<p>O esôfago acalásico não tem força para vencer uma válvula de 360°. A <b>válvula parcial</b> (Dor, Toupet ou Pinotti) controla o refluxo, que de fato aumenta após a miotomia (C está errada), sem obstruir. A, D e E não são o motivo.</p>"},
+ {s:"Paciente com megaesôfago tratado há 20 anos volta com <mark>mudança no padrão da disfagia e perda de peso</mark>. A principal hipótese a investigar é:",
+  a:["Carcinoma epidermoide do esôfago","Adenocarcinoma em esôfago de Barrett","Estenose péptica por refluxo","Recidiva da acalasia","Divertículo epifrênico"],c:0,
+  e:"<p>A estase crônica torna o megaesôfago lesão pré-maligna para <b>carcinoma epidermoide</b>, e o risco persiste após o tratamento. Barrett (B) e estenose péptica (C) podem ocorrer após miotomia com refluxo, recidiva (D) é possível, mas emagrecimento com disfagia nova em megaesôfago antigo manda excluir câncer primeiro.</p>"},
+ {s:"<mark>Seis meses após Heller</mark>, o paciente do caso-mãe volta a ter disfagia. O esofagograma mostra cárdia afilada; a EDA não mostra lesão. A causa técnica mais provável é:",
+  a:["Lesão do vago anterior","Fundoplicatura parcial anterior","Excesso de miotomia esofágica","Dissecção excessiva dos pilares","Miotomia insuficiente na vertente gástrica"],c:4,
+  e:"<p>O componente mais forte do esfíncter fica abaixo da junção; miotomia que não avança <b>2–3 cm no estômago</b> é a causa técnica mais frequente de falha. Conduta: dilatação, POEM ou re-miotomia. As demais alternativas não explicam a cárdia afilada.</p>"}
+]);
+})();
+
+</script>
+</body>
+</html>

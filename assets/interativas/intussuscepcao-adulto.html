@@ -1,0 +1,711 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Atlas da Intussuscepção do Adulto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#FAF5EC; --panel:#FFFDF7; --panel2:#F2EADC; --ink:#2B2118; --ink2:#6B5B4C;
+  --line:#D9CBB6; --acc:#33628F; --acc-soft:#E3ECF4;
+  --b:#1E7F74; --b-soft:#E0F0ED; --d:#B3372E; --d-soft:#F6E3E0;
+  --w:#A06F17; --w-soft:#F5EAD2; --m:#6D5A9E; --m-soft:#EAE5F4;
+  --mark:#FFF3C2;
+  --shadow:0 1px 2px rgba(43,33,24,.06),0 6px 18px rgba(43,33,24,.07);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#161210; --panel:#201A15; --panel2:#292118; --ink:#EDE3D3; --ink2:#B3A28D;
+    --line:#453A2E; --acc:#7FA8CE; --acc-soft:#25313D;
+    --b:#5BB8AC; --b-soft:#1D3330; --d:#E08074; --d-soft:#3D2320;
+    --w:#D9A94F; --w-soft:#3A2F1A; --m:#B2A0DC; --m-soft:#2E2740;
+    --mark:#4A3E1C; --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 18px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#161210; --panel:#201A15; --panel2:#292118; --ink:#EDE3D3; --ink2:#B3A28D;
+  --line:#453A2E; --acc:#7FA8CE; --acc-soft:#25313D;
+  --b:#5BB8AC; --b-soft:#1D3330; --d:#E08074; --d-soft:#3D2320;
+  --w:#D9A94F; --w-soft:#3A2F1A; --m:#B2A0DC; --m-soft:#2E2740;
+  --mark:#4A3E1C; --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 18px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.62 "IBM Plex Sans",system-ui,sans-serif;padding-inline:16px}
+.wrap{max-width:1180px;margin:0 auto;padding-block:0 80px}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;text-wrap:balance;line-height:1.15}
+h1{font-size:clamp(30px,5vw,52px);font-weight:700;margin:.2em 0 .25em}
+h2{font-size:clamp(22px,3vw,30px);font-weight:600;margin:0 0 .35em}
+h3{font-size:19px;font-weight:600;margin:1.4em 0 .4em}
+p{max-width:70ch;margin:.75em 0}
+.mono,.num{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);font-weight:600}
+header.hero{padding:56px 0 26px;border-bottom:1px solid var(--line)}
+.hero p.lede{font-size:18px;color:var(--ink2);max-width:62ch}
+nav.rail{position:sticky;top:0;z-index:60;background:var(--bg);border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto;padding:8px 0;margin:0 -16px;padding-inline:16px}
+nav.rail a{flex:0 0 auto;font-size:13px;font-weight:500;color:var(--ink2);text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid transparent;white-space:nowrap}
+nav.rail a:hover{color:var(--ink);border-color:var(--line)}
+nav.rail a .n{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--acc);margin-right:5px}
+section.cap{padding:44px 0 12px;border-bottom:1px solid var(--line);scroll-margin-top:64px}
+.capnum{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--acc);letter-spacing:.1em}
+.plate{display:grid;grid-template-columns:1.25fr .9fr;gap:20px;align-items:start;margin:20px 0}
+@media (max-width:860px){.plate{grid-template-columns:1fr}}
+.fig{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:var(--shadow)}
+.fig .figtitle{font-size:13px;font-weight:600;color:var(--ink2);margin:0 0 8px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.ctrl{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
+.ctrl h4{margin:0 0 10px;font-size:14px;font-weight:600}
+.seg{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 12px}
+.seg button{font:500 13px/1.2 "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:7px 11px;cursor:pointer}
+.seg button:hover{border-color:var(--acc)}
+.seg button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+:root[data-theme="dark"] .seg button.on{color:#10151B}
+.seg button:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.readout{display:grid;grid-template-columns:1fr auto;gap:3px 12px;font-size:13.5px;margin:10px 0;border-top:1px dashed var(--line);padding-top:10px}
+.readout .k{color:var(--ink2)} .readout .v{font-family:"IBM Plex Mono",monospace;text-align:right}
+.verdict{border-radius:11px;padding:11px 13px;font-size:14px;font-weight:500;margin-top:10px;border:1px solid var(--line)}
+.verdict.b{background:var(--b-soft);color:var(--b);border-color:color-mix(in srgb,var(--b) 40%,transparent)}
+.verdict.d{background:var(--d-soft);color:var(--d);border-color:color-mix(in srgb,var(--d) 40%,transparent)}
+.verdict.w{background:var(--w-soft);color:var(--w);border-color:color-mix(in srgb,var(--w) 40%,transparent)}
+.verdict.m{background:var(--m-soft);color:var(--m);border-color:color-mix(in srgb,var(--m) 40%,transparent)}
+.tag{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.03em;border-radius:999px;padding:2px 9px;vertical-align:middle}
+.tag.b{background:var(--b-soft);color:var(--b)} .tag.d{background:var(--d-soft);color:var(--d)}
+.tag.w{background:var(--w-soft);color:var(--w)} .tag.m{background:var(--m-soft);color:var(--m)}
+input[type=range]{width:100%;accent-color:var(--acc)}
+.howto{background:var(--acc-soft);border:1px solid color-mix(in srgb,var(--acc) 35%,transparent);border-radius:12px;padding:12px 15px;font-size:14px;max-width:74ch;margin:14px 0}
+.howto b{color:var(--acc)}
+.keep{background:var(--panel2);border-left:4px solid var(--b);border-radius:0 12px 12px 0;padding:12px 16px;max-width:74ch;margin:16px 0;font-size:15px}
+.keep .t{font-weight:700;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--b)}
+.banca{background:var(--w-soft);border-left:4px solid var(--w);border-radius:0 12px 12px 0;padding:12px 16px;max-width:74ch;margin:16px 0;font-size:15px}
+.banca .t{font-weight:700;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--w)}
+.diverg{background:var(--m-soft);border-left:4px solid var(--m);border-radius:0 12px 12px 0;padding:12px 16px;max-width:74ch;margin:16px 0;font-size:15px}
+.diverg .t{font-weight:700;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--m)}
+.proib{background:var(--d-soft);border:1px solid color-mix(in srgb,var(--d) 45%,transparent);border-radius:12px;padding:12px 15px;margin-top:12px;font-size:14px}
+.proib .t{font-weight:700;color:var(--d);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase}
+.vocab{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:18px 0}
+.vcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px}
+.vcard .term{font-weight:700;font-family:"Fraunces",serif;font-size:16px}
+.vcard .lit{color:var(--ink2);font-style:italic;font-size:12.5px}
+mark{background:var(--mark);color:inherit;padding:0 3px;border-radius:3px}
+.steps{counter-reset:st;margin:10px 0;padding:0;list-style:none}
+.steps li{counter-increment:st;position:relative;padding:6px 0 6px 36px;font-size:14.5px}
+.steps li::before{content:counter(st);position:absolute;left:0;top:6px;width:24px;height:24px;border-radius:50%;background:var(--acc);color:#fff;font:600 13px/24px "IBM Plex Mono",monospace;text-align:center}
+:root[data-theme="dark"] .steps li::before{color:#10151B}
+.qcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:18px 0;box-shadow:var(--shadow)}
+.qcard .qhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.qcard .qn{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--acc);font-weight:600}
+.qcard .enun{max-width:78ch;font-size:15px}
+.alts{display:grid;gap:7px;margin:12px 0}
+.alts button{display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:start;text-align:left;font:400 14.5px/1.5 "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:9px 12px;cursor:pointer}
+.alts button .L{font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--ink2)}
+.alts button:hover{border-color:var(--acc)}
+.alts button.ok{background:var(--b-soft);border-color:var(--b);color:var(--b)}
+.alts button.ok .L{color:var(--b)}
+.alts button.no{background:var(--d-soft);border-color:var(--d);color:var(--d)}
+.alts button.no .L{color:var(--d)}
+.alts button:disabled{cursor:default}
+.expl{display:none;border-top:1px dashed var(--line);margin-top:10px;padding-top:10px;font-size:14.5px;max-width:78ch}
+.expl.show{display:block}
+.gridmae{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:14px;margin:20px 0}
+.mcard{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--acc);border-radius:12px;padding:13px 15px;font-size:14px;box-shadow:var(--shadow)}
+.mcard.b{border-top-color:var(--b)} .mcard.d{border-top-color:var(--d)}
+.mcard.w{border-top-color:var(--w)} .mcard.m{border-top-color:var(--m)}
+.mcard .gat{font-weight:600;font-size:13px;color:var(--ink2)}
+.mcard .act{font-weight:600;margin-top:6px}
+.legend{columns:2;gap:22px;font-size:13px;margin-top:10px}
+.legend div{break-inside:avoid;padding:2px 0}
+.legend .lnum{display:inline-block;width:20px;height:20px;border-radius:50%;background:#fff;border:1.4px solid #3A2A20;color:#3A2A20;font:600 11px/18px "IBM Plex Mono",monospace;text-align:center;margin-right:7px}
+figure{margin:0} figcaption{font-size:13px;color:var(--ink2);margin-top:8px;max-width:70ch}
+.score{font-family:"IBM Plex Mono",monospace;font-size:14px;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:8px 14px;display:inline-block;margin:8px 0}
+.btn{font:600 14px/1.2 "IBM Plex Sans",sans-serif;background:var(--acc);color:#fff;border:none;border-radius:10px;padding:10px 16px;cursor:pointer}
+:root[data-theme="dark"] .btn{color:#10151B}
+.btn.ghost{background:var(--panel2);color:var(--ink);border:1px solid var(--line)}
+.btn.danger{background:var(--d);color:#fff}
+.refs{font-size:13.5px;color:var(--ink2);max-width:80ch}
+.refs a{color:var(--acc)}
+canvas{max-width:100%;height:auto;display:block;border-radius:8px}
+svg{max-width:100%;height:auto;display:block}
+.contrato{font-size:12px;color:var(--ink2);border-top:1px dashed var(--line);margin-top:10px;padding-top:8px}
+@media (prefers-reduced-motion: reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Atlas visual · Cirurgia do aparelho digestivo</div>
+  <h1>Atlas da Intussuscepção do Adulto</h1>
+  <p class="lede">Um homem de 26 anos entra no seu plantão com uma dor que vai e volta há dez dias — e a tomografia mostra um alvo dentro do abdome. Esta página existe para você decidir, diante desse alvo, quem opera, quem observa e quem jamais recebe um enema.</p>
+  <p class="lede" style="font-size:15px">Construído sobre Sabiston 21ª ed., Heersche (World J Surg 2025), Hong (Tech Coloproctol 2019), Chand (Langenbecks Arch Surg 2024) e Azar &amp; Berger (Ann Surg 1997). Referências completas no rodapé.</p>
+</header>
+
+<nav class="rail" aria-label="Capítulos">
+  <a href="#c0"><span class="n">00</span>Vocabulário</a>
+  <a href="#c1"><span class="n">01</span>A TC do plantão</a>
+  <a href="#c2"><span class="n">02</span>Por que o alvo existe</a>
+  <a href="#c3"><span class="n">03</span>O telescópio e os culpados</a>
+  <a href="#c4"><span class="n">04</span>Máquina de decisão</a>
+  <a href="#c5"><span class="n">05</span>Na mesa</a>
+  <a href="#c6"><span class="n">06</span>Forja</a>
+  <a href="#c7"><span class="n">07</span>Tabela-mãe</a>
+</nav>
+
+<!-- ============ 00 VOCABULÁRIO ============ -->
+<section class="cap" id="c0">
+  <div class="capnum">CAPÍTULO 00</div>
+  <h2>O vocabulário antes do bisturi</h2>
+  <p>Antes de qualquer decisão, os nomes. Intussuscepção é um tema em que metade dos erros de prova nasce de confundir <em>quem entra</em> com <em>quem recebe</em> — e a outra metade nasce de aplicar ao adulto um raciocínio que só vale para o lactente. Guarde estes termos; todos os instrumentos abaixo os usam.</p>
+  <div class="vocab">
+    <div class="vcard"><div class="term">Intussuscepção (invaginação)</div><div class="lit">intus = dentro; suscipere = receber</div>Um segmento de intestino desliza para dentro da luz do segmento imediatamente distal, arrastando o próprio mesentério, como um telescópio que se fecha.</div>
+    <div class="vcard"><div class="term">Intussuscepto</div><div class="lit">o que entra</div>O segmento proximal que penetra na luz do vizinho. É ele que sofre primeiro: seu mesentério é comprimido no pescoço da invaginação.</div>
+    <div class="vcard"><div class="term">Intussuscipiente</div><div class="lit">o que recebe</div>O segmento distal que envolve o intussuscepto. Na TC, é a camada mais externa do alvo.</div>
+    <div class="vcard"><div class="term">Cabeça de invaginação (lead point)</div><div class="lit">ponto de partida</div>A lesão que a peristalse agarra e empurra — pólipo, lipoma, tumor, divertículo de Meckel. No adulto, existe em <span class="num">~60–90%</span> das intussuscepções sintomáticas; no lactente, quase nunca.</div>
+    <div class="vcard"><div class="term">Sinal do alvo (target/doughnut)</div><div class="lit">corte axial</div>Anéis concêntricos na TC: parede do intussuscipiente por fora, crescente de gordura mesentérica no meio, intussuscepto e sua luz no centro.</div>
+    <div class="vcard"><div class="term">Sinal da salsicha (sausage)</div><div class="lit">corte longitudinal</div>A mesma estrutura vista ao longo do eixo: massa alongada em camadas, "intestino dentro de intestino".</div>
+    <div class="vcard"><div class="term">Entérica · ileocólica · colocólica</div><div class="lit">classificação topográfica</div>Entérica: delgado em delgado. Ileocólica: íleo atravessa a válvula e entra no cólon. Colocólica: cólon em cólon. A topografia é o maior preditor de malignidade — e portanto de conduta.</div>
+    <div class="vcard"><div class="term">Intussuscepção transitória</div><div class="lit">achado da era da TC</div>Invaginação entérica curta, fina, sem cabeça, sem obstrução, que se desfaz sozinha. Achado cada vez mais comum em TC feita por outro motivo — e a grande pegadinha moderna do tema.</div>
+  </div>
+  <div class="keep"><span class="t">Guarde isto</span><br>No adulto, intussuscepção é doença <b>orgânica até prova em contrário</b>: a pergunta nunca é só "como reduzo?", é "<b>o que</b> está servindo de cabeça — e ela é maligna?". No lactente é o oposto: idiopática (hiperplasia linfoide) em &gt;90%, e o tratamento é a redução.</div>
+</section>
+
+<!-- ============ 01 TC ============ -->
+<section class="cap" id="c1">
+  <div class="capnum">CAPÍTULO 01</div>
+  <h2>A TC que chegou ao plantão</h2>
+  <p>Petrônio, 26 anos, auxiliar de carga em Várzea Grande. Há dez dias tem crises de dor em cólica periumbilical que duram minutos e passam, com náusea. Já veio duas vezes ao PS; nas duas, o exame físico entre as crises era quase normal e ele foi embora com sintomático. Hoje a dor voltou com distensão e parada de eliminação de gases. Você pede a tomografia com contraste — o exame de escolha, que diagnostica a intussuscepção do adulto com sensibilidade próxima de <span class="num">78–100%</span> e foi o método diagnóstico em <span class="num">88,5%</span> dos casos da literatura recente.</p>
+  <div class="howto"><b>Como usar:</b> escolha a entidade no painel à direita e arraste o slider de fase do contraste. Observe o alvo no quadrante inferior direito, o valor de UH da cabeça da invaginação e os três números que decidem conduta: <b>diâmetro</b>, <b>extensão</b> e <b>presença de cabeça</b>. Exercício: antes de ler o veredito, diga em voz alta se você operaria cada um dos quatro cenários.</p></div>
+  <div class="plate">
+    <div class="fig">
+      <div class="figtitle"><span>TC de abdome · corte axial · janela de partes moles (L40 / W400)</span><span class="mono" id="ctphaselabel">portal 60 s</span></div>
+      <canvas id="ct" width="640" height="560" aria-label="Tomografia simulada com sinal do alvo"></canvas>
+      <div class="contrato">D = direita do paciente à esquerda da imagem · A = anterior no topo · barra = 10 cm. Simulação didática: proporções e densidades aproximadas de atlas radiológico.</div>
+    </div>
+    <div class="ctrl">
+      <h4>Entidade no alvo</h4>
+      <div class="seg" id="ctlesions" role="group" aria-label="Seleção de lesão"></div>
+      <h4>Fase do contraste</h4>
+      <input type="range" id="ctphase" min="0" max="1" step="1" value="1" aria-label="Fase do contraste">
+      <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--ink2)"><span>sem contraste</span><span>portal 60 s</span></div>
+      <div class="readout" id="ctread"></div>
+      <div class="verdict" id="ctverdict"></div>
+    </div>
+  </div>
+  <h3>O que a clínica do adulto tem de traiçoeiro</h3>
+  <p>A tríade clássica pediátrica — dor em cólica, massa palpável em salsicha e fezes em geleia de framboesa — é <b>rara no adulto</b>. O que domina é dor abdominal (<span class="num">~86%</span> dos casos), quase sempre <b>intermitente e arrastada</b> por dias a semanas, porque a invaginação se faz e se desfaz. Náusea, vômitos e episódios suboclusivos de repetição completam o quadro; sangramento digestivo e massa palpável são minoria. Por isso o diagnóstico do adulto quase nunca é clínico: em <span class="num">98%</span> das séries modernas quem dá o nome é a TC — e muitas vezes ela foi pedida como "abdome agudo a esclarecer".</p>
+  <div class="banca"><span class="t">Como a banca cobra · chance alta</span><br>O enunciado descreve adulto jovem com <b>dor em cólica intermitente de dias/semanas + episódios suboclusivos</b> e entrega a TC com "imagem em alvo" ou "intestino dentro de intestino". A pergunta é a conduta. O distrator plantado é sempre o mesmo: <b>redução por enema</b> (conduta do lactente) ou "observação" quando há cabeça de invaginação evidente.</div>
+</section>
+
+<!-- ============ 02 MECANISMO ============ -->
+<section class="cap" id="c2">
+  <div class="capnum">CAPÍTULO 02</div>
+  <h2>Por que o alvo existe — e por que ele estrangula</h2>
+  <p>Dois fatos independentes constroem toda a fisiopatologia. <b>Fato um:</b> a peristalse trata qualquer massa intraluminal como se fosse bolo alimentar — ela agarra a lesão e a empurra para frente. Como a lesão está presa à parede, quem vai junto é a parede inteira. <b>Fato dois:</b> a parede não viaja sozinha — ela arrasta o <b>mesentério</b>, com artéria, veia e linfáticos, para dentro do pescoço da invaginação. A veia, de parede fina, é comprimida primeiro: congestão → edema → mais volume dentro do pescoço → mais compressão. Quando a pressão iguala a arterial, a isquemia deixa de ser venosa e passa a ser transmural.</p>
+  <div class="howto"><b>Como usar:</b> avance os estágios e veja o telescópio se formar no corte longitudinal. Acompanhe os números do painel — repare que a <b>drenagem venosa falha antes</b> de o fluxo arterial cair. Exercício: em que estágio a "geleia de framboesa" faz sentido fisiopatológico?</div>
+  <div class="plate">
+    <div class="fig">
+      <div class="figtitle"><span>Corte longitudinal esquemático · delgado</span><span class="mono" id="mechlabel">estágio 1/4</span></div>
+      <svg id="mechsvg" viewBox="0 0 640 360" role="img" aria-label="Animação esquemática da invaginação intestinal em quatro estágios"></svg>
+      <div class="contrato">Esquema físico (não inverte no tema escuro). Luz intestinal em bege, parede em rosa, mesentério em amarelo, veia em azul, artéria em vermelho.</div>
+    </div>
+    <div class="ctrl">
+      <h4>Estágio</h4>
+      <div class="seg" id="mechstages"></div>
+      <div class="readout" id="mechread"></div>
+      <div class="verdict" id="mechverdict"></div>
+    </div>
+  </div>
+  <h3>A cadeia causal que a prova adora</h3>
+  <p>Siga a corrente: cabeça de invaginação → peristalse traciona → mesentério entra junto → <b>compressão venosa</b> → congestão e edema da parede → sangue e muco na luz (a tal geleia, quando existe) → edema aumenta o conteúdo do pescoço → <b>compressão arterial</b> → isquemia → necrose → perfuração. Cada elo é uma pergunta possível de prova; o conjunto explica por que a dor é em cólica (luta peristáltica contra obstrução) e por que ela é intermitente (a invaginação se desfaz e se refaz enquanto não há cabeça fixa... ou enquanto a cabeça ainda desliza de volta).</p>
+  <div class="keep"><span class="t">Guarde isto</span><br>O sofrimento vascular da intussuscepção é <b>venoso antes de ser arterial</b> — a mesma lógica do volvo e da hérnia estrangulada. É por isso que parede espessada e edemaciada na TC ("alvo borrado", líquido entre as camadas, pneumatose) significa que o relógio da necrose já está correndo.</div>
+</section>
+
+<!-- ============ 03 TELESCÓPIO E CULPADOS ============ -->
+<section class="cap" id="c3">
+  <div class="capnum">CAPÍTULO 03</div>
+  <h2>O telescópio por dentro — e quem é o culpado no adulto jovem</h2>
+  <p>Agora abra o telescópio. A figura mostra o corte longitudinal com as quatro peças que você precisa nomear na prova e na mesa. Clique em cada uma: o painel diz o que ela é, como aparece na TC e qual é a consequência cirúrgica de esquecê-la.</p>
+  <div class="howto"><b>Como usar:</b> clique nas estruturas numeradas da figura (ou nos botões). Depois, troque para a aba de <b>topografia</b> e compare as barras de malignidade — elas vêm das duas maiores revisões sistemáticas do tema e são o coração da conduta. Exercício: sem olhar, diga qual topografia tem quase <b>metade a dois terços</b> de chance de câncer.</div>
+  <div class="plate">
+    <div class="fig">
+      <div class="figtitle"><span>Anatomia da invaginação · corte longitudinal</span><span class="mono">clique nas estruturas</span></div>
+      <svg id="anasvg" viewBox="0 0 640 340" role="img" aria-label="Corte longitudinal da intussuscepção com estruturas clicáveis"></svg>
+      <div class="contrato">Esquema físico. Proximal à esquerda, distal à direita. Sentido peristáltico da esquerda para a direita.</div>
+    </div>
+    <div class="ctrl">
+      <div class="seg" id="anabtns"></div>
+      <div id="anapanel" style="font-size:14.5px"></div>
+    </div>
+  </div>
+
+  <h3>Topografia é destino: a régua da malignidade</h3>
+  <div class="plate">
+    <div class="fig">
+      <div class="figtitle"><span>Probabilidade de malignidade por topografia</span><span class="mono">Hong 2019 · Heersche 2025</span></div>
+      <svg id="topsvg" viewBox="0 0 640 300" role="img" aria-label="Barras de malignidade por topografia da intussuscepção"></svg>
+    </div>
+    <div class="ctrl">
+      <div class="seg" id="topbtns"></div>
+      <div id="toppanel" style="font-size:14.5px"></div>
+    </div>
+  </div>
+  <p>Leia a régua com olhos de cirurgião: na <b>colocólica</b>, o adenocarcinoma primário domina — quase metade dos casos na meta-análise de Hong (<span class="num">46,5%</span>) e mais de dois terços (<span class="num">68%</span>) na revisão de 2025. Na <b>entérica</b>, o jogo inverte: a maioria é benigna ou transitória, e quando há câncer o protagonista costuma ser <b>metástase</b> (melanoma é o clássico) ou linfoma, não adenocarcinoma primário. A <b>ileocólica</b> fica no meio (<span class="num">37–46%</span>) — e por isso herda a conduta oncológica.</p>
+
+  <h3>Os culpados do adulto jovem</h3>
+  <p>No adulto jovem especificamente, pense em quatro famílias de cabeça de invaginação, por frequência de prova: <b>divertículo de Meckel</b> (o resto do ducto onfalomesentérico invertido funciona como pólipo perfeito), <b>pólipos hamartomatosos de Peutz-Jeghers</b> (o enunciado entrega as manchas melanóticas periorais), <b>lipoma ileal</b> (a cabeça com densidade de gordura negativa na TC, patognomônica) e <b>linfoma</b> (ileocecal, o linfonodo é a pista). Somam-se as invaginações <b>transitórias</b> da doença celíaca e do Crohn — dismotilidade e parede espessada, sem cabeça — e uma curiosidade moderna cobrada em prova de subespecialidade: a intussuscepção <b>retrógrada da alça biliopancreática após bypass gástrico em Y-de-Roux</b>.</p>
+  <div class="keep"><span class="t">Guarde isto</span><br>Cabeça com <b>UH negativa</b> = lipoma. Adulto jovem + manchas melanóticas labiais + obstrução = <b>Peutz-Jeghers</b>. Entérica + histórico de melanoma = <b>metástase</b>. Alvo curto, fino, sem cabeça, achado por acaso = <b>transitória</b> — investigue a causa clínica (celíaca, Crohn), não a alça.</div>
+</section>
+
+<!-- ============ 04 MÁQUINA DE DECISÃO ============ -->
+<section class="cap" id="c4">
+  <div class="capnum">CAPÍTULO 04</div>
+  <h2>A máquina de decisão — três perguntas e nenhum enema</h2>
+  <p>Toda a conduta do adulto cabe em três perguntas feitas em ordem. A primeira é topográfica (onde está o alvo?), a segunda é etiológica (existe cabeça — e ela cheira a câncer?), a terceira é temporal (o intestino está obstruído ou sofrendo <em>agora</em>?). As três juntas produzem uma de quatro condutas. Nenhuma delas é enema.</p>
+  <div class="howto"><b>Como usar:</b> monte o cenário nos três seletores ou dispare um dos presets de prova. Leia a conduta em passos e o bloco <b>proibido</b>. Depois aperte o botão vermelho do caminho errado e veja, nos números, o que acontece quando alguém trata o adulto como lactente. Exercício: monte o cenário do Petrônio (cap. 01) e confira sua resposta.</div>
+  <div class="plate">
+    <div class="ctrl">
+      <h4>1 · Onde está o alvo?</h4>
+      <div class="seg" id="dm1"></div>
+      <h4>2 · Cabeça de invaginação?</h4>
+      <div class="seg" id="dm2"></div>
+      <h4>3 · Estado do intestino agora</h4>
+      <div class="seg" id="dm3"></div>
+      <h4>Presets de prova</h4>
+      <div class="seg" id="dmpresets"></div>
+    </div>
+    <div class="ctrl">
+      <div class="verdict" id="dmverdict"></div>
+      <ol class="steps" id="dmsteps"></ol>
+      <div class="proib" id="dmproib"></div>
+      <button class="btn danger" id="wrongbtn" style="margin-top:12px">⚠ Insistir na redução por enema (caminho errado)</button>
+      <div id="wrongout" style="font-size:14px;margin-top:10px"></div>
+    </div>
+  </div>
+  <div class="diverg"><span class="t">Divergência de banca</span><br>O ensino clássico (Azar &amp; Berger, Ann Surg 1997; ecoado no Sabiston) manda <b>ressecar praticamente toda intussuscepção do adulto</b>, sem redução. A literatura da era da TC (Hong 2019; Heersche 2025) abriu duas exceções: a <b>transitória sem cabeça</b>, que se observa, e a <b>entérica benigna extensa</b>, em que se admite redução delicada antes de ressecar para poupar intestino. Como reconhecer o que a banca quer: enunciado com achado <b>incidental, curto, sem cabeça</b> → conservador; enunciado com <b>cabeça, sintomas ou cólon envolvido</b> → cirurgia, e no cólon <b>sem reduzir</b>. Se a questão for antiga ou genérica ("intussuscepção no adulto — conduta"), a resposta segura segue sendo <b>cirúrgica</b>.</div>
+</section>
+
+<!-- ============ 05 NA MESA ============ -->
+<section class="cap" id="c5">
+  <div class="capnum">CAPÍTULO 05</div>
+  <h2>Na mesa — a ileocólica que você vai ressecar</h2>
+  <p>A TC do Petrônio mostrou, na verdade, uma ileocólica: o íleo terminal atravessou a válvula e a cabeça se palpa dentro do ascendente. Você indicou laparotomia. A prancha mostra o campo como você o verá — e o que fazer e não fazer com as mãos.</p>
+  <div class="plate">
+    <div class="fig">
+      <div class="figtitle"><span>Prancha operatória · intussuscepção ileocólica</span><span class="mono">vista do cirurgião</span></div>
+      <svg id="mesasvg" viewBox="0 0 680 520" role="img" aria-label="Prancha operatória da intussuscepção ileocólica com linhas de ressecção"></svg>
+      <div class="legend" id="mesalegend"></div>
+      <div class="contrato" id="mesacontrato"></div>
+    </div>
+    <div class="ctrl">
+      <h4>O que as mãos fazem</h4>
+      <div style="font-size:14.5px">
+        <p style="margin-top:0">Você entra pela mediana, encontra a "salsicha" no flanco direito e a primeira tentação é <b>ordenhar</b> o íleo de volta, como se faz na criança. Pare. Neste paciente há cabeça palpável e topografia ileocólica: a chance de tumor gira em torno de <span class="num">40%</span>, e espremer a peça pode semear células na luz e na veia, além de rasgar uma parede isquêmica.</p>
+        <ol class="steps">
+          <li>Inventário completo + proteção do campo; avalie vitalidade sem desfazer a invaginação.</li>
+          <li>Ligadura vascular na origem (a. ileocólica) — princípio oncológico, linfadenectomia junto.</li>
+          <li><b>Ressecção em bloco</b> da peça invaginada: ileocolectomia/hemicolectomia direita conforme a extensão.</li>
+          <li>Anastomose ileocólica primária se paciente estável e tecidos viáveis; estoma se instabilidade ou peritonite.</li>
+        </ol>
+        <div class="proib"><span class="t">Proibido</span><br>Ordenhar/reduzir quando há suspeita de malignidade ou sinais de isquemia; abrir a peça na cavidade; enema baritado ou pneumático "para tentar antes".</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 FORJA ============ -->
+<section class="cap" id="c6">
+  <div class="capnum">CAPÍTULO 06</div>
+  <h2>Forja — a mesma prova, oito vidas</h2>
+  <p>Oito questões. A primeira é a questão-mãe do Petrônio; nas seguintes, <mark>o dado marcado</mark> é o pivô que mudou — e com ele, o gabarito. Responda antes de abrir a explicação: ela diz por que a conduta virou e de qual linha da tabela-mãe cada distrator foi roubado.</p>
+  <div class="score" id="fscore">0/0 acertos</div>
+  <button class="btn ghost" id="freset" style="margin-left:8px">Recomeçar</button>
+  <div id="forja"></div>
+</section>
+
+<!-- ============ 07 TABELA-MÃE ============ -->
+<section class="cap" id="c7">
+  <div class="capnum">CAPÍTULO 07</div>
+  <h2>Tabela-mãe — cada gatilho, uma conduta</h2>
+  <p>É daqui que a banca rouba os distratores: cada cartão é a conduta correta de <em>alguma</em> linha. Errar intussuscepção em prova quase sempre é aplicar o cartão certo ao paciente errado.</p>
+  <div class="gridmae">
+    <div class="mcard b"><div class="gat">Entérica curta (&lt; 3,5 cm), fina, SEM cabeça, achado incidental / assintomática</div><div class="act">Transitória: nenhuma cirurgia. Tratar/investigar a causa (celíaca, Crohn, pós-operatório). TC de controle se sintomas.</div></div>
+    <div class="mcard w"><div class="gat">Entérica com cabeça BENIGNA definida (lipoma, Meckel, pólipo) ou sintomática</div><div class="act">Cirurgia eletiva/urgência conforme quadro: enterectomia segmentar econômica. Redução delicada antes de ressecar só para poupar alça, se não houver isquemia nem suspeita de câncer.</div></div>
+    <div class="mcard m"><div class="gat">Peutz-Jeghers com invaginações de repetição por pólipos</div><div class="act">Conservação intestinal: redução + enterotomia e polipectomia (± enteroscopia intraoperatória) em vez de ressecções extensas repetidas.</div></div>
+    <div class="mcard d"><div class="gat">Ileocólica ou colocólica no adulto (malignidade 37–68%)</div><div class="act">Ressecção EM BLOCO com princípios oncológicos, SEM redução prévia (risco de disseminação). Ileocolectomia / colectomia segmentar com linfadenectomia.</div></div>
+    <div class="mcard d"><div class="gat">Obstrução completa, isquemia, peritonite — qualquer topografia</div><div class="act">Cirurgia de urgência. Ressecar sem reduzir se sofrimento de alça; anastomose primária × estoma conforme estabilidade.</div></div>
+    <div class="mcard b"><div class="gat">Lactente/criança com ileocólica idiopática, estável, sem peritonite</div><div class="act">Redução por enema (pneumático ou hidrostático) guiado por imagem — a ÚNICA linha em que enema é resposta certa.</div></div>
+    <div class="mcard m"><div class="gat">Entérica em paciente com melanoma / neoplasia conhecida</div><div class="act">Pensar metástase como cabeça: ressecção segmentar (paliativa se doença disseminada, guiada pelo quadro obstrutivo).</div></div>
+    <div class="mcard w"><div class="gat">Pós bypass gástrico em Y-de-Roux com dor + alvo na anastomose JJ</div><div class="act">Intussuscepção retrógrada: cirurgia (redução + enteropexia ou ressecção/reconstrução da JJ) — não observar.</div></div>
+  </div>
+  <div class="keep"><span class="t">Guarde isto — a frase que resolve 80% das questões</span><br>Criança: <b>reduz</b> (enema). Adulto com cólon envolvido: <b>resseca sem reduzir</b>. Adulto com delgado benigno: <b>resseca pouco</b> (ou reduz para ressecar menos). Adulto sem cabeça e sem sintoma: <b>não mexe</b>.</div>
+
+  <h3 id="refs">Referências</h3>
+  <p class="refs">Baseado em artigos recuperados do PubMed e literatura de referência: Heersche S et al. <i>Intestinal Intussusception in Adults: A Systematic Review</i>. World J Surg 2025 — <a href="https://doi.org/10.1002/wjs.70055">DOI 10.1002/wjs.70055</a> · Hong KD, Kim J, Ji W, Wexner SD. <i>Adult intussusception: a systematic review and meta-analysis</i>. Tech Coloproctol 2019 — <a href="https://doi.org/10.1007/s10151-019-01980-5">DOI 10.1007/s10151-019-01980-5</a> · T Chand J et al. <i>Adult intussusception: a systematic review of current literature</i>. Langenbecks Arch Surg 2024 — <a href="https://doi.org/10.1007/s00423-024-03429-2">DOI 10.1007/s00423-024-03429-2</a> · Attoun MA et al. <i>The Management of Intussusception: A Systematic Review</i>. Cureus 2023 — <a href="https://doi.org/10.7759/cureus.49481">DOI 10.7759/cureus.49481</a> · Azar T, Berger DL. <i>Adult intussusception</i>. Ann Surg 1997;226:134-8 · Marinis A et al. <i>Intussusception of the bowel in adults: a review</i>. World J Gastroenterol 2009;15:407-11 · Townsend CM (ed). <i>Sabiston Textbook of Surgery</i>, 21ª ed. Figuras e valores de densidade são simulações didáticas aproximadas.</p>
+</section>
+</div>
+<script>
+(function(){
+"use strict";
+const $=id=>document.getElementById(id);
+
+/* ---------- 01 TC SIMULADA ---------- */
+const PX=14; // 1 cm = 14 px  (barra 10 cm = 140 px)
+const LES={
+  trans:{nome:"Transitória entérica",topo:"enteroentérica (periumbilical)",diam:2.4,ext:3.0,head:null,headUH:[0,0],dilat:false,cls:"b",
+    ver:"Alvo curto e fino, SEM cabeça, sem alças dilatadas, em paciente assintomático ou oligossintomático: intussuscepção transitória. Nenhuma cirurgia — investigar causa clínica (celíaca, Crohn) e controle."},
+  lipo:{nome:"Lipoma ileal",topo:"enteroentérica (íleo)",diam:3.5,ext:6.5,head:"lipoma",headUH:[-85,-85],dilat:true,cls:"w",
+    ver:"Cabeça com densidade NEGATIVA (gordura) = lipoma, benigno e patognomônico na TC. Sintomática + suboclusão: enterectomia segmentar econômica (redução delicada aceitável para poupar alça)."},
+  linf:{nome:"Linfoma ileocecal",topo:"ileocólica (QID)",diam:5.0,ext:9.0,head:"massa",headUH:[42,68],dilat:true,cls:"d",
+    ver:"Alvo grande atravessando a válvula, cabeça sólida que realça + linfonodomegalia mesentérica em adulto jovem: pense linfoma. Ileocolectomia em bloco, SEM redução (topografia com ~40% de malignidade)."},
+  adeno:{nome:"Adenocarcinoma colocólico",topo:"colocólica (descendente)",diam:5.4,ext:7.5,head:"massa",headUH:[45,80],dilat:true,cls:"d",
+    ver:"Colocólica no adulto = câncer até prova em contrário (46–68%). Colectomia segmentar oncológica em bloco, sem redução prévia — reduzir aqui é semear tumor."}};
+let curLes="linf", curPhase=1;
+const g=uh=>{const v=Math.max(0,Math.min(1,(uh+160)/400))*255;return v};
+function ctDraw(){
+  const c=$("ct"),x=c.getContext("2d"),L=LES[curLes];
+  const ph=curPhase; // 0 sem contraste, 1 portal
+  x.fillStyle="#0A0A0A";x.fillRect(0,0,640,560);
+  const fill=(uh)=>{const v=g(uh);x.fillStyle=`rgb(${v},${v},${v})`};
+  const ell=(cx,cy,rx,ry,uh,rot)=>{fill(uh);x.beginPath();x.ellipse(cx,cy,rx,ry,rot||0,0,7);x.fill()};
+  // corpo
+  ell(320,285,286,238,-100);           // gordura subcutânea
+  ell(320,285,262,214,45);             // parede muscular
+  ell(320,285,244,196,-70);            // gordura intra-abdominal / mesentério
+  // psoas + vértebra + grandes vasos
+  ell(268,428,42,34,55,-0.3); ell(372,428,42,34,55,0.3);
+  fill(600);x.beginPath();x.ellipse(320,438,40,34,0,0,7);x.fill(); // corpo vertebral
+  fill(250);x.beginPath();x.moveTo(320,404);x.lineTo(288,462);x.lineTo(352,462);x.closePath();x.fill(); // canal/processo simplificado
+  ell(296,392,15,15,ph?140:45);        // aorta
+  ell(352,394,19,15,ph?95:40);         // VCI
+  // alças de delgado (gás/fluido)
+  const loops=[[236,206],[300,178],[368,196],[420,246],[406,312],[210,270],[258,300]];
+  loops.forEach((p,i)=>{ell(p[0],p[1],26,22,ph?60:38);ell(p[0],p[1],19,15,(i%2)?-950:15)});
+  // cólon com gás (moldura)
+  ell(170,220,30,26,40);ell(170,220,22,18,-980);
+  ell(470,220,30,26,40);ell(470,220,22,18,-980);
+  // alças dilatadas a montante
+  if(L.dilat){const dl=curLes==="adeno"?[[214,344],[176,292],[262,366]]:[[452,300],[492,238],[404,350]];
+    dl.forEach(p=>{ell(p[0],p[1],34,27,ph?62:40);ell(p[0],p[1],27,20,10);
+      x.save();x.beginPath();x.ellipse(p[0],p[1],27,20,0,0,7);x.clip();fill(-980);x.fillRect(p[0]-27,p[1]-20,54,14);x.restore()})}
+  // ALVO — posição por topografia
+  const pos = curLes==="adeno" ? [452,330] : curLes==="trans" ? [318,300] : [212,338];
+  const R=L.diam*PX/2;
+  const wallUH = ph? (curLes==="trans"?58:72) : 42;
+  ell(pos[0],pos[1],R+8,R+8,wallUH);                    // intussuscipiente
+  ell(pos[0]+3,pos[1]+2,R-2,R-2,-78);                   // crescente de gordura mesentérica
+  ell(pos[0]-R*0.22,pos[1]-R*0.14,R*0.62,R*0.62,wallUH-6); // intussuscepto
+  if(L.head==="lipoma") ell(pos[0]-R*0.2,pos[1]-R*0.1,R*0.4,R*0.4,-85);
+  else if(L.head==="massa") ell(pos[0]-R*0.2,pos[1]-R*0.1,R*0.44,R*0.44,L.headUH[ph]);
+  else ell(pos[0]-R*0.22,pos[1]-R*0.14,R*0.2,R*0.2,10); // luz central
+  if(curLes==="linf"){[[262,392],[286,414]].forEach(p=>ell(p[0],p[1],9,7,ph?55:40))} // linfonodos
+  // contorno tracejado + UH
+  x.strokeStyle="#F2C14E";x.setLineDash([5,4]);x.lineWidth=1.4;
+  x.beginPath();x.ellipse(pos[0],pos[1],R+12,R+12,0,0,7);x.stroke();x.setLineDash([]);
+  x.fillStyle="#F2C14E";x.font="600 13px 'IBM Plex Mono',monospace";
+  const uhTxt=L.head?`cabeça ${L.headUH[ph]} UH`:`parede ${wallUH} UH`;
+  x.fillText(uhTxt,pos[0]+R+18>460?pos[0]-R-150:pos[0]+R+18,pos[1]-4);
+  x.fillText(`⌀ ${L.diam.toFixed(1).replace(".",",")} cm`,pos[0]+R+18>460?pos[0]-R-150:pos[0]+R+18,pos[1]+14);
+  // ruído
+  const im=x.getImageData(0,0,640,560),d=im.data;
+  for(let i=0;i<d.length;i+=4){const n=(Math.random()+Math.random()-1)*14;d[i]+=n;d[i+1]+=n;d[i+2]+=n}
+  x.putImageData(im,0,0);
+  // anotações fixas
+  x.fillStyle="#DDD";x.font="600 14px 'IBM Plex Mono',monospace";
+  x.fillText("D",14,290);x.fillText("E",614,290);x.fillText("A",312,22);x.fillText("P",312,548);
+  x.strokeStyle="#DDD";x.lineWidth=2;x.beginPath();x.moveTo(480,532);x.lineTo(620,532);x.stroke();
+  x.font="500 12px 'IBM Plex Mono',monospace";x.fillText("10 cm",528,524);
+  // painel
+  $("ctphaselabel").textContent=ph?"portal 60 s":"sem contraste";
+  $("ctread").innerHTML=
+   `<span class="k">Topografia</span><span class="v">${L.topo}</span>`+
+   `<span class="k">Diâmetro do alvo</span><span class="v">${L.diam.toFixed(1).replace(".",",")} cm</span>`+
+   `<span class="k">Extensão craniocaudal</span><span class="v">${L.ext.toFixed(1).replace(".",",")} cm</span>`+
+   `<span class="k">Cabeça de invaginação</span><span class="v">${L.head?(L.head==="lipoma"?"sim — gordura":"sim — massa sólida"):"ausente"}</span>`+
+   (L.head?`<span class="k">UH da cabeça (fase atual)</span><span class="v">${L.headUH[ph]} UH</span>`:"")+
+   `<span class="k">Alças dilatadas a montante</span><span class="v">${L.dilat?"sim":"não"}</span>`;
+  $("ctverdict").className="verdict "+L.cls;$("ctverdict").textContent=L.ver;
+}
+const segBtns=(el,items,cb)=>{items.forEach((it,i)=>{const b=document.createElement("button");b.type="button";b.textContent=it.label;b.onclick=()=>{[...el.children].forEach(c=>c.classList.remove("on"));b.classList.add("on");cb(it.id)};if(it.on)b.classList.add("on");el.appendChild(b)})};
+segBtns($("ctlesions"),[{id:"trans",label:"Transitória"},{id:"lipo",label:"Lipoma ileal"},{id:"linf",label:"Linfoma ileocecal",on:true},{id:"adeno",label:"Adenoca colocólico"}],id=>{curLes=id;ctDraw()});
+$("ctphase").oninput=e=>{curPhase=+e.target.value;ctDraw()};
+ctDraw();
+
+/* ---------- 02 MECANISMO ---------- */
+const MST=[
+ {d:60, wall:"#C98A7A",vein:5, lbl:"1 · Invaginação inicial",pv:"normal",cor:"rosada",clin:"dor em cólica intermitente; pode se desfazer sozinha",cls:"b",ver:"A peristalse agarrou a cabeça e o segmento entrou. Ainda reversível — é esta a fase das invaginações transitórias."},
+ {d:130,wall:"#BE7A6C",vein:9, lbl:"2 · Congestão venosa",pv:"↑ (veia comprimida no pescoço)",cor:"vinhosa",clin:"dor mais frequente; muco e sangue na luz (\"geleia\")",cls:"w",ver:"A veia de parede fina falha primeiro. Congestão → edema → o conteúdo do pescoço cresce e o círculo vicioso fecha."},
+ {d:185,wall:"#8A4A46",vein:12,lbl:"3 · Edema e suboclusão",pv:"↑↑ (estase completa)",cor:"violácea",clin:"vômitos, distensão, parada de eliminação — suboclusão",cls:"w",ver:"O edema obstruiu a luz. A parede ainda é viável, mas o fluxo arterial começa a ser vencido pela pressão tecidual."},
+ {d:220,wall:"#4E2B30",vein:12,lbl:"4 · Isquemia transmural",pv:"= pressão arterial",cor:"enegrecida",clin:"dor contínua, peritonismo, febre — abdome cirúrgico",cls:"d",ver:"Arterial vencida: necrose e risco de perfuração. Aqui não existe redução — resseca-se sem desfazer a invaginação."}];
+let mst=0;
+function mechDraw(){
+  const s=MST[mst],d=s.d;
+  const svg=$("mechsvg");
+  const y1=118,y2=242,wt=16; // tubo
+  let h=`<rect x="0" y="0" width="640" height="360" fill="#F3EBE1"/>`;
+  // tubo receptor (intussuscipiente)
+  h+=`<rect x="30" y="${y1}" width="580" height="${wt}" rx="8" fill="${s.wall}"/><rect x="30" y="${y2-wt}" width="580" height="${wt}" rx="8" fill="${s.wall}"/>`;
+  h+=`<rect x="30" y="${y1+wt}" width="580" height="${y2-y1-2*wt}" fill="#EFE3D2"/>`;
+  // segmento invaginado (entra da esquerda): paredes internas
+  const tip=200+d;
+  h+=`<rect x="30" y="${y1+wt+6}" width="${tip-30}" height="12" rx="6" fill="${s.wall}"/>`;
+  h+=`<rect x="30" y="${y2-wt-18}" width="${tip-30}" height="12" rx="6" fill="${s.wall}"/>`;
+  // dobra de retorno (ponta arredondada)
+  h+=`<path d="M ${tip} ${y1+wt+6} A 30 30 0 0 1 ${tip} ${y2-wt-6} L ${tip-14} ${y2-wt-6} A 22 22 0 0 0 ${tip-14} ${y1+wt+6} Z" fill="${s.wall}"/>`;
+  // cabeça (lead point)
+  h+=`<circle cx="${tip-26}" cy="180" r="17" fill="#E8CE8E" stroke="#B9A692" stroke-width="1.5"/><text x="${tip-26}" y="184" font-size="11" text-anchor="middle" fill="#3A2A20" font-family="IBM Plex Mono">LP</text>`;
+  // mesentério arrastado (entra por baixo no pescoço)
+  h+=`<path d="M 120 320 L ${tip-70} ${y2-wt-18} L ${tip-20} ${y2-wt-18} L 240 320 Z" fill="#E8CE8E" opacity="0.9"/>`;
+  // vasos no mesentério: artéria + veia (calibre da veia cresce = congestão)
+  h+=`<path d="M 160 318 C 180 280 ${tip-90} 250 ${tip-46} ${y2-wt-16}" stroke="#C0392B" stroke-width="4.5" fill="none" stroke-linecap="round"/>`;
+  h+=`<path d="M 190 320 C 205 285 ${tip-80} 258 ${tip-38} ${y2-wt-14}" stroke="${mst>=3?"#22345A":"#4A6FA5"}" stroke-width="${s.vein}" fill="none" stroke-linecap="round"/>`;
+  // pescoço da invaginação
+  h+=`<path d="M 30 ${y1+2} v ${wt}" stroke="none"/>`;
+  h+=`<line x1="96" y1="${y1-14}" x2="96" y2="${y1+4}" stroke="#6B5647" stroke-width="0.9"/><text x="96" y="${y1-20}" font-size="12" text-anchor="middle" fill="#3A2A20" font-family="Helvetica">pescoço</text>`;
+  // seta peristalse (manobra/fluxo)
+  h+=`<defs><marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#3A2A20"/></marker></defs>`;
+  h+=`<line x1="60" y1="70" x2="180" y2="70" stroke="#3A2A20" stroke-width="2.4" marker-end="url(#ar)"/><text x="62" y="56" font-size="12.5" fill="#3A2A20" font-family="Helvetica">peristalse</text>`;
+  h+=`<text x="36" y="${y2+40}" font-size="12.5" fill="#3A2A20" font-family="Helvetica">mesentério arrastado — a veia (azul) é esmagada antes da artéria (vermelha)</text>`;
+  svg.innerHTML=h;
+  $("mechlabel").textContent=`estágio ${mst+1}/4`;
+  $("mechread").innerHTML=
+   `<span class="k">Pressão venosa no pescoço</span><span class="v">${s.pv}</span>`+
+   `<span class="k">Cor da parede</span><span class="v">${s.cor}</span>`+
+   `<span class="k">Tradução clínica</span><span class="v" style="white-space:normal;max-width:180px">${s.clin}</span>`;
+  $("mechverdict").className="verdict "+s.cls;$("mechverdict").textContent=s.ver;
+  [...$("mechstages").children].forEach((b,i)=>b.classList.toggle("on",i===mst));
+}
+MST.forEach((s,i)=>{const b=document.createElement("button");b.type="button";b.textContent=s.lbl;b.onclick=()=>{mst=i;mechDraw()};$("mechstages").appendChild(b)});
+mechDraw();
+
+/* ---------- 03 ANATOMIA CLICÁVEL ---------- */
+const ANA=[
+ {id:"a1",n:1,nome:"Intussuscepto",txt:"<b>O segmento que entra.</b> É a parede proximal invertida sobre si mesma — na TC forma os anéis centrais do alvo. Consequência cirúrgica: é dele o mesentério estrangulado; se está isquêmico, a peça sai <b>sem redução</b>."},
+ {id:"a2",n:2,nome:"Mesentério arrastado",txt:"<b>A gordura no meio do alvo.</b> O crescente hipodenso excêntrico entre as camadas é a assinatura tomográfica da intussuscepção (e o que a diferencia de simples espessamento parietal). É por aqui que passam a veia congestionada e a artéria — e é por aqui que um tumor embolia se você espremer a peça."},
+ {id:"a3",n:3,nome:"Intussuscipiente",txt:"<b>O segmento que recebe.</b> Camada mais externa do alvo. Na mesa, é o cilindro dentro do qual você palpa a cabeça; na colocólica, é ele que será ressecado em bloco junto com o conteúdo, sem abrir nem reduzir."},
+ {id:"a4",n:4,nome:"Cabeça de invaginação",txt:"<b>O motor de tudo.</b> Lipoma, pólipo, Meckel invertido, tumor: é o que a peristalse agarra. Regra do adulto: intussuscepção sintomática TEM cabeça até prova em contrário (60–90%) — e a natureza dela decide entre ressecção econômica e ressecção oncológica."}];
+let anaCur="a2";
+function anaDraw(){
+  const y1=98,y2=242,wt=15,tip=430;
+  const on=id=>anaCur===id;
+  const st=(id,c)=>`stroke="${on(id)?"#33628F":c}" stroke-width="${on(id)?3.5:1.4}"`;
+  let h=`<rect x="0" y="0" width="640" height="340" fill="#F3EBE1"/>`;
+  h+=`<g id="ga3" style="cursor:pointer"><rect x="26" y="${y1}" width="588" height="${wt}" rx="7" fill="#C98A7A" ${st("a3","#7A4032")}/><rect x="26" y="${y2}" width="588" height="${wt}" rx="7" fill="#C98A7A" ${st("a3","#7A4032")}/></g>`;
+  h+=`<rect x="26" y="${y1+wt}" width="588" height="${y2-y1-wt}" fill="#EFE3D2"/>`;
+  h+=`<g id="ga2" style="cursor:pointer"><path d="M 110 322 L ${tip-92} ${y2-24} L ${tip-30} ${y2-24} L 250 322 Z" fill="#E8CE8E" ${st("a2","#C9AE6A")}/><path d="M 150 320 C 175 280 ${tip-110} 255 ${tip-62} ${y2-24}" stroke="#C0392B" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M 180 322 C 200 288 ${tip-96} 262 ${tip-50} ${y2-22}" stroke="#4A6FA5" stroke-width="8" fill="none" stroke-linecap="round"/></g>`;
+  h+=`<g id="ga1" style="cursor:pointer"><rect x="26" y="${y1+wt+8}" width="${tip-30}" height="11" rx="5" fill="#BE7A6C" ${st("a1","#8A4A46")}/><rect x="26" y="${y2-19-8}" width="${tip-30}" height="11" rx="5" fill="#BE7A6C" ${st("a1","#8A4A46")}/><path d="M ${tip} ${y1+wt+8} A 32 32 0 0 1 ${tip} ${y2-16} L ${tip-14} ${y2-16} A 24 24 0 0 0 ${tip-14} ${y1+wt+8} Z" fill="#BE7A6C" ${st("a1","#8A4A46")}/></g>`;
+  h+=`<g id="ga4" style="cursor:pointer"><circle cx="${tip-30}" cy="170" r="19" fill="#E8CE8E" ${st("a4","#B9A692")}/><text x="${tip-30}" y="175" font-size="11" text-anchor="middle" fill="#3A2A20" font-family="IBM Plex Mono">LP</text></g>`;
+  // marcadores numerados fora dos traços
+  const mk=(n,x,y,id,ly)=>`<g style="cursor:pointer" id="mk${id}"><line x1="${x}" y1="${y+12}" x2="${x}" y2="${ly}" stroke="#6B5647" stroke-width="0.8"/><circle cx="${x}" cy="${y}" r="10" fill="#FFF" stroke="#3A2A20" stroke-width="1.3"/><text x="${x}" y="${y+4}" font-size="11.5" text-anchor="middle" fill="#3A2A20" font-family="IBM Plex Mono" font-weight="600">${n}</text></g>`;
+  h+=mk(1,300,52,"a1",y1+wt+8)+mk(3,80,52,"a3",y1-1)+mk(4,tip-30,52,"a4",170-21);
+  h+=`<g style="cursor:pointer" id="mka2"><line x1="72" y1="308" x2="128" y2="316" stroke="#6B5647" stroke-width="0.8"/><circle cx="62" cy="306" r="10" fill="#FFF" stroke="#3A2A20" stroke-width="1.3"/><text x="62" y="310" font-size="11.5" text-anchor="middle" fill="#3A2A20" font-family="IBM Plex Mono" font-weight="600">2</text></g>`;
+  svg3.innerHTML=h;
+  ["a1","a2","a3","a4"].forEach(id=>{const g1=document.getElementById("g"+id),g2=document.getElementById("mk"+id);if(g1)g1.onclick=()=>{anaCur=id;anaDraw()};if(g2)g2.onclick=()=>{anaCur=id;anaDraw()}});
+  const A=ANA.find(a=>a.id===anaCur);
+  $("anapanel").innerHTML=`<div style="font-weight:700;font-family:Fraunces,serif;font-size:17px;margin-bottom:6px">${A.n} · ${A.nome}</div>${A.txt}`;
+  [...$("anabtns").children].forEach((b,i)=>b.classList.toggle("on",ANA[i].id===anaCur));
+}
+const svg3=$("anasvg");
+ANA.forEach(a=>{const b=document.createElement("button");b.type="button";b.textContent=a.n+" · "+a.nome;b.onclick=()=>{anaCur=a.id;anaDraw()};$("anabtns").appendChild(b)});
+anaDraw();
+
+/* ---------- 03b TOPOGRAFIA ---------- */
+const TOP=[
+ {id:"ent",nome:"Entérica",hong:22.5,heer:9,freq:"49,5% dos casos (a mais comum)",cls:"b",txt:"Delgado em delgado. Maioria benigna ou transitória; quando maligna, pense <b>metástase</b> (melanoma) e linfoma, não adenocarcinoma primário. Conduta: da observação (sem cabeça) à enterectomia econômica (cabeça benigna) — redução para poupar alça é aceitável se não houver isquemia nem suspeita de câncer."},
+ {id:"ileo",nome:"Ileocólica",hong:36.9,heer:46,freq:"29,1% dos casos",cls:"d",txt:"O íleo atravessa a válvula. Malignidade intermediária-alta (adenocarcinoma de ceco, linfoma): trate como o cólon — <b>ileocolectomia em bloco sem redução</b>, com linfadenectomia."},
+ {id:"colo",nome:"Colocólica",hong:46.5,heer:68,freq:"19,9% dos casos",cls:"d",txt:"Cólon em cólon. O território do <b>adenocarcinoma primário</b>: quase metade a dois terços são malignas. Ressecção segmentar oncológica em bloco, ligadura vascular na origem, <b>nunca</b> reduzir antes (semeadura intraluminal e embolização venosa tumoral descritas)."}];
+let topCur="colo";
+function topDraw(){
+  const svg=$("topsvg");const W=640,H=300,x0=80,y0=250,ch=190,bw=44,gap=110;
+  let h=`<line x1="${x0}" y1="${y0}" x2="600" y2="${y0}" stroke="currentColor" stroke-width="1"/>`;
+  [0,25,50,75,100].forEach(v=>{const y=y0-v/100*ch;h+=`<line x1="${x0-4}" y1="${y}" x2="600" y2="${y}" stroke="currentColor" stroke-width="${v?0.25:1}" opacity="${v?0.4:1}"/><text x="${x0-10}" y="${y+4}" font-size="11.5" text-anchor="end" fill="currentColor" font-family="IBM Plex Mono">${v}%</text>`});
+  TOP.forEach((t,i)=>{
+    const gx=x0+40+i*(2*bw+gap);
+    const h1=t.hong/100*ch,h2=t.heer/100*ch;
+    const sel=topCur===t.id;
+    h+=`<g style="cursor:pointer" data-top="${t.id}">`;
+    h+=`<rect x="${gx}" y="${y0-h1}" width="${bw}" height="${h1}" rx="4" fill="#33628F" opacity="${sel?1:.55}"/>`;
+    h+=`<rect x="${gx+bw+8}" y="${y0-h2}" width="${bw}" height="${h2}" rx="4" fill="#B3372E" opacity="${sel?1:.55}"/>`;
+    h+=`<text x="${gx+bw/2}" y="${y0-h1-7}" font-size="12" text-anchor="middle" fill="currentColor" font-family="IBM Plex Mono">${String(t.hong).replace(".",",")}</text>`;
+    h+=`<text x="${gx+bw+8+bw/2}" y="${y0-h2-7}" font-size="12" text-anchor="middle" fill="currentColor" font-family="IBM Plex Mono">${String(t.heer).replace(".",",")}</text>`;
+    h+=`<text x="${gx+bw+4}" y="${y0+22}" font-size="13.5" text-anchor="middle" fill="currentColor" font-weight="${sel?700:400}">${t.nome}</text></g>`;
+  });
+  h+=`<rect x="440" y="30" width="12" height="12" rx="3" fill="#33628F"/><text x="458" y="41" font-size="12" fill="currentColor">Hong 2019 (meta-análise)</text>`;
+  h+=`<rect x="440" y="52" width="12" height="12" rx="3" fill="#B3372E"/><text x="458" y="63" font-size="12" fill="currentColor">Heersche 2025 (WJS)</text>`;
+  svg.innerHTML=h;
+  svg.querySelectorAll("[data-top]").forEach(g2=>g2.addEventListener("click",()=>{topCur=g2.getAttribute("data-top");topDraw()}));
+  const T=TOP.find(t=>t.id===topCur);
+  $("toppanel").innerHTML=`<div style="font-weight:700;font-family:Fraunces,serif;font-size:17px;margin-bottom:4px">${T.nome} <span class="tag ${T.cls}">${T.cls==="d"?"conduta oncológica":"conduta seletiva"}</span></div><div style="color:var(--ink2);font-size:13px;margin-bottom:8px">Frequência: ${T.freq} · Malignidade: ${String(T.hong).replace(".",",")}–${T.heer}%</div>${T.txt}`;
+  [...$("topbtns").children].forEach((b,i)=>b.classList.toggle("on",TOP[i].id===topCur));
+}
+TOP.forEach(t=>{const b=document.createElement("button");b.type="button";b.textContent=t.nome;b.onclick=()=>{topCur=t.id;topDraw()};$("topbtns").appendChild(b)});
+topDraw();
+
+/* ---------- 04 MÁQUINA DE DECISÃO ---------- */
+const DM1=[{id:"ent",l:"Entérica (delgado)"},{id:"ileo",l:"Ileocólica"},{id:"colo",l:"Colocólica"}];
+const DM2=[{id:"sem",l:"Sem cabeça, curta"},{id:"ben",l:"Cabeça benigna definida"},{id:"mal",l:"Suspeita de malignidade"},{id:"pj",l:"Peutz-Jeghers (pólipos múltiplos)"}];
+const DM3=[{id:"ass",l:"Assintomática / incidental"},{id:"sub",l:"Sintomática / suboclusão"},{id:"urg",l:"Obstrução completa · isquemia · peritonite"}];
+let dm={p1:"ileo",p2:"mal",p3:"sub"},childMode=false;
+function dmSeg(el,items,key){el.innerHTML="";items.forEach(it=>{const b=document.createElement("button");b.type="button";b.textContent=it.l;b.classList.toggle("on",dm[key]===it.id);b.onclick=()=>{dm[key]=it.id;childMode=false;dmDraw()};el.appendChild(b)})}
+function dmDraw(){
+  dmSeg($("dm1"),DM1,"p1");dmSeg($("dm2"),DM2,"p2");dmSeg($("dm3"),DM3,"p3");
+  const V=$("dmverdict"),S=$("dmsteps"),P=$("dmproib");
+  let cls,txt,steps,proib;
+  if(childMode){
+    cls="b";txt="LACTENTE, ileocólica idiopática, estável, sem peritonite: redução por ENEMA pneumático ou hidrostático guiado por imagem — sucesso de 80–90%. Cirurgia só se falha, instabilidade ou perfuração. Este é o ÚNICO cenário desta página em que o enema é gabarito.";
+    steps=["Estabilizar, acesso venoso, avaliar peritonite (contraindica enema)","Redução por enema guiado (pneumático > hidrostático)","Observação hospitalar; recorrência ~10% — repetir enema é aceitável","Cirurgia se falha/perfuração/instabilidade"];
+    proib="Aplicar este cartão a um ADULTO. No adulto a invaginação tem cabeça orgânica em 60–90% — o enema atrasa o diagnóstico, pode perfurar alça isquêmica e pode disseminar tumor.";
+  } else if(dm.p3==="urg"){
+    cls="d";txt="Abdome cirúrgico AGORA. Ressuscitação + antibiótico + cirurgia de urgência. Alça sofrida ou suspeita de câncer: ressecar SEM reduzir.";
+    steps=["Reanimação volêmica, SNG, antibiótico de largo espectro","Laparotomia (ou laparoscopia se experiência e estabilidade)","Alça isquêmica ou suspeita de malignidade → ressecção em bloco sem redução","Anastomose primária se estável e tecidos viáveis; estoma se instabilidade/peritonite fecal"];
+    proib="Enema (qualquer tipo) e tentativa insistente de redução manual de alça isquêmica — a parede rasga e a peritonite vira fecal.";
+  } else if(dm.p1!=="ent"){
+    if(dm.p2==="sem"&&dm.p3==="ass"){cls="m";txt="Ileocólica/colocólica sem cabeça visível e assintomática é RARA — antes de aceitar 'sem cabeça', procure-a: colonoscopia + revisão da TC. Limiar baixíssimo para cirurgia.";
+      steps=["Colonoscopia (biópsia se lesão; NÃO tentar reduzir pelo aparelho)","Revisão da TC com radiologista (cabeça? linfonodos?)","Lesão encontrada ou dúvida persistente → ressecção em bloco","Apenas se tudo negativo e paciente 100% assintomático: vigilância próxima"];
+      proib="Rotular colocólica de 'transitória'. Essa etiqueta é do delgado; no cólon, presuma neoplasia.";}
+    else{cls="d";txt=(dm.p1==="ileo"?"Ileocólica":"Colocólica")+" no adulto: presunção de malignidade ("+(dm.p1==="ileo"?"37–46%":"47–68%")+"). Ressecção EM BLOCO com princípios oncológicos, SEM redução prévia.";
+      steps=["Estadiamento se eletiva (TC tórax/abd, CEA; colonoscopia se não obstruído)","Ligadura vascular na origem + linfadenectomia regional","Ileocolectomia/hemicolectomia direita (ileocólica) ou colectomia segmentar oncológica (colocólica), peça fechada","Anastomose primária conforme preparo/estabilidade; oncologia adjuvante conforme AP"];
+      proib="Reduzir antes de ressecar (semeadura intraluminal e embolização venosa tumoral) · abrir a peça na cavidade · enema.";}
+  } else {
+    if(dm.p2==="sem"&&dm.p3==="ass"){cls="b";txt="Intussuscepção entérica transitória: curta (< 3,5 cm), fina, sem cabeça, sem obstrução, achada por acaso. NÃO é doença cirúrgica.";
+      steps=["Nenhuma cirurgia; correlacionar com clínica","Procurar causa de dismotilidade/parede espessada: doença celíaca, Crohn, pós-operatório","Sintomas persistentes ou recorrentes → reinvestigar (enteroTC, trânsito, cápsula)","Aparecimento de cabeça ou obstrução em controle → cirurgia"];
+      proib="Laparotomia 'para dar uma olhada' num achado incidental assintomático — cirurgia desnecessária é o distrator desta linha.";}
+    else if(dm.p2==="sem"){cls="w";txt="Entérica sem cabeça identificada, porém SINTOMÁTICA: a cabeça pode existir e não ter aparecido. Investigar dirigido; recorrência/persistência empurra para cirurgia diagnóstica.";
+      steps=["EnteroTC/enteroRM ± cápsula (se sem obstrução) à procura da cabeça","Tratar causa clínica se encontrada (celíaca, Crohn)","Suboclusões de repetição ou cabeça encontrada → enterectomia segmentar","Na dúvida persistente com sintomas: laparoscopia diagnóstica"];
+      proib="Enema; e também alta sem investigação — dor em cólica recorrente + alvo no delgado não é 'gastroenterite'.";}
+    else if(dm.p2==="pj"){cls="m";txt="Peutz-Jeghers: o problema é CRÔNICO e recorrente — cada laparotomia com ressecção larga aproxima o paciente da síndrome do intestino curto. Cirurgia CONSERVADORA de intestino.";
+      steps=["Redução delicada da(s) invaginação(ões)","Enterotomia + polipectomia dos pólipos-cabeça (> 1,5–3 cm)","'Clean sweep': enteroscopia intraoperatória para limpar o delgado numa só cirurgia","Ressecção segmentar mínima apenas se alça inviável; vigilância endoscópica programada"];
+      proib="Enterectomias largas repetidas — a complicação final é o intestino curto, não o pólipo.";}
+    else if(dm.p2==="mal"){cls="d";txt="Entérica com cara de câncer (massa que realça, linfonodos, histórico de melanoma/neoplasia): ressecção segmentar SEM redução, com margens e mesentério correspondente.";
+      steps=["Estadiamento (a principal etiologia maligna entérica é METÁSTASE)","Enterectomia segmentar em bloco com margens + cunha mesentérica","Doença disseminada: ressecção/derivação paliativa guiada pelo sintoma","AP define o resto (linfoma → oncologia clínica; GIST → margens, sem linfadenectomia)"];
+      proib="Ordenhar a peça para 'ver o que é' — êmbolo tumoral venoso e implante peritoneal/luminal.";}
+    else{cls="w";txt="Entérica com cabeça BENIGNA definida (lipoma com UH negativa, Meckel, pólipo) e sintomática: enterectomia segmentar ECONÔMICA.";
+      steps=["Confirmar benignidade na imagem (gordura pura, Meckel)","Cirurgia eletiva-precoce (antes da urgência isquêmica)","Redução suave admitida SÓ para limitar a extensão da ressecção, se alça viável","Enterectomia curta + anastomose primária"];
+      proib="Reduzir se houver qualquer dúvida de malignidade ou sinais de sofrimento de alça.";}
+  }
+  V.className="verdict "+cls;V.textContent=txt;
+  S.innerHTML=steps.map(s=>`<li>${s}</li>`).join("");
+  P.innerHTML=`<span class="t">Proibido</span><br>${proib}`;
+  $("wrongout").innerHTML="";
+}
+const PRE=[
+ {l:"Petrônio, 26 a (cap. 01)",f:()=>{dm={p1:"ileo",p2:"mal",p3:"sub"}}},
+ {l:"Achado incidental de TC",f:()=>{dm={p1:"ent",p2:"sem",p3:"ass"}}},
+ {l:"Lipoma ileal suboclusivo",f:()=>{dm={p1:"ent",p2:"ben",p3:"sub"}}},
+ {l:"Sigmoide, 63 a, massa",f:()=>{dm={p1:"colo",p2:"mal",p3:"sub"}}},
+ {l:"Lactente de 9 meses",f:()=>{childMode=true}}];
+PRE.forEach(p=>{const b=document.createElement("button");b.type="button";b.textContent=p.l;b.onclick=()=>{childMode=false;p.f();dmDraw();if(p.l.includes("Lactente")){childMode=true;dmDraw()}};$("dmpresets").appendChild(b)});
+$("wrongbtn").onclick=()=>{
+  let t;
+  if(childMode){t=`<div class="verdict b">Aqui o enema NÃO é caminho errado — é o gabarito. No lactente estável a redução pneumática/hidrostática resolve 80–90% sem bisturi. O erro seria operar de cara.</div>`}
+  else if(dm.p3==="urg"){t=`<div class="verdict d">O contraste entra sob pressão numa alça de parede violácea. Perfuração em cavidade livre → peritonite fecal/baritada, choque séptico. O paciente que precisava de laparotomia em 1 h agora precisa dela em 10 min, com dano somado.</div>`}
+  else if(dm.p1!=="ent"||dm.p2==="mal"){t=`<div class="verdict d">O enema (ou a ordenha) desfaz a invaginação — e parece vitória. Mas a cabeça era tumor: células descamam na luz e embolizam pela veia mesentérica espremida; a cirurgia oncológica que viria é adiada semanas "porque melhorou". Resultado: mesmo estadiamento operatório, prognóstico pior. Era só ressecar em bloco.</div>`}
+  else{t=`<div class="verdict w">No delgado benigno o enema simplesmente não funciona (não alcança) e atrasa a enterectomia. Cada dia de suboclusão de repetição é uma chance de a próxima crise vir com isquemia.</div>`}
+  $("wrongout").innerHTML=t;
+};
+dmDraw();
+
+/* ---------- 05 PRANCHA NA MESA ---------- */
+(function(){
+  const svg=$("mesasvg");
+  let h=`<rect x="0" y="0" width="680" height="520" fill="#F3EBE1" stroke="#B9A692" stroke-width="2" rx="10"/>`;
+  h+=`<defs><marker id="mman" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#3A2A20"/></marker></defs>`;
+  // peritônio / gordura de fundo
+  h+=`<rect x="14" y="14" width="652" height="452" fill="#EBD9B8" rx="8"/>`;
+  // linha de Toldt (linha branca lateral) à esquerda do cólon
+  h+=`<path d="M 96 60 C 78 160 76 300 96 420" stroke="#FFFFFF" stroke-width="6" fill="none" opacity="0.85"/>`;
+  // cólon ascendente + ceco (viewer left = direita do paciente)
+  h+=`<path d="M 118 52 C 168 48 176 96 176 150 L 176 330 C 176 396 160 434 128 448 C 100 458 84 430 92 400 C 104 372 118 350 118 300 Z" fill="#C98A7A" stroke="#7A4032" stroke-width="1.8"/>`;
+  // tênia
+  h+=`<path d="M 146 58 C 158 140 158 330 132 440" stroke="#8A5A48" stroke-width="4" fill="none"/>`;
+  // haustras
+  h+=`<path d="M 118 120 C 140 112 158 112 176 120 M 118 190 C 140 182 158 182 176 190 M 118 260 C 140 252 158 252 176 260" stroke="#8A5A48" stroke-width="1.4" fill="none"/>`;
+  // massa invaginada dentro do ascendente (cabeça palpável) — tracejado
+  h+=`<ellipse cx="150" cy="210" rx="24" ry="52" fill="#B0685C" opacity="0.55"/><ellipse cx="150" cy="210" rx="24" ry="52" fill="none" stroke="#5A3038" stroke-width="1.6" stroke-dasharray="5 4"/>`;
+  // íleo terminal vindo medial (da direita do desenho), afunilando no ceco
+  h+=`<path d="M 560 330 C 470 300 380 322 300 330 C 240 336 200 322 176 300 L 176 330 C 210 352 250 362 306 356 C 390 348 470 330 560 356 Z" fill="#D49E8C" stroke="#8A4A46" stroke-width="1.6"/>`;
+  // pescoço da invaginação (junção ileocecal)
+  h+=`<ellipse cx="182" cy="316" rx="14" ry="20" fill="#8A4A46" opacity="0.6"/>`;
+  // mesentério do íleo (leque) com vasos
+  h+=`<path d="M 560 356 C 470 350 330 360 210 330 C 300 420 470 430 560 420 Z" fill="#E8CE8E" stroke="#C9AE6A" stroke-width="1.2" opacity="0.95"/>`;
+  // a. ileocólica saindo da AMS (embaixo à direita) até o pescoço
+  h+=`<path d="M 540 430 C 430 410 300 380 208 328" stroke="#C0392B" stroke-width="6" fill="none" stroke-linecap="round"/>`;
+  h+=`<path d="M 540 430 C 480 428 430 424 380 414" stroke="#C0392B" stroke-width="8" fill="none" stroke-linecap="round"/>`; // tronco AMS
+  // ponto de ligadura (X duplo) na origem da ileocólica
+  h+=`<g stroke="#3A2A20" stroke-width="2.2"><line x1="486" y1="414" x2="500" y2="428"/><line x1="500" y1="414" x2="486" y2="428"/></g>`;
+  // veia acompanhante
+  h+=`<path d="M 548 442 C 440 420 310 390 216 338" stroke="#4A6FA5" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.9"/>`;
+  // ESPÉCIME EM BLOCO — destaque translúcido (região 1 de 2)
+  h+=`<path d="M 96 96 C 130 78 190 84 196 130 L 200 300 C 240 330 300 344 360 340 L 360 388 C 280 396 210 380 160 350 C 120 396 96 430 84 420 C 64 400 84 340 96 300 Z" fill="#EF9F27" opacity="0.20"/>`;
+  // linhas de secção (tracejadas) — íleo e cólon
+  h+=`<line x1="356" y1="322" x2="356" y2="392" stroke="#3A2A20" stroke-width="2.6" stroke-dasharray="7 5"/>`;
+  h+=`<line x1="112" y1="104" x2="196" y2="96" stroke="#3A2A20" stroke-width="2.6" stroke-dasharray="7 5"/>`;
+  // setas de manobra (2): tração medial do ceco + abertura da linha de Toldt
+  h+=`<line x1="150" y1="380" x2="230" y2="404" stroke="#3A2A20" stroke-width="2.6" marker-end="url(#mman)"/>`;
+  h+=`<path d="M 70 300 C 66 260 66 200 74 150" stroke="#3A2A20" stroke-width="2.6" fill="none" marker-end="url(#mman)"/>`;
+  // marcadores numerados (ordem proximal→distal) com linhas-guia sem seta
+  const mk=(n,x,y,lx,ly)=>`<line x1="${x}" y1="${y}" x2="${lx}" y2="${ly}" stroke="#6B5647" stroke-width="0.8"/><circle cx="${x}" cy="${y}" r="10" fill="#FFF" stroke="#3A2A20" stroke-width="1.3"/><text x="${x}" y="${y+4}" font-size="11.5" text-anchor="middle" fill="#3A2A20" font-family="IBM Plex Mono" font-weight="600">${n}</text>`;
+  h+=mk(1,414,296,404,330);   // íleo terminal
+  h+=mk(2,470,388,440,376);   // mesentério arrastado
+  h+=mk(3,228,282,196,308);   // pescoço/válvula
+  h+=mk(4,224,180,172,204);   // ascendente com cabeça palpável
+  h+=mk(5,506,452,494,426);   // ligadura a. ileocólica
+  h+=mk(6,336,428,354,390);   // secção ileal
+  h+=mk(7,232,76,190,96);     // secção cólica
+  h+=mk(8,52,220,72,222);     // linha de Toldt
+  // orientação do campo
+  h+=`<text x="340" y="40" font-size="12" text-anchor="middle" fill="#3A2A20" font-family="Helvetica">CRANIAL</text><text x="340" y="500" font-size="12" text-anchor="middle" fill="#3A2A20" font-family="Helvetica">CAUDAL</text><text x="30" y="490" font-size="12" fill="#3A2A20" font-family="Helvetica">LATERAL (D)</text><text x="580" y="490" font-size="12" fill="#3A2A20" font-family="Helvetica">MEDIAL</text>`;
+  svg.innerHTML=h;
+  $("mesalegend").innerHTML=["Íleo terminal (intussuscepto entrando no ceco)","Mesentério ileal arrastado — veia congesta","Pescoço da invaginação na válvula ileocecal","Cólon ascendente (intussuscipiente) com cabeça palpável — não abrir, não reduzir","Ligadura da a. ileocólica na origem (princípio oncológico)","Linha de secção ileal (~10 cm proximal)","Linha de secção no ascendente/transverso proximal","Linha de Toldt — mobilização lateromedial"].map((t,i)=>`<div><span class="lnum">${i+1}</span>${t}</div>`).join("");
+  $("mesacontrato").textContent="Contrato de vista — Via: laparotomia mediana. Paciente: decúbito dorsal, leve céfalo-declive com rotação à esquerda. Cirurgião: à esquerda do paciente, olhando o campo com cranial ao alto; direita do paciente = lateral esquerdo da prancha. Âncoras: linha de Toldt lateral, válvula ileocecal, tronco da AMS caudal-medial. Área alaranjada = espécime da ileocolectomia em bloco. Calibres e distâncias fora de escala (didático).";
+})();
+
+/* ---------- 06 FORJA ---------- */
+const FQ=[
+{g:"D",tag:"questão-mãe",en:`Petrônio, 26 anos, dor em cólica intermitente há 10 dias, hoje com distensão e parada de eliminação de gases. TC: invaginação <b>ileocólica</b> com cabeça sólida de 3 cm que realça pelo contraste no ceco, linfonodos mesentéricos e alças de delgado dilatadas a montante. Estável, sem peritonite. Conduta:`,
+ alts:["Redução por enema pneumático guiado por fluoroscopia","Colonoscopia com tentativa de redução e biópsia da lesão","Laparotomia com redução manual seguida de ressecção econômica do segmento","Ileocolectomia/hemicolectomia direita em bloco, sem redução, com ligadura vascular na origem","Observação com TC seriada, já que a invaginação pode se desfazer espontaneamente"],
+ ex:`Ileocólica + cabeça que realça + linfonodos em adulto = presunção de malignidade (37–46%). A peça sai <b>em bloco, sem redução</b> (D). O enema (A) é o cartão do lactente; a redução prévia (C) arrisca semeadura tumoral; a colonoscopia redutora (B) soma perfuração à semeadura; observar (E) é o cartão da transitória entérica — outra linha da tabela.`},
+{g:"A",tag:"pivô: achado incidental",en:`Mesmo Petrônio, mas a TC (pedida por cólica renal) mostra invaginação <b>enteroentérica de 2,4 cm de diâmetro e 3,0 cm de extensão, sem cabeça</b>, sem dilatação a montante. Ele está <b>assintomático</b> do abdome. Conduta:`,
+ alts:["Conduta expectante; investigar causa clínica (doença celíaca, Crohn) e controle por imagem se sintomas","Laparoscopia diagnóstica na mesma internação","Enterectomia segmentar do segmento invaginado","Enteroscopia com duplo balão imediata","Redução por enema hidrossolúvel"],
+ ex:`Curta, fina, sem cabeça, incidental: <b>transitória</b> — a exceção moderna à regra "adulto = cirurgia". Gabarito A. Operar (B, C) é o distrator clássico contra quem decorou só o ensino antigo; o enema (E) segue proibido; a enteroscopia (D) é desproporcional sem sintomas.`},
+{g:"E",tag:"pivô: cabeça com UH negativa",en:`Marilda, 31 anos, três crises suboclusivas em dois meses. TC: invaginação jejunal de 6 cm de extensão com cabeça arredondada de 3,5 cm e densidade de <b>−85 UH</b>; alças dilatadas a montante na crise. Conduta:`,
+ alts:["Quimioterapia após biópsia percutânea da lesão","Observação, pois lesões gordurosas não causam obstrução","Redução por enema baritado","Hemicolectomia direita oncológica","Enterectomia segmentar econômica com anastomose primária (redução delicada aceitável para limitar a ressecção)"],
+ ex:`UH negativa = gordura = <b>lipoma</b>, benigno e patognomônico: não precisa de biópsia (A) nem de cirurgia oncológica (D). Sintomática de repetição → ressecção econômica (E), com redução suave permitida porque a benignidade está estabelecida. "Observar" (B) ignora que a cabeça continua lá; enema (C) é do lactente.`},
+{g:"B",tag:"pivô: síndrome polipoide",en:`Otávio, 19 anos, obstrução por invaginação jejunojejunal. Chama atenção <b>pigmentação melanótica em lábios e mucosa oral</b>; um tio materno foi operado "várias vezes da mesma coisa". Na laparotomia: dois pólipos-cabeça de 3 cm e múltiplos pólipos menores palpáveis ao longo do delgado. Conduta:`,
+ alts:["Enterectomia ampla englobando todos os segmentos com pólipos","Redução das invaginações + enterotomias com polipectomias, idealmente com enteroscopia intraoperatória (\"clean sweep\")","Duodenopancreatectomia, dado o risco de malignização periampular","Derivação enteroentérica interna deixando os pólipos","Colectomia total profilática"],
+ ex:`Peutz-Jeghers: doença <b>recorrente para a vida toda</b>. Cada ressecção larga (A) aproxima do intestino curto — o princípio é conservar intestino: reduzir + polipectomias por enterotomia, limpando o delgado numa só cirurgia (B). Whipple (C) e colectomia (E) confundem vigilância de risco com tratamento da urgência.`},
+{g:"C",tag:"pivô: idade",en:`Théo, <b>9 meses</b>, crises de choro com encolhimento das pernas, vômitos e evacuação com sangue e muco ("geleia de framboesa"). Massa palpável em QSD. US: imagem em alvo ileocólica. Corado, hidratado, <b>sem sinais de peritonite</b>. Conduta:`,
+ alts:["Laparotomia imediata com ileocolectomia em bloco","Colonoscopia descompressiva","Redução por enema pneumático (ou hidrostático) guiado por imagem","Antibioticoterapia e observação, por tratar-se de adenite mesentérica","Punção esvaziadora guiada por US"],
+ ex:`O único cenário em que o enema é gabarito (C): lactente estável com ileocólica idiopática — sucesso 80–90%. A ileocolectomia de cara (A) é a conduta do ADULTO transplantada para a criança: o espelho exato do erro clássico. Peritonite/instabilidade mudariam a resposta para cirurgia.`},
+{g:"E",tag:"pivô: anatomia operada",en:`Vandete, 34 anos, <b>bypass gástrico em Y-de-Roux há 4 anos</b> com grande perda ponderal, dor epigástrica intensa em crises. TC: imagem em alvo na topografia da <b>anastomose jejunojejunal</b>, com dilatação da alça biliopancreática. Conduta:`,
+ alts:["Observação: invaginações após bypass são sempre transitórias","IBP em dose plena e endoscopia ambulatorial","Enema hidrossolúvel para redução","Colecistectomia, pois a dor é biliar até prova em contrário","Cirurgia (laparoscopia/laparotomia): redução e correção da JJ — enteropexia ou ressecção/reconstrução"],
+ ex:`Intussuscepção <b>retrógrada</b> da JJ pós-bypass: a alça comum invagina contra o peristaltismo, favorecida pelo mesentério afilado do emagrecimento. Não é transitória (A) nem dispéptica (B); risco real de necrose da alça — cirurgia (E), com enteropexia ou reconstrução. O enema (C) não alcança e atrasa.`},
+{g:"A",tag:"pivô: doença de base",en:`Ismênia, 27 anos, <b>doença celíaca</b> recém-diagnosticada, ainda sem dieta. TC por dor inespecífica: <b>três</b> invaginações enteroentéricas curtas (&lt; 2,5 cm), finas, sem cabeça, sem dilatação. Assintomática no momento do laudo. Conduta:`,
+ alts:["Dieta isenta de glúten e seguimento clínico; nenhuma cirurgia","Laparotomia exploradora para inspecionar os três segmentos","Enterectomia do segmento mais longo","Cápsula endoscópica de urgência","Corticoide sistêmico para reduzir o edema de alça"],
+ ex:`Múltiplos alvos curtos e sem cabeça em celíaca = dismotilidade — o protótipo da <b>transitória</b>: trata-se a doença de base (A). Multiplicidade aqui TRANQUILIZA (lesão orgânica costuma dar UMA invaginação fixa). Operar (B, C) é o distrator; a cápsula (D) pode até impactar se houver estenose e não é urgência.`},
+{g:"C",tag:"pivô: história oncológica",en:`Aristeu, 41 anos, tratou <b>melanoma</b> de dorso há 3 anos. Agora: suboclusão + TC com invaginação enteroentérica cuja cabeça é massa de 4 cm que realça; nódulos hepáticos suspeitos. Após estadiamento, conduta para o quadro obstrutivo:`,
+ alts:["Redução manual na laparotomia, preservando a alça, já que a doença é sistêmica","Apenas quimioterapia/imunoterapia, evitando cirurgia","Enterectomia segmentar em bloco da lesão-cabeça (intenção também paliativa), sem redução","Bypass interno deixando a lesão in situ","Hemicolectomia direita com linfadenectomia D3"],
+ ex:`Metástase de melanoma é A cabeça maligna clássica do delgado. Obstrução mecânica não responde a imunoterapia (B); a ressecção segmentar em bloco (C) resolve o sintoma e retira a lesão — sem ordenha (A). O bypass (D) é para irressecabilidade; D3 colônica (E) pertence a outra topografia.`}];
+let fAc=0,fTot=0;
+function buildForja(){
+  const F=$("forja");F.innerHTML="";fAc=0;fTot=0;upSc();
+  FQ.forEach((q,qi)=>{
+    const card=document.createElement("div");card.className="qcard";
+    card.innerHTML=`<div class="qhead"><span class="qn">Q${qi+1} · <span class="tag m">${q.tag}</span></span></div><div class="enun">${q.en}</div>`;
+    const alts=document.createElement("div");alts.className="alts";
+    const expl=document.createElement("div");expl.className="expl";
+    const letters=["A","B","C","D","E"];
+    q.alts.forEach((a,ai)=>{
+      const b=document.createElement("button");b.type="button";
+      b.innerHTML=`<span class="L">${letters[ai]}</span><span>${a}</span>`;
+      b.onclick=()=>{
+        if(card.dataset.done)return;card.dataset.done="1";fTot++;
+        const ok=letters[ai]===q.g;if(ok)fAc++;
+        [...alts.children].forEach((bb,bi)=>{bb.disabled=true;if(letters[bi]===q.g)bb.classList.add("ok");else if(bi===ai&&!ok)bb.classList.add("no")});
+        expl.classList.add("show");upSc();
+      };
+      alts.appendChild(b);
+    });
+    expl.innerHTML=`<b>Gabarito ${q.g}.</b> ${q.ex}`;
+    card.appendChild(alts);card.appendChild(expl);F.appendChild(card);
+  });
+}
+function upSc(){$("fscore").textContent=`${fAc}/${fTot} acertos`}
+$("freset").onclick=buildForja;
+buildForja();
+})();
+</script>
+
+</body></html>

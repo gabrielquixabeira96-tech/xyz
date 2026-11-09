@@ -1,0 +1,1383 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Atlas da Anticoagulação Perioperatória</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#F1F5F7; --panel:#FFFFFF; --panel2:#E7EEF2; --ink:#131A20; --ink2:#4C5C67; --line:#CBD8E0;
+  --acc:#1D5E8C; --acc-soft:#E1EDF6;
+  --b:#0D7A69; --b-soft:#DDF1EC;
+  --d:#B02318; --d-soft:#FBE3E0;
+  --w:#A15806; --w-soft:#FAEDDA;
+  --m:#6935C4; --m-soft:#ECE5FA;
+  --film:#F8F4EC; --plasma:#EFE2B4; --rbc:#8E1B14; --fib:#DCD3C4;
+  --shadow:0 1px 2px rgba(16,32,44,.06),0 6px 18px rgba(16,32,44,.06);
+}
+:root:not([data-theme="light"]){ }
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1418; --panel:#182127; --panel2:#212C34; --ink:#E6EEF3; --ink2:#9BAFBC; --line:#2B3942;
+    --acc:#6FB4E2; --acc-soft:#153244;
+    --b:#3FC8B0; --b-soft:#0C2F2A;
+    --d:#F0877B; --d-soft:#3A1613;
+    --w:#DEA54D; --w-soft:#3A2B11;
+    --m:#B69AF6; --m-soft:#241B3D;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 18px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1418; --panel:#182127; --panel2:#212C34; --ink:#E6EEF3; --ink2:#9BAFBC; --line:#2B3942;
+  --acc:#6FB4E2; --acc-soft:#153244;
+  --b:#3FC8B0; --b-soft:#0C2F2A;
+  --d:#F0877B; --d-soft:#3A1613;
+  --w:#DEA54D; --w-soft:#3A2B11;
+  --m:#B69AF6; --m-soft:#241B3D;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 18px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+h1,h2,h3,.disp{font-family:"Fraunces","Iowan Old Style",Georgia,serif;text-wrap:balance;font-weight:600}
+mark{background:var(--w-soft);color:var(--ink);padding:0 3px;border-radius:3px;font-weight:600}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px;border-radius:4px}
+
+/* ---------- hero ---------- */
+.hero{padding:46px 0 26px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);font-weight:600}
+.hero h1{font-size:clamp(2.1rem,5vw,3.3rem);line-height:1.03;margin:.22em 0 .3em;letter-spacing:-.015em}
+.hero .lede{max-width:66ch;color:var(--ink2);font-size:1.06rem}
+.stem{margin:22px 0 0;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--acc);
+  border-radius:0 12px 12px 0;padding:16px 20px;max-width:78ch;box-shadow:var(--shadow)}
+.stem .q{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);font-weight:600;display:block;margin-bottom:6px}
+.stem p{margin:.4em 0}
+.stem ol{margin:.5em 0 0;padding-left:1.3em;color:var(--ink2);font-size:.94rem}
+.stem li{margin:.15em 0}
+.stem li.hit{color:var(--ink);font-weight:600}
+.revealbtn{margin-top:10px;font:inherit;font-size:.86rem;background:var(--acc);color:#fff;border:0;
+  border-radius:999px;padding:7px 16px;cursor:pointer;font-weight:600}
+.revealbtn:hover{filter:brightness(1.08)}
+
+/* ---------- nav rail ---------- */
+nav.rail{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 92%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.rail .inner{display:flex;gap:2px;overflow-x:auto;padding:7px 22px;max-width:1120px;margin:0 auto;scrollbar-width:thin}
+nav.rail a{flex:0 0 auto;text-decoration:none;color:var(--ink2);font-size:.8rem;padding:6px 11px;border-radius:8px;white-space:nowrap}
+nav.rail a b{font-family:"IBM Plex Mono",monospace;color:var(--acc);margin-right:6px;font-size:.76rem}
+nav.rail a:hover{background:var(--panel2);color:var(--ink)}
+
+/* ---------- sections ---------- */
+section.ch{padding:44px 0;border-bottom:1px solid var(--line);scroll-margin-top:54px}
+section.ch>header{margin-bottom:18px}
+section.ch h2{font-size:clamp(1.5rem,3vw,2rem);margin:.1em 0 .18em;letter-spacing:-.01em}
+section.ch header .num{font-family:"IBM Plex Mono",monospace;color:var(--acc);font-size:.78rem;letter-spacing:.1em}
+section.ch header .sub{color:var(--ink2);max-width:70ch;margin:0}
+
+.plate{display:grid;grid-template-columns:1.25fr .9fr;gap:20px;align-items:start}
+@media(max-width:860px){.plate{grid-template-columns:1fr}}
+.fig{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:var(--shadow);overflow-x:auto}
+.fig svg{display:block;max-width:100%;height:auto}
+.ctrl{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
+.ctrl h4{margin:0 0 8px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);font-weight:600;font-family:"IBM Plex Sans",sans-serif}
+.ctrl h4+*{margin-top:0}
+.ctrl .grp{margin-bottom:16px}
+.ctrl .grp:last-child{margin-bottom:0}
+
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{font:inherit;font-size:.83rem;padding:6px 11px;border-radius:8px;border:1px solid var(--line);
+  background:var(--panel2);color:var(--ink2);cursor:pointer;transition:.12s}
+.seg button:hover{border-color:var(--acc)}
+.seg button.on{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
+.seg.tone button.on.b{background:var(--b);border-color:var(--b)}
+.seg.tone button.on.d{background:var(--d);border-color:var(--d)}
+
+input[type=range]{width:100%;accent-color:var(--acc);margin:6px 0 0}
+.rangelab{display:flex;justify-content:space-between;font-size:.8rem;color:var(--ink2)}
+.rangelab b{font-family:"IBM Plex Mono",monospace;color:var(--ink);font-weight:600}
+
+.verdict{border-radius:10px;padding:11px 13px;font-size:.9rem;margin:10px 0 0;border:1px solid transparent;line-height:1.5}
+.verdict>b:first-child{display:block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px}
+.v-b{background:var(--b-soft);border-color:var(--b);color:var(--ink)} .v-b b{color:var(--b)}
+.v-d{background:var(--d-soft);border-color:var(--d);color:var(--ink)} .v-d b{color:var(--d)}
+.v-w{background:var(--w-soft);border-color:var(--w);color:var(--ink)} .v-w b{color:var(--w)}
+.v-m{background:var(--m-soft);border-color:var(--m);color:var(--ink)} .v-m b{color:var(--m)}
+.readout{display:grid;grid-template-columns:1fr auto;gap:4px 12px;font-size:.88rem;padding:10px 12px;
+  background:var(--panel2);border-radius:10px;margin:10px 0 0}
+.readout .v{font-family:"IBM Plex Mono",monospace;font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+.steps{margin:10px 0 0;padding-left:1.25em;font-size:.9rem}
+.steps li{margin:.28em 0}
+.forbid{margin-top:10px;border:1px dashed var(--d);background:var(--d-soft);border-radius:10px;padding:10px 12px;font-size:.86rem}
+.forbid>b:first-child{color:var(--d);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:3px}
+
+/* ---------- didactic blocks ---------- */
+.howto{border:1px solid var(--acc);background:var(--acc-soft);border-radius:12px;padding:12px 16px;font-size:.9rem;margin:0 0 18px;max-width:76ch;line-height:1.55}
+.howto b.t{color:var(--acc);text-transform:uppercase;font-size:.72rem;letter-spacing:.1em;display:block;margin-bottom:4px}
+.howto ol{margin:.3em 0 .2em 1.2em;padding:0}
+.howto li{margin:.2em 0}
+.howto .ex{margin:.6em 0 0;padding-top:.55em;border-top:1px solid color-mix(in srgb,var(--acc) 35%,transparent)}
+.prose{max-width:72ch;margin-top:26px}
+.prose p{margin:.75em 0}
+.prose h3{margin:1.55em 0 .45em;font-size:1.19rem;letter-spacing:-.005em}
+.prose .key{background:var(--panel);border-left:3px solid var(--b);padding:11px 15px;border-radius:0 10px 10px 0;margin:1.1em 0;font-size:.95rem}
+.prose .key>b:first-child{color:var(--b);text-transform:uppercase;font-size:.72rem;letter-spacing:.1em;display:block;margin-bottom:3px}
+.prose .num-table{display:grid;grid-template-columns:auto 1fr;gap:7px 16px;font-size:.9rem;margin:.9em 0;padding:12px 15px;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+.prose .num-table .k{font-family:"IBM Plex Mono",monospace;color:var(--acc);white-space:nowrap;font-weight:500}
+.divg{background:var(--panel);border:1px solid var(--w);border-radius:12px;padding:12px 15px;margin:1.1em 0;font-size:.93rem}
+.divg>b:first-child{color:var(--w);text-transform:uppercase;font-size:.72rem;letter-spacing:.1em}
+.chance{display:inline-block;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--w-soft);color:var(--w);font-weight:600;margin-left:8px;vertical-align:middle}
+.gloss{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:12px}
+.gloss .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px 15px;box-shadow:var(--shadow)}
+.gloss .card h5{margin:0 0 5px;font-size:.97rem;font-family:"Fraunces",Georgia,serif;font-weight:600}
+.gloss .card p{margin:.25em 0;font-size:.86rem;color:var(--ink2);line-height:1.5}
+.gloss .card p.why{color:var(--ink);border-top:1px solid var(--line);padding-top:.45em;margin-top:.5em}
+.gloss .card .tag{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--acc)}
+
+/* ---------- forge ---------- */
+.forge{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow);max-width:82ch}
+.forge .qhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:8px}
+.forge .qn{font-family:"IBM Plex Mono",monospace;font-size:.76rem;letter-spacing:.1em;color:var(--acc);text-transform:uppercase}
+.forge .pivot{font-size:.72rem;color:var(--ink2);text-align:right}
+.forge .stemtx{font-size:.97rem;margin:0 0 12px;line-height:1.62}
+.alts{display:flex;flex-direction:column;gap:7px}
+.alts button{font:inherit;text-align:left;font-size:.92rem;padding:9px 13px;border-radius:10px;border:1px solid var(--line);
+  background:var(--panel2);color:var(--ink);cursor:pointer;line-height:1.45;display:flex;gap:9px}
+.alts button:hover:not(:disabled){border-color:var(--acc)}
+.alts button:disabled{cursor:default}
+.alts button .L{font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--acc);flex:0 0 auto}
+.alts button.ok{background:var(--b-soft);border-color:var(--b)} .alts button.ok .L{color:var(--b)}
+.alts button.no{background:var(--d-soft);border-color:var(--d)} .alts button.no .L{color:var(--d)}
+.expl{margin-top:13px;padding:13px 15px;background:var(--panel2);border-radius:10px;font-size:.9rem;line-height:1.6}
+.expl h6{margin:0 0 4px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);font-family:"IBM Plex Sans",sans-serif}
+.expl p{margin:.45em 0}
+.expl .why{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin-top:.6em;font-size:.87rem}
+.expl .why .l{font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--ink2)}
+.forge .foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap}
+.forge .score{font-family:"IBM Plex Mono",monospace;font-size:.85rem;color:var(--ink2)}
+.forge .foot button{font:inherit;font-size:.86rem;padding:7px 15px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);cursor:pointer;font-weight:600}
+.forge .foot button.prim{background:var(--acc);border-color:var(--acc);color:#fff}
+
+/* ---------- mother table ---------- */
+.mother{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:13px}
+.mother .c{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--acc);border-radius:0 0 12px 12px;padding:13px 15px;box-shadow:var(--shadow)}
+.mother .c.b{border-top-color:var(--b)} .mother .c.d{border-top-color:var(--d)}
+.mother .c.w{border-top-color:var(--w)} .mother .c.m{border-top-color:var(--m)}
+.mother .c .trig{font-size:.86rem;color:var(--ink2);display:block;margin-bottom:5px}
+.mother .c .act{font-size:.95rem;font-weight:600;line-height:1.45}
+.mother .c .note{font-size:.8rem;color:var(--ink2);margin-top:6px;display:block}
+
+footer.end{padding:34px 0 60px;color:var(--ink2);font-size:.88rem;max-width:72ch}
+footer.end h3{font-size:1.15rem;margin:0 0 .3em}
+.srcs{font-size:.8rem;color:var(--ink2);margin-top:18px;line-height:1.7}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">ENARE R+ Cirurgia Geral &middot; Atlas 25</div>
+  <h1>Atlas da Anticoagulação Perioperatória</h1>
+  <p class="lede">Uma questão de anticoagulante no pré-operatório tem sempre a mesma espinha: <b>qual droga</b>, <b>quanto sangra o procedimento</b> e <b>quanto tromba o paciente</b> &mdash; nessa ordem. Quem responde na ordem errada cai na ponte de heparina, que é o distrator predileto da banca. Esta página desmonta a farmacocinética antes de chegar à conduta.</p>
+
+  <div class="stem">
+    <span class="q">Questão-mãe</span>
+    <p>Mulher de 68 anos, em uso de <b>apixabana</b> por fibrilação atrial não valvar (escore CHA<sub>2</sub>DS<sub>2</sub>-VASc de 3), sem eventos tromboembólicos prévios, será submetida a <b>colectomia eletiva</b>. Clearance de creatinina de 70 mL/min, sem sangramento ativo e sem trombocitopenia. Quanto ao manejo perioperatório do anticoagulante, a conduta é:</p>
+    <ol type="A">
+      <li>Suspender a apixabana 48 horas antes e realizar ponte com heparina de baixo peso molecular em dose plena.</li>
+      <li>Suspender a apixabana 7 dias antes e realizar ponte com heparina não fracionada intravenosa.</li>
+      <li>Manter a apixabana até a véspera, suspendendo apenas a dose da manhã da cirurgia.</li>
+      <li>Reverter com concentrado de complexo protrombínico na indução, mantendo o anticoagulante até a cirurgia.</li>
+      <li id="altE">Suspender a apixabana 48 horas antes, sem ponte com heparina, e reiniciar quando a hemostasia permitir.</li>
+    </ol>
+    <button class="revealbtn" id="revealBtn">Mostrar o gabarito</button>
+    <div id="revealBox" hidden class="verdict v-b" style="max-width:60ch">
+      <b>Gabarito &middot; E</b>Suspender 48 h antes, <b>sem ponte</b>, e reiniciar quando a hemostasia permitir. Os capítulos abaixo mostram, com número, por que 48 h basta e por que a ponte não só é dispensável como prejudicial.
+    </div>
+  </div>
+</header>
+</div>
+
+<nav class="rail"><div class="inner">
+  <a href="#c0"><b>00</b>Vocabulário</a>
+  <a href="#c1"><b>01</b>O relógio da droga</a>
+  <a href="#c2"><b>02</b>Onde cada droga corta</a>
+  <a href="#c3"><b>03</b>O buraco da varfarina</a>
+  <a href="#c4"><b>04</b>Máquina de decisão</a>
+  <a href="#c5"><b>05</b>Reversão</a>
+  <a href="#c6"><b>06</b>Neuroeixo e retorno</a>
+  <a href="#c7"><b>07</b>Forja</a>
+  <a href="#c8"><b>08</b>Tabela-mãe</a>
+</div></nav>
+
+<div class="wrap">
+
+<section class="ch" id="c0">
+  <header>
+    <span class="num">CAPÍTULO 00</span>
+    <h2>Antes de começar: o vocabulário do caso</h2>
+    <p class="sub">Cada palavra do enunciado carrega uma decisão. Estes dezesseis cartões dizem o que cada termo é, em linguagem de leigo, e por que ele aparece nesta questão. Se algum deles for novidade, leia-o agora &mdash; os capítulos seguintes assumem todos eles.</p>
+  </header>
+
+  <div class="gloss">
+    <div class="card"><span class="tag">droga</span><h5>Apixabana</h5><p>Comprimido que afina o sangue bloqueando um único ponto da coagulação, o fator Xa. Dose usual 5 mg duas vezes ao dia. Chamada de DOAC ou NOAC (anticoagulante oral direto).</p><p class="why">É a protagonista da questão: sua meia-vida curta (≈ 12 h) é o motivo pelo qual 48 h de suspensão bastam.</p></div>
+    <div class="card"><span class="tag">conceito</span><h5>Meia-vida</h5><p>Tempo que o corpo leva para eliminar metade da droga que está no sangue. Depois de 4 meias-vidas sobra ≈ 6 % da dose; depois de 5, ≈ 3 %.</p><p class="why">Toda a matemática do "quando suspender" é contar meias-vidas até sobrar pouco o bastante para operar.</p></div>
+    <div class="card"><span class="tag">doença</span><h5>Fibrilação atrial não valvar</h5><p>Arritmia em que os átrios tremem em vez de contrair. O sangue estagna no apêndice atrial esquerdo, forma coágulo e o coágulo viaja para o cérebro. "Não valvar" significa: sem prótese valvar mecânica e sem estenose mitral reumática moderada a grave.</p><p class="why">É o que define que a paciente pode usar DOAC. Se fosse valvar, só varfarina serviria &mdash; e a lógica da ponte mudaria.</p></div>
+    <div class="card"><span class="tag">escore</span><h5>CHA<sub>2</sub>DS<sub>2</sub>-VASc</h5><p>Soma de fatores que estima o risco de AVC na fibrilação atrial: insuficiência cardíaca 1, hipertensão 1, idade ≥ 75 <b>2</b>, diabetes 1, AVC/AIT prévio <b>2</b>, doença vascular 1, idade 65–74 1, sexo feminino 1.</p><p class="why">O 3 da paciente vem de idade 65–74 (1) + sexo feminino (1) + um fator clínico (1). É risco <b>baixo a moderado</b> &mdash; longe do patamar que justificaria ponte.</p></div>
+    <div class="card"><span class="tag">conceito</span><h5>Ponte (bridging)</h5><p>Substituir temporariamente o anticoagulante oral por heparina injetável em <b>dose plena</b> durante os dias em que o oral está fora. Não é profilaxia: é anticoagulação terapêutica de curta duração.</p><p class="why">É o distrator central da questão. Ponte foi inventada para a varfarina; aplicá-la a um DOAC só acrescenta sangramento.</p></div>
+    <div class="card"><span class="tag">droga</span><h5>Heparina de baixo peso molecular (HBPM)</h5><p>Enoxaparina, dalteparina. Injeção subcutânea que age sobretudo sobre o fator Xa. Dose <b>plena</b> = 1 mg/kg 12/12 h; dose <b>profilática</b> = 40 mg/dia.</p><p class="why">As duas doses são coisas diferentes. Confundi-las é confundir ponte com profilaxia de TEV &mdash; erro que a banca cobra literalmente.</p></div>
+    <div class="card"><span class="tag">droga</span><h5>Heparina não fracionada (HNF)</h5><p>Heparina "comum", intravenosa contínua, meia-vida de 60–90 minutos, controlada por TTPa e revertida por protamina.</p><p class="why">Reservada a quem tem insuficiência renal grave ou precisa de liga/desliga rápido. Na alternativa B ela aparece junto com um prazo absurdo de 7 dias.</p></div>
+    <div class="card"><span class="tag">exame</span><h5>Clearance de creatinina (ClCr)</h5><p>Estimativa de quanto sangue os rins filtram por minuto. Normal ≈ 90–120 mL/min. Calculado por Cockcroft-Gault, que é a fórmula usada nas bulas dos DOACs.</p><p class="why">70 mL/min é função renal boa. Isso mantém a meia-vida da apixabana em ≈ 13 h e valida o prazo de 48 h. Se fosse dabigatrana com ClCr 30, o prazo saltaria para 4 dias.</p></div>
+    <div class="card"><span class="tag">cirurgia</span><h5>Colectomia eletiva</h5><p>Ressecção de um segmento do cólon com anastomose, programada. Superfície cruenta ampla, mesocólon vascularizado, cavidade fechada onde o sangramento não se vê.</p><p class="why">É classificada como procedimento de <b>alto risco de sangramento</b>. É esse rótulo &mdash; e não a idade nem o escore &mdash; que define o prazo de 48 h em vez de 24 h.</p></div>
+    <div class="card"><span class="tag">conceito</span><h5>Risco de sangramento do procedimento</h5><p>Classificação em mínimo (dentária simples, catarata), baixo (colonoscopia diagnóstica, hérnia, marca-passo) e alto (abdome maior, cardíaco, intracraniano, espinhal, urológico maior, neuroeixo).</p><p class="why">É a variável que define <b>o prazo</b> de suspensão. Aprender essa lista rende mais pontos que decorar meias-vidas.</p></div>
+    <div class="card"><span class="tag">conceito</span><h5>Risco tromboembólico do paciente</h5><p>Chance de o paciente formar coágulo enquanto está sem anticoagulante. Alto = prótese mitral mecânica, AVC/AIT &lt; 3 meses, TEV &lt; 3 meses, trombofilia grave, CHA<sub>2</sub>DS<sub>2</sub>-VASc muito alto.</p><p class="why">É a variável que define <b>se há ponte</b> &mdash; e ela só entra em jogo quando a droga é varfarina.</p></div>
+    <div class="card"><span class="tag">droga</span><h5>Varfarina</h5><p>Antagonista da vitamina K. Não bloqueia um fator: impede o fígado de <i>fabricar</i> os fatores II, VII, IX e X. Por isso demora dias para sair de ação e dias para voltar.</p><p class="why">Toda a existência da ponte se explica por essa lentidão. Entender isso é entender por que o DOAC não precisa de ponte.</p></div>
+    <div class="card"><span class="tag">exame</span><h5>INR</h5><p>Razão normalizada internacional: mede o quanto a via extrínseca está lentificada. Alvo terapêutico na fibrilação atrial: 2,0–3,0. Sem anticoagulante fica ≈ 1,0.</p><p class="why">É o termômetro da varfarina. Os DOACs <b>não</b> se monitoram por INR &mdash; um INR normal em quem tomou apixabana há 6 h não significa sangue "limpo".</p></div>
+    <div class="card"><span class="tag">droga</span><h5>Concentrado de complexo protrombínico (CCP)</h5><p>Frasco com os fatores II, VII, IX e X já prontos, derivados de plasma. Dose 25–50 U/kg. Repõe em minutos o que a varfarina impediu de fabricar.</p><p class="why">É o veneno da alternativa D. Reverter anticoagulação em cirurgia <b>eletiva</b> é trocar um risco que o tempo resolve de graça por um risco trombótico que se compra caro.</p></div>
+    <div class="card"><span class="tag">droga</span><h5>Andexanete alfa e idarucizumabe</h5><p>Antídotos específicos. Andexanete é um fator Xa falso que sequestra os inibidores do Xa (apixabana, rivaroxabana). Idarucizumabe é um anticorpo que gruda na dabigatrana.</p><p class="why">Existem para <b>sangramento com risco de vida</b> ou cirurgia de emergência inadiável. Nunca para cirurgia programada.</p></div>
+    <div class="card"><span class="tag">achado</span><h5>Sem sangramento ativo, sem trombocitopenia</h5><p>Duas negativas que o enunciado faz questão de dar: a paciente não está sangrando agora e o número de plaquetas está normal.</p><p class="why">São exatamente as duas condições que justificariam reverter ou transfundir. Ao negá-las, o enunciado fecha a porta das alternativas D e de qualquer conduta de urgência.</p></div>
+  </div>
+
+  <div class="prose">
+    <h3>Por que este tema volta todo ano</h3>
+    <p>Anticoagulante no perioperatório é o encontro de três especialidades numa questão só: a cardiologia decide por que o paciente anticoagula, a farmacologia decide quanto tempo a droga sobra no sangue, e a cirurgia decide quanto aquilo vai sangrar na mesa. A banca gosta desse cruzamento porque ele separa quem decorou uma tabela de quem entende de onde a tabela veio &mdash; e porque o erro tem consequência real: um paciente operado com anticoagulante circulante sangra, e um paciente com ponte desnecessária sangra mais ainda.</p>
+    <p>Há um segundo motivo, mais prosaico. A conduta correta mudou nos últimos dez anos e boa parte dos serviços ainda opera pela conduta antiga. Dois ensaios grandes derrubaram a ponte: o <b>BRIDGE</b> (2015) mostrou que, em fibrilação atrial em varfarina, não fazer ponte é tão seguro quanto fazer, com menos da metade do sangramento maior; o <b>PAUSE</b> (2019) mostrou que os DOACs podem ser suspensos por um esquema fixo de 1 ou 2 dias, sem ponte e sem nenhum exame de coagulação prévio. Toda questão de prova hoje é escrita a partir desses dois estudos, e as alternativas erradas são fósseis da prática anterior a eles.</p>
+
+    <div class="prose"></div>
+    <div class="key"><b>Guarde isto</b>A pergunta nunca é "quanto essa paciente tromba". A pergunta é, em ordem: (1) qual droga &rarr; define a lógica; (2) quanto sangra o procedimento &rarr; define o prazo; (3) quanto tromba o paciente &rarr; define se há ponte, e isso <b>só</b> importa na varfarina.</p></div>
+
+    <div class="divg"><b>Como a banca cobra</b><span class="chance">Chance de cair ≈ 55 %</span>
+    <p>O tema aparece em pelo menos uma das três roupagens: (a) o caso clássico, DOAC + cirurgia eletiva de alto risco, testando o prazo e a ausência de ponte; (b) a troca de droga, com dabigatrana e clearance reduzido, testando se você sabe que só ela é 80 % renal; (c) a inversão, com varfarina e prótese mecânica, testando se você sabe que aí a ponte <i>é</i> indicada. Frases-gatilho literais: "fibrilação atrial não valvar" e "sem eventos tromboembólicos prévios" pedem <b>sem ponte</b>; "prótese valvar mitral mecânica", "AVC há 2 meses" e "TVP há 6 semanas" pedem <b>com ponte</b>; "clearance de 30 mL/min" com dabigatrana pede <b>4 dias</b>.</p></div>
+  </div>
+</section>
+
+<section class="ch" id="c1">
+  <header>
+    <span class="num">CAPÍTULO 01</span>
+    <h2>O relógio da droga</h2>
+    <p class="sub">Toda a regra de "quantas horas antes" é uma conta só: quanto sobra da droga no sangue depois de <i>n</i> horas. O gráfico faz essa conta ao vivo, e mostra por que o rim muda tudo para uma droga e quase nada para outra.</p>
+  </header>
+
+  <div class="howto">
+    <b class="t">Como usar este instrumento</b>
+    <ol>
+      <li>Escolha a droga nos botões da direita. A curva cheia é a concentração no plasma; a curva pontilhada é a mesma droga num rim perfeito (ClCr 100), para comparação.</li>
+      <li>Arraste <b>Clearance de creatinina</b> de 100 para 30 e observe qual curva se deforma. A da apixabana quase não se move; a da dabigatrana se arrasta para a direita.</li>
+      <li>Arraste <b>Horas desde a última dose</b> até o veredito ficar verde. Esse é o prazo de suspensão daquela droga naquele rim.</li>
+    </ol>
+    <p class="ex"><b>Exercício:</b> ponha apixabana com ClCr 70 e leve o tempo a 48 h &rarr; sobra ≈ 8 % do pico, ≈ 13 ng/mL, verde. Agora troque só a droga para dabigatrana e baixe o ClCr para 32, mantendo as mesmas 48 h &rarr; sobram ≈ 31 %, ≈ 54 ng/mL, vermelho. Mesma cirurgia, mesmo prazo, resultado oposto &mdash; e a única coisa que mudou foi por onde a droga sai.</p>
+  </div>
+
+  <div class="plate">
+    <div class="fig">
+      <svg id="pkSvg" viewBox="0 0 640 372" role="img" aria-label="Curva de decaimento da concentração plasmática do anticoagulante ao longo das horas desde a última dose, com linhas de corte em 30 e 50 nanogramas por mililitro"></svg>
+    </div>
+    <div class="ctrl">
+      <div class="grp">
+        <h4>Anticoagulante oral direto</h4>
+        <div class="seg" id="pkDrug">
+          <button data-k="apix" class="on">Apixabana</button>
+          <button data-k="riva">Rivaroxabana</button>
+          <button data-k="edox">Edoxabana</button>
+          <button data-k="dabi">Dabigatrana</button>
+        </div>
+      </div>
+      <div class="grp">
+        <div class="rangelab"><span>Clearance de creatinina</span><b><span id="pkCrclV">70</span> mL/min</b></div>
+        <input type="range" id="pkCrcl" min="15" max="120" step="5" value="70">
+      </div>
+      <div class="grp">
+        <div class="rangelab"><span>Horas desde a última dose</span><b><span id="pkHV">48</span> h</b></div>
+        <input type="range" id="pkH" min="0" max="120" step="1" value="48">
+      </div>
+      <div class="readout">
+        <span>Fração eliminada pelo rim</span><span class="v" id="pkRen">27 %</span>
+        <span>Meia-vida neste rim</span><span class="v" id="pkT12">13,1 h</span>
+        <span>Meias-vidas decorridas</span><span class="v" id="pkN">3,7</span>
+        <span>Resíduo estimado</span><span class="v" id="pkRes">13 ng/mL</span>
+        <span>Percentual do pico</span><span class="v" id="pkPct">7,8 %</span>
+      </div>
+      <div id="pkVerd" class="verdict v-b"><b>Liberado</b>—</div>
+    </div>
+  </div>
+
+  <div class="prose">
+    <h3>O que quer dizer "concentração no plasma", em termos simples</h3>
+    <p>Quando a paciente engole o comprimido de apixabana às 8 h, a droga é absorvida e a quantidade dela no sangue sobe até um pico por volta de 3 h depois &mdash; cerca de 170 nanogramas por mililitro, que é o <b>pico</b> marcado no alto do gráfico. A partir dali o fígado e o rim começam a retirá-la, e a quantidade cai. Não cai em linha reta: cai pela metade em intervalos fixos. É a chamada eliminação de primeira ordem, e é o que dá à curva o formato de escorregador.</p>
+    <p>O intervalo em que a quantidade cai pela metade é a <b>meia-vida</b>. Para a apixabana em rim normal são cerca de 12 horas. Isso significa: 12 h depois da última dose sobra metade; 24 h, um quarto; 36 h, um oitavo; 48 h, um dezesseis avos, ou 6 %. É por isso que o número 48 aparece na alternativa correta &mdash; ele não é um número arbitrário de diretriz, é quatro meias-vidas.</p>
+
+    <h3>Por que "quatro meias-vidas" é o alvo, e não zero</h3>
+    <p>Não existe sangue sem nenhuma molécula de droga. O que existe é um limiar abaixo do qual a droga não interfere mais na hemostasia cirúrgica. O estudo PAUSE mediu isso diretamente: dosou o nível residual de apixabana, rivaroxabana e dabigatrana no dia da cirurgia em três mil pacientes que suspenderam pelo esquema fixo. Mais de 90 % chegaram ao centro cirúrgico com <b>menos de 50 ng/mL</b>, e a esmagadora maioria dos que iam para procedimentos de alto risco chegaram abaixo de 30 ng/mL. Essas são as duas linhas horizontais do gráfico.</p>
+    <p>O achado que fecha a questão é o desfecho: com esse esquema, sem ponte e sem dosar nada antes, o tromboembolismo arterial em 30 dias ficou entre 0,16 % e 0,6 %, e o sangramento maior entre 0,9 % e 1,85 %. São números de segurança que nenhuma estratégia de ponte reproduziu.</p>
+
+    <h3>Os números, e o que cada um decide</h3>
+    <div class="num-table">
+      <span class="k">≈ 12 h</span><span>Meia-vida da apixabana. Fração renal 27 % &mdash; o rim quase não muda o prazo.</span>
+      <span class="k">≈ 5–13 h</span><span>Meia-vida da rivaroxabana (mais longa no idoso). Fração renal 33 %.</span>
+      <span class="k">≈ 10–14 h</span><span>Meia-vida da edoxabana. Fração renal 50 %.</span>
+      <span class="k">≈ 12–17 h</span><span>Meia-vida da dabigatrana. Fração renal <b>80 %</b> &mdash; é a única em que o clearance manda no prazo.</span>
+      <span class="k">36–42 h</span><span>Meia-vida da varfarina. Mas o que importa nela é a meia-vida dos fatores que ela deixou de fabricar (protrombina, 60–72 h) &mdash; por isso 5 dias.</span>
+      <span class="k">4–7 h</span><span>Meia-vida da enoxaparina. Por isso a última dose plena da ponte é 24 h antes: 4 meias-vidas.</span>
+      <span class="k">60–90 min</span><span>Meia-vida da heparina não fracionada. Por isso a infusão é desligada 4–6 h antes.</span>
+      <span class="k">&lt; 30 ng/mL</span><span>Nível residual seguro para procedimento de <b>alto</b> risco de sangramento e para punção do neuroeixo.</span>
+      <span class="k">&lt; 50 ng/mL</span><span>Nível residual aceitável para procedimento de <b>baixo</b> risco.</span>
+    </div>
+    <p>A regra que cai em prova é a do esquema fixo do PAUSE, reproduzida nas diretrizes do ACCP/CHEST 2022: para os inibidores do fator Xa, <b>24 h</b> antes de procedimento de baixo risco e <b>48 h</b> antes de procedimento de alto risco, independentemente do clearance, desde que ele esteja acima de 30 mL/min. Para a dabigatrana, os mesmos 24 e 48 h se o clearance for ≥ 50; se estiver entre 30 e 49, os prazos dobram para 48 h e <b>96 h</b>. Nenhum desses prazos depende do escore CHA<sub>2</sub>DS<sub>2</sub>-VASc &mdash; o escore não entra na conta do tempo.</p>
+
+    <h3>Como isso aparece na paciente do enunciado</h3>
+    <p>Ela tem 68 anos, usa apixabana e tem clearance de 70 mL/min. Coloque esses valores no instrumento: a meia-vida efetiva sobe de 12 h para pouco mais de 13 h &mdash; um acréscimo de uma hora, porque só 27 % da droga sai pelo rim e ele está funcionando bem. Em 48 h passaram-se 3,7 meias-vidas e sobram cerca de 13 ng/mL, bem abaixo dos 30. A colectomia pode começar com a hemostasia dela intacta.</p>
+    <p>Repare no que o enunciado <i>não</i> pede: nenhuma dosagem de anti-Xa antes da cirurgia, nenhum INR, nenhum TTPa. O PAUSE mostrou que o esquema fixo dispensa a medição, e é exatamente por isso que a alternativa correta não menciona exame nenhum. Se a questão trouxesse "solicitar dosagem de atividade anti-Xa na manhã da cirurgia" como alternativa, seria distrator.</p>
+
+    <div class="key"><b>Guarde isto</b>Prazo de suspensão de DOAC = 24 h se o procedimento é de baixo risco, 48 h se é de alto risco. A única droga que muda essa conta com o rim é a dabigatrana, porque só ela é 80 % renal: com clearance entre 30 e 49, dobra para 48 h e 96 h.</div>
+
+    <div class="divg"><b>Como a banca cobra</b><span class="chance">Chance de cair ≈ 40 %</span>
+    <p>A roupagem mais comum é dar o clearance no enunciado e esperar que você o use &mdash; mesmo quando ele é irrelevante. Com apixabana e clearance de 70, o número serve só para excluir a insuficiência renal; quem tenta "ajustar o prazo pelo clearance" acaba escolhendo 72 h ou 5 dias e erra. A segunda roupagem é a inversa: dabigatrana com clearance entre 30 e 50, em que ignorar o rim leva a marcar 48 h quando a resposta é 96 h. Frase-gatilho: sempre que o enunciado nomear <b>dabigatrana</b> e der um clearance abaixo de 50, o prazo dobra.</p></div>
+  </div>
+</section>
+
+<section class="ch" id="c2">
+  <header>
+    <span class="num">CAPÍTULO 02</span>
+    <h2>Onde cada droga corta a cascata</h2>
+    <p class="sub">Quem sabe onde a droga corta acerta sozinho três coisas que a prova cobra separadas: qual exame se altera, qual antídoto funciona e por que a varfarina é lenta e o DOAC é rápido.</p>
+  </header>
+
+  <div class="howto">
+    <b class="t">Como usar este instrumento</b>
+    <ol>
+      <li>Clique numa droga na coluna da direita. Os pontos da cascata que ela bloqueia acendem em vermelho.</li>
+      <li>Leia, no painel abaixo dos botões, o exame que se altera. Confira se ele corresponde à via em que os pontos acenderam &mdash; via intrínseca acende, TTPa alarga; via extrínseca acende, INR sobe.</li>
+      <li>Compare varfarina com apixabana: uma acende quatro caixas espalhadas, a outra acende uma só.</li>
+    </ol>
+    <p class="ex"><b>Exercício:</b> clique em varfarina e conte as caixas acesas &mdash; são quatro, e ela não bloqueia nenhuma delas: impede o fígado de fabricá-las. Agora clique em apixabana &mdash; uma caixa. Essa diferença de arquitetura é a explicação inteira de por que uma sai de ação em cinco dias e a outra em dois.</p>
+  </div>
+
+  <div class="plate">
+    <div class="fig">
+      <svg id="casc" viewBox="0 0 640 400" role="img" aria-label="Cascata da coagulação com as vias intrínseca e extrínseca convergindo no fator X, e destaque no ponto bloqueado pelo anticoagulante selecionado">
+        <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><polygon points="0,1 10,5 0,9"/></marker></defs>
+
+        <text class="lbl" x="118" y="30" text-anchor="middle">VIA INTRÍNSECA · TTPa</text>
+        <text class="lbl" x="500" y="30" text-anchor="middle">VIA EXTRÍNSECA · TP / INR</text>
+
+        <g class="nd" id="nd-xii"><rect x="43" y="48" width="150" height="32" rx="8"/><text x="118" y="68" text-anchor="middle">FXII → FXIIa</text></g>
+        <g class="nd" id="nd-xi"><rect x="43" y="98" width="150" height="32" rx="8"/><text x="118" y="118" text-anchor="middle">FXI → FXIa</text></g>
+        <g class="nd" id="nd-ix"><rect x="43" y="148" width="150" height="32" rx="8"/><text x="118" y="168" text-anchor="middle">FIX → FIXa</text></g>
+        <g class="nd" id="nd-viii"><rect x="205" y="148" width="76" height="32" rx="8"/><text x="243" y="168" text-anchor="middle">+ FVIIIa</text></g>
+        <g class="nd" id="nd-vii"><rect x="405" y="48" width="190" height="32" rx="8"/><text x="500" y="68" text-anchor="middle">Fator tecidual + FVIIa</text></g>
+
+        <g class="nd" id="nd-x"><rect x="230" y="200" width="180" height="34" rx="8"/><text x="320" y="222" text-anchor="middle">FX → FXa  (+ FVa)</text></g>
+        <g class="nd" id="nd-ii"><rect x="230" y="254" width="180" height="34" rx="8"/><text x="320" y="276" text-anchor="middle">Protrombina → Trombina</text></g>
+        <g class="nd" id="nd-fg"><rect x="230" y="308" width="180" height="34" rx="8"/><text x="320" y="330" text-anchor="middle">Fibrinogênio → Fibrina</text></g>
+
+        <path class="arw" d="M118,80 L118,98" marker-end="url(#ar)"/>
+        <path class="arw" d="M118,130 L118,148" marker-end="url(#ar)"/>
+        <path class="arw" d="M193,164 L205,164" marker-end="url(#ar)"/>
+        <path class="arw" d="M118,180 L118,190 L250,190 L250,200" marker-end="url(#ar)"/>
+        <path class="arw" d="M500,80 L500,190 L390,190 L390,200" marker-end="url(#ar)"/>
+        <path class="arw" d="M320,234 L320,254" marker-end="url(#ar)"/>
+        <path class="arw" d="M320,288 L320,308" marker-end="url(#ar)"/>
+        <path class="arw fb" d="M230,271 L200,271 L200,164 L200,164 L275,164" marker-end="url(#ar)" stroke-dasharray="4 3"/>
+        <text class="lbl fbl" x="204" y="248">amplificação</text>
+
+        <text class="lbl" x="418" y="220" text-anchor="start">anti-Xa</text>
+        <text class="lbl" x="418" y="274" text-anchor="start">tempo de trombina</text>
+        <text class="lbl" x="320" y="362" text-anchor="middle">COÁGULO ESTÁVEL · FXIIIa</text>
+
+        <g id="cutlayer"></g>
+      </svg>
+    </div>
+    <div class="ctrl">
+      <div class="grp">
+        <h4>Droga</h4>
+        <div class="seg" id="cascDrug">
+          <button data-k="xa" class="on">Apixabana / Rivaroxabana</button>
+          <button data-k="dabi">Dabigatrana</button>
+          <button data-k="warf">Varfarina</button>
+          <button data-k="unf">HNF</button>
+          <button data-k="lmwh">HBPM</button>
+          <button data-k="fonda">Fondaparinux</button>
+        </div>
+      </div>
+      <div class="readout" id="cascOut"></div>
+      <div id="cascNote" class="verdict v-m"><b>Leitura</b>—</div>
+    </div>
+  </div>
+
+  <div class="prose">
+    <h3>O que é a cascata, dito de forma simples</h3>
+    <p>Coagular é transformar um líquido em gel. O gel é a fibrina, uma rede de fios que prende as plaquetas e fecha o buraco. O fibrinogênio circula no sangue o tempo todo em forma solúvel, e só vira fibrina quando uma enzima chamada trombina o corta. Toda a cascata existe para produzir trombina no lugar certo e na hora certa.</p>
+    <p>A cascata tem duas portas de entrada que dão no mesmo corredor. A <b>via extrínseca</b> é acionada quando o vaso se rompe e o sangue encontra o fator tecidual, uma proteína que só existe fora do vaso &mdash; é a via da lesão, rápida, e é ela que o INR mede. A <b>via intrínseca</b> é acionada por contato com superfícies e serve sobretudo para amplificar o que a extrínseca começou &mdash; é ela que o TTPa mede. As duas convergem no <b>fator X</b>, e a partir dali o caminho é único: Xa gera trombina, trombina gera fibrina.</p>
+
+    <h3>Por que o ponto onde a droga corta muda tudo</h3>
+    <p>Os DOACs são inibidores <b>diretos</b>: a molécula gruda no sítio ativo da enzima e o desliga. Apixabana, rivaroxabana e edoxabana grudam no fator Xa; a dabigatrana gruda na trombina. Como agem sobre uma enzima que já está circulando, o efeito aparece em 2 a 4 horas &mdash; o tempo de a droga ser absorvida &mdash; e some quando a droga é eliminada. Ligar e desligar são igualmente rápidos.</p>
+    <p>A varfarina não gruda em nada. Ela bloqueia a enzima que recicla a vitamina K no fígado, e sem vitamina K reciclada o hepatócito não consegue terminar de fabricar os fatores II, VII, IX e X. Os fatores que já estavam prontos no sangue continuam funcionando até serem consumidos. Por isso o efeito só aparece depois que o estoque acaba, e por isso ele só desaparece depois que o fígado repõe o estoque. Pense num reservatório: o DOAC fecha a torneira de saída, a varfarina desliga a fábrica &mdash; e o reservatório leva dias para esvaziar e dias para encher.</p>
+    <p>Um detalhe que a banca adora: a varfarina também bloqueia a fabricação das <b>proteínas C e S</b>, que são anticoagulantes naturais e têm meia-vida <i>mais curta</i> que a dos fatores procoagulantes. Nos primeiros dias de varfarina o sangue fica transitoriamente mais trombogênico, não menos. É a explicação da necrose cutânea induzida por varfarina e o motivo histórico de se cobrir o início do tratamento com heparina.</p>
+
+    <h3>Os números, e o que cada um decide</h3>
+    <div class="num-table">
+      <span class="k">INR</span><span>Mede a via extrínseca. Alterado pela varfarina. <b>Não serve</b> para monitorar DOAC: pode estar normal com apixabana plena no sangue.</span>
+      <span class="k">TTPa</span><span>Mede a via intrínseca. Monitoriza a HNF. Um TTPa normal praticamente exclui dabigatrana em nível relevante, mas não a quantifica.</span>
+      <span class="k">Anti-Xa</span><span>Único exame que quantifica HBPM, fondaparinux e os inibidores do Xa &mdash; e exige calibrador específico para cada droga.</span>
+      <span class="k">Tempo de trombina</span><span>Extremamente sensível à dabigatrana. Se estiver normal, não há dabigatrana relevante circulando.</span>
+      <span class="k">II, VII, IX, X</span><span>Os quatro fatores dependentes de vitamina K. É o que a varfarina desliga e o que o CCP repõe.</span>
+      <span class="k">Prot. C e S</span><span>Anticoagulantes naturais, também dependentes de vitamina K, com meia-vida menor &mdash; a razão do estado pró-trombótico inicial da varfarina.</span>
+    </div>
+    <p>A regra que cai é a de qual exame não serve: pedir INR ou TTPa para "confirmar que a apixabana saiu" é conduta errada, e o esquema fixo do PAUSE foi validado exatamente para dispensar essa dosagem. Se uma alternativa propuser exame de coagulação de rotina antes de cirurgia eletiva em paciente em DOAC com prazo cumprido, ela é distrator.</p>
+
+    <div class="key"><b>Guarde isto</b>DOAC = tampa numa enzima que já existe &rarr; liga e desliga em horas. Varfarina = fábrica desligada &rarr; liga e desliga em dias. Toda a diferença de conduta perioperatória entre as duas famílias sai dessa única frase.</div>
+
+    <div class="divg"><b>Como a banca cobra</b><span class="chance">Chance de cair ≈ 25 %</span>
+    <p>Aparece de duas formas: perguntando qual exame monitoriza qual droga (o par que mais confunde é HBPM &rarr; anti-Xa, não TTPa) e perguntando o antídoto correto. O distrator clássico é oferecer protamina para um DOAC &mdash; protamina só reverte heparina, porque só ela é uma molécula com carga oposta à da heparina. Frases-gatilho: "TTPa alargado em paciente em uso de heparina não fracionada"; "INR de 1,1 em paciente que tomou rivaroxabana há 4 horas" (o INR normal <b>não</b> autoriza operar).</p></div>
+  </div>
+</section>
+
+<section class="ch" id="c3">
+  <header>
+    <span class="num">CAPÍTULO 03</span>
+    <h2>O buraco da varfarina, e por que o DOAC não tem</h2>
+    <p class="sub">Ponte não é um cuidado extra que se oferece a quem tromba muito. É um remendo inventado para tapar um buraco que só a varfarina cria. Este instrumento desenha o buraco.</p>
+  </header>
+
+  <div class="howto">
+    <b class="t">Como usar este instrumento</b>
+    <ol>
+      <li>Olhe primeiro sem tocar em nada. As duas faixas mostram o nível de anticoagulação do mesmo paciente, do 7.º dia antes ao 7.º depois da cirurgia. A linha tracejada é o nível terapêutico; a área vermelha é o tempo em que o paciente está <b>desprotegido</b>.</li>
+      <li>Compare a largura das duas áreas vermelhas. A da varfarina começa dias antes e termina dias depois; a do DOAC é um traço estreito em volta da cirurgia.</li>
+      <li>Ligue a ponte na varfarina e veja a área vermelha encolher. Depois ligue a ponte no DOAC e veja o que ela tapa &mdash; quase nada &mdash; ao custo de sangramento que o painel mostra.</li>
+    </ol>
+    <p class="ex"><b>Exercício:</b> sem ponte, a varfarina deixa ≈ 7,9 dias abaixo do nível terapêutico e o DOAC ≈ 3,4. Ligue a ponte na varfarina: cai para ≈ 2,6 dias, e o sangramento maior sobe de 1,3 % para 3,2 %. Ligue a ponte no DOAC: a proteção ganha 1,4 dia e o sangramento sobe igual. Esse par de números <i>é</i> o gabarito da questão-mãe.</p>
+  </div>
+
+  <div class="plate">
+    <div class="fig">
+      <svg id="gapSvg" viewBox="0 0 660 350" role="img" aria-label="Nível de anticoagulação do sétimo dia antes ao sétimo dia após a cirurgia, comparando varfarina e anticoagulante oral direto, com a janela desprotegida sombreada"></svg>
+    </div>
+    <div class="ctrl">
+      <div class="grp">
+        <h4>Ponte com HBPM em dose plena</h4>
+        <div class="seg" id="gapBridge">
+          <button data-k="none" class="on">Nenhuma</button>
+          <button data-k="warf">Na varfarina</button>
+          <button data-k="doac">No DOAC</button>
+        </div>
+      </div>
+      <div class="readout" id="gapOut"></div>
+      <div id="gapVerd" class="verdict v-b"><b>Leitura</b>—</div>
+      <div class="forbid"><b>O que a ponte nunca é</b>Ponte é heparina em <b>dose plena</b> (enoxaparina 1 mg/kg 12/12 h). Profilaxia de TEV pós-operatória é heparina em <b>dose profilática</b> (enoxaparina 40 mg/dia). Todo paciente da colectomia recebe a segunda; quase nenhum recebe a primeira. Chamar profilaxia de ponte é o erro que faz marcar a alternativa A.</div>
+    </div>
+  </div>
+
+  <div class="prose">
+    <h3>De onde veio a ideia de ponte</h3>
+    <p>Nos anos 1990, quem usava varfarina e precisava operar ficava sem anticoagulação por cerca de uma semana e meia: cinco dias para o INR cair até 1,2 e mais cinco para voltar ao alvo depois da cirurgia. Para um portador de prótese valvar mecânica, uma semana e meia desprotegido é tempo suficiente para trombosar a prótese. Alguém propôs o óbvio: encher esse vale com uma heparina, que liga e desliga em horas. Nasceu a ponte.</p>
+    <p>A lógica era impecável para o problema que existia. O que ninguém tinha medido era o preço. A heparina em dose plena até 24 h antes da cirurgia e retomada 24 a 48 h depois é anticoagulação terapêutica num paciente recém-operado &mdash; e o preço é sangramento.</p>
+
+    <h3>Os dois ensaios que reescreveram a conduta</h3>
+    <p>O <b>BRIDGE</b> (NEJM, 2015) randomizou 1.884 pacientes com fibrilação atrial em varfarina que iriam operar: ponte com dalteparina contra placebo. Tromboembolismo arterial em 30 dias: 0,4 % sem ponte contra 0,3 % com ponte &mdash; não inferior. Sangramento maior: 1,3 % sem ponte contra <b>3,2 %</b> com ponte. Ou seja, a ponte não evitou AVC e multiplicou o sangramento por dois e meio. Desde então, mesmo na varfarina, a ponte ficou restrita ao subgrupo de risco trombótico alto, que o BRIDGE não incluiu.</p>
+    <p>O <b>PAUSE</b> (JAMA Intern Med, 2019) fez a pergunta análoga nos DOACs, mas sem grupo-ponte: 3.007 pacientes suspenderam apixabana, rivaroxabana ou dabigatrana por um esquema fixo de 1 dia (baixo risco) ou 2 dias (alto risco), <b>sem ponte e sem dosar nada</b>, e retomaram em 24 h ou 48–72 h. Tromboembolismo arterial em 30 dias entre 0,16 % e 0,6 %; sangramento maior entre 0,9 % e 1,85 %. É esse esquema, e não outro, que a alternativa E descreve.</p>
+
+    <h3>Por que o DOAC não tem buraco para tapar</h3>
+    <p>Volte ao capítulo 01 e olhe o formato das duas curvas. A da varfarina desce devagar e sobe devagar, porque depende de o fígado consumir e depois repor um estoque de proteínas. A do DOAC desce em dois dias e, quando o comprimido volta, sobe ao pico em três horas. O vale do DOAC é um V estreito; o da varfarina é uma banheira. Tapar um V com heparina significa dar anticoagulação plena a um paciente que ficaria desprotegido por pouco mais de um dia &mdash; e dar isso justamente na janela em que a anastomose colônica ainda não está selada.</p>
+    <p>Há ainda um risco que a prova raramente explicita: quando se faz ponte com um DOAC, a heparina plena e o DOAC se sobrepõem nas pontas, porque o DOAC ainda tem resíduo quando a heparina começa e já tem nível quando ela termina. Dois anticoagulantes ao mesmo tempo, num pós-operatório de colectomia, é a receita de hematoma de parede e de sangramento na linha de grampos.</p>
+
+    <h3>Como isso aparece na paciente do enunciado</h3>
+    <p>Ela usa apixabana, não varfarina. O buraco dela dura de 48 h antes até 48 a 72 h depois &mdash; e mesmo esse intervalo é coberto, na parte pós-operatória, por profilaxia de TEV em dose profilática, que ela receberia de qualquer forma por ser uma colectomia. O risco de AVC dela nesses poucos dias, com CHA<sub>2</sub>DS<sub>2</sub>-VASc 3 e nenhum evento prévio, é da ordem de alguns centésimos de por cento. O risco de sangramento maior que a ponte acrescentaria, pelo BRIDGE, é da ordem de dois por cento. A conta não fecha em nenhum cenário.</p>
+
+    <div class="key"><b>Guarde isto</b>Ponte existe porque a varfarina é lenta, não porque o paciente é trombótico. Em DOAC, a resposta é sempre "sem ponte" &mdash; e em varfarina, "com ponte" só quando o risco trombótico é alto: prótese mitral mecânica, AVC/AIT há menos de 3 meses, TEV há menos de 3 meses, trombofilia grave.</div>
+
+    <div class="divg"><b>Como a banca cobra</b><span class="chance">Chance de cair ≈ 50 %</span>
+    <p>Esta é a linha da questão. A banca sempre oferece uma alternativa com o <b>prazo certo e a ponte errada</b> &mdash; na questão-mãe é a alternativa A, "48 horas antes e ponte com HBPM em dose plena". Quem conhece o prazo mas não a lógica marca A e perde a questão inteira. A defesa é fixa: identificado um DOAC, elimine <i>antes de ler o resto</i> toda alternativa que contenha a palavra ponte. Frases-gatilho para o cenário oposto, em que a ponte é correta: "prótese valvar mitral mecânica", "AVC isquêmico há 6 semanas", "trombose venosa profunda há 2 meses", "síndrome antifosfolípide".</p></div>
+  </div>
+</section>
+
+<section class="ch" id="c4">
+  <header>
+    <span class="num">CAPÍTULO 04</span>
+    <h2>A máquina de decisão</h2>
+    <p class="sub">Três perguntas, sempre nesta ordem. A primeira define a lógica, a segunda define o prazo, a terceira define se existe ponte. A máquina devolve o calendário dia a dia e diz a que alternativa da questão-mãe aquilo corresponde.</p>
+  </header>
+
+  <div class="howto">
+    <b class="t">Como usar este instrumento</b>
+    <ol>
+      <li>Comece pelos <b>atalhos</b>: clique em "a paciente da questão" e leia o calendário que aparece. Cada faixa é um dia; a coluna com a linha grossa é o dia da cirurgia.</li>
+      <li>Mude <b>uma</b> variável de cada vez e observe qual linha do calendário se move. Trocar o procedimento move o começo; trocar a droga move o começo <i>e</i> o formato; trocar o risco trombótico só acende ou apaga a faixa da ponte.</li>
+      <li>Leia o bloco vermelho "proibido" &mdash; ele nomeia, para cada configuração, a alternativa de prova que aquela combinação torna errada.</li>
+    </ol>
+    <p class="ex"><b>Exercício:</b> deixe a droga em inibidor do Xa e mude o risco trombótico de baixo para alto. Nada acontece na faixa da ponte. Agora troque a droga para varfarina, mantendo o risco alto: a faixa acende. Isso prova, com o instrumento, que o risco trombótico só é uma variável de decisão quando a droga é varfarina.</p>
+  </div>
+
+  <div class="plate">
+    <div class="fig">
+      <svg id="calSvg" viewBox="0 0 660 268" role="img" aria-label="Calendário perioperatório dia a dia mostrando quando o anticoagulante oral está suspenso, quando há ponte com heparina e quando há profilaxia de tromboembolismo venoso"></svg>
+    </div>
+    <div class="ctrl">
+      <div class="grp">
+        <h4>Atalhos de cenário</h4>
+        <div class="seg" id="mxPreset">
+          <button data-k="p1" class="on">A paciente da questão</button>
+          <button data-k="p2">Colonoscopia diagnóstica</button>
+          <button data-k="p3">Dabigatrana, ClCr 32</button>
+          <button data-k="p4">Prótese mitral mecânica</button>
+          <button data-k="p5">Extração dentária</button>
+        </div>
+      </div>
+      <div class="grp">
+        <h4>1 · Qual a droga?</h4>
+        <div class="seg" id="mxDrug">
+          <button data-k="xa" class="on">Inibidor do Xa</button>
+          <button data-k="dabi">Dabigatrana</button>
+          <button data-k="warf">Varfarina</button>
+        </div>
+      </div>
+      <div class="grp">
+        <h4>2 · Quanto sangra o procedimento?</h4>
+        <div class="seg" id="mxBleed">
+          <button data-k="min">Mínimo</button>
+          <button data-k="low">Baixo</button>
+          <button data-k="high" class="on">Alto</button>
+        </div>
+      </div>
+      <div class="grp">
+        <h4>3 · Quanto tromba o paciente?</h4>
+        <div class="seg" id="mxThr">
+          <button data-k="low" class="on">Baixo</button>
+          <button data-k="mod">Moderado</button>
+          <button data-k="high">Alto</button>
+        </div>
+      </div>
+      <div class="grp">
+        <div class="rangelab"><span>Clearance de creatinina</span><b><span id="mxCrclV">70</span> mL/min</b></div>
+        <input type="range" id="mxCrcl" min="15" max="120" step="1" value="70">
+      </div>
+      <div id="mxV1" class="verdict v-b"></div>
+      <div id="mxV2" class="verdict v-w"></div>
+      <div id="mxV3" class="verdict v-b"></div>
+      <ol class="steps" id="mxSteps"></ol>
+      <div class="forbid" id="mxForbid"></div>
+      <div class="readout" id="mxMap"></div>
+    </div>
+  </div>
+
+  <div class="prose">
+    <h3>Pergunta 1 — qual a droga, e por que ela vem primeiro</h3>
+    <p>Começar pela droga não é uma preferência de organização: é o que impede o erro mais caro. Se a droga é um DOAC, a terceira pergunta deixa de existir, porque não há ponte a decidir. Quem começa pelo risco trombótico chega ao fim com um paciente "de risco moderado a alto" na cabeça e escolhe a alternativa que oferece heparina &mdash; que é exatamente o que a banca quer.</p>
+    <p>Uma checagem que vale ponto: DOAC só é opção em fibrilação atrial <b>não valvar</b> e no tratamento de tromboembolismo venoso. Em prótese valvar mecânica, DOAC é contraindicado &mdash; o ensaio RE-ALIGN, com dabigatrana em portadores de prótese mecânica, foi interrompido por excesso de trombose de prótese e de sangramento. Portanto, se o enunciado disser "prótese mecânica" e alguma alternativa propuser trocar a varfarina por um DOAC no perioperatório, ela é errada por dois motivos ao mesmo tempo.</p>
+
+    <h3>Pergunta 2 — quanto sangra o procedimento, e o que entra em cada classe</h3>
+    <p>Esta é a variável que define o prazo, e a lista vale mais do que parece porque quase toda questão traz um procedimento nomeado, não uma classe. Um procedimento é de <b>alto risco</b> quando o sangramento é difícil de comprimir, acontece numa cavidade fechada ou num compartimento onde alguns mililitros já são catastróficos.</p>
+    <div class="num-table">
+      <span class="k">Alto</span><span>Cirurgia abdominal maior (colectomia, gastrectomia, hepatectomia, Whipple), torácica, cardíaca, intracraniana, espinhal, urológica maior (prostatectomia, nefrectomia, RTU), ortopédica maior, biópsia renal ou hepática, polipectomia de pólipo &gt; 1–2 cm, CPRE com papilotomia, gastrostomia endoscópica, <b>e qualquer bloqueio do neuroeixo</b>.</span>
+      <span class="k">Baixo</span><span>Herniorrafia, colecistectomia laparoscópica eletiva, endoscopia ou colonoscopia diagnóstica com biópsias superficiais, implante de marca-passo, artroscopia, cirurgia de mama, coronariografia, cirurgia de pequeno porte de partes moles.</span>
+      <span class="k">Mínimo</span><span>Extração dentária de 1–3 elementos, raspagem periodontal, catarata sem bloqueio retrobulbar, procedimentos dermatológicos superficiais. <b>Não se suspende o anticoagulante</b> &mdash; usa-se hemostasia local, e no caso dentário ácido tranexâmico tópico ou bochecho.</span>
+    </div>
+    <p>A regra que cai é a fronteira baixo/alto, porque é ela que decide entre 24 h e 48 h. Colectomia é alto por definição de superfície cruenta e de cavidade fechada; colonoscopia diagnóstica é baixo mesmo com biópsias, e vira alto assim que aparecer polipectomia de lesão grande. E há a categoria mínima, que a banca usa para punir quem suspende por reflexo: o paciente que vai extrair dois dentes não suspende nada.</p>
+
+    <h3>Pergunta 3 — quanto tromba o paciente, e quando isso importa</h3>
+    <p>Esta pergunta só muda a conduta na varfarina. Considera-se risco <b>alto</b>: prótese valvar mitral mecânica, prótese aórtica de modelo antigo (bola em gaiola ou disco basculante), prótese mecânica com AVC prévio, estenose mitral reumática, AVC ou AIT há menos de 3 meses, tromboembolismo venoso há menos de 3 meses, trombofilia grave (síndrome antifosfolípide, deficiência de antitrombina), e CHA<sub>2</sub>DS<sub>2</sub>-VASc muito alto com AVC prévio. Risco <b>moderado</b>: CHA<sub>2</sub>DS<sub>2</sub>-VASc de 5 a 6, TEV entre 3 e 12 meses, câncer ativo, prótese aórtica bivalvular com fator de risco. Risco <b>baixo</b>: o resto &mdash; e é aí que a paciente do enunciado se encaixa, com escore 3 e nenhum evento prévio.</p>
+    <p>Quando o risco é alto <i>e</i> a droga é varfarina, a ponte se organiza assim: suspende-se a varfarina 5 dias antes; a HBPM em dose plena começa 3 dias antes, quando o INR já está caindo; a última dose de HBPM é dada <b>24 h antes</b> da incisão (e se o esquema for de duas doses diárias, omite-se a da noite); a varfarina volta 12 a 24 h após a cirurgia; a HBPM plena volta 24 h depois em procedimento de baixo risco e 48 a 72 h em alto risco, e é mantida até o INR voltar ao alvo terapêutico.</p>
+
+    <h3>Como isso aparece na paciente do enunciado</h3>
+    <p>Pergunta 1: apixabana, um inibidor do fator Xa &rarr; a lógica é a do DOAC e a pergunta 3 fica desativada. Pergunta 2: colectomia &rarr; alto risco de sangramento &rarr; 48 h. Pergunta 3: escore 3, sem evento prévio &rarr; risco baixo, e mesmo que fosse alto não haveria ponte. O clearance de 70 confirma que não há motivo para alongar o prazo. Resultado: última dose na manhã do dia D-2, nenhuma dose em D-1 nem em D0, cirurgia com hemostasia normal, profilaxia de TEV em dose profilática a partir de 12 a 24 h do pós-operatório, e apixabana em dose plena entre 48 e 72 h, quando a hemostasia estiver assegurada. É a alternativa E, palavra por palavra.</p>
+
+    <div class="key"><b>Guarde isto</b>Droga &rarr; lógica. Procedimento &rarr; prazo. Paciente &rarr; ponte, e só na varfarina. Se você responder nessa ordem, nenhuma questão desse tema tem como te pegar.</div>
+
+    <div class="divg"><b>Como a banca cobra</b><span class="chance">Chance de cair ≈ 45 %</span>
+    <p>A cobrança quase sempre embaralha a ordem das perguntas dentro do enunciado, dando o escore de trombose <i>antes</i> de nomear a droga, para induzir você a decidir a ponte primeiro. Outra roupagem frequente é o procedimento de classificação ambígua &mdash; "colonoscopia com polipectomia de lesão de 3 cm" (alto, não baixo) ou "colecistectomia videolaparoscópica" (baixo). Frases-gatilho: "sem eventos tromboembólicos prévios" é a banca dizendo que a pergunta 3 é baixa; "clearance de creatinina de X mL/min" com um inibidor do Xa é ruído deliberado; "colectomia", "hepatectomia", "prostatectomia" e "neurocirurgia" são a banca dizendo alto risco sem usar a palavra.</p></div>
+  </div>
+</section>
+
+<section class="ch" id="c5">
+  <header>
+    <span class="num">CAPÍTULO 05</span>
+    <h2>Reversão: o que a banca pune</h2>
+    <p class="sub">Existe antídoto para tudo. O erro de prova não é escolher o antídoto errado &mdash; é usar antídoto quando o tempo resolveria de graça. Cirurgia eletiva não se reverte.</p>
+  </header>
+
+  <div class="howto">
+    <b class="t">Como usar este instrumento</b>
+    <ol>
+      <li>Escolha o cenário e a droga. As barras mostram, em escala logarítmica de tempo, quanto cada estratégia demora a devolver a hemostasia &mdash; de minutos a dois dias.</li>
+      <li>A barra verde é a estratégia correta para aquele cenário. As cinzas são possíveis mas não indicadas; a vermelha é a que causa dano.</li>
+      <li>Aperte <b>caminho errado</b> e leia o desfecho em números: o que acontece com o paciente quando se escolhe a barra errada.</li>
+    </ol>
+    <p class="ex"><b>Exercício:</b> deixe a droga em apixabana e percorra os três cenários. Na eletiva, a barra verde é a mais <i>longa</i> do gráfico &mdash; esperar 48 h. No sangramento com risco de vida, a verde passa a ser a mais curta. O antídoto não mudou de eficácia; mudou o que se está disposto a pagar por velocidade.</p>
+  </div>
+
+  <div class="plate">
+    <div class="fig">
+      <svg id="revSvg" viewBox="0 0 660 330" role="img" aria-label="Tempo até o efeito hemostático de cada estratégia de reversão, em escala logarítmica de minutos a dois dias, com a estratégia recomendada destacada"></svg>
+    </div>
+    <div class="ctrl">
+      <div class="grp">
+        <h4>Cenário</h4>
+        <div class="seg" id="revScen">
+          <button data-k="elec" class="on">Cirurgia eletiva programada</button>
+          <button data-k="urg">Urgência inadiável (&lt; 8 h)</button>
+          <button data-k="bleed">Sangramento com risco de vida</button>
+        </div>
+      </div>
+      <div class="grp">
+        <h4>Anticoagulante em uso</h4>
+        <div class="seg" id="revDrug">
+          <button data-k="xa" class="on">Apixabana / Rivaroxabana</button>
+          <button data-k="dabi">Dabigatrana</button>
+          <button data-k="warf">Varfarina</button>
+          <button data-k="unf">HNF</button>
+          <button data-k="lmwh">HBPM</button>
+        </div>
+      </div>
+      <div id="revVerd" class="verdict v-b"></div>
+      <div class="readout" id="revOut"></div>
+      <div class="grp" style="margin-top:12px">
+        <div class="seg"><button id="revWrongBtn" type="button">Mostrar o caminho errado</button></div>
+      </div>
+      <div class="forbid" id="revWrong" hidden></div>
+    </div>
+  </div>
+
+  <div class="prose">
+    <h3>O que é reverter, e por que não é o mesmo que esperar</h3>
+    <p>Reverter é repor artificialmente a capacidade de coagular que a droga tirou. Esperar é deixar o corpo eliminar a droga. As duas coisas chegam ao mesmo destino &mdash; sangue que coagula &mdash; mas por caminhos com preços muito diferentes. Esperar custa tempo e não custa mais nada. Reverter custa dinheiro, custa disponibilidade e, sobretudo, custa risco trombótico: você acabou de dar a um paciente com fibrilação atrial uma dose de fatores de coagulação prontos.</p>
+    <p>Daí a regra que governa o capítulo inteiro: <b>antídoto só quando o tempo não é uma opção</b>. Cirurgia programada tem tempo por definição &mdash; é para isso que ela é programada. Por isso a alternativa D da questão-mãe, que propõe complexo protrombínico na indução de uma colectomia eletiva, é errada mesmo tendo escolhido um agente que de fato funciona.</p>
+
+    <h3>Cada antídoto, e por que ele funciona</h3>
+    <p>O <b>andexanete alfa</b> é um fator Xa modificado, cataliticamente inativo: ele tem o formato do alvo mas não faz o trabalho do alvo. As moléculas de apixabana e rivaroxabana que estavam grudadas no Xa verdadeiro migram para o chamariz, e o Xa verdadeiro volta a funcionar. Age em 2 a 5 minutos, é caríssimo e pouco disponível no Brasil.</p>
+    <p>O <b>idarucizumabe</b> é um fragmento de anticorpo monoclonal com afinidade pela dabigatrana cerca de 350 vezes maior que a da própria trombina. Dose fixa de 5 g em duas ampolas de 2,5 g. É o antídoto mais limpo dos três, porque não repõe fator nenhum &mdash; apenas sequestra a droga.</p>
+    <p>O <b>complexo protrombínico de 4 fatores</b> repõe II, VII, IX e X prontos, em 25 a 50 U/kg. É o antídoto lógico da varfarina, porque a varfarina é exatamente a ausência desses quatro fatores. Nos inibidores do Xa ele é usado <i>off-label</i>, quando não há andexanete: não retira a droga do sangue, apenas empilha tanto substrato que a coagulação vence por número. Funciona clinicamente, mas não normaliza a dosagem de anti-Xa &mdash; o que confunde quem tenta acompanhar por exame.</p>
+    <p>A <b>vitamina K</b> não é antídoto de urgência: ela religa a fábrica, e a fábrica leva de 6 a 24 h para produzir. Por isso na reversão da varfarina ela vem <i>junto</i> com o CCP, nunca no lugar dele &mdash; o CCP resolve as próximas horas, a vitamina K impede o INR de subir de novo quando o CCP for consumido. A <b>protamina</b> é uma proteína fortemente positiva que se liga à heparina, fortemente negativa, neutralizando-a: 1 mg para cada 100 unidades de heparina, reversão completa da HNF e apenas parcial (cerca de 60 %) da HBPM, porque as cadeias curtas da HBPM escapam da ligação.</p>
+
+    <h3>Os números, e o que cada um decide</h3>
+    <div class="num-table">
+      <span class="k">25–50 U/kg</span><span>CCP de 4 fatores. A dose maior para INR mais alto. Decide a reversão da varfarina em sangramento grave.</span>
+      <span class="k">5–10 mg IV</span><span>Vitamina K junto do CCP. Decide se o INR permanece corrigido após 12 h.</span>
+      <span class="k">5 g</span><span>Idarucizumabe, dose fixa. Decide a reversão da dabigatrana.</span>
+      <span class="k">1 mg : 100 U</span><span>Protamina para heparina. Decide a reversão da HNF; na HBPM reverte só ≈ 60 %.</span>
+      <span class="k">48 h</span><span>O "antídoto" da cirurgia eletiva em apixabana: o próprio tempo. Custo zero, risco trombótico zero.</span>
+      <span class="k">≥ 8 h</span><span>Diálise remove ≈ 60 % da dabigatrana (a única dialisável, por baixa ligação proteica). Inibidores do Xa não dialisam.</span>
+    </div>
+    <p>A regra que cai em prova é a hierarquia por cenário, não a dose. Eletiva &rarr; esperar. Urgência inadiável &rarr; antídoto específico se disponível, CCP se não. Sangramento com risco de vida &rarr; antídoto específico, e simultaneamente suporte transfusional, controle mecânico do foco e ácido tranexâmico. O detalhe que separa candidatos: plasma fresco congelado <b>não</b> reverte DOAC nem reverte bem a varfarina &mdash; precisa de volume grande demais para entregar fator suficiente.</p>
+
+    <h3>Como isso aparece na paciente do enunciado</h3>
+    <p>O enunciado fecha duas portas de propósito: "sem sangramento ativo" e "sem trombocitopenia". São as duas condições que autorizariam uma conduta de reversão ou de transfusão. Ao negá-las, o autor está dizendo que não há urgência hemostática nenhuma &mdash; e a alternativa D, que oferece complexo protrombínico na indução, passa a ser não apenas desnecessária mas iatrogênica: repor fatores prontos numa mulher com fibrilação atrial e escore 3 é aumentar o risco de AVC para resolver um problema que 48 h de espera resolveriam sozinhas.</p>
+
+    <div class="key"><b>Guarde isto</b>Antídoto responde a uma pergunta de tempo, não de droga. Se dá para esperar, espera-se. Andexanete para inibidor do Xa, idarucizumabe para dabigatrana, CCP + vitamina K para varfarina, protamina para heparina &mdash; e nunca nenhum deles em cirurgia eletiva.</div>
+
+    <div class="divg"><b>Como a banca cobra</b><span class="chance">Chance de cair ≈ 30 %</span>
+    <p>Duas roupagens. A primeira é a da questão-mãe: oferecer reversão em contexto eletivo, para ver quem confunde "posso reverter" com "devo reverter". A segunda é o pareamento droga-antídoto, em que os distratores clássicos são protamina para DOAC, plasma fresco para rivaroxabana e vitamina K isolada para varfarina em sangramento intracraniano (lenta demais). Frases-gatilho: "sem sangramento ativo" e "eletiva" pedem <b>esperar</b>; "hematoma intraparenquimatoso", "instabilidade hemodinâmica" e "cirurgia de emergência" pedem <b>antídoto</b>.</p></div>
+  </div>
+</section>
+
+<section class="ch" id="c6">
+  <header>
+    <span class="num">CAPÍTULO 06</span>
+    <h2>Neuroeixo, e o caminho de volta</h2>
+    <p class="sub">Duas armadilhas que moram depois da decisão principal: a raqui ou peridural exige um intervalo <i>maior</i> que a própria cirurgia, e reiniciar o anticoagulante cedo demais é a forma mais comum de transformar uma colectomia limpa numa reabordagem.</p>
+  </header>
+
+  <div class="howto">
+    <b class="t">Como ler esta figura</b>
+    <ol>
+      <li>O tempo corre da esquerda para a direita e termina em zero, que é o momento da <b>punção do neuroeixo</b>. Cada barra é o período em que aquela droga precisa estar suspensa antes de encostar a agulha na coluna.</li>
+      <li>A linha vermelha tracejada marca as 48 h exigidas pela colectomia. Tudo o que ultrapassa essa linha para a esquerda é droga que exige mais tempo para o bloqueio do que para a cirurgia.</li>
+      <li>Compare as três faixas da dabigatrana: a mesma droga muda de 72 para 120 h só pela função renal.</li>
+    </ol>
+    <p class="ex"><b>Exercício:</b> localize a barra da apixabana e a linha tracejada. A barra passa da linha em 24 h. Isso significa que, se a equipe da nossa paciente quiser peridural, a última dose não pode ser em D-2 e sim em D-3 &mdash; a decisão anestésica muda o prazo cirúrgico, e não o contrário.</p>
+  </div>
+
+  <div class="plate">
+    <div class="fig">
+      <svg viewBox="0 0 660 336" role="img" aria-label="Intervalo mínimo de suspensão de cada anticoagulante antes da punção do neuroeixo, comparado com as 48 horas exigidas pela colectomia">
+        <text x="8" y="20" fill="var(--ink2)" style="font:500 10.5px 'IBM Plex Mono',monospace;letter-spacing:.06em">INTERVALO MÍNIMO ANTES DA PUNÇÃO DO NEUROEIXO · ASRA</text>
+        <line x1="200" y1="44" x2="630" y2="44" stroke="var(--line)" stroke-width="1"/>
+        <g fill="var(--ink2)" style="font:500 10px 'IBM Plex Mono',monospace" text-anchor="middle">
+          <text x="630" y="36">0 h</text><text x="548" y="36">24</text><text x="466" y="36">48</text>
+          <text x="384" y="36">72</text><text x="302" y="36">96</text><text x="220" y="36">120</text>
+        </g>
+        <g stroke="var(--line)" stroke-width="1">
+          <line x1="630" y1="40" x2="630" y2="48"/><line x1="548" y1="40" x2="548" y2="48"/><line x1="466" y1="40" x2="466" y2="48"/>
+          <line x1="384" y1="40" x2="384" y2="48"/><line x1="302" y1="40" x2="302" y2="48"/><line x1="220" y1="40" x2="220" y2="48"/>
+        </g>
+        <line x1="466" y1="48" x2="466" y2="308" stroke="var(--d)" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <text x="462" y="322" text-anchor="end" fill="var(--d)" style="font:600 10.5px 'IBM Plex Sans',sans-serif">48 h — exigidas pela colectomia</text>
+
+        <g style="font:500 12px 'IBM Plex Sans',sans-serif" fill="var(--ink)">
+          <text x="8" y="75">HNF intravenosa (TTPa normal)</text>
+          <text x="8" y="107">HBPM em dose profilática</text>
+          <text x="8" y="139">HBPM em dose plena</text>
+          <text x="8" y="171">Fondaparinux</text>
+          <text x="8" y="203">Apixabana · rivaroxabana · edoxabana</text>
+          <text x="8" y="235">Dabigatrana · ClCr ≥ 80</text>
+          <text x="8" y="267">Dabigatrana · ClCr 50–79</text>
+          <text x="8" y="299">Dabigatrana · ClCr 30–49</text>
+        </g>
+        <g fill="var(--acc-soft)" stroke="var(--acc)" stroke-width="1.4">
+          <rect x="610" y="62" width="20" height="18" rx="4"/>
+          <rect x="589" y="94" width="41" height="18" rx="4"/>
+          <rect x="548" y="126" width="82" height="18" rx="4"/>
+          <rect x="487" y="158" width="143" height="18" rx="4"/>
+          <rect x="384" y="190" width="246" height="18" rx="4"/>
+          <rect x="384" y="222" width="246" height="18" rx="4"/>
+          <rect x="302" y="254" width="328" height="18" rx="4"/>
+          <rect x="220" y="286" width="410" height="18" rx="4"/>
+        </g>
+        <g fill="var(--acc)" style="font:600 10.5px 'IBM Plex Mono',monospace">
+          <text x="602" y="75" text-anchor="end">4–6 h</text>
+          <text x="597" y="107">12 h</text>
+          <text x="556" y="139">24 h</text>
+          <text x="495" y="171">36–42 h</text>
+          <text x="392" y="203">72 h</text>
+          <text x="392" y="235">72 h</text>
+          <text x="310" y="267">96 h</text>
+          <text x="228" y="299">120 h</text>
+        </g>
+      </svg>
+    </div>
+    <div class="ctrl">
+      <h4>Cartão de bolso · o caminho de volta</h4>
+      <div class="readout">
+        <span>Retirada do cateter peridural</span><span class="v">com o DOAC ainda suspenso</span>
+        <span>DOAC após retirar o cateter</span><span class="v">≥ 6 h</span>
+        <span>Profilaxia de TEV pós-op</span><span class="v">12–24 h</span>
+        <span>DOAC pleno · baixo risco</span><span class="v">24 h</span>
+        <span>DOAC pleno · alto risco</span><span class="v">48–72 h</span>
+        <span>Varfarina pós-op</span><span class="v">12–24 h</span>
+        <span>HBPM plena da ponte · alto risco</span><span class="v">48–72 h</span>
+        <span>Profilaxia estendida · câncer</span><span class="v">28 dias</span>
+      </div>
+      <div class="verdict v-w"><b>A armadilha do retorno</b>A apixabana atinge o pico 3 h depois de engolida. Dar a dose plena na noite da colectomia equivale a anticoagular o paciente sobre uma anastomose de 6 horas. É por isso que a alternativa correta diz "reiniciar quando a hemostasia permitir" e não "reiniciar em 24 h".</div>
+      <div class="verdict v-b"><b>O que cobre o intervalo</b>Enquanto o oral está fora, quem protege é a profilaxia de TEV em <b>dose profilática</b> &mdash; que a colectomia exigiria de qualquer maneira. Isso não é ponte, e a diferença é a dose.</div>
+    </div>
+  </div>
+
+  <div class="prose">
+    <h3>Por que a coluna exige mais tempo que o abdome</h3>
+    <p>Num abdome, sangramento se manifesta como queda de hemoglobina, dreno produtivo, distensão &mdash; e há tempo para reabordar. No espaço peridural não há tempo nem espaço: o canal medular é um tubo ósseo rígido, e um hematoma de poucos mililitros comprime a medula ou a cauda equina. A paraplegia se instala em horas e, se a descompressão passar de 8 a 12 h, costuma ser definitiva. Como a consequência é catastrófica e irreversível, a margem exigida é maior: para os inibidores do Xa, 72 h em vez de 48.</p>
+    <p>A mesma lógica governa a <b>retirada do cateter</b>, que é tão perigosa quanto a punção &mdash; puxar o cateter machuca as mesmas veias epidurais. Por isso o cateter sai enquanto o anticoagulante ainda está suspenso, e só depois de retirado, com pelo menos 6 h de intervalo, o DOAC volta. Cateter peridural mantido em paciente já reanticoagulado é a combinação que produz os casos publicados de hematoma espinhal.</p>
+
+    <h3>O retorno ao anticoagulante, e por que "quando a hemostasia permitir" não é vago</h3>
+    <p>A frase da alternativa correta parece imprecisa, mas é exatamente a formulação das diretrizes, e ela carrega três condições concretas: hemostasia cirúrgica assegurada (sem sangramento no dreno, hemoglobina estável), trato gastrointestinal funcionante para absorver o comprimido, e ausência de plano de reabordagem ou de bloqueio neuroaxial em curso. Em cirurgia abdominal maior isso costuma acontecer entre 48 e 72 h. Antes disso, a proteção é feita com dose profilática.</p>
+    <p>Há um detalhe que a banca já cobrou e que muita gente perde: na colectomia por <b>câncer</b>, a profilaxia de TEV não termina na alta. Recomenda-se profilaxia estendida por cerca de <b>28 dias</b> após cirurgia oncológica abdominal ou pélvica maior. Numa paciente que voltou à apixabana em dose plena, essa exigência é cumprida pelo próprio anticoagulante; numa que ainda não voltou, é cumprida pela HBPM profilática.</p>
+
+    <div class="key"><b>Guarde isto</b>Neuroeixo pede 72 h para os inibidores do Xa &mdash; mais que as 48 h da cirurgia. Cateter sai antes de reanticoagular, e o DOAC volta ≥ 6 h depois da retirada. No pós-operatório: dose profilática em 12–24 h, dose plena em 48–72 h.</div>
+
+    <div class="divg"><b>Como a banca cobra</b><span class="chance">Chance de cair ≈ 20 %</span>
+    <p>Costuma vir como segunda pergunta do mesmo caso ("a equipe optou por analgesia peridural; qual o intervalo?") ou como questão isolada de anestesia dentro da prova de cirurgia. O distrator é oferecer as mesmas 48 h da cirurgia. Frases-gatilho: "raquianestesia", "peridural com cateter para analgesia", "punção lombar" &rarr; some 24 h ao prazo cirúrgico dos inibidores do Xa e verifique o clearance se for dabigatrana.</p>
+    <p>A segunda cobrança é o retorno precoce. Se uma alternativa disser "reiniciar a apixabana 6 horas após o término da cirurgia", ela está descrevendo anticoagulação plena sobre uma anastomose fresca &mdash; sempre errada em procedimento de alto risco.</p></div>
+  </div>
+</section>
+
+<section class="ch" id="c7">
+  <header>
+    <span class="num">CAPÍTULO 07</span>
+    <h2>Forja &mdash; nove versões da mesma questão</h2>
+    <p class="sub">A questão-mãe e oito pivôs. Em cada pivô, o dado trocado está <mark>destacado</mark>; tudo o mais permanece. Responda antes de ler a explicação &mdash; e, ao errar, identifique <i>qual</i> das três perguntas você respondeu errado.</p>
+  </header>
+
+  <div class="howto">
+    <b class="t">Como usar este instrumento</b>
+    <ol>
+      <li>Leia o enunciado e procure primeiro o trecho destacado: é o único dado que mudou em relação à questão-mãe.</li>
+      <li>Antes de clicar, diga em voz alta qual das três perguntas do capítulo 04 aquele dado alterou &mdash; a droga, o procedimento ou o risco trombótico.</li>
+      <li>Clique na alternativa. A explicação diz por que o gabarito virou e, para cada distrator, de qual outra linha da tabela-mãe ele é a conduta correta.</li>
+    </ol>
+    <p class="ex"><b>Exercício:</b> nas questões 2 e 3 o gabarito muda por motivos diferentes &mdash; na 2 mudou o procedimento (prazo), na 3 mudou a droga e o rim (prazo também, mas por outra via). Se você acertou as duas mas não sabe dizer qual pergunta cada uma mexeu, ainda não domina o tema.</p>
+  </div>
+
+  <div class="forge" id="forge">
+    <div class="qhead"><span class="qn" id="fQn">Questão 1 de 9</span><span class="pivot" id="fPivot"></span></div>
+    <p class="stemtx" id="fStem"></p>
+    <div class="alts" id="fAlts"></div>
+    <div class="expl" id="fExpl" hidden></div>
+    <div class="foot">
+      <span class="score" id="fScore">acertos 0 / 0</span>
+      <span style="display:flex;gap:8px">
+        <button id="fPrev" type="button">Anterior</button>
+        <button id="fNext" type="button" class="prim">Próxima</button>
+        <button id="fReset" type="button">Recomeçar</button>
+      </span>
+    </div>
+  </div>
+</section>
+
+<section class="ch" id="c8">
+  <header>
+    <span class="num">CAPÍTULO 08</span>
+    <h2>Tabela-mãe</h2>
+    <p class="sub">Um cartão por linha de conduta. A cor da borda superior codifica a classe: verde é a conduta segura e padrão, âmbar exige um ajuste, roxo individualiza, vermelho é o que nunca se faz. Cubra as ações e recite a partir do gatilho.</p>
+  </header>
+
+  <div class="mother">
+    <div class="c b"><span class="trig">DOAC (inibidor do Xa) + procedimento de <b>alto</b> risco, ClCr ≥ 30</span><span class="act">Suspender 48 h. Sem ponte. Reiniciar 48–72 h.</span><span class="note">Colectomia, gastrectomia, hepatectomia, urológica maior, neurocirurgia.</span></div>
+    <div class="c b"><span class="trig">DOAC (inibidor do Xa) + procedimento de <b>baixo</b> risco</span><span class="act">Suspender 24 h. Sem ponte. Reiniciar 24 h.</span><span class="note">Hérnia, colecistectomia lap., colonoscopia diagnóstica, marca-passo.</span></div>
+    <div class="c b"><span class="trig">Qualquer anticoagulante + risco <b>mínimo</b> de sangramento</span><span class="act">Não suspender. Hemostasia local; ácido tranexâmico tópico no procedimento dentário.</span><span class="note">Extração de 1–3 dentes, catarata, dermatológico superficial.</span></div>
+    <div class="c w"><span class="trig">Dabigatrana + ClCr <b>30–49</b></span><span class="act">Dobrar os prazos: 48 h se baixo risco, <b>96 h</b> se alto risco. Sem ponte.</span><span class="note">Única droga em que o clearance muda o prazo. ClCr &lt; 30: não recomendada.</span></div>
+    <div class="c b"><span class="trig">Varfarina + risco trombótico <b>baixo ou moderado</b></span><span class="act">Suspender 5 dias. <b>Sem ponte.</b> Conferir INR na véspera; se &gt; 1,5, vitamina K 1–2,5 mg VO.</span><span class="note">Base: ensaio BRIDGE. FA sem AVC prévio cai aqui.</span></div>
+    <div class="c m"><span class="trig">Varfarina + risco trombótico <b>alto</b></span><span class="act">Suspender 5 dias <b>com ponte</b>: HBPM plena de D-3, última dose 24 h antes; retomar 48–72 h; varfarina em 12–24 h.</span><span class="note">Prótese mitral mecânica, AVC/AIT &lt; 3 m, TEV &lt; 3 m, trombofilia grave.</span></div>
+    <div class="c w"><span class="trig">Bloqueio do <b>neuroeixo</b> programado</span><span class="act">Inibidor do Xa: 72 h. Dabigatrana: 72–120 h conforme ClCr. HBPM plena: 24 h; profilática: 12 h.</span><span class="note">Cateter sai antes de reanticoagular; DOAC volta ≥ 6 h após a retirada.</span></div>
+    <div class="c w"><span class="trig">Intervalo pós-operatório, oral ainda suspenso</span><span class="act">Profilaxia de TEV em <b>dose profilática</b> a partir de 12–24 h. Isso não é ponte.</span><span class="note">Cirurgia oncológica abdominopélvica: estender por 28 dias.</span></div>
+    <div class="c m"><span class="trig">Cirurgia de <b>urgência</b> inadiável em DOAC</span><span class="act">Adiar 12–24 h se possível; se não, antídoto específico (andexanete / idarucizumabe) ou CCP 25–50 U/kg.</span><span class="note">Dabigatrana é a única dialisável (≈ 60 % em 8 h).</span></div>
+    <div class="c d"><span class="trig">Sangramento com <b>risco de vida</b></span><span class="act">Antídoto específico + suporte transfusional + controle do foco + ácido tranexâmico.</span><span class="note">Varfarina: CCP 25–50 U/kg <b>com</b> vitamina K 5–10 mg IV. Plasma isolado não serve.</span></div>
+    <div class="c d"><span class="trig">Ponte com heparina em paciente em <b>DOAC</b></span><span class="act">Nunca. Aumenta sangramento sem reduzir tromboembolismo.</span><span class="note">É a alternativa A da questão-mãe: prazo certo, lógica errada.</span></div>
+    <div class="c d"><span class="trig">Reversão farmacológica em cirurgia <b>eletiva</b></span><span class="act">Nunca. O tempo resolve de graça; o antídoto acrescenta risco trombótico e custo.</span><span class="note">É a alternativa D da questão-mãe.</span></div>
+    <div class="c d"><span class="trig">Operar de alto risco com a <b>última dose na véspera</b></span><span class="act">Nunca. Sobra ≈ 40 % do pico no momento da incisão.</span><span class="note">É a alternativa C da questão-mãe. Só vale em risco mínimo.</span></div>
+    <div class="c d"><span class="trig">DOAC em <b>prótese valvar mecânica</b></span><span class="act">Contraindicado. Só varfarina.</span><span class="note">Ensaio RE-ALIGN, interrompido por excesso de trombose e de sangramento.</span></div>
+  </div>
+</section>
+
+<footer class="end">
+  <h3>A decisão que fica em aberto</h3>
+  <p>Esta paciente é fácil porque o enunciado a entrega limpa: escore 3, sem evento prévio, rim bom, cirurgia programada. Agora troque uma coisa só e responda sem consultar a tabela: a mesma mulher, mesma apixabana, mas a colectomia é por um <b>adenocarcinoma obstrutivo</b> e ela chega ao pronto-socorro com distensão e alça de 11 cm no cólon direito. A cirurgia deixou de ser eletiva, a última dose foi há 9 horas, e você tem tempo para esperar quantas horas antes que o cólon se rompa?</p>
+  <p>Repare que a pergunta não é mais "qual o prazo": é qual dos dois relógios corre mais rápido. Essa é a família de questões em que o modificador de cenário sobrepõe o algoritmo do diagnóstico &mdash; e é exatamente onde a conta costuma ser perdida.</p>
+  <div class="srcs">
+    <b>Fontes usadas para construir esta página:</b> Douketis JD et al. <i>Perioperative Management of Patients With Atrial Fibrillation Receiving a Direct Oral Anticoagulant</i> (PAUSE), JAMA Intern Med 2019 · Douketis JD et al. <i>Perioperative Bridging Anticoagulation in Patients with Atrial Fibrillation</i> (BRIDGE), NEJM 2015 · Douketis JD et al. <i>Perioperative Management of Antithrombotic Therapy</i>, CHEST Guideline and Expert Panel Report, 2022 · Doherty JU et al. <i>ACC Expert Consensus Decision Pathway for Periprocedural Management of Anticoagulation</i>, JACC 2017 · Steffel J et al. <i>EHRA Practical Guide on the Use of NOACs in Patients with AF</i>, 2021 · Horlocker TT et al. <i>Regional Anesthesia in the Patient Receiving Antithrombotic Therapy</i> (ASRA, 4.ª ed.), 2018 · Eikelboom JW et al. <i>Dabigatran versus Warfarin in Patients with Mechanical Heart Valves</i> (RE-ALIGN), NEJM 2013.
+  </div>
+</footer>
+</div>
+
+<script>
+(function(){
+"use strict";
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var nf=function(v,d){return v.toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d})};
+function seg(id,cb){var box=$(id); if(!box)return; box.addEventListener('click',function(e){
+  var b=e.target.closest('button'); if(!b||!box.contains(b))return;
+  $$('button',box).forEach(function(x){x.classList.remove('on')}); b.classList.add('on'); cb(b.dataset.k);
+});}
+function setSeg(id,k){var box=$(id); if(!box)return; $$('button',box).forEach(function(x){x.classList.toggle('on',x.dataset.k===k)});}
+function rows(el,arr){el.innerHTML=arr.map(function(r){return '<span>'+r[0]+'</span><span class="v">'+r[1]+'</span>'}).join('');}
+function verd(el,cls,title,txt){el.className='verdict v-'+cls; el.innerHTML='<b>'+title+'</b>'+txt;}
+
+/* ---------- gabarito ---------- */
+var rb=$('#revealBtn');
+rb.addEventListener('click',function(){
+  var box=$('#revealBox'); box.hidden=false; $('#altE').classList.add('hit'); rb.hidden=true;
+});
+
+/* ================= 01 · relógio da droga ================= */
+var PKD={
+ apix:{n:'Apixabana',t:12,f:.27,peak:171,dose:'5 mg 12/12 h'},
+ riva:{n:'Rivaroxabana',t:11,f:.33,peak:270,dose:'20 mg 1×/dia'},
+ edox:{n:'Edoxabana',t:11,f:.50,peak:170,dose:'60 mg 1×/dia'},
+ dabi:{n:'Dabigatrana',t:13,f:.80,peak:175,dose:'150 mg 12/12 h'}
+};
+var pkK='apix';
+function hl(d,c){return d.t/((1-d.f)+d.f*(c/100));}
+function pkDraw(){
+ var d=PKD[pkK], c=+$('#pkCrcl').value, h=+$('#pkH').value;
+ var t12=hl(d,c), t12r=d.t, YM=d.peak*1.06, TM=120;
+ var X0=64,X1=616,Y0=42,Y1=300;
+ var px=function(t){return X0+(t/TM)*(X1-X0)};
+ var py=function(v){return Y1-(v/YM)*(Y1-Y0)};
+ var s='';
+ s+='<text x="8" y="20" fill="var(--ink2)" style="font:500 10.5px \'IBM Plex Mono\',monospace;letter-spacing:.06em">CONCENTRAÇÃO PLASMÁTICA · '+d.n.toUpperCase()+' '+d.dose+'</text>';
+ // grid
+ for(var t=0;t<=TM;t+=24){
+  s+='<line x1="'+px(t)+'" y1="'+Y0+'" x2="'+px(t)+'" y2="'+Y1+'" stroke="var(--line)" stroke-width="1"/>';
+  s+='<text x="'+px(t)+'" y="'+(Y1+18)+'" text-anchor="middle" fill="var(--ink2)" style="font:500 10px \'IBM Plex Mono\',monospace">'+t+'</text>';
+ }
+ s+='<text x="'+((X0+X1)/2)+'" y="'+(Y1+36)+'" text-anchor="middle" fill="var(--ink2)" style="font:500 10.5px \'IBM Plex Sans\',sans-serif">horas desde a última dose</text>';
+ s+='<line x1="'+X0+'" y1="'+Y1+'" x2="'+X1+'" y2="'+Y1+'" stroke="var(--ink2)" stroke-width="1.2"/>';
+ // thresholds
+ [[50,'var(--w)','50 ng/mL · limite p/ baixo risco'],[30,'var(--b)','30 ng/mL · limite p/ alto risco e neuroeixo']].forEach(function(L){
+  s+='<line x1="'+X0+'" y1="'+py(L[0])+'" x2="'+X1+'" y2="'+py(L[0])+'" stroke="'+L[1]+'" stroke-width="1.3" stroke-dasharray="5 4"/>';
+  s+='<text x="'+(X1-4)+'" y="'+(py(L[0])-5)+'" text-anchor="end" fill="'+L[1]+'" style="font:600 10px \'IBM Plex Sans\',sans-serif">'+L[2]+'</text>';
+ });
+ // curves
+ function pts(tt){var a=[];for(var t=0;t<=TM;t+=1){a.push(px(t).toFixed(1)+','+py(d.peak*Math.pow(.5,t/tt)).toFixed(1));}return a.join(' ');}
+ s+='<polyline points="'+pts(t12r)+'" fill="none" stroke="var(--ink2)" stroke-width="1.4" stroke-dasharray="4 4" opacity=".75"/>';
+ s+='<polyline points="'+pts(t12)+'" fill="none" stroke="var(--acc)" stroke-width="2.6"/>';
+ // marker
+ var res=d.peak*Math.pow(.5,h/t12);
+ s+='<line x1="'+px(h)+'" y1="'+Y0+'" x2="'+px(h)+'" y2="'+Y1+'" stroke="var(--acc)" stroke-width="1.2" stroke-dasharray="3 3"/>';
+ s+='<circle cx="'+px(h)+'" cy="'+py(res)+'" r="5" fill="var(--acc)" stroke="var(--panel)" stroke-width="2"/>';
+ var lx=px(h)+10, anc='start'; if(lx>470){lx=px(h)-10;anc='end';}
+ s+='<text x="'+lx+'" y="'+Math.max(py(res)-12,Y0+14)+'" text-anchor="'+anc+'" fill="var(--acc)" style="font:600 12px \'IBM Plex Mono\',monospace">'+nf(res,0)+' ng/mL</text>';
+ s+='<text x="'+lx+'" y="'+Math.max(py(res)+2,Y0+28)+'" text-anchor="'+anc+'" fill="var(--ink2)" style="font:500 10.5px \'IBM Plex Sans\',sans-serif">em '+h+' h · ClCr '+c+'</text>';
+ // y labels
+ s+='<text x="'+(X0-8)+'" y="'+(py(d.peak)+4)+'" text-anchor="end" fill="var(--ink2)" style="font:500 10px \'IBM Plex Mono\',monospace">'+d.peak+'</text>';
+ s+='<text x="'+(X0-8)+'" y="'+(Y1+4)+'" text-anchor="end" fill="var(--ink2)" style="font:500 10px \'IBM Plex Mono\',monospace">0</text>';
+ s+='<text x="8" y="'+(Y1+52)+'" fill="var(--ink2)" style="font:500 10.5px \'IBM Plex Sans\',sans-serif">— cheia: este rim  ·  ---- tracejada: rim normal (ClCr 100)</text>';
+ $('#pkSvg').innerHTML=s;
+ $('#pkCrclV').textContent=c; $('#pkHV').textContent=h;
+ $('#pkRen').textContent=Math.round(d.f*100)+' %';
+ $('#pkT12').textContent=nf(t12,1)+' h';
+ $('#pkN').textContent=nf(h/t12,1);
+ $('#pkRes').textContent=nf(res,0)+' ng/mL';
+ $('#pkPct').textContent=nf(res/d.peak*100,1)+' %';
+ var need=(pkK==='dabi'&&c<50)?96:48;
+ var e=$('#pkVerd');
+ if(res<30) verd(e,'b','Liberado','Abaixo de 30 ng/mL. Seguro para procedimento de <b>alto</b> risco de sangramento e para punção do neuroeixo. Prazo de regra para esta droga neste rim: <b>'+need+' h</b>.');
+ else if(res<50) verd(e,'w','Zona intermediária','Entre 30 e 50 ng/mL. Aceitável para procedimento de <b>baixo</b> risco; insuficiente para colectomia. Faltam '+nf(Math.max(0,t12*Math.log2(d.peak/30)-h),0)+' h para o corte de 30 ng/mL.');
+ else verd(e,'d','Não operar de alto risco','Acima de 50 ng/mL: efeito anticoagulante relevante na incisão. Faltam '+nf(Math.max(0,t12*Math.log2(d.peak/30)-h),0)+' h até 30 ng/mL neste clearance.');
+}
+seg('#pkDrug',function(k){pkK=k;pkDraw()});
+$('#pkCrcl').addEventListener('input',pkDraw);
+$('#pkH').addEventListener('input',pkDraw);
+pkDraw();
+
+/* ================= 02 · cascata ================= */
+var CASC={
+ xa:{nodes:['nd-x'],note:['m','Uma caixa só','A droga tampa o fator Xa que já está circulando. Ligar e desligar dependem apenas da absorção e da eliminação &mdash; horas, não dias.'],
+   r:[['Alvo','fator Xa, direto'],['Meia-vida','12 h (apix) · 5–13 h (riva)'],['Eliminação renal','27 % · 33 %'],['Quantifica','anti-Xa calibrado'],['INR / TTPa','não confiáveis'],['Antídoto','andexanete · CCP se faltar'],['Alto risco · suspender','48 h']]},
+ dabi:{nodes:['nd-ii'],note:['w','O rim manda','Inibidor direto da trombina, 80 % eliminado pelo rim. É a única droga da tabela em que o clearance muda o prazo de suspensão.'],
+   r:[['Alvo','trombina (IIa), direto'],['Meia-vida','12–17 h'],['Eliminação renal','80 %'],['Quantifica','tempo de trombina · TTPa'],['Dialisável','sim, ≈ 60 % em 8 h'],['Antídoto','idarucizumabe 5 g'],['Alto risco · suspender','48 h · 96 h se ClCr 30–49']]},
+ warf:{nodes:['nd-ix','nd-vii','nd-x','nd-ii'],note:['d','Quatro caixas, nenhuma bloqueada','A varfarina não tampa nada: impede o fígado de fabricar II, VII, IX e X. Por isso demora dias para sair e dias para voltar &mdash; e por isso existe ponte.'],
+   r:[['Alvo','síntese de II, VII, IX, X'],['Também reduz','proteínas C e S'],['Meia-vida da droga','36–42 h'],['Meia-vida da protrombina','60–72 h'],['Monitoriza','INR (alvo 2,0–3,0)'],['Antídoto','CCP 25–50 U/kg + vit. K'],['Suspender','5 dias']]},
+ unf:{nodes:['nd-ii','nd-x'],note:['b','Liga e desliga em minutos','Potencializa a antitrombina, que inativa trombina e Xa em proporção igual. Meia-vida de 60–90 min: por isso é a heparina de escolha em insuficiência renal grave.'],
+   r:[['Alvo','antitrombina → IIa = Xa'],['Meia-vida','60–90 min'],['Eliminação renal','desprezível'],['Monitoriza','TTPa'],['Antídoto','protamina 1 mg : 100 U'],['Risco próprio','trombocitopenia induzida (HIT)'],['Suspender antes','4–6 h']]},
+ lmwh:{nodes:['nd-x'],note:['w','A droga da ponte','Age sobretudo sobre o Xa. Dose <b>plena</b> (1 mg/kg 12/12 h) é ponte; dose <b>profilática</b> (40 mg/dia) é profilaxia de TEV. Confundir as duas é o erro que a banca cobra.'],
+   r:[['Alvo','antitrombina → Xa ≫ IIa'],['Meia-vida','4–7 h'],['Eliminação renal','sim, acumula se ClCr &lt; 30'],['Monitoriza','anti-Xa (não TTPa)'],['Antídoto','protamina, só ≈ 60 %'],['Última dose plena','24 h antes'],['Última dose profilática','12 h antes']]},
+ fonda:{nodes:['nd-x'],note:['m','Xa puro','Pentassacarídeo sintético: só ativa a antitrombina contra o Xa, sem nenhuma ação sobre a trombina. Meia-vida longa e sem antídoto prático.'],
+   r:[['Alvo','antitrombina → Xa puro'],['Meia-vida','17–21 h'],['Eliminação renal','100 %'],['Monitoriza','anti-Xa específico'],['Antídoto','nenhum eficaz'],['Neuroeixo','36–42 h · evitar cateter'],['Vantagem','não causa HIT']]}
+};
+function cascDraw(k){
+ $$('#casc .nd').forEach(function(g){g.classList.remove('hit')});
+ var c=CASC[k];
+ c.nodes.forEach(function(id){var g=document.getElementById(id); if(g)g.classList.add('hit')});
+ rows($('#cascOut'),c.r);
+ verd($('#cascNote'),c.note[0],c.note[1],c.note[2]);
+}
+seg('#cascDrug',cascDraw); cascDraw('xa');
+
+/* ================= 03 · o buraco ================= */
+var W_PTS=[[-7,100],[-6,100],[-5,100],[-4,78],[-3,58],[-2,42],[-1,30],[0,20],[1,20],[2,24],[3,34],[4,48],[5,62],[6,78],[7,92]];
+var D_PTS=[[-7,100],[-3,100],[-2,100],[-1,45],[0,12],[1,6],[2,55],[2.5,85],[3,100],[7,100]];
+var THR=60;
+var BR={warf:[[-3,-0.5],[2,5.6]],doac:[[-2,-0.5],[1.5,3]]};
+var gapK='none';
+function lev(pts,d){var i;for(i=0;i<pts.length-1;i++){if(d>=pts[i][0]&&d<=pts[i+1][0]){var a=pts[i],b=pts[i+1];if(b[0]===a[0])return a[1];return a[1]+(b[1]-a[1])*(d-a[0])/(b[0]-a[0]);}}return pts[pts.length-1][1];}
+function covered(d,pts,bands){if(lev(pts,d)>=THR)return true;for(var i=0;i<bands.length;i++){if(d>=bands[i][0]&&d<=bands[i][1])return true;}return false;}
+function unprot(pts,bands){var n=0,st=0.02;for(var d=-7;d<=7;d+=st){if(!covered(d,pts,bands))n+=st;}return n;}
+function gapDraw(){
+ var X0=64,X1=636;
+ var px=function(d){return X0+((d+7)/14)*(X1-X0)};
+ var lanes=[{t:'VARFARINA',pts:W_PTS,y0:52,y1:154,br:(gapK==='warf')?BR.warf:[]},
+            {t:'ANTICOAGULANTE ORAL DIRETO',pts:D_PTS,y0:196,y1:298,br:(gapK==='doac')?BR.doac:[]}];
+ var s='';
+ lanes.forEach(function(L){
+  var py=function(v){return L.y1-(v/108)*(L.y1-L.y0)};
+  s+='<text x="8" y="'+(L.y0-10)+'" fill="var(--ink2)" style="font:500 10.5px \'IBM Plex Mono\',monospace;letter-spacing:.06em">'+L.t+'</text>';
+  // unprotected shading
+  var seg0=null;
+  for(var d=-7;d<=7.001;d+=0.02){
+    var c=covered(d,L.pts,L.br);
+    if(!c&&seg0===null)seg0=d;
+    if((c||d>=7)&&seg0!==null){s+='<rect x="'+px(seg0).toFixed(1)+'" y="'+L.y0+'" width="'+Math.max(0,(px(d)-px(seg0))).toFixed(1)+'" height="'+(L.y1-L.y0)+'" fill="var(--d)" opacity=".16"/>';seg0=null;}
+  }
+  s+='<line x1="'+X0+'" y1="'+py(THR)+'" x2="'+X1+'" y2="'+py(THR)+'" stroke="var(--ink2)" stroke-width="1.2" stroke-dasharray="5 4"/>';
+  s+='<text x="'+(X0+4)+'" y="'+(py(THR)-5)+'" fill="var(--ink2)" style="font:500 10px \'IBM Plex Sans\',sans-serif">nível terapêutico</text>';
+  var a=[];for(var t=-7;t<=7;t+=0.1){a.push(px(t).toFixed(1)+','+py(lev(L.pts,t)).toFixed(1));}
+  s+='<polyline points="'+a.join(' ')+'" fill="none" stroke="var(--acc)" stroke-width="2.6"/>';
+  L.br.forEach(function(b){
+   s+='<rect x="'+px(b[0])+'" y="'+(L.y0+6)+'" width="'+(px(b[1])-px(b[0]))+'" height="14" rx="4" fill="var(--m-soft)" stroke="var(--m)" stroke-width="1.3"/>';
+   s+='<text x="'+(px(b[0])+6)+'" y="'+(L.y0+17)+'" fill="var(--m)" style="font:600 9.5px \'IBM Plex Sans\',sans-serif">HBPM plena</text>';
+  });
+  s+='<line x1="'+px(0)+'" y1="'+(L.y0-4)+'" x2="'+px(0)+'" y2="'+(L.y1+4)+'" stroke="var(--d)" stroke-width="2"/>';
+  s+='<line x1="'+X0+'" y1="'+L.y1+'" x2="'+X1+'" y2="'+L.y1+'" stroke="var(--ink2)" stroke-width="1"/>';
+ });
+ for(var d=-7;d<=7;d++){
+  s+='<text x="'+px(d)+'" y="318" text-anchor="middle" fill="'+(d===0?'var(--d)':'var(--ink2)')+'" style="font:'+(d===0?'600':'500')+' 10px \'IBM Plex Mono\',monospace">'+(d===0?'0':(d>0?'+'+d:d))+'</text>';
+ }
+ s+='<text x="'+px(0)+'" y="336" text-anchor="middle" fill="var(--d)" style="font:600 10.5px \'IBM Plex Sans\',sans-serif">dia da cirurgia</text>';
+ s+='<text x="8" y="336" fill="var(--ink2)" style="font:500 10.5px \'IBM Plex Sans\',sans-serif">área vermelha = desprotegido</text>';
+ $('#gapSvg').innerHTML=s;
+ var uw=unprot(W_PTS,(gapK==='warf')?BR.warf:[]), ud=unprot(D_PTS,(gapK==='doac')?BR.doac:[]);
+ rows($('#gapOut'),[
+  ['Varfarina · dias desprotegida',nf(uw,1)+' d'],
+  ['DOAC · dias desprotegido',nf(ud,1)+' d'],
+  ['Sangramento maior (BRIDGE)',gapK==='none'?'1,3 %':'3,2 %'],
+  ['TE arterial (BRIDGE)',gapK==='none'?'0,4 %':'0,3 %']
+ ]);
+ var e=$('#gapVerd');
+ if(gapK==='none') verd(e,'b','Sem ponte','A varfarina deixa '+nf(uw,1)+' dias abaixo do nível terapêutico; o DOAC, '+nf(ud,1)+'. O vale do DOAC é um V estreito &mdash; não há buraco a tapar.');
+ else if(gapK==='warf') verd(e,'m','Ponte na varfarina','O vale cai para '+nf(uw,1)+' dias. Vale a pena <b>apenas</b> em risco trombótico alto: o preço é sangramento maior de 3,2 % contra 1,3 %, sem redução de AVC.');
+ else verd(e,'d','Ponte no DOAC','O vale cai de 3,4 para '+nf(ud,1)+' dias &mdash; ganho de pouco mais de um dia &mdash; ao mesmo preço de sangramento. Além disso a heparina plena se sobrepõe ao resíduo do DOAC nas duas pontas. É a alternativa A da questão-mãe.');
+}
+seg('#gapBridge',function(k){gapK=k;gapDraw()}); gapDraw();
+})();
+</script>
+
+<style>
+#casc .nd rect{fill:var(--panel2);stroke:var(--line);stroke-width:1.4;transition:.18s}
+#casc .nd text{fill:var(--ink);font:600 12px "IBM Plex Sans",sans-serif}
+#casc .nd.hit rect{fill:var(--d-soft);stroke:var(--d);stroke-width:2.4}
+#casc .nd.hit text{fill:var(--ink);font-weight:700}
+#casc .lbl{fill:var(--ink2);font:500 10.5px "IBM Plex Mono",monospace;letter-spacing:.06em}
+#casc .fbl{fill:var(--ink2);font:500 9.5px "IBM Plex Sans",sans-serif;letter-spacing:0}
+#casc .arw{stroke:var(--ink2);stroke-width:1.6;fill:none}
+#casc .arw.fb{stroke:var(--acc);stroke-width:1.2}
+#casc marker polygon{fill:var(--ink2)}
+</style>
+
+<script>
+(function(){
+"use strict";
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var nf=function(v,d){return v.toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d})};
+function seg(id,cb){var box=$(id); if(!box)return; box.addEventListener('click',function(e){
+  var b=e.target.closest('button'); if(!b||!box.contains(b))return;
+  $$('button',box).forEach(function(x){x.classList.remove('on')}); b.classList.add('on'); cb(b.dataset.k);
+});}
+function setSeg(id,k){var box=$(id); if(!box)return; $$('button',box).forEach(function(x){x.classList.toggle('on',x.dataset.k===k)});}
+function rows(el,arr){el.innerHTML=arr.map(function(r){return '<span>'+r[0]+'</span><span class="v">'+r[1]+'</span>'}).join('');}
+function verd(el,cls,title,txt){el.className='verdict v-'+cls; el.innerHTML='<b>'+title+'</b>'+txt;}
+
+/* ================= 04 · máquina de decisão ================= */
+var M={drug:'xa',bleed:'high',thr:'low',crcl:70};
+var DRUGN={xa:'inibidor do fator Xa',dabi:'dabigatrana',warf:'varfarina'};
+var BLEEDN={min:'mínimo',low:'baixo',high:'alto'};
+var THRN={low:'baixo',mod:'moderado',high:'alto'};
+function plan(){
+ var p={bridge:false,stopH:0,restartH:0,stopTxt:'',restartTxt:'',warn:''};
+ if(M.bleed==='min'){p.stopH=0;p.stopTxt='não suspender';p.restartH=0;p.restartTxt='não há interrupção';}
+ if(M.drug==='warf'){
+   p.stopH=120;p.stopTxt='5 dias antes (7 dias se INR alvo alto ou INR basal &gt; 3)';
+   p.restartH=18;p.restartTxt='12–24 h após, na dose habitual';
+   p.bridge=(M.thr==='high');
+   if(M.bleed==='min'){p.stopH=0;p.stopTxt='não suspender; hemostasia local';p.restartTxt='—';p.bridge=false;}
+ } else if(M.bleed!=='min'){
+   var high=(M.bleed==='high');
+   if(M.drug==='dabi'){
+     if(M.crcl>=50){p.stopH=high?48:24;}
+     else if(M.crcl>=30){p.stopH=high?96:48;p.warn='ClCr entre 30 e 49: os prazos dobram porque 80 % da dabigatrana sai pelo rim.';}
+     else {p.stopH=120;p.warn='ClCr &lt; 30: dabigatrana não é recomendada. Suspender 96–120 h e considerar troca de anticoagulante.';}
+   } else {
+     p.stopH=high?48:24;
+     if(M.crcl<30){p.stopH=high?48:36;p.warn='ClCr &lt; 30: considerar 36 h no baixo risco e manter 48 h no alto; apixabana é a menos dependente do rim.';}
+   }
+   p.stopTxt=p.stopH+' h antes (última dose no dia D&minus;'+Math.ceil(p.stopH/24)+')';
+   p.restartH=high?60:24;
+   p.restartTxt=high?'48–72 h após, com hemostasia assegurada':'24 h após';
+ }
+ return p;
+}
+function calDraw(p){
+ var X0=182,X1=644,D0=-6,D1=4,N=D1-D0+1,cw=(X1-X0)/N;
+ var s='',i;
+ var lastDay=p.stopH?-Math.ceil(p.stopH/24):null;
+ var restDay=(M.bleed==='min')?-99:(M.drug==='warf'?1:(M.bleed==='high'?2:1));
+ function oral(d){ if(M.bleed==='min')return 2; if(d<=lastDay)return 2; if(d===restDay)return 1; if(d>restDay)return 2; return 0; }
+ function bri(d){ if(!p.bridge)return 0; if(d>=-3&&d<=-2)return 2; if(d===-1)return 1; if(d>=2&&d<=4)return 2; return 0; }
+ function prof(d){ if(M.bleed==='min')return 0; if(d>=1)return 2; if(d===0)return 1; return 0; }
+ var lanes=[['Anticoagulante oral',oral,'var(--acc)'],['Ponte · HBPM dose plena',bri,'var(--m)'],['Profilaxia de TEV · dose profilática',prof,'var(--b)']];
+ s+='<text x="8" y="20" fill="var(--ink2)" style="font:500 10.5px \'IBM Plex Mono\',monospace;letter-spacing:.06em">CALENDÁRIO PERIOPERATÓRIO</text>';
+ for(i=0;i<N;i++){
+  var d=D0+i, cx=X0+i*cw+cw/2;
+  s+='<text x="'+cx+'" y="42" text-anchor="middle" fill="'+(d===0?'var(--d)':'var(--ink2)')+'" style="font:'+(d===0?'700':'500')+' 10.5px \'IBM Plex Mono\',monospace">'+(d===0?'CIR':(d>0?'+'+d:''+d))+'</text>';
+ }
+ lanes.forEach(function(L,li){
+  var y=56+li*40;
+  s+='<text x="8" y="'+(y+18)+'" fill="var(--ink)" style="font:500 12px \'IBM Plex Sans\',sans-serif">'+L[0]+'</text>';
+  for(i=0;i<N;i++){
+   var d=D0+i,v=L[1](d),x=X0+i*cw+2,w=cw-4;
+   var fill=v===2?L[2]:(v===1?'var(--panel2)':'none');
+   var op=v===2?'1':'1';
+   s+='<rect x="'+x.toFixed(1)+'" y="'+y+'" width="'+w.toFixed(1)+'" height="26" rx="5" fill="'+fill+'" fill-opacity="'+(v===2?'.85':'1')+'" stroke="'+(v?L[2]:'var(--line)')+'" stroke-width="'+(v?1.4:1)+'" stroke-dasharray="'+(v===1?'4 3':'0')+'"/>';
+   if(d===0)s+='<rect x="'+x.toFixed(1)+'" y="'+y+'" width="'+w.toFixed(1)+'" height="26" rx="5" fill="none" stroke="var(--d)" stroke-width="2"/>';
+  }
+ });
+ s+='<text x="8" y="200" fill="var(--ink2)" style="font:500 10.5px \'IBM Plex Sans\',sans-serif">cheio = em uso  ·  tracejado = dose de transição  ·  vazio = suspenso  ·  coluna vermelha = dia da cirurgia</text>';
+ s+='<text x="8" y="226" fill="var(--ink)" style="font:600 12.5px \'IBM Plex Sans\',sans-serif">'+DRUGN[M.drug]+' · sangramento '+BLEEDN[M.bleed]+' · trombose '+THRN[M.thr]+' · ClCr '+M.crcl+'</text>';
+ s+='<text x="8" y="250" fill="'+(p.bridge?'var(--m)':'var(--b)')+'" style="font:700 13px \'IBM Plex Sans\',sans-serif">'+(p.bridge?'COM PONTE':'SEM PONTE')+'</text>';
+ $('#calSvg').innerHTML=s;
+}
+function mxDraw(){
+ var p=plan();
+ $('#mxCrclV').textContent=M.crcl;
+ calDraw(p);
+ verd($('#mxV1'),M.drug==='warf'?'m':'b','1 · Qual a droga',
+   M.drug==='warf'?'Varfarina &rarr; lógica de <b>fábrica desligada</b>: prazo longo e a pergunta 3 fica ativa.':'DOAC ('+DRUGN[M.drug]+') &rarr; lógica de <b>tampa em enzima</b>: prazo curto e a pergunta 3 <b>não se aplica</b> &mdash; nunca há ponte.');
+ verd($('#mxV2'),M.bleed==='high'?'w':(M.bleed==='min'?'b':'b'),'2 · Quanto sangra',
+   'Risco '+BLEEDN[M.bleed]+' &rarr; suspender: <b>'+p.stopTxt+'</b>.'+(p.warn?' '+p.warn:''));
+ verd($('#mxV3'),M.drug==='warf'?(M.thr==='high'?'m':'b'):'b','3 · Quanto tromba',
+   M.drug==='warf'?('Risco '+THRN[M.thr]+' &rarr; '+(M.thr==='high'?'<b>ponte indicada</b> com HBPM em dose plena.':'<b>sem ponte</b>. O ensaio BRIDGE mostrou não inferioridade com metade do sangramento.')):'Pergunta desativada: em DOAC não existe ponte, qualquer que seja o risco trombótico.');
+ var st=[];
+ if(M.bleed==='min'){st.push('Não suspender o anticoagulante.');st.push('Hemostasia local; no procedimento dentário, ácido tranexâmico tópico ou bochecho 4×/dia por 2 dias.');}
+ else{
+  st.push('Suspender '+(M.drug==='warf'?'a varfarina':'o anticoagulante')+' '+p.stopTxt+'.');
+  if(M.drug==='warf')st.push('Conferir INR na véspera; se &gt; 1,5, vitamina K 1–2,5 mg por via oral.');
+  if(p.bridge){st.push('HBPM em <b>dose plena</b> a partir de D&minus;3; <b>última dose 24 h antes</b> da incisão (omitir a dose da noite).');}
+  else{st.push('Nenhuma heparina em dose plena no pré-operatório.');}
+  st.push('Profilaxia de TEV em <b>dose profilática</b> a partir de 12–24 h do pós-operatório, com métodos mecânicos desde a indução.');
+  st.push('Retomar o anticoagulante oral '+p.restartTxt+'.');
+  if(p.bridge)st.push('Retomar a HBPM plena '+(M.bleed==='high'?'48–72 h':'24 h')+' após e mantê-la até o INR voltar a 2,0–3,0.');
+ }
+ $('#mxSteps').innerHTML=st.map(function(x){return '<li>'+x+'</li>'}).join('');
+ var f='';
+ if(M.drug!=='warf')f='Ponte com heparina em dose plena. Em DOAC ela aumenta o sangramento sem reduzir tromboembolismo &mdash; é a alternativa <b>A</b> da questão-mãe.';
+ else if(M.thr!=='high')f='Ponte de rotina. Fora do risco trombótico alto, o BRIDGE mostrou 3,2 % de sangramento maior contra 1,3 % sem ponte.';
+ else f='Trocar a varfarina por um DOAC no perioperatório. Em prótese mecânica isso é contraindicado (RE-ALIGN).';
+ if(M.bleed==='high')f+=' Também proibido: reversão farmacológica em cirurgia eletiva (alternativa <b>D</b>) e operar com a última dose na véspera (alternativa <b>C</b>).';
+ $('#mxForbid').innerHTML='<b>Proibido nesta configuração</b>'+f;
+ var alt='—';
+ if(M.drug==='xa'&&M.bleed==='high'&&!p.bridge)alt='E · a alternativa correta';
+ else if(M.drug==='xa'&&M.bleed==='low')alt='corresponde à questão 2 da forja';
+ else if(M.drug==='dabi'&&M.crcl<50)alt='corresponde à questão 3 da forja';
+ else if(M.drug==='warf'&&p.bridge)alt='corresponde à questão 4 da forja';
+ else if(M.drug==='warf')alt='corresponde à questão 5 da forja';
+ else if(M.bleed==='min')alt='corresponde à questão 7 da forja';
+ rows($('#mxMap'),[['Prazo de suspensão',M.bleed==='min'?'não suspender':p.stopH+' h'],['Ponte',p.bridge?'sim, HBPM plena':'não'],['Retorno ao oral',M.bleed==='min'?'—':p.restartTxt],['Mapa',alt]]);
+}
+seg('#mxDrug',function(k){M.drug=k;mxDraw()});
+seg('#mxBleed',function(k){M.bleed=k;mxDraw()});
+seg('#mxThr',function(k){M.thr=k;mxDraw()});
+$('#mxCrcl').addEventListener('input',function(){M.crcl=+this.value;setSeg('#mxPreset','');mxDraw()});
+var PRE={p1:{drug:'xa',bleed:'high',thr:'low',crcl:70},p2:{drug:'xa',bleed:'low',thr:'low',crcl:70},
+ p3:{drug:'dabi',bleed:'high',thr:'low',crcl:32},p4:{drug:'warf',bleed:'high',thr:'high',crcl:70},
+ p5:{drug:'xa',bleed:'min',thr:'low',crcl:70}};
+seg('#mxPreset',function(k){var p=PRE[k];M.drug=p.drug;M.bleed=p.bleed;M.thr=p.thr;M.crcl=p.crcl;
+ setSeg('#mxDrug',M.drug);setSeg('#mxBleed',M.bleed);setSeg('#mxThr',M.thr);$('#mxCrcl').value=M.crcl;mxDraw();});
+mxDraw();
+
+/* ================= 05 · reversão ================= */
+var AG=[
+ {k:'wait',n:'Esperar a eliminação',t:2880,s:'48 h · custo zero'},
+ {k:'idaru',n:'Idarucizumabe 5 g',t:3,s:'anticorpo anti-dabigatrana'},
+ {k:'andex',n:'Andexanete alfa',t:4,s:'Xa falso, sequestra a droga'},
+ {k:'prot',n:'Protamina 1 mg : 100 U',t:5,s:'só heparina'},
+ {k:'ccp',n:'CCP 4 fatores 25–50 U/kg',t:20,s:'repõe II, VII, IX, X'},
+ {k:'pfc',n:'Plasma fresco congelado',t:45,s:'volume alto, efeito fraco'},
+ {k:'hd',n:'Hemodiálise ≥ 8 h',t:480,s:'só dabigatrana'},
+ {k:'vitk',n:'Vitamina K 5–10 mg IV',t:600,s:'religa a fábrica, 6–24 h'}
+];
+var RV={
+ 'elec|xa':{g:['wait'],b:['ccp','andex','pfc'],v:['b','Esperar 48 h','Cirurgia programada tem tempo por definição. Nenhum antídoto, nenhum exame de coagulação prévio.'],w:'CCP na indução de uma colectomia eletiva: repõe fatores prontos numa paciente com fibrilação atrial e escore 3, sem nenhum ganho hemostático sobre o que 48 h de espera já garantiriam. Risco trombótico acrescentado ≈ 1,4 % e custo de 4 a 6 frascos. É a alternativa D da questão-mãe.'},
+ 'elec|dabi':{g:['wait'],b:['idaru','ccp','pfc'],v:['b','Esperar 48–96 h','Prazo conforme o clearance. Idarucizumabe não tem papel em cirurgia programada.'],w:'Idarucizumabe eletivo: 5 g de anticorpo para poupar dois dias de espera, com rebote de dabigatrana em 12–24 h se a droga não tiver sido eliminada. Reanticoagulação inesperada no pós-operatório imediato.'},
+ 'elec|warf':{g:['wait'],b:['ccp','pfc'],v:['b','Suspender 5 dias','Se o INR na véspera ainda estiver acima de 1,5, vitamina K 1–2,5 mg por via oral &mdash; não CCP.'],w:'CCP para "preparar" o INR na véspera: reverte, mas expõe a paciente a trombose e desperdiça hemoderivado num problema que 5 dias de suspensão resolvem.'},
+ 'elec|unf':{g:['wait'],b:['prot'],v:['b','Desligar 4–6 h antes','A meia-vida de 60–90 min faz o trabalho. Confirmar com TTPa se houver dúvida.'],w:'Protamina eletiva: reação anafilactoide, hipotensão e bradicardia por uma reversão que o relógio faz sozinho.'},
+ 'elec|lmwh':{g:['wait'],b:['prot'],v:['b','Última dose 24 h antes','Dose plena 24 h; dose profilática 12 h. Nada mais.'],w:'Protamina para HBPM eletiva: reverte apenas ≈ 60 % e acrescenta risco de reação, sem necessidade nenhuma.'},
+ 'urg|xa':{g:['andex','ccp'],b:['pfc','wait'],v:['w','Adiar 12–24 h se possível; se não, CCP','Andexanete alfa é o agente específico, mas é pouco disponível. Na falta dele, CCP de 4 fatores 25–50 U/kg.'],w:'Plasma fresco congelado: seriam necessários litros para entregar fator suficiente, e a apixabana continua no sangue bloqueando o Xa reposto. Sobrecarga de volume sem hemostasia.'},
+ 'urg|dabi':{g:['idaru'],b:['pfc','andex'],v:['w','Idarucizumabe 5 g','Dose fixa, efeito em minutos. Se indisponível e houver tempo, hemodiálise remove ≈ 60 % em 8 h.'],w:'Andexanete alfa: é um fator Xa falso e a dabigatrana bloqueia trombina, não Xa. Alvo errado, zero efeito.'},
+ 'urg|warf':{g:['ccp','vitk'],b:['pfc'],v:['w','CCP 25–50 U/kg + vitamina K 5–10 mg IV','O CCP resolve as próximas horas; a vitamina K impede o INR de subir de novo quando o CCP for consumido. Sempre juntos.'],w:'Vitamina K isolada: leva 6 a 24 h para agir. Em cirurgia inadiável ou hemorragia intracraniana, esse atraso é o desfecho.'},
+ 'urg|unf':{g:['prot'],b:['pfc'],v:['b','Protamina 1 mg : 100 U','Ou simplesmente desligar a infusão e esperar 4–6 h, se houver tempo.'],w:'Plasma fresco para heparina: a heparina não consome fatores, potencializa a antitrombina. Repor fator não desfaz isso.'},
+ 'urg|lmwh':{g:['prot'],b:['pfc'],v:['w','Protamina, reversão parcial','1 mg por mg de enoxaparina nas últimas 8 h; reverte ≈ 60 %. Adiar é sempre melhor.'],w:'Assumir reversão completa com protamina: as cadeias curtas da HBPM escapam da neutralização e o paciente segue anticoagulado apesar do TTPa.'},
+ 'bleed|xa':{g:['andex','ccp'],b:['wait','pfc'],v:['d','Andexanete alfa; na falta, CCP 25–50 U/kg','Simultaneamente: controle mecânico do foco, hemocomponentes, ácido tranexâmico, cálcio. Suspender qualquer antiagregante associado.'],w:'Esperar a meia-vida com o paciente sangrando: 48 h de espera em choque hemorrágico é a definição de conduta expectante inadequada.'},
+ 'bleed|dabi':{g:['idaru'],b:['wait','pfc'],v:['d','Idarucizumabe 5 g imediatamente','Hemodiálise é alternativa apenas se o antídoto não existir e o paciente tolerar o tempo.'],w:'Protamina: não tem nenhuma afinidade pela dabigatrana. Perde-se o tempo em que o antídoto certo teria agido.'},
+ 'bleed|warf':{g:['ccp','vitk'],b:['pfc','wait'],v:['d','CCP 25–50 U/kg + vitamina K 5–10 mg IV','Se não houver CCP, plasma fresco 15 mL/kg é a alternativa de segunda linha &mdash; e é ruim: volume alto e correção incompleta.'],w:'Plasma isolado em hemorragia intracraniana: 15 mL/kg em uma idosa é ≈ 1 litro, com correção parcial do INR e risco de TACO. O CCP corrige em minutos, em 100 mL.'},
+ 'bleed|unf':{g:['prot'],b:['pfc'],v:['d','Protamina 1 mg : 100 U das últimas 2–3 h','Infundir lentamente: bolus rápido causa hipotensão e bradicardia.'],w:'Dose calculada sobre a heparina total do dia: excesso de protamina tem efeito anticoagulante próprio e piora o sangramento.'},
+ 'bleed|lmwh':{g:['prot'],b:['pfc'],v:['d','Protamina, reversão parcial (≈ 60 %)','1 mg por mg de enoxaparina se a dose foi há menos de 8 h; metade disso entre 8 e 12 h. Acrescentar ácido tranexâmico.'],w:'Confiar apenas na protamina e não controlar o foco: com reversão incompleta, o único fator sob seu controle é a hemostasia mecânica.'}
+};
+var rvS='elec',rvD='xa';
+function revDraw(){
+ var key=rvS+'|'+rvD, C=RV[key];
+ var X0=250,X1=630,Y0=54,LM=Math.log10(4320);
+ var px=function(t){return X0+(Math.log10(Math.max(t,1))/LM)*(X1-X0)};
+ var s='';
+ s+='<text x="8" y="20" fill="var(--ink2)" style="font:500 10.5px \'IBM Plex Mono\',monospace;letter-spacing:.06em">TEMPO ATÉ O EFEITO HEMOSTÁTICO · ESCALA LOGARÍTMICA</text>';
+ [[1,'1 min'],[10,'10 min'],[60,'1 h'],[360,'6 h'],[1440,'24 h'],[4320,'72 h']].forEach(function(T){
+  s+='<line x1="'+px(T[0])+'" y1="'+(Y0-14)+'" x2="'+px(T[0])+'" y2="298" stroke="var(--line)" stroke-width="1"/>';
+  s+='<text x="'+px(T[0])+'" y="'+(Y0-20)+'" text-anchor="middle" fill="var(--ink2)" style="font:500 10px \'IBM Plex Mono\',monospace">'+T[1]+'</text>';
+ });
+ AG.forEach(function(a,i){
+  var y=Y0+i*30, good=C.g.indexOf(a.k)>=0, bad=C.b.indexOf(a.k)>=0;
+  var col=good?'var(--b)':(bad?'var(--d)':'var(--ink2)');
+  var fillc=good?'var(--b-soft)':(bad?'var(--d-soft)':'var(--panel2)');
+  s+='<text x="8" y="'+(y+14)+'" fill="'+(good||bad?'var(--ink)':'var(--ink2)')+'" style="font:'+(good?'600':'500')+' 11.5px \'IBM Plex Sans\',sans-serif">'+a.n+'</text>';
+  s+='<rect x="'+X0+'" y="'+(y+2)+'" width="'+Math.max(6,px(a.t)-X0).toFixed(1)+'" height="18" rx="5" fill="'+fillc+'" stroke="'+col+'" stroke-width="'+(good||bad?1.8:1.1)+'"/>';
+  var tx=px(a.t)+7, anc='start';
+  if(a.t>=300){tx=px(a.t)-8; anc='end';}
+  s+='<text x="'+tx.toFixed(1)+'" y="'+(y+15)+'" text-anchor="'+anc+'" fill="'+col+'" style="font:500 10px \'IBM Plex Sans\',sans-serif">'+a.s+'</text>';
+ });
+ s+='<text x="8" y="318" fill="var(--ink2)" style="font:500 10.5px \'IBM Plex Sans\',sans-serif">verde = estratégia correta neste cenário  ·  vermelho = errada ou danosa  ·  cinza = possível, não indicada</text>';
+ $('#revSvg').innerHTML=s;
+ verd($('#revVerd'),C.v[0],C.v[1],C.v[2]);
+ rows($('#revOut'),[['Cenário',{elec:'eletiva programada',urg:'urgência &lt; 8 h',bleed:'risco de vida'}[rvS]],
+   ['Droga',{xa:'apixabana / rivaroxabana',dabi:'dabigatrana',warf:'varfarina',unf:'HNF',lmwh:'HBPM'}[rvD]],
+   ['Agente de escolha',C.g.map(function(k){var a=AG.filter(function(x){return x.k===k})[0];return a?a.n:k}).join(' + ')]]);
+ $('#revWrong').hidden=true; $('#revWrongBtn').textContent='Mostrar o caminho errado';
+ $('#revWrong').innerHTML='<b>Caminho errado</b>'+C.w;
+}
+seg('#revScen',function(k){rvS=k;revDraw()});
+seg('#revDrug',function(k){rvD=k;revDraw()});
+$('#revWrongBtn').addEventListener('click',function(){var b=$('#revWrong');b.hidden=!b.hidden;this.textContent=b.hidden?'Mostrar o caminho errado':'Ocultar';});
+revDraw();
+})();
+</script>
+
+<script>
+(function(){
+"use strict";
+var $=function(s,r){return (r||document).querySelector(s)};
+var L=['A','B','C','D','E'];
+var Q=[
+{n:'Questão-mãe · ENARE R+ Cirurgia Geral',p:'sem pivô — o caso original',
+ s:'Mulher de 68 anos, em uso de <b>apixabana</b> por fibrilação atrial não valvar (CHA<sub>2</sub>DS<sub>2</sub>-VASc 3), sem eventos tromboembólicos prévios, será submetida a <b>colectomia eletiva</b>. Clearance de creatinina de 70 mL/min, sem sangramento ativo e sem trombocitopenia. Quanto ao manejo perioperatório do anticoagulante, a conduta é:',
+ a:['Suspender a apixabana 48 horas antes e realizar ponte com heparina de baixo peso molecular em dose plena.',
+    'Suspender a apixabana 7 dias antes e realizar ponte com heparina não fracionada intravenosa.',
+    'Manter a apixabana até a véspera, suspendendo apenas a dose da manhã da cirurgia.',
+    'Reverter com concentrado de complexo protrombínico na indução, mantendo o anticoagulante até a cirurgia.',
+    'Suspender a apixabana 48 horas antes, sem ponte com heparina, e reiniciar quando a hemostasia permitir.'],
+ k:4,
+ lead:'Três perguntas, nesta ordem. <b>Droga:</b> apixabana, inibidor direto do fator Xa, meia-vida de ≈ 13 h neste clearance &rarr; lógica de DOAC, e a pergunta da ponte deixa de existir. <b>Procedimento:</b> colectomia = alto risco de sangramento &rarr; 48 h, que são quase quatro meias-vidas e deixam ≈ 13 ng/mL na incisão. <b>Paciente:</b> escore 3 sem evento prévio = risco trombótico baixo &mdash; e mesmo que fosse alto, em DOAC não há ponte. O esquema é exatamente o validado no PAUSE: suspender 2 dias, não dosar nada, não fazer ponte, retomar com a hemostasia assegurada.',
+ w:[['A','Prazo certo, lógica errada — é o distrator principal. Ponte é conceito de varfarina: no BRIDGE ela multiplicou o sangramento maior de 1,3 % para 3,2 % sem reduzir AVC, e num DOAC ela ainda se sobrepõe ao resíduo da droga nas duas pontas.'],
+     ['B','Sete dias é prazo de nenhuma droga: excede até os 5 dias da varfarina. HNF intravenosa como ponte é reservada a insuficiência renal grave ou necessidade de liga-desliga muito rápido. Dois erros somados.'],
+     ['C','Última dose na véspera deixa ≈ 40 % do pico na incisão. É conduta correta apenas para risco de sangramento <b>mínimo</b> — extração dentária, catarata, dermatológico superficial.'],
+     ['D','Reversão em cirurgia eletiva. O CCP repõe fatores prontos numa paciente com fibrilação atrial: risco trombótico e custo, para resolver o que 48 h de espera resolvem de graça. O enunciado fecha essa porta ao dizer "sem sangramento ativo".'],
+     ['E','Correta. Suspensão de 48 h por ser alto risco, sem ponte por ser DOAC, retorno guiado pela hemostasia — na prática 48–72 h, com profilaxia de TEV em dose profilática no intervalo.']],
+ pearl:'Identificou um DOAC? Elimine toda alternativa que contenha a palavra ponte, antes de olhar o prazo.'},
+
+{n:'Pivô 1 · o procedimento',p:'trocou o risco de sangramento',
+ s:'Mesma paciente de 68 anos em apixabana, CHA<sub>2</sub>DS<sub>2</sub>-VASc 3, clearance 70 mL/min. O procedimento programado passa a ser <mark>colonoscopia diagnóstica com biópsias superficiais</mark>. A conduta é:',
+ a:['Suspender a apixabana 48 horas antes, sem ponte.',
+    'Suspender a apixabana 5 dias antes e conferir o INR na véspera.',
+    'Suspender a apixabana 24 horas antes, sem ponte, e reiniciar em 24 horas.',
+    'Manter a apixabana sem qualquer alteração.',
+    'Suspender 48 horas antes e realizar ponte com HBPM em dose profilática.'],
+ k:2,
+ lead:'Só a pergunta 2 mudou. Colonoscopia diagnóstica, mesmo com biópsias superficiais, é procedimento de <b>baixo</b> risco de sangramento: a superfície é pequena, visível e comprimível por via endoscópica. Baixo risco &rarr; 24 h de suspensão, isto é, omitir a dose da véspera à noite e a da manhã. O retorno também encurta: 24 h após.',
+ w:[['A','48 h é o prazo do alto risco. Suspender mais do que o necessário deixa a paciente desprotegida sem ganho — e é o erro simétrico ao de suspender de menos.'],
+    ['B','Cinco dias e INR são a conduta da varfarina. O INR nem sequer monitoriza apixabana.'],
+    ['C','Correta. Baixo risco de sangramento em inibidor do Xa com clearance ≥ 30: 24 h antes, sem ponte, retorno em 24 h.'],
+    ['D','Manter sem alteração vale para risco <b>mínimo</b>. Biópsia de mucosa cria superfície cruenta, ainda que pequena — sai da categoria mínima.'],
+    ['E','Ponte não existe em DOAC, e "ponte em dose profilática" é um termo contraditório: ponte é sempre dose plena. Dose profilática é profilaxia de TEV.']],
+ pearl:'Baixo vira alto assim que aparecer polipectomia de lesão maior que 1–2 cm, papilotomia na CPRE ou gastrostomia endoscópica.'},
+
+{n:'Pivô 2 · a droga e o rim',p:'trocou o anticoagulante e o clearance',
+ s:'Mesma paciente, mesma colectomia eletiva, mas em uso de <mark>dabigatrana 150 mg de 12 em 12 horas</mark> e com <mark>clearance de creatinina de 32 mL/min</mark>. A conduta é:',
+ a:['Suspender a dabigatrana 96 horas (4 dias) antes, sem ponte.',
+    'Suspender a dabigatrana 48 horas antes, sem ponte.',
+    'Suspender a dabigatrana 24 horas antes e dosar o TTPa na manhã da cirurgia.',
+    'Suspender 48 horas antes e realizar ponte com HBPM em dose plena.',
+    'Administrar idarucizumabe 5 g na indução anestésica.'],
+ k:0,
+ lead:'A pergunta 1 mudou de resposta e arrastou a pergunta 2 junto. Dabigatrana é o único anticoagulante oral direto com eliminação predominantemente renal — <b>80 %</b> — e por isso o único em que o clearance entra na conta do prazo. Com ClCr entre 30 e 49, os prazos dobram: 48 h no baixo risco e <b>96 h</b> no alto. No simulador do capítulo 01, a meia-vida efetiva sobe de 13 h para ≈ 27 h; em 48 h ainda sobrariam ≈ 29 % do pico.',
+ w:[['A','Correta. Dabigatrana + ClCr 30–49 + alto risco de sangramento = 96 h, sem ponte.'],
+    ['B','48 h é o prazo do alto risco com clearance ≥ 50. Com 32 mL/min o resíduo na incisão fica acima de 50 ng/mL.'],
+    ['C','24 h é prazo de baixo risco, e o TTPa não quantifica dabigatrana — apenas sugere presença. O exame sensível seria o tempo de trombina, e mesmo ele não é exigido pelo esquema fixo.'],
+    ['D','Erra duas vezes: prazo curto e ponte inexistente em DOAC.'],
+    ['E','Idarucizumabe é antídoto de sangramento com risco de vida ou de cirurgia inadiável. Em cirurgia programada, com quatro dias disponíveis, é iatrogenia cara.']],
+ pearl:'Dabigatrana com clearance abaixo de 50 é a única situação em que o número do rim muda o prazo. Nos inibidores do Xa, o clearance no enunciado costuma ser ruído.'},
+
+{n:'Pivô 3 · a prótese',p:'trocou a droga e o risco trombótico',
+ s:'Mulher de 68 anos em uso de <mark>varfarina por prótese valvar mitral mecânica</mark>, INR de 2,8, será submetida a colectomia eletiva. Sem sangramento ativo, sem trombocitopenia. A conduta é:',
+ a:['Suspender a varfarina 48 horas antes, sem ponte.',
+    'Manter a varfarina e reverter com vitamina K oral na véspera.',
+    'Suspender a varfarina 5 dias antes, sem ponte, e reiniciar 12 a 24 horas após a cirurgia.',
+    'Suspender a varfarina 5 dias antes e realizar ponte com HBPM em dose plena, com a última dose 24 horas antes da incisão.',
+    'Suspender a varfarina 5 dias antes e substituí-la por apixabana no intervalo perioperatório.'],
+ k:3,
+ lead:'Aqui as três perguntas mudam de resposta. <b>Droga:</b> varfarina &rarr; lógica de fábrica desligada, prazo de 5 dias, e a pergunta 3 volta a existir. <b>Procedimento:</b> colectomia, alto risco. <b>Paciente:</b> prótese valvar mitral mecânica é a categoria de risco trombótico alto por excelência — a mitral trombosa mais que a aórtica porque o fluxo ali é de menor velocidade. Risco alto + varfarina = a única combinação em que a ponte é indicada.',
+ w:[['A','48 h é prazo de DOAC. A varfarina precisa de 5 dias porque o que precisa desaparecer não é a droga, e sim o efeito sobre fatores com meia-vida de 60–72 h.'],
+    ['B','Vitamina K oral na véspera serve para corrigir um INR residual acima de 1,5 em quem já suspendeu há 5 dias — não para reverter uma anticoagulação plena mantida de propósito.'],
+    ['C','Prazo certo, ponte omitida. Nesta paciente, os dias sem anticoagulação de uma prótese mitral mecânica são exatamente o cenário que o BRIDGE não estudou e que as diretrizes mantêm como indicação de ponte.'],
+    ['D','Correta. Varfarina suspensa 5 dias, HBPM plena a partir de D−3, última dose 24 horas antes (omitindo a da noite se o esquema for 12/12 h), retorno da HBPM em 48–72 h por ser alto risco e varfarina em 12–24 h, até o INR voltar a 2,0–3,0.'],
+    ['E','DOAC é contraindicado em prótese valvar mecânica: o ensaio RE-ALIGN, com dabigatrana, foi interrompido por excesso simultâneo de trombose de prótese e de sangramento.']],
+ pearl:'"Prótese mitral mecânica", "AVC/AIT há menos de 3 meses", "TEV há menos de 3 meses" e "síndrome antifosfolípide" são as quatro frases que ligam a ponte — e só valem se a droga for varfarina.'},
+
+{n:'Pivô 4 · a mesma paciente em varfarina',p:'trocou só a droga',
+ s:'Mesma paciente de 68 anos, fibrilação atrial <b>não valvar</b>, CHA<sub>2</sub>DS<sub>2</sub>-VASc 3, sem eventos prévios, colectomia eletiva — mas em uso de <mark>varfarina</mark>, com INR de 2,4. A conduta é:',
+ a:['Suspender a varfarina 48 horas antes e operar com INR em torno de 1,5.',
+    'Suspender a varfarina 5 dias antes, sem ponte, conferindo o INR na véspera.',
+    'Suspender a varfarina 5 dias antes e realizar ponte com HBPM em dose plena.',
+    'Suspender a varfarina 3 dias antes e administrar vitamina K 10 mg intravenosa.',
+    'Manter a varfarina e operar com INR de 2,4, reforçando a hemostasia local.'],
+ k:1,
+ lead:'Mudou apenas a pergunta 1, mas isso reativa a pergunta 3 — que aqui responde "baixo". Escore 3 sem evento tromboembólico prévio não é risco trombótico alto. É exatamente a população do ensaio BRIDGE, em que não fazer ponte foi não inferior (0,4 % contra 0,3 % de tromboembolismo arterial) com menos da metade do sangramento maior (1,3 % contra 3,2 %).',
+ w:[['A','48 h deixa o INR em torno de 1,8–2,0: anticoagulação ainda relevante para uma colectomia.'],
+    ['B','Correta. Cinco dias, sem ponte, com INR conferido na véspera; se estiver acima de 1,5, vitamina K 1–2,5 mg por via oral. Retorno da varfarina em 12–24 h.'],
+    ['C','É o erro que o BRIDGE corrigiu. Fora do risco trombótico alto, a ponte só acrescenta sangramento.'],
+    ['D','Três dias é insuficiente, e vitamina K 10 mg intravenosa é dose de reversão de emergência: torna a paciente refratária à varfarina por vários dias no pós-operatório.'],
+    ['E','INR de 2,4 numa colectomia é anticoagulação plena sobre uma anastomose. Só se aceita operar sem suspender em risco de sangramento mínimo.']],
+ pearl:'Varfarina não implica ponte. Ponte depende da terceira pergunta, e a maioria dos pacientes com fibrilação atrial responde "baixo" a ela.'},
+
+{n:'Pivô 5 · o pós-operatório que deu errado',p:'trocou o cenário para hemorragia',
+ s:'A mesma paciente da questão-mãe foi operada. No <mark>2.º dia de pós-operatório</mark>, com a apixabana já reiniciada em dose plena por decisão da equipe, ela apresenta <mark>hemorragia digestiva com instabilidade hemodinâmica</mark>. A última dose foi há 6 horas. Além do suporte hemodinâmico e do controle do foco, a conduta farmacológica é:',
+ a:['Andexanete alfa; na indisponibilidade, concentrado de complexo protrombínico de 4 fatores 25–50 U/kg.',
+    'Idarucizumabe 5 g por via intravenosa.',
+    'Protamina 1 mg para cada 100 unidades da última dose.',
+    'Vitamina K 10 mg intravenosa associada a plasma fresco congelado.',
+    'Ácido tranexâmico isolado, aguardando a eliminação natural da apixabana.'],
+ k:0,
+ lead:'Cenário invertido: agora não há tempo, e a regra "se dá para esperar, espera-se" não se aplica. O antídoto específico do inibidor do fator Xa é o <b>andexanete alfa</b>, um fator Xa cataliticamente inativo que funciona como chamariz e libera o Xa verdadeiro. Como a disponibilidade no Brasil é limitada, a alternativa aceita é o CCP de 4 fatores em 25–50 U/kg — que não retira a droga, mas empilha substrato suficiente para a coagulação vencer por número.',
+ w:[['A','Correta. Antídoto específico se disponível; CCP de 4 fatores como alternativa prática. Simultaneamente: hemocomponentes, ácido tranexâmico, correção de cálcio e controle endoscópico ou cirúrgico do foco.'],
+    ['B','Idarucizumabe é anticorpo anti-dabigatrana. Contra apixabana, alvo errado e efeito nulo.'],
+    ['C','Protamina neutraliza heparina por ligação de cargas opostas. Não tem afinidade nenhuma por um inibidor sintético do Xa.'],
+    ['D','Vitamina K repõe a síntese hepática bloqueada pela varfarina — a apixabana não bloqueia síntese nenhuma. Plasma fresco entrega fator insuficiente por litro infundido.'],
+    ['E','Ácido tranexâmico é adjuvante antifibrinolítico, não antídoto. Esperar a eliminação com a paciente instável é conduta expectante inadequada.']],
+ pearl:'Este caso também ensina pelo erro que o precede: reiniciar apixabana em dose plena no 2.º dia de uma colectomia é cedo. O prazo é 48–72 h <i>com hemostasia assegurada</i>.'},
+
+{n:'Pivô 6 · o procedimento mínimo',p:'trocou o procedimento para risco mínimo',
+ s:'Homem de 71 anos em uso de rivaroxabana 20 mg/dia por fibrilação atrial não valvar, clearance de 68 mL/min, será submetido a <mark>extração de dois elementos dentários</mark>. A conduta é:',
+ a:['Suspender a rivaroxabana 5 dias antes.',
+    'Suspender a rivaroxabana 48 horas antes e realizar ponte com HBPM.',
+    'Suspender a rivaroxabana 72 horas antes.',
+    'Manter a rivaroxabana e realizar hemostasia local, com ácido tranexâmico tópico ou bochecho.',
+    'Administrar concentrado de complexo protrombínico profilático antes do procedimento.'],
+ k:3,
+ lead:'A pergunta 2 caiu para a categoria <b>mínima</b>, que quase todo candidato esquece que existe. Extração de um a três elementos, raspagem periodontal, catarata sem bloqueio retrobulbar e procedimentos dermatológicos superficiais têm sangramento visível, comprimível e sem consequência sistêmica — não se suspende nada. A hemostasia é local: sutura, compressão e ácido tranexâmico a 5 % em bochecho quatro vezes ao dia por dois dias.',
+ w:[['A','Cinco dias é prazo de varfarina, e nem lá se justificaria para uma extração.'],
+    ['B','Suspende sem necessidade e acrescenta ponte, que não existe em DOAC. Dois erros.'],
+    ['C','72 h é o prazo do <b>neuroeixo</b>, não de procedimento dentário. Suspender três dias expõe o paciente a AVC sem nenhum ganho.'],
+    ['D','Correta. Risco mínimo: manter o anticoagulante e resolver localmente.'],
+    ['E','Reversão profilática em procedimento ambulatorial de risco mínimo é a definição de desproporção entre risco e intervenção.']],
+ pearl:'Se as alternativas oferecem prazos crescentes e uma opção de "não suspender", verifique primeiro se o procedimento é de risco mínimo — a banca conta com o reflexo de suspender.'},
+
+{n:'Pivô 7 · o neuroeixo',p:'acrescentou o bloqueio peridural',
+ s:'Na mesma paciente da questão-mãe, a equipe de anestesia deseja <mark>peridural com cateter para analgesia pós-operatória</mark>. Quanto ao intervalo entre a última dose de apixabana e a punção, e ao manejo do cateter:',
+ a:['24 horas antes da punção; o cateter pode ser mantido com a apixabana reiniciada.',
+    '72 horas antes da punção; o cateter é retirado com o anticoagulante ainda suspenso e a apixabana volta pelo menos 6 horas após a retirada.',
+    '12 horas antes da punção, o mesmo intervalo válido para a HBPM profilática.',
+    'Não há intervalo seguro: o bloqueio do neuroeixo é contraindicado em qualquer paciente que use DOAC.',
+    '48 horas antes da punção, o mesmo intervalo já exigido pela colectomia.'],
+ k:1,
+ lead:'O neuroeixo é a única situação em que a exigência supera a da própria cirurgia. O canal medular é um tubo ósseo rígido: poucos mililitros de hematoma comprimem a medula ou a cauda equina, e a paraplegia se torna definitiva se a descompressão passar de 8 a 12 horas. Por isso a ASRA exige <b>72 h</b> para apixabana, rivaroxabana e edoxabana — 24 h a mais que a cirurgia. A retirada do cateter é tão perigosa quanto a punção, porque machuca as mesmas veias epidurais.',
+ w:[['A','24 h é prazo de baixo risco cirúrgico, e manter cateter em paciente reanticoagulado é a combinação que produz os casos publicados de hematoma espinhal.'],
+    ['B','Correta. 72 h antes da punção; cateter retirado com o anticoagulante suspenso; retorno do DOAC ≥ 6 h após a retirada.'],
+    ['C','12 h é o intervalo da HBPM em dose <b>profilática</b>. Para HBPM plena são 24 h; para DOAC, 72 h.'],
+    ['D','Não é contraindicação absoluta: é uma questão de intervalo. A contraindicação prática existe para o fondaparinux, cuja meia-vida longa e ausência de antídoto desaconselham cateter.'],
+    ['E','Repetir o prazo da cirurgia é justamente o distrator: a decisão anestésica alonga o prazo, e a última dose passa de D−2 para D−3.']],
+ pearl:'Inibidor do Xa: 48 h para a cirurgia, 72 h para a agulha na coluna. Dabigatrana: 72 h com ClCr ≥ 80, 96 h com 50–79, 120 h com 30–49.'},
+
+{n:'Pivô 8 · o retorno',p:'trocou o foco para o pós-operatório',
+ s:'A paciente da questão-mãe foi submetida à colectomia sem intercorrências, com hemostasia adequada, dreno de baixo débito seroso e dieta oral liberada no <mark>2.º dia de pós-operatório</mark>. Quanto ao retorno da anticoagulação:',
+ a:['Reiniciar a apixabana em dose plena 6 horas após o término da cirurgia.',
+    'Manter a apixabana suspensa por 30 dias e reavaliar em ambulatório.',
+    'Profilaxia de tromboembolismo venoso em dose profilática a partir de 12 a 24 horas, e apixabana em dose plena entre 48 e 72 horas, com a hemostasia assegurada.',
+    'Manter ponte com HBPM em dose plena até o retorno da apixabana.',
+    'Reiniciar a apixabana em metade da dose durante os primeiros 7 dias.'],
+ k:2,
+ lead:'A frase "reiniciar quando a hemostasia permitir", da alternativa correta da questão-mãe, tem conteúdo concreto: hemostasia cirúrgica assegurada, trato gastrointestinal capaz de absorver o comprimido e ausência de cateter peridural ou de plano de reabordagem. Em cirurgia abdominal maior isso acontece entre 48 e 72 h. No intervalo, quem protege é a profilaxia de TEV em <b>dose profilática</b>, que a colectomia exigiria de qualquer forma — e que não é ponte.',
+ w:[['A','A apixabana atinge o pico 3 h depois de engolida. Dose plena na noite da cirurgia é anticoagular sobre uma anastomose de horas.'],
+    ['B','Trinta dias sem anticoagulação numa fibrilação atrial com escore 3 desfaz todo o benefício do tratamento crônico.'],
+    ['C','Correta. Dose profilática em 12–24 h, dose plena em 48–72 h. Se a colectomia fosse por câncer, a profilaxia se estenderia por cerca de 28 dias — exigência cumprida pela própria apixabana depois que ela retorna.'],
+    ['D','Ponte no pós-operatório de DOAC repete o erro da alternativa A da questão-mãe, agora do lado de fora da cirurgia.'],
+    ['E','Meia dose não é um esquema validado: subdose expõe ao AVC sem proteger do sangramento, que depende do momento e não da dose reduzida.']],
+ pearl:'Dose profilática ≠ dose plena. Enoxaparina 40 mg/dia é profilaxia; 1 mg/kg 12/12 h é ponte. A troca dessas duas palavras é o que faz uma alternativa certa virar errada.'}
+];
+var qi=0, ans=new Array(Q.length).fill(-1);
+function render(){
+ var q=Q[qi];
+ $('#fQn').textContent='Questão '+(qi+1)+' de '+Q.length+' · '+q.n;
+ $('#fPivot').innerHTML=q.p;
+ $('#fStem').innerHTML=q.s;
+ var box=$('#fAlts'); box.innerHTML='';
+ q.a.forEach(function(t,i){
+  var b=document.createElement('button'); b.type='button';
+  b.innerHTML='<span class="L">'+L[i]+'</span><span>'+t+'</span>';
+  if(ans[qi]>=0){b.disabled=true; if(i===q.k)b.classList.add('ok'); else if(i===ans[qi])b.classList.add('no');}
+  b.addEventListener('click',function(){ if(ans[qi]>=0)return; ans[qi]=i; render(); });
+  box.appendChild(b);
+ });
+ var ex=$('#fExpl');
+ if(ans[qi]>=0){
+  ex.hidden=false;
+  ex.innerHTML='<h6>'+(ans[qi]===q.k?'Correto · gabarito '+L[q.k]:'Gabarito '+L[q.k]+' — você marcou '+L[ans[qi]])+'</h6>'+
+   '<p>'+q.lead+'</p><div class="why">'+q.w.map(function(r){return '<span class="l">'+r[0]+'</span><span>'+r[1]+'</span>'}).join('')+'</div>'+
+   '<p style="margin-top:.8em"><b>Pérola:</b> '+q.pearl+'</p>';
+ } else ex.hidden=true;
+ var done=ans.filter(function(x){return x>=0}).length;
+ var hit=ans.filter(function(x,i){return x===Q[i].k}).length;
+ $('#fScore').textContent='acertos '+hit+' / '+done+(done?'  ·  '+Math.round(hit/done*100)+' %':'');
+ $('#fPrev').disabled=(qi===0); $('#fNext').disabled=(qi===Q.length-1);
+}
+$('#fPrev').addEventListener('click',function(){if(qi>0){qi--;render();}});
+$('#fNext').addEventListener('click',function(){if(qi<Q.length-1){qi++;render();}});
+$('#fReset').addEventListener('click',function(){ans=new Array(Q.length).fill(-1);qi=0;render();});
+render();
+})();
+</script>
+
+</body></html>

@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atlas da Doença Diverticular</title>
+<meta name="description" content="Aula-atlas interativa: anatomia do pseudodivertículo, Hinchey original e modificado, classificação WSES, fluxograma de conduta e cirurgia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#121110; --bg-nav:#0e0d0c; --surface:#171614; --surface-2:#1c1a18; --surface-3:#22201d;
+  --ink:#f6f4f2; --ink-strong:#faf8f6;
+  --ink-body:rgba(243,242,242,.82); --ink-soft:rgba(243,242,242,.70); --ink-meta:rgba(243,242,242,.58);
+  --ink-faint:rgba(243,242,242,.38);
+  --rule:rgba(243,242,242,.10); --rule-2:rgba(243,242,242,.16); --rule-3:rgba(243,242,242,.28);
+  --accent:#b68235; --a300:#facb8d; --a400:#e1ad66; --a600:#8d6428; --a700:#6b4c1e;
+  --t1:rgba(194,141,65,.16); --t2:rgba(194,141,65,.34); --t3:rgba(194,141,65,.56); --t4:rgba(194,141,65,.82);
+  --fh:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --fb:"Lora",Georgia,"Times New Roman",serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink-body);font-family:var(--fb);font-size:15.5px;line-height:1.68;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--fh);color:var(--ink-strong);font-weight:500;margin:0;text-wrap:balance;letter-spacing:-.005em}
+a{color:var(--a300);text-decoration:none}
+::selection{background:var(--t2);color:var(--ink-strong)}
+:focus-visible{outline:2px solid var(--a400);outline-offset:2px;border-radius:3px}
+.num{font-variant-numeric:tabular-nums}
+h1,h2,h3,h4,.big,td:first-child,.verd .h,svg text{font-variant-numeric:lining-nums}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px 90px}
+@media (max-width:600px){.wrap{padding:0 16px 70px}}
+
+/* topo */
+header.hero{max-width:1140px;margin:0 auto;padding:54px 24px 26px}
+@media (max-width:600px){header.hero{padding:34px 16px 20px}}
+.kicker{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--a300)}
+h1{font-size:clamp(36px,6vw,64px);line-height:1.02;font-weight:400;margin:14px 0 0}
+h1 em{font-style:italic;color:var(--a300)}
+.lede{max-width:62ch;font-size:17px;color:var(--ink-soft);margin:18px 0 0}
+.stem{margin:26px 0 0;padding:18px 20px;border-left:2px solid var(--accent);background:var(--surface);
+  border-radius:0 8px 8px 0;max-width:78ch}
+.stem p{margin:0;font-size:15px}
+.stem b{color:var(--ink-strong);font-weight:600}
+.stem .src{display:block;margin-top:10px;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-meta)}
+
+/* trilho */
+nav.rail{position:sticky;top:0;z-index:40;background:rgba(14,13,12,.94);backdrop-filter:blur(8px);
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-top:30px}
+.rail-in{max-width:1140px;margin:0 auto;padding:8px 24px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.rail-in::-webkit-scrollbar{display:none}
+.rail a{flex:none;font-size:12.5px;color:var(--ink-soft);padding:6px 11px;border-radius:999px;white-space:nowrap;
+  border:1px solid transparent;transition:.15s}
+.rail a:hover,.rail a.on{color:var(--ink-strong);border-color:var(--rule-2);background:var(--surface-2)}
+.rail a .n{color:var(--a400);margin-right:6px;font-size:11px;font-variant-numeric:tabular-nums}
+@media (max-width:600px){.rail-in{padding:8px 16px}}
+
+/* capítulo */
+section.ch{padding-top:58px;scroll-margin-top:56px}
+.ch-head{display:flex;gap:16px;align-items:baseline;border-top:1px solid var(--rule-2);padding-top:20px}
+.ch-num{font-size:12px;color:var(--a400);letter-spacing:.14em;padding-top:6px;font-variant-numeric:tabular-nums}
+.ch-head h2{font-size:clamp(26px,3.4vw,36px);line-height:1.1}
+.ch-sub{color:var(--ink-meta);font-size:14.5px;margin:6px 0 0;max-width:72ch;font-style:italic}
+.plate{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr);gap:24px;margin-top:24px;align-items:start}
+@media (max-width:880px){.plate{grid-template-columns:minmax(0,1fr)}}
+.fig{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:12px;overflow:hidden;min-width:0}
+.fig svg{display:block;width:100%;height:auto}
+.figcap{font-size:12px;color:var(--ink-meta);margin:10px 2px 0;line-height:1.55}
+.panel{display:flex;flex-direction:column;gap:14px;min-width:0}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:15px 16px;min-width:0}
+.card h3{font-family:var(--fb);font-size:10.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-meta);margin-bottom:11px}
+.card h4{font-size:21px;line-height:1.15;margin-bottom:6px}
+.card p{margin:0 0 8px;font-size:14px}
+.card p:last-child{margin-bottom:0}
+.prose{margin-top:24px;max-width:70ch;font-size:15.5px}
+.prose p{margin:0 0 13px}
+.prose strong{color:var(--ink-strong);font-weight:600}
+.prose em{color:var(--ink)}
+
+/* controles */
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button,.btn{font:inherit;font-size:13px;padding:6px 11px;border-radius:4px;cursor:pointer;
+  border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-soft);transition:.15s;text-align:left}
+.seg button:hover,.btn:hover{border-color:var(--a600);color:var(--ink-strong)}
+.seg button[aria-pressed="true"]{background:var(--t2);border-color:var(--a400);color:var(--ink-strong)}
+.btn.prim{background:var(--accent);border-color:var(--accent);color:#17120b;font-weight:600}
+.btn.prim:hover{background:var(--a400);color:#17120b}
+.q-lbl{font-size:13px;color:var(--ink-soft);margin:12px 0 6px}
+.q-lbl:first-child{margin-top:0}
+.chk{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--ink-soft);cursor:pointer;padding:4px 0}
+.chk input{accent-color:var(--accent);width:16px;height:16px;margin-top:3px;flex:none}
+.chk .pt{margin-left:auto;color:var(--a400);font-variant-numeric:tabular-nums;font-size:12px;padding-left:8px}
+input[type=range]{width:100%;accent-color:var(--accent)}
+select{font:inherit;font-size:13px;background:var(--surface-2);color:var(--ink);border:1px solid var(--rule-2);
+  border-radius:4px;padding:5px 8px;max-width:100%}
+
+/* veredito — intensidade do ouro codifica gravidade */
+.verd{border-radius:6px;padding:13px 15px;border:1px solid var(--rule-2);font-size:14px;background:var(--surface-2)}
+.verd .t{font-size:10px;letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:4px;color:var(--ink-meta)}
+.verd .h{font-family:var(--fh);font-size:22px;line-height:1.15;display:block;margin-bottom:6px;color:var(--ink-strong)}
+.verd p{margin:0;color:var(--ink-soft)}
+.verd.g1{border-color:var(--rule-3)}
+.verd.g2{border-color:var(--a600);background:var(--t1)}
+.verd.g2 .t{color:var(--a400)}
+.verd.g3{border:1px solid var(--a300);background:var(--t2);box-shadow:inset 3px 0 0 var(--a300)}
+.verd.g3 .t{color:var(--a300)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.steps li{counter-increment:s;position:relative;padding-left:30px;font-size:14px;color:var(--ink-soft)}
+.steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;
+  border:1px solid var(--a600);color:var(--a300);font-size:11px;display:grid;place-items:center}
+.forbid{padding:11px 13px;border-radius:6px;border:1px dashed var(--a400);font-size:13.5px;color:var(--ink-soft)}
+.forbid b{color:var(--a300);font-weight:600}
+.note{padding:11px 13px;border-radius:6px;background:var(--surface-2);border:1px solid var(--rule);font-size:13.5px}
+.note b{color:var(--ink-strong);font-weight:600}
+.path{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center;font-size:12.5px}
+.path span{padding:3px 8px;border-radius:999px;border:1px solid var(--rule-2);color:var(--ink-soft)}
+.path span:last-child{border-color:var(--a400);color:var(--a300)}
+.path i{color:var(--ink-faint);font-style:normal}
+mark{background:var(--t2);color:var(--ink-strong);padding:0 3px;border-radius:2px}
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;font-size:13.5px;margin:0}
+.kv dt{color:var(--ink-meta);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding-top:3px}
+.kv dd{margin:0;color:var(--ink-body)}
+.big{font-family:var(--fh);font-size:52px;line-height:1;color:var(--a300);font-variant-numeric:tabular-nums}
+.big small{font-size:20px;color:var(--ink-meta)}
+
+/* tabelas */
+.tbl{overflow-x:auto;margin-top:22px;border:1px solid var(--rule);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
+th,td{text-align:left;vertical-align:top;padding:10px 13px;border-bottom:1px solid var(--rule)}
+th{font-weight:500;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-meta);background:var(--surface-2)}
+td:first-child{color:var(--a300);font-family:var(--fh);font-size:18px;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+tr.hl td{background:var(--t1)}
+tr[data-k]{cursor:pointer}
+tr[data-k]:hover td{background:var(--surface-2)}
+
+/* pegadinhas */
+.traps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin-top:24px}
+.trap{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:15px 16px}
+.trap .t{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--a400)}
+.trap h4{font-size:20px;margin:6px 0 8px;line-height:1.15}
+.trap p{margin:0;font-size:14px;color:var(--ink-soft)}
+.trap p b{color:var(--ink-strong);font-weight:600}
+
+/* forja */
+.quiz{margin-top:24px;display:flex;flex-direction:column;gap:16px}
+.qz{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:17px 18px}
+.qz .qn{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--a400)}
+.qz .qs{margin:8px 0 12px;font-size:15px;color:var(--ink-body)}
+.qz .qs b{color:var(--ink-strong);font-weight:600}
+.alts{display:flex;flex-direction:column;gap:7px}
+.alts button{font:inherit;font-size:14px;text-align:left;display:flex;gap:10px;align-items:flex-start;
+  padding:9px 12px;border-radius:5px;border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-soft);cursor:pointer}
+.alts button:hover:not(:disabled){border-color:var(--a600);color:var(--ink-strong)}
+.alts button .L{flex:none;width:22px;height:22px;border-radius:50%;border:1px solid var(--rule-3);display:grid;place-items:center;
+  font-size:11.5px;color:var(--ink-meta)}
+.alts button:disabled{cursor:default}
+.alts button.ok{border-color:var(--a300);background:var(--t2);color:var(--ink-strong)}
+.alts button.ok .L{background:var(--a300);border-color:var(--a300);color:#17120b}
+.alts button.no{border-style:dashed;border-color:var(--rule-3);color:var(--ink-faint);text-decoration:line-through;text-decoration-color:var(--rule-3)}
+.alts button.no .L{border-style:dashed}
+.alts button.dim{opacity:.55}
+.qexp{display:none;margin-top:12px;padding:12px 14px;border-left:2px solid var(--a400);background:var(--surface-2);
+  border-radius:0 6px 6px 0;font-size:14px;color:var(--ink-soft)}
+.qexp b{color:var(--ink-strong);font-weight:600}
+.qexp .res{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--a300);margin-bottom:5px}
+.qz.done .qexp{display:block}
+.score{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--rule);
+  border-radius:8px;padding:14px 16px;position:sticky;bottom:12px;z-index:5}
+.score .big{font-size:38px}
+.score .lab{font-size:13px;color:var(--ink-meta);flex:1;min-width:160px}
+
+/* tabela-mãe */
+.mom{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px;margin-top:24px}
+.mc{background:var(--surface);border:1px solid var(--rule);border-top:2px solid var(--rule-3);border-radius:6px;padding:13px 15px}
+.mc.g2{border-top-color:var(--a600)} .mc.g3{border-top-color:var(--a300)}
+.mc .gat{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-meta)}
+.mc h4{font-size:19px;margin:5px 0 6px;line-height:1.15}
+.mc p{margin:0;font-size:13.5px;color:var(--ink-soft)}
+.mc p b{color:var(--a300);font-weight:600}
+
+/* svg */
+.svgtxt{font-family:var(--fb)}
+.hot{cursor:pointer}
+.hot:hover .hl,.hot.on .hl{stroke:var(--a300);stroke-width:2.4}
+.leg{display:flex;flex-wrap:wrap;gap:6px 14px;margin:10px 2px 0;font-size:12px;color:var(--ink-meta)}
+.leg span{display:inline-flex;align-items:center;gap:6px}
+.leg svg{width:26px;height:10px;display:inline-block}
+footer.fim{max-width:1140px;margin:0 auto;padding:30px 24px 50px;border-top:1px solid var(--rule);font-size:12.5px;color:var(--ink-meta)}
+footer.fim p{margin:0 0 6px;max-width:90ch}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="kicker">Residência Max · Cirurgia Geral · Coloproctologia</span>
+  <h1>Doença diverticular: <em>onde o vaso entra, a parede cede</em></h1>
+  <p class="lede">Todo o tema cabe numa cadeia: o divertículo nasce no ponto em que o vaso atravessa a
+  muscular; inflama quando o colo do saco se fecha; e a conduta depende de onde o pus ou as fezes
+  foram parar. Hinchey é só o mapa desse trajeto.</p>
+  <div class="stem">
+    <p><b>Caso-guia.</b> Mulher de <b>67 anos</b>, dor em fossa ilíaca esquerda há 4 dias, febre de
+    38,4 °C, leucocitose. TC com contraste: espessamento do sigmoide, densificação da gordura e
+    <b>coleção pélvica de 6 cm</b> com gás, sem pneumoperitônio. Hemodinamicamente estável, abdome
+    doloroso sem peritonite difusa.
+    <span class="src">Pergunta que a página responde: que estágio é este e o que se faz agora.</span></p>
+  </div>
+</header>
+
+<nav class="rail"><div class="rail-in">
+  <a href="#c1"><span class="n">01</span>O divertículo</a>
+  <a href="#c2"><span class="n">02</span>Espectro clínico</a>
+  <a href="#c3"><span class="n">03</span>Hinchey</a>
+  <a href="#c4"><span class="n">04</span>Diagnóstico</a>
+  <a href="#c5"><span class="n">05</span>Fluxograma</a>
+  <a href="#c6"><span class="n">06</span>Cirurgia</a>
+  <a href="#c7"><span class="n">07</span>Pegadinhas</a>
+  <a href="#c8"><span class="n">08</span>Forja</a>
+  <a href="#c9"><span class="n">09</span>Tabela-mãe</a>
+</div></nav>
+
+<div class="wrap">
+
+<section class="ch" id="c1">
+  <div class="ch-head"><span class="ch-num">01</span><div>
+    <h2>Onde o divertículo nasce</h2>
+    <p class="ch-sub">Corte transversal do sigmoide. Toque nas estruturas; ligue o modo sangramento.</p>
+  </div></div>
+  <div class="plate">
+    <div class="fig">
+<svg id="svgCorte" viewBox="0 0 600 500" role="img" aria-label="Corte transversal do sigmoide com pseudodivertículos nos pontos de entrada dos vasa recta">
+  <rect width="600" height="500" fill="#1a1816"/>
+  <!-- mesocólon -->
+  <path d="M262,380 L230,500 L370,500 L338,380 Z" fill="#241f1a" stroke="rgba(243,242,242,.18)"/>
+  <!-- camadas -->
+  <g class="hot" data-k="muscular"><circle class="hl" cx="300" cy="230" r="170" fill="#3a3027" stroke="rgba(243,242,242,.35)" stroke-width="2"/></g>
+  <circle cx="300" cy="230" r="150" fill="#2e2620"/>
+  <g class="hot" data-k="mucosa"><circle class="hl" cx="300" cy="230" r="136" fill="#4a3a2a" stroke="rgba(243,242,242,.2)"/></g>
+  <circle cx="300" cy="230" r="112" fill="#0e0d0c"/>
+  <text x="300" y="236" text-anchor="middle" class="svgtxt" font-size="17" fill="rgba(243,242,242,.4)">luz</text>
+  <!-- divertículos -->
+  <g class="hot" data-k="divert">
+    <path class="hl" d="M435,269 Q503,259 501,324 Q452,367 416,308" fill="#4a3a2a" stroke="rgba(250,203,141,.75)" stroke-width="2"/>
+    <path class="hl" d="M184,308 Q148,367 99,324 Q97,259 165,269" fill="#4a3a2a" stroke="rgba(250,203,141,.75)" stroke-width="2"/>
+  </g>
+  <!-- tênias -->
+  <g class="hot" data-k="tenia"><ellipse cx="300" cy="400" rx="26" ry="14" transform="rotate(180 300 400)" fill="#5a4630" stroke="rgba(250,203,141,.6)"/><ellipse cx="153" cy="145" rx="26" ry="14" transform="rotate(300 153 145)" fill="#5a4630" stroke="rgba(250,203,141,.6)"/><ellipse cx="447" cy="145" rx="26" ry="14" transform="rotate(420 447 145)" fill="#5a4630" stroke="rgba(250,203,141,.6)"/></g>
+  <!-- vasa recta -->
+  <g class="hot" data-k="vasa" id="vasaN">
+    <path class="hl" d="M324,475 Q377,395 445,340 L436,293" fill="none" stroke="#e1ad66" stroke-width="3.5"/>
+    <path class="hl" d="M276,475 Q223,395 155,340 L164,293" fill="none" stroke="#e1ad66" stroke-width="3.5"/>
+  </g>
+  <g id="vasaB" style="display:none">
+    <path d="M324,475 Q379,399 507,326 L446,264" fill="none" stroke="#facb8d" stroke-width="3.5"/>
+    <path d="M276,475 Q221,399 93,326 L154,264" fill="none" stroke="#facb8d" stroke-width="3.5"/>
+    <circle cx="494" cy="320" r="9" fill="none" stroke="#facb8d" stroke-width="2" stroke-dasharray="3 3"/>
+  </g>
+  <line x1="300" y1="470" x2="300" y2="500" stroke="#e1ad66" stroke-width="5"/>
+  <g font-family="Lora,Georgia,serif" font-size="18" text-anchor="middle" fill="#17120b">
+    <g class="hot" data-k="divert"><circle cx="525" cy="335" r="17" fill="#facb8d"/><text x="525" y="341">1</text></g>
+    <g class="hot" data-k="vasa"><circle cx="365" cy="455" r="17" fill="#facb8d"/><text x="365" y="461">2</text></g>
+    <g class="hot" data-k="tenia"><circle cx="496" cy="109" r="17" fill="#facb8d"/><text x="496" y="115">3</text></g>
+    <g class="hot" data-k="muscular"><circle cx="300" cy="70" r="17" fill="#facb8d"/><text x="300" y="76">4</text></g>
+    <g class="hot" data-k="mucosa"><circle cx="300" cy="124" r="17" fill="#facb8d"/><text x="300" y="130">5</text></g>
+  </g>
+  <text x="300" y="492" text-anchor="middle" class="svgtxt" font-size="14" fill="rgba(243,242,242,.5)">mesocólon</text>
+</svg>
+      <div class="leg">
+        <span><svg viewBox="0 0 26 10"><line x1="0" y1="5" x2="26" y2="5" stroke="#e1ad66" stroke-width="4"/></svg>vasa recta</span>
+        <span><svg viewBox="0 0 26 10"><rect x="0" y="1" width="26" height="8" fill="#3a3027"/></svg>muscular própria</span>
+        <span><svg viewBox="0 0 26 10"><rect x="0" y="1" width="26" height="8" fill="#4a3a2a"/></svg>mucosa / submucosa</span>
+      </div>
+      <p class="figcap">1 pseudodivertículo · 2 vasa recta saindo da arcada marginal · 3 tênias
+      (mesocólica, omental e livre) · 4 muscular própria · 5 mucosa e submucosa. Esquema fora de escala.</p>
+    </div>
+    <div class="panel">
+      <div class="card"><h3>Modo</h3><div class="seg" id="bleedBtn"><button type="button" aria-pressed="false">Mostrar o mecanismo do sangramento</button></div></div>
+      <div class="card" id="corteOut" aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>O divertículo do sigmoide é <strong>falso (pseudodivertículo)</strong>: só mucosa e submucosa
+    herniam, através da muscular, nos pontos de fraqueza em que os <strong>vasa recta</strong>
+    penetram a parede — entre a tênia mesentérica e as duas antimesentéricas. Pressão intraluminal
+    alta (segmentação do sigmoide, dieta pobre em fibra) empurra a mucosa por essas portas.</p>
+    <p>Por isso as duas complicações são opostas e não coexistem com frequência: a
+    <strong>inflamação</strong> é do saco obstruído e predomina no sigmoide; o
+    <strong>sangramento</strong> é do vaso esticado sobre a cúpula e, apesar de haver menos
+    divertículos à direita, vem classicamente mais do <strong>cólon direito</strong>, de colo largo e parede fina.</p>
+  </div>
+</section>
+
+<section class="ch" id="c2">
+  <div class="ch-head"><span class="ch-num">02</span><div>
+    <h2>O espectro clínico</h2>
+    <p class="ch-sub">Diverticulose é anatomia; diverticulite é doença. A prova mistura os dois de propósito.</p>
+  </div></div>
+  <div class="traps">
+    <div class="trap"><span class="t">Achado</span><h4>Diverticulose</h4><p>Divertículos sem inflamação, quase sempre assintomáticos. Conduta: <b>fibra</b>. Não há indicação cirúrgica.</p></div>
+    <div class="trap"><span class="t">Inflamação</span><h4>Diverticulite não complicada</h4><p>Espessamento parietal e densificação da gordura, sem abscesso, perfuração, fístula ou obstrução. Dor em FIE, febre, leucocitose — a "apendicite à esquerda".</p></div>
+    <div class="trap"><span class="t">Inflamação</span><h4>Diverticulite complicada</h4><p><b>Abscesso, perfuração (peritonite), fístula ou obstrução/estenose.</b> É aqui que Hinchey e WSES classificam.</p></div>
+    <div class="trap"><span class="t">Vaso</span><h4>Sangramento diverticular</h4><p>Hematoquezia volumosa e <b>indolor</b> no idoso; a maioria para espontaneamente. Não é diverticulite: não há dor nem febre.</p></div>
+    <div class="trap"><span class="t">Fístula</span><h4>Colovesical é a mais comum</h4><p><b>Pneumatúria, fecalúria</b>, ITU de repetição polimicrobiana. Mais frequente no homem — o útero protege a bexiga na mulher, salvo após histerectomia.</p></div>
+    <div class="trap"><span class="t">Crônica</span><h4>Estenose</h4><p>Episódios repetidos fibrosam o sigmoide. Diante de estenose, o câncer precisa ser excluído; conduta eletiva é a ressecção.</p></div>
+  </div>
+</section>
+
+<section class="ch" id="c3">
+  <div class="ch-head"><span class="ch-num">03</span><div>
+    <h2>Hinchey: o mapa do pus</h2>
+    <p class="ch-sub">Avance os estágios e veja para onde vai a infecção. O painel traduz para a
+    classificação tomográfica da WSES e diz a conduta.</p>
+  </div></div>
+  <div class="plate">
+    <div class="fig">
+<svg id="svgH" viewBox="0 0 600 520" role="img" aria-label="Esquema do abdome com sigmoide inflamado e estágios de Hinchey">
+  <defs>
+    <radialGradient id="flegm"><stop offset="0" stop-color="rgba(225,173,102,.55)"/><stop offset="1" stop-color="rgba(225,173,102,0)"/></radialGradient>
+    <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="2" fill="rgba(246,244,242,.65)"/><circle cx="9" cy="9" r="1.4" fill="rgba(141,100,40,.9)"/></pattern>
+  </defs>
+  <rect width="600" height="520" fill="#1a1816"/>
+  <!-- contorno do abdome -->
+  <path d="M80,30 Q60,260 120,420 Q300,520 480,420 Q540,260 520,30 Z" fill="#201d1a" stroke="rgba(243,242,242,.18)" stroke-width="2"/>
+  <text x="580" y="508" text-anchor="end" class="svgtxt" font-size="13" fill="rgba(243,242,242,.45)">visão frontal · direita do paciente à esquerda</text>
+  <!-- líquido difuso (III/IV) -->
+  <g id="lDif" style="display:none">
+    <path d="M100,90 Q90,260 140,390 L175,380 Q130,260 140,90 Z" fill="rgba(225,173,102,.30)"/>
+    <path d="M500,90 Q512,260 462,390 L425,380 Q470,260 460,90 Z" fill="rgba(225,173,102,.30)"/>
+    <ellipse cx="300" cy="440" rx="120" ry="40" fill="rgba(225,173,102,.30)"/>
+    <ellipse cx="300" cy="100" rx="150" ry="22" fill="rgba(225,173,102,.22)"/>
+  </g>
+  <g id="lFec" style="display:none">
+    <path d="M100,90 Q90,260 140,390 L175,380 Q130,260 140,90 Z" fill="url(#dots)"/>
+    <path d="M500,90 Q512,260 462,390 L425,380 Q470,260 460,90 Z" fill="url(#dots)"/>
+    <ellipse cx="300" cy="440" rx="120" ry="40" fill="url(#dots)"/>
+  </g>
+  <!-- cólon -->
+  <path d="M150,380 L150,110 Q150,90 170,90 L430,90 Q450,90 450,110 L450,300" fill="none" stroke="#5a4630" stroke-width="30" stroke-linecap="round"/>
+  <path id="sig" d="M450,300 Q460,380 380,370 Q300,360 320,410 Q330,440 300,470" fill="none" stroke="#5a4630" stroke-width="30" stroke-linecap="round"/>
+  <path id="sigInf" d="M450,300 Q460,380 380,370" fill="none" stroke="#b68235" stroke-width="30" stroke-linecap="round" opacity="0"/>
+  <text x="300" y="80" text-anchor="middle" class="svgtxt" font-size="13" fill="rgba(243,242,242,.4)">transverso</text>
+  <text x="488" y="210" text-anchor="middle" class="svgtxt" font-size="13" fill="rgba(243,242,242,.4)" transform="rotate(90 488 210)">descendente</text>
+  <text x="260" y="490" text-anchor="middle" class="svgtxt" font-size="13" fill="rgba(243,242,242,.4)">reto</text>
+  <!-- flegmão -->
+  <ellipse id="hFleg" cx="430" cy="355" rx="70" ry="50" fill="url(#flegm)" style="display:none"/>
+  <!-- abscesso pericólico -->
+  <g id="hAbs1" style="display:none"><circle cx="470" cy="372" r="22" fill="rgba(250,203,141,.28)" stroke="#facb8d" stroke-width="2.5"/><circle cx="465" cy="366" r="4" fill="#facb8d"/></g>
+  <!-- abscesso pélvico/distante -->
+  <g id="hAbs2" style="display:none"><ellipse cx="365" cy="440" rx="44" ry="30" fill="rgba(250,203,141,.28)" stroke="#facb8d" stroke-width="2.5"/><circle cx="358" cy="430" r="5" fill="#facb8d"/><path d="M470,372 Q430,420 400,430" fill="none" stroke="#facb8d" stroke-dasharray="4 5" stroke-width="2"/></g>
+  <!-- perfuração / ar livre -->
+  <g id="hPerf" style="display:none"><circle cx="452" cy="345" r="8" fill="#0e0d0c" stroke="#facb8d" stroke-width="2.5"/>
+    <g fill="none" stroke="#facb8d" stroke-width="2"><circle cx="210" cy="120" r="6"/><circle cx="235" cy="112" r="4"/><circle cx="390" cy="118" r="5"/></g>
+    <text x="300" y="140" text-anchor="middle" class="svgtxt" font-size="13" fill="#facb8d">ar livre subdiafragmático</text></g>
+  <!-- etiqueta do estágio -->
+  <text id="hLab" x="40" y="500" class="svgtxt" font-size="22" fill="#facb8d" font-family="Cormorant Garamond,Georgia,serif">Hinchey 0</text>
+</svg>
+      <p class="figcap">Esquema frontal fora de escala. Sombreado: inflamação/flegmão; círculos
+      contornados: abscesso com gás; pontilhado: conteúdo fecal livre.</p>
+    </div>
+    <div class="panel">
+      <div class="card"><h3>Hinchey modificado</h3><div class="seg" id="hSeg"></div></div>
+      <div id="hOut" aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="tbl"><table id="hTbl">
+    <thead><tr><th>Hinchey</th><th>Original (1978)</th><th>Modificado (Wasvary, 1999)</th><th>Conduta habitual</th></tr></thead>
+    <tbody>
+      <tr data-k="0"><td>0</td><td>—</td><td>Diverticulite clínica leve</td><td>Clínica, ambulatorial na maioria</td></tr>
+      <tr data-k="Ia"><td>Ia</td><td rowspan="2">I · abscesso pericólico ou mesocólico</td><td>Inflamação pericólica confinada / flegmão</td><td>Antibiótico</td></tr>
+      <tr data-k="Ib"><td>Ib</td><td>Abscesso pericólico ou mesocólico confinado</td><td>Antibiótico; drenar se grande</td></tr>
+      <tr data-k="II"><td>II</td><td>Abscesso pélvico, intra-abdominal à distância ou retroperitoneal</td><td>Idem</td><td>Drenagem percutânea + antibiótico</td></tr>
+      <tr data-k="III"><td>III</td><td>Peritonite purulenta generalizada</td><td>Idem</td><td>Cirurgia de urgência</td></tr>
+      <tr data-k="IV"><td>IV</td><td>Peritonite fecal generalizada</td><td>Idem</td><td>Cirurgia de urgência</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tbl"><table>
+    <thead><tr><th>WSES</th><th>Achado na TC (Sartelli, 2015)</th></tr></thead>
+    <tbody>
+      <tr><td>0</td><td><b>Não complicada:</b> divertículos, espessamento parietal, densificação da gordura pericólica</td></tr>
+      <tr><td>1A</td><td>Bolhas de ar pericólicas ou pouco líquido pericólico, sem abscesso (até 5 cm do segmento inflamado)</td></tr>
+      <tr><td>1B</td><td>Abscesso ≤ 4 cm</td></tr>
+      <tr><td>2A</td><td>Abscesso &gt; 4 cm</td></tr>
+      <tr><td>2B</td><td>Ar à distância (&gt; 5 cm do segmento inflamado)</td></tr>
+      <tr><td>3</td><td>Líquido difuso sem ar livre à distância</td></tr>
+      <tr><td>4</td><td>Líquido difuso com ar livre à distância</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="ch" id="c4">
+  <div class="ch-head"><span class="ch-num">04</span><div>
+    <h2>Diagnóstico</h2>
+    <p class="ch-sub">A TC estadia; a colonoscopia vem depois — nunca na fase aguda.</p>
+  </div></div>
+  <div class="plate">
+    <div class="panel">
+      <div class="card"><h3>Exame de escolha</h3><h4>TC de abdome e pelve com contraste</h4>
+        <p>Confirma o diagnóstico, exclui diagnósticos diferenciais e classifica a gravidade (abscesso,
+        gás extraluminal, líquido livre). É a base das classificações modernas.</p>
+        <p>Ultrassonografia é alternativa em mãos experientes ou quando a TC não está disponível.</p></div>
+      <div class="card"><h3>Laboratório</h3>
+        <p>Leucocitose e proteína C-reativa elevadas apoiam o diagnóstico; PCR muito alta sugere forma
+        complicada. Exame de urina ajuda a pensar em fístula colovesical.</p></div>
+    </div>
+    <div class="panel">
+      <div class="verd g3"><span class="t">Proibido na fase aguda</span><span class="h">Colonoscopia e enema opaco</span>
+        <p>Insuflar ar ou injetar contraste sob pressão num cólon inflamado pode converter uma
+        microperfuração bloqueada em perfuração livre.</p></div>
+      <div class="card"><h3>Depois do episódio</h3><h4>Colonoscopia em 6 a 8 semanas</h4>
+        <p>Para excluir câncer que simula diverticulite — sobretudo após forma <b>complicada</b>
+        (abscesso, estenose) ou quando não há colonoscopia recente de qualidade.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="ch" id="c5">
+  <div class="ch-head"><span class="ch-num">05</span><div>
+    <h2>Fluxograma de conduta (WSES 2020)</h2>
+    <p class="ch-sub">Primeiro: há peritonite difusa? Depois: há abscesso e de que tamanho? Por fim: quem é o doente.</p>
+  </div></div>
+  <div class="plate">
+    <div class="panel">
+      <div class="card"><h3>Cenários de prova</h3><div class="seg" id="mqPre"></div></div>
+      <div class="card"><h3>Perguntas</h3><div id="mqQ"></div></div>
+    </div>
+    <div class="panel" id="mqOut" aria-live="polite"></div>
+  </div>
+  <div class="prose">
+    <p>A diverticulite não complicada em paciente imunocompetente, sem sinais de inflamação
+    sistêmica e que se alimenta, é tratada em casa, com reavaliação em poucos dias. Os ensaios
+    DIABOLO e AVOD mostraram que, nesse grupo selecionado, <strong>o antibiótico pode ser omitido</strong>
+    sem aumento de complicações; a WSES incorporou isso. Imunossupressão, sinais sistêmicos ou
+    intolerância oral mudam a resposta para internação e antibiótico.</p>
+    <p>No abscesso, o divisor é o tamanho: até <strong>4–5 cm</strong>, antibiótico isolado; acima
+    disso, <strong>drenagem percutânea guiada</strong> associada ao antibiótico. Na peritonite
+    difusa, cirurgia de urgência: o doente grave, instável ou cheio de comorbidades vai para
+    <strong>Hartmann</strong>; o estável e imunocompetente pode receber <strong>ressecção com
+    anastomose primária</strong>, com ou sem ileostomia de proteção.</p>
+  </div>
+</section>
+
+<section class="ch" id="c6">
+  <div class="ch-head"><span class="ch-num">06</span><div>
+    <h2>A cirurgia</h2>
+    <p class="ch-sub">Urgência para controlar o foco; eletiva para quem tem motivo — e não pela contagem de crises.</p>
+  </div></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Operação</th><th>Como é</th><th>Para quem</th></tr></thead>
+    <tbody>
+      <tr><td>Hartmann</td><td>Sigmoidectomia, coto retal fechado e colostomia terminal</td><td>Peritonite em doente instável, imunossuprimido ou com muitas comorbidades. Muitos estomas nunca são revertidos</td></tr>
+      <tr><td>Ressecção + anastomose</td><td>Sigmoidectomia com anastomose primária, com ou sem ileostomia de proteção</td><td>Peritonite (III/IV) em doente estável, imunocompetente, com poucas comorbidades; e cirurgia eletiva</td></tr>
+      <tr><td>Controle de danos</td><td>Ressecção do segmento perfurado, cotos fechados, abdome aberto e reabordagem em 24–48 h</td><td>Choque séptico / instabilidade grave</td></tr>
+      <tr><td>Lavagem laparoscópica</td><td>Lavagem e drenagem sem ressecção</td><td>Controversa: no SCANDIV e no braço LOLA (LADIES), mais abscesso/sepse persistente e reoperação precoce (o LOLA foi interrompido por excesso de eventos adversos); no DILALA, morbimortalidade semelhante ao Hartmann e menos reoperações em 12 meses. Não é a resposta padrão; WSES 2020 e ASCRS 2020 a admitem só em Hinchey III muito selecionado, nunca na peritonite fecal.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="traps" style="margin-top:16px">
+    <div class="trap"><span class="t">Eletiva</span><h4>Indicação individualizada</h4><p>A regra antiga de operar após dois episódios caiu. Pesam: <b>forma complicada prévia</b> (fístula, estenose, abscesso tratado clinicamente), sintomas persistentes que comprometem a qualidade de vida e <b>imunossupressão</b>. Idade jovem, isoladamente, não é indicação.</p></div>
+    <div class="trap"><span class="t">Margem distal</span><h4>No reto superior</h4><p>A anastomose deve ficar no <b>reto</b>, onde as tênias se abrem — deixar sigmoide distal é a principal causa técnica de recidiva.</p></div>
+    <div class="trap"><span class="t">Margem proximal</span><h4>Cólon macio, não "sem divertículos"</h4><p>Corta-se em cólon flexível, sem espessamento. Não é preciso retirar todos os divertículos do cólon.</p></div>
+    <div class="trap"><span class="t">Prevenção</span><h4>O que não previne recidiva</h4><p>Mesalazina, rifaximina e probióticos não têm benefício demonstrado. Castanhas, sementes e pipoca não precisam ser proibidas. Fibra e atividade física, sim.</p></div>
+  </div>
+</section>
+
+<section class="ch" id="c7">
+  <div class="ch-head"><span class="ch-num">07</span><div>
+    <h2>Pegadinhas de prova</h2>
+    <p class="ch-sub">As frases que mais derrubam candidato.</p>
+  </div></div>
+  <div class="traps">
+    <div class="trap"><span class="t">Topografia</span><h4>Sangra à direita, inflama à esquerda</h4><p>No Ocidente, os divertículos predominam no <b>sigmoide</b>, mas o sangramento vem classicamente mais do <b>cólon direito</b>.</p></div>
+    <div class="trap"><span class="t">Hinchey I × II</span><h4>Perto ou longe</h4><p>I = abscesso <b>pericólico</b>/mesocólico. II = abscesso <b>pélvico</b>, à distância ou retroperitoneal. O que define não é só o tamanho.</p></div>
+    <div class="trap"><span class="t">Hinchey III × IV</span><h4>Purulenta ou fecal</h4><p>Ambas são peritonite generalizada e cirurgia. A diferença é a comunicação com a luz: na IV, fezes livres.</p></div>
+    <div class="trap"><span class="t">Ar livre</span><h4>Pneumoperitônio ≠ laparotomia automática</h4><p>Pequenas bolhas pericólicas (WSES 1A) podem ser tratadas clinicamente; o que manda é a peritonite difusa e o estado do doente.</p></div>
+    <div class="trap"><span class="t">Diagnóstico</span><h4>Colonoscopia na crise</h4><p>Proibida. É exame de 6–8 semanas depois.</p></div>
+    <div class="trap"><span class="t">Antibiótico</span><h4>Nem sempre obrigatório</h4><p>Não complicada, imunocompetente, sem sinais sistêmicos: pode ser omitido. Imunossuprimido: sempre tratar e com limiar baixo para internar.</p></div>
+    <div class="trap"><span class="t">Fístula</span><h4>Colovesical: tratar eletivamente</h4><p>Sigmoidectomia com fechamento do orifício vesical, sem urgência, após controle da infecção.</p></div>
+    <div class="trap"><span class="t">Ásia</span><h4>Diverticulite do cólon direito</h4><p>Mais comum em asiáticos, com divertículos verdadeiros; geralmente tratamento clínico. Simula apendicite.</p></div>
+  </div>
+</section>
+
+<section class="ch" id="c8">
+  <div class="ch-head"><span class="ch-num">08</span><div>
+    <h2>Forja</h2>
+    <p class="ch-sub">Oito questões comentadas sobre o mesmo eixo: onde está o pus e quem é o doente.</p>
+  </div></div>
+  <div class="quiz" id="quiz"></div>
+</section>
+
+<section class="ch" id="c9">
+  <div class="ch-head"><span class="ch-num">09</span><div>
+    <h2>Tabela-mãe: gatilho → conduta</h2>
+    <p class="ch-sub">A borda superior mais clara indica maior gravidade.</p>
+  </div></div>
+  <div class="mom">
+    <div class="mc g3"><span class="gat">Peritonite fecal ou purulenta + instável</span><h4>Hartmann / controle de danos</h4><p>Ressecar o foco, <b>sem anastomose</b>.</p></div>
+    <div class="mc g3"><span class="gat">Peritonite difusa, doente estável</span><h4>Ressecção + anastomose</h4><p>Com ou sem <b>ileostomia de proteção</b>.</p></div>
+    <div class="mc g2"><span class="gat">Abscesso &gt; 4–5 cm</span><h4>Drenagem percutânea</h4><p>+ antibiótico; cirurgia se inviável ou falha.</p></div>
+    <div class="mc g2"><span class="gat">Abscesso ≤ 4–5 cm</span><h4>Antibiótico isolado</h4><p>Internação e reavaliação.</p></div>
+    <div class="mc g2"><span class="gat">Imunossuprimido</span><h4>Internar e tratar</h4><p>Antibiótico sempre; limiar baixo para cirurgia, inclusive eletiva.</p></div>
+    <div class="mc"><span class="gat">Não complicada, imunocompetente</span><h4>Ambulatorial</h4><p>Antibiótico pode ser omitido; reavaliar.</p></div>
+    <div class="mc"><span class="gat">6–8 semanas depois</span><h4>Colonoscopia</h4><p>Excluir câncer.</p></div>
+    <div class="mc"><span class="gat">Pneumatúria / fecalúria</span><h4>Fístula colovesical</h4><p>Sigmoidectomia eletiva + rafia vesical.</p></div>
+    <div class="mc"><span class="gat">Hematoquezia indolor, idoso</span><h4>Sangramento diverticular</h4><p>Ressuscitar; colonoscopia; angio-TC se instável.</p></div>
+  </div>
+</section>
+</div>
+
+<footer class="fim">
+  <p><b>Fontes de referência:</b> Sartelli M et al. 2020 update of the WSES guidelines for the management of acute colonic diverticulitis in the emergency setting. World J Emerg Surg 2020;15:32 ·
+  Sartelli M et al. A proposal for a CT driven classification of left colon acute diverticulitis. World J Emerg Surg 2015;10:3 ·
+  Hinchey EJ et al. Adv Surg 1978 · Wasvary H et al. Am Surg 1999 · Hall J et al. ASCRS Clinical Practice Guidelines for the management of left-sided colonic diverticulitis. Dis Colon Rectum 2020.</p>
+  <p>Esquemas didáticos, fora de escala. Atlas produzido para o Residência Max.</p>
+</footer>
+
+<script>
+(function(){
+  /* trilho: marca o capítulo visível */
+  var links=[].slice.call(document.querySelectorAll('.rail a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function spy(){var y=window.scrollY+120,idx=0;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)idx=i});
+    links.forEach(function(a,i){a.classList.toggle('on',i===idx)})}
+  window.addEventListener('scroll',spy,{passive:true});spy();
+})();
+
+function montarQuiz(alvo,QS){
+  var box=document.getElementById(alvo),feitas=0,acertos=0,L='ABCDE';
+  var sc=document.createElement('div');sc.className='score';
+  sc.innerHTML='<span class="big num" id="'+alvo+'-p">0<small>/'+QS.length+'</small></span>'+
+    '<span class="lab" id="'+alvo+'-l">Responda as questões; cada uma abre o comentário ao ser marcada.</span>'+
+    '<button class="btn" type="button" id="'+alvo+'-r">Recomeçar</button>';
+  function placar(){document.getElementById(alvo+'-p').innerHTML=acertos+'<small>/'+QS.length+'</small>';
+    document.getElementById(alvo+'-l').textContent=feitas<QS.length?(feitas+' de '+QS.length+' respondidas.'):
+      (acertos===QS.length?'Gabarito completo.':'Releia os comentários das que errou — cada distrator é a conduta certa de outro cenário.')}
+  function render(){
+    box.innerHTML='';feitas=0;acertos=0;
+    QS.forEach(function(q,i){
+      var d=document.createElement('div');d.className='qz';
+      var h='<div class="qn">Questão '+(i+1)+(q.tag?' · '+q.tag:'')+'</div><p class="qs">'+q.q+'</p><div class="alts">';
+      q.a.forEach(function(t,j){h+='<button type="button" data-j="'+j+'"><span class="L">'+L[j]+'</span><span>'+t+'</span></button>'});
+      h+='</div><div class="qexp"><span class="res"></span>'+q.e+'</div>';
+      d.innerHTML=h;
+      [].forEach.call(d.querySelectorAll('.alts button'),function(b){
+        b.addEventListener('click',function(){
+          if(d.classList.contains('done'))return;
+          var j=+b.getAttribute('data-j');d.classList.add('done');feitas++;
+          if(j===q.c)acertos++;
+          [].forEach.call(d.querySelectorAll('.alts button'),function(x){var k=+x.getAttribute('data-j');x.disabled=true;
+            if(k===q.c)x.classList.add('ok');else if(k===j)x.classList.add('no');else x.classList.add('dim')});
+          d.querySelector('.res').textContent=(j===q.c?'Acertou':'Errou')+' · gabarito '+L[q.c];
+          placar();
+        });
+      });
+      box.appendChild(d);
+    });
+    box.appendChild(sc);placar();
+  }
+  render();
+  document.addEventListener('click',function(e){if(e.target&&e.target.id===alvo+'-r'){render();box.scrollIntoView({behavior:'smooth'})}});
+}
+
+/* máquina de decisão genérica: Q = [{id,lbl,ops:[[valor,rótulo],...]}], f(estado) -> resultado */
+function montarMaquina(cfg){
+  var st={};cfg.Q.forEach(function(q){st[q.id]=q.ops[0][0]});
+  var qbox=document.getElementById(cfg.qbox);
+  function desenhar(){
+    qbox.innerHTML='';
+    cfg.Q.forEach(function(q){
+      if(q.se&&!q.se(st))return;
+      var l=document.createElement('div');l.className='q-lbl';l.textContent=q.lbl;qbox.appendChild(l);
+      var s=document.createElement('div');s.className='seg';
+      q.ops.forEach(function(o){var b=document.createElement('button');b.type='button';b.textContent=o[1];
+        b.setAttribute('aria-pressed',st[q.id]===o[0]?'true':'false');
+        b.onclick=function(){st[q.id]=o[0];desenhar()};s.appendChild(b)});
+      qbox.appendChild(s);
+    });
+    var r=cfg.f(st);
+    document.getElementById(cfg.out).innerHTML=
+      '<div class="verd g'+r.g+'"><span class="t">'+r.t+'</span><span class="h">'+r.h+'</span><p>'+r.p+'</p></div>'+
+      (r.path?'<div class="card"><h3>Caminho no fluxograma</h3><div class="path">'+r.path.map(function(x){return '<span>'+x+'</span>'}).join('<i>→</i>')+'</div></div>':'')+
+      '<div class="card"><h3>Conduta</h3><ol class="steps">'+r.s.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ol></div>'+
+      (r.x?'<div class="forbid"><b>Proibido / distrator:</b> '+r.x+'</div>':'');
+  }
+  if(cfg.presets){var pb=document.getElementById(cfg.presets);
+    cfg.presets_list.forEach(function(p){var b=document.createElement('button');b.type='button';b.textContent=p[0];
+      b.onclick=function(){for(var k in p[1])st[k]=p[1][k];desenhar()};pb.appendChild(b)})}
+  desenhar();
+}
+
+/* pontos clicáveis num SVG -> painel */
+function montarHot(svgId,outId,DATA,first){
+  var svg=document.getElementById(svgId),out=document.getElementById(outId);
+  function show(k){[].forEach.call(svg.querySelectorAll('.hot'),function(g){g.classList.toggle('on',g.getAttribute('data-k')===k)});
+    var d=DATA[k];out.innerHTML='<div class="t" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--a400)">'+(d.t||'')+'</div><h4>'+d.h+'</h4>'+d.b}
+  [].forEach.call(svg.querySelectorAll('.hot'),function(g){g.setAttribute('tabindex','0');g.setAttribute('role','button');
+    g.addEventListener('click',function(){show(g.getAttribute('data-k'))});
+    g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();show(g.getAttribute('data-k'))}})});
+  show(first);
+  return show;
+}
+
+
+var CORTE={
+ divert:{t:'1 · o que hernia',h:'Pseudodivertículo',b:'<p>Só <b>mucosa e submucosa</b> atravessam a muscular — por isso é "falso". Nasce entre a tênia mesentérica e as antimesentéricas, exatamente onde os vasa recta entram.</p><p>Quando o colo do saco se obstrui (fecalito, edema), há proliferação bacteriana, microperfuração e inflamação pericólica: a diverticulite.</p>'},
+ vasa:{t:'2 · o ponto fraco',h:'Vasa recta',b:'<p>Ramos terminais da arcada marginal que atravessam a muscular para nutrir a mucosa. O orifício que deixam na parede é a porta do divertículo.</p><p>Ao crescer, o divertículo leva o vaso consigo: ele fica esticado sobre a cúpula, separado da luz só por mucosa — e sangra para dentro do cólon.</p>'},
+ tenia:{t:'3 · reforço longitudinal',h:'Tênias',b:'<p>Três faixas de muscular longitudinal (mesocólica, omental e livre). Onde há tênia não há divertículo. No reto, as tênias se abrem e formam uma camada contínua — é por isso que o reto praticamente não tem divertículos e que a margem distal da sigmoidectomia vai até ele.</p>'},
+ muscular:{t:'4 · a parede',h:'Muscular própria',b:'<p>Na doença diverticular do sigmoide há espessamento muscular (miocose) e segmentação: o cólon se contrai em câmaras fechadas e gera pressão alta, que empurra a mucosa pelas portas dos vasos.</p>'},
+ mucosa:{t:'5 · o que forra o saco',h:'Mucosa e submucosa',b:'<p>São as camadas que herniam. Divertículo verdadeiro, com todas as camadas, é o do cólon direito do asiático e o de Meckel no delgado.</p>'}
+};
+var showC=montarHot('svgCorte','corteOut',CORTE,'divert');
+document.querySelector('#bleedBtn button').onclick=function(){var on=this.getAttribute('aria-pressed')!=='true';this.setAttribute('aria-pressed',on);
+  document.getElementById('vasaB').style.display=on?'':'none';document.getElementById('vasaN').style.display=on?'none':'';
+  if(on)document.getElementById('corteOut').innerHTML='<div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--a400)">mecanismo</div><h4>Sangramento diverticular</h4><p>O vaso esticado sobre a cúpula sofre lesão crônica da íntima pelo lado luminal e se rompe: hemorragia <b>arterial, indolor</b>, sem inflamação.</p><p>Classicamente mais comum no <b>cólon direito</b>. A maioria para sozinha; a colonoscopia localiza e trata; angio-TC e embolização se instável ou sangrando ativamente.</p>';
+  else showC('vasa');};
+
+/* Hinchey */
+var HS=[
+ {k:'0',w:'WSES 0',g:1,h:'Diverticulite leve',p:'Sigmoide espessado, gordura densificada, sem coleção nem gás extraluminal.',c:'Tratamento clínico; ambulatorial se imunocompetente e sem sinais sistêmicos.'},
+ {k:'Ia',w:'WSES 0 / 1A',g:1,h:'Flegmão pericólico',p:'Inflamação confinada ao redor do segmento; pode haver pequenas bolhas de ar pericólicas.',c:'Antibiótico; reavaliar.'},
+ {k:'Ib',w:'WSES 1B (≤ 4 cm) / 2A (> 4 cm)',g:2,h:'Abscesso pericólico',p:'Coleção encostada no segmento inflamado ou no mesocólon.',c:'Antibiótico IV; drenagem percutânea se > 4–5 cm.'},
+ {k:'II',w:'WSES 2A / 2B',g:2,h:'Abscesso pélvico ou à distância',p:'O pus migrou para a pelve, para longe do cólon ou para o retroperitônio. É o caso-guia: coleção pélvica de 6 cm.',c:'Drenagem percutânea guiada por imagem + antibiótico. Cirurgia se não drenável ou se falhar.'},
+ {k:'III',w:'WSES 3 / 4',g:3,h:'Peritonite purulenta generalizada',p:'Pus livre na cavidade, sem comunicação com a luz cólica.',c:'Cirurgia de urgência: ressecção (anastomose ± estoma no estável; Hartmann no grave).'},
+ {k:'IV',w:'WSES 4',g:3,h:'Peritonite fecal generalizada',p:'Perfuração livre com fezes e ar na cavidade.',c:'Cirurgia de urgência; Hartmann ou controle de danos se instável.'}
+];
+var hi=3;
+function hDraw(){var s=HS[hi];
+  var vis={hFleg:hi>=1&&hi<=3,hAbs1:hi===2||hi===3,hAbs2:hi===3,lDif:hi>=4,lFec:hi===5,hPerf:hi===5};
+  for(var id in vis)document.getElementById(id).style.display=vis[id]?'':'none';
+  document.getElementById('sigInf').setAttribute('opacity',hi===0?.5:.85);
+  document.getElementById('hLab').textContent='Hinchey '+s.k;
+  [].forEach.call(document.querySelectorAll('#hSeg button'),function(b,i){b.setAttribute('aria-pressed',i===hi)});
+  [].forEach.call(document.querySelectorAll('#hTbl tr[data-k]'),function(r){r.classList.toggle('hl',r.dataset.k===s.k)});
+  document.getElementById('hOut').innerHTML='<div class="verd g'+s.g+'"><span class="t">'+s.w+'</span><span class="h">'+s.h+'</span><p>'+s.p+'</p></div><div class="card" style="margin-top:14px"><h3>Conduta habitual</h3><p>'+s.c+'</p></div>';}
+HS.forEach(function(s,i){var b=document.createElement('button');b.type='button';b.textContent=s.k;b.onclick=function(){hi=i;hDraw()};document.getElementById('hSeg').appendChild(b)});
+hDraw();
+
+/* fluxograma WSES */
+montarMaquina({qbox:'mqQ',out:'mqOut',presets:'mqPre',
+ presets_list:[['Caso-guia: abscesso pélvico 6 cm',{per:'n',abs:'s',tam:'g',perc:'s'}],
+   ['Não complicada, 48 anos',{per:'n',abs:'n',imu:'n',sis:'n',vo:'s'}],
+   ['Transplantado renal',{per:'n',abs:'n',imu:'s'}],
+   ['Abscesso pericólico 3 cm',{per:'n',abs:'s',tam:'p'}],
+   ['Peritonite fecal + choque',{per:'s',est:'n'}],
+   ['Peritonite purulenta, estável',{per:'s',est:'s',com:'n'}]],
+ Q:[{id:'per',lbl:'Peritonite difusa (Hinchey III/IV, WSES 3/4)?',ops:[['n','Não'],['s','Sim']]},
+    {id:'est',lbl:'Estado hemodinâmico',ops:[['s','Estável'],['n','Instável / choque séptico']],se:function(s){return s.per==='s'}},
+    {id:'com',lbl:'Comorbidades graves ou imunossupressão?',ops:[['n','Não'],['s','Sim']],se:function(s){return s.per==='s'&&s.est==='s'}},
+    {id:'abs',lbl:'Abscesso na TC?',ops:[['n','Não'],['s','Sim']],se:function(s){return s.per==='n'}},
+    {id:'tam',lbl:'Tamanho do abscesso',ops:[['p','≤ 4–5 cm'],['g','> 4–5 cm']],se:function(s){return s.per==='n'&&s.abs==='s'}},
+    {id:'perc',lbl:'Acessível à drenagem percutânea?',ops:[['s','Sim'],['n','Não']],se:function(s){return s.per==='n'&&s.abs==='s'&&s.tam==='g'}},
+    {id:'imu',lbl:'Imunossuprimido?',ops:[['n','Não'],['s','Sim']],se:function(s){return s.per==='n'&&s.abs==='n'}},
+    {id:'sis',lbl:'Sinais de inflamação sistêmica (sepse)?',ops:[['n','Não'],['s','Sim']],se:function(s){return s.per==='n'&&s.abs==='n'&&s.imu==='n'}},
+    {id:'vo',lbl:'Tolera dieta oral?',ops:[['s','Sim'],['n','Não']],se:function(s){return s.per==='n'&&s.abs==='n'&&s.imu==='n'&&s.sis==='n'}}],
+ f:function(s){
+  if(s.per==='s'){
+    if(s.est==='n')return {g:3,t:'Hinchey III/IV · instável',h:'Controle de danos ou Hartmann',path:['Peritonite difusa','Instável','Controle de danos / Hartmann'],
+      p:'Choque séptico: o objetivo é tirar o foco rápido, não reconstruir.',s:['Ressuscitação, antibiótico de amplo espectro imediato','Laparotomia: ressecção do segmento perfurado','Cotos fechados, abdome aberto com pressão negativa, reabordagem em 24–48 h (controle de danos) — ou Hartmann','Reconstrução só quando estabilizar'],
+      x:'Anastomose primária em choque séptico; drenagem percutânea ou antibiótico isolado em peritonite generalizada.'};
+    if(s.com==='s')return {g:3,t:'Hinchey III/IV · alto risco',h:'Hartmann',path:['Peritonite difusa','Estável','Comorbidades / imunossupressão','Hartmann'],
+      p:'Em doente crítico ou com múltiplas comorbidades, a WSES sugere Hartmann.',s:['Ressuscitação e antibiótico','Sigmoidectomia, fechamento do coto retal, colostomia terminal','Reconstrução eletiva, se possível'],x:'Lavagem laparoscópica como tratamento padrão.'};
+    return {g:3,t:'Hinchey III/IV · estável',h:'Ressecção com anastomose primária ± ileostomia',path:['Peritonite difusa','Estável','Sem comorbidades graves','Anastomose ± ileostomia'],
+      p:'No doente estável, imunocompetente e com poucas comorbidades, a anastomose primária (com ou sem estoma de proteção) é preferível ao Hartmann. Na fecal, a decisão pesa mais o estado do doente e a experiência do cirurgião.',
+      s:['Antibiótico e ressuscitação','Sigmoidectomia (laparoscópica ou aberta)','Anastomose colorretal; ileostomia de proteção conforme contaminação e condições','Hartmann se dúvida'],x:'Tratar peritonite generalizada sem cirurgia.'};}
+  if(s.abs==='s'){
+    if(s.tam==='p')return {g:2,t:'Hinchey Ib · WSES 1B',h:'Antibiótico isolado',path:['Sem peritonite difusa','Abscesso','≤ 4–5 cm','Antibiótico'],
+      p:'Abscesso pequeno costuma responder a antibiótico intravenoso, sem drenagem.',s:['Internação, antibiótico IV com cobertura de gram-negativos e anaeróbios','Reavaliação clínica; nova TC se não melhorar','Colonoscopia em 6–8 semanas','Discutir cirurgia eletiva'],x:'Cirurgia de urgência ou drenagem de rotina em abscesso pequeno.'};
+    if(s.perc==='s')return {g:2,t:'Hinchey Ib/II · WSES 2A',h:'Drenagem percutânea + antibiótico',path:['Sem peritonite difusa','Abscesso','> 4–5 cm','Drenagem percutânea'],
+      p:'Resposta do caso-guia: coleção pélvica de 6 cm em doente estável — Hinchey II.',s:['Antibiótico IV','Drenagem percutânea guiada por TC ou US','Reavaliar; cirurgia se piora ou falha','Colonoscopia em 6–8 semanas; considerar sigmoidectomia eletiva'],x:'Laparotomia de urgência em doente estável com abscesso drenável; colonoscopia na internação.'};
+    return {g:2,t:'Abscesso grande não drenável',h:'Antibiótico com vigilância rigorosa ou cirurgia',path:['Sem peritonite difusa','Abscesso > 4–5 cm','Não drenável','Antibiótico / cirurgia'],
+      p:'Sem janela percutânea, pode-se tentar antibiótico isolado com monitorização estreita; piora clínica indica cirurgia.',s:['Antibiótico IV','Reavaliação clínica e por imagem frequente','Cirurgia (ressecção) se falha'],x:'Insistir no tratamento clínico com piora clínica.'};}
+  if(s.imu==='s')return {g:2,t:'Não complicada · imunossuprimido',h:'Internar e tratar com antibiótico',path:['Não complicada','Imunossuprimido','Internação + antibiótico'],
+      p:'A inflamação pode ser subestimada clínica e laboratorialmente; o risco de complicação e de falha é maior.',s:['Internação','Antibiótico IV','Limiar baixo para nova TC e para cirurgia','Discutir sigmoidectomia eletiva após o episódio'],x:'Tratamento ambulatorial sem antibiótico neste doente.'};
+  if(s.sis==='s'||s.vo==='n')return {g:2,t:'Não complicada · com sinais de alarme',h:'Internação e antibiótico',path:['Não complicada','Sinais sistêmicos ou intolerância oral','Internação'],
+      p:'Sinais de inflamação sistêmica ou intolerância à via oral tiram o paciente do tratamento domiciliar.',s:['Internação, hidratação','Antibiótico (IV, depois oral)','Reavaliar em 48–72 h; nova TC se não melhorar'],x:'Alta sem antibiótico.'};
+  return {g:1,t:'Não complicada · WSES 0',h:'Tratamento ambulatorial; antibiótico pode ser omitido',path:['Não complicada','Imunocompetente, sem sinais sistêmicos','Ambulatorial'],
+    p:'Seleção estrita: imunocompetente, sem sinais sistêmicos, tolerando dieta.',s:['Analgesia e dieta conforme tolerância','Antibiótico pode ser dispensado (DIABOLO, AVOD)','Reavaliação clínica em poucos dias','Colonoscopia em 6–8 semanas se não houver recente'],x:'Colonoscopia na crise; cirurgia eletiva só porque é o segundo episódio.'};
+ }});
+
+montarQuiz('quiz',[
+ {tag:'Caso-guia',q:'Mulher de 67 anos com diverticulite e <b>abscesso pélvico de 6 cm</b> com gás, estável, sem peritonite difusa. A classificação e a conduta são:',
+  a:['Hinchey I; antibiótico oral ambulatorial','Hinchey III; laparotomia com Hartmann','Hinchey II; drenagem percutânea e antibiótico','Hinchey IV; controle de danos','Hinchey Ia; colonoscopia na internação'],c:2,
+  e:'<b>C.</b> Abscesso <b>pélvico</b> (à distância do segmento) é Hinchey II; acima de 4–5 cm e acessível, drena-se por via percutânea com antibiótico. Hartmann e controle de danos são para peritonite generalizada. Colonoscopia na fase aguda é proibida.'},
+ {tag:'Abscesso pequeno',q:'Homem de 55 anos, estável, com <b>abscesso pericólico de 3 cm</b> na TC. A conduta inicial recomendada é:',
+  a:['Antibiótico intravenoso, sem drenagem','Drenagem percutânea obrigatória','Sigmoidectomia de urgência','Tratamento ambulatorial sem antibiótico','Lavagem laparoscópica'],c:0,
+  e:'<b>A.</b> Abscesso ≤ 4–5 cm (Hinchey Ib, WSES 1B) responde a antibiótico isolado. A drenagem fica para os maiores; tratamento sem antibiótico é só para a não complicada selecionada.'},
+ {tag:'Peritonite fecal',q:'Paciente de 78 anos, cardiopata, com <b>peritonite fecal</b> por diverticulite perfurada e <b>choque séptico</b> em uso de noradrenalina. A melhor conduta cirúrgica é:',
+  a:['Sigmoidectomia com anastomose primária sem estoma','Lavagem laparoscópica e drenagem','Drenagem percutânea','Antibiótico e reavaliação em 24 h','Ressecção sem anastomose: Hartmann ou controle de danos'],c:4,
+  e:'<b>E.</b> Instável e com comorbidades: tirar o foco sem reconstruir. Anastomose primária é opção para o doente estável; lavagem não se aplica à peritonite fecal; drenagem e antibiótico isolado não tratam peritonite generalizada.'},
+ {tag:'Não complicada',q:'Mulher de 46 anos, imunocompetente, com diverticulite <b>não complicada</b> na TC, sem febre alta nem taquicardia, aceitando dieta. É conduta adequada:',
+  a:['Internação e antibiótico IV por 7 dias','Tratamento ambulatorial, podendo-se omitir o antibiótico, com reavaliação','Colonoscopia imediata para excluir câncer','Sigmoidectomia eletiva após este primeiro episódio','Nutrição parenteral e jejum'],c:1,
+  e:'<b>B.</b> No paciente selecionado (imunocompetente, sem sinais sistêmicos, tolerando dieta), o tratamento é domiciliar e o antibiótico pode ser omitido (DIABOLO, AVOD; WSES 2020). Colonoscopia só depois de 6–8 semanas.'},
+ {tag:'Diagnóstico',q:'Na suspeita de diverticulite aguda em adulto, o exame de escolha para confirmar e estadiar é:',
+  a:['Colonoscopia','Enema opaco','Radiografia de abdome','TC de abdome e pelve com contraste','Retossigmoidoscopia rígida'],c:3,
+  e:'<b>D.</b> A TC confirma, exclui diferenciais e classifica (WSES, Hinchey modificado). Colonoscopia e enema na fase aguda podem perfurar; radiografia só mostra pneumoperitônio.'},
+ {tag:'Sangramento',q:'Sobre o sangramento diverticular, é correto afirmar:',
+  a:['Costuma ser doloroso e acompanhado de febre','Origina-se mais frequentemente do cólon direito, embora os divertículos predominem à esquerda','Exige colectomia de urgência na maioria dos casos','Ocorre por erosão inflamatória da diverticulite','É venoso e de baixo débito'],c:1,
+  e:'<b>B.</b> O vasa recta esticado sobre a cúpula rompe — sangramento arterial, indolor, sem inflamação; a maioria para espontaneamente. Classicamente, o cólon direito (colo largo, parede fina) sangra mais.'},
+ {tag:'Técnica',q:'Na sigmoidectomia eletiva por doença diverticular, o fator técnico mais associado à <b>recidiva</b> é:',
+  a:['Não ressecar todos os divertículos do cólon','Ligadura da artéria mesentérica inferior na origem','Uso de grampeador circular','Anastomose no sigmoide distal, e não no reto superior','Abordagem laparoscópica'],c:3,
+  e:'<b>D.</b> A margem distal deve estar no reto (onde as tênias se abrem). Não é necessário retirar todos os divertículos — a margem proximal é cólon macio, sem espessamento.'},
+ {tag:'Peritonite purulenta',q:'Homem de 52 anos, sem comorbidades, <b>estável</b>, com peritonite purulenta generalizada (Hinchey III). Segundo a WSES 2020, a opção preferível é:',
+  a:['Ressecção do sigmoide com anastomose primária, com ou sem ileostomia de proteção','Drenagem percutânea','Antibiótico isolado','Colostomia em alça sem ressecção','Colonoscopia descompressiva'],c:0,
+  e:'<b>A.</b> No doente estável e imunocompetente, a ressecção com anastomose (± ileostomia) supera o Hartmann em reconstrução do trânsito. Hartmann fica para o crítico ou com muitas comorbidades.'}
+]);
+
+</script>
+</body>
+</html>

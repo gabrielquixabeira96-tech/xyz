@@ -1,0 +1,876 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
+<title>Atlas do Desfiladeiro Torácico</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#EEF1F3; --sf:#FFFFFF; --sf2:#F6F8F9; --ink:#172029; --mut:#5B6873; --ln:#D3DAE0; --ln2:#E4E9ED;
+  --ac:#234E9D; --ac-soft:#E3EAF7;
+  --b:#1C7F73; --b-soft:#DDF0ED; --d:#B5352B; --d-soft:#F6DFDC; --w:#B77A14; --w-soft:#F7EBD2; --m:#6A4DB0; --m-soft:#EAE3F7;
+  --disp:'Fraunces',Georgia,'Times New Roman',serif; --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif; --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  --r:6px; --sh:0 1px 2px rgba(23,32,41,.06),0 8px 24px -12px rgba(23,32,41,.18);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#12181F; --sf:#1A222B; --sf2:#202A34; --ink:#E6EBEF; --mut:#97A3AE; --ln:#2B3640; --ln2:#243039;
+    --ac:#7FA3E8; --ac-soft:#1E2C45;
+    --b:#4FB8AA; --b-soft:#163632; --d:#E5766C; --d-soft:#3E1F1C; --w:#E0A93E; --w-soft:#3C2E14; --m:#A995E3; --m-soft:#2C2345;
+    --sh:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6); color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12181F; --sf:#1A222B; --sf2:#202A34; --ink:#E6EBEF; --mut:#97A3AE; --ln:#2B3640; --ln2:#243039;
+  --ac:#7FA3E8; --ac-soft:#1E2C45;
+  --b:#4FB8AA; --b-soft:#163632; --d:#E5766C; --d-soft:#3E1F1C; --w:#E0A93E; --w-soft:#3C2E14; --m:#A995E3; --m-soft:#2C2345;
+  --sh:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6); color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--disp);font-weight:600;line-height:1.15;text-wrap:balance;margin:0}
+p{margin:0 0 .8em;max-width:70ch}
+mark{background:var(--w-soft);color:inherit;padding:0 .2em;border-radius:3px;box-shadow:inset 0 -2px 0 var(--w)}
+code,.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* header */
+.hero{padding:44px 0 20px;border-bottom:1px solid var(--ln)}
+.hero .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin-bottom:12px}
+.hero h1{font-size:clamp(34px,4.6vw,54px);font-weight:700;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--ac)}
+.hero .lede{margin-top:16px;font-size:17px;max-width:64ch;color:var(--ink)}
+.trip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ln);border:1px solid var(--ln);margin-top:26px;border-radius:var(--r);overflow:hidden}
+.trip>div{background:var(--sf);padding:14px 16px}
+.trip .k{font-family:var(--mono);font-size:12px;color:var(--mut);letter-spacing:.06em;text-transform:uppercase}
+.trip .v{font-family:var(--disp);font-size:26px;font-weight:600;margin:4px 0 2px}
+.trip .s{font-size:13px;color:var(--mut)}
+.trip .n .v{color:var(--w)} .trip .vv .v{color:var(--ac)} .trip .a .v{color:var(--d)}
+
+/* rail */
+.rail{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--ln)}
+.rail .in{display:flex;gap:2px;overflow-x:auto;padding:8px 20px;max-width:1180px;margin:0 auto;scrollbar-width:none}
+.rail a{flex:0 0 auto;text-decoration:none;color:var(--mut);font-size:12.5px;padding:6px 10px;border-radius:999px;white-space:nowrap;border:1px solid transparent}
+.rail a b{font-family:var(--mono);font-weight:500;color:var(--ac);margin-right:5px}
+.rail a:hover{background:var(--sf)} .rail a.on{background:var(--sf);border-color:var(--ln);color:var(--ink)}
+
+/* chapters */
+.ch{padding:52px 0 26px;border-bottom:1px solid var(--ln)}
+.ch .num{font-family:var(--mono);font-size:12px;color:var(--ac);letter-spacing:.08em}
+.ch h2{font-size:clamp(26px,3vw,36px);margin:6px 0 6px}
+.ch .sub{color:var(--mut);max-width:64ch;margin-bottom:22px;font-size:15px}
+.plate{display:grid;grid-template-columns:1.25fr .9fr;gap:20px;align-items:start}
+@media (max-width:860px){.plate{grid-template-columns:1fr}.trip{grid-template-columns:1fr}}
+.fig{background:var(--sf);border:1px solid var(--ln);border-radius:var(--r);box-shadow:var(--sh);padding:12px;min-width:0}
+.fig canvas,.fig svg{display:block;width:100%;height:auto;max-width:100%}
+.fig .cap{font-size:12.5px;color:var(--mut);margin-top:8px;line-height:1.45}
+.panel{background:var(--sf);border:1px solid var(--ln);border-radius:var(--r);padding:14px;min-width:0;display:flex;flex-direction:column;gap:12px}
+.panel h3{font-size:15px;font-family:var(--sans);font-weight:600}
+.lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);margin-bottom:6px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{border:1px solid var(--ln);background:var(--sf2);border-radius:999px;padding:5px 11px;font-size:13px;line-height:1.3}
+.seg button.on{background:var(--ac-soft);border-color:var(--ac);color:var(--ink)}
+.seg button.b.on{background:var(--b-soft);border-color:var(--b)} .seg button.d.on{background:var(--d-soft);border-color:var(--d)}
+.seg button.w.on{background:var(--w-soft);border-color:var(--w)} .seg button.m.on{background:var(--m-soft);border-color:var(--m)}
+.slider{display:flex;align-items:center;gap:10px}
+.slider input{flex:1;accent-color:var(--ac)}
+.slider .val{font-family:var(--mono);font-size:13px;min-width:52px;text-align:right}
+.read{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.read div{background:var(--sf2);border-radius:var(--r);padding:8px 10px}
+.read .k{font-size:11.5px;color:var(--mut)} .read .v{font-family:var(--mono);font-size:18px;font-weight:500}
+.verd{border-left:3px solid var(--ac);background:var(--ac-soft);padding:9px 12px;border-radius:0 var(--r) var(--r) 0;font-size:14px}
+.verd.b{border-color:var(--b);background:var(--b-soft)} .verd.d{border-color:var(--d);background:var(--d-soft)}
+.verd.w{border-color:var(--w);background:var(--w-soft)} .verd.m{border-color:var(--m);background:var(--m-soft)}
+.verd b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-family:var(--mono);font-weight:500;margin-bottom:3px}
+.tag{display:inline-block;font-family:var(--mono);font-size:11px;padding:2px 7px;border-radius:4px;border:1px solid var(--ln);background:var(--sf2)}
+.tag.b{background:var(--b-soft);border-color:var(--b)} .tag.d{background:var(--d-soft);border-color:var(--d)} .tag.w{background:var(--w-soft);border-color:var(--w)} .tag.m{background:var(--m-soft);border-color:var(--m)}
+.prose{margin-top:22px;max-width:70ch}
+.prose p{font-size:15.5px}
+.prose .hist{border-left:2px solid var(--ln);padding-left:14px;color:var(--mut);font-size:14px}
+.div{margin-top:12px;border:1px dashed var(--w);border-radius:var(--r);padding:10px 14px;font-size:14px;background:var(--w-soft)}
+.div b{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:4px}
+.steps{margin:0;padding-left:20px} .steps li{margin:4px 0}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13.5px}
+.kv dt{color:var(--mut)} .kv dd{margin:0}
+.small{font-size:12.5px;color:var(--mut)}
+/* forge */
+.q{background:var(--sf);border:1px solid var(--ln);border-radius:var(--r);padding:18px;margin-bottom:14px}
+.q .qh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:8px}
+.q .qh span{font-family:var(--mono);font-size:12px;color:var(--mut)}
+.q .st{max-width:74ch;font-size:15px}
+.alts{display:grid;gap:6px;margin:12px 0 0}
+.alts button{text-align:left;border:1px solid var(--ln);background:var(--sf2);border-radius:var(--r);padding:8px 12px;font-size:14px;display:flex;gap:10px;line-height:1.4}
+.alts button i{font-style:normal;font-family:var(--mono);color:var(--mut);flex:0 0 16px}
+.alts button.ok{border-color:var(--b);background:var(--b-soft)} .alts button.no{border-color:var(--d);background:var(--d-soft)}
+.alts button:disabled{cursor:default}
+.exp{display:none;margin-top:12px;border-top:1px solid var(--ln2);padding-top:12px;font-size:14px;max-width:74ch}
+.q.done .exp{display:block}
+.score{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:14px;margin-bottom:16px}
+.score button{border:1px solid var(--ln);background:var(--sf);border-radius:999px;padding:5px 12px;font-size:13px}
+/* mother table */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.card{background:var(--sf);border:1px solid var(--ln);border-top:3px solid var(--ac);border-radius:var(--r);padding:12px 14px;font-size:13.5px}
+.card.b{border-top-color:var(--b)} .card.d{border-top-color:var(--d)} .card.w{border-top-color:var(--w)} .card.m{border-top-color:var(--m)}
+.card .t{font-weight:600;margin-bottom:4px} .card .g{color:var(--mut);font-size:12.5px;margin-bottom:6px}
+.foot{padding:34px 0 60px;color:var(--mut);font-size:13px;max-width:72ch}
+/* svg helpers (themed) */
+.sv text{font-family:var(--sans);fill:var(--ink)} .sv .mu{fill:var(--mut)} .sv .mo{font-family:var(--mono)}
+.sv .hit{cursor:pointer} .sv .hit:hover{filter:brightness(1.08)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Aula-atlas · Cirurgia vascular e torácica · ENARE R+ 2027</div>
+  <h1>Atlas do <em>Desfiladeiro</em> Torácico</h1>
+  <p class="lede">Uma artéria, uma veia e cinco raízes atravessam três portas estreitas entre o pescoço e a axila. Cada porta fecha com um movimento diferente, esmaga uma estrutura diferente e produz uma síndrome que a banca cobra de um jeito diferente. Aqui você fecha as portas com a mão.</p>
+  <div class="trip">
+    <div class="n"><div class="k">Neurogênica</div><div class="v">≈ 95%</div><div class="s">Tronco inferior C8–T1 · mão de Gilliatt-Sumner · fisioterapia primeiro</div></div>
+    <div class="vv"><div class="k">Venosa · Paget-Schroetter</div><div class="v">≈ 3–5%</div><div class="s">Trombose de esforço da subclávia · trombólise + 1ª costela</div></div>
+    <div class="a"><div class="k">Arterial</div><div class="v">≈ 1%</div><div class="s">Costela cervical · aneurisma pós-estenótico · embolia digital</div></div>
+  </div>
+</div></header>
+
+<nav class="rail"><div class="in">
+  <a href="#c1"><b>1</b>Angiografia dinâmica</a>
+  <a href="#c2"><b>2</b>As três portas</a>
+  <a href="#c3"><b>3</b>Plexo e mão</a>
+  <a href="#c4"><b>4</b>Máquina de decisão</a>
+  <a href="#c5"><b>5</b>Simulador da veia</a>
+  <a href="#c6"><b>6</b>Na mesa</a>
+  <a href="#c7"><b>7</b>Forja</a>
+  <a href="#c8"><b>8</b>Tabela-mãe</a>
+</div></nav>
+
+<main class="wrap">
+
+<!-- ================= 1 ================= -->
+<section class="ch" id="c1">
+  <div class="num">CAPÍTULO 1</div>
+  <h2>O exame que o médico viu: angiografia com o braço subindo</h2>
+  <p class="sub">Larissa, 27 anos, fisioterapeuta, nada 4 km por dia no Sesc de Cuiabá. Há dois dias o braço direito inchou e ficou azulado depois do treino. Você pede o exame com o braço em posição neutra e depois em abdução — porque o desfiladeiro só mostra o defeito quando você o fecha.</p>
+  <div class="plate">
+    <div class="fig">
+      <canvas id="ang" width="640" height="560" aria-label="Angiografia simulada do desfiladeiro torácico direito, com o vaso passando entre a clavícula e a primeira costela"></canvas>
+      <div class="cap">Subtração digital simulada, incidência AP do ombro direito. Medial (mediastino) à esquerda, axila à direita. Ossos em fantasma para orientar: clavícula acima, 1ª costela abaixo. Sem escala real — o objetivo é a geometria, não a medida.</div>
+    </div>
+    <div class="panel">
+      <div><div class="lbl">Vaso contrastado</div><div class="seg" id="angVessel"><button data-v="v" class="on">Veia subclávia</button><button data-v="a">Artéria subclávia</button></div></div>
+      <div><div class="lbl">Causa da compressão</div><div class="seg" id="angCause">
+        <button data-c="normal" class="on">Nenhuma (anatomia normal)</button>
+        <button data-c="cc">Espaço costoclavicular estreito</button>
+        <button data-c="rib">Costela cervical</button>
+        <button data-c="scal">Escaleno anterior hipertrofiado</button>
+        <button data-c="pm">Peitoral menor tenso</button></div></div>
+      <div><div class="lbl">Abdução do braço</div><div class="slider"><span class="mono small">0°</span><input type="range" id="angAbd" min="0" max="180" value="0" step="5"><span class="val" id="angAbdV">0°</span></div></div>
+      <div id="angExtraWrap"><div class="lbl" id="angExtraLbl">Esforço repetitivo (trombose)</div><div class="seg" id="angExtra"><button data-e="0" class="on">Ausente</button><button data-e="1">Presente</button></div></div>
+      <div class="read">
+        <div><div class="k">Redução de calibre</div><div class="v" id="rSten">0%</div></div>
+        <div><div class="k">Local do estreitamento</div><div class="v" id="rSite" style="font-size:13px">—</div></div>
+        <div><div class="k">Sinal clínico esperado</div><div class="v" id="rSign" style="font-size:13px">—</div></div>
+        <div><div class="k">Colaterais / dilatação</div><div class="v" id="rCol" style="font-size:13px">—</div></div>
+      </div>
+      <div class="verd" id="angVerd"><b>Leitura</b>Braço ao lado do corpo, veia pérvia, calibre uniforme. Nada a ver aqui — e é exatamente por isso que o exame neutro engana.</div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>O primeiro fato que a imagem ensina é geométrico: a veia subclávia passa <em>na frente</em> do escaleno anterior, e portanto fora do triângulo interescalênico. Selecione "veia" e "escaleno anterior hipertrofiado" — o calibre não muda, porque o músculo não a toca. A veia é esmagada num único lugar, o espaço costoclavicular, entre a clavícula com o subclávio e a primeira costela. Toda a síndrome de Paget-Schroetter cabe nesse gesto: braço em abdução e retropulsão milhares de vezes, endotélio lesado, trombo.</p>
+    <p>O segundo fato é hemodinâmico. Selecione "artéria" e "costela cervical": a estenose é fixa, existe já com o braço abaixado, e o jato pós-estenótico dilata a parede a jusante. A dilatação pós-estenótica é onde o trombo mural se forma, e é dele que saem os êmbolos para os dedos. A veia sofre na abdução; a artéria sofre no osso.</p>
+    <p class="hist">Em 1875 James Paget descreveu o braço inchado de um jovem depois de esforço; Leopold von Schrötter, em 1884, atribuiu à trombose da subclávia. O nome composto é de Hughes, 1949. "Síndrome do desfiladeiro torácico" como guarda-chuva dos três fenótipos é de Peet, 1956 — antes disso cada porta tinha sua própria síndrome com nome próprio, e é isso que o próximo capítulo desmonta.</p>
+  </div>
+</section>
+
+<!-- ================= 2 ================= -->
+<section class="ch" id="c2">
+  <div class="num">CAPÍTULO 2</div>
+  <h2>Por que o sinal existe: as três portas e a manobra que fecha cada uma</h2>
+  <p class="sub">Do mediastino à axila o feixe atravessa três estreitos em sequência. Cada manobra provocativa fecha um deles — e cada nome histórico da síndrome era, na verdade, o nome de uma porta.</p>
+  <div class="plate">
+    <div class="fig">
+      <svg class="sv" id="gates" viewBox="0 0 720 400" role="img" aria-label="As três portas do desfiladeiro torácico: triângulo interescalênico, espaço costoclavicular e espaço retropeitoral menor, com seus conteúdos">
+        <defs>
+          <pattern id="musc" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(90)"><rect width="6" height="6" fill="#A8483E"/><line x1="0" y1="0" x2="0" y2="6" stroke="#7E3129" stroke-width="1.2"/></pattern>
+          <pattern id="bone" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="#EFE6D6"/><circle cx="4" cy="4" r="1" fill="#CDBFA6"/></pattern>
+        </defs>
+        <rect x="0" y="0" width="720" height="400" fill="#F3EBE1" rx="6"/>
+        <text x="16" y="24" font-size="12" class="mo" fill="#6B5647">MEDIAL · mediastino</text>
+        <text x="704" y="24" font-size="12" class="mo" fill="#6B5647" text-anchor="end">LATERAL · axila</text>
+        <line x1="20" y1="336" x2="700" y2="336" stroke="#B9A692" stroke-width="1" stroke-dasharray="3 4"/>
+        <text x="20" y="352" font-size="11" fill="#6B5647">sentido do feixe →</text>
+
+        <!-- GATE 1: interescalênico -->
+        <g id="g1" class="hit" data-g="1">
+          <rect x="30" y="40" width="210" height="290" fill="transparent"/>
+          <text x="135" y="58" text-anchor="middle" font-size="13" font-weight="600" fill="#3A2A20">1 · Triângulo interescalênico</text>
+          <!-- floor: 1ª costela -->
+          <path d="M45 300 Q135 280 225 300 L225 318 Q135 298 45 318 Z" fill="url(#bone)" stroke="#8C7B63" stroke-width="1.4"/>
+          <!-- cervical rib (variant) -->
+          <g id="crib" opacity="0">
+            <path d="M150 292 Q185 262 222 268" fill="none" stroke="#8C7B63" stroke-width="9" stroke-linecap="round" stroke-dasharray="6 4"/>
+          </g>
+          <!-- escaleno médio (posterior wall, right) -->
+          <g id="g1r"><path d="M190 80 L226 80 L232 300 L182 300 Z" fill="url(#musc)" stroke="#7E3129" stroke-width="1.2"/></g>
+          <!-- contents -->
+          <g id="g1c">
+            <circle cx="160" cy="278" r="12" fill="#E0B93C" stroke="#9A7C1E" stroke-width="1"/>
+            <circle cx="150" cy="232" r="12" fill="#E0B93C" stroke="#9A7C1E" stroke-width="1"/>
+            <circle cx="140" cy="188" r="12" fill="#E0B93C" stroke="#9A7C1E" stroke-width="1"/>
+            <circle cx="122" cy="272" r="16" fill="#C0392B" stroke="#7E1F16" stroke-width="1.2"/>
+          </g>
+          <!-- escaleno anterior (anterior wall, left) -->
+          <g id="g1l"><path d="M60 80 L96 80 L106 300 L52 300 Z" fill="url(#musc)" stroke="#7E3129" stroke-width="1.2"/>
+            <path d="M92 110 Q86 200 70 292" fill="none" stroke="#E0B93C" stroke-width="3" stroke-linecap="round"/></g>
+          <!-- vein OUTSIDE, anterior to anterior scalene -->
+          <circle cx="40" cy="282" r="17" fill="#3E5F8A" stroke="#243B5C" stroke-width="1.2"/>
+        </g>
+
+        <!-- GATE 2: costoclavicular -->
+        <g id="g2" class="hit" data-g="2">
+          <rect x="255" y="40" width="210" height="290" fill="transparent"/>
+          <text x="360" y="58" text-anchor="middle" font-size="13" font-weight="600" fill="#3A2A20">2 · Espaço costoclavicular</text>
+          <path d="M270 300 Q360 280 450 300 L450 318 Q360 298 270 318 Z" fill="url(#bone)" stroke="#8C7B63" stroke-width="1.4"/>
+          <g id="g2c">
+            <circle cx="420" cy="266" r="12" fill="#E0B93C" stroke="#9A7C1E" stroke-width="1"/>
+            <circle cx="404" cy="246" r="12" fill="#E0B93C" stroke="#9A7C1E" stroke-width="1"/>
+            <circle cx="388" cy="228" r="12" fill="#E0B93C" stroke="#9A7C1E" stroke-width="1"/>
+            <circle cx="360" cy="262" r="16" fill="#C0392B" stroke="#7E1F16" stroke-width="1.2"/>
+            <circle cx="306" cy="272" r="18" fill="#3E5F8A" stroke="#243B5C" stroke-width="1.2"/>
+          </g>
+          <!-- clavicle + subclavius (top jaw) -->
+          <g id="g2t">
+            <path d="M266 150 Q360 120 454 150 L454 186 Q360 156 266 186 Z" fill="url(#bone)" stroke="#8C7B63" stroke-width="1.4"/>
+            <path d="M280 186 Q360 170 440 186 L436 200 Q360 184 284 200 Z" fill="url(#musc)" stroke="#7E3129" stroke-width="1"/>
+          </g>
+        </g>
+
+        <!-- GATE 3: retropeitoral menor -->
+        <g id="g3" class="hit" data-g="3">
+          <rect x="480" y="40" width="210" height="290" fill="transparent"/>
+          <text x="585" y="58" text-anchor="middle" font-size="13" font-weight="600" fill="#3A2A20">3 · Espaço retropeitoral menor</text>
+          <path d="M495 300 Q585 284 675 300 L675 318 Q585 302 495 318 Z" fill="url(#bone)" stroke="#8C7B63" stroke-width="1.4"/>
+          <text x="585" y="333" text-anchor="middle" font-size="10.5" fill="#6B5647">gradil costal (2ª–3ª costelas)</text>
+          <g id="g3c">
+            <circle cx="600" cy="230" r="11" fill="#E0B93C" stroke="#9A7C1E" stroke-width="1"/>
+            <circle cx="620" cy="256" r="11" fill="#E0B93C" stroke="#9A7C1E" stroke-width="1"/>
+            <circle cx="582" cy="256" r="11" fill="#E0B93C" stroke="#9A7C1E" stroke-width="1"/>
+            <circle cx="600" cy="256" r="14" fill="#C0392B" stroke="#7E1F16" stroke-width="1.2"/>
+            <circle cx="548" cy="270" r="17" fill="#3E5F8A" stroke="#243B5C" stroke-width="1.2"/>
+          </g>
+          <g id="g3t">
+            <circle cx="655" cy="120" r="16" fill="url(#bone)" stroke="#8C7B63" stroke-width="1.4"/>
+            <path d="M640 128 Q590 150 500 200 L505 214 Q595 168 648 142 Z" fill="url(#musc)" stroke="#7E3129" stroke-width="1"/>
+          </g>
+        </g>
+
+        <!-- legend -->
+        <g font-size="11.5" fill="#3A2A20">
+          <circle cx="30" cy="380" r="6" fill="#3E5F8A"/><text x="42" y="384">veia</text>
+          <circle cx="90" cy="380" r="6" fill="#C0392B"/><text x="102" y="384">artéria</text>
+          <circle cx="160" cy="380" r="6" fill="#E0B93C"/><text x="172" y="384">plexo (troncos / fascículos)</text>
+          <rect x="350" y="374" width="14" height="12" fill="url(#musc)"/><text x="370" y="384">músculo</text>
+          <rect x="430" y="374" width="14" height="12" fill="url(#bone)" stroke="#8C7B63" stroke-width=".8"/><text x="450" y="384">osso</text>
+          <path d="M520 386 L536 374" stroke="#E0B93C" stroke-width="3" stroke-linecap="round"/><text x="544" y="384">n. frênico</text>
+        </g>
+      </svg>
+      <div class="cap">Esquema frontal do lado direito, de medial para lateral. A ordem dos conteúdos dentro de cada porta respeita a ordem real de anterior para posterior: veia, artéria, plexo. Clique numa porta para abrir a ficha; acione uma manobra para fechá-la.</div>
+    </div>
+    <div class="panel">
+      <div><div class="lbl">Manobra provocativa</div><div class="seg" id="manv">
+        <button data-m="0" class="on">Neutra</button>
+        <button data-m="adson">Adson</button>
+        <button data-m="halsted">Halsted / costoclavicular</button>
+        <button data-m="roos">Roos · EAST</button>
+        <button data-m="wright">Wright · hiperabdução</button></div></div>
+      <div><div class="lbl">Variante óssea</div><div class="seg" id="cribBtn"><button data-r="0" class="on">Sem costela cervical</button><button data-r="1">Costela cervical</button></div></div>
+      <div class="verd" id="manvVerd"><b>Posição neutra</b>As três portas abertas. Selecione uma manobra: a porta que ela fecha se move, e o texto diz o que a banca aceita como "teste positivo".</div>
+      <div id="gateCard">
+        <h3 id="gcT">Clique numa porta</h3>
+        <dl class="kv" id="gcKV"></dl>
+      </div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>Repare no que o desenho já resolveu antes de qualquer frase: a veia azul da primeira porta está <em>fora</em> dela. Isso é o motivo de a síndrome do escaleno anterior de Naffziger (1935) nunca ter sido uma síndrome venosa. A porta 2 é a única em que os três elementos se espremem juntos entre dois ossos — por isso é a casa da trombose de esforço, e por isso a cirurgia que resolve o fenótipo venoso é a que tira o osso de baixo, a primeira costela, e não a que corta músculo.</p>
+    <p>As manobras fecham portas, não fazem diagnóstico. Adson tensiona os escalenos (porta 1); Halsted abaixa e retrai a clavícula (porta 2); Wright enrola o feixe no tendão do peitoral menor (porta 3). Todas obliteram o pulso radial numa fração grande de pessoas sem nada — a banca sabe disso, e a resposta "Adson positivo confirma o diagnóstico" é distrator. O teste que reproduz o <em>sintoma</em> neurogênico em três minutos, Roos, é o mais útil na prática; o diagnóstico continua clínico, apoiado por imagem para o fenótipo vascular e por eletroneuromiografia para o neurogênico verdadeiro.</p>
+    <div class="div"><b>Divergência de banca</b>Textos nacionais mais antigos e alguns cadernos de prova tratam o teste de Adson como "o" teste do desfiladeiro e o citam como confirmatório. Sabiston, Rutherford e os padrões da SVS (2016) o descrevem como pouco específico. Se o enunciado pede "o teste mais sensível/confirmatório", desconfie de Adson; se descreve a manobra de rotação da cabeça com inspiração profunda e pede apenas o nome, a resposta é Adson.</div>
+  </div>
+</section>
+
+<!-- ================= 3 ================= -->
+<section class="ch" id="c3">
+  <div class="num">CAPÍTULO 3</div>
+  <h2>A estrutura em camadas: do tronco inferior à mão de Gilliatt-Sumner</h2>
+  <p class="sub">Seu Anselmo, 44 anos, pedreiro em Várzea Grande, formiga na borda interna do antebraço e nos dois últimos dedos há oito meses; a mulher notou que "a palma murchou". Cinco síndromes produzem uma mão parecida. O que as separa é qual fibra sensitiva morre e qual sobrevive.</p>
+  <div class="plate">
+    <div class="fig">
+      <svg class="sv" id="plex" viewBox="0 0 720 430" role="img" aria-label="Plexo braquial de C5 a T1 com troncos, fascículos e nervos terminais, ao lado da palma da mão direita com territórios motores e sensitivos">
+        <rect x="0" y="0" width="720" height="430" fill="#F3EBE1" rx="6"/>
+        <!-- PLEXUS -->
+        <g id="plexG" stroke="#E0B93C" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path id="rC5" d="M40 80 L150 105"/>
+          <path id="rC6" d="M40 130 L150 105"/>
+          <path id="rC7" d="M40 180 L150 180"/>
+          <path id="rC8" d="M40 230 L150 255"/>
+          <path id="rT1" d="M40 280 L150 255"/>
+          <!-- trunks -->
+          <path id="tS" d="M150 105 L200 105"/>
+          <path id="tM" d="M150 180 L200 180"/>
+          <path id="tI" d="M150 255 L200 255"/>
+          <!-- divisions to cords -->
+          <path id="dv1" d="M200 105 L260 120" stroke-width="5"/>
+          <path id="dv2" d="M200 105 L260 180" stroke-width="4" stroke-dasharray="6 5"/>
+          <path id="dv3" d="M200 180 L260 120" stroke-width="5"/>
+          <path id="dv4" d="M200 180 L260 180" stroke-width="4" stroke-dasharray="6 5"/>
+          <path id="dv5" d="M200 255 L260 250" stroke-width="5"/>
+          <path id="dv6" d="M200 255 L260 180" stroke-width="4" stroke-dasharray="6 5"/>
+          <!-- cords -->
+          <path id="cL" d="M260 120 L310 120"/>
+          <path id="cP" d="M260 180 L310 180"/>
+          <path id="cM" d="M260 250 L310 250"/>
+          <!-- terminal -->
+          <path id="nMC" d="M310 120 L370 85" stroke-width="5"/>
+          <path id="nMedL" d="M310 120 L370 160" stroke-width="5"/>
+          <path id="nMedM" d="M310 250 L370 160" stroke-width="5"/>
+          <path id="nRad" d="M310 180 L370 210" stroke-width="5"/>
+          <path id="nUln" d="M310 250 L370 262" stroke-width="5"/>
+          <path id="nMACN" d="M310 250 L358 312" stroke-width="4"/>
+        </g>
+        <g font-size="11.5" fill="#3A2A20">
+          <text x="34" y="84" text-anchor="end">C5</text><text x="34" y="134" text-anchor="end">C6</text><text x="34" y="184" text-anchor="end">C7</text><text x="34" y="234" text-anchor="end">C8</text><text x="34" y="284" text-anchor="end">T1</text>
+          <text x="175" y="94" text-anchor="middle" class="mu" font-size="10.5">tronco superior</text>
+          <text x="175" y="170" text-anchor="middle" class="mu" font-size="10.5">tronco médio</text>
+          <text x="175" y="276" text-anchor="middle" class="mu" font-size="10.5">tronco inferior</text>
+          <text x="285" y="110" text-anchor="middle" class="mu" font-size="10.5">f. lateral</text>
+          <text x="285" y="199" text-anchor="middle" class="mu" font-size="10.5">f. posterior</text>
+          <text x="285" y="270" text-anchor="middle" class="mu" font-size="10.5">f. medial</text>
+          <text x="378" y="88">musculocutâneo</text>
+          <text x="378" y="164">mediano</text>
+          <text x="378" y="214">radial</text>
+          <text x="378" y="266">ulnar</text>
+          <text x="364" y="318">cut. antebraq. medial</text>
+          <text x="40" y="52" font-size="12" font-weight="600">Plexo braquial (raízes → troncos → fascículos)</text>
+          <text x="40" y="345" font-size="10.5" class="mu">tracejado = divisões posteriores</text>
+        </g>
+        <!-- lesion site marker -->
+        <g id="lesion" opacity="0"><circle id="lesC" cx="200" cy="255" r="15" fill="none" stroke="#B5352B" stroke-width="2.5" stroke-dasharray="4 3"/></g>
+
+        <!-- HAND (right, palmar) -->
+        <g id="hand">
+          <text x="560" y="52" text-anchor="middle" font-size="12" font-weight="600">Mão direita · face palmar</text>
+          <text x="470" y="72" font-size="10.5" class="mu">ulnar</text><text x="650" y="72" font-size="10.5" class="mu" text-anchor="end">radial</text>
+          <!-- forearm -->
+          <path d="M498 332 L494 415 L626 415 L622 332 Z" fill="#E8CFA9" stroke="#8C6A4A" stroke-width="1.3"/>
+          <rect id="sMACN" x="497" y="334" width="40" height="80" fill="#3E5F8A" opacity="0"/>
+          <text x="560" y="428" text-anchor="middle" font-size="10.5" class="mu">antebraço · borda medial</text>
+          <!-- palm -->
+          <path d="M488 205 Q485 300 500 335 L620 335 Q640 300 632 205 Z" fill="#E8CFA9" stroke="#8C6A4A" stroke-width="1.3"/>
+          <!-- thumb -->
+          <path d="M632 235 Q670 200 690 160 Q700 145 686 138 Q672 136 660 158 Q640 185 626 205 Z" fill="#E8CFA9" stroke="#8C6A4A" stroke-width="1.3"/>
+          <rect id="sThumb" x="636" y="136" width="60" height="100" rx="20" transform="rotate(35 666 186)" fill="#3E5F8A" opacity="0"/>
+          <!-- fingers: little, ring(medial half, lateral half), middle, index -->
+          <rect x="490" y="120" width="28" height="92" rx="13" fill="#E8CFA9" stroke="#8C6A4A" stroke-width="1.3"/>
+          <rect x="529" y="95" width="30" height="117" rx="14" fill="#E8CFA9" stroke="#8C6A4A" stroke-width="1.3"/>
+          <rect x="569" y="85" width="30" height="127" rx="14" fill="#E8CFA9" stroke="#8C6A4A" stroke-width="1.3"/>
+          <rect x="609" y="98" width="28" height="114" rx="13" fill="#E8CFA9" stroke="#8C6A4A" stroke-width="1.3"/>
+          <!-- sensory overlays -->
+          <rect id="sLittle" x="490" y="120" width="28" height="92" rx="13" fill="#3E5F8A" opacity="0"/>
+          <rect id="sRingM" x="529" y="95" width="15" height="117" rx="7" fill="#3E5F8A" opacity="0"/>
+          <rect id="sRingL" x="544" y="95" width="15" height="117" rx="7" fill="#3E5F8A" opacity="0"/>
+          <rect id="sMiddle" x="569" y="85" width="30" height="127" rx="14" fill="#3E5F8A" opacity="0"/>
+          <rect id="sIndex" x="609" y="98" width="28" height="114" rx="13" fill="#3E5F8A" opacity="0"/>
+          <path id="sPalmU" d="M488 205 Q485 300 500 335 L545 335 L545 205 Z" fill="#3E5F8A" opacity="0"/>
+          <path id="sPalmR" d="M545 205 L545 335 L620 335 Q640 300 632 205 Z" fill="#3E5F8A" opacity="0"/>
+          <!-- motor overlays -->
+          <ellipse id="mThenar" cx="608" cy="272" rx="24" ry="46" transform="rotate(-18 608 272)" fill="#C0392B" opacity="0" stroke="#7E1F16" stroke-width="1"/>
+          <ellipse id="mHypo" cx="506" cy="282" rx="16" ry="44" transform="rotate(8 506 282)" fill="#C0392B" opacity="0" stroke="#7E1F16" stroke-width="1"/>
+          <g id="mInter" opacity="0" fill="#C0392B" stroke="#7E1F16" stroke-width="1"><circle cx="524" cy="228" r="7"/><circle cx="564" cy="224" r="7"/><circle cx="604" cy="228" r="7"/></g>
+          
+        </g>
+        <g font-size="11" fill="#3A2A20">
+          <rect x="430" y="392" width="12" height="12" fill="#C0392B" opacity=".6"/><text x="447" y="402">atrofia / fraqueza</text>
+          <rect x="560" y="392" width="12" height="12" fill="#3E5F8A" opacity=".5"/><text x="577" y="402">hipoestesia</text>
+        </g>
+      </svg>
+      <div class="cap">Esquema, sem escala. A intensidade da cor no território motor indica o grau de acometimento esperado. O antebraço aparece só na borda medial, porque é onde mora o nervo cutâneo antebraquial medial — a fibra que decide o diagnóstico.</div>
+    </div>
+    <div class="panel">
+      <div><div class="lbl">Onde está a lesão</div><div class="seg" id="lesSel">
+        <button data-l="tos" class="on w">Desfiladeiro neurogênico verdadeiro</button>
+        <button data-l="ctc">Túnel do carpo</button>
+        <button data-l="cub">Túnel cubital</button>
+        <button data-l="c8">Radiculopatia C8</button>
+        <button data-l="panc">Tumor de Pancoast</button></div></div>
+      <h3 id="lesT"></h3>
+      <dl class="kv" id="lesKV"></dl>
+      <div class="verd w" id="lesVerd"></div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>O tronco inferior é o que descansa sobre a primeira costela, e é ele que uma costela cervical, uma banda fibrosa de Roos ou um escaleno hipertrofiado levantam e esticam. Suas fibras T1 vão majoritariamente para a eminência tenar lateral pelo mediano, e as fibras C8 para hipotenar e interósseos pelo ulnar. Por isso a mão do desfiladeiro neurogênico verdadeiro — descrita por Gilliatt e Sumner em 1970 — atrofia <em>mais o tenar do que o hipotenar</em>, um padrão que nenhuma neuropatia do punho ou do cotovelo reproduz sozinha.</p>
+    <p>A eletroneuromiografia segue a mesma lógica de camadas. A lesão é pós-ganglionar, então os potenciais sensitivos caem — o do cutâneo antebraquial medial primeiro e mais, porque ele é quase puro T1. O potencial sensitivo do mediano fica normal (seus dedos são C6–C7), enquanto a resposta motora do mediano para o abdutor curto do polegar despenca. Uma radiculopatia C8 inverte só um detalhe, e é o detalhe que decide: sensitivos preservados, porque a lesão é proximal ao gânglio. Troque o seletor entre "desfiladeiro" e "C8" e observe que a mão pintada é quase a mesma; a diferença está toda na linha da ENMG.</p>
+  </div>
+</section>
+
+<!-- ================= 4 ================= -->
+<section class="ch" id="c4">
+  <div class="num">CAPÍTULO 4</div>
+  <h2>A máquina de decisão: três perguntas, em ordem</h2>
+  <p class="sub">A banca não pergunta "o que é desfiladeiro torácico". Ela dá o fenótipo pelo enunciado, planta um modificador — tempo, atrofia, fisioterapia feita ou não, estágio arterial — e espera que você mude a conduta por causa dele. Gire os controles e veja qual dado vira a resposta.</p>
+  <div class="plate">
+    <div class="panel">
+      <div><div class="lbl">Cenários de prova</div><div class="seg" id="dmPre">
+        <button data-p="larissa">Larissa · braço azul há 2 dias</button>
+        <button data-p="gustavo">Gustavo · braço inchado há 5 semanas</button>
+        <button data-p="anselmo">Seu Anselmo · palma murcha</button>
+        <button data-p="rafael">Rafael · 19 anos, Roos +</button>
+        <button data-p="marlene">Dona Marlene · dedo roxo</button></div></div>
+      <div><div class="lbl">1 · Fenótipo dado pelo enunciado</div><div class="seg" id="dmPh">
+        <button data-v="n" class="on w">Neurogênico</button><button data-v="v">Venoso</button><button data-v="a">Arterial</button></div>
+        <div class="verd" id="dmV1" style="margin-top:8px"></div></div>
+      <div id="dmQ2"><div class="lbl" id="dmL2"></div><div class="seg" id="dmS2"></div><div class="verd" id="dmV2" style="margin-top:8px"></div></div>
+      <div id="dmQ3"><div class="lbl" id="dmL3"></div><div class="seg" id="dmS3"></div><div class="verd" id="dmV3" style="margin-top:8px"></div></div>
+      <div id="dmQ4"><div class="lbl" id="dmL4"></div><div class="seg" id="dmS4"></div><div class="verd" id="dmV4" style="margin-top:8px"></div></div>
+    </div>
+    <div class="panel">
+      <h3>Conduta</h3>
+      <ol class="steps" id="dmSteps"></ol>
+      <div class="verd d" id="dmForb"><b>Proibido neste cenário</b><span id="dmForbT"></span></div>
+      <div class="verd m" id="dmAlt"><b>Na forja, corresponde a</b><span id="dmAltT"></span></div>
+      <div class="small" id="dmNote"></div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>Os três fenótipos têm três relógios diferentes. O neurogênico tem o relógio mais lento: meses de fisioterapia antes de qualquer bisturi, porque a maioria melhora sem cirurgia e porque a cirurgia desse fenótipo é a de resultado mais imprevisível. O venoso tem um relógio de duas semanas: depois disso o trombo se organiza e a trombólise deixa de valer. O arterial não tem relógio nenhum — a indicação é a presença da lesão, porque o aneurisma pós-estenótico com trombo mural emboliza quando quiser, e a embolia digital repetida termina em amputação.</p>
+    <p>É esse contraste que o seu padrão de erro pede para vigiar. Em cinco simulados o desvio foi o mesmo: resolver o diagnóstico nomeado e ignorar o modificador. Aqui o modificador é "há cinco semanas" no braço do Gustavo — a trombose é a mesma da Larissa, e a conduta já não é.</p>
+  </div>
+</section>
+
+<!-- ================= 5 ================= -->
+<section class="ch" id="c5">
+  <div class="num">CAPÍTULO 5</div>
+  <h2>O simulador da veia: a sequência certa e o caminho errado</h2>
+  <p class="sub">Você está com a Larissa no segundo dia. A veia subclávia direita está ocluída por trombo fresco num túnel ósseo que continua fechado. Cada botão é uma decisão; o relógio anda; a veia responde com números aproximados de séries clássicas.</p>
+  <div class="plate">
+    <div class="fig">
+      <svg class="sv" id="veinSim" viewBox="0 0 700 300" role="img" aria-label="Veia subclávia atravessando o espaço costoclavicular, com trombo, estenose extrínseca, colaterais e eventual stent">
+        <rect x="0" y="0" width="700" height="300" fill="#F3EBE1" rx="6"/>
+        <text x="16" y="24" font-size="12" class="mo" fill="#6B5647">medial · veia braquiocefálica</text>
+        <text x="684" y="24" font-size="12" class="mo" fill="#6B5647" text-anchor="end">lateral · veia axilar</text>
+        <!-- collaterals -->
+        <g id="vsCol" opacity="0" fill="none" stroke="#3E5F8A" stroke-width="3" stroke-linecap="round">
+          <path d="M240 150 Q220 90 300 70 Q380 50 470 80 Q520 100 500 150"/>
+          <path d="M260 150 Q270 110 330 100 Q420 90 450 150"/>
+          <path d="M220 160 Q180 60 330 40 Q500 30 520 150"/>
+        </g>
+        <!-- bones -->
+        <g id="vsClav"><path d="M250 60 Q350 40 450 60 L450 118 Q350 98 250 118 Z" fill="#EFE6D6" stroke="#8C7B63" stroke-width="1.4"/>
+          <text x="350" y="86" text-anchor="middle" font-size="11" fill="#6B5647">clavícula + m. subclávio</text></g>
+        <path d="M250 232 Q350 214 450 232 L450 262 Q350 244 250 262 Z" fill="#EFE6D6" stroke="#8C7B63" stroke-width="1.4"/>
+        <text x="350" y="252" text-anchor="middle" font-size="11" fill="#6B5647">1ª costela</text>
+        <!-- vein -->
+        <path id="vsVein" d="M40 175 L250 175 Q350 175 450 175 L660 175" fill="none" stroke="#3E5F8A" stroke-width="44" stroke-linecap="round"/>
+        <!-- extrinsic narrowing: two wedges -->
+        <g id="vsWedge"><path d="M280 118 Q350 150 420 118 Z" fill="#EFE6D6" stroke="#8C7B63" stroke-width="1"/><path d="M280 232 Q350 200 420 232 Z" fill="#EFE6D6" stroke="#8C7B63" stroke-width="1"/></g>
+        <!-- thrombus -->
+        <path id="vsThr" d="M120 175 L600 175" fill="none" stroke="#7A2E2A" stroke-width="34" stroke-linecap="round" opacity="1"/>
+        <!-- stent -->
+        <g id="vsStent" opacity="0" fill="none" stroke="#9AA3AD" stroke-width="2"><path d="M290 157 l10 8 l10 -8 l10 8 l10 -8 l10 8 l10 -8 l10 8 l10 -8 l10 8 l10 -8 l10 8 l10 -8"/><path d="M290 193 l10 -8 l10 8 l10 -8 l10 8 l10 -8 l10 8 l10 -8 l10 8 l10 -8 l10 8 l10 -8 l10 8"/><line x1="290" y1="157" x2="290" y2="193"/><line x1="410" y1="157" x2="410" y2="193"/></g>
+        <g id="vsCrush" opacity="0"><path d="M300 160 L330 190 M330 160 L360 190 M360 160 L390 190" stroke="#B5352B" stroke-width="3"/><text x="350" y="285" text-anchor="middle" font-size="12" fill="#B5352B" font-weight="600">stent esmagado entre clavícula e costela</text></g>
+        <text x="350" y="285" id="vsMsg" text-anchor="middle" font-size="12" fill="#3A2A20"></text>
+      </svg>
+      <div class="cap">Corte frontal esquemático do espaço costoclavicular. Trombo em vinho; estreitamento extrínseco em cunhas ósseas; colaterais por cima do ombro aparecem quando a veia oclui (o sinal de Urschel do exame físico).</div>
+    </div>
+    <div class="panel">
+      <div class="read">
+        <div><div class="k">Dia desde o início</div><div class="v" id="vsDay">2</div></div>
+        <div><div class="k">Luz da veia ocupada por trombo</div><div class="v" id="vsThrV">100%</div></div>
+        <div><div class="k">Estenose extrínseca</div><div class="v" id="vsStenV">60%</div></div>
+        <div><div class="k">Patência esperada em 1 ano</div><div class="v" id="vsPat">—</div></div>
+      </div>
+      <div><div class="lbl">Próximo passo</div><div class="seg" id="vsBtns">
+        <button data-s="ac">Anticoagular</button>
+        <button data-s="cdt">Trombólise por cateter</button>
+        <button data-s="rib">Ressecar 1ª costela</button>
+        <button data-s="pta">Venografia + angioplastia</button>
+        <button data-s="stent" class="d">Stent na subclávia</button>
+        <button data-s="wait">Esperar 3 meses</button>
+        <button data-s="reset">↺ Recomeçar</button></div></div>
+      <div class="lbl">Sequência escolhida</div>
+      <div id="vsSeq" class="small">—</div>
+      <div class="verd" id="vsVerd"><b>Situação</b>Trombose aguda de esforço, dia 2. Colaterais visíveis no ombro. Escolha o primeiro passo.</div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>A veia é a estrutura com a resposta mais mecânica de todo o tema, e por isso a que mais rende questão de sequência. Anticoagular sozinho trata o trombo e ignora a causa: nas séries antigas, dois em cada três desses pacientes ficavam com braço pesado, edema aos esforços e recanalização incompleta. Trombólise dirigida por cateter limpa a luz se for feita dentro de cerca de duas semanas — depois disso o trombo está organizado e a lise é pobre. Mas a veia limpa continua num túnel fechado; o exame do próximo dia mostra a mesma cunha extrínseca no espaço costoclavicular. A descompressão é o passo que muda a história natural.</p>
+    <p>O stent é o caminho errado mais bem construído da prova, porque parece lógico. Na série de Urschel, todos os stents colocados antes da ressecção da costela fraturaram ou ocluíram — a clavícula e a costela esmagam o metal do mesmo jeito que esmagavam a veia. Angioplastia com balão só faz sentido depois que o osso saiu, para tratar a estenose intrínseca residual da parede fibrosada. Aperte o botão vermelho e veja o número.</p>
+    <div class="div"><b>Divergência de banca</b>Há duas escolas sobre <em>quando</em> ressecar a costela depois da trombólise: na mesma internação (Urschel, Molina — dias) ou após semanas de anticoagulação com reavaliação (protocolo de alguns centros vasculares). O ENARE tem cobrado o conceito, não o intervalo: trombólise seguida de descompressão cirúrgica precoce. Se as alternativas contrapõem "anticoagulação isolada por 3 meses" e "trombólise + descompressão", a segunda é o gabarito num jovem ativo com trombose recente.</div>
+  </div>
+</section>
+
+<!-- ================= 6 ================= -->
+<section class="ch" id="c6">
+  <div class="num">CAPÍTULO 6</div>
+  <h2>Na mesa: a fossa supraclavicular direita aberta</h2>
+  <p class="sub">A via supraclavicular é a que expõe as três portas de cima: escalenos, plexo, artéria e — com a clavícula afastada — a veia. É a via da escalenectomia, da costela cervical e da reconstrução arterial. A prancha mostra o campo como o cirurgião o vê da direita do paciente.</p>
+  <div class="plate">
+    <div class="fig">
+      <svg class="sv" id="plate6" viewBox="0 0 680 575" role="img" aria-label="Prancha anatômica da fossa supraclavicular direita: primeira costela, escalenos anterior e médio, troncos do plexo braquial, artéria e veia subclávias, nervo frênico e clavícula">
+        <defs>
+          <pattern id="pm" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(80)"><rect width="6" height="6" fill="#A8483E"/><line x1="0" y1="0" x2="0" y2="6" stroke="#7E3129" stroke-width="1.1"/></pattern>
+          <pattern id="pm2" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(100)"><rect width="6" height="6" fill="#B25A50"/><line x1="0" y1="0" x2="0" y2="6" stroke="#7E3129" stroke-width="1"/></pattern>
+          <pattern id="pb" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="#EFE6D6"/><circle cx="4" cy="4" r="1" fill="#CDBFA6"/></pattern>
+          <marker id="arw" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#3A2A20"/></marker>
+        </defs>
+        <rect x="0" y="0" width="680" height="575" fill="#F3EBE1"/>
+        <rect x="20" y="20" width="640" height="370" fill="#EBD9B8" stroke="#B9A692" stroke-width="1"/>
+        <!-- orientation -->
+        <g font-size="11" fill="#6B5647" class="mo">
+          <text x="340" y="36" text-anchor="middle">CRANIAL</text>
+          <text x="30" y="210" transform="rotate(-90 30 210)" text-anchor="middle">MEDIAL</text>
+          <text x="650" y="210" transform="rotate(90 650 210)" text-anchor="middle">LATERAL</text>
+        </g>
+        <!-- 1 first rib (deepest) -->
+        <g id="s_rib"><path d="M150 345 Q330 250 610 300" fill="none" stroke="#8C7B63" stroke-width="26" stroke-linecap="round"/><path d="M150 345 Q330 250 610 300" fill="none" stroke="#EFE6D6" stroke-width="20" stroke-linecap="round"/></g>
+        <!-- 10 cervical rib (variant, dashed) -->
+        <g id="s_crib"><path d="M500 150 Q420 215 300 292" fill="none" stroke="#8C7B63" stroke-width="12" stroke-linecap="round" stroke-dasharray="7 5" opacity=".85"/></g>
+        <!-- 2 scalenus medius -->
+        <g id="s_sm"><path d="M470 22 L540 22 L535 200 Q520 260 480 300 L430 300 Q440 230 445 150 Z" fill="url(#pm2)" stroke="#7E3129" stroke-width="1.2"/></g>
+        <!-- interscalene triangle highlight -->
+        <path id="s_tri" d="M300 120 L440 120 L455 300 L300 300 Z" fill="#EF9F27" opacity=".18"/>
+        <!-- 3 plexus trunks -->
+        <g id="s_plex" fill="none" stroke="#E0B93C" stroke-width="9" stroke-linecap="round">
+          <path d="M330 118 Q420 190 520 302"/>
+          <path d="M325 160 Q410 225 505 318"/>
+          <path d="M320 208 Q400 258 490 330"/>
+        </g>
+        <!-- 4 subclavian artery -->
+        <g id="s_art"><path d="M200 300 Q260 268 330 272 Q420 290 470 340" fill="none" stroke="#7E1F16" stroke-width="12" stroke-linecap="round"/><path d="M200 300 Q260 268 330 272 Q420 290 470 340" fill="none" stroke="#C0392B" stroke-width="9" stroke-linecap="round"/></g>
+        <!-- 5 scalenus anterior -->
+        <g id="s_sa"><path d="M215 22 L285 22 L300 300 L232 300 Z" fill="url(#pm)" stroke="#7E3129" stroke-width="1.2"/></g>
+        <!-- 6 phrenic nerve on SA -->
+        <g id="s_phr"><path d="M280 60 Q262 190 238 296" fill="none" stroke="#E0B93C" stroke-width="4" stroke-linecap="round"/></g>
+        <!-- 7 subclavian vein (anterior to SA, behind clavicle) -->
+        <g id="s_vein"><path d="M90 356 Q230 322 330 332 Q420 344 480 372" fill="none" stroke="#243B5C" stroke-width="19" stroke-linecap="round"/><path d="M90 356 Q230 322 330 332 Q420 344 480 372" fill="none" stroke="#3E5F8A" stroke-width="16" stroke-linecap="round"/></g>
+        <!-- 9 omohyoid (retracted, divided) -->
+        <g id="s_omo"><path d="M600 120 Q520 80 440 60" fill="none" stroke="#A8483E" stroke-width="16" stroke-linecap="round" opacity=".9"/><path d="M420 56 Q380 52 350 40" fill="none" stroke="#A8483E" stroke-width="16" stroke-linecap="round" opacity=".9" stroke-dasharray="2 6"/></g>
+        <!-- ECM clavicular head (medial) & trapezius (lateral) -->
+        <path d="M22 22 L120 22 L110 372 L22 372 Z" fill="url(#pm)" stroke="#7E3129" stroke-width="1.2" opacity=".95"/>
+        <path d="M600 22 L658 22 L658 330 L618 330 Z" fill="url(#pm2)" stroke="#7E3129" stroke-width="1.2" opacity=".95"/>
+        <!-- 8 clavicle (most anterior, semi-transparent) -->
+        <g id="s_clav" opacity=".78"><path d="M22 388 Q150 350 340 356 Q520 362 658 336 L658 388 Z" fill="url(#pb)" stroke="#8C7B63" stroke-width="1.6"/></g>
+        <!-- maneuver arrow: divide SA at insertion, phrenic retracted medially -->
+        <path d="M296 286 L262 286" stroke="#3A2A20" stroke-width="1.6" marker-end="url(#arw)" fill="none"/>
+        <line x1="298" y1="300" x2="236" y2="300" stroke="#3A2A20" stroke-width="2.2" stroke-dasharray="3 3"/>
+        <!-- markers & guide lines -->
+        <g id="mk" font-size="12" font-weight="500" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif">
+          <line x1="560" y1="288" x2="580" y2="252" stroke="#6B5647" stroke-width=".8"/><circle cx="586" cy="246" r="10" fill="#fff" stroke="#3A2A20" stroke-width="1"/><text x="586" y="250" text-anchor="middle" fill="#3A2A20">1</text>
+          <line x1="500" y1="90" x2="565" y2="76" stroke="#6B5647" stroke-width=".8"/><circle cx="576" cy="74" r="10" fill="#fff" stroke="#3A2A20" stroke-width="1"/><text x="576" y="78" text-anchor="middle" fill="#3A2A20">2</text>
+          <line x1="452" y1="222" x2="540" y2="200" stroke="#6B5647" stroke-width=".8"/><circle cx="551" cy="197" r="10" fill="#fff" stroke="#3A2A20" stroke-width="1"/><text x="551" y="201" text-anchor="middle" fill="#3A2A20">3</text>
+          <line x1="348" y1="270" x2="358" y2="250" stroke="#6B5647" stroke-width=".8"/><circle cx="362" cy="240" r="10" fill="#fff" stroke="#3A2A20" stroke-width="1"/><text x="362" y="244" text-anchor="middle" fill="#3A2A20">4</text>
+          <line x1="250" y1="120" x2="190" y2="100" stroke="#6B5647" stroke-width=".8"/><circle cx="180" cy="96" r="10" fill="#fff" stroke="#3A2A20" stroke-width="1"/><text x="180" y="100" text-anchor="middle" fill="#3A2A20">5</text>
+          <line x1="271" y1="110" x2="330" y2="70" stroke="#6B5647" stroke-width=".8"/><circle cx="340" cy="64" r="10" fill="#fff" stroke="#3A2A20" stroke-width="1"/><text x="340" y="68" text-anchor="middle" fill="#3A2A20">6</text>
+          <line x1="150" y1="342" x2="150" y2="316" stroke="#6B5647" stroke-width=".8"/><circle cx="150" cy="306" r="10" fill="#fff" stroke="#3A2A20" stroke-width="1"/><text x="150" y="310" text-anchor="middle" fill="#3A2A20">7</text>
+          <line x1="560" y1="352" x2="560" y2="330" stroke="#6B5647" stroke-width=".8"/><circle cx="560" cy="320" r="10" fill="#fff" stroke="#3A2A20" stroke-width="1"/><text x="560" y="324" text-anchor="middle" fill="#3A2A20">8</text>
+          <line x1="520" y1="92" x2="480" y2="120" stroke="#6B5647" stroke-width=".8"/><circle cx="472" cy="128" r="10" fill="#fff" stroke="#3A2A20" stroke-width="1"/><text x="472" y="132" text-anchor="middle" fill="#3A2A20">9</text>
+          <line x1="440" y1="205" x2="470" y2="222" stroke="#6B5647" stroke-width=".8"/><circle cx="480" cy="228" r="10" fill="#fff" stroke="#3A2A20" stroke-width="1"/><text x="480" y="232" text-anchor="middle" fill="#3A2A20">10</text>
+          <line x1="370" y1="160" x2="395" y2="130" stroke="#6B5647" stroke-width=".8"/><circle cx="400" cy="122" r="10" fill="#fff" stroke="#3A2A20" stroke-width="1"/><text x="400" y="126" text-anchor="middle" fill="#3A2A20">T</text>
+        </g>
+        <!-- legend -->
+        <g font-size="12.5" fill="#3A2A20" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif">
+          <text x="20" y="412" font-weight="500">Legenda (ordem: do plano profundo ao superficial)</text>
+          <text x="20" y="432">1 · 1ª costela</text><text x="20" y="452">2 · Escaleno médio</text><text x="20" y="472">3 · Troncos do plexo (sup/méd/inf)</text><text x="20" y="492">4 · Artéria subclávia (2ª porção)</text>
+          <text x="250" y="432">5 · Escaleno anterior</text><text x="250" y="452">6 · Nervo frênico (lateral → medial)</text><text x="250" y="472">7 · Veia subclávia (anterior ao 5)</text><text x="250" y="492">8 · Clavícula (em transparência)</text>
+          <text x="470" y="432">9 · Omo-hióideo, seccionado</text><text x="470" y="452">10 · Costela cervical (variante)</text><text x="470" y="472">T · Triângulo interescalênico</text><text x="470" y="492">→ Secção do 5 rente à costela</text>
+        </g>
+        <g font-size="11.5" fill="#6B5647" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif">
+          <text x="20" y="516">Vista: incisão supraclavicular direita, 2 cm acima da clavícula; olhar ântero-superior, perpendicular ao campo.</text>
+          <text x="20" y="532">Paciente: decúbito dorsal, coxim interescapular, cabeça rodada à esquerda, braço direito ao lado do corpo.</text>
+          <text x="20" y="548">Equipe: cirurgião à direita do paciente, auxiliar na cabeceira.</text>
+          <text x="20" y="564">Âncoras: clavícula na borda inferior; ECM (cabeça clavicular) medial; trapézio lateral; gordura rebatida.</text>
+        </g>
+      </svg>
+      <div class="cap">Suposições declaradas: calibres reduzidos para leitura; a clavícula está desenhada translúcida para mostrar a veia, que na cirurgia real só aparece com afastamento caudal do osso; a costela cervical é a variante mais frequente (articulada com a 1ª costela sob a artéria e o tronco inferior) e está tracejada porque nem sempre existe.</div>
+    </div>
+    <div class="panel">
+      <div><div class="lbl">Via de acesso</div><div class="seg" id="viaSel">
+        <button data-via="supra" class="on">Supraclavicular</button>
+        <button data-via="trans">Transaxilar (Roos)</button>
+        <button data-via="infra">Infraclavicular</button>
+        <button data-via="para">Paraclavicular</button></div></div>
+      <h3 id="viaT"></h3>
+      <dl class="kv" id="viaKV"></dl>
+      <div class="verd" id="viaVerd"></div>
+      <div class="small">Passe o seletor e observe o que fica em destaque na prancha: só o que a via expõe bem permanece com cor cheia.</div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>Três estruturas mandam nessa dissecção. O frênico desce pela face anterior do escaleno anterior de lateral para medial — o único nervo do corpo que faz esse trajeto — e por isso você o identifica antes de tocar no músculo e o afasta medialmente antes de seccionar a inserção no tubérculo da primeira costela. A artéria está imediatamente atrás do músculo que você acabou de cortar: o escaleno anterior é a cortina que a separa da veia, e cortá-lo sem ver o que há atrás é a lesão vascular clássica dessa via. E o tronco inferior está apoiado na costela, atrás da artéria: é ele que a costela cervical levanta, e é ele que sofre com a tração do afastador.</p>
+    <p>À esquerda existe uma quarta estrutura que a prancha direita não mostra: o ducto torácico, que se arqueia sobre a artéria subclávia para desembocar na confluência jugulo-subclávia. Quilotórax e fístula quilosa são a complicação da fossa supraclavicular esquerda, e a banca gosta de perguntar o lado.</p>
+  </div>
+</section>
+
+<!-- ================= 7 ================= -->
+<section class="ch" id="c7">
+  <div class="num">CAPÍTULO 7</div>
+  <h2>Forja: a questão-mãe e sete pivôs</h2>
+  <p class="sub">A primeira é a questão como a banca a escreveria. Cada uma seguinte troca um dado (destacado) e a conduta vira. Responda antes de abrir o comentário.</p>
+  <div class="score"><span id="fScore">0 / 0</span><button id="fReset">Recomeçar</button></div>
+  <div id="forge"></div>
+</section>
+
+<!-- ================= 8 ================= -->
+<section class="ch" id="c8">
+  <div class="num">CAPÍTULO 8</div>
+  <h2>Tabela-mãe: gatilho → conduta</h2>
+  <p class="sub">Um cartão por linha de conduta. A cor da borda diz a classe: teal para conservador, âmbar para atenção ao relógio, vermelho para agir agora, violeta para individualizar.</p>
+  <div class="cards">
+    <div class="card b"><div class="t">Neurogênico sem atrofia, sem fisioterapia prévia</div><div class="g">Gatilho: parestesias C8–T1 posicionais, Roos +, ENMG normal ou inespecífica</div>Fisioterapia estruturada (postura, alongamento de escalenos e peitoral menor, fortalecimento de cintura escapular) por ≥ 8 semanas + AINE. Nada de bisturi. Bloqueio de escaleno com anestésico/toxina botulínica como teste terapêutico e preditor de resposta cirúrgica.</div>
+    <div class="card m"><div class="t">Neurogênico refratário a fisioterapia ou com atrofia / ENMG positiva</div><div class="g">Gatilho: ≥ 8 semanas sem melhora, mão de Gilliatt-Sumner, SNAP do cutâneo antebraquial medial reduzido</div>Descompressão cirúrgica: escalenectomia anterior e média supraclavicular (± ressecção da 1ª costela e neurólise) ou ressecção transaxilar da 1ª costela. Costela cervical/banda fibrosa sempre ressecada. Resultado menos previsível dos três fenótipos — informe o paciente.</div>
+    <div class="card d"><div class="t">Venoso agudo ≤ 14 dias (Paget-Schroetter)</div><div class="g">Gatilho: jovem, braço dominante, esforço, edema + cianose + colaterais, duplex/venografia com trombo</div>Anticoagulação imediata + trombólise dirigida por cateter → ressecção da 1ª costela (transaxilar, infraclavicular ou paraclavicular) com venólise precoce → venografia pós-operatória; angioplastia com balão se estenose residual. Anticoagular ~3 meses. Stent só após descompressão, e raramente.</div>
+    <div class="card w"><div class="t">Venoso subagudo &gt; 14 dias ou trombo organizado</div><div class="g">Gatilho: mesmo quadro, mas semanas de evolução; trombólise pouco eficaz</div>Anticoagulação plena (≥ 3 meses) e descompressão cirúrgica eletiva com venografia intraoperatória; reconstrução venosa (venoplastia com patch, bypass jugular) em casos selecionados. Trombólise não é a resposta.</div>
+    <div class="card m"><div class="t">Compressão venosa intermitente sem trombose (McCleery)</div><div class="g">Gatilho: edema e cianose posicionais que somem em repouso; duplex dinâmico com oclusão só em abdução</div>Descompressão eletiva (ressecção da 1ª costela) em sintomáticos; sem trombólise, sem anticoagulação prolongada. É o estágio "pré-Paget-Schroetter".</div>
+    <div class="card d"><div class="t">Arterial com aneurisma pós-estenótico / trombo mural / embolia (Scher II–III)</div><div class="g">Gatilho: costela cervical, sopro supraclavicular, pulso assimétrico, isquemia digital unilateral, Raynaud unilateral</div>Cirurgia sem esperar: ressecção da costela cervical/1ª costela + escalenectomia anterior (via supraclavicular ± infraclavicular) + ressecção do segmento arterial doente com interposição (safena ou PTFE) + tromboembolectomia distal. Se isquemia aguda do membro: heparina e embolectomia primeiro. Simpatectomia torácica em isquemia digital fixa selecionada.</div>
+    <div class="card w"><div class="t">Arterial estenose com dilatação leve, assintomático (Scher 0–I)</div><div class="g">Gatilho: costela cervical de achado com assimetria de pulso, sem trombo</div>Descompressão (ressecção óssea + escalenectomia) para prevenir a progressão; reconstrução arterial só se dilatação significativa ou lesão intimal. Individualizar — muitos autores indicam a descompressão profilática justamente porque a história natural é a embolia.</div>
+    <div class="card b"><div class="t">Costela cervical assintomática de achado radiológico</div><div class="g">Gatilho: RX por outro motivo, exame normal</div>Nada. 0,5–1% da população tem; a grande maioria nunca adoece. Orientar sinais de alerta (mão fria, dedo pálido, parestesias em C8–T1).</div>
+    <div class="card d"><div class="t">Mão "de desfiladeiro" com Horner, dor no ombro e tabagismo</div><div class="g">Gatilho: dor progressiva noturna, ptose/miose, massa apical no RX</div>Não é desfiladeiro: tumor de Pancoast invadindo T1/C8. TC de tórax, biópsia, estadiamento. O RX de tórax que você pediu para ver a costela cervical serve para ver o ápice.</div>
+  </div>
+</section>
+
+</main>
+<footer class="wrap foot">Construído para o ENARE R+ Cirurgia 2027 a partir de Sabiston 21ª ed., Rutherford's Vascular Surgery 10ª ed., padrões de relato da Society for Vascular Surgery para desfiladeiro torácico (Illig et al., 2016), Urschel &amp; Patel (Ann Thorac Surg 2008) e Gilliatt &amp; Sumner (1970). Percentuais de patência e falha são aproximações de séries clássicas para fins de raciocínio, não metas assistenciais.</footer>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
+const pct=x=>Math.round(x*100).toString()+'%';
+function seg(sel,attr,cb){const box=$(sel);if(!box)return;box.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||!box.contains(b))return;box.querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on');cb(b.dataset[attr],b);});}
+function setSeg(sel,attr,val){const box=$(sel);if(!box)return;box.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x.dataset[attr]===val));}
+
+/* rail */
+const links=$$('.rail a');const secs=links.map(a=>$(a.getAttribute('href')));
+const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+en.target.id));}});},{rootMargin:'-30% 0px -60% 0px'});
+secs.forEach(s=>s&&io.observe(s));
+
+/* ===== 1. ANGIOGRAFIA ===== */
+const A={vessel:'v',cause:'normal',abd:0,extra:0};
+const cv=$('#ang'),cx=cv.getContext('2d');
+const noise=document.createElement('canvas');noise.width=640;noise.height=560;
+(function(){const c=noise.getContext('2d');const im=c.createImageData(640,560);const d=im.data;for(let i=0;i<d.length;i+=4){const v=128+Math.round((Math.random()+Math.random()+Math.random()-1.5)*40);d[i]=d[i+1]=d[i+2]=v;d[i+3]=255;}c.putImageData(im,0,0);})();
+function stenosis(){const t=A.abd/180,c=A.cause,v=A.vessel;let s=0,site='cc';
+ if(v==='v'){ if(c==='normal')s=.08+.27*t; else if(c==='cc')s=.30+.65*t; else if(c==='rib'){s=.05+.15*t;} else if(c==='scal'){s=.02*t;site='none';} else {s=t<.5?.04:.04+(t-.5)*1.25;site='pm';} }
+ else { if(c==='normal')s=.05+.30*t; else if(c==='cc')s=.15+.55*t; else if(c==='rib'){s=.55+.30*t;site='is';} else if(c==='scal'){s=.35+.35*t;site='is';} else {s=t<.5?.04:.04+(t-.5)*1.4;site='pm';} }
+ return {s:Math.min(s,.96),site};}
+function siteX(site){return site==='is'?215:site==='pm'?450:300;}
+function drawAng(){const W=640,H=560;const {s,site}=stenosis();const t=A.abd/180;
+ cx.fillStyle='#D9D9D9';cx.fillRect(0,0,W,H);
+ const g=cx.createRadialGradient(320,280,120,320,280,420);g.addColorStop(0,'rgba(255,255,255,0)');g.addColorStop(1,'rgba(0,0,0,.18)');cx.fillStyle=g;cx.fillRect(0,0,W,H);
+ // ghost bones
+ cx.save();cx.globalAlpha=.55;cx.fillStyle='#EDEDED';cx.strokeStyle='#BDBDBD';cx.lineWidth=1.5;
+ const cy0=200+70*t; // clavicle descends with abduction
+ cx.beginPath();cx.moveTo(150,cy0+30);cx.quadraticCurveTo(300,cy0-40,480,cy0+10);cx.lineTo(480,cy0+58);cx.quadraticCurveTo(300,cy0+8,150,cy0+78);cx.closePath();cx.fill();cx.stroke();
+ cx.beginPath();cx.moveTo(120,440);cx.quadraticCurveTo(300,380,500,420);cx.lineTo(500,460);cx.quadraticCurveTo(300,420,120,480);cx.closePath();cx.fill();cx.stroke();
+ if(A.cause==='rib'){cx.beginPath();cx.moveTo(300,395);cx.quadraticCurveTo(240,350,190,300);cx.lineTo(206,290);cx.quadraticCurveTo(256,340,314,386);cx.closePath();cx.fill();cx.stroke();}
+ if(A.cause==='pm'){cx.beginPath();cx.moveTo(560,150+60*t);cx.lineTo(430,300+40*t);cx.lineTo(438,318+40*t);cx.lineTo(572,168+60*t);cx.closePath();cx.fill();cx.stroke();}
+ cx.restore();
+ // vessel
+ const W0=A.vessel==='v'?30:21;const sx=siteX(site);const flow=A.vessel==='v'?-1:1; // vein flows medially, artery laterally
+ const cl=x=>330-38*Math.sin(Math.PI*(x-30)/580);
+ const dil=(A.vessel==='a'&&s>.45&&(A.cause==='rib'||A.cause==='scal'||A.cause==='cc'))?(s-.45)/.5:0;
+ const wid=x=>{let w=W0*(1-(site==='none'?0:s)*Math.exp(-((x-sx)**2)/(2*22*22)));if(dil>0)w+=W0*.75*dil*Math.exp(-((x-(sx+118))**2)/(2*40*40));return Math.max(w,W0*.06);};
+ const top=[],bot=[];for(let x=30;x<=610;x+=4){const y=cl(x),w=wid(x)/2;top.push([x,y-w]);bot.push([x,y+w]);}
+ cx.fillStyle='rgba(30,30,32,.86)';cx.beginPath();top.forEach((p,i)=>i?cx.lineTo(p[0],p[1]):cx.moveTo(p[0],p[1]));bot.reverse().forEach(p=>cx.lineTo(p[0],p[1]));cx.closePath();cx.fill();
+ // vein thrombus (filling defect) & collaterals
+ if(A.vessel==='v'&&A.extra===1){cx.save();cx.fillStyle='rgba(205,205,205,.85)';for(let x=sx+10;x<sx+230;x+=9){const y=cl(x),w=wid(x)*.36;cx.beginPath();cx.ellipse(x,y+(Math.sin(x*.7)*w*.5),7,w,0,0,Math.PI*2);cx.fill();}cx.restore();
+  cx.save();cx.strokeStyle='rgba(28,28,30,.85)';cx.lineWidth=3;cx.lineCap='round';[[0,0],[18,-22],[-14,26]].forEach((o,i)=>{cx.beginPath();cx.moveTo(200+o[0],320);cx.bezierCurveTo(150+o[0],150+o[1],420+o[0],90+o[1],470+o[0],320);cx.stroke();});cx.restore();}
+ // arterial mural thrombus + emboli
+ if(A.vessel==='a'&&A.extra===1&&dil>0){cx.save();cx.fillStyle='rgba(200,200,200,.8)';const x0=sx+118,y0=cl(x0),w=wid(x0)/2;cx.beginPath();cx.ellipse(x0,y0+w*.45,40,w*.5,0,0,Math.PI*2);cx.fill();
+  cx.fillStyle='rgba(28,28,30,.9)';for(let i=0;i<5;i++){const ex=sx+190+i*36;cx.beginPath();cx.arc(ex,cl(ex)+wid(ex)*.15,3.2,0,Math.PI*2);cx.fill();}cx.restore();}
+ // stenosis annotation
+ if(site!=='none'&&s>.15){cx.save();cx.setLineDash([5,4]);cx.strokeStyle='#9A2B22';cx.lineWidth=1.4;cx.beginPath();cx.ellipse(sx,cl(sx),52,W0*1.3,0,0,Math.PI*2);cx.stroke();cx.setLineDash([]);cx.fillStyle='#9A2B22';cx.font='500 14px "IBM Plex Mono",monospace';cx.fillText('−'+Math.round(s*100)+'%',sx-18,cl(sx)+W0*1.3+18);cx.restore();}
+ // noise
+ cx.save();cx.globalAlpha=.16;cx.globalCompositeOperation='multiply';cx.drawImage(noise,0,0);cx.restore();
+ // marks
+ cx.fillStyle='#333';cx.font='500 13px "IBM Plex Mono",monospace';cx.fillText('MEDIAL',14,26);cx.textAlign='right';cx.fillText('LATERAL',626,26);cx.textAlign='left';
+ cx.fillText(A.vessel==='v'?'FLEBOGRAFIA · MSD':'ARTERIOGRAFIA · MSD',14,548);cx.textAlign='right';cx.fillText('abdução '+A.abd+'°',626,548);cx.textAlign='left';
+ cx.fillRect(500,520,100,3);cx.font='12px "IBM Plex Mono",monospace';cx.fillText('5 cm',540,514);
+ cx.font='11px "IBM Plex Sans",sans-serif';cx.fillStyle='#555';cx.fillText('clavícula',300,cy0+26);cx.fillText('1ª costela',290,446);
+ if(A.cause==='rib')cx.fillText('costela cervical',312,392);
+ if(A.cause==='pm')cx.fillText('peitoral menor',470,150+60*t);
+ // readouts
+ $('#rSten').textContent=site==='none'?'0%':Math.round(s*100)+'%';
+ $('#rSite').textContent=site==='none'?'não há — a veia não passa aqui':site==='is'?'triângulo interescalênico':site==='pm'?'retropeitoral menor':'espaço costoclavicular';
+ const v=A.vessel;let sign,col,verd,cls='';
+ if(v==='v'){sign=s>.7||A.extra?'edema, cianose, peso no braço':s>.4?'peso posicional, veias do ombro':'nenhum';col=(A.extra===1)?'colaterais do ombro (Urschel)':s>.8?'colaterais só em abdução':'ausentes';
+  if(A.cause==='scal'){verd='O escaleno anterior hipertrofiado não altera a veia: ela passa <em>anterior</em> ao músculo, fora do triângulo interescalênico. Alternativa que atribui Paget-Schroetter ao escaleno é distrator.';cls='m';}
+  else if(A.extra===1){verd='Falha de enchimento com colaterais: trombose de esforço — Paget-Schroetter. Braço dominante de uma nadadora, 2 dias: relógio da trombólise correndo.';cls='d';}
+  else if(A.cause==='cc'&&s>.7){verd='Oclusão posicional sem trombo: compressão venosa intermitente (McCleery). Descompressão eletiva em sintomático; sem trombólise.';cls='w';}
+  else if(A.cause==='normal'&&s>.25){verd='Redução de até um terço em abdução ocorre em gente saudável. Exame dinâmico "positivo" isolado não faz diagnóstico.';cls='b';}
+  else{verd='Veia pérvia, calibre uniforme. Se a suspeita é venosa e o exame neutro é normal, repita em abdução.';cls='';}
+ }else{sign=s>.6?'pulso radial ↓, sopro supraclavicular, PA ≥ 20 mmHg menor':s>.3?'pulso some na manobra':'nenhum';col=dil>0?'dilatação pós-estenótica'+(A.extra?' + trombo mural':''):'ausente';
+  if(A.extra===1&&dil>0){verd='Aneurisma pós-estenótico com trombo mural e êmbolos digitais: estágio III de Scher. Cirurgia sem esperar: costela + escalenectomia + interposição arterial + embolectomia.';cls='d';}
+  else if(dil>0){verd='Estenose fixa com jato pós-estenótico dilatando a parede: estágio I–II de Scher. É aqui que o trombo mural vai nascer — trate a compressão antes da embolia.';cls='w';}
+  else if(A.cause==='normal'&&s>.25){verd='Perda de pulso em hiperabdução em pessoa normal — Adson e Wright "positivos" em até metade dos assintomáticos.';cls='b';}
+  else{verd='Artéria de calibre regular. Fenótipo arterial exige lesão estrutural, não só compressão dinâmica.';cls='';}
+ }
+ $('#rSign').textContent=sign;$('#rCol').textContent=col;const vd=$('#angVerd');vd.className='verd '+cls;vd.innerHTML='<b>Leitura</b>'+verd;
+ $('#angExtraLbl').textContent=v==='v'?'Esforço repetitivo (trombose)':'Trombo mural + embolia distal';
+}
+seg('#angVessel','v',v=>{A.vessel=v;drawAng();});seg('#angCause','c',c=>{A.cause=c;drawAng();});seg('#angExtra','e',e=>{A.extra=+e;drawAng();});
+$('#angAbd').addEventListener('input',e=>{A.abd=+e.target.value;$('#angAbdV').textContent=A.abd+'°';drawAng();});
+drawAng();
+
+/* ===== 2. PORTAS ===== */
+const MAN={
+ '0':{c:[0,0,0],t:'Posição neutra',x:'As três portas abertas. Selecione uma manobra: a porta que ela fecha se move, e o texto diz o que a banca aceita como "teste positivo".',cls:''},
+ adson:{c:[.85,.15,0],t:'Adson (1927) — porta 1',x:'Cabeça rodada para o lado examinado, pescoço estendido, inspiração profunda: os escalenos encurtam e estreitam o triângulo. Positivo = pulso radial some ou sopro aparece. Sensibilidade e especificidade baixas — positivo em até metade dos assintomáticos.',cls:'w'},
+ halsted:{c:[.1,.9,.1],t:'Halsted / costoclavicular (1916) — porta 2',x:'Ombros para trás e para baixo, "posição militar": a clavícula desce sobre a 1ª costela. Positivo = pulso some ou sintomas reproduzem. É a geometria do Paget-Schroetter e da mochila pesada.',cls:'w'},
+ roos:{c:[.3,.75,.4],t:'Roos · EAST (1966) — portas 2 e 3',x:'Braços a 90° de abdução e rotação externa, cotovelos a 90°, abrir e fechar as mãos por 3 minutos. Positivo = reprodução das parestesias/peso antes dos 3 minutos, mão pálida ou cianótica. O mais útil para o fenótipo neurogênico porque reproduz o sintoma, não só o pulso.',cls:'b'},
+ wright:{c:[.1,.4,.9],t:'Wright · hiperabdução (1945) — porta 3',x:'Braço a 180°: o feixe enrola no processo coracoide sob o tendão do peitoral menor. Positivo = pulso some/sintomas. Também positivo em muitos normais.',cls:'w'}};
+function closeGates(c){$('#g1l').style.transform=`translate(${22*c[0]}px,0)`;$('#g1r').style.transform=`translate(${-22*c[0]}px,0)`;$('#g2t').style.transform=`translate(0,${72*c[1]}px)`;$('#g3t').style.transform=`translate(0,${62*c[2]}px)`;$('#g3c').style.transform=`translate(0,${-6*c[2]}px)`;}
+['#g1l','#g1r','#g2t','#g3t','#g3c'].forEach(s=>{$(s).style.transition='transform .6s cubic-bezier(.4,0,.2,1)';});
+seg('#manv','m',m=>{const d=MAN[m];closeGates(d.c);const v=$('#manvVerd');v.className='verd '+d.cls;v.innerHTML='<b>'+d.t+'</b>'+d.x;});
+seg('#cribBtn','r',r=>{$('#crib').style.transition='opacity .4s';$('#crib').style.opacity=r==='1'?1:0;$('#g1c').style.transition='transform .5s';$('#g1c').style.transform=r==='1'?'translate(0,-14px)':'';});
+const GATES={1:{t:'Porta 1 · Triângulo interescalênico',kv:[['Nome histórico','Síndrome do escaleno anterior — Naffziger, 1935; "síndrome da costela cervical" — Adson'],['Limites','Escaleno anterior (anterior), escaleno médio (posterior), 1ª costela (assoalho)'],['Conteúdo','Artéria subclávia e os três troncos do plexo; o tronco inferior deitado na costela'],['NÃO contém','Veia subclávia — passa anterior ao escaleno anterior. Nervo frênico está sobre o músculo, fora do triângulo'],['Fecha com','Adson; costela cervical; banda fibrosa (Roos); hipertrofia/fibrose pós-trauma cervical ("whiplash")'],['Fenótipo','Neurogênico (o mais comum) e arterial'],['Cirurgia que abre','Escalenectomia anterior e média via supraclavicular ± ressecção da costela cervical/1ª costela']]},
+2:{t:'Porta 2 · Espaço costoclavicular',kv:[['Nome histórico','Síndrome costoclavicular — Falconer & Weddell, 1943'],['Limites','Clavícula, m. subclávio e lig. costocoracoide (teto); 1ª costela (assoalho); escaleno anterior atrás, medialmente'],['Conteúdo','Veia (mais anterior e medial), artéria e plexo — os três juntos'],['Particularidade','Única porta com dois ossos: é onde a veia é esmagada por retropulsão + abdução repetidas'],['Fecha com','Halsted, Roos; calo/pseudoartrose de clavícula; mochila; 1ª costela anômala'],['Fenótipo','Venoso — casa do Paget-Schroetter e do McCleery; também neurogênico'],['Cirurgia que abre','Ressecção da 1ª costela (transaxilar, infraclavicular ou paraclavicular) com venólise']]},
+3:{t:'Porta 3 · Espaço retropeitoral menor (subcoracoide)',kv:[['Nome histórico','Síndrome de hiperabdução — Wright, 1945'],['Limites','Tendão do peitoral menor e processo coracoide (anterior/superior); gradil costal 2ª–4ª costelas (posterior)'],['Conteúdo','Fascículos do plexo em torno da artéria axilar; veia axilar medial e inferior'],['Fecha com','Wright (hiperabdução); hipertrofia/encurtamento do peitoral menor em atletas de arremesso'],['Fenótipo','Neurogênico com dor anterior no ombro/peitoral; raramente vascular'],['Cirurgia que abre','Tenotomia do peitoral menor (pode ser feita isolada ou associada à descompressão proximal)']]}};
+$('#gates').addEventListener('click',e=>{const g=e.target.closest('[data-g]');if(!g)return;const d=GATES[g.dataset.g];$('#gcT').textContent=d.t;$('#gcKV').innerHTML=d.kv.map(k=>`<dt>${k[0]}</dt><dd>${k[1]}</dd>`).join('');});
+
+/* ===== 3. PLEXO E MÃO ===== */
+const LES={
+ tos:{t:'Desfiladeiro neurogênico verdadeiro (tronco inferior C8–T1)',les:[200,255],hi:['rC8','rT1','tI','dv5','cM','nMedM','nUln','nMACN'],
+  mot:{mThenar:.75,mHypo:.45,mInter:.45},sen:{sLittle:.5,sRingM:.5,sPalmU:.35,sMACN:.55},
+  kv:[['Motor','Atrofia tenar lateral (abdutor curto do polegar, fibras T1) maior que hipotenar e interósseos — mão de Gilliatt-Sumner'],['Sensitivo','Borda ulnar da mão, 5º e metade do 4º dedos, E borda medial do antebraço'],['ENMG','SNAP do cutâneo antebraquial medial ↓↓ (mais sensível); SNAP ulnar ↓; CMAP mediano (APB) ↓; SNAP mediano normal'],['Pista do enunciado','Piora com braço elevado; Roos +; costela cervical ou banda no RX; sem dor cervical, sem Horner']],
+  v:'Sensitivo do mediano preservado com motor do mediano comprometido = lesão proximal ao punho e distal ao gânglio: T1. Só o tronco inferior explica essa combinação.',cls:'w'},
+ ctc:{t:'Síndrome do túnel do carpo (mediano no punho)',les:[372,160],hi:['nMedL','nMedM'],
+  mot:{mThenar:.7,mHypo:0,mInter:0},sen:{sThumb:.5,sIndex:.5,sMiddle:.5,sRingL:.5,sPalmR:0,sMACN:0},
+  kv:[['Motor','Atrofia tenar (APB, oponente); hipotenar e interósseos poupados'],['Sensitivo','3½ dedos radiais; a eminência tenar é poupada (ramo palmar cutâneo sai antes do túnel)'],['ENMG','Latência distal do mediano ↑, SNAP mediano ↓; ulnar e cutâneo antebraquial medial normais'],['Pista','Parestesia noturna, Phalen/Tinel, gestante, hipotireoidismo, movimento repetitivo']],
+  v:'Aqui o mediano sensitivo cai — exatamente o que no desfiladeiro fica normal. É a linha da ENMG que separa as duas mãos.',cls:'b'},
+ cub:{t:'Síndrome do túnel cubital (ulnar no cotovelo)',les:[372,262],hi:['nUln'],
+  mot:{mThenar:0,mHypo:.7,mInter:.7},sen:{sLittle:.55,sRingM:.55,sPalmU:.45,sMACN:0},
+  kv:[['Motor','Hipotenar, interósseos, adutor do polegar (Froment); tenar lateral poupado — ao contrário do desfiladeiro'],['Sensitivo','1½ dedos ulnares E dorso ulnar da mão (ramo dorsal sai proximal ao punho)'],['ENMG','Bloqueio/lentificação da condução ulnar através do cotovelo; cutâneo antebraquial medial normal'],['Pista','Apoio do cotovelo, flexão prolongada, Tinel no sulco epitrócleo-olecraniano']],
+  v:'Antebraço medial sem hipoestesia e tenar preservado: o problema é distal ao cutâneo antebraquial medial e não envolve T1 para o mediano.',cls:'b'},
+ c8:{t:'Radiculopatia C8 (pré-ganglionar)',les:[62,232],hi:['rC8'],
+  mot:{mThenar:.5,mHypo:.5,mInter:.5},sen:{sLittle:.5,sPalmU:.4,sMACN:.4},
+  kv:[['Motor','Fraqueza difusa dos intrínsecos (tenar e hipotenar), flexores dos dedos'],['Sensitivo','Dermátomo C8: 5º dedo, borda ulnar da mão e do antebraço'],['ENMG','SNAPs NORMAIS (corpo celular no gânglio, distal à lesão); fibrilações em paraespinhais e miótomo C8'],['Pista','Dor cervical irradiada, Spurling +, hérnia C7–T1 na RM']],
+  v:'A mão pintada é quase a do desfiladeiro. A diferença inteira está numa linha: potenciais sensitivos preservados, porque a lesão fica antes do gânglio da raiz dorsal.',cls:'m'},
+ panc:{t:'Tumor de Pancoast (sulco superior invadindo T1–C8)',les:[52,262],hi:['rC8','rT1','tI','dv5','cM','nMedM','nUln','nMACN'],
+  mot:{mThenar:.7,mHypo:.5,mInter:.5},sen:{sLittle:.5,sRingM:.5,sPalmU:.35,sMACN:.55},
+  kv:[['Motor / sensitivo','Idênticos ao desfiladeiro neurogênico — o tumor comprime as mesmas fibras'],['O que sobra','Dor no ombro/escápula progressiva e noturna; síndrome de Horner (gânglio estrelado); tabagismo; emagrecimento'],['Imagem','RX de tórax: opacidade apical, destruição de 1ª–2ª costelas; TC/RM'],['ENMG','Igual ao desfiladeiro (pós-ganglionar)']],
+  v:'Toda mão de desfiladeiro em fumante com dor progressiva merece um RX do ápice antes da fisioterapia. O RX que você pediu para achar costela cervical existe também para isso.',cls:'d'}};
+const HI='#D97A1F';
+function setLes(k){const d=LES[k];$$('#plexG path').forEach(p=>{p.style.stroke=d.hi.includes(p.id)?HI:'#E0B93C';p.style.strokeWidth=d.hi.includes(p.id)?'9':'';});
+ $('#lesion').style.opacity=1;$('#lesC').setAttribute('cx',d.les[0]);$('#lesC').setAttribute('cy',d.les[1]);
+ ['mThenar','mHypo','mInter'].forEach(id=>$('#'+id).style.opacity=d.mot[id]||0);
+ ['sLittle','sRingM','sRingL','sMiddle','sIndex','sThumb','sPalmU','sPalmR','sMACN'].forEach(id=>$('#'+id).style.opacity=(d.sen[id]||0));
+ $('#lesT').textContent=d.t;$('#lesKV').innerHTML=d.kv.map(k=>`<dt>${k[0]}</dt><dd>${k[1]}</dd>`).join('');const v=$('#lesVerd');v.className='verd '+d.cls;v.innerHTML='<b>O detalhe que decide</b>'+d.v;}
+$$('#plexG path, #hand [id^=s], #hand [id^=m]').forEach(el=>el.style.transition='opacity .4s, stroke .3s');
+seg('#lesSel','l',setLes);setLes('tos');
+
+/* ===== 4. MÁQUINA ===== */
+const DM={ph:'n',n:{q2:'none',q3:'no',q4:'no'},v:{q2:'thr',q3:'le14',q4:'resid'},a:{q2:'s1',q3:'no',q4:'yes'}};
+const DMQ={
+ n:{l2:'2 · Fisioterapia estruturada já realizada',o2:[['none','Nenhuma'],['short','< 8 semanas'],['fail','≥ 8 semanas sem melhora']],l3:'3 · Atrofia intrínseca ou ENMG com SNAP do cutâneo antebraquial medial ↓',o3:[['no','Não'],['yes','Sim']],l4:'4 · Costela cervical / banda fibrosa na imagem',o4:[['no','Não'],['yes','Sim']]},
+ v:{l2:'2 · Apresentação',o2:[['thr','Trombose confirmada no duplex/venografia'],['int','Compressão intermitente, sem trombo']],l3:'3 · Tempo desde o início dos sintomas',o3:[['le14','≤ 14 dias'],['gt14','> 14 dias']],l4:'4 · Venografia após a trombólise',o4:[['resid','Estenose residual extrínseca'],['clean','Sem estenose residual']]},
+ a:{l2:'2 · Estágio de Scher',o2:[['s1','I · estenose + dilatação pós-estenótica'],['s2','II · aneurisma com trombo mural'],['s3','III · embolização distal']],l3:'3 · Isquemia aguda do membro agora',o3:[['no','Não'],['yes','Sim']],l4:'4 · Costela cervical ou 1ª costela anômala',o4:[['yes','Sim'],['no','Não']]}};
+function buildDM(){const p=DM.ph,q=DMQ[p];[2,3,4].forEach(i=>{$('#dmL'+i).textContent=q['l'+i];$('#dmS'+i).innerHTML=q['o'+i].map(o=>`<button data-v="${o[0]}" class="${DM[p]['q'+i]===o[0]?'on':''}">${o[1]}</button>`).join('');});runDM();}
+[2,3,4].forEach(i=>seg('#dmS'+i,'v',v=>{DM[DM.ph]['q'+i]=v;runDM();}));
+seg('#dmPh','v',v=>{DM.ph=v;buildDM();});
+function V(id,cls,t,x){const e=$(id);e.className='verd '+cls;e.innerHTML='<b>'+t+'</b>'+x;}
+function runDM(){const p=DM.ph,s=DM[p];let steps=[],forb='',alt='',note='';
+ if(p==='n'){V('#dmV1','w','Neurogênico','95% dos casos. Diagnóstico clínico; ENMG separa o "verdadeiro" (com déficit objetivo) do "disputado" (só sintomas). Relógio lento.');
+  const atro=s.q3==='yes',fail=s.q2==='fail',bone=s.q4==='yes';
+  V('#dmV2',fail?'m':'b',fail?'Falhou':'Ainda não esgotada',fail?'Refratariedade define candidatura cirúrgica.':'A maioria melhora com programa de 8–12 semanas. Cirurgia agora é o distrator.');
+  V('#dmV3',atro?'d':'b',atro?'Déficit objetivo':'Sem déficit',atro?'Mão de Gilliatt-Sumner / ENMG positiva = desfiladeiro neurogênico verdadeiro: a fisioterapia não recupera axônio perdido; descomprimir mais cedo.':'Sem atrofia, o tempo joga a favor do tratamento conservador.');
+  V('#dmV4',bone?'w':'b',bone?'Substrato ósseo':'Sem osso anômalo',bone?'Costela cervical/banda: alvo definido para a ressecção quando operar. Não indica cirurgia por si só se assintomática.':'A compressão é muscular/postural — resposta melhor à fisioterapia.');
+  if(atro||fail){steps=['Confirmar com ENMG (SNAP do cutâneo antebraquial medial) e RX/TC cervical para planejar o osso a ressecar','Bloqueio do escaleno anterior com anestésico como teste preditor de resposta','Descompressão: escalenectomia anterior e média supraclavicular + neurólise'+(bone?' + ressecção da costela cervical/banda':'')+' (ou ressecção transaxilar da 1ª costela)','Fisioterapia pós-operatória precoce; avisar que o alívio completo é menos previsível que nos fenótipos vasculares'];forb='Operar sem ENMG/imagem nem tentativa conservadora quando não há déficit; prometer cura. Também proibido: tratar como túnel do carpo por causa do tenar atrofiado.';alt=atro?'Questão 4 (letra D): identificar o desfiladeiro neurogênico verdadeiro pelo padrão ENMG':'Cirurgia após falha conservadora — não é a alternativa da questão 5';}
+  else{steps=['Fisioterapia estruturada ≥ 8 semanas: postura, alongamento de escalenos e peitoral menor, fortalecimento escapular, ergonomia','AINE, calor local; considerar toxina botulínica no escaleno anterior','Reavaliar em 8–12 semanas: melhora → manter; sem melhora → ENMG, imagem e discutir cirurgia','RX cervical/tórax desde o início: costela cervical E ápice pulmonar'];forb='Indicar ressecção da 1ª costela como primeira conduta. Em prova, "descompressão cirúrgica imediata" no neurogênico sem déficit é o distrator mais plantado.';alt='Questão 5 (letra E): fisioterapia como primeira conduta';}
+ }
+ if(p==='v'){V('#dmV1','','Venoso',"3–5%. Trombose de esforço da subclávia (Paget-Schroetter) ou compressão intermitente (McCleery). Relógio de 14 dias.");
+  const thr=s.q2==='thr',early=s.q3==='le14',resid=s.q4==='resid';
+  V('#dmV2',thr?'d':'m',thr?'Trombose':'Sem trombo',thr?'Anticoagulação começa agora, na sala.':'Sem trombo não há lise nem anticoagulação prolongada; a discussão é descompressão eletiva.');
+  V('#dmV3',early?'d':'w',early?'Dentro da janela':'Fora da janela',early?'Trombólise dirigida por cateter tem alta taxa de recanalização até ~14 dias.':'Trombo organizado: lise pobre. Anticoagular e descomprimir eletivamente.');
+  V('#dmV4',resid?'w':'b',resid?'Estenose persiste':'Luz livre',resid?'A veia limpa continua no túnel fechado: é a costela, não o trombo, que dita o próximo passo. Balão só depois do osso.':'Mesmo sem estenose residual a compressão extrínseca persiste — a descompressão é o que evita a retrombose.');
+  if(!thr){steps=['Duplex dinâmico (abdução) confirmando oclusão posicional; venografia se dúvida','Sintomático: ressecção da 1ª costela com venólise, eletiva','Sem trombólise, sem anticoagulação prolongada'];forb='Trombólise ou anticoagulação por 3 meses numa veia sem trombo.';alt='Cenário McCleery — variação da questão 1 que a forja não usa como gabarito; reconheça a diferença';}
+  else if(early){steps=['Heparina imediata (HNF ou HBPM)','Trombólise dirigida por cateter (venografia com fio/cateter no trombo)','Descompressão cirúrgica precoce: ressecção da 1ª costela + venólise (transaxilar, infraclavicular ou paraclavicular)','Venografia pós-operatória: angioplastia com balão se estenose residual'+(resid?' (é o seu caso)':''),'Anticoagulação oral por ~3 meses'];forb='Stent antes da descompressão — esmaga e oclui. Anticoagulação isolada como conduta definitiva num jovem ativo. Angioplastia antes de tirar o osso.';alt=resid?'Questões 1 (letra A) e 3 (letra C)':'Questão 1 (letra A)';}
+  else{steps=['Anticoagulação plena por ≥ 3 meses','Duplex/venografia para mapear recanalização e a estenose extrínseca','Descompressão eletiva: ressecção da 1ª costela + venólise; venografia intraoperatória','Reconstrução venosa (patch, bypass jugular) em casos selecionados de oclusão longa sintomática'];forb='Trombólise de trombo com mais de 2 semanas; stent; abandonar o paciente só com anticoagulação sem discutir a causa.';alt='Questão 2 (letra B)';}
+ }
+ if(p==='a'){V('#dmV1','d','Arterial','~1%. Quase sempre há osso anômalo (costela cervical em ~60–80%). O relógio não existe: a lesão indica a cirurgia.');
+  const st=s.q2,isq=s.q3==='yes',bone=s.q4==='yes';
+  V('#dmV2',st==='s1'?'w':'d',st==='s1'?'Scher I':st==='s2'?'Scher II':'Scher III',st==='s1'?'Estenose com dilatação pós-estenótica: substrato do aneurisma. Descomprimir antes que trombe.':st==='s2'?'Aneurisma com trombo mural: fonte embólica ativa. Ressecar e reconstruir.':'Embolia digital/ulnar: já perdeu leito distal. Ressecar, reconstruir e desobstruir o que der.');
+  V('#dmV3',isq?'d':'b',isq?'Membro em risco agora':'Sem isquemia aguda',isq?'Heparina e revascularização do membro (embolectomia) antes de qualquer costela.':'Cirurgia programada, mas sem esperar semanas.');
+  V('#dmV4',bone?'w':'m',bone?'Osso anômalo presente':'Sem osso anômalo',bone?'Alvo claro: costela cervical/1ª costela + escaleno anterior.':'Raro: procurar banda fibrosa, calo de clavícula, hipertrofia de escaleno; a descompressão continua indicada.');
+  steps=[];if(isq)steps.push('Heparina sistêmica e embolectomia/trombectomia do membro (± trombólise intra-arterial) — salvar o membro primeiro');
+  steps.push('AngioTC/arteriografia com braço em abdução para mapear estenose, aneurisma e leito distal');
+  steps.push('Via supraclavicular ± infraclavicular: ressecção da '+(bone?'costela cervical/1ª costela':'1ª costela e de qualquer banda')+' + escalenectomia anterior');
+  if(st==='s1')steps.push('Reconstrução arterial só se dilatação significativa ou lesão intimal; caso contrário, descompressão e vigilância');else steps.push('Ressecção do segmento arterial doente com interposição de safena ou PTFE');
+  if(st==='s3')steps.push('Tromboembolectomia distal; simpatectomia torácica em isquemia digital fixa selecionada');steps.push('Antiagregação; seguimento com duplex');
+  forb='Anticoagular e observar um aneurisma com trombo mural; fisioterapia como conduta principal; tratar a mão fria unilateral como fenômeno de Raynaud primário.';alt='Questão 6 (letra C)';
+ }
+ $('#dmSteps').innerHTML=steps.map(t=>`<li>${t}</li>`).join('');$('#dmForbT').textContent=forb;$('#dmAltT').textContent=alt;$('#dmNote').textContent=note;}
+const PRE={larissa:{ph:'v',v:{q2:'thr',q3:'le14',q4:'resid'}},gustavo:{ph:'v',v:{q2:'thr',q3:'gt14',q4:'resid'}},anselmo:{ph:'n',n:{q2:'none',q3:'yes',q4:'no'}},rafael:{ph:'n',n:{q2:'none',q3:'no',q4:'no'}},marlene:{ph:'a',a:{q2:'s3',q3:'no',q4:'yes'}}};
+seg('#dmPre','p',k=>{const p=PRE[k];DM.ph=p.ph;Object.assign(DM[p.ph],p[p.ph]);setSeg('#dmPh','v',p.ph);buildDM();});
+buildDM();
+
+/* ===== 5. VEIA ===== */
+let VS;function vsReset(){VS={day:2,thr:1,org:false,dec:false,stent:false,crush:false,pta:false,ac:false,seq:[]};vsRender('Trombose aguda de esforço, dia 2. Colaterais visíveis no ombro. Escolha o primeiro passo.','');}
+function vsPat(){const s=VS;if(s.crush)return['< 20%','d'];if(s.dec){if(s.thr<=.2)return[s.pta||s.stent?'≈ 90–95%':'≈ 90%','b'];if(s.thr<=.6)return['≈ 60–70%','w'];return['≈ 40–50%','w'];}
+ if(s.thr<=.2)return['≈ 65–75% · retrombose 20–30%','w'];if(s.thr<=.6)return['≈ 30–50% funcional','w'];if(s.seq.length===0)return['—',''];return['baixa','d'];}
+function vsRender(msg,cls){const s=VS;$('#vsDay').textContent=s.day;$('#vsThrV').textContent=pct(s.thr);$('#vsStenV').textContent=s.dec?'10%':'60%';const p=vsPat();$('#vsPat').textContent=p[0];
+ $('#vsThr').style.opacity=s.thr;$('#vsThr').setAttribute('stroke-width',34*Math.max(s.thr,.3));$('#vsThr').setAttribute('stroke',s.org?'#5A4A44':'#7A2E2A');
+ $('#vsWedge').style.opacity=s.dec?0:1;$('#vsClav').style.transform=s.dec?'translate(0,-16px)':'';$('#vsClav').style.transition='transform .5s';
+ $('#vsCol').style.opacity=s.thr>.5?1:0;$('#vsStent').style.opacity=s.stent?1:0;$('#vsCrush').style.opacity=s.crush?1:0;$('#vsMsg').textContent=s.crush?'':(s.dec?'espaço costoclavicular aberto':'túnel ósseo fechado');
+ $('#vsSeq').textContent=s.seq.length?s.seq.join(' → '):'—';const v=$('#vsVerd');v.className='verd '+(cls||p[1]);v.innerHTML='<b>Dia '+s.day+'</b>'+msg;}
+['#vsThr','#vsCol','#vsWedge','#vsStent','#vsCrush'].forEach(x=>$(x).style.transition='opacity .5s');
+seg('#vsBtns','s',k=>{const s=VS;if(k==='reset'){vsReset();setSeg('#vsBtns','s','none');return;}
+ let msg='',cls='';
+ if(k==='ac'){s.ac=true;s.day+=1;s.seq.push('anticoagulação');msg=s.thr>.5?'Heparina impede a propagação; a luz continua cheia de trombo e o túnel continua fechado. Necessário — e insuficiente sozinho.':'Anticoagulação mantida. Se a descompressão já foi feita, é o fechamento correto: ~3 meses.';cls=s.dec?'b':'w';}
+ if(k==='cdt'){s.seq.push('trombólise por cateter');const early=s.day<=14;s.day+=2;s.ac=true;if(s.thr<=.2){msg='Não há trombo para lisar.';cls='w';}else if(early&&!s.org){s.thr=.1;msg='Lise completa em 24–48 h. A venografia de controle mostra a cunha extrínseca no espaço costoclavicular: a veia está limpa, mas continua presa. Se parar aqui, um em cada quatro retromboza.';cls='w';}else{s.thr=.6;msg='Trombo organizado: lise parcial, paredes irregulares. A janela de 14 dias passou — a janela aqui era anticoagular e descomprimir eletivamente.';cls='d';}}
+ if(k==='rib'){s.seq.push('ressecção da 1ª costela');s.day+=3;s.dec=true;if(s.crush){msg='Costela fora, mas o stent esmagado permanece dentro de uma veia ocluída: agora é reconstrução venosa ou bypass jugular. O erro anterior não se desfaz.';cls='d';}else if(s.thr<=.2){msg='Túnel aberto com a veia limpa: venografia pós-operatória para avaliar estenose intrínseca residual; balão se necessário; anticoagular 3 meses. É a sequência que vale >90% de patência.';cls='b';}else if(s.thr>=.9){msg='Descomprimiu com a veia ainda ocluída. Aceitável se seguido de venografia intraoperatória com lise/trombectomia; sozinho, deixa a veia trombosada num túnel aberto.';cls='w';}else{msg='Túnel aberto sobre uma veia parcialmente recanalizada: melhora o fluxo e impede a retrombose; a estenose intrínseca fibrótica pode exigir venoplastia.';cls='w';}}
+ if(k==='pta'){s.seq.push('angioplastia');s.day+=1;if(!s.dec){msg='Balão insufla, a veia abre, o balão sai — e a clavícula e a costela fecham a veia de novo antes de você tirar as luvas. Recuo elástico imediato: angioplastia antes da descompressão não resolve.';cls='d';}else if(s.thr>.3){msg='Não se dilata trombo. Lise ou trombectomia primeiro.';cls='d';}else{s.pta=true;msg='Estenose intrínseca residual tratada com balão numa veia já livre do osso. Patência a longo prazo excelente.';cls='b';}}
+ if(k==='stent'){s.seq.push('stent');s.day+=1;s.stent=true;if(!s.dec){s.crush=true;s.thr=1;msg='O stent fica preso entre dois ossos que se movem a cada abdução. Fratura, deformação, reoclusão: na série de Urschel, 100% dos stents colocados antes da descompressão falharam. Este é o distrator mais bem construído da prova.';cls='d';}else{msg='Stent após a descompressão: aceitável só em estenose intrínseca refratária ao balão; patência inferior à venoplastia cirúrgica. Raro.';cls='w';}}
+ if(k==='wait'){s.seq.push('3 meses');s.day+=90;if(s.stent&&!s.dec){s.crush=true;s.thr=1;msg='Três meses de abdução repetida sobre um stent sem descompressão: oclusão.';cls='d';}else if(!s.dec&&s.thr>.5){s.thr=.5;s.org=true;msg='Recanalização parcial com paredes fibrosadas e colaterais. Braço pesado ao esforço, edema vespertino: síndrome pós-trombótica do membro superior em boa parte dos pacientes. A trombólise já não é opção.';cls='w';}else if(!s.dec&&s.thr<=.2){if(Math.random()<.3){s.thr=.9;msg='Retrombose. Veia limpa em túnel fechado retromboza em cerca de um em cada quatro — este foi um deles.';cls='d';}else{msg='Sem retrombose até aqui, mas o túnel continua fechado e a próxima temporada de natação é uma roleta. A descompressão eletiva ainda está indicada.';cls='w';}}else if(s.dec){msg='Três meses de anticoagulação após a descompressão: fim do tratamento. Duplex de controle e alta.';cls='b';}else{msg='Tempo passou sem mudança relevante.';cls='w';}}
+ if(s.day>14&&s.thr>.3)s.org=true;vsRender(msg,cls);});
+vsReset();
+
+/* ===== 6. VIA ===== */
+const VIA={supra:{t:'Via supraclavicular',op:{s_rib:.7,s_sm:1,s_plex:1,s_art:1,s_sa:1,s_phr:1,s_vein:.35,s_clav:.78,s_crib:1,s_omo:1},kv:[['Indicação principal','Neurogênico (escalenectomia anterior e média + neurólise), costela cervical, todo o fenótipo arterial (reconstrução da subclávia)'],['Expõe bem','Escalenos, os três troncos, artéria subclávia 2ª porção, frênico, costela cervical'],['Expõe mal','Veia subclávia e a porção anterior da 1ª costela (atrás da clavícula) — combina-se com via infraclavicular quando a veia precisa de reconstrução'],['Risco típico','Nervo frênico (elevação diafragmática), plexo por tração, artéria atrás do escaleno anterior; à esquerda, ducto torácico (quilotórax)']],v:'É a via que ensina a anatomia — por isso é a da prancha.'},
+ trans:{t:'Via transaxilar (Roos, 1966)',op:{s_rib:1,s_sm:.55,s_plex:.55,s_art:.85,s_sa:.6,s_phr:.3,s_vein:1,s_clav:.5,s_crib:.6,s_omo:.3},kv:[['Indicação principal','Ressecção da 1ª costela — clássica para o venoso (Paget-Schroetter) e usada no neurogênico'],['Expõe bem','1ª costela inteira por baixo, veia, artéria e T1/tronco inferior vistos de baixo; cicatriz escondida'],['Expõe mal','Escalenos (escalenectomia limitada), costela cervical alta, artéria para reconstrução — não serve para o arterial'],['Risco típico','Nervo intercostobraquial (parestesia da face medial do braço), tronco inferior/T1, lesão de veia ou artéria sem controle proximal, pneumotórax, plexopatia por hiperabdução prolongada do braço']],v:'Braço do paciente suspenso em abdução: é o assistente que segura o desfiladeiro aberto para você.'},
+ infra:{t:'Via infraclavicular',op:{s_rib:.8,s_sm:.3,s_plex:.3,s_art:.5,s_sa:.35,s_phr:.3,s_vein:1,s_clav:.9,s_crib:.3,s_omo:.3},kv:[['Indicação principal','Fenótipo venoso: ressecção da porção anterior da 1ª costela + venólise + venoplastia com patch, se preciso'],['Expõe bem','Veia subclávia/axilar, junção com a jugular, ligamento costoclavicular, subclávio'],['Expõe mal','Plexo, escalenos, artéria proximal'],['Risco típico','Pleura (pneumotórax), veia sem controle, nervo peitoral']],v:'É a via de quem trata a veia como problema principal e quer reconstruí-la sob visão direta.'},
+ para:{t:'Via paraclavicular (supra + infraclavicular)',op:{s_rib:1,s_sm:1,s_plex:1,s_art:1,s_sa:1,s_phr:1,s_vein:1,s_clav:.78,s_crib:1,s_omo:1},kv:[['Indicação principal','Venoso com necessidade de reconstrução venosa complexa; arterial com aneurisma extenso; reoperações'],['Expõe bem','Tudo: 1ª costela inteira, escalenos, plexo, artéria e veia com controle proximal e distal'],['Expõe mal','Nada relevante — ao custo de duas incisões'],['Risco típico','Soma dos riscos das duas vias']],v:'A via de exposição total: usada por centros de referência para o fenótipo vascular complexo.'}};
+Object.keys(VIA.supra.op).forEach(id=>{const e=document.getElementById(id);if(e)e.style.transition='opacity .5s';});
+function setVia(k){const d=VIA[k];Object.entries(d.op).forEach(([id,o])=>{const e=document.getElementById(id);if(e)e.style.opacity=o;});$('#viaT').textContent=d.t;$('#viaKV').innerHTML=d.kv.map(x=>`<dt>${x[0]}</dt><dd>${x[1]}</dd>`).join('');$('#viaVerd').innerHTML='<b>Em uma frase</b>'+d.v;}
+seg('#viaSel','via',setVia);setVia('supra');
+
+/* ===== 7. FORJA ===== */
+const Q=[
+{piv:'Questão-mãe',st:'Larissa, 27 anos, fisioterapeuta e nadadora amadora, procura o pronto atendimento com edema e cianose do membro superior direito (dominante) iniciados há 2 dias, após semana de treinos intensos. Refere peso no braço e nota veias dilatadas na região do ombro e da parede torácica anterior. Pulsos distais presentes e simétricos, sem déficit neurológico. Duplex venoso: trombose oclusiva da veia subclávia direita. Qual a conduta mais adequada?',
+ alts:['Anticoagulação plena, trombólise dirigida por cateter e descompressão cirúrgica precoce com ressecção da primeira costela','Anticoagulação plena com heparina de baixo peso molecular por 3 meses e meia elástica, com reavaliação ambulatorial','Angioplastia com implante de stent na veia subclávia seguida de anticoagulação por 6 meses','Filtro de veia cava superior e anticoagulação por 3 meses','Escalenectomia anterior por via supraclavicular após término da anticoagulação'],ans:0,
+ exp:'Trombose de esforço da subclávia numa jovem com braço dominante em uso repetitivo é Paget-Schroetter: a veia foi esmagada no espaço costoclavicular. Dentro de 14 dias, a trombólise por cateter limpa a luz com alta taxa de sucesso; a descompressão precoce (ressecção da 1ª costela + venólise) é o que evita a retrombose, com patência acima de 90%. <b>B</b> é a conduta de trombose venosa profunda "comum" e deixa a causa mecânica no lugar — dois terços ficam sintomáticos. <b>C</b> é o stent esmagado entre clavícula e costela. <b>D</b> é invenção sem indicação. <b>E</b> corta o músculo errado: a veia não passa pelo triângulo interescalênico.'},
+{piv:'Pivô: o tempo',st:'Gustavo, 31 anos, professor de crossfit, refere edema do membro superior esquerdo com peso aos esforços iniciado <mark>há 5 semanas</mark>, com melhora parcial espontânea. Ao exame, circulação colateral no ombro e discreta cianose ao elevar o braço. Duplex: trombo parcialmente recanalizado na veia subclávia esquerda, com parede espessada. Qual a conduta mais adequada?',
+ alts:['Trombólise dirigida por cateter seguida de ressecção da primeira costela','Anticoagulação plena e descompressão cirúrgica eletiva com venografia intraoperatória','Angioplastia com stent seguida de anticoagulação','Fisioterapia postural e anti-inflamatório, sem anticoagulação','Ressecção transaxilar imediata sem anticoagulação'],ans:1,
+ exp:'O único dado que mudou foi o tempo. Com 5 semanas o trombo está organizado, aderido e parcialmente recanalizado — a trombólise (<b>A</b>) recupera pouco e aumenta o risco hemorrágico sem ganho. A conduta é anticoagular e resolver a causa eletivamente, com venografia na mesa para decidir venoplastia. <b>C</b> continua sendo o stent no túnel fechado. <b>D</b> confunde com o fenótipo neurogênico. <b>E</b> opera sem tratar o trombo residual.'},
+{piv:'Pivô: o passo seguinte',st:'Larissa (questão 1) foi submetida a trombólise dirigida por cateter com lise completa do trombo em 36 horas. A venografia de controle com o braço em abdução mostra <mark>estenose extrínseca de 70% da veia subclávia no cruzamento com a primeira costela</mark>, sem trombo residual. Qual o próximo passo?',
+ alts:['Angioplastia com balão da estenose e alta com anticoagulação oral','Implante de stent autoexpansível na estenose e anticoagulação por 3 meses','Ressecção da primeira costela com venólise e venografia pós-operatória, com angioplastia se persistir estenose','Anticoagulação por 3 meses e nova venografia antes de decidir cirurgia','Escalenectomia anterior supraclavicular para liberar a veia'],ans:2,
+ exp:'A veia está limpa, mas o túnel ósseo continua fechado — a estenose que você vê é a clavícula e a costela, não a parede. Balão antes de tirar o osso (<b>A</b>) recua na hora; stent (<b>B</b>) fratura. A ordem correta é osso → venografia → balão só para estenose intrínseca residual. <b>D</b> devolve o paciente ao risco de retrombose por 3 meses. <b>E</b> é a mesma armadilha anatômica: o escaleno anterior está atrás da veia, não a comprime.'},
+{piv:'Pivô: o fenótipo',st:'Seu Anselmo, 44 anos, pedreiro, refere há 8 meses parestesias na borda ulnar do antebraço e nos 4º e 5º dedos da mão direita, que pioram ao trabalhar com os braços elevados. Ao exame, <mark>atrofia da eminência tenar lateral mais acentuada que da hipotenar</mark> e hipoestesia na face medial do antebraço. Eletroneuromiografia: potencial sensitivo do nervo cutâneo antebraquial medial reduzido, potencial sensitivo do mediano normal, amplitude motora do mediano para o abdutor curto do polegar reduzida. Qual o diagnóstico?',
+ alts:['Síndrome do túnel do carpo bilateral em fase avançada','Neuropatia ulnar no cotovelo (túnel cubital)','Radiculopatia C8 por hérnia discal C7–T1','Síndrome do desfiladeiro torácico neurogênica verdadeira','Neuropatia motora multifocal'],ans:3,
+ exp:'Tenar atrofiado com sensitivo do mediano normal exclui o túnel do carpo (<b>A</b>), que derruba o sensitivo do mediano e poupa o hipotenar. Túnel cubital (<b>B</b>) poupa o tenar lateral e o antebraço medial. Radiculopatia C8 (<b>C</b>) tem a mesma mão, mas potenciais sensitivos <em>normais</em>, porque a lesão é pré-ganglionar. O padrão de queda do cutâneo antebraquial medial + motor do mediano + sensitivo do ulnar, com mediano sensitivo preservado, é a assinatura eletrofisiológica do tronco inferior comprimido: a mão de Gilliatt-Sumner.'},
+{piv:'Pivô: a primeira conduta',st:'Rafael, 19 anos, praticante de musculação, refere há 3 semanas dor no ombro e parestesias intermitentes no 4º e 5º dedos da mão esquerda ao fazer desenvolvimento de ombros. Exame: <mark>sem atrofia, sem déficit de força, sensibilidade normal</mark>; teste de Roos reproduz os sintomas em 90 segundos; pulsos simétricos. RX cervical sem costela cervical. Qual a conduta inicial mais adequada?',
+ alts:['Ressecção transaxilar da primeira costela','Escalenectomia anterior e média por via supraclavicular','Eletroneuromiografia e, se normal, alta sem tratamento','Bloqueio do escaleno anterior com toxina botulínica como tratamento definitivo','Programa de fisioterapia postural e de alongamento de escalenos e peitoral menor por pelo menos 8 semanas, com anti-inflamatório'],ans:4,
+ exp:'Desfiladeiro neurogênico "disputado": sintomas típicos, teste provocativo positivo, sem déficit objetivo. A maioria melhora com programa conservador de 8–12 semanas; cirurgia (<b>A</b>, <b>B</b>) só após falha, e é o fenótipo de resultado menos previsível. <b>C</b> erra duas vezes: ENMG frequentemente é normal no disputado e "normal" não significa alta. <b>D</b> confunde teste terapêutico/preditor com tratamento definitivo.'},
+{piv:'Pivô: a artéria',st:'Dona Marlene, 52 anos, costureira, apresenta há 2 meses episódios de palidez e dor no 2º e 3º dedos da mão direita, com <mark>necrose da polpa do 3º dedo</mark>. Nega tabagismo. Pulso radial direito diminuído; sopro na fossa supraclavicular direita; PA sistólica 30 mmHg menor no braço direito. RX: costela cervical bilateral, maior à direita. AngioTC: estenose da artéria subclávia direita ao cruzar a costela cervical com dilatação pós-estenótica de 2,5 cm contendo trombo mural, e oclusão de artérias digitais. Qual a conduta?',
+ alts:['Anticoagulação plena e simpatectomia torácica videoassistida','Fisioterapia e bloqueadores de canal de cálcio para fenômeno de Raynaud','Ressecção da costela cervical e escalenectomia anterior com ressecção do segmento arterial aneurismático e interposição de enxerto, associada a tromboembolectomia distal','Angioplastia com stent recoberto da artéria subclávia','Ressecção transaxilar isolada da primeira costela direita'],ans:2,
+ exp:'Estágio III de Scher: costela cervical → estenose → dilatação pós-estenótica → trombo mural → embolia digital. A fonte embólica é a parede arterial doente; enquanto ela existir, novos êmbolos virão. Trata-se osso, músculo e artéria no mesmo tempo, por via supraclavicular (± infraclavicular). <b>A</b> trata o dedo e deixa a fonte. <b>B</b> é Raynaud unilateral — que não existe: unilateral é embolia até prova em contrário. <b>D</b> repete o erro do stent entre ossos, agora na artéria. <b>E</b> tira a costela errada e não reconstrói a artéria.'},
+{piv:'Pivô: a anatomia',st:'Sobre a anatomia do desfiladeiro torácico, assinale a estrutura que <mark>NÃO atravessa o triângulo interescalênico</mark>, delimitado pelos músculos escalenos anterior e médio e pela primeira costela:',
+ alts:['Veia subclávia','Artéria subclávia','Tronco inferior do plexo braquial','Tronco superior do plexo braquial','Tronco médio do plexo braquial'],ans:0,
+ exp:'A veia subclávia passa anterior ao escaleno anterior, entre ele e a clavícula/subclávio — dentro do espaço costoclavicular, mas fora do triângulo. É por isso que a síndrome do escaleno anterior nunca é venosa, que a escalenectomia não trata Paget-Schroetter, e que o frênico (que desce sobre a face anterior do escaleno anterior) fica entre a veia e a artéria durante a dissecção supraclavicular.'},
+{piv:'Pivô: o erro',st:'Em relação ao tratamento da síndrome de Paget-Schroetter, assinale a conduta considerada <mark>inadequada</mark>:',
+ alts:['Anticoagulação imediata ao diagnóstico da trombose','Trombólise dirigida por cateter nos primeiros 14 dias de sintomas','Ressecção da primeira costela com venólise após a trombólise','Angioplastia com balão de estenose residual após a descompressão cirúrgica','Implante de stent na veia subclávia antes da descompressão cirúrgica do espaço costoclavicular'],ans:4,
+ exp:'As quatro primeiras são, em ordem, a sequência correta. O stent antes da descompressão fica entre a clavícula e a primeira costela, que continuam se aproximando a cada abdução: fratura, migração e reoclusão são a regra — na série de Urschel, todos falharam. O balão (<b>D</b>) só entra depois do osso, e é aceitável porque não deixa metal no túnel.'}];
+const L='ABCDE';let fDone=0,fRight=0;
+function buildForge(){$('#forge').innerHTML=Q.map((q,i)=>`<div class="q" data-i="${i}"><div class="qh"><h3 style="font-family:var(--sans);font-size:15px">${i+1}. ${q.piv}</h3><span>${i===0?'formato ENARE':'dado trocado em destaque'}</span></div><div class="st">${q.st}</div><div class="alts">${q.alts.map((a,j)=>`<button data-j="${j}"><i>${L[j]}</i><span>${a}</span></button>`).join('')}</div><div class="exp"><b>Gabarito: ${L[q.ans]}.</b> ${q.exp}</div></div>`).join('');fDone=0;fRight=0;$('#fScore').textContent='0 / 0';}
+$('#forge').addEventListener('click',e=>{const b=e.target.closest('button[data-j]');if(!b)return;const box=b.closest('.q');if(box.classList.contains('done'))return;const i=+box.dataset.i,j=+b.dataset.j;box.classList.add('done');box.querySelectorAll('button').forEach((x,k)=>{x.disabled=true;if(k===Q[i].ans)x.classList.add('ok');else if(k===j)x.classList.add('no');});fDone++;if(j===Q[i].ans)fRight++;$('#fScore').textContent=fRight+' / '+fDone+(fDone===Q.length?'  ·  '+Math.round(100*fRight/fDone)+'%':'');});
+$('#fReset').addEventListener('click',buildForge);buildForge();
+})();
+</script>
+
+</body></html>

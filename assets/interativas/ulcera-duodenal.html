@@ -1,0 +1,1367 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Atlas Úlcera Duodenal</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: coluna editorial clássica; cada capítulo = prancha (modelo 3D + painel de controle) e texto abaixo. Campo 3D com fundo físico fixo. */
+:root{
+  --bg:#FAFAF8; --fg:#141414; --mut:#585856; --rule:#CACAC6; --panel:#FFFFFF; --soft:#EEEEEB;
+  --inv-bg:#141414; --inv-fg:#FAFAF8; --warn:#4A4A48; --ok:#2E2E2E;
+  --f-d:'EB Garamond', Garamond, 'Times New Roman', serif;
+  --f-b:'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  --f-m:'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --stage:#171717;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0F0F0F; --fg:#ECECE9; --mut:#A4A4A0; --rule:#353533; --panel:#161616; --soft:#1F1F1E;
+  --inv-bg:#ECECE9; --inv-fg:#0F0F0F; --warn:#B4B4B0; --ok:#D0D0CC; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#0F0F0F; --fg:#ECECE9; --mut:#A4A4A0; --rule:#353533; --panel:#161616; --soft:#1F1F1E;
+  --inv-bg:#ECECE9; --inv-fg:#0F0F0F; --warn:#B4B4B0; --ok:#D0D0CC; color-scheme:dark }
+*,*::before,*::after{box-sizing:border-box;border-radius:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-b);font-size:16px;line-height:1.6;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:0 64px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:30;background:var(--bg)}
+.wrap{max-width:1180px;margin:0 auto}
+h1,h2,h3,h4{font-family:var(--f-d);font-weight:500;text-wrap:balance;margin:0;letter-spacing:.005em}
+h1{font-size:clamp(2.3rem,6vw,4.1rem);line-height:1.02}
+h2{font-size:clamp(1.7rem,3.6vw,2.4rem);line-height:1.1}
+h3{font-size:1.35rem;line-height:1.2}
+h4{font-size:1.1rem}
+p{margin:0}
+.mono{font-family:var(--f-m);font-variant-numeric:tabular-nums}
+.eyebrow{font-family:var(--f-m);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+
+/* Cabeçalho */
+header.hero{padding-block:48px 28px;border-bottom:1px solid var(--fg)}
+.hero .row{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px;align-items:end}
+.hero .lead{font-family:var(--f-d);font-size:1.32rem;line-height:1.45;max-width:62ch}
+.hero .sub{font-family:var(--f-d);font-style:italic;font-size:1.5rem;color:var(--mut);margin-top:10px}
+.hero dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:0;font-size:.9rem;border-top:1px solid var(--rule);padding-top:14px}
+.hero dt{font-family:var(--f-m);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);padding-top:3px}
+.hero dd{margin:0}
+
+/* Trilho de capítulos */
+nav.rail{position:sticky;top:env(safe-area-inset-top, 0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--rule);
+  margin-inline:calc(-1 * max(16px, env(safe-area-inset-left, 0px)));padding-inline:max(16px, env(safe-area-inset-left, 0px))}
+nav.rail .in{max-width:1180px;margin:0 auto;display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+nav.rail .in::-webkit-scrollbar{display:none}
+nav.rail a{flex:0 0 auto;text-decoration:none;font-size:.8rem;padding:10px 12px;border-right:1px solid var(--rule);color:var(--mut);white-space:nowrap}
+nav.rail a:first-child{border-left:1px solid var(--rule)}
+nav.rail a b{font-family:var(--f-m);font-weight:500;color:var(--fg);margin-right:6px}
+nav.rail a.on{background:var(--fg);color:var(--bg)}
+nav.rail a.on b{color:var(--bg)}
+
+section.chap{padding-block:56px 8px;border-bottom:1px solid var(--rule)}
+.chap-head{display:grid;grid-template-columns:72px minmax(0,1fr);gap:18px;margin-bottom:22px;align-items:start}
+.chap-num{font-family:var(--f-d);font-size:3.2rem;line-height:.9;border-top:3px solid var(--fg);padding-top:6px}
+.chap-head .kick{margin-bottom:6px}
+.chap-head p.dek{font-family:var(--f-d);font-size:1.18rem;color:var(--mut);margin-top:8px;max-width:68ch}
+
+/* Prancha */
+.plate{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.85fr);gap:0;border:1px solid var(--fg)}
+.fig{min-width:0;border-right:1px solid var(--fg);background:var(--stage)}
+.slot{position:relative;height:min(74vh,600px);min-height:380px;background:var(--stage)}
+.slot .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#BDBDBA;text-align:center;padding:24px;font-size:.92rem}
+.slot.has .ph{display:none}
+.slot .ph button{background:transparent;color:#F2F2EF;border:1px solid #F2F2EF}
+.panel{min-width:0;background:var(--panel);padding:18px 18px 20px;display:flex;flex-direction:column;gap:16px;max-height:min(74vh,600px);overflow:auto}
+.panel h4{font-family:var(--f-m);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);font-weight:500;margin-bottom:8px}
+.contract{border:1px solid var(--rule);padding:10px 12px;font-size:.84rem;line-height:1.45;background:var(--soft)}
+.contract b{font-weight:600}
+.btns{display:flex;flex-wrap:wrap;gap:6px}
+button,.btn{font-family:var(--f-b);font-size:.82rem;line-height:1.2;padding:7px 10px;border:1px solid var(--fg);background:transparent;color:var(--fg);cursor:pointer}
+button:hover{background:var(--soft)}
+button.on,button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+button.ghost{border-color:var(--rule)}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--rule)}
+.steps li button{width:100%;text-align:left;border:0;border-bottom:1px solid var(--rule);padding:9px 6px;display:grid;grid-template-columns:28px 1fr;gap:6px;background:transparent;color:var(--fg)}
+.steps li button .n{font-family:var(--f-m);color:var(--mut)}
+.steps li button.on{background:var(--fg);color:var(--bg)}
+.steps li button.on .n{color:var(--bg)}
+.caption{font-size:.9rem;line-height:1.5;border-left:3px solid var(--fg);padding:2px 0 2px 12px}
+.note{font-size:.84rem;color:var(--mut);line-height:1.5}
+.alert{border:1px solid var(--warn);color:var(--fg);padding:10px 12px;font-size:.86rem}
+.alert .lab{font-family:var(--f-m);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:4px}
+
+/* Lista de estruturas */
+.slist{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--rule)}
+.sgroup{font-family:var(--f-m);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);padding:10px 0 4px}
+.srow{display:grid;grid-template-columns:22px 14px minmax(0,1fr) 84px;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid var(--rule);font-size:.82rem}
+.srow .num{font-family:var(--f-m);font-size:.72rem;color:var(--mut);text-align:right}
+.srow .sw{width:12px;height:12px;border:1px solid var(--fg)}
+.srow label{cursor:pointer;min-width:0}
+.srow input[type=checkbox]{position:absolute;opacity:0;pointer-events:none}
+.srow.off label{color:var(--mut);text-decoration:line-through}
+.srow.off .sw{background:transparent!important}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:18px;background:transparent;margin:0}
+input[type=range]::-webkit-slider-runnable-track{height:2px;background:var(--fg)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;background:var(--bg);border:2px solid var(--fg);margin-top:-5px}
+input[type=range]::-moz-range-track{height:2px;background:var(--fg)}
+input[type=range]::-moz-range-thumb{width:10px;height:10px;background:var(--bg);border:2px solid var(--fg);border-radius:0}
+.info{border:1px solid var(--fg);padding:12px;font-size:.86rem;line-height:1.5}
+.info h5{font-family:var(--f-d);font-size:1.15rem;font-weight:500;margin:0 0 6px}
+.info dl{display:grid;grid-template-columns:86px 1fr;gap:4px 10px;margin:0}
+.info dt{font-family:var(--f-m);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);padding-top:3px}
+.info dd{margin:0}
+
+/* Stage 3D */
+#stage{position:absolute;inset:0;background:var(--stage);overflow:hidden;touch-action:none}
+#gl{display:block;width:100%;height:100%}
+.hud{position:absolute;left:10px;top:10px;max-width:calc(100% - 120px);background:rgba(10,10,10,.78);color:#F2F2EF;border:1px solid rgba(255,255,255,.35);padding:7px 9px;font-size:.72rem;line-height:1.4;pointer-events:none;font-family:var(--f-b)}
+.hud b{font-weight:600}
+.hud .v{font-family:var(--f-m);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase}
+#gizmo{position:absolute;right:10px;top:10px;width:92px;height:92px;background:rgba(10,10,10,.78);border:1px solid rgba(255,255,255,.35);pointer-events:none}
+.stage-cap{position:absolute;left:10px;right:10px;bottom:10px;background:rgba(10,10,10,.82);color:#F2F2EF;border:1px solid rgba(255,255,255,.35);padding:8px 10px;font-size:.8rem;line-height:1.4;pointer-events:none}
+.stage-cap:empty{display:none}
+.stage-cap .k{font-family:var(--f-m);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#BDBDBA;display:block}
+#labels{position:absolute;inset:0;pointer-events:none}
+.mk{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:4px;white-space:nowrap}
+.mk i{font-style:normal;font-family:var(--f-m);font-size:10.5px;line-height:1;min-width:17px;height:17px;display:inline-flex;align-items:center;justify-content:center;background:#FFFFFF;color:#141414;border:1px solid #141414}
+.mk span{font-size:11px;background:rgba(10,10,10,.8);color:#F2F2EF;padding:2px 5px;border:1px solid rgba(255,255,255,.3)}
+.mk.dim{opacity:.45}
+.stage-help{position:absolute;right:10px;top:110px;font-size:.68rem;color:#BDBDBA;text-align:right;pointer-events:none;line-height:1.35;max-width:150px}
+.nogl{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#EEE;padding:24px;text-align:center}
+
+/* Texto */
+.prose{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;max-width:70ch;margin:30px 0 40px;font-size:1.02rem}
+.prose p{hyphens:auto}
+.prose h3{margin-top:14px}
+.prose .rel{border:1px solid var(--rule);padding:14px 16px;background:var(--soft)}
+.prose .rel dl{display:grid;grid-template-columns:minmax(110px,max-content) 1fr;gap:6px 14px;margin:6px 0 0;font-size:.92rem}
+.prose .rel dt{font-weight:600}
+.prose .rel dd{margin:0}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.box{border:1px solid var(--fg);padding:14px 16px}
+.box .lab{font-family:var(--f-m);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);display:block;margin-bottom:6px}
+.box.div{border-style:double;border-width:3px}
+.box.no{border-color:var(--warn);border-style:dashed}
+.box.no .lab{color:var(--warn)}
+
+/* Fluxograma */
+.flow{display:flex;flex-direction:column;align-items:stretch;gap:0;margin:8px 0 28px;max-width:900px}
+.fn{border:1px solid var(--fg);background:var(--panel);padding:12px 14px;font-size:.92rem;line-height:1.5}
+.fn .t{font-family:var(--f-m);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);display:block;margin-bottom:4px}
+.fn.dec{border-width:2px;background:var(--soft)}
+.fn.end{background:var(--fg);color:var(--bg)}
+.fn.end .t{color:var(--bg);opacity:.75}
+.fn.no{border-color:var(--warn);border-style:dashed}
+.fn.no .t{color:var(--warn)}
+.fa{height:26px;position:relative;margin-left:28px}
+.fa::before{content:"";position:absolute;left:0;top:0;bottom:6px;border-left:1px solid var(--fg)}
+.fa::after{content:"";position:absolute;left:-5px;bottom:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:7px solid var(--fg)}
+.fa span{position:absolute;left:14px;top:3px;font-family:var(--f-m);font-size:.72rem;color:var(--mut);white-space:nowrap}
+.fsplit{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;border-top:1px solid var(--fg);padding-top:0;margin-top:0}
+.fsplit > div{display:flex;flex-direction:column;min-width:0}
+.fsplit .fa{margin-left:20px}
+
+/* Tabelas */
+.tw{overflow-x:auto;border:1px solid var(--fg);margin:8px 0 28px}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:.88rem}
+th,td{border-bottom:1px solid var(--rule);border-right:1px solid var(--rule);padding:9px 10px;text-align:left;vertical-align:top}
+th{font-family:var(--f-m);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;background:var(--fg);color:var(--bg);border-color:var(--fg)}
+td.cls{font-family:var(--f-d);font-size:1.25rem;white-space:nowrap}
+td .mono{font-size:.85rem}
+tr.hi td{background:var(--soft)}
+
+/* Quiz */
+.quiz{display:flex;flex-direction:column;gap:22px;margin:10px 0 30px}
+.q{border:1px solid var(--fg);padding:18px}
+.q .stem{font-size:1rem;margin:6px 0 12px;max-width:80ch}
+.q .opts{display:flex;flex-direction:column;gap:6px}
+.q .opts button{text-align:left;display:grid;grid-template-columns:26px 1fr;gap:6px;padding:9px 10px;font-size:.92rem;border-color:var(--rule)}
+.q .opts button .l{font-family:var(--f-m);font-weight:500}
+.q .opts button.right{border:2px solid var(--fg);background:var(--fg);color:var(--bg)}
+.q .opts button.wrong{border:2px dashed var(--warn);text-decoration:line-through}
+.q .exp{margin-top:12px;border-top:1px solid var(--rule);padding-top:10px;font-size:.9rem;display:flex;flex-direction:column;gap:6px}
+.q .exp p b{font-family:var(--f-m)}
+.score{font-family:var(--f-m);font-size:.9rem;border:1px solid var(--fg);padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+
+.refs{font-size:.86rem;color:var(--mut);max-width:90ch;display:flex;flex-direction:column;gap:6px;margin-top:14px}
+footer{padding-top:28px;font-size:.8rem;color:var(--mut)}
+
+@media (max-width:860px){
+  .hero .row{grid-template-columns:minmax(0,1fr);gap:22px}
+  .plate{grid-template-columns:minmax(0,1fr)}
+  .fig{border-right:0;border-bottom:1px solid var(--fg)}
+  .slot{height:420px;min-height:0}
+  .panel{max-height:none}
+  .two{grid-template-columns:minmax(0,1fr)}
+  .chap-head{grid-template-columns:minmax(0,1fr);gap:8px}
+  .chap-num{font-size:2.4rem;width:64px}
+}
+@media (max-width:480px){
+  .hud{font-size:.66rem;max-width:calc(100% - 96px);padding:5px 7px}
+  #gizmo{width:72px;height:72px}
+  .stage-help{display:none}
+  .stage-cap{font-size:.74rem}
+  .srow{grid-template-columns:20px 14px minmax(0,1fr) 70px}
+}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+</style>
+
+<div class="wrap">
+<header class="hero" id="topo">
+  <div class="row">
+    <div>
+      <div class="eyebrow">Atlas interativo · Cirurgia do trato digestivo alto · R+ Especialidades Cirúrgicas</div>
+      <h1 style="margin-top:14px">Atlas da úlcera duodenal</h1>
+      <p class="sub">Por que a úlcera anterior perfura e a posterior sangra.</p>
+    </div>
+    <div>
+      <p class="lead">O bulbo duodenal tem duas paredes com vizinhanças completamente diferentes. Na frente dele há uma cavidade vazia; atrás dele passa uma artéria de calibre considerável. Quase tudo o que a banca cobra sobre complicação de úlcera duodenal sai dessa diferença, e este atlas mostra a anatomia em três dimensões antes de chegar à conduta.</p>
+    </div>
+  </div>
+  <dl style="margin-top:26px">
+    <dt>Como usar</dt><dd>Cada capítulo tem um modelo 3D à esquerda e um painel de controle à direita. O modelo acompanha a rolagem e se reconfigura para a cena do capítulo. Arraste com um dedo ou com o mouse para girar, faça pinça ou use a roda do mouse para aproximar, arraste com dois dedos ou com o botão direito para deslocar. Toque em uma estrutura para ver o nome e as relações dela.</dd>
+    <dt>Orientação fixa</dt><dd>Em todas as cenas, o paciente está em decúbito dorsal na mesa. O quadro no canto superior esquerdo do modelo informa a vista atual (anterior, posterior, cranial, lateral ou oblíqua) e de que lado da tela fica a direita do paciente. O cubo de eixos no canto superior direito mostra Cr (cranial), Ca (caudal), D (direita do paciente), E (esquerda), A (anterior) e P (posterior).</dd>
+    <dt>Fontes</dt><dd>Sabiston (21ª ed.), Schwartz (11ª ed.), diretriz ACG 2021 (Laine e cols.) e diretriz ESGE 2021 de hemorragia digestiva alta não varicosa. Quando as fontes divergem, o texto mostra um bloco com borda dupla marcado como divergência.</dd>
+  </dl>
+</header>
+
+<nav class="rail" aria-label="Capítulos">
+  <div class="in">
+    <a href="#c1"><b>01</b>Anatomia 3D</a>
+    <a href="#c2"><b>02</b>Anterior perfura</a>
+    <a href="#c3"><b>03</b>Posterior sangra</a>
+    <a href="#c4"><b>04</b>Ligadura tripla</a>
+    <a href="#c5"><b>05</b>Embolização</a>
+    <a href="#c6"><b>06</b>Kissing ulcers</a>
+    <a href="#c7"><b>07</b>Conduta: perfurada</a>
+    <a href="#c8"><b>08</b>Conduta: sangrante</a>
+    <a href="#c9"><b>09</b>Como a banca cobra</a>
+    <a href="#c10"><b>10</b>Questões</a>
+  </div>
+</nav>
+
+<!-- ============ 01 ============ -->
+<section class="chap" id="c1">
+  <div class="chap-head">
+    <div class="chap-num">01</div>
+    <div>
+      <div class="eyebrow kick">Exploração livre</div>
+      <h2>A vizinhança do bulbo duodenal</h2>
+      <p class="dek">Antes de falar de úlcera, é preciso saber o que encosta em cada parede do bulbo. Ligue e desligue as estruturas até conseguir dizer, sem olhar, o que está na frente e o que está atrás de D1.</p>
+    </div>
+  </div>
+  <div class="plate">
+    <div class="fig"><div class="slot" data-scene="explore"><div class="ph"><span>Modelo 3D desta cena</span><button type="button" data-load="explore">Carregar o modelo aqui</button></div></div></div>
+    <div class="panel" id="panel-explore">
+      <div class="contract"><b>Contrato de vista.</b> Paciente em decúbito dorsal (supino) na mesa. Vista inicial anterior, como o cirurgião enxerga após uma laparotomia mediana supraumbilical com o fígado e a vesícula afastados para cima: cranial no alto da tela, direita do paciente à esquerda da tela. Âncoras: piloro junto à linha média (um pouco à direita), aorta atrás de tudo, um pouco à esquerda.</div>
+      <div>
+        <h4>Vistas prontas</h4>
+        <div class="btns" data-views>
+          <button type="button" data-view="anterior">Anterior</button>
+          <button type="button" data-view="posterior">Posterior</button>
+          <button type="button" data-view="cranial">Cranial</button>
+          <button type="button" data-view="lateralD">Lateral direita</button>
+          <button type="button" data-view="obliqua">Oblíqua anterior direita</button>
+        </div>
+      </div>
+      <div>
+        <h4>Atalhos de estudo</h4>
+        <div class="btns">
+          <button type="button" data-preset="all">Mostrar tudo</button>
+          <button type="button" data-preset="vessels">Só vasos e colédoco</button>
+          <button type="button" data-preset="behindD1">O que fica atrás de D1</button>
+          <button type="button" data-preset="frontD1">O que fica na frente de D1</button>
+          <button type="button" id="btn-labels" aria-pressed="true">Rótulos ligados</button>
+        </div>
+      </div>
+      <div class="info" id="pick-info"><h5>Toque em uma estrutura</h5><p class="note">Ao tocar em qualquer estrutura do modelo, aparece aqui o nome dela, de onde ela vem, por onde passa e o que fica ao redor.</p></div>
+      <div>
+        <h4>Estruturas · visibilidade e transparência</h4>
+        <p class="note" style="margin-bottom:6px">Toque no nome para mostrar ou ocultar. O controle deslizante à direita ajusta a opacidade: totalmente à esquerda deixa a estrutura quase transparente.</p>
+        <div class="slist" id="slist"></div>
+      </div>
+    </div>
+  </div>
+  <div class="prose">
+    <h3>Como o duodeno está deitado no abdome</h3>
+    <p>O duodeno começa no piloro, mais ou menos na altura da primeira vértebra lombar e um pouco à direita da linha média, e desenha um "C" aberto para a esquerda em volta da cabeça do pâncreas. A primeira porção (D1) sai do piloro para a direita, para cima e para trás. Os primeiros 2 a 3 cm dessa porção formam o bulbo, que é a parte mais larga, revestida de peritônio na frente e atrás e, por isso, móvel. É no bulbo que nascem mais de 90% das úlceras duodenais, porque é ali que o jato ácido que sai do estômago bate antes de ser neutralizado pelo bicarbonato pancreático e biliar, que só chega na segunda porção.</p>
+    <p>Depois do bulbo, o duodeno vira bruscamente para baixo (flexura superior) e passa a ser a segunda porção (D2), descendente, já retroperitoneal, colada ao lado direito da cabeça do pâncreas. Na parede medial de D2 fica a papila maior, por onde o colédoco e o ducto pancreático desembocam. A terceira porção (D3) cruza a linha média da direita para a esquerda, passando na frente da veia cava e da aorta e atrás dos vasos mesentéricos superiores.</p>
+    <h3>A parede anterior olha para o vazio</h3>
+    <p>Na frente do bulbo não há órgão sólido. Há a cavidade peritoneal livre (a grande cavidade), com a face inferior do fígado e a vesícula logo acima e a parede abdominal anterior à frente. Se a úlcera atravessa a parede anterior, nada tampa o buraco: o ar e o suco gastroduodenal escapam direto para a cavidade. Isso é perfuração.</p>
+    <h3>A parede posterior repousa sobre uma artéria</h3>
+    <p>Atrás do bulbo, colados à parede posterior, ficam, de medial para lateral (da esquerda para a direita do paciente), a artéria gastroduodenal (AGD) e o colédoco. Mais atrás e um pouco medial está a veia porta, e por baixo começa a cabeça do pâncreas. Uma úlcera que aprofunda na parede posterior não encontra cavidade livre; encontra a AGD. Quando a erosão chega à parede da artéria, o sangue arterial sai para dentro da luz duodenal. Isso é hemorragia. Se a úlcera continua aprofundando sem romper vaso, ela penetra na cabeça do pâncreas. Isso é úlcera penetrante.</p>
+    <div class="rel">
+      <div class="eyebrow">Relações que a banca pede</div>
+      <dl>
+        <dt>Na frente de D1</dt><dd>Cavidade peritoneal livre; face inferior do fígado (segmentos IV e V) e colo e fundo da vesícula, logo acima; parede abdominal anterior.</dd>
+        <dt>Atrás de D1</dt><dd>AGD (medial), colédoco (lateral à AGD), veia porta (mais profunda), cabeça do pâncreas (abaixo e atrás) e, mais ao fundo, a veia cava inferior.</dd>
+        <dt>Acima de D1</dt><dd>Forame epiploico (de Winslow) e ligamento hepatoduodenal com colédoco, artéria hepática própria e veia porta.</dd>
+        <dt>Abaixo de D1</dt><dd>Cabeça e colo do pâncreas; a AGD se divide na borda inferior de D1.</dd>
+      </dl>
+    </div>
+    <h3>A artéria gastroduodenal, da origem aos ramos</h3>
+    <p>O tronco celíaco sai da face anterior da aorta na altura de T12 e se divide em três: gástrica esquerda, esplênica e hepática comum. A hepática comum corre para a direita pela borda superior do pâncreas. Quando chega perto do duodeno, ela se divide em hepática própria, que sobe no ligamento hepatoduodenal à esquerda do colédoco e à frente da veia porta, e AGD, que desce. A AGD tem cerca de 3 mm de diâmetro (2 a 4 mm) e um trajeto de 2 a 3 cm atrás da primeira porção do duodeno, apoiada na face anterior do colo e da cabeça do pâncreas. Ao longo do caminho e na borda inferior do bulbo ela dá os ramos que importam: a pancreaticoduodenal superior posterior (o primeiro ramo, que cruza o colédoco pela frente e desce na face posterior da cabeça do pâncreas), ramos pancreáticos para o colo e o corpo (aqui chamados de ramo pancreático transverso, o ramo medial que a ligadura em U precisa pegar), e, na bifurcação terminal, a gastroepiploica direita, que vai para a curvatura maior do estômago, e a pancreaticoduodenal superior anterior, que desce na face anterior da cabeça do pâncreas.</p>
+    <p>Embaixo, a artéria mesentérica superior (AMS) dá as pancreaticoduodenais inferiores, anterior e posterior, que sobem e se ligam às superiores, formando duas arcadas em volta da cabeça do pâncreas. Essa arcada é a ponte entre o território celíaco e o território mesentérico. Para a cirurgia, ela significa uma coisa: a AGD recebe sangue pelos dois lados. Se você interrompe só a entrada de cima, o sangue continua chegando por baixo, de forma retrógrada, pela arcada. Os capítulos 04 e 05 mostram isso em movimento.</p>
+    <div class="box div"><span class="lab">Variação anatômica relevante</span>A AGD nasce da hepática comum na grande maioria das pessoas, mas pode nascer da hepática direita, da hepática esquerda ou de uma hepática substituta vinda da AMS. Na prática da ligadura isso pesa pouco, porque a ligadura é feita no ponto que sangra, dentro do duodeno. Na embolização pesa mais: o radiologista precisa saber de onde a AGD sai para cateterizá-la. O colédoco também varia: a distância entre ele e a AGD atrás de D1 é de poucos milímetros e muda de pessoa para pessoa, e a inflamação e a fibrose em volta de uma úlcera crônica dificultam reconhecê-lo. É por isso que o ponto profundo e lateral é perigoso.</div>
+  </div>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="chap" id="c2">
+  <div class="chap-head">
+    <div class="chap-num">02</div>
+    <div>
+      <div class="eyebrow kick">Cena animada</div>
+      <h2>A úlcera anterior perfura</h2>
+      <p class="dek">A úlcera da parede anterior atravessa todas as camadas e não encontra nada que a bloqueie. O ar sobe para o ponto mais alto da cavidade e o líquido escorre para os pontos mais baixos.</p>
+    </div>
+  </div>
+  <div class="plate">
+    <div class="fig"><div class="slot" data-scene="perf"><div class="ph"><span>Modelo 3D desta cena</span><button type="button" data-load="perf">Carregar o modelo aqui</button></div></div></div>
+    <div class="panel" id="panel-perf">
+      <div class="contract"><b>Contrato de vista.</b> Paciente em decúbito dorsal na mesa, vista oblíqua anterior direita (de frente, um pouco pela direita do paciente e de cima). Cranial no alto. A úlcera fica na parede anterior do bulbo, a cerca de 2 cm do piloro, logo abaixo da borda do fígado e da vesícula.</div>
+      <div><h4>Passos</h4><ol class="steps" data-steps="perf"></ol></div>
+      <div>
+        <h4>Posição do paciente para o ar</h4>
+        <div class="btns">
+          <button type="button" data-air="supino" class="on">Deitado (TC)</button>
+          <button type="button" data-air="pe">Em pé (radiografia)</button>
+        </div>
+        <p class="note" style="margin-top:6px">O ar procura o ponto mais alto. Deitado, o ponto mais alto é a parede abdominal anterior, e a TC mostra o ar à frente do fígado. Em pé, o ponto mais alto é a cúpula diafragmática, e a radiografia mostra a foice de ar sob o diafragma direito.</p>
+      </div>
+      <div class="btns"><button type="button" data-play="perf">Reproduzir sequência</button><button type="button" class="ghost" data-reset="perf">Recomeçar</button></div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>A úlcera péptica é uma perda de substância da parede que ultrapassa a muscular da mucosa. O que faz uma úlcera crescer em profundidade é o desequilíbrio entre agressão (ácido, pepsina, AINE, <i>Helicobacter pylori</i>) e defesa (muco, bicarbonato, fluxo sanguíneo da mucosa, prostaglandinas). Quando a úlcera atravessa mucosa, submucosa, muscular própria e serosa da parede anterior, abre-se um orifício entre a luz e a cavidade peritoneal livre. Não existe órgão encostado ali para tamponar, e esse é o motivo anatômico pelo qual a úlcera anterior perfura.</p>
+    <p>O que sai pelo orifício explica o quadro clínico. Sai ar, que forma o pneumoperitônio. Sai suco gástrico e duodenal, ácido e rico em enzimas, que provoca uma peritonite química imediata. É por isso que a dor é súbita, intensa, "em facada", e o abdome fica em tábua nas primeiras horas, antes de existir infecção. Depois de 6 a 12 horas, a peritonite química passa a ser bacteriana, e o paciente evolui para sepse.</p>
+    <p>O líquido escorre por gravidade. Com o paciente deitado, ele desce pela goteira parietocólica direita até a fossa ilíaca direita, o que pode imitar apendicite (sinal de Valentino), e se acumula no espaço hepatorrenal (bolsa de Morison). O ar faz o caminho contrário: sobe. Use os dois botões de posição do painel e observe para onde o ar vai em cada caso. Essa é a base física do pedido de radiografia de tórax em pé e da orientação de manter o paciente sentado por alguns minutos antes do exame.</p>
+    <div class="box"><span class="lab">Perfuração bloqueada</span>Às vezes o omento, a face inferior do fígado ou a vesícula se colam sobre o orifício e o fecham. É nesse grupo, e só nele, que o tratamento não operatório pode ser discutido (capítulo 07).</div>
+  </div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="chap" id="c3">
+  <div class="chap-head">
+    <div class="chap-num">03</div>
+    <div>
+      <div class="eyebrow kick">Cena animada</div>
+      <h2>A úlcera posterior sangra</h2>
+      <p class="dek">Na parede posterior, a úlcera aprofunda até encontrar a AGD. Se rompe a parede da artéria, sangra para a luz; se não rompe, continua e penetra na cabeça do pâncreas.</p>
+    </div>
+  </div>
+  <div class="plate">
+    <div class="fig"><div class="slot" data-scene="bleed"><div class="ph"><span>Modelo 3D desta cena</span><button type="button" data-load="bleed">Carregar o modelo aqui</button></div></div></div>
+    <div class="panel" id="panel-bleed">
+      <div class="contract"><b>Contrato de vista.</b> Paciente em decúbito dorsal na mesa, vista lateral direita levemente oblíqua e cranial (olhando o duodeno pela direita do paciente, um pouco de cima). Assim se veem ao mesmo tempo a parede posterior do bulbo, a AGD logo atrás dela e a cabeça do pâncreas abaixo. Anterior fica à direita da tela; cranial, no alto. A parede do duodeno está semitransparente para deixar a luz visível.</div>
+      <div><h4>Passos</h4><ol class="steps" data-steps="bleed"></ol></div>
+      <div class="btns"><button type="button" data-play="bleed">Reproduzir sequência</button><button type="button" class="ghost" data-reset="bleed">Recomeçar</button></div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>A úlcera da parede posterior do bulbo se forma e aprofunda pelo mesmo mecanismo da anterior. A diferença está no que ela encontra quando atravessa a parede. Logo atrás da serosa posterior do bulbo passa a AGD, uma artéria de cerca de 3 mm com pressão sistêmica. A base inflamada e necrótica da úlcera digere a adventícia e a camada muscular da artéria. A parede arterial cede em um ponto, e o sangue sai em jato para dentro da luz duodenal. Na endoscopia, esse ponto aparece como sangramento em jato (Forrest Ia), como babação (Ib) ou, quando parou, como um vaso visível na base da úlcera (IIa), que é o orifício da parede da AGD tamponado por um trombo (às vezes um pequeno pseudoaneurisma) fazendo saliência.</p>
+    <p>O sangue que cai na luz vai para os dois lados. Parte reflui para o estômago e sai como hematêmese. Parte segue para o jejuno e sai como melena, ou como hematoquezia quando o sangramento é tão volumoso que o trânsito acelera. Quando um paciente tem hematoquezia com instabilidade hemodinâmica, a primeira hipótese a excluir é uma fonte alta como esta.</p>
+    <p>Como a AGD é um vaso grande, recebe fluxo pelos dois lados e é cercada por tecido inflamado e fibrótico, a úlcera posterior do bulbo é, junto com a úlcera alta da pequena curvatura gástrica (que erode a gástrica esquerda), o local com maior risco de falha da terapia endoscópica e de ressangramento.</p>
+    <h3>Penetração: quando a úlcera não rompe a artéria</h3>
+    <p>Se a úlcera passa ao lado da artéria ou a artéria se trombosa antes de romper, a erosão continua para trás e entra no parênquima da cabeça do pâncreas, que serve de fundo para ela. Isso é a úlcera penetrante. O paciente muda o padrão da dor: ela deixa de ser epigástrica e rítmica, passa a ser contínua, irradia para as costas, não melhora com antiácido nem com alimentação, e a amilase sérica pode subir. A banca usa esse quadro para confundir com pancreatite aguda.</p>
+  </div>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="chap" id="c4">
+  <div class="chap-head">
+    <div class="chap-num">04</div>
+    <div>
+      <div class="eyebrow kick">Cena animada · técnica operatória</div>
+      <h2>Por que ligar uma vez só não resolve</h2>
+      <p class="dek">O segmento da AGD que sangra recebe sangue por três entradas. A ligadura precisa fechar as três, sem pegar o colédoco que passa ao lado.</p>
+    </div>
+  </div>
+  <div class="plate">
+    <div class="fig"><div class="slot" data-scene="ligate"><div class="ph"><span>Modelo 3D desta cena</span><button type="button" data-load="ligate">Carregar o modelo aqui</button></div></div></div>
+    <div class="panel" id="panel-ligate">
+      <div class="contract"><b>Contrato de vista.</b> Paciente em decúbito dorsal na mesa, vista anterior (como o cirurgião vê pela laparotomia, olhando para dentro do duodeno aberto). Cranial no alto, direita do paciente à esquerda da tela. Duodeno e estômago quase transparentes para mostrar a AGD atrás da parede posterior; pâncreas translúcido. Partículas claras indicam o sentido do fluxo arterial.</div>
+      <div><h4>Passos</h4><ol class="steps" data-steps="ligate"></ol></div>
+      <div class="btns"><button type="button" data-play="ligate">Reproduzir sequência</button><button type="button" class="ghost" data-reset="ligate">Recomeçar</button></div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>Imagine o segmento da AGD que fica atrás da úlcera como um cano com três entradas. Pela entrada de cima chega o sangue da hepática comum, que é o fluxo normal, anterógrado. Pela entrada de baixo chega sangue da AMS, que sobe pelas pancreaticoduodenais inferiores, passa pelas arcadas e entra na AGD de baixo para cima, de forma retrógrada. Pela entrada medial chega o fluxo do ramo pancreático transverso, que se comunica com a rede arterial do colo e do corpo do pâncreas.</p>
+    <p>Um ponto só, dado no fundo da úlcera, fecha o furo naquele momento, mas não interrompe nenhuma das entradas. Quando a pressão volta ao normal, ou quando o trombo dentro do ponto se desfaz, o sangramento recomeça. Por isso a técnica consagrada (Sabiston, Schwartz) é a ligadura em três pontos. O primeiro ponto passa cranial à úlcera e fecha a entrada de cima. O segundo passa caudal à úlcera e fecha a entrada de baixo. O terceiro é um ponto em U dado na face medial, por baixo do vaso, para fechar o ramo pancreático transverso.</p>
+    <p>Os pontos são profundos e precisam passar por baixo da artéria. É aqui que mora o risco: o colédoco desce atrás de D1 a poucos milímetros, lateral à AGD (à direita do paciente). Um ponto profundo e lateral pode pegar ou obstruir o colédoco e causar icterícia obstrutiva ou fístula biliar no pós-operatório. O cirurgião deve reconhecer o colédoco antes de passar os pontos; quando há dúvida, pode passar um cateter ou uma sonda pelo colédoco (por coledocotomia ou pela papila) para palpá-lo, ou fazer colangiografia. O passo 7 da cena mostra o ponto errado.</p>
+    <h3>A sequência da operação</h3>
+    <p>O acesso é uma piloroduodenotomia longitudinal: uma incisão na parede anterior que começa no antro, passa pelo piloro e continua pelo bulbo, de 4 a 5 cm. A incisão longitudinal permite estender o quanto for preciso para ver a úlcera. Com a parede posterior exposta, o cirurgião comprime o ponto que sangra com o dedo, aspira, identifica a úlcera e faz a ligadura tripla. Depois fecha a incisão no sentido transversal, que é a piloroplastia de Heineke-Mikulicz: a incisão longitudinal fechada na transversal alarga o canal pilórico em vez de estreitá-lo. No pós-operatório, IBP e pesquisa e erradicação do <i>H. pylori</i>.</p>
+  </div>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="chap" id="c5">
+  <div class="chap-head">
+    <div class="chap-num">05</div>
+    <div>
+      <div class="eyebrow kick">Cena animada · radiologia intervencionista</div>
+      <h2>Embolização em sanduíche</h2>
+      <p class="dek">O raciocínio é o mesmo da ligadura tripla, feito por dentro da artéria. A mola de baixo fecha a porta dos fundos; a mola de cima fecha a porta da frente.</p>
+    </div>
+  </div>
+  <div class="plate">
+    <div class="fig"><div class="slot" data-scene="embo"><div class="ph"><span>Modelo 3D desta cena</span><button type="button" data-load="embo">Carregar o modelo aqui</button></div></div></div>
+    <div class="panel" id="panel-embo">
+      <div class="contract"><b>Contrato de vista.</b> Paciente em decúbito dorsal na mesa de angiografia, vista oblíqua anterior esquerda (de frente e um pouco pela esquerda do paciente), para acompanhar o cateter subindo pela aorta, entrando no tronco celíaco, seguindo pela hepática comum e descendo na AGD. Cranial no alto. Duodeno e pâncreas semitransparentes.</div>
+      <div><h4>Passos</h4><ol class="steps" data-steps="embo"></ol></div>
+      <div class="btns"><button type="button" data-play="embo">Reproduzir sequência</button><button type="button" class="ghost" data-reset="embo">Recomeçar</button></div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>A embolização arterial transcateter é a alternativa à cirurgia quando a endoscopia falha. O radiologista punciona a artéria femoral (ou radial), sobe com o cateter até o tronco celíaco, entra na hepática comum e cateteriza a AGD. A angiografia mostra o extravasamento de contraste no ponto que sangra. Se não houver extravasamento visível, o que é comum porque o sangramento é intermitente, a embolização pode ser feita de forma empírica, guiada por um clipe deixado pelo endoscopista na base da úlcera.</p>
+    <p>A primeira mola vai distal ao ponto de sangramento, abaixo dele, e fecha a entrada retrógrada que vem da arcada pancreaticoduodenal. A segunda vai proximal, acima do ponto, e fecha a entrada anterógrada que vem da hepática comum. Se o radiologista colocasse só a mola proximal, a situação seria a mesma do ponto único da cirurgia: o sangue continuaria entrando por baixo. Ramos que saem entre as duas molas também podem manter o fluxo; quando a angiografia mostra isso, o segmento inteiro é preenchido (com molas ou agente líquido).</p>
+    <div class="box"><span class="lab">Complicações e limites</span>A irrigação do duodeno é muito rica, então a isquemia duodenal depois da embolização é rara. O risco aumenta em quem já operou o estômago ou o duodeno, porque parte da circulação colateral foi interrompida. Outras complicações: pancreatite, dissecção arterial e ressangramento. A ACG 2021 e a ESGE 2021 colocam a embolização como próximo passo depois da falha endoscópica; em comparação com a cirurgia, ela tem mais ressangramento e menos complicações.</div>
+  </div>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="chap" id="c6">
+  <div class="chap-head">
+    <div class="chap-num">06</div>
+    <div>
+      <div class="eyebrow kick">Cena</div>
+      <h2>Kissing ulcers</h2>
+      <p class="dek">Duas úlceras, uma na parede anterior e outra na posterior, frente a frente na mesma altura do bulbo. Uma pode perfurar enquanto a outra sangra.</p>
+    </div>
+  </div>
+  <div class="plate">
+    <div class="fig"><div class="slot" data-scene="kiss"><div class="ph"><span>Modelo 3D desta cena</span><button type="button" data-load="kiss">Carregar o modelo aqui</button></div></div></div>
+    <div class="panel" id="panel-kiss">
+      <div class="contract"><b>Contrato de vista.</b> Paciente em decúbito dorsal na mesa, vista lateral direita pura (olhando pela direita do paciente): anterior à direita da tela, posterior à esquerda, cranial no alto. Essa é a única vista em que as duas úlceras aparecem de perfil, uma diante da outra. Duodeno semitransparente.</div>
+      <div><h4>Passos</h4><ol class="steps" data-steps="kiss"></ol></div>
+      <div class="btns"><button type="button" data-play="kiss">Reproduzir sequência</button><button type="button" class="ghost" data-reset="kiss">Recomeçar</button></div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>Kissing ulcers são úlceras que se tocam quando a luz colaba: uma na parede anterior, outra na posterior, na mesma altura. O cenário de prova é o paciente operado por úlcera perfurada que também tem melena, queda de hemoglobina ou instabilidade hemodinâmica maior do que a peritonite explica. A úlcera anterior perfurou; a posterior está sangrando ou vai sangrar.</p>
+    <p>Se o cirurgião faz só o tampão de omento na perfuração anterior, a úlcera posterior continua lá, em cima da AGD. O certo é aproveitar o orifício da perfuração, estendê-lo como piloroduodenotomia longitudinal, olhar a parede posterior e, se houver úlcera sangrante ou com vaso visível, fazer a ligadura tripla da AGD. Depois fecha-se a incisão na transversal (Heineke-Mikulicz) e reforça-se com omento. A regra prática: em toda perfuração anterior de paciente com sinais de sangramento, a parede posterior precisa ser inspecionada.</p>
+  </div>
+</section>
+
+<!-- ============ 07 ============ -->
+<section class="chap" id="c7">
+  <div class="chap-head">
+    <div class="chap-num">07</div>
+    <div>
+      <div class="eyebrow kick">Conduta</div>
+      <h2>Úlcera perfurada</h2>
+      <p class="dek">Diagnóstico por imagem, estabilização, rafia com omento e tratamento da causa. O tratamento não operatório é exceção com critérios rígidos.</p>
+    </div>
+  </div>
+  <div class="flow" aria-label="Fluxograma da úlcera perfurada">
+    <div class="fn"><span class="t">Suspeita</span>Dor epigástrica súbita e intensa, que se espalha para o abdome todo; abdome em tábua; história de dispepsia, uso de AINE, tabagismo. Idosos e usuários de corticoide podem ter poucos sinais.</div>
+    <div class="fa"></div>
+    <div class="fn"><span class="t">Imagem</span>Radiografia de tórax em pé (paciente sentado ou em pé por cerca de 10 minutos antes): ar sob o diafragma. Se não consegue ficar em pé, decúbito lateral esquerdo com raio horizontal. O pneumoperitônio está ausente em cerca de 15 a 25% das perfurações, então radiografia normal não exclui. A TC de abdome é o exame mais sensível: mostra pequenas bolhas de ar, líquido livre e às vezes o ponto de perfuração.</div>
+    <div class="fa"></div>
+    <div class="fn"><span class="t">Estabilização (simultânea à imagem)</span>Jejum; sonda nasogástrica aberta; dois acessos e hidratação venosa guiada por diurese (sonda vesical); IBP endovenoso; antibiótico de amplo espectro cobrindo gram-negativos e anaeróbios (antifúngico em casos selecionados); analgesia. Calcular o risco (escore de Boey: choque na admissão, comorbidade grave, perfuração há mais de 24 h; cada item soma 1 e a mortalidade sobe com o total).</div>
+    <div class="fa"></div>
+    <div class="fn dec"><span class="t">Decisão</span>Há peritonite difusa, instabilidade ou extravasamento de contraste? Ou o paciente está estável, com dor localizada, poucas horas de evolução e perfuração bloqueada no estudo contrastado?</div>
+    <div class="fsplit">
+      <div>
+        <div class="fa"><span>quase todos os pacientes</span></div>
+        <div class="fn end"><span class="t">Cirurgia</span>Rafia da perfuração com tampão de omento (Graham ou Cellan-Jones), por via laparoscópica ou aberta, com lavagem da cavidade. A laparoscopia é preferível no paciente estável com equipe experiente; a via aberta, no choque, na peritonite muito avançada ou na perfuração difícil.</div>
+      </div>
+      <div>
+        <div class="fa"><span>exceção</span></div>
+        <div class="fn"><span class="t">Não operatório (método de Taylor)</span>Só se todos estiverem presentes: estável, sem peritonite difusa, perfuração bloqueada confirmada por estudo contrastado hidrossolúvel (sem extravasamento). SNG, jejum, antibiótico, IBP EV e reavaliação seriada por cirurgião. Piora em 12 a 24 h leva à cirurgia. Funciona pior acima de 70 anos.</div>
+      </div>
+    </div>
+    <div class="fa"></div>
+    <div class="fn"><span class="t">Depois da operação</span>Pesquisar <i>H. pylori</i> (biópsia, sorologia ou teste respiratório fora do IBP) e erradicar; suspender AINE; IBP por 8 semanas ou mais. Úlcera gástrica perfurada: biopsiar a borda, porque pode ser câncer; úlcera duodenal não precisa de biópsia de rotina.</div>
+    <div class="fa"></div>
+    <div class="fsplit">
+      <div><div class="fa"><span>casos selecionados</span></div><div class="fn"><span class="t">Operação redutora de ácido</span>Vagotomia (troncular com piloroplastia ou gástrica proximal) ou antrectomia ficam para o paciente estável, com úlcera crônica refratária, sem <i>H. pylori</i> e sem AINE, ou que não poderá aderir ao tratamento clínico. Hoje é raro.</div></div>
+      <div><div class="fa"><span>perfuração grande</span></div><div class="fn no"><span class="t">Perfurações grandes (acima de 2 a 3 cm)</span>O omento sozinho pode não segurar. Opções de maior porte: tampão de omento em plug, patch de serosa jejunal, exclusão pilórica com gastrojejunostomia, duodenostomia com sonda, gastrectomia distal com reconstrução. Escolha conforme estabilidade e experiência.</div></div>
+    </div>
+  </div>
+  <div class="prose">
+    <div class="box div"><span class="lab">Divergência de nomenclatura · Graham × Cellan-Jones</span>Historicamente, Cellan-Jones (1929) descreveu o tampão com omento pediculado, e Graham (1937), com omento livre. Na prática atual, "patch de Graham" costuma designar o omento pediculado fixado por pontos que passam pelas bordas da perfuração e são amarrados sobre o omento, sem fechar o orifício antes; em muitos textos, "Graham modificado" designa justamente o uso de omento pediculado em vez de livre. Quando o orifício é fechado primeiro e o omento é fixado por cima, o nome mais usado é rafia primária com epiploplastia (omentopexia). As bancas brasileiras aceitam "rafia com epiploplastia" como resposta para a técnica padrão.</div>
+  </div>
+</section>
+
+<!-- ============ 08 ============ -->
+<section class="chap" id="c8">
+  <div class="chap-head">
+    <div class="chap-num">08</div>
+    <div>
+      <div class="eyebrow kick">Conduta</div>
+      <h2>Úlcera sangrante</h2>
+      <p class="dek">Ressuscitar, estratificar, fazer a endoscopia em até 24 h, tratar os estigmas de alto risco e saber o que fazer quando volta a sangrar.</p>
+    </div>
+  </div>
+  <div class="flow" aria-label="Fluxograma da úlcera sangrante">
+    <div class="fn"><span class="t">Ressuscitação</span>Dois acessos venosos calibrosos, cristaloide, tipagem. Transfusão restritiva: hemoglobina abaixo de 7 g/dL; abaixo de 8 g/dL no coronariopata ou com doença cardiovascular. Choque com sangramento ativo: transfundir conforme a perda, sem esperar a hemoglobina. Suspender antiagregante e anticoagulante conforme o risco trombótico e reverter anticoagulação quando indicado.</div>
+    <div class="fa"></div>
+    <div class="fn"><span class="t">Estratificação antes da endoscopia</span>Glasgow-Blatchford (ureia, hemoglobina, PA sistólica, FC, melena, síncope, hepatopatia, insuficiência cardíaca). Escore 0 ou 1: risco muito baixo, pode ser manejado ambulatorialmente com endoscopia eletiva.</div>
+    <div class="fa"></div>
+    <div class="fn"><span class="t">Antes da endoscopia</span>IBP EV em alta dose (bolus de 80 mg e depois 8 mg/h, ou bolus intermitentes equivalentes), conforme a ESGE; a ACG não se posiciona (ver divergências). Não atrasar a endoscopia por causa dele. Eritromicina 250 mg EV de 30 a 120 minutos antes da endoscopia, para esvaziar o estômago e melhorar a visão.</div>
+    <div class="fa"></div>
+    <div class="fn dec"><span class="t">Endoscopia em até 24 h, depois da ressuscitação</span>Classificar a úlcera por Forrest (tabela abaixo). Antecipar a endoscopia não traz benefício: em pacientes de alto risco já ressuscitados, fazê-la em menos de 6 h não reduziu mortalidade nem ressangramento em relação a 6 a 24 h (Lau, NEJM 2020), e a ESGE não recomenda endoscopia urgente (menos de 12 h).</div>
+    <div class="fsplit">
+      <div><div class="fa"><span>Ia, Ib, IIa</span></div><div class="fn end"><span class="t">Terapia endoscópica</span>Adrenalina diluída nunca sozinha: quando usada, sempre associada a um segundo método (clipe, coagulação térmica bipolar ou heater probe, ou injeção esclerosante). No sangramento ativo (Ia, Ib), a ESGE recomenda essa combinação; no vaso visível (IIa), clipe, térmico ou esclerosante podem ser usados sozinhos ou com adrenalina. A ACG aceita térmico, clipe ou etanol absoluto como monoterapia. Pó hemostático para sangramento ativo como ponte; clipe over-the-scope no ressangramento ou no sangramento refratário aos métodos padrão.</div></div>
+      <div><div class="fa"><span>IIb</span></div><div class="fn"><span class="t">Coágulo aderido</span>Tentar remover (irrigação vigorosa ou alça fria) e tratar o estigma subjacente. IBP em alta dose em qualquer caso.</div></div>
+      <div><div class="fa"><span>IIc, III</span></div><div class="fn"><span class="t">Sem terapia endoscópica</span>IBP oral; dieta precoce; alta precoce se baixo risco clínico.</div></div>
+    </div>
+    <div class="fa"></div>
+    <div class="fn"><span class="t">Depois da hemostasia</span>IBP em alta dose por 72 h (contínuo ou intermitente), depois IBP oral duas vezes ao dia até completar 14 dias e depois uma vez ao dia. Rockall completo (idade, choque, comorbidade, diagnóstico, estigma) para prognóstico. Pesquisar e erradicar <i>H. pylori</i>; em vigência de sangramento os testes têm mais falso-negativo, e um teste negativo deve ser repetido depois. Second-look endoscópico de rotina não é recomendado.</div>
+    <div class="fa"></div>
+    <div class="fn dec"><span class="t">Ressangramento</span>Segunda endoscopia com nova terapia (clipe over-the-scope é boa opção nesse momento).</div>
+    <div class="fsplit">
+      <div><div class="fa"><span>segunda EDA falhou</span></div><div class="fn"><span class="t">Angioembolização ou cirurgia</span>Embolização em sanduíche da AGD (capítulo 05) ou ligadura tripla por piloroduodenotomia (capítulo 04), conforme disponibilidade, estado do paciente e experiência local.</div></div>
+      <div><div class="fa"><span>a qualquer momento</span></div><div class="fn no"><span class="t">Cirurgia imediata</span>Choque refratário apesar da ressuscitação adequada, ou sangramento maciço sem acesso imediato à endoscopia ou à embolização.</div></div>
+    </div>
+  </div>
+
+  <div class="prose" style="margin-bottom:10px"><h3>Classificação de Forrest</h3><p>A classificação de Forrest descreve o que o endoscopista vê na base da úlcera. Cada classe tem um risco de ressangramento se nada for feito, e é esse risco que decide se há terapia endoscópica. Os percentuais abaixo são os clássicos (Laine e Peterson, NEJM 1994) e variam entre séries.</p></div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Classe</th><th>O que se vê</th><th>Ressangramento sem tratamento</th><th>Conduta</th></tr></thead>
+      <tbody>
+        <tr class="hi"><td class="cls">Ia</td><td>Sangramento ativo em jato (arterial pulsátil)</td><td class="mono">cerca de 55% junto com Ib; próximo de 90% em séries antigas só de Ia</td><td>Terapia endoscópica combinada; IBP alta dose 72 h</td></tr>
+        <tr class="hi"><td class="cls">Ib</td><td>Sangramento ativo em babação (porejamento)</td><td class="mono">cerca de 55% (agrupado com Ia)</td><td>Terapia endoscópica; IBP alta dose 72 h</td></tr>
+        <tr class="hi"><td class="cls">IIa</td><td>Vaso visível não sangrante (protuberância pigmentada na base)</td><td class="mono">cerca de 43%</td><td>Terapia endoscópica; IBP alta dose 72 h</td></tr>
+        <tr><td class="cls">IIb</td><td>Coágulo aderido que resiste à irrigação</td><td class="mono">cerca de 22%</td><td>Remover o coágulo e tratar o estigma subjacente (ver divergência); IBP alta dose</td></tr>
+        <tr><td class="cls">IIc</td><td>Mancha plana pigmentada (hematina)</td><td class="mono">cerca de 10%</td><td>Sem terapia endoscópica; IBP oral</td></tr>
+        <tr><td class="cls">III</td><td>Base limpa, recoberta de fibrina</td><td class="mono">cerca de 5%</td><td>Sem terapia endoscópica; IBP oral; dieta e alta precoces</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="prose">
+    <div class="box div"><span class="lab">Divergências entre diretrizes</span>
+      <p style="margin-bottom:8px"><b>Coágulo aderido (IIb).</b> A ESGE 2021 sugere considerar a remoção do coágulo e o tratamento do que está embaixo. A ACG 2021 não recomenda a favor nem contra a terapia endoscópica. Em prova, a resposta mais aceita é remover e tratar, com IBP em alta dose.</p>
+      <p style="margin-bottom:8px"><b>IBP antes da endoscopia.</b> A ESGE sugere iniciar IBP EV em alta dose antes da endoscopia, porque reduz a proporção de estigmas de alto risco. A ACG não faz recomendação, porque não muda ressangramento, cirurgia nem mortalidade. Nenhuma das duas manda adiar a endoscopia por causa do IBP.</p>
+      <p style="margin-bottom:8px"><b>Meta transfusional.</b> As duas usam limiar de 7 g/dL. No cardiopata, a ACG considera razoável o limiar de 8 g/dL na doença cardiovascular prévia (no texto de discussão, não na recomendação numerada); a ESGE, na doença cardiovascular aguda, recomenda limiar de 8 g/dL e alvo de 10 g/dL ou mais depois da transfusão.</p>
+      <p><b>Depois da falha da segunda endoscopia.</b> Aqui as duas diretrizes concordam: a ACG sugere angioembolização como próximo passo, e a ESGE recomenda considerar a embolização, deixando a cirurgia para quando ela não estiver disponível ou falhar. A divergência é com os livros de cirurgia (Sabiston, Schwartz), que mantêm a cirurgia como opção definitiva equivalente, sobretudo no paciente instável ou quando a radiologia intervencionista não está disponível de imediato.</p>
+    </div>
+    <h3>Quem tem alto risco de ressangrar</h3>
+    <p>Úlcera maior que 2 cm; úlcera na parede posterior do bulbo (sobre a AGD) ou na pequena curvatura alta (sobre a gástrica esquerda); estigma Forrest Ia ou IIa; instabilidade hemodinâmica na apresentação; hemoglobina baixa na chegada. Esses pacientes ficam em unidade de maior vigilância e recebem a avaliação do cirurgião logo no início, mesmo que a endoscopia tenha funcionado.</p>
+    <h3>A técnica cirúrgica em uma linha</h3>
+    <p>Piloroduodenotomia longitudinal, compressão digital do ponto que sangra, ligadura tripla da AGD (cranial, caudal e ponto em U medial no ramo pancreático transverso) sem pegar o colédoco, fechamento transversal como piloroplastia de Heineke-Mikulicz, IBP e erradicação do <i>H. pylori</i>. Vagotomia hoje é exceção: fica para o paciente sem <i>H. pylori</i> e sem AINE, ou com ressangramento em vigência de tratamento adequado.</p>
+  </div>
+</section>
+
+<!-- ============ 09 ============ -->
+<section class="chap" id="c9">
+  <div class="chap-head">
+    <div class="chap-num">09</div>
+    <div>
+      <div class="eyebrow kick">Prova</div>
+      <h2>Como a banca cobra e onde estão as armadilhas</h2>
+    </div>
+  </div>
+  <div class="prose">
+    <div class="two">
+      <div class="box"><span class="lab">Enunciado de perfuração</span>Dor súbita "em facada", abdome em tábua, uso de AINE. A pergunta costuma ser o exame (radiografia em pé; se normal, TC) ou a técnica (rafia com omento). A resposta errada típica é gastrectomia ou vagotomia de rotina.</div>
+      <div class="box"><span class="lab">Enunciado de hemorragia</span>Hematêmese ou melena, úlcera de parede posterior de bulbo, vaso visível. A pergunta costuma ser Forrest, a terapia endoscópica (combinada) ou o passo seguinte ao ressangramento (segunda EDA).</div>
+    </div>
+    <div class="box no"><span class="lab">Armadilha 1 · radiografia normal</span>Pneumoperitônio ausente não exclui perfuração. Com quadro sugestivo e paciente estável, o passo seguinte é a TC, não a alta e nem o diagnóstico de pancreatite.</div>
+    <div class="box no"><span class="lab">Armadilha 2 · amilase alta</span>Dor que irradia para as costas com amilase elevada em quem tem úlcera conhecida pode ser úlcera posterior penetrante no pâncreas, e não pancreatite primária. A perfuração livre também eleva a amilase, porque o conteúdo duodenal na cavidade é absorvido pelo peritônio. Amilase alta, por si só, não fecha diagnóstico de pancreatite.</div>
+    <div class="box no"><span class="lab">Armadilha 3 · kissing ulcers</span>Perfuração com melena, queda de hemoglobina ou choque desproporcional: há uma úlcera posterior sangrando. Tampão de omento sozinho é a alternativa errada; abra, olhe a parede posterior e ligue a AGD.</div>
+    <div class="box no"><span class="lab">Armadilha 4 · adrenalina isolada</span>Injetar só adrenalina é tratamento insuficiente, porque o efeito é transitório. A alternativa correta associa um segundo método.</div>
+    <div class="box no"><span class="lab">Armadilha 5 · ressangramento vai direto para cirurgia</span>Depois de um ressangramento, a conduta é uma segunda endoscopia. Se ela falhar, embolização (preferida pelas diretrizes) ou cirurgia. Cirurgia direta, sem segunda endoscopia, só no choque refratário ou sem acesso a endoscopia.</div>
+    <div class="box no"><span class="lab">Armadilha 6 · ponto único</span>"Sutura do vaso no leito da úlcera" sem os três pontos é a alternativa que parece certa e não é. A AGD recebe fluxo de cima, de baixo e do lado.</div>
+    <div class="box no"><span class="lab">Armadilha 7 · úlcera gástrica</span>Úlcera gástrica perfurada ou sangrante precisa de biópsia, porque pode ser adenocarcinoma. A duodenal, não.</div>
+    <div class="box no"><span class="lab">Armadilha 8 · Taylor para todos</span>Tratamento não operatório só com perfuração bloqueada confirmada por contraste, paciente estável e sem peritonite difusa. Peritonite difusa, choque ou extravasamento de contraste mandam para a cirurgia.</div>
+  </div>
+</section>
+
+<!-- ============ 10 ============ -->
+<section class="chap" id="c10">
+  <div class="chap-head">
+    <div class="chap-num">10</div>
+    <div>
+      <div class="eyebrow kick">Questões</div>
+      <h2>Seis questões no nível de R+</h2>
+      <p class="dek">Escolha uma alternativa. O comentário abre embaixo e explica por que cada alternativa está certa ou errada.</p>
+    </div>
+  </div>
+  <div class="score" id="score"><span id="score-txt">0 de 6 respondidas · 0 acertos</span><button type="button" id="quiz-reset">Recomeçar questões</button></div>
+  <div class="quiz" id="quiz"></div>
+  <div class="refs">
+    <div class="eyebrow">Referências</div>
+    <p>Townsend CM e cols. Sabiston Textbook of Surgery, 21ª ed. Elsevier, 2022. Capítulo de estômago e duodeno.</p>
+    <p>Brunicardi FC e cols. Schwartz's Principles of Surgery, 11ª ed. McGraw-Hill, 2019. Capítulo de estômago.</p>
+    <p>Laine L, Barkun AN, Saltzman JR, Martel M, Leontiadis GI. ACG Clinical Guideline: Upper Gastrointestinal and Ulcer Bleeding. Am J Gastroenterol 2021;116:899–917.</p>
+    <p>Gralnek IM e cols. Endoscopic diagnosis and management of nonvariceal upper gastrointestinal hemorrhage (NVUGIH): ESGE Guideline – Update 2021. Endoscopy 2021;53:300–332.</p>
+    <p>Laine L, Peterson WL. Bleeding peptic ulcer. N Engl J Med 1994;331:717–727.</p>
+    <p>Lau JYW e cols. Timing of endoscopy for acute upper gastrointestinal bleeding. N Engl J Med 2020;382:1299–1308.</p>
+    <p>Crofts TJ e cols. A randomized trial of nonoperative treatment for perforated peptic ulcer. N Engl J Med 1989;320:970–973.</p>
+  </div>
+  <footer>Modelo 3D procedural: proporções e relações anatômicas fiéis, calibres levemente aumentados para visibilidade (AGD e ramos) e fígado e vesícula representados de forma esquemática e translúcida.</footer>
+</section>
+</div>
+
+<div id="stage" hidden>
+  <canvas id="gl" aria-label="Modelo 3D do duodeno e da artéria gastroduodenal"></canvas>
+  <div id="labels"></div>
+  <div class="hud" id="hud"></div>
+  <canvas id="gizmo" width="184" height="184" aria-hidden="true"></canvas>
+  <div class="stage-help">1 dedo: girar<br>pinça: zoom<br>2 dedos: deslocar<br>toque: identificar</div>
+  <div class="stage-cap" id="cap"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+(function(){
+'use strict';
+const V = (x,y,z)=>new THREE.Vector3(x,y,z);
+const PI = Math.PI;
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const lerp=(a,b,t)=>a+(b-a)*t;
+const smooth=t=>{t=clamp(t,0,1);return t*t*(3-2*t);};
+
+/* ---------- ruído para superfícies orgânicas ---------- */
+function hash(x,y,z){const h=Math.sin(x*127.1+y*311.7+z*74.7)*43758.5453;return h-Math.floor(h);}
+function vnoise(x,y,z){
+  const xi=Math.floor(x),yi=Math.floor(y),zi=Math.floor(z);
+  const xf=x-xi,yf=y-yi,zf=z-zi;const u=xf*xf*(3-2*xf),v=yf*yf*(3-2*yf),w=zf*zf*(3-2*zf);
+  let r=0;
+  for(let dx=0;dx<2;dx++)for(let dy=0;dy<2;dy++)for(let dz=0;dz<2;dz++){
+    r+=hash(xi+dx,yi+dy,zi+dz)*(dx?u:1-u)*(dy?v:1-v)*(dz?w:1-w);
+  }
+  return r;
+}
+function fbm(p,f){f=f||1;return vnoise(p.x*f,p.y*f,p.z*f)*0.6+vnoise(p.x*f*2.1,p.y*f*2.1,p.z*f*2.1)*0.3+vnoise(p.x*f*4.3,p.y*f*4.3,p.z*f*4.3)*0.1;}
+
+/* ---------- geometria de referência (cm; x = esquerda do paciente, y = cranial, z = anterior) ---------- */
+const P = {
+  aorta:[V(1.2,14,-5.8),V(1.05,6,-5.6),V(1.0,0,-5.5),V(0.9,-8,-5.3),V(0.8,-15,-5.2)],
+  ivc:[V(-2.6,14,-5.4),V(-2.55,6,-5.5),V(-2.5,0,-5.6),V(-2.5,-8,-5.5),V(-2.5,-15,-5.4)],
+  celiac:[V(1.0,5.4,-4.9),V(1.0,5.45,-4.2),V(1.0,5.4,-3.6)],
+  lga:[V(1.0,5.4,-3.6),V(1.5,6.4,-3.3),V(2.1,7.6,-2.6),V(2.6,8.6,-1.9)],
+  splenicA:[V(1.0,5.4,-3.6),V(2.6,5.1,-3.8),V(4.0,4.2,-3.6),V(5.6,4.0,-4.2),V(7.2,4.6,-4.3),V(8.6,4.4,-4.7),V(10.2,5.2,-4.9)],
+  cha:[V(1.0,5.4,-3.6),V(-0.3,5.05,-3.0),V(-1.3,4.8,-2.72),V(-2.0,4.6,-2.62)],
+  pha:[V(-2.0,4.6,-2.62),V(-2.25,5.6,-2.4),V(-2.55,7.2,-2.1),V(-2.85,9.6,-1.7)],
+  gda:[V(-2.0,4.6,-2.62),V(-1.97,3.9,-2.56),V(-1.92,2.9,-2.48),V(-1.88,1.9,-2.38),V(-1.84,1.1,-2.24),V(-1.8,0.5,-2.02)],
+  pspd:[V(-1.97,3.95,-2.57),V(-2.5,2.6,-2.95),V(-3.0,1.25,-2.9),V(-3.55,0.2,-3.15),V(-4.05,-1.0,-3.75),V(-4.25,-2.8,-4.3),V(-4.05,-5.0,-4.1)],
+  tpa:[V(-1.9,2.25,-2.45),V(-1.1,1.75,-2.6),V(0.2,1.35,-2.75),V(1.8,1.35,-2.9),V(3.6,1.75,-3.25),V(5.6,2.25,-3.8)],
+  aspd:[V(-1.8,0.5,-2.02),V(-2.4,-0.5,-1.4),V(-2.95,-1.6,-1.2),V(-3.55,-3.0,-1.25),V(-4.0,-5.0,-1.6)],
+  rgea:null, // gerada a partir da curvatura maior
+  sma:[V(0.95,3.6,-4.7),V(1.1,2.8,-3.6),V(1.25,1.2,-3.05),V(1.3,-1.5,-2.75),V(1.4,-4.0,-2.3),V(1.6,-7.0,-1.6),V(1.9,-10.5,-0.9),V(2.2,-13.5,-0.6)],
+  ipda:[V(1.35,-3.4,-2.45),V(0.6,-4.1,-2.6),V(0.0,-4.6,-2.62)],
+  aipd:[V(0.0,-4.6,-2.62),V(-0.9,-5.25,-1.85),V(-2.2,-5.55,-1.45),V(-3.4,-5.4,-1.5),V(-4.0,-5.0,-1.6)],
+  pipd:[V(0.0,-4.6,-2.62),V(-0.9,-5.2,-3.6),V(-2.3,-5.45,-4.25),V(-3.5,-5.3,-4.3),V(-4.05,-5.0,-4.1)],
+  portal:[V(0.4,0.6,-3.3),V(-0.7,2.3,-3.55),V(-1.9,4.4,-3.75),V(-2.7,6.9,-3.3),V(-3.2,9.6,-2.8)],
+  smv:[V(0.2,-13.5,-0.7),V(0.2,-10,-1.1),V(0.2,-7,-1.6),V(0.25,-4.0,-2.2),V(0.35,-1.0,-2.95),V(0.4,0.6,-3.3)],
+  splenicV:[V(0.4,0.6,-3.3),V(1.8,1.0,-3.45),V(3.4,1.4,-3.65),V(5.6,2.3,-4.3),V(7.8,3.2,-4.7),V(10.0,4.3,-4.9)],
+  cbd:[V(-3.95,9.8,-2.0),V(-3.75,7.2,-2.55),V(-3.5,4.6,-3.15),V(-3.4,2.6,-3.35),V(-3.55,0.7,-3.45),V(-3.95,-1.0,-3.5),V(-4.25,-2.5,-3.15),V(-4.42,-3.05,-2.8)],
+  cystic:[V(-3.3,7.4,-1.1),V(-3.55,7.6,-1.75),V(-3.75,7.5,-2.4)],
+  stomach:[V(6.6,8.3,0.1),V(6.5,5.2,1.3),V(5.3,1.9,2.0),V(3.4,0.45,2.1),V(1.6,0.9,1.6),V(0.0,1.9,0.9)],
+  duo:[V(0.0,1.9,0.9),V(-1.2,2.3,0.1),V(-2.6,2.8,-0.8),V(-3.9,3.2,-1.7),V(-5.0,2.9,-2.45),V(-5.6,1.0,-2.75),V(-5.75,-2.5,-2.85),V(-5.45,-5.4,-2.95),V(-4.3,-7.0,-3.15),V(-2.0,-7.45,-3.3),V(0.8,-7.25,-3.3),V(3.0,-6.4,-3.2),V(4.0,-4.6,-3.0),V(4.25,-3.5,-2.8)],
+  panc:[V(-1.4,-0.2,-2.3),V(0.6,0.55,-1.75),V(2.8,1.35,-2.2),V(5.4,2.35,-3.15),V(7.9,3.5,-3.95),V(9.7,4.6,-4.3)],
+  gb:[V(-3.3,7.4,-1.1),V(-3.9,6.6,0.2),V(-4.4,5.7,1.5),V(-4.75,5.05,2.45)]
+};
+const CRV = {};
+function crv(pts){return new THREE.CatmullRomCurve3(pts,false,'centripetal');}
+for(const k in P) if(P[k]) CRV[k]=crv(P[k]);
+function tNearest(curve,pt,n){n=n||400;let best=0,bd=1e9;for(let i=0;i<=n;i++){const t=i/n;const d=curve.getPointAt(t).distanceToSquared(pt);if(d<bd){bd=d;best=t;}}return best;}
+function tAtY(curve,y){let best=0,bd=1e9;for(let i=0;i<=500;i++){const t=i/500;const d=Math.abs(curve.getPointAt(t).y-y);if(d<bd){bd=d;best=t;}}return best;}
+function tAtX(curve,x,t0,t1){let best=0,bd=1e9;for(let i=0;i<=500;i++){const t=t0+(t1-t0)*i/500;const d=Math.abs(curve.getPointAt(t).x-x);if(d<bd){bd=d;best=t;}}return best;}
+
+/* frames do tubo: N = anterior projetado, B = T x N */
+const ZW=V(0,0,1), YW=V(0,1,0);
+function frame(curve,t){
+  const Pt=curve.getPointAt(t), T=curve.getTangentAt(t);
+  let N=ZW.clone().sub(T.clone().multiplyScalar(T.dot(ZW)));
+  if(N.lengthSq()<1e-4) N=YW.clone().sub(T.clone().multiplyScalar(T.dot(YW)));
+  N.normalize(); const B=new THREE.Vector3().crossVectors(T,N).normalize();
+  return {P:Pt,T,N,B};
+}
+
+/* raios */
+const stL=CRV.stomach.getLength(), duL=CRV.duo.getLength();
+function rStomach(t){
+  const s=t*stL; const keys=[[0,3.3],[0.3,3.15],[0.6,2.35],[0.85,1.65],[0.96,1.05],[1,0.85]];
+  let b=keys[0][1]; for(let i=0;i<keys.length-1;i++){if(t>=keys[i][0]&&t<=keys[i+1][0]){b=lerp(keys[i][1],keys[i+1][1],smooth((t-keys[i][0])/(keys[i+1][0]-keys[i][0])));}}
+  if(s<1.4){const q=1-s/1.4;b*=Math.sqrt(Math.max(0.0,1-q*q));}
+  return Math.max(b,0.02);
+}
+function rDuo(t){
+  const s=t*duL; let b;
+  if(s<0.9) b=lerp(0.85,1.35,smooth(s/0.9));
+  else if(s<6.5) b=1.35;
+  else if(s<9) b=lerp(1.35,1.28,smooth((s-6.5)/2.5));
+  else if(s<17) b=lerp(1.28,1.15,smooth((s-9)/8));
+  else b=lerp(1.15,1.1,smooth((s-17)/6));
+  const e=duL-s; if(e<0.9){const q=1-e/0.9;b*=Math.sqrt(Math.max(0,1-q*q));}
+  return Math.max(b,0.02);
+}
+const STF={N:0.78,B:1.0}; // estômago achatado no sentido anteroposterior
+function rPanc(t){return lerp(1.25,0.45,smooth(t))*(t<0.05?Math.sqrt(t/0.05)*0.6+0.4:1)*(t>0.95?Math.sqrt(Math.max(0,(1-t)/0.05))*0.7+0.3:1);}
+function rGB(t){const s=[[0,0.42],[0.25,0.75],[0.6,1.05],[0.88,1.1],[1,0.5]];let b=0.4;for(let i=0;i<s.length-1;i++){if(t>=s[i][0]&&t<=s[i+1][0])b=lerp(s[i][1],s[i+1][1],smooth((t-s[i][0])/(s[i+1][0]-s[i][0])));}if(t>0.92){b*=Math.sqrt(Math.max(0.02,1-Math.pow((t-0.92)/0.08,2)));}return Math.max(b,0.05);}
+
+/* tubo de raio variável */
+function organTube(curve,rFn,o){
+  o=o||{};const segs=o.segs||140,rad=o.rad||48,th0=o.th0!==undefined?o.th0:-PI,th1=o.th1!==undefined?o.th1:PI;
+  const a=o.t0||0,b=o.t1!==undefined?o.t1:1,fN=o.fN||1,fB=o.fB||1,amp=o.amp||0,nf=o.nf||0.8,len=curve.getLength();
+  const pos=[],uv=[],idx=[];
+  for(let i=0;i<=segs;i++){
+    const t=a+(b-a)*i/segs; const F=frame(curve,t); const r=rFn(t);
+    for(let j=0;j<=rad;j++){
+      const th=th0+(th1-th0)*j/rad; const c=Math.cos(th),s=Math.sin(th);
+      const dir=F.N.clone().multiplyScalar(c*fN).add(F.B.clone().multiplyScalar(s*fB));
+      let rr=r; if(amp){const q=F.P.clone().add(dir.clone().multiplyScalar(r));rr*=1+amp*(fbm(q,nf)-0.5);}
+      const p=F.P.clone().add(dir.multiplyScalar(rr));
+      pos.push(p.x,p.y,p.z); uv.push(t*len/3, j/rad);
+    }
+  }
+  for(let i=0;i<segs;i++)for(let j=0;j<rad;j++){const A=i*(rad+1)+j,B=A+rad+1;idx.push(A,B,A+1,B,B+1,A+1);}
+  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));g.setIndex(idx);g.computeVertexNormals();return g;
+}
+function blob(c,r,o){
+  o=o||{};const g=new THREE.SphereGeometry(1,o.ws||64,o.hs||44);const p=g.attributes.position;const v=new THREE.Vector3();
+  for(let i=0;i<p.count;i++){v.fromBufferAttribute(p,i);const n=v.clone();let k=1;if(o.amp){k+=o.amp*(fbm(n.clone().multiplyScalar(3).add(V(c.x,c.y,c.z)),o.nf||1)-0.5);}
+    v.set(n.x*r.x*k,n.y*r.y*k,n.z*r.z*k);if(o.rot){v.applyEuler(o.rot);}v.add(c);p.setXYZ(i,v.x,v.y,v.z);}
+  g.computeVertexNormals();return g;
+}
+
+/* ---------- renderer ---------- */
+const stage=document.getElementById('stage'), canvas=document.getElementById('gl');
+let renderer;
+try{ renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:false,powerPreference:'high-performance'}); }
+catch(e){ renderer=null; }
+if(!renderer||typeof THREE.OrbitControls!=='function'){
+  stage.hidden=false; const d=document.createElement('div');d.className='nogl';d.textContent='Este navegador não conseguiu iniciar o WebGL, então o modelo 3D não pode ser exibido. O texto, os fluxogramas e as questões continuam disponíveis.';stage.appendChild(d);
+}
+const SRGB=c=>new THREE.Color(c).convertSRGBToLinear();
+const scene=new THREE.Scene(); scene.background=SRGB('#1A1918');
+const camera=new THREE.PerspectiveCamera(32,1.5,0.5,400);
+camera.position.set(-1.5,2,32);
+let controls=null;
+if(renderer){
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+  renderer.outputEncoding=THREE.sRGBEncoding;
+  renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=1.05;
+  /* roda do mouse só dá zoom depois de clicar no modelo, para não sequestrar a rolagem da página */
+  let armed=false;
+  canvas.addEventListener('pointerdown',()=>{armed=true;});
+  document.addEventListener('pointerdown',e=>{if(!stage.contains(e.target))armed=false;});
+  canvas.addEventListener('wheel',e=>{if(!armed){e.stopImmediatePropagation();}},{capture:true});
+  controls=new THREE.OrbitControls(camera,canvas);
+  controls.enableDamping=true; controls.dampingFactor=0.09; controls.rotateSpeed=0.75; controls.zoomSpeed=0.9;
+  controls.minDistance=7; controls.maxDistance=80; controls.target.set(-1.5,2,-1.5);
+  controls.touches={ONE:THREE.TOUCH.ROTATE,TWO:THREE.TOUCH.DOLLY_PAN};
+}
+scene.add(new THREE.HemisphereLight(SRGB('#F4EEE6'),SRGB('#2A2522'),0.55));
+const key=new THREE.DirectionalLight(SRGB('#FFF6EC'),1.55);key.position.set(-14,18,22);scene.add(key);
+const fill=new THREE.DirectionalLight(SRGB('#DCE4EE'),0.5);fill.position.set(16,4,10);scene.add(fill);
+const rim=new THREE.DirectionalLight(SRGB('#FFFFFF'),0.55);rim.position.set(4,8,-20);scene.add(rim);
+scene.add(new THREE.AmbientLight(SRGB('#FFFFFF'),0.12));
+
+/* textura de relevo (serosa) */
+function noiseTex(scale){
+  const c=document.createElement('canvas');c.width=c.height=256;const x=c.getContext('2d');const im=x.createImageData(256,256);
+  for(let i=0;i<256;i++)for(let j=0;j<256;j++){const v=fbm(V(i/256*scale,j/256*scale,0.37),1);const k=(i*256+j)*4;const g=Math.floor(v*255);im.data[k]=im.data[k+1]=im.data[k+2]=g;im.data[k+3]=255;}
+  x.putImageData(im,0,0);const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;return t;
+}
+const bumpFine=noiseTex(28), bumpLob=noiseTex(12);
+
+/* ---------- estruturas ---------- */
+const ART='#A8362C', ART2='#B9473A', PORT='#46679B', SIS='#3C5A86', BIL='#5E6B32';
+const STRUCTS=[
+ {id:'aorta',name:'Aorta abdominal',short:'Aorta',grp:'Vasos de base',color:ART,rad:1.1,anchor:V(1.0,-9,-5.2),
+  info:{o:'Continuação da aorta torácica ao atravessar o hiato diafragmático (T12).',t:'Desce à esquerda da linha média, colada à coluna, até a bifurcação em L4.',r:'É a estrutura mais posterior do modelo. Dá o tronco celíaco (T12) e, cerca de 1 cm abaixo, a artéria mesentérica superior (L1). A veia cava fica à sua direita.'}},
+ {id:'ivc',name:'Veia cava inferior',short:'Cava inferior',grp:'Vasos de base',color:SIS,rad:1.15,anchor:V(-2.5,-11,-5.0),
+  info:{o:'Confluência das ilíacas comuns (L5).',t:'Sobe à direita da aorta, atrás da cabeça do pâncreas e de D3.',r:'Fica atrás do duodeno e do pâncreas. A terceira porção do duodeno cruza na frente dela.'}},
+ {id:'celiac',name:'Tronco celíaco',short:'Tronco celíaco',grp:'Território celíaco',color:ART,rad:0.36,anchor:V(1.0,5.6,-4.1),
+  info:{o:'Face anterior da aorta, na altura de T12.',t:'Curto (1 a 2 cm), vai para a frente e se divide em três.',r:'Ramos: gástrica esquerda, esplênica e hepática comum. Fica acima da borda superior do pâncreas.'}},
+ {id:'lga',name:'Artéria gástrica esquerda',short:'Gástrica esquerda',grp:'Território celíaco',color:ART,rad:0.17,anchor:V(2.1,7.6,-2.6),
+  info:{o:'Tronco celíaco.',t:'Sobe para a cárdia e corre pela pequena curvatura.',r:'É a artéria erodida pelas úlceras altas da pequena curvatura gástrica, o outro local clássico de sangramento grave.'}},
+ {id:'splenicA',name:'Artéria esplênica',short:'Esplênica',grp:'Território celíaco',color:ART,rad:0.28,anchor:V(7.2,4.6,-4.3),
+  info:{o:'Tronco celíaco.',t:'Tortuosa, segue para a esquerda pela borda superior do pâncreas até o hilo esplênico.',r:'Dá ramos pancreáticos (incluindo a pancreática dorsal) que se comunicam com a rede do colo e do corpo.'}},
+ {id:'cha',name:'Artéria hepática comum',short:'Hepática comum',grp:'Território celíaco',color:ART,rad:0.27,anchor:V(-0.6,5.0,-2.9),
+  info:{o:'Tronco celíaco.',t:'Corre para a direita pela borda superior do pâncreas, acima de D1.',r:'Divide-se em hepática própria (sobe) e gastroduodenal (desce atrás de D1). É a entrada cranial do fluxo da AGD.'}},
+ {id:'pha',name:'Artéria hepática própria',short:'Hepática própria',grp:'Território celíaco',color:ART,rad:0.21,anchor:V(-2.5,7.2,-2.1),
+  info:{o:'Hepática comum, após a saída da AGD.',t:'Sobe no ligamento hepatoduodenal até o hilo hepático.',r:'No ligamento, fica à esquerda (medial) do colédoco e à frente da veia porta.'}},
+ {id:'gda',name:'Artéria gastroduodenal (AGD)',short:'AGD',grp:'Território celíaco',color:ART2,rad:0.23,anchor:V(-1.82,0.75,-2.1),
+  info:{o:'Hepática comum, acima da primeira porção do duodeno (em parte das pessoas, hepática direita, esquerda ou substituta).',t:'Desce de 2 a 3 cm atrás de D1, sobre a face anterior do colo e da cabeça do pâncreas, e termina na borda inferior de D1.',r:'Na frente: parede posterior do bulbo. Atrás: pâncreas e veia porta. Lateral (à direita do paciente): colédoco. Ramos: pancreaticoduodenal superior posterior, ramo pancreático transverso, gastroepiploica direita e pancreaticoduodenal superior anterior.'}},
+ {id:'pspd',name:'Pancreaticoduodenal superior posterior',short:'PD sup. posterior',grp:'Território celíaco',color:ART,rad:0.13,anchor:V(-4.15,-2.0,-4.2),
+  info:{o:'Primeiro ramo da AGD, na parte alta do seu trajeto.',t:'Cruza o colédoco pela frente e desce na face posterior da cabeça do pâncreas.',r:'Forma a arcada posterior com a pancreaticoduodenal inferior posterior (ramo da AMS).'}},
+ {id:'tpa',name:'Ramo pancreático transverso',short:'Pancreático transverso',grp:'Território celíaco',color:ART,rad:0.13,anchor:V(1.8,1.35,-2.9),
+  info:{o:'Face medial da AGD, na altura do bulbo.',t:'Corre para a esquerda pelo colo e corpo do pâncreas.',r:'Comunica-se com a rede arterial do corpo do pâncreas (pancreática dorsal e transversa). É a entrada medial que o ponto em U da ligadura tripla precisa fechar.'}},
+ {id:'aspd',name:'Pancreaticoduodenal superior anterior',short:'PD sup. anterior',grp:'Território celíaco',color:ART,rad:0.13,anchor:V(-3.0,-1.7,-1.15),
+  info:{o:'Ramo terminal da AGD, na borda inferior de D1.',t:'Desce na face anterior da cabeça do pâncreas, junto ao sulco com D2.',r:'Forma a arcada anterior com a pancreaticoduodenal inferior anterior (ramo da AMS). Por ela o sangue pode subir da AMS para a AGD.'}},
+ {id:'rgea',name:'Artéria gastroepiploica direita',short:'Gastroepiploica dir.',grp:'Território celíaco',color:ART,rad:0.14,anchor:V(3.2,-2.0,1.9),
+  info:{o:'Ramo terminal da AGD, na borda inferior de D1.',t:'Corre para a esquerda pela curvatura maior do estômago, dentro do omento maior.',r:'Anastomosa-se com a gastroepiploica esquerda (ramo da esplênica). Irriga o omento usado no tampão.'}},
+ {id:'sma',name:'Artéria mesentérica superior (AMS)',short:'AMS',grp:'Território mesentérico',color:ART,rad:0.34,anchor:V(1.6,-7.0,-1.6),
+  info:{o:'Face anterior da aorta, em L1, cerca de 1 cm abaixo do tronco celíaco.',t:'Desce atrás do colo do pâncreas e na frente do processo uncinado e de D3.',r:'A veia mesentérica superior corre à sua direita. Dá as pancreaticoduodenais inferiores, que fecham as arcadas com a AGD.'}},
+ {id:'ipda',name:'Pancreaticoduodenais inferiores (arcadas)',short:'PD inferiores',grp:'Território mesentérico',color:ART,rad:0.13,anchor:V(-2.2,-5.55,-1.45),
+  info:{o:'AMS (tronco comum ou ramos separados).',t:'Correm para a direita na borda inferior da cabeça do pâncreas, em um ramo anterior e outro posterior.',r:'Anastomosam-se com as pancreaticoduodenais superiores. É por essas arcadas que o sangue da AMS chega à AGD de baixo para cima.'}},
+ {id:'portal',name:'Veia porta',short:'Veia porta',grp:'Veias',color:PORT,rad:0.6,anchor:V(-2.7,6.9,-3.3),
+  info:{o:'Confluência da veia mesentérica superior com a esplênica, atrás do colo do pâncreas.',t:'Sobe para a direita, atrás de D1, até o ligamento hepatoduodenal.',r:'É a estrutura mais posterior do ligamento hepatoduodenal, atrás do colédoco e da hepática própria. Atrás de D1, fica mais profunda que a AGD.'}},
+ {id:'smv',name:'Veia mesentérica superior',short:'VMS',grp:'Veias',color:PORT,rad:0.45,anchor:V(0.2,-10,-1.1),
+  info:{o:'Drenagem do intestino delgado e do cólon direito.',t:'Sobe à direita da AMS, na frente do processo uncinado e de D3.',r:'Atrás do colo do pâncreas, une-se à esplênica para formar a porta.'}},
+ {id:'splenicV',name:'Veia esplênica',short:'Veia esplênica',grp:'Veias',color:PORT,rad:0.38,anchor:V(7.8,3.2,-4.7),
+  info:{o:'Hilo esplênico.',t:'Corre para a direita atrás do corpo do pâncreas.',r:'Une-se à veia mesentérica superior atrás do colo, formando a porta.'}},
+ {id:'cbd',name:'Colédoco',short:'Colédoco',grp:'Via biliar',color:BIL,rad:0.33,anchor:V(-3.5,4.6,-3.15),
+  info:{o:'União do ducto hepático comum com o cístico.',t:'Desce no ligamento hepatoduodenal, passa atrás de D1, entra na face posterior da cabeça do pâncreas e desemboca na papila maior, na parede medial de D2.',r:'Atrás de D1, fica lateral à AGD (à direita do paciente), a poucos milímetros. É a estrutura que um ponto profundo e lateral da ligadura pode pegar.'}},
+ {id:'pancreas',name:'Pâncreas (cabeça, colo e corpo)',short:'Pâncreas',grp:'Órgãos',color:'#D6B88C',anchor:V(-2.4,-2.6,-1.5),
+  info:{o:'Órgão retroperitoneal.',t:'A cabeça fica dentro do "C" duodenal; o colo passa na frente da confluência portal; o corpo e a cauda seguem para a esquerda até o baço.',r:'A AGD desce sobre a face anterior do colo e da cabeça. A cabeça é o fundo onde a úlcera posterior penetra.'}},
+ {id:'stomach',name:'Estômago distal e piloro',short:'Estômago e piloro',grp:'Órgãos',color:'#C7887A',anchor:V(4.8,1.2,3.6),
+  info:{o:'Corpo, antro e canal pilórico.',t:'O antro segue para a direita, e um pouco para cima e para trás, até o piloro, que fica um pouco à direita da linha média, em L1.',r:'O piloro marca o início do duodeno. A gastroepiploica direita corre pela curvatura maior.'}},
+ {id:'d1post',name:'Parede posterior do bulbo (D1)',short:'D1 · parede posterior',grp:'Órgãos',color:'#B07263',anchor:null,
+  info:{o:'Metade posterior da primeira porção do duodeno.',t:'Repousa sobre a AGD, o colédoco, a veia porta e o colo e cabeça do pâncreas.',r:'Úlcera aqui não encontra cavidade livre: encontra a AGD (sangramento) ou o pâncreas (penetração).'}},
+ {id:'d1ant',name:'Parede anterior do bulbo (D1)',short:'D1 · parede anterior',grp:'Órgãos',color:'#D29B8A',anchor:null,
+  info:{o:'Metade anterior da primeira porção do duodeno.',t:'Fica voltada para a cavidade peritoneal livre, abaixo do fígado e da vesícula.',r:'Úlcera aqui não encontra órgão que a bloqueie: perfura para a cavidade livre.'}},
+ {id:'dRest',name:'Duodeno (D2, D3 e D4)',short:'D2 a D4',grp:'Órgãos',color:'#C48676',anchor:V(-7.1,-1.5,-2.8),
+  info:{o:'Continuação de D1 após a flexura superior.',t:'D2 desce à direita da cabeça do pâncreas; D3 cruza a linha média na frente da cava e da aorta e atrás dos vasos mesentéricos; D4 sobe até o ângulo de Treitz.',r:'A papila maior fica na parede medial de D2. A partir de D2 o duodeno é retroperitoneal.'}},
+ {id:'gb',name:'Vesícula biliar e ducto cístico',short:'Vesícula',grp:'Órgãos',color:'#6F8F5C',anchor:V(-5.2,5.3,2.5),
+  info:{o:'Leito vesical, na face inferior do fígado.',t:'O fundo se projeta para a frente e para baixo, sobre o bulbo.',r:'Está acima e na frente de D1. Pode bloquear uma perfuração anterior.'}},
+ {id:'liver',name:'Fígado (esquemático)',short:'Fígado',grp:'Órgãos',color:'#8F5444',anchor:V(-6.5,10.5,2.0),
+  info:{o:'Representado de forma esquemática, sem segmentação.',t:'A face inferior (visceral) cobre D1 por cima.',r:'Entre a face superior do fígado e o diafragma fica o espaço subfrênico direito, onde o ar se acumula com o paciente em pé.'}},
+ {id:'diaphragm',name:'Cúpula diafragmática direita',short:'Diafragma',grp:'Paredes',color:'#9C4A3E',anchor:V(-6,13.6,-1),
+  info:{o:'Representação parcial da hemicúpula direita.',t:'Recobre o fígado por cima.',r:'Com o paciente em pé, o ar livre sobe e forma uma foice logo abaixo dela.'}},
+ {id:'wall',name:'Parede abdominal anterior (peritônio parietal)',short:'Parede anterior',grp:'Paredes',color:'#CDBBA4',anchor:V(-8,-8,6.2),
+  info:{o:'Representação de uma lâmina da parede anterior.',t:'Fica à frente de todas as vísceras.',r:'Entre ela e as vísceras está a cavidade peritoneal livre. Com o paciente deitado, o ar livre se acumula logo abaixo dela.'}}
+];
+const SID={}; STRUCTS.forEach((s,i)=>{s.n=i+1;SID[s.id]=s;s.meshes=[];s.op=1;});
+const world=new THREE.Group(); scene.add(world);
+
+function mat(color,o){o=o||{};return new THREE.MeshStandardMaterial({color:SRGB(color),roughness:o.rough!==undefined?o.rough:0.55,metalness:0,side:o.side||THREE.FrontSide,bumpMap:o.bump||null,bumpScale:o.bs||0,transparent:true,opacity:1,emissive:SRGB('#000000')});}
+function addMesh(sid,geo,material){
+  geo.computeBoundingSphere();const c=geo.boundingSphere.center.clone();geo.translate(-c.x,-c.y,-c.z);
+  const m=new THREE.Mesh(geo,material);m.position.copy(c);m.userData.sid=sid;world.add(m);SID[sid].meshes.push(m);return m;
+}
+function vessel(sid,curve,r,segs){
+  const s=SID[sid];const mt=mat(s.color,{rough:0.38});
+  addMesh(sid,new THREE.TubeGeometry(curve,segs||80,r,14,false),mt);
+  [0,1].forEach(t=>{const g=new THREE.SphereGeometry(r*1.0,14,10);const p=curve.getPointAt(t);g.translate(p.x,p.y,p.z);addMesh(sid,g,mt);});
+}
+// vasos
+vessel('aorta',CRV.aorta,1.1,60); vessel('ivc',CRV.ivc,1.15,60);
+vessel('celiac',CRV.celiac,0.36,20); vessel('lga',CRV.lga,0.17,40); vessel('splenicA',CRV.splenicA,0.28,80);
+vessel('cha',CRV.cha,0.27,40); vessel('pha',CRV.pha,0.21,50); vessel('gda',CRV.gda,0.23,60);
+vessel('pspd',CRV.pspd,0.13,80); vessel('tpa',CRV.tpa,0.13,60); vessel('aspd',CRV.aspd,0.13,60);
+vessel('sma',CRV.sma,0.34,80); vessel('ipda',CRV.ipda,0.15,20); vessel('ipda',CRV.aipd,0.13,50); vessel('ipda',CRV.pipd,0.13,50);
+vessel('portal',CRV.portal,0.6,60); vessel('smv',CRV.smv,0.45,60); vessel('splenicV',CRV.splenicV,0.38,60);
+vessel('cbd',CRV.cbd,0.33,80); vessel('gb',CRV.cystic,0.16,16);
+
+// estômago
+const stMat=mat('#C7887A',{bump:bumpFine,bs:0.035,side:THREE.DoubleSide});
+addMesh('stomach',organTube(CRV.stomach,rStomach,{t1:0.985,segs:120,rad:56,fN:STF.N,amp:0.05,nf:0.7}),stMat);
+// gastroepiploica direita ao longo da curvatura maior
+(function(){
+  const pts=[V(-1.8,0.5,-2.02),V(-1.4,0.0,-1.0),V(-0.6,-0.3,0.1)];
+  for(let t=0.92;t>=0.22;t-=0.07){const F=frame(CRV.stomach,t);const r=rStomach(t);const d1=F.B.clone(),d2=F.B.clone().negate();const dGC=(d1.y<d2.y?d1:d2);pts.push(F.P.clone().add(dGC.multiplyScalar(r*STF.B+0.3)).add(F.N.clone().multiplyScalar(0.2)));}
+  P.rgea=pts;CRV.rgea=crv(pts);vessel('rgea',CRV.rgea,0.14,90);
+})();
+// duodeno
+const tD1=tNearest(CRV.duo,V(-4.95,2.95,-2.4));
+const tU=tAtX(CRV.duo,-1.9,0,tD1);
+addMesh('d1ant',organTube(CRV.duo,rDuo,{t0:0,t1:tD1,segs:60,rad:28,th0:-PI/2,th1:PI/2,amp:0.04}),mat('#D29B8A',{bump:bumpFine,bs:0.03,side:THREE.DoubleSide}));
+addMesh('d1post',organTube(CRV.duo,rDuo,{t0:0,t1:tD1,segs:60,rad:28,th0:PI/2,th1:3*PI/2,amp:0.04}),mat('#B07263',{bump:bumpFine,bs:0.03,side:THREE.DoubleSide}));
+addMesh('dRest',organTube(CRV.duo,rDuo,{t0:tD1,t1:1,segs:200,rad:48,amp:0.04}),mat('#C48676',{bump:bumpFine,bs:0.03,side:THREE.DoubleSide}));
+// pâncreas
+const pMat=mat('#D6B88C',{bump:bumpLob,bs:0.06,rough:0.7});
+addMesh('pancreas',blob(V(-2.6,-2.4,-2.9),V(1.8,3.2,1.5),{amp:0.16,nf:1.2}),pMat);
+addMesh('pancreas',blob(V(-0.7,-5.0,-3.65),V(1.35,0.85,0.85),{amp:0.18,nf:1.4}),pMat);
+addMesh('pancreas',organTube(CRV.panc,rPanc,{segs:90,rad:32,fN:0.62,amp:0.16,nf:1.3}),pMat);
+// vesícula
+addMesh('gb',organTube(CRV.gb,rGB,{segs:60,rad:32,amp:0.03}),mat('#6F8F5C',{rough:0.35,bump:bumpFine,bs:0.02}));
+// fígado esquemático
+addMesh('liver',blob(V(-4.2,10.4,-1.0),V(7.6,2.9,6.4),{amp:0.08,nf:0.4,rot:new THREE.Euler(0.36,0,0.1)}),mat('#8F5444',{rough:0.5,bump:bumpFine,bs:0.02,side:THREE.DoubleSide}));
+// diafragma (hemicúpula direita)
+(function(){const g=new THREE.SphereGeometry(10.2,48,24,PI*0.5,PI*1.25,0,0.95);g.scale(1.05,0.75,1.0);g.translate(-3.6,6.9,-1.0);addMesh('diaphragm',g,mat('#9C4A3E',{side:THREE.DoubleSide,rough:0.6}));})();
+// parede anterior
+(function(){const g=new THREE.PlaneGeometry(26,34,24,24);const p=g.attributes.position;for(let i=0;i<p.count;i++){const x=p.getX(i),y=p.getY(i);p.setZ(i,-0.012*x*x-0.004*y*y);}g.computeVertexNormals();g.translate(-1,-1,6.6);addMesh('wall',g,mat('#CDBBA4',{side:THREE.DoubleSide,rough:0.8}));})();
+
+// âncoras de D1
+(function(){const F=frame(CRV.duo,tU*0.75);SID.d1ant.anchor=F.P.clone().add(F.N.clone().multiplyScalar(rDuo(tU*0.75)+0.1)).add(V(0,0.6,0));
+ const G=frame(CRV.duo,tU*1.9);SID.d1post.anchor=G.P.clone().add(G.N.clone().multiplyScalar(-rDuo(tU*1.9)-0.1)).add(V(0,1.3,0));})();
+
+function setOpacity(sid,op){
+  const s=SID[sid];s.op=op;
+  s.meshes.forEach(m=>{m.visible=op>0.01;m.material.opacity=op;m.material.depthWrite=op>0.97;m.material.transparent=op<0.999;m.material.needsUpdate=true;});
+}
+function setEmissive(sid,hex,k){SID[sid].meshes.forEach(m=>{m.material.emissive.copy(SRGB(hex)).multiplyScalar(k);});}
+
+/* ---------- pontos-chave ---------- */
+const gdaC=CRV.gda;
+const tBleed=tAtY(gdaC,2.65), tTieCr=tAtY(gdaC,3.45), tTieCa=tAtY(gdaC,1.6), tCoilP=tAtY(gdaC,3.55), tCoilD=tAtY(gdaC,1.45);
+const pBleed=gdaC.getPointAt(tBleed);
+const FU=frame(CRV.duo,tU), rU=rDuo(tU);
+const pAntOut=FU.P.clone().add(FU.N.clone().multiplyScalar(rU+0.02));
+const pPostIn=FU.P.clone().add(FU.N.clone().multiplyScalar(-(rU-0.06)));
+const lumenC=FU.P.clone();
+
+/* ---------- efeitos ---------- */
+const fxGroup=new THREE.Group();world.add(fxGroup);
+function ulcerTex(){
+  const c=document.createElement('canvas');c.width=c.height=256;const x=c.getContext('2d');
+  let g=x.createRadialGradient(128,128,10,128,128,128);
+  g.addColorStop(0,'rgba(232,224,196,1)');g.addColorStop(0.45,'rgba(214,196,160,1)');g.addColorStop(0.62,'rgba(140,52,40,1)');g.addColorStop(0.8,'rgba(170,70,58,0.85)');g.addColorStop(1,'rgba(170,70,58,0)');
+  x.fillStyle=g;x.fillRect(0,0,256,256);
+  for(let i=0;i<220;i++){const a=Math.random()*PI*2,r=Math.random()*55;x.fillStyle='rgba(120,90,60,'+(Math.random()*0.18)+')';x.fillRect(128+Math.cos(a)*r,128+Math.sin(a)*r,2,2);}
+  const t=new THREE.CanvasTexture(c);t.encoding=THREE.sRGBEncoding;return t;
+}
+const uTex=ulcerTex();
+function disc(radius,tex,color){const m=new THREE.Mesh(new THREE.CircleGeometry(radius,48),new THREE.MeshStandardMaterial({map:tex||null,color:color?SRGB(color):0xffffff,transparent:true,depthWrite:false,side:THREE.DoubleSide,roughness:0.8,polygonOffset:true,polygonOffsetFactor:-2}));return m;}
+function orient(obj,pos,normal){obj.position.copy(pos);obj.lookAt(pos.clone().add(normal));}
+// úlcera anterior
+const ulcA=disc(0.62,uTex);orient(ulcA,pAntOut,FU.N);fxGroup.add(ulcA);
+const holeA=disc(0.26,null,'#120C0A');orient(holeA,pAntOut.clone().add(FU.N.clone().multiplyScalar(0.01)),FU.N);holeA.material.map=null;holeA.material.color=SRGB('#100A08');fxGroup.add(holeA);
+// úlcera posterior (vista de dentro)
+const ulcP=disc(0.62,uTex);orient(ulcP,pPostIn,FU.N);fxGroup.add(ulcP);
+function cone(color){const g=new THREE.CylinderGeometry(0.08,0.42,1,28,1,true);g.translate(0,0.5,0);const m=new THREE.Mesh(g,new THREE.MeshStandardMaterial({color:SRGB(color),roughness:0.85,side:THREE.DoubleSide,transparent:true,opacity:0.95}));return m;}
+function aimCone(m,from,to,frac){const d=to.clone().sub(from);const L=d.length();m.position.copy(from);m.quaternion.setFromUnitVectors(V(0,1,0),d.normalize());m.scale.set(1,Math.max(0.001,L*frac),1);}
+const eroP=cone('#5B2A21');fxGroup.add(eroP);
+const gdaFront=pBleed.clone().add(lumenC.clone().sub(pBleed).normalize().multiplyScalar(0.18));
+const eroA=cone('#5B2A21');fxGroup.add(eroA);
+const pAntIn=FU.P.clone().add(FU.N.clone().multiplyScalar(rU-0.08));
+const pancTarget=V(-2.15,0.35,-2.75);
+const eroPen=cone('#6A2E22');fxGroup.add(eroPen);
+const penPatch=new THREE.Mesh(new THREE.SphereGeometry(0.95,28,20),new THREE.MeshStandardMaterial({color:SRGB('#B4553D'),transparent:true,opacity:0.55,roughness:0.6,emissive:SRGB('#5A1C10')}));penPatch.position.copy(pancTarget).add(V(-0.1,-0.4,-0.2));penPatch.scale.set(1,0.75,0.8);fxGroup.add(penPatch);
+const vv=new THREE.Mesh(new THREE.SphereGeometry(0.17,20,14),new THREE.MeshStandardMaterial({color:SRGB('#5E1712'),roughness:0.25,metalness:0.05}));vv.position.copy(pPostIn.clone().add(FU.N.clone().multiplyScalar(0.1)));fxGroup.add(vv);
+// pneumoperitônio
+const airMat=new THREE.MeshStandardMaterial({color:SRGB('#E9EEF1'),transparent:true,opacity:0,roughness:0.2,depthWrite:false,side:THREE.DoubleSide});
+const airSup=new THREE.Mesh(blob(V(-1.5,1.5,5.75),V(6.5,7.5,0.45),{amp:0.1,nf:0.6}),airMat.clone());fxGroup.add(airSup);
+const airUp=(function(){const g=new THREE.SphereGeometry(9.85,48,16,PI*0.5,PI*1.0,0,0.62);g.scale(1.05,0.75,1.0);g.translate(-3.6,6.9,-1.0);return new THREE.Mesh(g,airMat.clone());})();fxGroup.add(airUp);
+// omento
+const omMat=new THREE.MeshStandardMaterial({color:SRGB('#DCC083'),roughness:0.75,bumpMap:bumpLob,bumpScale:0.05,transparent:true,opacity:1});
+const omPatch=new THREE.Mesh(blob(V(0,0,0),V(1.25,1.05,0.38),{amp:0.25,nf:1.6}),omMat);orient(omPatch,pAntOut.clone().add(FU.N.clone().multiplyScalar(0.25)),FU.N);fxGroup.add(omPatch);
+const omPed=(function(){const c=crv([pAntOut.clone().add(FU.N.clone().multiplyScalar(0.35)).add(V(0.5,-0.6,0)),V(-0.3,0.2,2.4),V(1.6,-1.6,2.7),V(3.6,-2.7,2.8)]);return new THREE.Mesh(new THREE.TubeGeometry(c,40,0.42,12,false),omMat);})();fxGroup.add(omPed);
+// pontos de ligadura
+const sutMat=new THREE.MeshStandardMaterial({color:SRGB('#1C1F26'),roughness:0.35});
+const sutBad=new THREE.MeshStandardMaterial({color:SRGB('#1C1F26'),roughness:0.35,emissive:SRGB('#000000')});
+function basis(z,ySeed){z=z.clone().normalize();let y=ySeed.clone().sub(z.clone().multiplyScalar(z.dot(ySeed))).normalize();const x=new THREE.Vector3().crossVectors(y,z);return new THREE.Matrix4().makeBasis(x,y,z);}
+function tieAt(curve,t,R,arc,m){const p=curve.getPointAt(t),T=curve.getTangentAt(t);const mesh=new THREE.Mesh(new THREE.TorusGeometry(R,0.065,10,40,arc||PI*2),m||sutMat);mesh.position.copy(p);mesh.quaternion.setFromRotationMatrix(basis(T,V(0,0,-1)));fxGroup.add(mesh);return mesh;}
+const tieCr=tieAt(gdaC,tTieCr,0.36), tieCa=tieAt(gdaC,tTieCa,0.36), tieSingle=tieAt(gdaC,tBleed,0.36);
+const tieU=(function(){const p=CRV.tpa.getPointAt(0.07),T=CRV.tpa.getTangentAt(0.07);const m=new THREE.Mesh(new THREE.TorusGeometry(0.34,0.065,10,30,PI),sutMat);m.position.copy(p);m.quaternion.setFromRotationMatrix(basis(T,V(0,0,-1)));fxGroup.add(m);return m;})();
+const tieCBD=(function(){const pg=gdaC.getPointAt(tAtY(gdaC,2.05)),pc=CRV.cbd.getPointAt(tAtY(CRV.cbd,2.05));const mid=pg.clone().add(pc).multiplyScalar(0.5);const R=pg.distanceTo(pc)/2+0.45;const m=new THREE.Mesh(new THREE.TorusGeometry(R,0.07,10,40,PI),sutBad);m.position.copy(mid);const zax=V(0,1,0);const xax=pc.clone().sub(pg).normalize();const yax=new THREE.Vector3().crossVectors(zax,xax);m.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(xax,yax.negate(),zax));m.rotateZ(0);fxGroup.add(m);return m;})();
+// linha da piloroduodenotomia
+const incision=(function(){const pts=[];for(let t=0.86;t<=1.0001;t+=0.035){const F=frame(CRV.stomach,t);pts.push(F.P.clone().add(F.N.clone().multiplyScalar(rStomach(t)*STF.N+0.05)));}for(let t=0.02;t<=tU+0.06;t+=0.03){const F=frame(CRV.duo,t);pts.push(F.P.clone().add(F.N.clone().multiplyScalar(rDuo(t)+0.05)));}const m=new THREE.Mesh(new THREE.TubeGeometry(crv(pts),60,0.07,8,false),new THREE.MeshStandardMaterial({color:SRGB('#111111'),roughness:0.5}));fxGroup.add(m);return m;})();
+// cateter
+const cathPath=crv([V(0.85,-15,-5.3),V(0.95,-4,-5.45),V(1.05,3.6,-5.5),V(1.05,5.1,-5.3),V(1.0,5.42,-4.6),V(1.0,5.42,-3.7),...P.cha.slice(1),V(-1.97,3.9,-2.56),V(-1.92,2.9,-2.48),V(-1.88,1.9,-2.38),V(-1.86,1.4,-2.3)]);
+const cathGeo=new THREE.TubeGeometry(cathPath,260,0.1,8,false);
+const cath=new THREE.Mesh(cathGeo,new THREE.MeshStandardMaterial({color:SRGB('#D8D8D2'),roughness:0.3}));fxGroup.add(cath);
+const tCathP=tNearest(cathPath,gdaC.getPointAt(tCoilP),600), tCathCel=tNearest(cathPath,V(1.0,5.42,-3.7),600);
+function coilAt(t0){const pts=[];const n=90;for(let i=0;i<=n;i++){const t=t0-0.05+0.1*i/n;const F=frame(gdaC,clamp(t,0,1));const a=i/n*PI*2*6;pts.push(F.P.clone().add(F.N.clone().multiplyScalar(Math.cos(a)*0.17)).add(F.B.clone().multiplyScalar(Math.sin(a)*0.17)));}
+  const m=new THREE.Mesh(new THREE.TubeGeometry(crv(pts),300,0.045,6,false),new THREE.MeshStandardMaterial({color:SRGB('#9EA2A8'),metalness:0.85,roughness:0.3}));fxGroup.add(m);return m;}
+const coilD=coilAt(tCoilD), coilP=coilAt(tCoilP);
+
+/* partículas */
+function spriteTex(){const c=document.createElement('canvas');c.width=c.height=64;const x=c.getContext('2d');const g=x.createRadialGradient(32,32,0,32,32,32);g.addColorStop(0,'rgba(255,255,255,1)');g.addColorStop(0.55,'rgba(255,255,255,0.9)');g.addColorStop(1,'rgba(255,255,255,0)');x.fillStyle=g;x.fillRect(0,0,64,64);return new THREE.CanvasTexture(c);}
+const spr=spriteTex();
+function pSys(n,color,size,depthTest){const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(new Float32Array(n*3).fill(9999),3));const m=new THREE.PointsMaterial({color:SRGB(color),size,map:spr,transparent:true,depthWrite:false,depthTest:depthTest!==false,sizeAttenuation:true,alphaTest:0.02});const pts=new THREE.Points(g,m);pts.frustumCulled=false;fxGroup.add(pts);return {pts,n,arr:g.attributes.position.array,attr:g.attributes.position,p:[]};}
+const jet=pSys(260,'#D02A1C',0.34), lum=pSys(160,'#8E1E14',0.32), gas=pSys(170,'#F3F6F8',0.26), fluid=pSys(170,'#B8A458',0.22), blush=pSys(90,'#F2F2EE',0.2,false);
+const flowPaths={
+  A:crv([V(1.0,5.42,-3.6),...P.cha.slice(1),V(-1.97,3.9,-2.56),V(-1.94,3.2,-2.5),pBleed.clone()]),
+  B:crv([V(1.3,-1.5,-2.75),V(1.35,-3.0,-2.5),V(1.2,-3.6,-2.45),V(0.6,-4.1,-2.6),V(0.0,-4.6,-2.62),V(-0.9,-5.25,-1.85),V(-2.2,-5.55,-1.45),V(-3.4,-5.4,-1.5),V(-4.0,-5.0,-1.6),V(-3.55,-3.0,-1.25),V(-2.95,-1.6,-1.2),V(-2.4,-0.5,-1.4),V(-1.8,0.5,-2.02),V(-1.84,1.1,-2.24),V(-1.88,1.9,-2.38),pBleed.clone()]),
+  C:crv([...P.tpa.slice().reverse(),V(-1.91,2.45,-2.46),pBleed.clone()])
+};
+const flowSys={A:pSys(26,'#FFE6D8',0.2,false),B:pSys(34,'#FFE6D8',0.2,false),C:pSys(22,'#FFE6D8',0.2,false)};
+const stopT={A:{cr:tNearest(flowPaths.A,gdaC.getPointAt(tTieCr)),coil:tNearest(flowPaths.A,gdaC.getPointAt(tCoilP))},
+             B:{ca:tNearest(flowPaths.B,gdaC.getPointAt(tTieCa)),coil:tNearest(flowPaths.B,gdaC.getPointAt(tCoilD))},
+             C:{u:tNearest(flowPaths.C,CRV.tpa.getPointAt(0.07))}};
+// trajetos do líquido e do gás
+const fluidPaths=[crv([pAntOut,V(-3.8,1.8,3.0),V(-7.0,-0.5,1.6),V(-8.6,-4.5,0.0),V(-8.2,-9.5,0.2),V(-6.6,-13,0.6)]),crv([pAntOut,V(-4.6,3.6,2.2),V(-7.2,4.6,-0.6),V(-7.6,4.9,-3.6)])];
+
+/* ---------- rótulos ---------- */
+const labelsEl=document.getElementById('labels');
+STRUCTS.forEach(s=>{const d=document.createElement('div');d.className='mk';d.innerHTML='<i>'+s.n+'</i><span>'+s.short+'</span>';labelsEl.appendChild(d);s.lab=d;});
+const FXL={};
+function fxLabel(id,text,pos){const d=document.createElement('div');d.className='mk fx';d.innerHTML='<span style="border-left:2px solid #fff">'+text+'</span>';labelsEl.appendChild(d);FXL[id]={el:d,pos,on:false};}
+fxLabel('ulcA','Úlcera anterior',pAntOut.clone().add(V(0.3,0.9,0.4)));
+fxLabel('ulcP','Úlcera posterior',pPostIn.clone().add(V(0.3,-1.1,0.7)));
+fxLabel('bleed','Ponto que sangra',pBleed.clone().add(V(1.0,0.35,1.3)));
+fxLabel('pneumoS','Pneumoperitônio (deitado)',V(-1.5,7.5,5.9));
+fxLabel('pneumoU','Ar no espaço subfrênico (em pé)',V(-5.5,13.2,2.0));
+fxLabel('morison','Bolsa de Morison',V(-7.6,5.6,-3.6));
+fxLabel('fid','Fossa ilíaca direita',V(-6.6,-13,0.6));
+fxLabel('cavity','Cavidade peritoneal livre',V(-1,-3,4.6));
+fxLabel('vv','Vaso visível',vv.position.clone().add(V(0.4,0.6,0.3)));
+fxLabel('pen','Penetração na cabeça do pâncreas',penPatch.position.clone().add(V(-0.6,-0.9,0)));
+fxLabel('inA','Entrada cranial · hepática comum',V(-0.4,5.4,-2.9));
+fxLabel('inB','Entrada caudal · arcada da AMS',V(-3.6,-3.2,-1.1));
+fxLabel('inC','Entrada medial · pancreático transverso',V(1.6,1.55,-2.9));
+fxLabel('tCr','Ponto cranial',gdaC.getPointAt(tTieCr).add(V(-0.7,0.15,0.2)));
+fxLabel('tCa','Ponto caudal',gdaC.getPointAt(tTieCa).add(V(-0.7,-0.15,0.2)));
+fxLabel('tU','Ponto em U',CRV.tpa.getPointAt(0.07).add(V(0.5,-0.5,0.2)));
+fxLabel('tS','Ponto único',pBleed.clone().add(V(-0.8,0.1,0.2)));
+fxLabel('tCBD','Colédoco incluído no ponto',CRV.cbd.getPointAt(tAtY(CRV.cbd,2.05)).add(V(-0.9,0,0)));
+fxLabel('cath','Cateter',V(1.0,-6,-5.4));
+fxLabel('coD','Mola distal',gdaC.getPointAt(tCoilD).add(V(1.5,-0.55,0.3)));
+fxLabel('coP','Mola proximal',gdaC.getPointAt(tCoilP).add(V(1.4,0.45,0.3)));
+fxLabel('omen','Tampão de omento',pAntOut.clone().add(V(1.2,-0.8,0.8)));
+fxLabel('inc','Linha da piloroduodenotomia',pAntOut.clone().add(V(1.6,0.9,0.4)));
+
+/* ---------- estado dos efeitos ---------- */
+const FX0={antU:0,perf:false,gas:false,fluid:false,collect:false,postU:0,jet:'none',jetK:1,vv:false,lumen:false,pen:false,flows:{A:false,B:false,C:false},block:{},ties:{cr:false,ca:false,u:false,single:false,cbd:false},cath:0,coilD:false,coilP:false,blush:false,omen:false,inc:false,labels:[],hi:[],cbdHi:false};
+let fx=JSON.parse(JSON.stringify(FX0)); let fxT0=0; let gasMode='supino';
+let cur={antU:0,postU:0,pen:0,cath:0,air:0};
+
+const DEFV={aorta:1,ivc:1,celiac:1,lga:1,splenicA:1,cha:1,pha:1,gda:1,pspd:1,tpa:1,aspd:1,rgea:1,sma:1,ipda:1,portal:1,smv:1,splenicV:1,cbd:1,pancreas:0.92,stomach:0.9,d1post:0.9,d1ant:0.62,dRest:0.9,gb:0.9,liver:0.2,diaphragm:0,wall:0};
+const exploreVis=Object.assign({},DEFV);
+function mk(over){return Object.assign({},DEFV,over||{});}
+
+const VIEWS={anterior:{d:[0,0.02,1]},posterior:{d:[0,0.02,-1]},cranial:{d:[0,1,0.06]},lateralD:{d:[-1,0.02,0]},obliqua:{d:[-0.62,0.38,0.69]}};
+
+function S(title,cap,delta,extra){return Object.assign({title,cap,delta},extra||{});}
+const SCENES={
+ explore:{view:[0,0.02,1],target:[-1.5,1.5,-1.5],dist:34,vis:null,labels:'all'},
+ perf:{view:[-0.5,0.38,0.78],target:[-2.4,3.0,0.5],dist:34,
+   vis:mk({liver:0.18,gb:0.75,wall:0.12,diaphragm:0.22,d1ant:0.95,stomach:0.95,pancreas:0.85,d1post:0.95,aorta:0.5,ivc:0.5}),
+   labels:['d1ant','stomach','liver','gb','wall','diaphragm','dRest'],
+   steps:[
+    S('Úlcera na parede anterior','Úlcera na parede anterior do bulbo, a cerca de 2 cm do piloro. Ainda não atravessou a parede.',{antU:0.3,labels:['ulcA','cavity']}),
+    S('A úlcera aprofunda','A úlcera atravessa a muscular própria. Na frente dela só existe a serosa e, depois, a cavidade livre.',{antU:0.75,labels:['ulcA','cavity']}),
+    S('Perfuração','A serosa rompe. Ar e suco gastroduodenal saem direto para a cavidade peritoneal livre. Não há órgão para tamponar.',{antU:1,perf:true,gas:true,fluid:true,labels:['ulcA','cavity']}),
+    S('Pneumoperitônio','O ar sobe para o ponto mais alto. Deitado: logo abaixo da parede anterior. Em pé: abaixo da cúpula diafragmática, no espaço subfrênico. Use os botões de posição.',{antU:1,perf:true,gas:true,fluid:true,collect:true,labels:['pneumoS','pneumoU']}),
+    S('Líquido nas goteiras','O líquido desce pela goteira parietocólica direita até a fossa ilíaca direita (sinal de Valentino) e para o espaço hepatorrenal (bolsa de Morison).',{antU:1,perf:true,gas:false,fluid:true,collect:true,labels:['morison','fid']}),
+    S('Rafia com tampão de omento','Tratamento padrão: rafia e tampão de omento pediculado (Graham ou Cellan-Jones), por laparoscopia ou laparotomia, com lavagem da cavidade.',{antU:1,perf:true,gas:false,fluid:false,collect:false,omen:true,labels:['omen']})
+   ]},
+ bleed:{view:[-0.86,0.3,0.4],target:[-2.0,2.0,-1.8],dist:20,
+   vis:mk({d1ant:0.12,d1post:0.38,stomach:0.35,dRest:0.45,liver:0,gb:0,pancreas:0.75,aorta:0.25,ivc:0.25,portal:0.75,splenicA:0.4,splenicV:0.5,smv:0.6,sma:0.6,lga:0.4,wall:0,diaphragm:0}),
+   labels:['gda','cbd','pancreas','portal','d1post','cha','aspd','rgea'],
+   steps:[
+    S('Úlcera na parede posterior','Úlcera na parede posterior do bulbo, vista por dentro da luz. Logo atrás dela passa a AGD.',{postU:0.3,labels:['ulcP']}),
+    S('A erosão chega à AGD','A base necrótica da úlcera digere a adventícia e a camada muscular da artéria.',{postU:1,labels:['ulcP','bleed'],hi:['gda']}),
+    S('Forrest Ia · jato','A parede arterial cede. Sangue arterial em jato para dentro da luz duodenal.',{postU:1,jet:'Ia',labels:['bleed']}),
+    S('Forrest Ib · babação','Sangramento ativo lento, em porejamento, sem jato.',{postU:1,jet:'Ib',labels:['bleed']}),
+    S('Forrest IIa · vaso visível','O sangramento parou, mas o orifício da AGD, tamponado por trombo, faz saliência na base da úlcera. Risco de ressangramento próximo de 43% sem tratamento.',{postU:1,vv:true,labels:['vv']}),
+    S('Hematêmese e melena','O sangue na luz reflui para o estômago (hematêmese) e segue para o jejuno (melena). Se o volume é grande, pode sair como hematoquezia.',{postU:1,jet:'Ia',lumen:true,labels:['bleed']}),
+    S('Penetração no pâncreas','Sem romper a artéria, a úlcera continua para trás e entra na cabeça do pâncreas: dor contínua nas costas e amilase às vezes elevada.',{postU:1,pen:true,labels:['pen']})
+   ]},
+ ligate:{view:[0.0,0.08,1],target:[-1.4,0.6,-2.2],dist:22,
+   vis:mk({d1ant:0.06,d1post:0.22,stomach:0.22,dRest:0.35,liver:0,gb:0,pancreas:0.42,aorta:0.3,ivc:0.2,portal:0.45,smv:0.45,splenicV:0.4,wall:0,diaphragm:0,splenicA:0.5,lga:0.4}),
+   labels:['gda','cha','sma','ipda','aspd','tpa','cbd','pspd','rgea'],
+   steps:[
+    S('O ponto que sangra','A AGD sangra no ponto em que a úlcera posterior a erodiu. As partículas claras mostram o fluxo arterial chegando ao ponto.',{postU:1,jet:'Ia',flows:{A:true,B:true,C:true},labels:['bleed']}),
+    S('Três entradas','Por cima: hepática comum (anterógrado). Por baixo: AMS pelas arcadas pancreaticoduodenais (retrógrado). Pelo lado: ramo pancreático transverso.',{postU:1,jet:'Ia',flows:{A:true,B:true,C:true},labels:['inA','inB','inC']}),
+    S('Erro: ponto único no leito','Um ponto só no fundo da úlcera fecha o furo por um tempo. As três entradas continuam abertas, e o sangramento volta.',{postU:1,jet:'Ia',flows:{A:true,B:true,C:true},ties:{single:true},single:true,labels:['tS']}),
+    S('Ponto cranial','Primeiro ponto, acima da úlcera: fecha a entrada vinda da hepática comum.',{postU:1,jet:'Ia',flows:{A:true,B:true,C:true},block:{A:'cr'},ties:{cr:true},labels:['tCr','inB','inC']}),
+    S('Ponto caudal','Segundo ponto, abaixo da úlcera: fecha o fluxo retrógrado que sobe da AMS pelas arcadas. O ponto ainda sangra, menos.',{postU:1,jet:'Ia',flows:{A:true,B:true,C:true},block:{A:'cr',B:'ca'},ties:{cr:true,ca:true},labels:['tCr','tCa','inC']}),
+    S('Ponto em U medial','Terceiro ponto, em U, na face medial: fecha o ramo pancreático transverso. Com as três entradas fechadas, o fluxo no segmento cessa.',{postU:1,jet:'none',flows:{A:true,B:true,C:true},block:{A:'cr',B:'ca',C:'u'},ties:{cr:true,ca:true,u:true},labels:['tCr','tCa','tU']}),
+    S('O risco: o colédoco','O colédoco desce poucos milímetros lateral à AGD. Um ponto profundo e lateral pode pegá-lo: icterícia ou fístula biliar no pós-operatório. Reconheça-o antes de passar os pontos.',{postU:1,jet:'none',flows:{A:true,B:true,C:true},block:{A:'cr',B:'ca',C:'u'},ties:{cr:true,ca:true,u:true,cbd:true},cbdHi:true,labels:['tCBD']},{vis:{cbd:1}})
+   ]},
+ embo:{view:[0.55,0.12,0.83],target:[-0.6,1.0,-3.0],dist:34,
+   vis:mk({d1ant:0.08,d1post:0.2,stomach:0.18,dRest:0.3,liver:0,gb:0,pancreas:0.35,aorta:0.55,ivc:0.15,portal:0.3,smv:0.3,splenicV:0.3,wall:0,diaphragm:0,cbd:0.6}),
+   labels:['gda','cha','celiac','aorta','sma','aspd','ipda'],
+   steps:[
+    S('Sangramento ativo','A úlcera posterior sangra pela AGD. O fluxo chega por cima (hepática comum) e por baixo (arcada da AMS).',{postU:1,jet:'Ia',flows:{A:true,B:true},labels:['bleed']}),
+    S('Cateter no tronco celíaco','Acesso femoral. O cateter sobe pela aorta e entra no tronco celíaco.',{postU:1,jet:'Ia',flows:{A:true,B:true},cath:0.62,labels:['cath']}),
+    S('Cateter na AGD e angiografia','O cateter segue pela hepática comum e desce na AGD. O contraste extravasa no ponto que sangra.',{postU:1,jet:'Ia',flows:{A:true,B:true},cath:0.9,blush:true,labels:['bleed']}),
+    S('Mola distal','A primeira mola vai abaixo do ponto que sangra e fecha a entrada retrógrada da arcada.',{postU:1,jet:'Ia',jetK:0.6,flows:{A:true,B:true},block:{B:'coil'},cath:1,coilD:true,labels:['coD']}),
+    S('Mola proximal','O cateter recua e a segunda mola vai acima do ponto. O segmento fica isolado entre as duas: sanduíche.',{postU:1,jet:'none',flows:{A:true,B:true},block:{A:'coil',B:'coil'},cath:0.86,coilD:true,coilP:true,labels:['coD','coP']}),
+    S('Erro: só a mola proximal','Com só a mola proximal, a arcada continua enchendo a AGD por baixo e o ponto continua sangrando. É o mesmo erro do ponto único.',{postU:1,jet:'Ia',jetK:0.65,flows:{A:true,B:true},block:{A:'coil'},cath:0.86,coilP:true,labels:['coP','inB']})
+   ]},
+ kiss:{view:[-1,0.06,0.02],target:[-1.8,2.2,-0.6],dist:20,
+   vis:mk({d1ant:0.35,d1post:0.35,stomach:0.45,dRest:0.5,liver:0.12,gb:0.5,pancreas:0.6,aorta:0.25,ivc:0.25,portal:0.6,wall:0.1,diaphragm:0}),
+   labels:['d1ant','d1post','gda','cbd','pancreas'],
+   steps:[
+    S('Duas úlceras frente a frente','Uma úlcera na parede anterior e outra na posterior, na mesma altura do bulbo. Quando a luz colaba, elas se tocam.',{antU:0.6,postU:0.6,labels:['ulcA','ulcP']}),
+    S('A anterior perfura','A úlcera anterior atravessa a parede e abre para a cavidade livre: pneumoperitônio e peritonite.',{antU:1,postU:0.7,perf:true,gas:true,fluid:true,labels:['ulcA','cavity']}),
+    S('A posterior sangra','Ao mesmo tempo, a úlcera posterior erode a AGD: melena, queda de hemoglobina, choque desproporcional à peritonite.',{antU:1,postU:1,perf:true,gas:true,jet:'Ia',lumen:true,labels:['ulcP','bleed']}),
+    S('Erro: só o tampão de omento','O tampão fecha a perfuração anterior, mas a úlcera posterior continua sangrando sobre a AGD.',{antU:1,postU:1,perf:true,omen:true,jet:'Ia',lumen:true,labels:['omen','bleed']}),
+    S('Conduta completa','Estender a perfuração como piloroduodenotomia longitudinal, ligar a AGD com três pontos, fechar na transversal (Heineke-Mikulicz) e reforçar com omento.',{antU:1,postU:1,perf:true,omen:true,inc:true,ties:{cr:true,ca:true,u:true},labels:['inc','tCr','tCa','tU']},{vis:{d1ant:0.22}})
+   ]}
+};
+// estados cumulativos
+for(const k in SCENES){const sc=SCENES[k];if(!sc.steps)continue;sc.steps.forEach(st=>{st.fx=Object.assign(JSON.parse(JSON.stringify(FX0)),JSON.parse(JSON.stringify(st.delta)));st.fx.ties=Object.assign({},FX0.ties,st.delta.ties||{});st.fx.flows=Object.assign({},FX0.flows,st.delta.flows||{});});}
+
+/* ---------- câmera ---------- */
+let tween=null;
+function viewTo(dir,target,dist,instant){
+  const d=V(dir[0],dir[1],dir[2]).normalize();const tg=target?V(target[0],target[1],target[2]):controls.target.clone();
+  const asp=camera.aspect; const k=asp<1?Math.min(1.9,1/asp*0.95):1; const D=(dist||30)*k;
+  const p1=tg.clone().add(d.multiplyScalar(D));
+  if(instant||!controls){camera.position.copy(p1);if(controls)controls.target.copy(tg);camera.lookAt(tg);return;}
+  tween={t:0,p0:camera.position.clone(),g0:controls.target.clone(),p1,g1:tg};
+}
+let curScene=null, curStep=-1, playTimer=null;
+function applyVis(v){for(const id in v){setOpacity(id,v[id]);}STRUCTS.forEach(s=>setEmissive(s.id,'#000000',0));}
+function setScene(name){
+  if(!renderer)return; curScene=name; stopPlay(); const sc=SCENES[name];
+  if(name==='explore'){applyVis(exploreVis);fx=JSON.parse(JSON.stringify(FX0));}
+  else {applyVis(sc.vis);}
+  viewTo(sc.view,sc.target,sc.dist);
+  curStep=-1; if(sc.steps) setStep(0); else {fx=JSON.parse(JSON.stringify(FX0));fxT0=clock;}
+  resetParticles();
+  document.getElementById('cap').innerHTML='';
+}
+function setStep(i){
+  const sc=SCENES[curScene]; if(!sc||!sc.steps)return; curStep=i; const st=sc.steps[i];
+  fx=JSON.parse(JSON.stringify(st.fx)); fxT0=clock;
+  applyVis(Object.assign({},sc.vis,st.vis||{}));
+  (fx.hi||[]).forEach(id=>setEmissive(id,'#FF6A50',0.25));
+  document.getElementById('cap').innerHTML='<span class="k">Passo '+(i+1)+' de '+sc.steps.length+' · '+st.title+'</span>'+st.cap;
+  document.querySelectorAll('[data-steps="'+curScene+'"] button').forEach((b,j)=>{b.classList.toggle('on',j===i);b.setAttribute('aria-current',j===i?'step':'false');});
+  if(curScene==='perf'&&i===3){airView();}
+  if(st.fx.lumen||st.fx.jet!=='none')resetParticles(['jet','lum']);
+}
+function airView(){ if(gasMode==='pe') viewTo([-0.15,0.1,1],[-2.6,6.5,0.5],40); else viewTo([-1,0.08,0.05],[-2.0,3.0,1.0],38); }
+function stopPlay(){if(playTimer){clearInterval(playTimer);playTimer=null;}document.querySelectorAll('[data-play]').forEach(b=>{b.textContent='Reproduzir sequência';b.classList.remove('on');});}
+function play(name){
+  const btn=document.querySelector('[data-play="'+name+'"]');
+  if(playTimer){stopPlay();return;}
+  ensureScene(name); setStep(0); btn.textContent='Pausar sequência'; btn.classList.add('on');
+  playTimer=setInterval(()=>{const n=SCENES[curScene].steps.length;if(curStep>=n-1){stopPlay();return;}setStep(curStep+1);},4200);
+}
+
+/* ---------- partículas: atualização ---------- */
+function resetParticles(which){const all={jet,lum,gas,fluid,blush,A:flowSys.A,B:flowSys.B,C:flowSys.C};(which||Object.keys(all)).forEach(k=>{const s=all[k];s.p=[];s.arr.fill(9999);s.attr.needsUpdate=true;});}
+const tmp=new THREE.Vector3();
+function rnd(a,b){return a+Math.random()*(b-a);}
+function heart(t){const ph=(t*1.25)%1;return ph<0.18?1:0.25;}
+let lastJetEmit=0;
+function updJet(dt,t){
+  const s=jet; let rate=0, speed=0, spread=0;
+  let K=fx.jetK;
+  if(fx.single){const e=t-fxT0;K*=e<2.2?0:(e<3?(e-2.2)/0.8:1)*0.75;}
+  if(fx.jet==='Ia'){rate=230*heart(t)*K;speed=5.5;spread=0.32;}
+  else if(fx.jet==='Ib'){rate=55*K;speed=0.9;spread=0.9;}
+  const dir=lumenC.clone().sub(pBleed).normalize();
+  let emit=rate*dt; while(emit>0){ if(Math.random()<emit){ if(s.p.length<s.n){const v=dir.clone().add(V(rnd(-spread,spread),rnd(-spread,spread),rnd(-spread,spread))).normalize().multiplyScalar(speed*rnd(0.7,1.2));s.p.push({x:gdaFront.clone(),v,life:0,max:fx.jet==='Ia'?rnd(0.35,0.6):rnd(0.9,1.6)});} } emit-=1; }
+  for(let i=s.p.length-1;i>=0;i--){const q=s.p[i];q.life+=dt;if(q.life>q.max){s.p.splice(i,1);continue;}q.v.multiplyScalar(fx.jet==='Ia'?0.965:0.98);if(fx.jet==='Ib')q.v.y-=0.6*dt;q.x.add(tmp.copy(q.v).multiplyScalar(dt));}
+  writeP(s);
+}
+function writeP(s){const a=s.arr;let i=0;for(;i<s.p.length;i++){a[i*3]=s.p[i].x.x;a[i*3+1]=s.p[i].x.y;a[i*3+2]=s.p[i].x.z;}for(;i<s.n;i++){a[i*3]=9999;a[i*3+1]=9999;a[i*3+2]=9999;}s.attr.needsUpdate=true;}
+function updLumen(dt){
+  const s=lum; if(fx.lumen&&s.p.length<s.n&&Math.random()<dt*70){const back=Math.random()<0.38;s.p.push({u:tU,sp:(back?-1:1)*rnd(0.05,0.11),off:V(rnd(-0.6,0.6),rnd(-0.6,0.6),rnd(-0.6,0.6)),back,x:new THREE.Vector3()});}
+  for(let i=s.p.length-1;i>=0;i--){const q=s.p[i];if(q.back){q.u+=q.sp*dt*0.45; if(q.u<0){q.st=(q.st===undefined?1:q.st)+q.sp*dt*0.35;if(q.st<0.55){s.p.splice(i,1);continue;}q.x.copy(CRV.stomach.getPointAt(q.st)).add(q.off);continue;}}
+    else {q.u+=q.sp*dt*0.6; if(q.u>0.98){s.p.splice(i,1);continue;}}
+    if(q.u>=0) q.x.copy(CRV.duo.getPointAt(clamp(q.u,0,1))).add(q.off);
+  }
+  if(!fx.lumen&&s.p.length) s.p=[];
+  writeP(s);
+}
+function updGas(dt){
+  const s=gas; if(fx.gas&&s.p.length<s.n&&Math.random()<dt*60){
+    let tgt; if(gasMode==='pe'){const a=rnd(PI*0.55,PI*1.45),b=rnd(0.08,0.5);tgt=V(-3.6+Math.cos(a)*Math.sin(b)*10.0*1.05,6.9+Math.cos(b)*10.0*0.75,-1.0-Math.sin(a)*Math.sin(b)*10.0);}
+    else tgt=V(rnd(-7.5,4.5),rnd(-5,8.5),5.7+rnd(-0.3,0.3));
+    s.p.push({a:pAntOut.clone(),b:tgt,mid:pAntOut.clone().add(FU.N.clone().multiplyScalar(2.2)).add(V(rnd(-1,1),rnd(-1,1),0)),k:0,sp:rnd(0.35,0.6),x:new THREE.Vector3()});}
+  for(let i=s.p.length-1;i>=0;i--){const q=s.p[i];q.k+=dt*q.sp;if(q.k>1.6){s.p.splice(i,1);continue;}const k=Math.min(1,q.k);const e=1-Math.pow(1-k,2);
+    const ab=q.a.clone().lerp(q.mid,e),bc=q.mid.clone().lerp(q.b,e);q.x.copy(ab.lerp(bc,e));}
+  if(!fx.gas&&s.p.length) s.p=[];
+  writeP(s);
+}
+function updFluid(dt){
+  const s=fluid; if(fx.fluid&&s.p.length<s.n&&Math.random()<dt*55){s.p.push({c:fluidPaths[Math.random()<0.6?0:1],k:0,sp:rnd(0.12,0.22),off:V(rnd(-0.5,0.5),rnd(-0.5,0.5),rnd(-0.4,0.4)),x:new THREE.Vector3()});}
+  for(let i=s.p.length-1;i>=0;i--){const q=s.p[i];q.k+=dt*q.sp*(1-Math.min(q.k,1)*0.6);if(q.k>1.25){s.p.splice(i,1);continue;}q.x.copy(q.c.getPointAt(Math.min(1,q.k))).add(q.off);}
+  if(!fx.fluid&&s.p.length) s.p=[];
+  writeP(s);
+}
+function updBlush(dt){
+  const s=blush; if(fx.blush&&s.p.length<s.n&&Math.random()<dt*50){s.p.push({x:gdaFront.clone(),v:lumenC.clone().sub(pBleed).normalize().add(V(rnd(-0.7,0.7),rnd(-0.7,0.7),rnd(-0.7,0.7))).multiplyScalar(rnd(0.4,1.0)),life:0,max:rnd(1,2)});}
+  for(let i=s.p.length-1;i>=0;i--){const q=s.p[i];q.life+=dt;if(q.life>q.max){s.p.splice(i,1);continue;}q.x.add(tmp.copy(q.v).multiplyScalar(dt*0.8));q.v.multiplyScalar(0.97);}
+  if(!fx.blush&&s.p.length) s.p=[];
+  writeP(s);
+}
+function updFlows(dt){
+  ['A','B','C'].forEach(k=>{const s=flowSys[k];const on=fx.flows[k];
+    if(!on){if(s.p.length){s.p=[];writeP(s);}return;}
+    const stopKey=fx.block[k]; const tEnd=stopKey?stopT[k][stopKey]:1; const L=flowPaths[k].getLength();
+    if(s.p.length<s.n&&Math.random()<dt*9){s.p.push({k:0,x:new THREE.Vector3()});}
+    for(let i=s.p.length-1;i>=0;i--){const q=s.p[i];q.k+=dt*4.2/L;if(q.k>tEnd){s.p.splice(i,1);continue;}q.x.copy(flowPaths[k].getPointAt(q.k));}
+    writeP(s);
+  });
+}
+function jetActive(){ if(fx.jet==='none')return false; return true; }
+
+/* ---------- loop ---------- */
+let clock=0,last=performance.now(),running=false;
+const labelsOn={v:true};
+const gizmo=document.getElementById('gizmo'),gctx=gizmo.getContext('2d');
+const hud=document.getElementById('hud');
+const AX=[{v:V(0,1,0),t:'Cr'},{v:V(0,-1,0),t:'Ca'},{v:V(-1,0,0),t:'D'},{v:V(1,0,0),t:'E'},{v:V(0,0,1),t:'A'},{v:V(0,0,-1),t:'P'}];
+function drawGizmo(){
+  const w=gizmo.width,c=w/2,R=w*0.33;gctx.clearRect(0,0,w,w);const qi=camera.quaternion.clone().invert();
+  const it=AX.map(a=>{const p=a.v.clone().applyQuaternion(qi);return {p,t:a.t};}).sort((a,b)=>a.p.z-b.p.z);
+  gctx.font='600 '+Math.round(w*0.11)+'px "IBM Plex Mono", monospace';gctx.textAlign='center';gctx.textBaseline='middle';
+  it.forEach(a=>{const x=c+a.p.x*R,y=c-a.p.y*R;const al=a.p.z<-0.2?0.4:1;gctx.strokeStyle='rgba(242,242,239,'+al+')';gctx.lineWidth=w*0.012;gctx.beginPath();gctx.moveTo(c,c);gctx.lineTo(x,y);gctx.stroke();
+    gctx.fillStyle='rgba(10,10,10,'+(0.9)+')';gctx.fillRect(x-w*0.085,y-w*0.07,w*0.17,w*0.14);gctx.strokeRect(x-w*0.085,y-w*0.07,w*0.17,w*0.14);gctx.fillStyle='rgba(242,242,239,'+al+')';gctx.fillText(a.t,x,y+1);});
+}
+let hudKey='';
+function updHUD(){
+  const d=camera.position.clone().sub(controls.target).normalize();
+  const comps=[{v:d.z,p:'anterior',n:'posterior'},{v:-d.x,p:'direita',n:'esquerda'},{v:d.y,p:'cranial',n:'caudal'}];
+  let name; const mx=comps.reduce((a,b)=>Math.abs(b.v)>Math.abs(a.v)?b:a);
+  if(Math.abs(mx.v)>0.86){name=mx===comps[1]?('lateral '+(mx.v>0?'direita':'esquerda')):(mx.v>0?mx.p:mx.n);}
+  else{name='oblíqua '+comps.filter(c=>Math.abs(c.v)>0.3).map(c=>c.v>0?c.p:c.n).join(' ');}
+  const e=camera.matrixWorld.elements;const R=V(e[0],e[1],e[2]),U=V(e[4],e[5],e[6]),F=V(-e[8],-e[9],-e[10]);
+  function where(v){const r=R.dot(v),u=U.dot(v),f=F.dot(v);const m=Math.max(Math.abs(r),Math.abs(u),Math.abs(f));if(m===Math.abs(r))return r>0?'à direita da tela':'à esquerda da tela';if(m===Math.abs(u))return u>0?'no alto da tela':'embaixo da tela';return f>0?'para dentro da tela':'para fora da tela';}
+  const txt='<span class="v">Vista '+name+'</span><br>Paciente em decúbito dorsal na mesa<br>Direita do paciente '+where(V(-1,0,0))+'<br>Cranial '+where(V(0,1,0));
+  if(txt!==hudKey){hud.innerHTML=txt;hudKey=txt;}
+}
+function updLabels(){
+  const w=stage.clientWidth,h=stage.clientHeight; const narrow=w<560;
+  const sc=SCENES[curScene]; const list=sc&&sc.labels;
+  STRUCTS.forEach(s=>{const show=labelsOn.v&&s.op>0.1&&s.anchor&&(list==='all'||(list&&list.indexOf(s.id)>=0));
+    if(!show){s.lab.style.display='none';return;}
+    tmp.copy(s.anchor).project(camera); if(tmp.z>1){s.lab.style.display='none';return;}
+    s.lab.style.display='flex';s.lab.style.left=((tmp.x+1)/2*w)+'px';s.lab.style.top=((1-tmp.y)/2*h)+'px';s.lab.querySelector('span').style.display=narrow?'none':'';
+  });
+  const fl=fx.labels||[];
+  for(const id in FXL){const L=FXL[id];let show=fl.indexOf(id)>=0&&labelsOn.v;
+    if(id==='pneumoS'&&gasMode!=='supino')show=false; if(id==='pneumoU'&&gasMode!=='pe')show=false;
+    if(!show){L.el.style.display='none';continue;}
+    tmp.copy(L.pos).project(camera);L.el.style.display='flex';L.el.style.left=((tmp.x+1)/2*w)+'px';L.el.style.top=((1-tmp.y)/2*h)+'px';}
+}
+function approach(a,b,k){return a+(b-a)*Math.min(1,k);}
+function updFX(dt,t){
+  cur.antU=approach(cur.antU,fx.antU,dt*2.2); cur.postU=approach(cur.postU,fx.postU,dt*2.2); cur.pen=approach(cur.pen,fx.pen?1:0,dt*1.6); cur.cath=approach(cur.cath,fx.cath,dt*1.1); cur.air=approach(cur.air,fx.collect?1:0,dt*0.9);
+  ulcA.visible=cur.antU>0.02; ulcA.scale.setScalar(0.5+cur.antU*0.6); ulcA.material.opacity=Math.min(1,cur.antU*3);
+  holeA.visible=fx.perf&&!fx.omen; holeA.scale.setScalar(fx.perf?1:0.01);
+  eroA.visible=cur.antU>0.02&&SID.d1ant.op<0.6; aimCone(eroA,pAntIn,pAntOut,Math.max(0.01,cur.antU));
+  ulcP.visible=cur.postU>0.02; ulcP.scale.setScalar(0.5+cur.postU*0.6); ulcP.material.opacity=Math.min(1,cur.postU*3);
+  eroP.visible=cur.postU>0.02; aimCone(eroP,pPostIn,gdaFront,Math.max(0.01,cur.postU));
+  eroPen.visible=cur.pen>0.02; aimCone(eroPen,pPostIn,pancTarget,Math.max(0.01,cur.pen));
+  penPatch.visible=cur.pen>0.05; penPatch.material.opacity=0.55*cur.pen*(0.8+0.2*Math.sin(t*3));
+  vv.visible=fx.vv;
+  airSup.material.opacity=gasMode==='supino'?0.55*cur.air:0; airSup.visible=airSup.material.opacity>0.01;
+  airUp.material.opacity=gasMode==='pe'?0.6*cur.air:0; airUp.visible=airUp.material.opacity>0.01;
+  omPatch.visible=fx.omen; omPed.visible=fx.omen && SID.stomach.op>0;
+  tieCr.visible=fx.ties.cr; tieCa.visible=fx.ties.ca; tieU.visible=fx.ties.u; tieSingle.visible=fx.ties.single; tieCBD.visible=fx.ties.cbd;
+  sutBad.emissive.copy(SRGB('#C83C28')).multiplyScalar(fx.ties.cbd?0.6+0.4*Math.sin(t*5):0);
+  if(fx.cbdHi) setEmissive('cbd','#E0C040',0.25+0.2*Math.sin(t*5));
+  incision.visible=fx.inc;
+  cath.visible=cur.cath>0.01; cathGeo.setDrawRange(0,Math.floor(cur.cath*260)*8*6);
+  coilD.visible=fx.coilD; coilP.visible=fx.coilP;
+}
+function frameLoop(now){
+  requestAnimationFrame(frameLoop);
+  if(!running||!renderer)return;
+  const dt=Math.min(0.05,(now-last)/1000);last=now;clock+=dt;
+  if(tween){tween.t=Math.min(1,tween.t+dt/0.9);const e=smooth(tween.t);
+    const d0=tween.p0.clone().sub(tween.g0),d1=tween.p1.clone().sub(tween.g1);const L0=d0.length(),L1=d1.length();d0.normalize();d1.normalize();
+    let dm=d0.clone().lerp(d1,e);if(dm.lengthSq()<0.01)dm.add(V(0,0.3,0));dm.normalize();
+    controls.target.copy(tween.g0.clone().lerp(tween.g1,e));camera.position.copy(controls.target.clone().add(dm.multiplyScalar(lerp(L0,L1,e))));
+    if(tween.t>=1)tween=null;}
+  controls.update();
+  updFX(dt,clock); updJet(dt,clock); updLumen(dt); updGas(dt); updFluid(dt); updBlush(dt); updFlows(dt);
+  renderer.render(scene,camera);
+  updLabels(); drawGizmo(); updHUD();
+}
+function resize(){if(!renderer)return;const w=stage.clientWidth,h=stage.clientHeight;if(!w||!h)return;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();}
+if(window.ResizeObserver) new ResizeObserver(resize).observe(stage); else window.addEventListener('resize',resize);
+
+/* ---------- colocar o palco na cena certa ---------- */
+const slots=[...document.querySelectorAll('.slot')];
+function ensureScene(name){
+  const slot=document.querySelector('.slot[data-scene="'+name+'"]');
+  if(stage.parentNode!==slot){slots.forEach(s=>s.classList.remove('has'));slot.appendChild(stage);slot.classList.add('has');stage.hidden=false;resize();}
+  if(curScene!==name){ if(curScene===null){const sc=SCENES[name];resize();viewTo(sc.view,sc.target,sc.dist,true);} setScene(name); }
+}
+const ratios=new Map();
+const io=new IntersectionObserver(es=>{es.forEach(e=>ratios.set(e.target,e.isIntersecting?e.intersectionRatio:0));
+  let best=null,bv=0.25;ratios.forEach((v,k)=>{if(v>bv){bv=v;best=k;}});
+  if(best&&renderer){ensureScene(best.dataset.scene);} },{threshold:[0,0.25,0.4,0.6,0.8,1]});
+slots.forEach(s=>io.observe(s));
+const vis=new IntersectionObserver(es=>{es.forEach(e=>{running=e.isIntersecting;last=performance.now();});});
+vis.observe(stage);
+document.querySelectorAll('[data-load]').forEach(b=>b.addEventListener('click',()=>ensureScene(b.dataset.load)));
+
+/* ---------- painéis ---------- */
+// passos
+for(const k in SCENES){const sc=SCENES[k];if(!sc.steps)continue;const ol=document.querySelector('[data-steps="'+k+'"]');
+  sc.steps.forEach((st,i)=>{const li=document.createElement('li');const b=document.createElement('button');b.type='button';b.innerHTML='<span class="n">'+String(i+1).padStart(2,'0')+'</span><span>'+st.title+'</span>';b.addEventListener('click',()=>{stopPlay();ensureScene(k);setStep(i);});li.appendChild(b);ol.appendChild(li);});}
+document.querySelectorAll('[data-play]').forEach(b=>b.addEventListener('click',()=>play(b.dataset.play)));
+document.querySelectorAll('[data-reset]').forEach(b=>b.addEventListener('click',()=>{stopPlay();ensureScene(b.dataset.reset);setStep(0);const sc=SCENES[b.dataset.reset];viewTo(sc.view,sc.target,sc.dist);}));
+document.querySelectorAll('[data-air]').forEach(b=>b.addEventListener('click',()=>{gasMode=b.dataset.air;document.querySelectorAll('[data-air]').forEach(x=>x.classList.toggle('on',x===b));resetParticles(['gas']);ensureScene('perf');if(curStep<3)setStep(3);else airView();}));
+// vistas e atalhos
+document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{ensureScene('explore');const v=VIEWS[b.dataset.view];viewTo(v.d,[-1.5,1.5,-1.5],34);}));
+const PRESETS={
+  all:()=>Object.assign({},DEFV),
+  vessels:()=>{const o={};for(const k in DEFV)o[k]=0;['aorta','ivc','celiac','lga','splenicA','cha','pha','gda','pspd','tpa','aspd','rgea','sma','ipda','portal','smv','splenicV','cbd'].forEach(k=>o[k]=1);o.pancreas=0.15;o.d1post=0.12;o.d1ant=0.06;o.dRest=0.12;o.stomach=0.1;return o;},
+  behindD1:()=>{const o={};for(const k in DEFV)o[k]=0;Object.assign(o,{gda:1,cha:1,pha:1,cbd:1,portal:1,pancreas:0.85,d1post:0.45,d1ant:0,pspd:1,tpa:1,aspd:1,rgea:1,celiac:1,aorta:0.4,ivc:0.4,stomach:0.25,dRest:0.4});return o;},
+  frontD1:()=>{const o={};for(const k in DEFV)o[k]=0;Object.assign(o,{d1ant:1,d1post:1,stomach:1,dRest:0.9,liver:0.3,gb:1,wall:0.18,pancreas:0.5});return o;}
+};
+document.querySelectorAll('[data-preset]').forEach(b=>b.addEventListener('click',()=>{const o=PRESETS[b.dataset.preset]();Object.assign(exploreVis,o);ensureScene('explore');applyVis(exploreVis);syncList();
+  if(b.dataset.preset==='behindD1')viewTo([-0.25,0.15,0.96],[-2.2,2.0,-2.4],22);
+  if(b.dataset.preset==='frontD1')viewTo([-0.3,0.25,0.92],[-2.2,3.0,0.5],30);}));
+const lb=document.getElementById('btn-labels');
+lb.addEventListener('click',()=>{labelsOn.v=!labelsOn.v;lb.setAttribute('aria-pressed',labelsOn.v);lb.textContent=labelsOn.v?'Rótulos ligados':'Rótulos desligados';});
+// lista de estruturas
+const slist=document.getElementById('slist');let lastGrp='';
+STRUCTS.forEach(s=>{
+  if(s.grp!==lastGrp){const g=document.createElement('div');g.className='sgroup';g.textContent=s.grp;slist.appendChild(g);lastGrp=s.grp;}
+  const row=document.createElement('div');row.className='srow';row.dataset.id=s.id;
+  row.innerHTML='<span class="num">'+s.n+'</span><span class="sw" style="background:'+s.color+'"></span><label for="cb-'+s.id+'"><input type="checkbox" id="cb-'+s.id+'">'+s.name+'</label><input type="range" id="op-'+s.id+'" min="5" max="100" step="5" aria-label="Opacidade de '+s.name+'">';
+  slist.appendChild(row);
+  const cb=row.querySelector('input[type=checkbox]'),rg=row.querySelector('input[type=range]');
+  cb.addEventListener('change',()=>{const v=exploreVis[s.id];exploreVis[s.id]=cb.checked?(v>0?v:(s.lastOp||(DEFV[s.id]||0.6))):0;if(!cb.checked)s.lastOp=v||s.lastOp;ensureScene('explore');setOpacity(s.id,exploreVis[s.id]);syncList();});
+  rg.addEventListener('input',()=>{exploreVis[s.id]=rg.value/100;ensureScene('explore');setOpacity(s.id,exploreVis[s.id]);syncList();});
+});
+function syncList(){STRUCTS.forEach(s=>{const row=slist.querySelector('[data-id="'+s.id+'"]');const v=exploreVis[s.id]||0;row.classList.toggle('off',v<=0.01);row.querySelector('input[type=checkbox]').checked=v>0.01;row.querySelector('input[type=range]').value=Math.round((v>0.01?v:(s.lastOp||DEFV[s.id]||0.6))*100);});}
+syncList();
+// seleção por toque
+if(renderer){
+  const ray=new THREE.Raycaster();let down=null;
+  canvas.addEventListener('pointerdown',e=>{down={x:e.clientX,y:e.clientY};});
+  canvas.addEventListener('pointerup',e=>{if(!down)return;const mv=Math.hypot(e.clientX-down.x,e.clientY-down.y);down=null;if(mv>6)return;
+    const r=canvas.getBoundingClientRect();const m=new THREE.Vector2((e.clientX-r.left)/r.width*2-1,-((e.clientY-r.top)/r.height)*2+1);ray.setFromCamera(m,camera);
+    const cand=[];STRUCTS.forEach(s=>{if(s.op>=0.2)s.meshes.forEach(x=>cand.push(x));});
+    const hit=ray.intersectObjects(cand,false)[0]; if(!hit)return; const s=SID[hit.object.userData.sid];
+    STRUCTS.forEach(x=>{if(!(fx.hi||[]).includes(x.id))setEmissive(x.id,'#000000',0);});setEmissive(s.id,'#FFFFFF',0.16);
+    setTimeout(()=>{if(!(fx.hi||[]).includes(s.id))setEmissive(s.id,'#000000',0);},1600);
+    const box=document.getElementById('pick-info');
+    box.innerHTML='<h5>'+s.n+' · '+s.name+'</h5><dl><dt>Origem</dt><dd>'+s.info.o+'</dd><dt>Trajeto</dt><dd>'+s.info.t+'</dd><dt>Relações</dt><dd>'+s.info.r+'</dd></dl>';
+    if(curScene!=='explore'){document.getElementById('cap').innerHTML='<span class="k">Estrutura tocada</span>'+s.n+' · '+s.name+'. '+s.info.r;}
+  });
+}
+requestAnimationFrame(frameLoop);
+
+/* ---------- trilho de capítulos ---------- */
+const navA=[...document.querySelectorAll('nav.rail a')];
+const secs=[...document.querySelectorAll('section.chap')];let navTick=false;
+function navSync(){navTick=false;const y=window.innerHeight*0.4;let id=null;secs.forEach(s=>{if(s.getBoundingClientRect().top<=y)id=s.id;});
+  navA.forEach(a=>{const on=a.getAttribute('href')==='#'+id;if(on&&!a.classList.contains('on')){a.classList.add('on');const r=a.parentNode;r.scrollLeft=a.offsetLeft-r.clientWidth/2+a.clientWidth/2;}else if(!on)a.classList.remove('on');});}
+window.addEventListener('scroll',()=>{if(!navTick){navTick=true;requestAnimationFrame(navSync);}},{passive:true});navSync();
+
+window.__atlas={setScene:n=>ensureScene(n),setStep:i=>setStep(i),get scene(){return curScene;},get step(){return curStep;}};
+})();
+</script>
+
+<script>
+(function(){
+'use strict';
+const Q=[
+ {stem:'Homem de 58 anos, em uso de diclofenaco há três semanas por lombalgia, chega com dor epigástrica súbita e intensa há 4 horas. Está corado, PA 132 × 84 mmHg, FC 96 bpm, com defesa no epigástrio e no hipocôndrio direito, sem rigidez difusa. A radiografia de tórax em pé, feita após 10 minutos sentado, não mostra ar sob as cúpulas. Qual o próximo passo?',
+  opts:['Alta com IBP oral e retorno em 48 horas, porque a radiografia em pé exclui perfuração.','Endoscopia digestiva alta de urgência para procurar a úlcera.','Tomografia de abdome, porque a radiografia normal não exclui perfuração.','Tratamento não operatório pelo método de Taylor, porque não há pneumoperitônio.'],
+  ans:2,
+  why:['Errada. Entre 15% e 25% das perfurações não mostram pneumoperitônio na radiografia. Uma radiografia normal não exclui perfuração em quem tem quadro sugestivo.','Errada. A endoscopia insufla ar e pode piorar uma perfuração. Ela não é exame para diagnosticar perfuração, e sim para hemorragia.','Correta. A TC é o exame mais sensível para pneumoperitônio pequeno, líquido livre e às vezes o próprio ponto de perfuração. Com o paciente estável e radiografia negativa, ela é o próximo passo.','Errada. O método de Taylor exige perfuração confirmada e bloqueada, documentada por estudo contrastado. Aqui a perfuração nem foi confirmada.']},
+ {stem:'Mulher de 67 anos, coronariopata, com melena e hemoglobina de 7,6 g/dL. Após a ressuscitação, faz endoscopia em 12 horas, que mostra úlcera de 1,5 cm na parede posterior do bulbo, com uma protuberância pigmentada na base, sem sangramento ativo. Qual conduta está correta?',
+  opts:['Terapia endoscópica combinada (adrenalina associada a clipe ou coagulação térmica), IBP em alta dose por 72 horas e transfusão para manter hemoglobina acima de 8 g/dL.','Injeção de adrenalina isolada e IBP oral, porque a lesão não está sangrando.','IBP em alta dose sem terapia endoscópica, porque a lesão é IIb e o coágulo não deve ser removido.','Cirurgia com ligadura da AGD, por ser úlcera de parede posterior com vaso visível.'],
+  ans:0,
+  why:['Correta. A protuberância pigmentada é vaso visível (Forrest IIa), com risco de ressangramento próximo de 43%. Exige terapia endoscópica (clipe ou térmico, sozinhos ou associados à adrenalina; nunca adrenalina isolada) e IBP em alta dose por 72 horas. Na coronariopata, o limiar de transfusão é 8 g/dL.','Errada. Adrenalina isolada é insuficiente, porque o efeito vasoconstritor e compressivo passa. E Forrest IIa tratado pede IBP em alta dose por 72 horas, não IBP oral em dose padrão.','Errada. A descrição não é de coágulo aderido (IIb); é vaso visível (IIa). Mesmo no IIb, a conduta mais aceita é remover o coágulo e tratar o que está embaixo.','Errada. A localização posterior aumenta o risco, mas a primeira linha continua sendo a endoscopia. A cirurgia fica para falha endoscópica ou choque refratário.']},
+ {stem:'Durante piloroduodenotomia por úlcera da parede posterior do bulbo com sangramento arterial, o cirurgião comprime o ponto com o dedo e aspira a luz. Qual técnica de hemostasia é a correta?',
+  opts:['Um ponto em X profundo no leito da úlcera, sobre o vaso que sangra.','Ligadura da AGD na origem, na borda superior do pâncreas, sem abordar o leito da úlcera.','Pontos cranial e caudal profundos e lateralizados, englobando todo o tecido até a borda direita do ligamento hepatoduodenal.','Ponto cranial e ponto caudal à úlcera, mais um ponto em U na face medial, com o colédoco reconhecido antes de passar os pontos.'],
+  ans:3,
+  why:['Errada. O ponto único não fecha as entradas do vaso. O fluxo retrógrado da AMS pela arcada e o fluxo do ramo pancreático transverso mantêm o sangramento.','Errada. Fecha só a entrada cranial. O sangue continua chegando por baixo, de forma retrógrada, pela arcada pancreaticoduodenal.','Errada. O colédoco desce lateral à AGD, a poucos milímetros. Pontos lateralizados e profundos podem pegá-lo e causar icterícia obstrutiva ou fístula biliar.','Correta. É a ligadura tripla: cranial (hepática comum), caudal (arcada da AMS) e em U medial (pancreático transverso), com o colédoco identificado para não ser incluído.']},
+ {stem:'Homem de 72 anos com úlcera de 2,5 cm na parede posterior do bulbo. Teve hemostasia endoscópica inicial com clipes, ressangrou em 36 horas e fez segunda endoscopia com clipe over-the-scope, que também falhou. Depois de nova ressuscitação está com PA 108 × 70 mmHg e FC 98 bpm. A radiologia intervencionista está disponível. Qual a melhor conduta agora?',
+  opts:['Terceira endoscopia com injeção de adrenalina e pó hemostático.','Angioembolização da AGD com molas distal e proximal ao ponto que sangra.','Angioembolização com uma mola na origem da AGD, junto à hepática comum.','Aumentar o IBP para 16 mg/h e observar por 24 horas.'],
+  ans:1,
+  why:['Errada. Depois da falha da segunda endoscopia, insistir em nova terapia endoscópica atrasa o tratamento definitivo.','Correta. Com falha da segunda endoscopia e paciente estabilizado, a ACG e a ESGE colocam a embolização transcateter como próximo passo. As molas são postas em sanduíche: a distal fecha o fluxo retrógrado da arcada; a proximal, o fluxo anterógrado da hepática comum.','Errada. Uma mola só na origem equivale ao ponto único: a arcada pancreaticoduodenal continua enchendo a AGD por baixo e o ponto continua sangrando.','Errada. Não há benefício em aumentar a dose do IBP acima do esquema de alta dose, e observar um sangramento arterial que já falhou duas vezes na endoscopia é perigoso.']},
+ {stem:'Homem de 49 anos, tabagista, é levado à laparoscopia com diagnóstico de úlcera duodenal perfurada. Na admissão tinha melena; a hemoglobina caiu de 12 para 8,4 g/dL em 6 horas, e ele precisou de noradrenalina em dose maior do que a peritonite de 5 horas explicaria. Encontra-se perfuração de 6 mm na parede anterior do bulbo. Qual a conduta?',
+  opts:['Tampão de omento na perfuração e endoscopia no pós-operatório para avaliar a melena.','Converter para o tratamento não operatório, porque a perfuração é pequena.','Gastrectomia subtotal com reconstrução a Billroth II, por se tratar de úlcera complicada dupla.','Estender a perfuração como piloroduodenotomia, inspecionar a parede posterior, fazer a ligadura tripla da AGD se houver úlcera sangrante e fechar como piloroplastia com omento.'],
+  ans:3,
+  why:['Errada. Melena, queda de hemoglobina e choque desproporcional sugerem uma úlcera posterior sangrante frente a frente com a perfuração (kissing ulcers). Fechar só a anterior deixa a fonte de sangramento sem tratamento.','Errada. O paciente tem peritonite e instabilidade, e já está em cirurgia. Não há indicação de tratamento não operatório.','Errada. A ressecção gástrica não é a primeira escolha no paciente instável quando o problema pode ser resolvido por piloroduodenotomia e ligadura. Fica reservada a casos com destruição extensa do bulbo.','Correta. Em perfuração anterior com sinais de sangramento, a parede posterior precisa ser inspecionada. O orifício da perfuração vira a porta de entrada da piloroduodenotomia; a AGD é ligada em três pontos e a incisão é fechada na transversal (Heineke-Mikulicz), reforçada com omento.']},
+ {stem:'Mulher de 54 anos com dispepsia de longa data, em uso irregular de omeprazol, relata que há duas semanas a dor epigástrica deixou de melhorar com alimentação e antiácido, ficou contínua e irradia para a região lombar. Amilase de 2,4 vezes o limite superior, lipase pouco elevada. Ultrassonografia sem cálculos; TC com pâncreas sem necrose, discreta infiltração da gordura entre o bulbo e a cabeça do pâncreas, sem ar livre. Qual a principal hipótese?',
+  opts:['Úlcera da parede posterior do bulbo penetrando a cabeça do pâncreas.','Pancreatite aguda biliar com indicação de CPRE nas primeiras 24 horas.','Perfuração livre da parede anterior do bulbo, bloqueada pelo fígado.','Úlcera da pequena curvatura gástrica erodindo a artéria esplênica.'],
+  ans:0,
+  why:['Correta. A mudança do padrão da dor (contínua, irradiada para as costas, sem alívio com alimentação) e a amilase discretamente elevada em quem tem úlcera conhecida sugerem úlcera posterior que penetrou na cabeça do pâncreas. A endoscopia confirma.','Errada. Não há cálculos, a amilase está abaixo de 3 vezes o limite superior e a TC não mostra pancreatite; o quadro arrastado não sustenta pancreatite biliar. Além disso, CPRE urgente (nas primeiras 24 horas) na pancreatite biliar fica reservada para colangite associada.','Errada. A perfuração anterior dá dor súbita e peritonite. Uma perfuração bloqueada costuma deixar ar ou líquido junto ao bulbo na TC, e não infiltração entre o bulbo e o pâncreas.','Errada. A úlcera alta da pequena curvatura erode a gástrica esquerda e se manifesta como hemorragia, não como dor nas costas com amilase elevada.']}
+];
+const L=['a','b','c','d'];
+const box=document.getElementById('quiz');let done=0,ok=0;
+function score(){document.getElementById('score-txt').textContent=done+' de '+Q.length+' respondidas · '+ok+' acerto'+(ok===1?'':'s');}
+function render(){box.innerHTML='';done=0;ok=0;score();
+  Q.forEach((q,qi)=>{const d=document.createElement('article');d.className='q';
+    d.innerHTML='<div class="eyebrow">Questão '+(qi+1)+'</div><p class="stem">'+q.stem+'</p><div class="opts"></div><div class="exp" hidden></div>';
+    const o=d.querySelector('.opts'),ex=d.querySelector('.exp');
+    q.opts.forEach((t,i)=>{const b=document.createElement('button');b.type='button';b.id='q'+qi+'o'+i;b.innerHTML='<span class="l">'+L[i]+')</span><span>'+t+'</span>';
+      b.addEventListener('click',()=>{if(d.dataset.done)return;d.dataset.done='1';done++;if(i===q.ans)ok++;score();
+        o.querySelectorAll('button').forEach((x,j)=>{if(j===q.ans)x.classList.add('right');else if(j===i)x.classList.add('wrong');x.disabled=true;});
+        ex.hidden=false;ex.innerHTML='<p><b>Gabarito: '+L[q.ans]+'.</b> '+(i===q.ans?'Você acertou.':'Você marcou '+L[i]+'.')+'</p>'+q.why.map((w,j)=>'<p><b>'+L[j]+')</b> '+w+'</p>').join('');});
+      o.appendChild(b);});
+    box.appendChild(d);});}
+render();
+document.getElementById('quiz-reset').addEventListener('click',render);
+})();
+</script>
+
+</body></html>

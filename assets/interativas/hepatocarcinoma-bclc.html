@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atlas do Hepatocarcinoma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{
+  color-scheme:dark;
+  --ground:#121110;--surface:#171614;--surface-2:#1c1a18;--surface-3:#23201d;
+  --ink:#f6f4f2;--ink-strong:#faf8f6;--ink-body:rgba(243,242,242,.82);--ink-soft:rgba(243,242,242,.70);
+  --ink-meta:rgba(243,242,242,.58);--rule:rgba(243,242,242,.10);--rule-2:rgba(243,242,242,.16);--rule-3:rgba(243,242,242,.28);
+  --accent:#b68235;--accent-300:#facb8d;--accent-400:#e1ad66;--accent-600:#8d6428;--accent-700:#6b4c1e;
+  --tint-1:rgba(194,141,65,.16);--tint-2:rgba(194,141,65,.34);--tint-3:rgba(194,141,65,.56);--tint-4:rgba(194,141,65,.82);
+  --fh:"Cormorant Garamond",Georgia,"Times New Roman",serif;--fb:"Lora",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:56px}
+body{margin:0;background:var(--ground);color:var(--ink-body);font-family:var(--fb);font-size:15.5px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--fh);font-weight:500;color:var(--ink-strong);margin:0;letter-spacing:-.005em;text-wrap:balance}
+p{margin:0 0 .8em}
+b,strong{color:var(--ink);font-weight:600}
+em{color:var(--accent-300)}
+a{color:var(--accent-300)}
+button{font-family:var(--fb);color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent-400);outline-offset:2px;border-radius:3px}
+::selection{background:var(--tint-2);color:var(--ink-strong)}
+.num{font-variant-numeric:tabular-nums}
+svg text{font-family:var(--fb)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px 80px}
+header.hero{max-width:1140px;margin:0 auto;padding:52px 20px 26px}
+.kicker{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-meta)}
+.kicker.g{color:var(--accent-300)}
+h1{font-size:clamp(34px,6vw,60px);line-height:1.02;margin:12px 0 0;font-weight:500}
+h1 i{color:var(--accent-400)}
+.lede{max-width:62ch;font-size:17px;color:var(--ink-soft);margin:16px 0 0}
+.caso{margin:24px 0 0;padding:18px 20px;border-left:2px solid var(--accent);background:var(--surface);border-radius:0 8px 8px 0;max-width:76ch}
+.caso p{margin:0;font-size:15px}
+.caso .src{display:block;margin-top:9px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-meta)}
+nav.rail{position:sticky;top:0;z-index:40;background:rgba(14,13,12,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);margin-top:28px}
+.rail-in{max-width:1140px;margin:0 auto;padding:8px 20px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.rail-in::-webkit-scrollbar{display:none}
+.rail a{flex:none;font-size:12.5px;color:var(--ink-soft);text-decoration:none;padding:5px 11px;border-radius:999px;border:1px solid var(--rule);white-space:nowrap;transition:.15s}
+.rail a .n{color:var(--accent-400);margin-right:6px;font-size:11px;font-variant-numeric:tabular-nums}
+.rail a:hover{border-color:var(--rule-3);color:var(--ink)}
+.rail a.on{background:var(--tint-1);border-color:var(--accent-600);color:var(--accent-300)}
+section.ch{padding-top:54px;scroll-margin-top:56px}
+.ch-head{display:flex;gap:16px;align-items:baseline;border-top:1px solid var(--rule-2);padding-top:18px}
+.ch-num{font-size:12px;color:var(--accent-400);letter-spacing:.12em;padding-top:6px;font-variant-numeric:tabular-nums;flex:none}
+.ch-head h2{font-size:clamp(25px,3.4vw,36px);line-height:1.12}
+.ch-sub{color:var(--ink-meta);font-size:14.5px;margin:6px 0 0;max-width:72ch}
+.plate{display:grid;grid-template-columns:1.2fr .95fr;gap:24px;margin-top:22px;align-items:start}
+.plate>*{min-width:0}
+@media (max-width:880px){.plate{grid-template-columns:1fr}}
+.fig{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:14px;min-width:0}
+.fig svg{display:block;width:100%;height:auto}
+.figcap{font-size:12px;color:var(--ink-meta);margin:10px 2px 0;line-height:1.55}
+.panel{display:flex;flex-direction:column;gap:14px;min-width:0}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:15px 16px}
+.card h3,.lbl{font-family:var(--fb);font-size:10.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-meta);margin:0 0 10px}
+.prose{margin-top:22px;max-width:70ch;font-size:15.5px}
+.prose p{margin:0 0 12px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{font-size:13px;padding:6px 11px;border-radius:4px;border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-soft);transition:.15s}
+.seg button:hover{border-color:var(--accent-600);color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#121110;font-weight:600}
+.sl{margin-top:10px}
+.sl label{display:flex;justify-content:space-between;gap:10px;font-size:13px;color:var(--ink-soft);margin-bottom:3px}
+.sl label b{font-variant-numeric:tabular-nums;color:var(--accent-300);font-weight:600}
+input[type=range]{width:100%;accent-color:var(--accent);height:22px;margin:0}
+.chk{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--ink-soft);cursor:pointer;padding:4px 0;line-height:1.45}
+.chk input{accent-color:var(--accent);width:16px;height:16px;margin-top:2px;flex:none}
+select,input[type=number]{font-family:var(--fb);font-size:13.5px;background:var(--surface-2);color:var(--ink);border:1px solid var(--rule-2);border-radius:4px;padding:6px 8px;width:100%}
+.verd{border-radius:8px;padding:13px 15px;border:1px solid var(--rule-2);font-size:14px}
+.verd .t{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:4px;color:var(--ink-meta)}
+.verd .h{font-family:var(--fh);font-size:23px;line-height:1.15;display:block;margin-bottom:6px;color:var(--ink-strong)}
+.verd p{margin:0 0 6px;color:var(--ink-body)}
+.verd p:last-child{margin:0}
+.v-1{background:var(--surface-2)}
+.v-2{background:var(--tint-1);border-color:var(--accent-600)}
+.v-2 .h,.v-3 .h{color:var(--accent-300)}
+.v-3{background:var(--tint-2);border-color:var(--accent-400)}
+.v-4{background:var(--accent);border-color:var(--accent)}
+.v-4 .t,.v-4 .h,.v-4 p,.v-4 b{color:#121110}
+.v-x{background:transparent;border:1px dashed var(--accent-400)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13.5px;margin:0}
+.kv dt{color:var(--ink-meta);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding-top:3px}
+.kv dd{margin:0;color:var(--ink)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.steps li{counter-increment:s;position:relative;padding-left:30px;font-size:14px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:var(--tint-2);color:var(--accent-300);font-size:11px;display:grid;place-items:center;font-weight:600}
+.forbid{margin-top:12px;padding:11px 13px;border-radius:6px;border:1px dashed var(--accent-400);font-size:13.5px}
+.forbid b{color:var(--accent-300)}
+.note{margin-top:12px;padding:11px 13px;border-radius:6px;background:var(--surface-2);border:1px solid var(--rule);font-size:13.5px}
+.divg{margin-top:16px;padding:13px 15px;border-left:2px solid var(--accent-400);background:var(--tint-1);border-radius:0 8px 8px 0;font-size:14px;max-width:76ch}
+.divg .t{display:block;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-300);margin-bottom:4px}
+mark{background:var(--tint-2);color:var(--accent-300);padding:0 3px;border-radius:3px}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:999px;border:1px solid var(--accent-600);color:var(--accent-300)}
+.tbl{width:100%;overflow-x:auto;margin-top:16px;border:1px solid var(--rule);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;vertical-align:top;padding:9px 11px;border-bottom:1px solid var(--rule)}
+th{font-weight:500;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-300);background:var(--surface-2)}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--ink);font-weight:600}
+tr.hl td{background:var(--tint-1)}
+@media (max-width:560px){table{font-size:12.5px}th,td{padding:7px 7px}}
+.traps{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px;margin-top:20px}
+.trap{background:var(--surface);border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.trap button{all:unset;box-sizing:border-box;display:block;width:100%;padding:14px 16px;cursor:pointer;font-family:var(--fh);font-size:19px;line-height:1.25;color:var(--ink-strong)}
+.trap button::after{content:"＋ ver a armadilha";display:block;font-family:var(--fb);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-400);margin-top:8px}
+.trap.open button::after{content:"− fechar"}
+.trap .ans{display:none;padding:0 16px 14px;font-size:14px}
+.trap.open .ans{display:block}
+.trap.open{border-color:var(--accent-600)}
+.score{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:18px;font-size:14px}
+.score b{font-family:var(--fh);font-size:28px;color:var(--accent-300);font-weight:500}
+.score button{font-size:12.5px;padding:6px 12px;border-radius:4px;border:1px solid var(--rule-2);background:var(--surface-2)}
+.q{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:18px;margin-top:16px}
+.q .qn{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-400)}
+.q .qs{margin:6px 0 12px;font-size:15.5px;color:var(--ink)}
+.alts{display:flex;flex-direction:column;gap:7px}
+.alts button{text-align:left;font-size:14.5px;padding:9px 12px;border-radius:6px;border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-body);display:flex;gap:10px;line-height:1.5}
+.alts button .L{flex:none;width:22px;height:22px;border-radius:50%;border:1px solid var(--rule-3);display:grid;place-items:center;font-size:12px;color:var(--ink-meta)}
+.alts button:hover:not([disabled]){border-color:var(--accent-600)}
+.alts button[disabled]{cursor:default}
+.alts button.right{background:var(--tint-2);border-color:var(--accent-400);color:var(--ink-strong)}
+.alts button.right .L{background:var(--accent);border-color:var(--accent);color:#121110}
+.alts button.wrong{border-style:dashed;border-color:var(--rule-3);opacity:.75;text-decoration:line-through;text-decoration-color:var(--rule-3)}
+.exp{display:none;margin-top:12px;padding:12px 14px;border-left:2px solid var(--accent);background:var(--surface-2);border-radius:0 6px 6px 0;font-size:14px}
+.exp .res{display:block;font-family:var(--fh);font-size:21px;color:var(--accent-300);margin-bottom:4px}
+.q.done .exp{display:block}
+.mother{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:20px}
+.mc{background:var(--surface);border:1px solid var(--rule);border-top:3px solid var(--rule-3);border-radius:6px;padding:13px 14px;font-size:13.5px}
+.mc.l2{border-top-color:var(--accent-600)}.mc.l3{border-top-color:var(--accent-400)}.mc.l4{border-top-color:var(--accent-300)}
+.mc .g{color:var(--ink-meta);font-size:12.5px}
+.mc .a{font-family:var(--fh);font-size:19px;color:var(--ink-strong);line-height:1.2;margin:4px 0}
+.mc p{margin:0;color:var(--ink-soft)}
+footer.fontes{margin-top:60px;border-top:1px solid var(--rule-2);padding-top:18px;font-size:12.5px;color:var(--ink-meta);max-width:90ch}
+footer.fontes ol{padding-left:18px;margin:8px 0 0}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--ink-meta);margin-top:8px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:2px;display:inline-block}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.big{font-family:var(--fh);font-size:40px;line-height:1;color:var(--accent-300)}
+@media (max-width:560px){.two{grid-template-columns:1fr}.wrap,header.hero{padding-left:16px;padding-right:16px}.rail-in{padding-left:16px;padding-right:16px}.card{padding:13px}.fig{padding:10px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.bclc{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:20px}
+.bc{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:12px;opacity:.5;transition:.2s;font-size:13px}
+.bc .s{display:block;font-family:var(--fh);font-size:34px;line-height:1;color:var(--ink-meta)}
+.bc b{display:block;margin:4px 0;color:var(--ink)}
+.bc p{margin:0 0 6px;color:var(--ink-soft)}
+.bc i{font-style:normal;color:var(--accent-300)}
+.bc.on{opacity:1;border-color:var(--accent-400);background:var(--tint-1)}
+.bc.on .s{color:var(--accent-300)}
+@media (max-width:760px){.bclc{grid-template-columns:1fr}.bc{display:grid;grid-template-columns:44px 1fr;column-gap:10px}.bc .s{grid-row:span 3}}
+#crit{font-size:13.5px}
+#crit td{padding:6px 4px;border-bottom:1px solid var(--rule)}
+#crit td:last-child{text-align:right;font-weight:600;color:var(--accent-300)}
+#crit td.no{color:var(--ink-meta);font-weight:400}
+.sizes-row{display:grid;grid-template-columns:28px 1fr 56px;gap:8px;align-items:center;margin-top:6px;font-size:13px}
+.sizes-row b{color:var(--accent-300);font-variant-numeric:tabular-nums;text-align:right}
+.sizes-row span{color:var(--ink-meta)}
+
+</style>
+</head>
+<body>
+<header class="hero">
+  <span class="kicker g">Residência Max · Cirurgia Geral · Fígado</span>
+  <h1>O tumor que se diagnostica <i>pela fase</i></h1>
+  <p class="lede">O hepatocarcinoma é o exemplo clássico de câncer sólido diagnosticado sem biópsia — desde que o fígado seja cirrótico e o nódulo acenda na fase arterial e se apague na portal. Depois do diagnóstico, a conduta sai de três medidas: o tumor, o fígado e o paciente. É isso que o BCLC organiza.</p>
+  <div class="caso">
+    <p><b>O caso.</b> Homem de 58 anos, cirrose por hepatite C, sem ascite nem encefalopatia, bilirrubina 0,8 mg/dL, albumina 3,9 g/dL, INR 1,1, plaquetas 160 mil, sem varizes à endoscopia. A ultrassonografia de rastreio mostra nódulo de <b>3,5 cm</b> no segmento VI. A tomografia trifásica mostra <b>hiper-realce arterial e washout na fase portal</b>. ECOG 0.</p>
+    <span class="src">A pergunta: precisa biopsiar? Qual estádio? Ressecar, ablar ou transplantar?</span>
+  </div>
+</header>
+
+<nav class="rail" aria-label="Capítulos"><div class="rail-in">
+  <a href="#c1"><span class="n">01</span>A imagem</a>
+  <a href="#c2"><span class="n">02</span>O fígado</a>
+  <a href="#c3"><span class="n">03</span>BCLC 2022</a>
+  <a href="#c4"><span class="n">04</span>Transplante</a>
+  <a href="#c5"><span class="n">05</span>Ressecar ou ablar</a>
+  <a href="#c6"><span class="n">06</span>Pegadinhas</a>
+  <a href="#c7"><span class="n">07</span>Forja</a>
+  <a href="#c8"><span class="n">08</span>Tabela-mãe</a>
+</div></nav>
+
+<div class="wrap">
+
+<section class="ch" id="c1">
+  <div class="ch-head"><span class="ch-num">01</span><div>
+    <h2>A imagem que dispensa a biópsia</h2>
+    <p class="ch-sub">Corte axial simulado de TC com contraste, janela de partes moles. Troque a lesão e avance as fases: o diagnóstico está no comportamento da lesão em relação ao parênquima, não em uma fase isolada.</p>
+  </div></div>
+  <div class="plate">
+    <div class="fig">
+      <svg id="ct" viewBox="0 0 480 380" role="img" aria-label="Tomografia axial simulada do abdome superior"></svg>
+      <p class="figcap">TC simulada (L 40 / W 400). Convenção radiológica: direita do paciente à esquerda da imagem. A lesão está no segmento VI, contornada em ouro com a densidade estimada ao lado.</p>
+    </div>
+    <div class="panel">
+      <div class="card"><h3>Lesão</h3><div class="seg" id="segLes"></div>
+        <h3 style="margin-top:14px">Fase</h3><div class="seg" id="segFase"></div></div>
+      <div class="card"><h3>Curva de realce (UH)</h3><svg id="curve" viewBox="0 0 320 150" role="img" aria-label="Curva de densidade por fase"></svg>
+        <div class="legend"><span><i style="background:#facb8d"></i>lesão</span><span><i style="background:rgba(243,242,242,.5)"></i>parênquima</span></div></div>
+      <div class="verd" id="vCt"></div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>O nódulo de hepatocarcinoma é nutrido quase só por <strong>artérias</strong> neoformadas, enquanto o fígado recebe a maior parte do sangue pela veia porta. Na fase arterial o tumor brilha mais que o fígado; na portal o fígado se enche de contraste e o tumor, que já o perdeu, fica mais escuro — é o <strong>washout</strong>. Em fígado cirrótico, nódulo de 1 cm ou mais com esse padrão em TC ou RM multifásica é diagnóstico (LI-RADS 5) e <strong>dispensa biópsia</strong>.</p>
+    <p>Nódulo menor que 1 cm: repetir ultrassonografia em 3 meses. Padrão atípico: segundo método contrastado ou biópsia. Fígado <strong>não cirrótico</strong>: a regra não vale — biópsia.</p>
+  </div>
+  <div class="divg"><span class="t">Quem rastrear</span>Cirróticos de qualquer causa candidatos a tratamento (Child-Pugh A e B; Child C apenas se em lista de transplante) e portadores de hepatite B crônica de alto risco mesmo sem cirrose. Ultrassonografia a cada <b>6 meses</b>, com ou sem alfafetoproteína. A AFP sozinha não diagnostica nem exclui.</div>
+</section>
+
+<section class="ch" id="c2">
+  <div class="ch-head"><span class="ch-num">02</span><div>
+    <h2>O fígado: Child-Pugh e MELD</h2>
+    <p class="ch-sub">O mesmo tumor pode ser ressecado em um fígado e transplantado em outro. Preencha com os dados do caso — já vêm carregados — e depois descompense o paciente.</p>
+  </div></div>
+  <div class="plate">
+    <div class="card">
+      <h3>Child-Pugh</h3>
+      <div id="cp"></div>
+      <div class="verd" id="vCp" style="margin-top:12px"></div>
+    </div>
+    <div class="panel">
+      <div class="card"><h3>MELD</h3>
+        <div class="two">
+          <div class="sl"><label for="mB"><span>Bilirrubina (mg/dL)</span></label><input type="number" id="mB" min="0.1" step="0.1" value="0.8"></div>
+          <div class="sl"><label for="mI"><span>INR</span></label><input type="number" id="mI" min="0.5" step="0.1" value="1.1"></div>
+          <div class="sl"><label for="mC"><span>Creatinina (mg/dL)</span></label><input type="number" id="mC" min="0.1" step="0.1" value="0.9"></div>
+          <div class="sl"><label for="mN"><span>Sódio (mEq/L)</span></label><input type="number" id="mN" min="110" max="160" step="1" value="138"></div>
+        </div>
+        <label class="chk" style="margin-top:8px"><input type="checkbox" id="mD"> Diálise ≥ 2 vezes na última semana</label>
+      </div>
+      <div class="verd v-2" id="vMeld"></div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>O <strong>Child-Pugh</strong> resume a reserva hepática em cinco itens e decide quem tolera hepatectomia (na prática, Child A sem hipertensão portal). O <strong>MELD</strong> prediz mortalidade em 3 meses na lista e ordena a fila do transplante — mas o tumor não altera bilirrubina, INR nem creatinina. Por isso o paciente com hepatocarcinoma recebe pontuação de <strong>situação especial</strong>: no Brasil, dentro dos critérios de Milão, MELD mínimo de 20, que sobe para 24 após 3 meses e 29 após 6 meses em lista (Portaria GM/MS 2.600/2009).</p>
+  </div>
+</section>
+
+<section class="ch" id="c3">
+  <div class="ch-head"><span class="ch-num">03</span><div>
+    <h2>BCLC 2022: tumor, fígado, paciente</h2>
+    <p class="ch-sub">O sistema de Barcelona é ao mesmo tempo estadiamento e algoritmo: cada estádio carrega o tratamento de primeira linha. Monte o paciente e veja qual coluna acende.</p>
+  </div></div>
+  <div class="plate">
+    <div class="panel">
+      <div class="card"><h3>Cenários</h3><div class="seg" id="segBP"></div></div>
+      <div class="card">
+        <h3>Desempenho (ECOG)</h3><div class="seg" id="bPS"></div>
+        <h3 style="margin-top:14px">Função hepática</h3><div class="seg" id="bLiv"></div>
+        <h3 style="margin-top:14px">Carga tumoral</h3><div class="seg" id="bTum"></div>
+        <div id="bSub"></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="verd" id="vBclc"></div>
+      <div class="card"><h3>Caminho</h3><ol class="steps" id="stBclc"></ol></div>
+    </div>
+  </div>
+  <div class="bclc" id="bclcStrip">
+    <div class="bc" data-s="0"><span class="s">0</span><b>Muito precoce</b><p>Único ≤ 2 cm · ECOG 0 · função preservada</p><i>Ressecção ou ablação</i></div>
+    <div class="bc" data-s="A"><span class="s">A</span><b>Precoce</b><p>Único, ou até 3 nódulos ≤ 3 cm · ECOG 0 · função preservada</p><i>Ressecção, transplante ou ablação</i></div>
+    <div class="bc" data-s="B"><span class="s">B</span><b>Intermediário</b><p>Multinodular · ECOG 0 · função preservada</p><i>Transplante (critério expandido), TACE ou sistêmico</i></div>
+    <div class="bc" data-s="C"><span class="s">C</span><b>Avançado</b><p>Invasão portal e/ou disseminação extra-hepática (ECOG 0–2), ou ECOG 1–2 pelo tumor</p><i>Tratamento sistêmico</i></div>
+    <div class="bc" data-s="D"><span class="s">D</span><b>Terminal</b><p>Função hepática terminal (não candidato a transplante) · ECOG &gt; 2</p><i>Melhor suporte clínico</i></div>
+  </div>
+  <div class="divg"><span class="t">Migração de estádio terapêutico</span>Se o tratamento do estádio não é possível (contraindicação, falha, recusa), oferece-se a opção do estádio seguinte — o paciente “migra”. Um BCLC A não ressecável e não transplantável pode receber TACE; um B que progride após TACE vai para sistêmico.</div>
+</section>
+
+<section class="ch" id="c4">
+  <div class="ch-head"><span class="ch-num">04</span><div>
+    <h2>Transplante: Milão, UCSF e up-to-seven</h2>
+    <p class="ch-sub">O transplante trata o tumor e a cirrose de uma vez, mas a recidiva depende da carga tumoral. Desenhe o fígado do seu paciente: número e tamanho dos nódulos.</p>
+  </div></div>
+  <div class="plate">
+    <div class="fig">
+      <svg id="liver" viewBox="0 0 440 300" role="img" aria-label="Fígado com nódulos desenhados em escala"></svg>
+      <p class="figcap">Fígado em vista anterior, esquemático. Nódulos desenhados em escala entre si (1 cm = 8 unidades). Os números identificam cada nódulo nos controles.</p>
+    </div>
+    <div class="panel">
+      <div class="card"><h3>Número de nódulos</h3><div class="seg" id="segN"></div><div id="sizes"></div>
+        <label class="chk" style="margin-top:8px"><input type="checkbox" id="vi"> Invasão vascular macroscópica (trombo tumoral portal)</label>
+        <div class="sl"><label for="afp"><span>Alfafetoproteína</span></label><select id="afp"><option value="0">&lt; 100 ng/mL</option><option value="1">100 a 1.000 ng/mL</option><option value="2">&gt; 1.000 ng/mL</option></select></div>
+      </div>
+      <div class="card"><h3>Critérios</h3><table id="crit"><tbody></tbody></table></div>
+      <div class="verd" id="vTx"></div>
+    </div>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>Critério</th><th>Definição</th><th>Para lembrar</th></tr></thead>
+    <tbody>
+      <tr><td>Milão</td><td>1 nódulo ≤ 5 cm, ou 2–3 nódulos ≤ 3 cm cada; sem invasão vascular; sem doença extra-hepática</td><td>“1 de 5 ou 3 de 3”. Referência mundial e brasileira para priorização</td></tr>
+      <tr><td>UCSF</td><td>1 nódulo ≤ 6,5 cm, ou 2–3 nódulos com o maior ≤ 4,5 cm e soma dos diâmetros ≤ 8 cm; sem invasão vascular</td><td>Expansão modesta de Milão com sobrevida semelhante</td></tr>
+      <tr><td>Up-to-seven</td><td>Diâmetro do maior nódulo (cm) + número de nódulos ≤ 7; sem invasão microvascular</td><td>Critério expandido citado no BCLC B</td></tr>
+      <tr><td>Downstaging (UNOS-DS)</td><td>Fora de Milão, mas com 1 nódulo ≤ 8 cm; 2–3 ≤ 5 cm cada; ou 4–5 ≤ 3 cm cada — soma ≤ 8 cm; sem invasão vascular</td><td>Terapia locorregional para trazer o tumor a Milão antes de listar</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="ch" id="c5">
+  <div class="ch-head"><span class="ch-num">05</span><div>
+    <h2>Ressecar, ablar ou transplantar</h2>
+    <p class="ch-sub">No estádio 0–A as três opções são curativas. A escolha depende do que sobra de fígado — confira os itens que liberam a hepatectomia.</p>
+  </div></div>
+  <div class="plate">
+    <div class="card"><h3>Liberação para ressecção</h3>
+      <label class="chk"><input type="checkbox" class="rs" checked> Tumor único, sem invasão vascular macroscópica</label>
+      <label class="chk"><input type="checkbox" class="rs" checked> Child-Pugh A, bilirrubina normal</label>
+      <label class="chk"><input type="checkbox" class="rs" checked> Sem hipertensão portal clinicamente significativa (gradiente &lt; 10 mmHg; na prática, plaquetas ≥ 100 mil, sem varizes nem esplenomegalia)</label>
+      <label class="chk"><input type="checkbox" class="rs" checked> Fígado remanescente futuro adequado (≥ 40% no cirrótico)</label>
+      <label class="chk"><input type="checkbox" class="rs" checked> ECOG 0</label>
+      <div class="verd" id="vRs" style="margin-top:12px"></div>
+    </div>
+    <div class="tbl" style="margin-top:0"><table>
+      <thead><tr><th>Opção</th><th>Melhor para</th><th>Limite</th></tr></thead>
+      <tbody>
+        <tr><td>Ressecção</td><td>Único, Child A, sem hipertensão portal</td><td>Recidiva em 5 anos alta (o fígado cirrótico continua gerando tumor)</td></tr>
+        <tr><td>Ablação (radiofrequência / micro-ondas)</td><td>Até 3 nódulos ≤ 3 cm; no ≤ 2 cm resultado equivalente à ressecção</td><td>Perde eficácia acima de 3 cm e junto a grandes vasos ou vesícula</td></tr>
+        <tr><td>Transplante</td><td>Dentro de Milão com hipertensão portal ou disfunção hepática</td><td>Fila, imunossupressão; exige critério de carga tumoral</td></tr>
+        <tr><td>TACE</td><td>BCLC B com fluxo portal preservado; ponte ou downstaging</td><td>Contraindicada em descompensação e trombose portal principal</td></tr>
+        <tr><td>Sistêmico</td><td>BCLC C e B difuso: atezolizumabe + bevacizumabe (BCLC 2022); durvalumabe + tremelimumabe (HIMALAYA, incorporado depois)</td><td>Alternativas: sorafenibe, lenvatinibe, durvalumabe</td></tr>
+      </tbody></table></div>
+  </div>
+</section>
+
+<section class="ch" id="c6">
+  <div class="ch-head"><span class="ch-num">06</span><div>
+    <h2>Pegadinhas de prova</h2>
+    <p class="ch-sub">Decida antes de abrir.</p>
+  </div></div>
+  <div class="traps">
+    <div class="trap"><button type="button">“Nódulo de 3 cm com hiper-realce arterial e washout em cirrótico: biopsiar para confirmar.”</button><div class="ans">Não. Em cirrótico, nódulo ≥ 1 cm com padrão típico em TC/RM multifásica é <b>diagnóstico</b>. A biópsia fica para o atípico e para o fígado não cirrótico — e tem risco de implante no trajeto.</div></div>
+    <div class="trap"><button type="button">“AFP normal afasta hepatocarcinoma.”</button><div class="ans">Falso. Boa parte dos tumores pequenos não eleva a AFP. Ela complementa o rastreio e tem valor prognóstico (AFP muito alta pesa contra o transplante), mas não diagnostica nem exclui.</div></div>
+    <div class="trap"><button type="button">“Paciente Child A com nódulo único de 4 cm sempre vai para ressecção.”</button><div class="ans">Só sem <b>hipertensão portal clinicamente significativa</b> e com bilirrubina normal. Plaquetas baixas, varizes ou esplenomegalia empurram para o transplante (se dentro de Milão).</div></div>
+    <div class="trap"><button type="button">“<b>Trombo tumoral</b> em ramo portal no cirrótico com CHC = BCLC B, indicar TACE.”</button><div class="ans">Invasão vascular macroscópica é <b>BCLC C</b>: tratamento sistêmico. O trombo tumoral portal contraindica transplante e é contraindicação clássica à TACE convencional. Trombose branda (não tumoral), comum na cirrose, não muda o estádio. O trombo tumoral realça na fase arterial e dilata a veia.</div></div>
+    <div class="trap"><button type="button">“Paciente com ECOG 1 por sintomas do câncer e tumor pequeno continua BCLC A.”</button><div class="ans">No BCLC, desempenho 1–2 atribuído ao tumor classifica como <b>C</b>, mesmo com carga tumoral pequena. Cuidado: ECOG reduzido por outra causa (artrose, sequela) não conta.</div></div>
+    <div class="trap"><button type="button">“Child C é sempre BCLC D.”</button><div class="ans">Só se não for candidato a transplante. Child C com tumor dentro de Milão deve ser avaliado para <b>transplante</b> — que trata as duas doenças.</div></div>
+  </div>
+</section>
+
+<section class="ch" id="c7">
+  <div class="ch-head"><span class="ch-num">07</span><div>
+    <h2>Forja: um caso, oito versões</h2>
+    <p class="ch-sub">A primeira é a questão-mãe. Nas seguintes, só o dado <mark>marcado</mark> muda.</p>
+  </div></div>
+  <div class="score" id="score"></div>
+  <div id="qs"></div>
+</section>
+
+<section class="ch" id="c8">
+  <div class="ch-head"><span class="ch-num">08</span><div>
+    <h2>Tabela-mãe: gatilho → conduta</h2>
+    <p class="ch-sub">Borda mais clara, conduta mais agressiva ou paciente mais grave.</p>
+  </div></div>
+  <div class="mother">
+    <div class="mc"><div class="g">Cirrótico em seguimento</div><div class="a">US a cada 6 meses ± AFP</div><p>Child A–B; Child C só se em lista. Hepatite B de alto risco mesmo sem cirrose.</p></div>
+    <div class="mc"><div class="g">Nódulo &lt; 1 cm à US</div><div class="a">Repetir US em 3 meses</div><p>Cresceu ou ≥ 1 cm → TC/RM multifásica.</p></div>
+    <div class="mc l2"><div class="g">≥ 1 cm, realce arterial + washout, cirrótico</div><div class="a">CHC — sem biópsia</div><p>LI-RADS 5. Atípico → outro método ou biópsia.</p></div>
+    <div class="mc l2"><div class="g">BCLC 0–A, único, Child A, sem hipertensão portal</div><div class="a">Ressecção</div><p>≤ 2 cm: ablação é equivalente.</p></div>
+    <div class="mc l3"><div class="g">BCLC 0–A com hipertensão portal, dentro de Milão</div><div class="a">Transplante</div><p>Não candidato → ablação. Brasil: MELD de situação especial.</p></div>
+    <div class="mc l3"><div class="g">BCLC B, nódulos definidos, porta pérvia</div><div class="a">TACE</div><p>Dentro de critério expandido → avaliar transplante.</p></div>
+    <div class="mc l4"><div class="g">BCLC C: invasão portal ou metástase (ECOG 0–2), ou ECOG 1–2</div><div class="a">Atezolizumabe + bevacizumabe</div><p>Ou durvalumabe + tremelimumabe (HIMALAYA). Alternativas: sorafenibe, lenvatinibe.</p></div>
+    <div class="mc l4"><div class="g">BCLC D: ECOG &gt; 2 ou fígado terminal sem transplante</div><div class="a">Melhor suporte clínico</div><p>Child C dentro de Milão é candidato a transplante, não D.</p></div>
+  </div>
+  <footer class="fontes">
+    <b>Referências usadas para o conteúdo</b>
+    <ol>
+      <li>Reig M et al. BCLC strategy for prognosis prediction and treatment recommendation: the 2022 update. J Hepatol, 2022;76:681–93.</li>
+      <li>Mazzaferro V et al. Liver transplantation for the treatment of small hepatocellular carcinomas in patients with cirrhosis. N Engl J Med, 1996;334:693–9 (critérios de Milão).</li>
+      <li>Yao FY et al. Liver transplantation for hepatocellular carcinoma: expansion of the tumor size limits. Hepatology, 2001;33:1394–403 (UCSF).</li>
+      <li>Mazzaferro V et al. Predicting survival after liver transplantation in patients with hepatocellular carcinoma beyond the Milan criteria (up-to-seven). Lancet Oncol, 2009;10:35–43.</li>
+      <li>Abou-Alfa GK et al. Tremelimumab plus durvalumab in unresectable hepatocellular carcinoma (HIMALAYA). NEJM Evid, 2022.</li>
+      <li>EASL Clinical Practice Guidelines: management of hepatocellular carcinoma, 2018; ACR LI-RADS v2018.</li>
+      <li>Ministério da Saúde. Portaria GM/MS nº 2.600/2009 — Regulamento Técnico do Sistema Nacional de Transplantes (situações especiais do MELD).</li>
+    </ol>
+    <p style="margin-top:10px">Figuras são esquemas didáticos em SVG; a tomografia é simulada, não imagem de paciente.</p>
+  </footer>
+</section>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(s,r){return (r||document).querySelector(s)};
+  var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  window.$=$;window.$$=$$;
+  window.fmt=function(n,d){return Number(n).toFixed(d==null?0:d).replace(".",",")};
+  /* trilho: marca o capítulo visível */
+  var links=$$(".rail a");
+  if("IntersectionObserver" in window&&links.length){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id)})}
+    })},{rootMargin:"-45% 0px -50% 0px"});
+    $$("section.ch").forEach(function(s){io.observe(s)});
+  }
+  /* segmentados genéricos */
+  window.segmented=function(el,items,onPick,initial){
+    el.innerHTML="";
+    items.forEach(function(it,i){
+      var b=document.createElement("button");b.type="button";b.innerHTML=it.label;
+      b.setAttribute("aria-pressed",i===(initial||0)?"true":"false");
+      b.addEventListener("click",function(){
+        $$("button",el).forEach(function(x){x.setAttribute("aria-pressed","false")});
+        b.setAttribute("aria-pressed","true");onPick(it,i);
+      });
+      el.appendChild(b);
+    });
+    onPick(items[initial||0],initial||0);
+  };
+  /* pegadinhas */
+  $$(".trap button").forEach(function(b){
+    b.setAttribute("aria-expanded","false");
+    b.addEventListener("click",function(){
+      var t=b.parentNode;t.classList.toggle("open");
+      b.setAttribute("aria-expanded",t.classList.contains("open")?"true":"false");
+    });
+  });
+  /* forja */
+  window.buildQuiz=function(data){
+    var box=$("#qs"),score=$("#score");if(!box)return;
+    var ok=0,done=0,L="ABCDE";
+    function upd(){score.innerHTML="<span>Placar</span> <b class='num'>"+ok+"/"+done+"</b> <span class='num' style='color:var(--ink-meta)'>de "+data.length+" questões</span> <button type='button' id='qreset'>Recomeçar</button>";
+      $("#qreset").addEventListener("click",render)}
+    function render(){
+      ok=0;done=0;box.innerHTML="";
+      data.forEach(function(q,qi){
+        var d=document.createElement("div");d.className="q";
+        d.innerHTML="<div class='qn'>Questão "+(qi+1)+(qi===0?" · questão-mãe":" · pivô")+"</div><p class='qs'>"+q.s+"</p><div class='alts'></div><div class='exp'><span class='res'></span>"+q.e+"</div>";
+        var alts=$(".alts",d);
+        q.a.forEach(function(t,ai){
+          var b=document.createElement("button");b.type="button";
+          b.innerHTML="<span class='L'>"+L[ai]+"</span><span>"+t+"</span>";
+          b.addEventListener("click",function(){
+            if(d.classList.contains("done"))return;
+            d.classList.add("done");done++;
+            if(ai===q.c)ok++;
+            $$("button",alts).forEach(function(x,xi){x.disabled=true;if(xi===q.c)x.classList.add("right");else if(xi===ai)x.classList.add("wrong")});
+            $(".res",d).textContent=(ai===q.c?"Certo — ":"Não — ")+"gabarito "+L[q.c];
+            upd();
+          });
+          alts.appendChild(b);
+        });
+        box.appendChild(d);
+      });
+      upd();
+    }
+    render();
+  };
+  window.svgEl=function(tag,attrs,parent){
+    var e=document.createElementNS("http://www.w3.org/2000/svg",tag);
+    for(var k in attrs){e.setAttribute(k,attrs[k])}
+    if(parent)parent.appendChild(e);return e;
+  };
+})();
+
+(function(){
+"use strict";
+function S(tag,a,p){return svgEl(tag,a,p)}
+function T(txt,a,p){var t=S("text",a,p);t.textContent=txt;return t}
+function clear(el){while(el.firstChild)el.removeChild(el.firstChild)}
+function group(el,labels,cb,ini){
+  var bs=[];el.innerHTML="";
+  labels.forEach(function(l,i){var b=document.createElement("button");b.type="button";b.innerHTML=l;
+    b.addEventListener("click",function(){set(i)});el.appendChild(b);bs.push(b)});
+  function set(i,silent){bs.forEach(function(b,j){b.setAttribute("aria-pressed",j===i?"true":"false")});g.v=i;if(!silent)cb(i)}
+  var g={v:ini||0,set:set};set(g.v,true);return g;
+}
+function verd(el,cls,t,h,body){el.className="verd "+cls;el.innerHTML="<span class='t'>"+t+"</span><span class='h'>"+h+"</span>"+body}
+function gray(hu){var g=Math.round(Math.max(0,Math.min(1,(hu+160)/400))*255);return "rgb("+g+","+g+","+g+")"}
+
+/* ============ 01 TC ============ */
+var ct=$("#ct"),cv=$("#curve");
+var FASES=["Sem contraste","Arterial","Portal","Tardia"];
+var LIV=[55,72,110,95];
+var LES=[
+ {l:"Hepatocarcinoma",hu:[40,125,82,76],cap:true,
+  d:["Hipodenso ou isodenso ao fígado.","<b>Hiper-realce arterial</b> (não periférico): mais claro que o parênquima.","<b>Washout</b>: mais escuro que o fígado; <b>cápsula</b> realçada.","Washout mantido; cápsula."],
+  v:["v-4","LI-RADS 5","Hepatocarcinoma — diagnóstico sem biópsia","<p>Cirrótico, nódulo ≥ 1 cm, realce arterial e washout: o padrão fecha o diagnóstico. A próxima pergunta é o estádio.</p>"]},
+ {l:"Hemangioma",hu:[40,42,48,108],hem:true,
+  d:["Hipodenso, com densidade de sangue.","Realce <b>periférico, nodular e descontínuo</b>, com a densidade da aorta.","Preenchimento <b>centrípeto</b> progressivo.","Preenchimento completo, isodenso aos vasos — não há washout."],
+  v:["v-1","Benigno","Hemangioma","<p>O realce acompanha o sangue em todas as fases. Não exige seguimento nem tratamento quando típico.</p>"]},
+ {l:"Hiperplasia nodular focal",hu:[52,150,106,95],scar:[38,48,72,120],
+  d:["Quase isodensa; cicatriz central hipodensa.","Realce arterial <b>intenso e homogêneo</b>, poupando a cicatriz.","Isodensa ao fígado — sem washout.","Isodensa; a <b>cicatriz central</b> realça tardiamente."],
+  v:["v-1","Benigno","Hiperplasia nodular focal","<p>Mulher jovem, fígado não cirrótico, cicatriz central que realça tarde. Brilha na arterial como o CHC, mas não lava — essa é a distinção que a prova cobra.</p>"]},
+ {l:"Colangiocarcinoma intra-hepático",hu:[40,52,74,116],rim:[40,112,95,92],
+  d:["Hipodenso.","Realce <b>periférico em anel</b>.","Realce central progressivo.","Realce <b>central tardio</b> (estroma fibroso), sem washout."],
+  v:["v-3","LI-RADS M","Malignidade não CHC — biópsia","<p>Realce em anel e captação tardia progressiva sugerem colangiocarcinoma. Aqui a biópsia é necessária: muda o tratamento.</p>"]},
+ {l:"Nódulo regenerativo/displásico",hu:[60,74,108,94],
+  d:["Isodenso ou levemente hiperdenso.","Sem hiper-realce arterial relevante.","Isodenso — sem washout.","Isodenso."],
+  v:["v-2","LI-RADS 2–3","Nódulo sem padrão de CHC","<p>Sem realce arterial nem washout: não é diagnóstico. Seguimento com imagem; mudança de comportamento reclassifica.</p>"]}
+];
+var les=0,fase=1;
+function drawCt(){
+  clear(ct);var p=fase,L=LES[les];
+  var defs=S("defs",{},ct);
+  var f=S("filter",{id:"grain",x:"0",y:"0",width:"100%",height:"100%"},defs);
+  S("feTurbulence",{type:"fractalNoise",baseFrequency:"0.9",numOctaves:"2",seed:"3"},f);
+  S("feColorMatrix",{type:"matrix",values:"0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .22 0"},f);
+  S("rect",{x:0,y:0,width:480,height:380,fill:"#000"},ct);
+  S("ellipse",{cx:240,cy:195,rx:222,ry:168,fill:gray(-100)},ct);
+  S("ellipse",{cx:240,cy:198,rx:198,ry:148,fill:"none",stroke:gray([50,60,65,60][p]),"stroke-width":11},ct);
+  S("ellipse",{cx:240,cy:198,rx:190,ry:141,fill:gray(-90)},ct);
+  // rins
+  S("ellipse",{cx:355,cy:262,rx:24,ry:34,fill:gray([30,175,165,130][p]),transform:"rotate(-20 355 262)"},ct);
+  S("ellipse",{cx:140,cy:272,rx:22,ry:30,fill:gray([30,175,165,130][p]),transform:"rotate(20 140 272)"},ct);
+  // fígado
+  S("path",{d:"M58 205 Q50 112 150 78 Q238 58 300 92 Q262 118 236 150 Q206 192 212 248 Q196 300 128 302 Q66 292 58 205Z",fill:gray(LIV[p])},ct);
+  // veia porta e cava
+  S("ellipse",{cx:192,cy:180,rx:15,ry:9,fill:gray([40,110,190,120][p])},ct);
+  S("ellipse",{cx:216,cy:240,rx:14,ry:11,fill:gray([40,62,160,120][p])},ct);
+  // estômago
+  S("ellipse",{cx:322,cy:138,rx:48,ry:32,fill:gray([40,90,92,72][p])},ct);
+  S("ellipse",{cx:322,cy:128,rx:40,ry:18,fill:gray(-1000)},ct);
+  // baço
+  S("ellipse",{cx:392,cy:196,rx:30,ry:56,fill:gray([45,108,120,100][p]),transform:"rotate(18 392 196)"},ct);
+  // aorta e coluna
+  S("circle",{cx:256,cy:248,r:14,fill:gray([40,300,170,120][p])},ct);
+  S("circle",{cx:252,cy:298,r:28,fill:gray(700)},ct);
+  S("circle",{cx:252,cy:316,r:9,fill:gray(20)},ct);
+  // lesão
+  var cx=118,cy=222,r=24;
+  S("circle",{cx:cx,cy:cy,r:r,fill:gray(L.hu[p])},ct);
+  if(L.rim)S("circle",{cx:cx,cy:cy,r:r-3,fill:"none",stroke:gray(L.rim[p]),"stroke-width":6},ct);
+  if(L.scar){var sc="";for(var k=0;k<10;k++){var a=k*Math.PI/5,rr=k%2?3:9;sc+=(k?"L":"M")+(cx+Math.cos(a)*rr).toFixed(1)+" "+(cy+Math.sin(a)*rr).toFixed(1)}S("path",{d:sc+"Z",fill:gray(L.scar[p])},ct)}
+  if(L.hem&&p>0&&p<3){var rad=p===1?.78:.62,sz=p===1?.16:.27,hu=p===1?300:175;
+    for(var k2=0;k2<8;k2++){if(p===1&&k2%3===2)continue;var a2=k2*Math.PI/4+.3;S("circle",{cx:cx+Math.cos(a2)*r*rad,cy:cy+Math.sin(a2)*r*rad,r:r*sz,fill:gray(hu)},ct)}}
+  if(L.cap&&p>=2)S("circle",{cx:cx,cy:cy,r:r,fill:"none",stroke:gray(130),"stroke-width":2.5},ct);
+  S("rect",{x:0,y:0,width:480,height:380,filter:"url(#grain)",opacity:.9},ct);
+  // anotação
+  S("circle",{cx:cx,cy:cy,r:r+6,fill:"none",stroke:"#e1ad66","stroke-width":1.6,"stroke-dasharray":"5 4"},ct);
+  S("line",{x1:cx+r,y1:cy+r,x2:cx+44,y2:cy+58,stroke:"#e1ad66","stroke-width":1.2},ct);
+  S("rect",{x:cx+20,y:cy+58,width:80,height:22,rx:3,fill:"rgba(18,17,16,.85)"},ct);
+  T("≈ "+L.hu[p]+" UH",{x:cx+27,y:cy+74,fill:"#facb8d","font-size":13},ct);
+  T("D",{x:12,y:200,fill:"#e1ad66","font-size":14},ct);T("E",{x:458,y:200,fill:"#e1ad66","font-size":14},ct);
+  T("A",{x:236,y:20,fill:"#e1ad66","font-size":14},ct);T("P",{x:236,y:374,fill:"#e1ad66","font-size":14},ct);
+  T(FASES[p],{x:340,y:362,fill:"rgba(250,203,141,.9)","font-size":14},ct);
+  S("line",{x1:20,y1:356,x2:83,y2:356,stroke:"#facb8d","stroke-width":2},ct);T("5 cm",{x:30,y:350,fill:"#facb8d","font-size":12},ct);
+  drawCurve();
+  var v=L.v;verd($("#vCt"),v[0],v[1],v[2],"<p><b>"+FASES[p]+":</b> "+L.d[p]+"</p>"+v[3]);
+}
+function drawCurve(){
+  clear(cv);var L=LES[les];
+  var X=[44,128,212,296],Y=function(h){return 128-(h+10)/170*112};
+  [0,50,100,150].forEach(function(h){S("line",{x1:30,y1:Y(h),x2:310,y2:Y(h),stroke:"rgba(243,242,242,.08)"},cv);T(String(h),{x:2,y:Y(h)+4,fill:"rgba(243,242,242,.45)","font-size":10},cv)});
+  S("line",{x1:X[fase],y1:6,x2:X[fase],y2:130,stroke:"rgba(225,173,102,.45)","stroke-width":10},cv);
+  function line(arr,col,w){S("polyline",{points:arr.map(function(h,i){return X[i]+","+Y(h).toFixed(1)}).join(" "),fill:"none",stroke:col,"stroke-width":w},cv);
+    arr.forEach(function(h,i){S("circle",{cx:X[i],cy:Y(h),r:3.2,fill:col},cv)})}
+  line(LIV,"rgba(243,242,242,.5)",2);line(L.hu,"#facb8d",2.4);
+  ["sem","arterial","portal","tardia"].forEach(function(n,i){T(n,{x:X[i],y:146,fill:"rgba(243,242,242,.6)","font-size":11,"text-anchor":"middle"},cv)});
+}
+group($("#segLes"),LES.map(function(l){return l.l}),function(i){les=i;drawCt()},0);
+group($("#segFase"),FASES,function(i){fase=i;drawCt()},1);
+drawCt();
+
+/* ============ 02 Child-Pugh e MELD ============ */
+var CPI=[["Bilirrubina total",["&lt; 2 mg/dL","2–3 mg/dL","&gt; 3 mg/dL"],0],["Albumina",["&gt; 3,5 g/dL","2,8–3,5 g/dL","&lt; 2,8 g/dL"],0],["INR",["&lt; 1,7","1,7–2,3","&gt; 2,3"],0],["Ascite",["ausente","leve / controlada","moderada a grave"],0],["Encefalopatia",["ausente","grau I–II","grau III–IV"],0]];
+$("#cp").innerHTML=CPI.map(function(c,i){return "<div class='sl'><label for='cp"+i+"'><span>"+c[0]+"</span></label><select id='cp"+i+"' class='cpi'>"+c[1].map(function(o,j){return "<option value='"+(j+1)+"'>"+(j+1)+" ponto"+(j?"s":"")+" — "+o+"</option>"}).join("")+"</select></div>"}).join("");
+function cp(){var t=$$(".cpi").reduce(function(a,s){return a+(+s.value)},0);
+  var c=t<=6?"A":t<=9?"B":"C";
+  var txt={A:"<p>Reserva preservada. Candidato a hepatectomia se não houver hipertensão portal clinicamente significativa e a bilirrubina for normal. Função “preservada” no BCLC.</p>",
+           B:"<p>Disfunção moderada. Ressecção maior proibitiva; TACE e sistêmicos com cautela. Dentro de Milão: transplante.</p>",
+           C:"<p>Disfunção grave. Só o transplante muda o prognóstico; fora dele, o paciente é BCLC D.</p>"}[c];
+  verd($("#vCp"),c==="A"?"v-2":c==="B"?"v-3":"v-4",t+" pontos","Child-Pugh "+c,txt)}
+$$(".cpi").forEach(function(s){s.addEventListener("change",cp)});cp();
+function meld(){
+  var b=Math.max(1,+$("#mB").value||1),i=Math.max(1,+$("#mI").value||1),c=Math.max(1,+$("#mC").value||1),na=+$("#mN").value||137;
+  if($("#mD").checked||c>4)c=4;
+  var m=Math.round(10*(0.957*Math.log(c)+0.378*Math.log(b)+1.120*Math.log(i)+0.643));m=Math.max(6,Math.min(40,m));
+  var n=Math.max(125,Math.min(137,na)),mn=m;
+  if(m>11)mn=Math.round(m+1.32*(137-n)-0.033*m*(137-n));mn=Math.max(6,Math.min(40,mn));
+  verd($("#vMeld"),m>=20?"v-3":"v-2","Mortalidade em 3 meses na lista","MELD "+m+" · MELD-Na "+mn,
+   "<p>Valores abaixo de 1 entram como 1; creatinina limitada a 4 (e fixada em 4 se diálise). MELD-Na corrige pelo sódio (125–137) quando MELD &gt; 11.</p><p>Com CHC dentro de Milão, a fila brasileira usa a pontuação de situação especial (20 → 24 → 29), não este número.</p>")}
+["#mB","#mI","#mC","#mN","#mD"].forEach(function(id){$(id).addEventListener("input",meld);$(id).addEventListener("change",meld)});meld();
+
+/* ============ 03 BCLC ============ */
+var B={ps:0,liv:0,tum:1,hp:0,tx:0,pat:1};
+var gPS=group($("#bPS"),["0","1–2","3–4"],function(i){B.ps=i;bclc()},0);
+var gLiv=group($("#bLiv"),["Preservada","Terminal / descompensada"],function(i){B.liv=i;bclc()},0);
+var gTum=group($("#bTum"),["Único ≤ 2 cm","Único &gt; 2 cm","2–3 nódulos ≤ 3 cm","Multinodular","Invasão portal / extra-hepática"],function(i){B.tum=i;bclc()},1);
+function sub(){
+  var h="";
+  function seg(id,lab,opts,v){return "<h3 style='margin-top:14px'>"+lab+"</h3><div class='seg' data-k='"+id+"'>"+opts.map(function(o,i){return "<button type='button' aria-pressed='"+(i===v)+"' data-i='"+i+"'>"+o+"</button>"}).join("")+"</div>"}
+  if(B.ps===0&&B.liv===0&&B.tum<=1)h+=seg("hp","Hipertensão portal significativa ou bilirrubina alta?",["Não","Sim"],B.hp);
+  if((B.ps===0&&B.liv===0&&B.tum<=2)||(B.liv===1&&B.ps<2))h+=seg("tx",B.liv===1?"Candidato a transplante (dentro de Milão)?":"Candidato a transplante?",["Sim","Não"],B.tx);
+  if(B.ps===0&&B.liv===0&&B.tum===3)h+=seg("pat","Padrão do multinodular",["Critério expandido de transplante","Nódulos definidos, porta pérvia","Difuso, infiltrativo, bilobar"],B.pat);
+  $("#bSub").innerHTML=h;
+  $$("#bSub .seg").forEach(function(s){$$("button",s).forEach(function(b){b.addEventListener("click",function(){B[s.getAttribute("data-k")]=+b.getAttribute("data-i");bclc()})})});
+}
+function bclc(){
+  sub();
+  var st,v,steps,SYS="Atezolizumabe + bevacizumabe ou durvalumabe + tremelimumabe";
+  if(B.ps===2){st="D";v=["v-4","BCLC D","Melhor suporte clínico","<p>Desempenho 3–4: nenhum tratamento oncológico melhora a sobrevida.</p>"];steps=["ECOG &gt; 2 → estádio D","Analgesia, nutrição, cuidados paliativos"];}
+  else if(B.liv===1){
+    if(B.tx===0){st="";v=["v-3","Função terminal · candidato","Transplante hepático","<p>Child C dentro de Milão não é D: o transplante trata o tumor e a cirrose.</p>"];steps=["Função hepática terminal","Dentro de Milão, AFP aceitável → listar","Brasil: MELD de situação especial"];}
+    else{st="D";v=["v-4","BCLC D","Melhor suporte clínico","<p>Fígado terminal sem possibilidade de transplante.</p>"];steps=["Função hepática terminal","Não candidato a transplante → D"];}
+  }
+  else if(B.tum===4||B.ps===1){st="C";v=["v-4","BCLC C",SYS,"<p>Atezolizumabe + bevacizumabe é a primeira linha da figura de 2022; durvalumabe + tremelimumabe veio do HIMALAYA e foi incorporado depois. "+(B.tum===4?"Invasão vascular ou extra-hepática":"Sintomas do câncer (ECOG 1–2)")+" com função preservada. Se contraindicação à imunoterapia ou ao bevacizumabe: sorafenibe, lenvatinibe ou durvalumabe. Segunda linha: regorafenibe, cabozantinibe, ramucirumabe (AFP ≥ 400).</p>"];
+    steps=[B.tum===4?"Invasão portal / metástase":"ECOG 1–2 atribuído ao tumor","Função preservada","Sistêmico de primeira linha"];}
+  else if(B.tum===3){st="B";
+    if(B.pat===0){v=["v-3","BCLC B","Transplante","<p>Multinodular dentro de critério expandido (nódulos bem definidos, AFP aceitável), geralmente após downstaging.</p>"];}
+    else if(B.pat===1){v=["v-3","BCLC B","Quimioembolização (TACE)","<p>Nódulos definidos e fluxo portal preservado: TACE é a primeira linha.</p>"];}
+    else{v=["v-4","BCLC B","Tratamento sistêmico","<p>Doença difusa, infiltrativa, bilobar extensa: TACE não traz benefício. "+SYS+".</p>"];}
+    steps=["ECOG 0, função preservada","Multinodular além de A",["Critério expandido → transplante","Porta pérvia, nódulos definidos → TACE","Difuso → sistêmico"][B.pat]];}
+  else{
+    st=B.tum===0?"0":"A";
+    if(B.tum<=1){
+      if(B.hp===0){v=["v-2","BCLC "+st,"Ressecção hepática","<p>Nódulo único, Child A, sem hipertensão portal e bilirrubina normal."+(B.tum===0?" No ≤ 2 cm, a ablação tem resultado equivalente e é alternativa de primeira linha.":"")+"</p>"];steps=["Único","Pressão portal e bilirrubina normais","Ressecção"];}
+      else if(B.tx===0){v=["v-3","BCLC "+st,"Transplante hepático","<p>Hipertensão portal impede ressecção segura; dentro de Milão, o transplante é a opção curativa.</p>"];steps=["Único","Hipertensão portal ou bilirrubina alta","Candidato → transplante"];}
+      else{v=["v-2","BCLC "+st,"Ablação","<p>Não ressecável, não transplantável: ablação percutânea (radiofrequência ou micro-ondas). Acima de 3 cm a eficácia cai — considerar TACE (migração de estádio).</p>"];steps=["Único","Hipertensão portal","Não candidato a transplante → ablação"];}
+    }else{
+      if(B.tx===0){v=["v-3","BCLC A","Transplante hepático","<p>Até 3 nódulos ≤ 3 cm: dentro de Milão.</p>"];steps=["2–3 nódulos ≤ 3 cm","Candidato → transplante"];}
+      else{v=["v-2","BCLC A","Ablação","<p>Até 3 nódulos ≤ 3 cm em quem não será transplantado.</p>"];steps=["2–3 nódulos ≤ 3 cm","Não candidato → ablação"];}
+    }
+  }
+  verd.apply(null,[$("#vBclc")].concat(v));
+  $("#stBclc").innerHTML=steps.map(function(s){return "<li>"+s+"</li>"}).join("");
+  $$("#bclcStrip .bc").forEach(function(b){b.classList.toggle("on",b.getAttribute("data-s")===st)});
+}
+var BP=[["Caso da questão",{ps:0,liv:0,tum:1,hp:0,tx:0}],["Com hipertensão portal",{ps:0,liv:0,tum:1,hp:1,tx:0}],["Trombose portal tumoral",{ps:0,liv:0,tum:4}],["Multinodular",{ps:0,liv:0,tum:3,pat:1}],["ECOG 3",{ps:2,liv:0,tum:1}],["Child C em Milão",{ps:0,liv:1,tum:2,tx:0}]];
+group($("#segBP"),BP.map(function(b){return b[0]}),function(i){var o=BP[i][1];for(var k in o)B[k]=o[k];gPS.set(B.ps,true);gLiv.set(B.liv,true);gTum.set(B.tum,true);bclc()},0);
+bclc();
+
+/* ============ 04 transplante ============ */
+var lv=$("#liver"),NOD=[[150,130],[262,118],[200,178],[330,112],[105,175]],sizes=[3.5,2,1.5,1.5,1],nN=1;
+function crit(){
+  var s=sizes.slice(0,nN),mx=Math.max.apply(null,s),sum=s.reduce(function(a,b){return a+b},0),vi=$("#vi").checked,afp=+$("#afp").value;
+  var milan=!vi&&((nN===1&&mx<=5)||(nN<=3&&nN>1&&mx<=3));
+  var ucsf=!vi&&((nN===1&&mx<=6.5)||(nN<=3&&nN>1&&mx<=4.5&&sum<=8));
+  var u7=!vi&&(mx+nN<=7);
+  var ds=!vi&&!milan&&((nN===1&&mx<=8)||(nN<=3&&nN>1&&mx<=5&&sum<=8)||(nN>=4&&nN<=5&&mx<=3&&sum<=8));
+  function row(n,ok,extra){return "<tr><td>"+n+"</td><td class='"+(ok?"":"no")+"'>"+(ok?"dentro":"fora")+(extra||"")+"</td></tr>"}
+  $("#crit tbody").innerHTML=row("Milão",milan)+row("UCSF",ucsf)+row("Up-to-seven <span style='color:var(--ink-meta);font-weight:400'>("+fmt(mx,1)+" + "+nN+" = "+fmt(mx+nN,1)+")</span>",u7)+
+    "<tr><td>Downstaging UNOS-DS</td><td class='"+(ds?"":"no")+"'>"+(milan?"não se aplica":ds?"elegível":"não")+"</td></tr>";
+  if(vi)verd($("#vTx"),"v-4","Invasão vascular macroscópica","Contraindicação ao transplante","<p>Trombo tumoral portal prediz recidiva precoce: BCLC C, tratamento sistêmico.</p>");
+  else if(milan)verd($("#vTx"),"v-3","Dentro de Milão","Candidato a transplante","<p>No Brasil, dá direito à pontuação de situação especial (MELD 20, 24 após 3 meses, 29 após 6 meses). Terapia locorregional pode servir de ponte enquanto aguarda.</p>"+(afp===2?"<p><b>AFP &gt; 1.000:</b> marcador de biologia agressiva; várias políticas exigem queda com tratamento antes de listar.</p>":""));
+  else if(ds)verd($("#vTx"),"v-2","Fora de Milão"+(ucsf?" · dentro de UCSF":""),"Candidato a downstaging","<p>Terapia locorregional (TACE, ablação) para trazer o tumor a Milão; se mantido por alguns meses, listar.</p>"+(afp===2?"<p><b>AFP &gt; 1.000</b> pesa contra.</p>":""));
+  else verd($("#vTx"),"v-1","Fora dos critérios","Transplante não indicado","<p>Carga tumoral com risco de recidiva inaceitável. Reestadiar pelo BCLC: em geral B (TACE ou sistêmico).</p>");
+}
+function drawLiver(){
+  clear(lv);
+  S("rect",{x:0,y:0,width:440,height:300,fill:"#151412"},lv);
+  S("path",{d:"M30 120 Q40 40 170 36 Q300 30 410 70 Q428 90 400 110 Q330 150 270 190 Q220 230 160 250 Q80 270 46 220 Q22 180 30 120Z",fill:"#6b4c1e",stroke:"#8d6428","stroke-width":1.5},lv);
+  S("path",{d:"M248 40 Q232 120 236 205",fill:"none",stroke:"rgba(18,17,16,.35)","stroke-width":2},lv);
+  S("path",{d:"M196 252 Q206 236 220 238 Q228 252 214 262 Q200 264 196 252Z",fill:"#4a3a24"},lv);
+  T("lobo direito",{x:60,y:240,fill:"rgba(250,203,141,.55)","font-size":12},lv);T("lobo esquerdo",{x:300,y:150,fill:"rgba(250,203,141,.55)","font-size":12},lv);
+  for(var i=0;i<nN;i++){var p=NOD[i],r=sizes[i]*4;
+    S("circle",{cx:p[0],cy:p[1],r:r,fill:"#e8d6b4",stroke:"#facb8d","stroke-width":1.4,opacity:.95},lv);
+    T(String(i+1),{x:p[0],y:p[1]+4,fill:"#121110","font-size":12,"text-anchor":"middle","font-weight":"600"},lv);}
+  if($("#vi").checked){S("path",{d:"M215 250 Q190 215 175 190",fill:"none",stroke:"#facb8d","stroke-width":5,"stroke-dasharray":"3 3"},lv);T("trombo portal",{x:180,y:285,fill:"#facb8d","font-size":12},lv)}
+  S("line",{x1:20,y1:286,x2:60,y2:286,stroke:"#facb8d","stroke-width":2},lv);T("5 cm",{x:66,y:290,fill:"#facb8d","font-size":12},lv);
+  crit();
+}
+function sizesUI(){
+  $("#sizes").innerHTML=sizes.slice(0,nN).map(function(s,i){return "<div class='sizes-row'><span>#"+(i+1)+"</span><input type='range' min='0.5' max='10' step='0.5' value='"+s+"' data-i='"+i+"' aria-label='Diâmetro do nódulo "+(i+1)+"'><b>"+fmt(s,1)+" cm</b></div>"}).join("");
+  $$("#sizes input").forEach(function(r){r.addEventListener("input",function(){var i=+r.getAttribute("data-i");sizes[i]=+r.value;r.nextElementSibling.textContent=fmt(sizes[i],1)+" cm";drawLiver()})});
+}
+group($("#segN"),["1","2","3","4","5"],function(i){nN=i+1;sizesUI();drawLiver()},0);
+$("#vi").addEventListener("change",drawLiver);$("#afp").addEventListener("change",crit);
+sizesUI();drawLiver();
+
+/* ============ 05 ressecção ============ */
+function rs(){var c=$$(".rs").map(function(x){return x.checked});
+  if(c.every(Boolean))return verd($("#vRs"),"v-2","Todos os itens","Ressecção liberada","<p>Hepatectomia anatômica com margem. Seguir com imagem: a recidiva no fígado cirrótico é a regra a longo prazo.</p>");
+  if(!c[4])return verd($("#vRs"),"v-4","ECOG &gt; 0","Não é estádio 0–A","<p>Desempenho reduzido pelo tumor reclassifica como BCLC C.</p>");
+  if(!c[0])return verd($("#vRs"),"v-3","Multifocal ou invasão vascular","Reestadiar","<p>Até 3 nódulos ≤ 3 cm: transplante ou ablação. Invasão vascular: BCLC C.</p>");
+  if(!c[1]||!c[2])return verd($("#vRs"),"v-3","Fígado não tolera","Transplante (se dentro de Milão) ou ablação","<p>Hipertensão portal ou bilirrubina alta aumentam o risco de insuficiência hepática pós-hepatectomia.</p>");
+  verd($("#vRs"),"v-2","Remanescente pequeno","Embolização portal antes","<p>Embolizar o ramo portal do lado a ressecar faz o remanescente hipertrofiar; reavaliar volumetria. Alternativa: ablação/transplante conforme o caso.</p>")}
+$$(".rs").forEach(function(x){x.addEventListener("change",rs)});rs();
+
+/* ============ 07 forja ============ */
+var base="Homem de 58 anos, cirrose por hepatite C, ECOG 0. ";
+buildQuiz([
+ {s:base+"Child-Pugh A (5), plaquetas 160 mil, sem varizes, bilirrubina normal. Nódulo único de 3,5 cm no segmento VI com hiper-realce arterial e washout portal à TC. A melhor conduta é:",
+  a:["Biópsia percutânea antes de qualquer decisão","Ressecção hepática","Sorafenibe","Quimioembolização transarterial","Cuidados paliativos"],c:1,
+  e:"<p>Padrão típico em cirrótico: diagnóstico sem biópsia (A errada). BCLC A, único, fígado que tolera → <b>ressecção</b>. Sorafenibe (C) é sistêmico do C; TACE (D) é do B; paliação (E) é do D.</p>"},
+ {s:base+"Child-Pugh A, <mark>plaquetas 70 mil e varizes esofágicas de médio calibre</mark>. Nódulo único de 3,5 cm típico de CHC. A melhor conduta é:",
+  a:["Ressecção hepática","Ablação por radiofrequência","Transplante hepático","Atezolizumabe + bevacizumabe","Quimioembolização transarterial"],c:2,
+  e:"<p>Hipertensão portal clinicamente significativa torna a hepatectomia arriscada. Dentro de Milão e candidato → <b>transplante</b>. A ablação (B) seria a opção se ele não fosse candidato — e perde eficácia acima de 3 cm. D é do BCLC C; E é do B.</p>"},
+ {s:base+"Child-Pugh A. Nódulo de 3,5 cm típico de CHC com <mark>trombo tumoral no ramo direito da veia porta</mark>. A melhor conduta é:",
+  a:["Ressecção hepática","Quimioembolização transarterial","Transplante hepático","Atezolizumabe + bevacizumabe","Ablação por micro-ondas"],c:3,
+  e:"<p>Invasão vascular macroscópica = <b>BCLC C</b> → sistêmico de primeira linha (atezolizumabe + bevacizumabe; ou durvalumabe + tremelimumabe, pelo HIMALAYA). Contraindica transplante (C) e a TACE convencional (B); ressecção (A) e ablação (E) não são o padrão.</p>"},
+ {s:base.replace("ECOG 0","<mark>ECOG 3, acamado pela doença</mark>")+"Child-Pugh B (8). Múltiplos nódulos hepáticos típicos de CHC. A melhor conduta é:",
+  a:["Transplante hepático","Quimioembolização transarterial","Lenvatinibe","Ressecção do maior nódulo","Melhor suporte clínico"],c:4,
+  e:"<p>Desempenho 3–4 é <b>BCLC D</b>: suporte clínico. Nenhum tratamento oncológico (B, C, D) melhora a sobrevida; transplante (A) não é opção com esse desempenho e carga tumoral.</p>"},
+ {s:"Cirrótico em rastreio semestral apresenta à ultrassonografia <mark>nódulo de 8 mm</mark>, não visto no exame anterior. A conduta é:",
+  a:["Repetir a ultrassonografia em 3 meses","TC trifásica imediata e, se típica, ressecção","Biópsia guiada por ultrassonografia","Dosar AFP e, se normal, manter rastreio semestral","Ablação por radiofrequência"],c:0,
+  e:"<p>Abaixo de 1 cm a imagem contrastada raramente é conclusiva: <b>US em 3 meses</b>; se crescer ou atingir 1 cm, TC/RM multifásica. Biópsia (C) e ablação (E) são precipitadas; AFP normal (D) não exclui.</p>"},
+ {s:"Cirrótico Child A com hipertensão portal, ECOG 0, tem <mark>nódulo único de 6 cm</mark>, sem invasão vascular. Quanto aos critérios de transplante, ele está:",
+  a:["Dentro de Milão e de UCSF","Fora de Milão, dentro de UCSF","Dentro de Milão, fora de UCSF","Fora de Milão e de UCSF","Fora de qualquer critério, por ser único e maior que 5 cm"],c:1,
+  e:"<p>Milão aceita único até 5 cm; <b>UCSF</b> até 6,5 cm. 6 cm: fora de Milão, dentro de UCSF (e também dentro de up-to-seven: 6 + 1 = 7). Candidato a downstaging para priorização.</p>"},
+ {s:base+"Child-Pugh A, sem hipertensão portal. TC: <mark>cinco nódulos bem definidos, bilaterais, o maior com 4 cm</mark>, veia porta pérvia, sem doença extra-hepática. A melhor conduta é:",
+  a:["Hepatectomia direita","Ablação dos cinco nódulos","Sorafenibe","Quimioembolização transarterial (TACE)","Transplante imediato pela situação especial"],c:3,
+  e:"<p>Multinodular com função preservada e ECOG 0 = <b>BCLC B</b>; nódulos definidos e porta pérvia → <b>TACE</b>. Fora de Milão (E errada sem downstaging); ressecção (A) e ablação (B) não cobrem a doença; sistêmico (C) é para o B difuso ou o C.</p>"},
+ {s:"No paciente da questão-mãe, o residente pede <mark>biópsia para confirmar</mark> o diagnóstico antes da cirurgia. O argumento correto é:",
+  a:["Não é necessária: em cirrótico, nódulo ≥ 1 cm com realce arterial e washout é diagnóstico","É obrigatória, pois a AFP não foi dosada","É obrigatória em todo tumor sólido antes de ressecção","Só a RM, nunca a TC, permite dispensar a biópsia","A biópsia é necessária para calcular o BCLC"],c:0,
+  e:"<p>O CHC é a exceção: o padrão vascular em fígado cirrótico tem alta especificidade (LI-RADS 5) e vale tanto na <b>TC quanto na RM</b> multifásicas (D errada). A biópsia ainda tem risco de implante no trajeto. AFP (B) não é necessária; BCLC (E) é clínico-radiológico.</p>"}
+]);
+})();
+
+</script>
+</body>
+</html>

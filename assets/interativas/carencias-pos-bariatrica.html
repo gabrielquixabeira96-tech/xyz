@@ -1,0 +1,790 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}</style></head><body>
+<title>Carências Pós-Bariátrica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#E8ECEA; --surface:#FBFCFB; --surface-2:#F1F4F2;
+  --ink:#14201D; --ink-2:#43524E; --muted:#6E7F7A; --line:#CFD8D5;
+  --accent:#9A5A26; --accent-soft:#F0E3D4; --accent-line:#D9B792;
+  --ok:#1E6F52; --ok-soft:#DFEEE7; --ok-line:#9FCBB8;
+  --bad:#A83232; --bad-soft:#F5E0DE; --bad-line:#DDAAA5;
+  --on-accent:#FFFFFF;
+  --shadow:0 1px 2px rgba(20,32,29,.05), 0 8px 24px -16px rgba(20,32,29,.28);
+  --serif:'Spectral', Georgia, 'Times New Roman', serif;
+  --sans:'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono:'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0E1614; --surface:#16211E; --surface-2:#1C2723;
+    --ink:#E6EDEA; --ink-2:#B4C3BE; --muted:#859893; --line:#2B3B36;
+    --accent:#D08C4E; --accent-soft:#33251A; --accent-line:#5C4229;
+    --ok:#57C097; --ok-soft:#15302A; --ok-line:#2C5D4C;
+    --bad:#E5837B; --bad-soft:#33201E; --bad-line:#623A37;
+    --on-accent:#101917;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px -18px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0E1614; --surface:#16211E; --surface-2:#1C2723;
+  --ink:#E6EDEA; --ink-2:#B4C3BE; --muted:#859893; --line:#2B3B36;
+  --accent:#D08C4E; --accent-soft:#33251A; --accent-line:#5C4229;
+  --ok:#57C097; --ok-soft:#15302A; --ok-line:#2C5D4C;
+  --bad:#E5837B; --bad-soft:#33201E; --bad-line:#623A37;
+  --on-accent:#101917;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px -18px rgba(0,0,0,.8);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--sans); font-size:16px; line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:820px; margin:0 auto; padding:0 20px 96px}
+
+/* ---------- header ---------- */
+header.masthead{padding:56px 0 28px}
+.eyebrow{
+  font-family:var(--mono); font-size:11.5px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--accent); margin:0 0 14px;
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+}
+.eyebrow::after{content:""; flex:1; height:1px; background:var(--line); min-width:20px}
+h1{
+  font-family:var(--serif); font-weight:600; font-size:clamp(34px,6.2vw,52px);
+  line-height:1.04; letter-spacing:-.015em; margin:0 0 14px; text-wrap:balance;
+}
+.dek{
+  font-family:var(--serif); font-size:18px; line-height:1.6; color:var(--ink-2);
+  max-width:60ch; margin:0 0 22px;
+}
+.dek em{color:var(--accent); font-style:italic}
+.facts{display:flex; flex-wrap:wrap; gap:8px}
+.fact{
+  font-family:var(--mono); font-size:11.5px; letter-spacing:.05em;
+  border:1px solid var(--line); border-radius:2px; padding:5px 9px;
+  color:var(--muted); background:var(--surface);
+}
+
+/* ---------- progress rail ---------- */
+.rail{
+  position:sticky; top:0; z-index:20; background:var(--ground);
+  border-bottom:1px solid var(--line); margin:0 -20px 26px; padding:11px 20px 10px;
+}
+.rail-inner{max-width:820px; margin:0 auto; display:flex; align-items:center; gap:14px}
+.counter{font-family:var(--mono); font-size:12.5px; color:var(--ink-2); font-variant-numeric:tabular-nums; white-space:nowrap}
+.counter b{color:var(--ink); font-weight:500}
+.ticks{display:flex; gap:3px; flex:1; min-width:0; overflow:hidden}
+.tick{flex:1; height:5px; min-width:3px; border-radius:1px; background:var(--line); transition:background .18s}
+.tick.ok{background:var(--ok)} .tick.bad{background:var(--bad)} .tick.now{background:var(--accent)}
+.score{font-family:var(--mono); font-size:12.5px; color:var(--muted); font-variant-numeric:tabular-nums; white-space:nowrap}
+.score b{color:var(--ok); font-weight:500}
+
+/* ---------- question card ---------- */
+.card{
+  background:var(--surface); border:1px solid var(--line); border-radius:3px;
+  box-shadow:var(--shadow); overflow:hidden;
+}
+.card-top{
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+  padding:14px 22px; border-bottom:1px solid var(--line); background:var(--surface-2);
+}
+.qno{font-family:var(--mono); font-size:12px; color:var(--accent); font-weight:500; letter-spacing:.06em}
+.axis{
+  font-family:var(--mono); font-size:11px; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--ink-2); border:1px solid var(--accent-line); background:var(--accent-soft);
+  padding:3px 8px; border-radius:2px;
+}
+.kind{font-family:var(--mono); font-size:11px; color:var(--muted); letter-spacing:.06em; margin-left:auto}
+.stem{
+  font-family:var(--serif); font-size:18.5px; line-height:1.62; color:var(--ink);
+  padding:24px 22px 4px; margin:0; max-width:64ch;
+}
+.stem b{font-weight:600}
+.labs{
+  margin:18px 22px 4px; border:1px solid var(--line); border-radius:2px;
+  background:var(--surface-2); overflow-x:auto;
+}
+.labs-h{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--muted); padding:8px 12px 6px; border-bottom:1px solid var(--line);
+}
+.labs-g{display:grid; grid-template-columns:repeat(auto-fill,minmax(148px,1fr)); gap:1px; background:var(--line)}
+.lab{margin:0; padding:8px 12px; background:var(--surface-2)}
+.lab dt{font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; color:var(--muted); text-transform:uppercase}
+.lab dd{margin:2px 0 0; font-family:var(--mono); font-size:13.5px; font-variant-numeric:tabular-nums; color:var(--ink)}
+.lab.flag dd{color:var(--accent); font-weight:500}
+.ask{
+  font-family:var(--sans); font-size:15px; font-weight:600; color:var(--ink);
+  padding:18px 22px 0; margin:0; max-width:64ch;
+}
+.opts{list-style:none; margin:14px 0 0; padding:0 22px 22px; display:flex; flex-direction:column; gap:7px}
+.opt{
+  display:flex; gap:12px; align-items:flex-start; width:100%; text-align:left;
+  font:inherit; font-size:15.2px; line-height:1.5; color:var(--ink);
+  background:var(--surface); border:1px solid var(--line); border-radius:2px;
+  padding:11px 13px; cursor:pointer; transition:border-color .14s, background .14s;
+}
+.opt:hover:not(:disabled){border-color:var(--accent-line); background:var(--surface-2)}
+.opt:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.opt:disabled{cursor:default}
+.opt .k{
+  font-family:var(--mono); font-size:12px; color:var(--muted); border:1px solid var(--line);
+  border-radius:2px; width:21px; height:21px; display:grid; place-items:center; flex:none; margin-top:1px;
+}
+.opt.picked-ok{border-color:var(--ok-line); background:var(--ok-soft)}
+.opt.picked-ok .k{border-color:var(--ok); color:var(--ok)}
+.opt.picked-bad{border-color:var(--bad-line); background:var(--bad-soft)}
+.opt.picked-bad .k{border-color:var(--bad); color:var(--bad)}
+.opt.reveal-ok{border-color:var(--ok-line)}
+.opt.reveal-ok .k{border-color:var(--ok); color:var(--ok)}
+.opt.dim{opacity:.5}
+
+/* ---------- explanation ---------- */
+.exp{border-top:1px solid var(--line); background:var(--surface-2); padding:20px 22px 22px}
+.verdict{
+  display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+  font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:14px;
+}
+.verdict .v-ok{color:var(--ok)} .verdict .v-bad{color:var(--bad)}
+.verdict .ans{font-family:var(--sans); font-size:14px; letter-spacing:0; text-transform:none; color:var(--ink); font-weight:600}
+.block{margin:0 0 14px; max-width:64ch}
+.block:last-child{margin-bottom:0}
+.block h4{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--accent); margin:0 0 5px; font-weight:500;
+}
+.block p{margin:0; font-size:15px; line-height:1.62; color:var(--ink-2)}
+.block p b{color:var(--ink); font-weight:600}
+.block.rx{border-left:2px solid var(--accent-line); padding-left:13px}
+
+/* ---------- nav ---------- */
+.nav{display:flex; gap:10px; align-items:center; margin-top:18px; flex-wrap:wrap}
+button.btn{
+  font:inherit; font-size:14.5px; font-weight:500; padding:10px 18px; border-radius:2px; cursor:pointer;
+  border:1px solid var(--accent); background:var(--accent); color:var(--on-accent); transition:opacity .14s;
+}
+button.btn:hover{opacity:.87}
+button.btn.ghost{background:transparent; color:var(--ink-2); border-color:var(--line)}
+button.btn.ghost:hover{border-color:var(--accent-line); color:var(--ink)}
+button.btn:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+button.btn:disabled{opacity:.35; cursor:default}
+.hint{font-family:var(--mono); font-size:11.5px; color:var(--muted); margin-left:auto}
+
+/* ---------- results ---------- */
+.result{background:var(--surface); border:1px solid var(--line); border-radius:3px; box-shadow:var(--shadow); padding:30px 24px}
+.big{font-family:var(--serif); font-size:clamp(44px,10vw,72px); line-height:1; font-weight:600; letter-spacing:-.02em; font-variant-numeric:tabular-nums}
+.big small{font-size:.34em; color:var(--muted); font-weight:400; letter-spacing:0}
+.verdict-line{font-family:var(--serif); font-size:18px; line-height:1.6; color:var(--ink-2); max-width:58ch; margin:12px 0 24px}
+.bars{display:flex; flex-direction:column; gap:9px; margin:0 0 24px}
+.bar{display:grid; grid-template-columns:minmax(120px,1fr) 2fr auto; gap:12px; align-items:center}
+.bar .nm{font-family:var(--mono); font-size:11.5px; letter-spacing:.05em; color:var(--ink-2); text-transform:uppercase}
+.bar .track{display:block; height:8px; background:var(--surface-2); border:1px solid var(--line); border-radius:1px; overflow:hidden}
+.bar .fill{display:block; height:100%; background:var(--accent)}
+.bar .fill.good{background:var(--ok)}
+.bar .fill.poor{background:var(--bad)}
+.bar .n{font-family:var(--mono); font-size:12px; color:var(--muted); font-variant-numeric:tabular-nums}
+.sect-h{font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin:0 0 10px; font-weight:500}
+.misses{margin:0 0 24px; padding:0; list-style:none; display:flex; flex-direction:column; gap:8px}
+.miss{border-left:2px solid var(--bad-line); padding:2px 0 2px 13px; font-size:14.5px; color:var(--ink-2)}
+.miss b{color:var(--ink); font-weight:600}
+.miss span{font-family:var(--mono); font-size:11px; color:var(--muted); display:block; letter-spacing:.05em}
+
+/* ---------- pocket table ---------- */
+.pocket{margin-top:44px}
+details.pocket-d{border:1px solid var(--line); border-radius:3px; background:var(--surface); overflow:hidden}
+details.pocket-d>summary{
+  cursor:pointer; padding:15px 20px; font-family:var(--mono); font-size:12px;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--ink-2); list-style:none;
+  display:flex; align-items:center; gap:10px;
+}
+details.pocket-d>summary::-webkit-details-marker{display:none}
+details.pocket-d>summary::before{content:"+"; color:var(--accent); font-size:15px; line-height:1}
+details.pocket-d[open]>summary::before{content:"–"}
+details.pocket-d>summary:focus-visible{outline:2px solid var(--accent); outline-offset:-2px}
+details.pocket-d>summary .warn{margin-left:auto; color:var(--muted); letter-spacing:.05em; text-transform:none; font-size:11px}
+.tbl-scroll{overflow-x:auto; border-top:1px solid var(--line)}
+table{border-collapse:collapse; width:100%; min-width:680px; font-size:14px}
+thead th{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--muted); text-align:left; padding:11px 14px; background:var(--surface-2);
+  border-bottom:1px solid var(--line); font-weight:500; white-space:nowrap;
+}
+tbody td{padding:11px 14px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ink-2); line-height:1.5}
+tbody tr:last-child td{border-bottom:none}
+tbody td:first-child{color:var(--ink); font-weight:600; white-space:nowrap; font-size:14px}
+tbody td b{color:var(--ink); font-weight:600}
+tbody tr:nth-child(even) td{background:var(--surface-2)}
+
+footer.foot{margin-top:46px; padding-top:20px; border-top:1px solid var(--line); font-size:13px; color:var(--muted); line-height:1.7}
+footer.foot b{color:var(--ink-2); font-weight:500}
+@media (prefers-reduced-motion:reduce){*{transition:none !important; animation:none !important}}
+@media (max-width:560px){
+  .stem{font-size:17px; padding:20px 16px 4px}
+  .card-top,.opts,.exp,.ask{padding-left:16px; padding-right:16px}
+  .labs{margin-left:16px; margin-right:16px}
+  .bar{grid-template-columns:1fr auto; }
+  .bar .track{grid-column:1/-1}
+  .hint{display:none}
+}
+</style>
+<div class="wrap">
+
+<header class="masthead">
+  <p class="eyebrow">ENARE R+ Cirurgia · Bloco nutricional</p>
+  <h1>Carências pós-bariátrica</h1>
+  <p class="dek">Trinta casos construídos para atacar o ponto em que se erra de verdade: <em>não é lembrar da carência, é separá-la da vizinha</em>. B12 de cobre. Tiamina de B12. Zinco de biotina. Ferro de cobre. Cada questão nomeia o par que está sendo contrastado.</p>
+  <div class="facts">
+    <span class="fact">30 questões</span>
+    <span class="fact">correção imediata</span>
+    <span class="fact">alternativas embaralhadas</span>
+    <span class="fact">teclas 1–5 · Enter</span>
+  </div>
+</header>
+
+<div class="rail" id="rail">
+  <div class="rail-inner">
+    <span class="counter">Q <b id="cur">1</b> / <span id="total">30</span></span>
+    <div class="ticks" id="ticks"></div>
+    <span class="score"><b id="hits">0</b> acertos</span>
+  </div>
+</div>
+
+<main id="stage"></main>
+
+<section class="pocket">
+  <details class="pocket-d">
+    <summary>Tabela de bolso — todas as carências <span class="warn">contém as respostas</span></summary>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Nutriente</th><th>Sinal que entrega o diagnóstico</th><th>Como diferenciar</th><th>Tratamento resumido</th></tr></thead>
+        <tbody>
+          <tr><td>Tiamina (B1)</td><td>Vômitos no pós-op precoce + confusão, oftalmoplegia, ataxia. Ou neuropatia dolorosa (seco), ou IC de <b>alto débito</b> (úmido)</td><td>Única carência de <b>semanas</b>. Hemograma normal. Extremidades quentes e pressão de pulso alargada separam do selênio</td><td><b>200-500 mg IV</b> 3-5 dias, depois 250 mg/dia. <b>Sempre antes da glicose.</b> Profilaxia ≥12 mg/dia</td></tr>
+          <tr><td>Vitamina B12</td><td>Anemia macrocítica + parestesias + perda de propriocepção, <b>anos</b> após</td><td><b>MMA alto</b> (folato tem MMA normal). Sem neutropenia (cobre tem)</td><td>1.000 mcg/dia até normalizar; manutenção <b>350-500 mcg/dia VO</b> ou 1.000 mcg IM/mês</td></tr>
+          <tr><td>Folato (B9)</td><td>Anemia macrocítica <b>sem</b> alteração neurológica</td><td>MMA <b>normal</b> + homocisteína alta. Repor isolado <b>mascara B12</b></td><td>1.000 mcg/dia VO. Profilaxia 400-800 mcg; <b>800-1.000 mcg</b> em idade fértil</td></tr>
+          <tr><td>Ferro</td><td>Anemia microcítica; a carência mais comum após bypass (20-55%)</td><td>Ferritina baixa e saturação &lt;20%. Se ferritina normal e há neutropenia, pense em <b>cobre</b></td><td>150-200 mg/dia com vitamina C, longe de cálcio e IBP; <b>EV se falha</b>. Profilaxia 45-60 mg em mulher menstruada</td></tr>
+          <tr><td>Cobre</td><td><b>Anemia + neutropenia + mielopatia</b> idêntica à da B12. História de zinco isolado</td><td>B12 e MMA normais. A <b>neutropenia</b> é a chave</td><td>3-8 mg/dia VO; 2-4 mg/dia IV 6 dias se grave. Profilaxia 2 mg/dia. Déficit neurológico pode ser permanente</td></tr>
+          <tr><td>Zinco</td><td>Alopecia + <b>disgeusia</b> + dermatite periorificial + diarreia + má cicatrização</td><td>Disgeusia e má cicatrização não são do ferro nem da biotina. Também piora a cegueira noturna (via RBP)</td><td>Repor mantendo <b>8-15 mg de zinco : 1 mg de cobre</b>. Profilaxia 8-22 mg/dia</td></tr>
+          <tr><td>Vitamina A</td><td>Cegueira noturna → xeroftalmia → <b>manchas de Bitot</b> → ceratomalácia</td><td>Se não responde à reposição, o problema é <b>zinco ou ferro</b> associados</td><td>10.000-25.000 UI/dia; com lesão de córnea <b>50.000-100.000 UI IM × 3 dias</b>. Profilaxia 5.000-10.000 UI (10.000 no BPD/DS)</td></tr>
+          <tr><td>Vitamina E</td><td>Ataxia + arreflexia + perda de propriocepção + <b>retinopatia pigmentar</b></td><td>Hemograma <b>normal</b>: sem macrocitose (B12) e sem neutropenia (cobre)</td><td>100-400 UI/dia, forma hidrossolúvel. Profilaxia 15 mg/dia</td></tr>
+          <tr><td>Vitamina K</td><td>Equimoses e sangramento com <b>TP/INR alargado</b></td><td><b>Fator V normal</b> — na hepatopatia o fator V cai junto</td><td>10 mg parenteral na aguda; 1-2 mg/dia VO na crônica. Profilaxia 90-120 mcg (300 mcg no BPD/DS)</td></tr>
+          <tr><td>Vitamina D e cálcio</td><td>Dor óssea proximal, fraqueza; <b>PTH alto com cálcio normal-baixo</b> e fosfatase alcalina alta</td><td>No hiperpara <b>primário</b> o cálcio estaria <b>alto</b> e a calciúria elevada</td><td>D3 3.000-6.000 UI/dia (ou D2 50.000 UI 1-3×/sem) + <b>citrato</b> de cálcio 1.200-1.500 mg (1.800-2.400 no BPD/DS), fracionado</td></tr>
+          <tr><td>Magnésio</td><td><b>Hipocalcemia e hipopotassemia refratárias</b> à reposição, com PTH baixo para o cálcio</td><td>Sem magnésio, o PTH não é secretado nem age — nada corrige</td><td>Sulfato de magnésio EV primeiro; depois manutenção oral</td></tr>
+          <tr><td>Selênio</td><td><b>Cardiomiopatia dilatada de baixo débito</b> + miopatia proximal + unhas esbranquiçadas + macrocitose</td><td>Baixo débito e extremidades frias — o inverso do beribéri úmido</td><td>100-200 mcg/dia, mais na deficiência sintomática. Controle com selênio plasmático</td></tr>
+          <tr><td>Proteína</td><td>Edema, hipoalbuminemia, alopecia, esteatorreia — sobretudo após <b>BPD/DS</b></td><td>Sem estigmas hepáticos, sem proteinúria, sem sinais cardíacos</td><td>≥60 g/dia até <b>1,5 g/kg de peso ideal</b>; NE ou NP se refratária; <b>alongamento do canal comum</b> nos casos graves</td></tr>
+          <tr><td>Oxalato (nefrolitíase)</td><td>Cólica renal de repetição anos após bypass ou BPD/DS</td><td>Hiperoxalúria <b>entérica</b>: a gordura sequestra o cálcio e libera o oxalato</td><td><b>Cálcio junto às refeições</b>, hidratação &gt;2-2,5 L, dieta pobre em oxalato e gordura, citrato de potássio</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</section>
+
+<footer class="foot">
+  Conteúdo alinhado à diretriz <b>AACE/TOS/ASMBS/OMA/ASA — 2019 Update</b> (Mechanick et al., <i>Obesity</i> 2020;28(4)), às <b>ASMBS Nutritional Guidelines 2016</b> para micronutrientes e à <b>Resolução CFM 2.429/2025</b>. As alternativas são embaralhadas a cada tentativa: a posição da resposta certa nunca é a mesma duas vezes.
+</footer>
+
+</div>
+<script>
+const Q = [
+{n:1, g:"Tiamina", axis:"B1 × B12", kind:"caso",
+ stem:"Mulher de 28 anos, <b>10 semanas</b> após bypass gástrico em Y de Roux, com vômitos quase diários desde a alta e ingestão oral muito reduzida. Nas últimas 72 horas evoluiu com desorientação, visão dupla e marcha instável. Ao exame: nistagmo horizontal, paresia do reto lateral à direita, ataxia de tronco.",
+ labs:[["Hb","12,4 g/dL"],["VCM","88 fL"],["B12 sérico","410 pg/mL"],["Glicemia","78 mg/dL"]],
+ ask:"O diagnóstico mais provável é deficiência de:",
+ opts:["Vitamina B12 (degeneração combinada subaguda)","Tiamina (encefalopatia de Wernicke)","Cobre (mielopatia)","Piridoxina (B6)","Vitamina E"],
+ c:1,
+ why:"Tríade de <b>confusão + oftalmoplegia + ataxia</b> em paciente com vômitos persistentes no pós-operatório precoce. A tiamina tem estoque corporal de apenas <b>2 a 4 semanas</b> — é a única deficiência capaz de aparecer tão cedo.",
+ dif:"A deficiência de <b>B12</b> leva <b>anos</b> para se instalar (o estoque hepático dura 3-5 anos), cursa com macrocitose e acomete <b>cordões posteriores</b> de forma lenta — não dá oftalmoplegia aguda. Aqui o VCM e a B12 estão normais e o tempo é de 10 semanas.",
+ rx:"<b>Tiamina 200-500 mg IV por 3-5 dias</b>, depois 250 mg/dia; manutenção mínima de 12 mg/dia (ou complexo B 50 mg 1-2×/dia)."},
+
+{n:2, g:"Tiamina", axis:"ordem terapêutica", kind:"conduta",
+ stem:"A mesma paciente chega ao pronto-socorro desidratada e sonolenta. O plantonista prescreve soro glicosado a 10% para \"corrigir a hipoglicemia relativa\" e solicita exames.",
+ ask:"Sobre essa prescrição, a conduta correta é:",
+ opts:["Manter, pois a glicose é prioridade no rebaixamento de consciência","Administrar tiamina endovenosa antes ou junto com a glicose","Trocar por solução salina e aguardar as dosagens vitamínicas","Iniciar cianocobalamina intramuscular antes da glicose","Suspender qualquer infusão até a tomografia de crânio"],
+ c:1,
+ why:"A glicose é metabolizada por vias <b>dependentes de tiamina</b> (piruvato desidrogenase, transcetolase). Infundir glicose num paciente depletado consome o pouco que resta e <b>precipita ou agrava a encefalopatia de Wernicke</b>.",
+ dif:"Não se espera a dosagem de tiamina para tratar: o exame demora e o dano é irreversível (síndrome de Korsakoff). Trata-se pela suspeita clínica.",
+ rx:"<b>Tiamina primeiro, sempre.</b> 200-500 mg IV, e só então a glicose. Repor magnésio junto, que é cofator da transcetolase."},
+
+{n:3, g:"Tiamina", axis:"beribéri seco × úmido", kind:"caso",
+ stem:"Homem de 35 anos, <b>4 meses</b> após gastrectomia vertical, com má aceitação alimentar. Refere queimação e formigamento simétricos em pés e panturrilhas, com fraqueza para subir escadas. Sem confusão mental, sem alteração ocular. Reflexos aquileus abolidos, sensibilidade vibratória preservada.",
+ ask:"O quadro corresponde a:",
+ opts:["Beribéri seco (polineuropatia por deficiência de tiamina)","Beribéri úmido","Degeneração combinada subaguda por B12","Mielopatia por deficiência de cobre","Neuropatia por deficiência de vitamina E"],
+ c:0,
+ why:"Deficiência de tiamina com apresentação <b>exclusivamente neurológica periférica</b>: polineuropatia sensitivo-motora distal, simétrica, dolorosa, com arreflexia. É o beribéri <b>seco</b>.",
+ dif:"<b>Úmido</b> = acometimento cardiovascular (insuficiência cardíaca de alto débito). <b>Wernicke</b> = sistema nervoso central. <b>B12 e cobre</b> atingem cordão posterior — dariam perda de vibratória e propriocepção, aqui preservadas.",
+ rx:"Tiamina 100 mg VO 2-3×/dia (ou parenteral se má absorção) até resolução; depois manutenção diária."},
+
+{n:4, g:"Tiamina", axis:"B1 × selênio", kind:"caso",
+ stem:"Mulher de 42 anos, <b>5 meses</b> após bypass, com dispneia progressiva e edema de membros inferiores. Ao exame: taquicardia, <b>extremidades quentes</b>, pressão de pulso alargada (140/50 mmHg), turgência jugular e estase pulmonar. Ecocardiograma mostra ventrículo esquerdo de dimensões normais com <b>débito cardíaco elevado</b>.",
+ ask:"A causa nutricional mais provável é deficiência de:",
+ opts:["Selênio","Tiamina","Carnitina","Ferro","Vitamina D"],
+ c:1,
+ why:"Insuficiência cardíaca de <b>alto débito</b> com vasodilatação periférica (extremidades quentes, pressão de pulso alargada) é a assinatura do <b>beribéri úmido</b>. A resposta à tiamina costuma ser dramática, em horas.",
+ dif:"A cardiomiopatia por <b>selênio</b> é <b>dilatada e de baixo débito</b> — extremidades frias, VE dilatado com fração de ejeção reduzida. O sinal que separa as duas é hemodinâmico, não o achado de insuficiência cardíaca em si.",
+ rx:"Tiamina 200-500 mg IV. Cuidado com diurético e digital isolados: sem repor tiamina, não há resposta."},
+
+{n:5, g:"Proteína e selênio", axis:"selênio × B1", kind:"caso",
+ stem:"Homem de 50 anos, <b>3 anos</b> após derivação biliopancreática com duodenal switch, com dispneia aos esforços e fraqueza proximal de cintura pélvica. Extremidades frias, perfusão lentificada. Ecocardiograma: <b>cardiomiopatia dilatada, fração de ejeção 32%</b>. Ao exame das mãos, leitos ungueais esbranquiçados.",
+ labs:[["CPK","480 U/L"],["VCM","104 fL"],["B12","520 pg/mL"],["Tiamina","normal"]],
+ ask:"A deficiência mais provável é de:",
+ opts:["Tiamina","Selênio","Cobre","Vitamina E","Magnésio"],
+ c:1,
+ why:"<b>Cardiomiopatia dilatada de baixo débito + miopatia esquelética + leito ungueal esbranquiçado + macrocitose</b>, em procedimento altamente disabsortivo, é a tríade clássica da deficiência de selênio.",
+ dif:"A tiamina está normal e a hemodinâmica é de <b>baixo débito</b>, o oposto do beribéri úmido. A deficiência de <b>vitamina E</b> também dá miopatia, mas com ataxia e arreflexia, não cardiomiopatia dilatada.",
+ rx:"Reposição de selênio (100-200 mcg/dia, doses maiores na deficiência sintomática), com dosagem de selênio plasmático e glutationa peroxidase no seguimento."},
+
+{n:6, g:"B12 e folato", axis:"B12 × folato", kind:"conduta",
+ stem:"Mulher de 39 anos, <b>3 anos</b> após bypass gástrico, com parestesias em pés e cansaço. Não usa suplementação há um ano.",
+ labs:[["Hb","10,6 g/dL"],["VCM","106 fL"],["B12 sérico","238 pg/mL"],["Folato sérico","normal"],["Ferritina","64 ng/mL"]],
+ ask:"A B12 está na zona cinzenta. O exame que melhor confirma a deficiência é:",
+ opts:["Homocisteína sérica isolada","Ácido metilmalônico sérico ou urinário","Contagem de reticulócitos","Teste de Schilling","Anticorpo anti-fator intrínseco"],
+ c:1,
+ why:"Entre 200 e 400 pg/mL a B12 sérica é pouco confiável. O <b>ácido metilmalônico (MMA)</b> se acumula apenas quando falta B12 — é o marcador funcional mais específico.",
+ dif:"A <b>homocisteína sobe nas duas</b> deficiências, B12 e folato, e por isso não distingue. O MMA sobe <b>só na B12</b>: MMA alto + homocisteína alta = B12; MMA normal + homocisteína alta = folato.",
+ rx:"Confirmada: 1.000 mcg/dia VO até normalizar, depois manutenção com <b>350-500 mcg/dia VO</b> ou <b>1.000 mcg IM por mês</b>."},
+
+{n:7, g:"Ferro e cobre", axis:"B12 × cobre", kind:"caso",
+ stem:"Homem de 54 anos, <b>6 anos</b> após bypass gástrico. Há 8 meses apresenta marcha instável, parestesias e dificuldade para sentir a posição dos pés. Vinha usando, por conta própria, <b>zinco em altas doses</b> para alopecia. Ressonância de coluna cervical: hipersinal em cordões posteriores.",
+ labs:[["Hb","9,8 g/dL"],["VCM","98 fL"],["Neutrófilos","1.100/mm³"],["B12 sérico","540 pg/mL"],["MMA","normal"],["Ferritina","110 ng/mL"]],
+ ask:"A deficiência responsável é de:",
+ opts:["Vitamina B12","Folato","Cobre","Vitamina E","Tiamina"],
+ c:2,
+ why:"A deficiência de cobre reproduz <b>fielmente</b> a degeneração combinada subaguda da B12 — mesma mielopatia de cordão posterior, mesma imagem de ressonância. O que denuncia o cobre são dois achados: <b>neutropenia</b> e a história de <b>reposição isolada de zinco</b>, que compete com o cobre na absorção intestinal.",
+ dif:"Aqui a <b>B12 está normal e o MMA normal</b> — a B12 está descartada. Guarde a regra: <b>mielopatia + anemia + neutropenia = cobre até prova em contrário</b>. A B12 praticamente nunca causa neutropenia isolada.",
+ rx:"Cobre <b>3-8 mg/dia VO</b> na deficiência leve a moderada; <b>2-4 mg/dia IV por 6 dias</b> na grave. Suspender o zinco. A hematologia se recupera em semanas; o déficit neurológico pode ser <b>permanente</b>."},
+
+{n:8, g:"Ferro e cobre", axis:"zinco ⇄ cobre", kind:"direta",
+ stem:"Ao repor zinco de forma prolongada em um paciente pós-bypass, o risco de induzir deficiência de cobre é real.",
+ ask:"A proporção recomendada entre zinco e cobre na suplementação é de aproximadamente:",
+ opts:["1 mg de zinco para 1 mg de cobre","8 a 15 mg de zinco para 1 mg de cobre","50 mg de zinco para 1 mg de cobre","100 mg de zinco para 1 mg de cobre","Não há relação definida"],
+ c:1,
+ why:"A recomendação é de <b>8 a 15 mg de zinco para cada 1 mg de cobre</b>. O zinco induz metalotioneína no enterócito, que sequestra o cobre e o elimina com a descamação da mucosa.",
+ dif:"É por isso que \"repor zinco para a queda de cabelo\" sem cobre é uma causa <b>iatrogênica</b> frequente de mielopatia pós-bariátrica.",
+ rx:"Profilaxia: cobre <b>2 mg/dia</b> após bypass e BPD/DS (1 mg/dia após banda ou sleeve). Dosar cobre e ceruloplasmina <b>anualmente</b>."},
+
+{n:9, g:"Ferro e cobre", axis:"ferro × cobre", kind:"caso",
+ stem:"Mulher de 44 anos, 4 anos após bypass, em tratamento de anemia com sulfato ferroso 3 comprimidos ao dia há <b>4 meses</b>, sem resposta. Nega perdas menstruais aumentadas. Colonoscopia e endoscopia sem alterações.",
+ labs:[["Hb","9,1 g/dL"],["VCM","82 fL"],["Ferritina","190 ng/mL"],["Sat. transferrina","34%"],["Neutrófilos","1.300/mm³"],["Plaquetas","240 mil"]],
+ ask:"A explicação mais provável para a anemia refratária é:",
+ opts:["Má adesão ao ferro oral","Deficiência de cobre","Anemia de doença crônica","Deficiência de vitamina B6","Talassemia menor"],
+ c:1,
+ why:"Anemia microcítica com <b>ferritina e saturação de transferrina normais</b> exclui carência de ferro — não adianta insistir. A <b>neutropenia associada</b> aponta para cobre, que é cofator da ceruloplasmina (ferroxidase) e da liberação do ferro dos estoques.",
+ dif:"A anemia do cobre pode ser <b>micro, normo ou macrocítica</b> — o VCM não ajuda. O que ajuda é o par <b>anemia + neutropenia com ferro normal</b>. Se fosse ferro, a ferritina estaria baixa e a saturação abaixo de 20%.",
+ rx:"Repor cobre e reavaliar em 4-8 semanas. Suspender qualquer suplemento de zinco isolado."},
+
+{n:10, g:"Ferro e cobre", axis:"ferro — por que falha", kind:"conduta",
+ stem:"Mulher de 31 anos, menstruada, 2 anos após bypass. Toma sulfato ferroso <b>junto com o carbonato de cálcio no café da manhã</b> e usa omeprazol 40 mg pela manhã por dispepsia.",
+ labs:[["Hb","10,2 g/dL"],["VCM","74 fL"],["Ferritina","7 ng/mL"],["Sat. transferrina","9%"]],
+ ask:"A conduta inicial mais apropriada é:",
+ opts:["Trocar imediatamente para ferro endovenoso","Aumentar a dose do sulfato ferroso para 5 comprimidos ao dia","Separar o ferro do cálcio e do inibidor de bomba, associar vitamina C e reavaliar","Transfundir concentrado de hemácias","Suspender o ferro e iniciar eritropoetina"],
+ c:2,
+ why:"Ferropenia verdadeira (ferritina 7, saturação 9%). Antes de escalar, corrija os erros de administração: o <b>cálcio quela o ferro</b>, e o <b>IBP suprime a acidez</b> necessária para reduzir o ferro férrico a ferroso. A vitamina C favorece essa redução.",
+ dif:"O bypass exclui <b>duodeno e jejuno proximal</b>, os sítios de absorção do ferro — por isso a deficiência é a mais comum após a cirurgia (20-55%). Mas administração errada é a causa evitável mais frequente de \"refratariedade\".",
+ rx:"Ferro elementar <b>150-200 mg/dia</b> em jejum, com vitamina C, longe de cálcio, IBP, chá e café. Se ainda assim houver falha ou intolerância, <b>ferro endovenoso</b>."},
+
+{n:11, g:"Prática", axis:"dose profilática", kind:"direta",
+ stem:"Paciente do sexo feminino, 30 anos, menstruada, submetida a bypass gástrico em Y de Roux.",
+ ask:"A dose <b>profilática</b> diária de ferro elementar recomendada para ela é:",
+ opts:["8 a 12 mg","18 mg","45 a 60 mg","100 a 150 mg","Não se recomenda profilaxia, apenas tratamento"],
+ c:2,
+ why:"As diretrizes separam por risco: <b>18 mg/dia</b> nos de baixo risco (homens, sem anemia prévia) e <b>45 a 60 mg/dia</b> nos de alto risco — <b>mulheres menstruadas</b>, bypass, sleeve e BPD/DS.",
+ dif:"Doses de 150-200 mg são de <b>tratamento</b> da deficiência instalada, não de profilaxia.",
+ rx:"Profilaxia com 45-60 mg/dia, somando o que já vem nos dois polivitamínicos. Controle: hemograma e ferritina aos 3 meses, depois a cada 3-6 meses no primeiro ano e anualmente."},
+
+{n:12, g:"B12 e folato", axis:"folato × B12", kind:"caso",
+ stem:"Mulher de 26 anos, 18 meses após bypass, planejando engravidar. Assintomática do ponto de vista neurológico.",
+ labs:[["Hb","11,0 g/dL"],["VCM","108 fL"],["B12 sérico","480 pg/mL"],["MMA","normal"],["Homocisteína","24 µmol/L"],["Folato sérico","2,1 ng/mL"]],
+ ask:"O diagnóstico e a principal preocupação adicional são, respectivamente:",
+ opts:["Deficiência de B12; degeneração combinada subaguda","Deficiência de folato; defeito de fechamento do tubo neural","Deficiência de ferro; parto prematuro","Deficiência de cobre; mielopatia","Deficiência de tiamina; Wernicke gestacional"],
+ c:1,
+ why:"Macrocitose com <b>MMA normal e homocisteína elevada</b> é a assinatura bioquímica do folato. A B12 está normal.",
+ dif:"O par de exames resolve a dúvida: <b>MMA alto → B12</b>; <b>MMA normal + homocisteína alta → folato</b>. Clinicamente, o folato <b>não</b> causa alteração neurológica; se houver mielopatia, pense em B12 ou cobre.",
+ rx:"Folato <b>1.000 mcg/dia VO</b> até normalizar. Em mulheres em idade fértil, a profilaxia sobe para <b>800-1.000 mcg/dia</b>. Evitar gestação por 12-18 meses após a cirurgia."},
+
+{n:13, g:"B12 e folato", axis:"armadilha terapêutica", kind:"conduta",
+ stem:"Paciente pós-bypass com anemia macrocítica. O médico prescreve ácido fólico 5 mg/dia empiricamente, sem dosar B12. Dois meses depois o hemograma normalizou, mas o paciente refere piora das parestesias e passou a ter instabilidade de marcha.",
+ ask:"A explicação para esse desfecho é:",
+ opts:["O ácido fólico é neurotóxico em doses altas","O folato corrigiu a anemia e mascarou uma deficiência de B12 que seguiu progredindo","Trata-se de efeito adverso esperado, transitório","O paciente desenvolveu deficiência de folato de rebote","O ácido fólico induziu deficiência de ferro"],
+ c:1,
+ why:"O folato em dose alta contorna o bloqueio da síntese de DNA e <b>corrige a hematologia</b>, mas não repõe a B12 — a via da metilmalonil-CoA mutase segue parada e a <b>desmielinização progride</b>.",
+ dif:"É por isso que a diretriz orienta <b>não ultrapassar 1.000 mcg/dia</b> de folato e sempre dosar B12 antes ou junto.",
+ rx:"Dosar B12 e MMA imediatamente e repor B12 <b>antes ou simultaneamente</b> ao folato. Nunca folato isolado numa macrocitose não investigada."},
+
+{n:14, g:"Zinco", axis:"zinco × biotina × ferro", kind:"caso",
+ stem:"Mulher de 34 anos, <b>8 meses</b> após bypass, com queda difusa de cabelo, perda do paladar para alimentos salgados, lesões eritemato-descamativas ao redor da boca e das narinas, diarreia intermitente e uma ferida de cesárea prévia que reabriu e demora a fechar.",
+ labs:[["Hb","12,1 g/dL"],["Ferritina","78 ng/mL"],["Albumina","3,8 g/dL"],["Zinco sérico","48 µg/dL"]],
+ ask:"A deficiência que melhor explica o conjunto é de:",
+ opts:["Ferro","Biotina","Zinco","Vitamina A","Selênio"],
+ c:2,
+ why:"O conjunto é praticamente patognomônico: <b>alopecia + disgeusia + dermatite periorificial (padrão acrodermatite enteropática) + diarreia + má cicatrização</b>. O zinco é cofator de mais de 300 enzimas, entre elas as da renovação epitelial.",
+ dif:"A <b>alopecia por ferro</b> vem com anemia microcítica e ferritina baixa — aqui a ferritina é 78. A <b>biotina</b> dá alopecia e dermatite, mas <b>não</b> causa disgeusia nem má cicatrização, e é rara. A <b>vitamina A</b> dá hiperceratose folicular e sintomas oculares, não perda de paladar.",
+ rx:"Repor zinco mantendo a proporção com o cobre (8-15:1). Profilaxia: 8-22 mg/dia conforme o procedimento — <b>200% da RDA (16-22 mg) no BPD/DS</b>."},
+
+{n:15, g:"Lipossolúveis", axis:"vitamina A", kind:"caso",
+ stem:"Homem de 47 anos, <b>4 anos</b> após derivação biliopancreática, relata que passou a esbarrar em móveis ao entrar em ambientes escuros e que tem os olhos permanentemente secos. Ao exame oftalmológico: xerose conjuntival e placas espumosas esbranquiçadas na conjuntiva bulbar temporal.",
+ ask:"O achado descrito na conjuntiva corresponde a e traduz deficiência de:",
+ opts:["Manchas de Bitot; vitamina A","Anéis de Kayser-Fleischer; cobre","Pinguécula; sem valor carencial","Manchas de Roth; vitamina K","Xantelasma; vitamina E"],
+ c:0,
+ why:"<b>Cegueira noturna (nictalopia) + xeroftalmia + manchas de Bitot</b> formam a sequência clássica da hipovitaminose A. Prevalência de até 70% em 4 anos após bypass e BPD/DS.",
+ dif:"O anel de Kayser-Fleischer é do <b>excesso</b> de cobre (Wilson), não da falta. Na hipovitaminose A, o dano progride para ceratomalácia e ulceração de córnea, que é <b>emergência</b>.",
+ rx:"Sem lesão de córnea: <b>10.000 a 25.000 UI/dia</b> por 1-2 semanas. Com lesão de córnea: <b>50.000 a 100.000 UI IM por 3 dias</b>, depois 50.000 UI/dia IM por 2 semanas."},
+
+{n:16, g:"Lipossolúveis", axis:"vitamina A × zinco/ferro", kind:"conduta",
+ stem:"O mesmo paciente recebeu vitamina A oral em dose adequada por três semanas, mas mantém cegueira noturna e o retinol plasmático segue baixo.",
+ ask:"O passo seguinte mais apropriado é:",
+ opts:["Dobrar a dose de vitamina A por mais 30 dias","Investigar e corrigir deficiências de zinco e de ferro associadas","Iniciar betacaroteno em substituição ao retinol","Solicitar ressonância de órbitas","Suspender a vitamina A pelo risco de hipervitaminose"],
+ c:1,
+ why:"A vitamina A circula ligada à <b>proteína ligadora de retinol (RBP)</b>, cuja síntese e mobilização hepática dependem de <b>zinco</b>. A deficiência de <b>ferro</b> também prejudica a mobilização dos estoques hepáticos.",
+ dif:"Hipovitaminose A que \"não responde\" quase sempre é hipovitaminose A com <b>zinco baixo junto</b> — repor apenas A não resolve. É um erro de conduta que a prova adora.",
+ rx:"Corrigir zinco (mantendo o cobre) e ferro, e manter a vitamina A. Reavaliar retinol plasmático e RBP após a correção."},
+
+{n:17, g:"Lipossolúveis", axis:"vitamina E × B12/cobre", kind:"caso",
+ stem:"Mulher de 58 anos, <b>7 anos</b> após duodenal switch, com ataxia de marcha progressiva, perda de propriocepção e sensibilidade vibratória, arreflexia global e oftalmoplegia leve. Fundoscopia: retinopatia pigmentar.",
+ labs:[["Hb","13,0 g/dL"],["VCM","90 fL"],["Neutrófilos","4.400/mm³"],["B12","610 pg/mL"],["MMA","normal"],["Cobre","normal"],["Ceruloplasmina","normal"]],
+ ask:"A deficiência mais provável é de:",
+ opts:["Vitamina B12","Cobre","Vitamina E","Tiamina","Folato"],
+ c:2,
+ why:"Síndrome espinocerebelar com <b>arreflexia, perda de propriocepção e retinopatia pigmentar</b>, com B12 e cobre <b>normais</b> e sem citopenias, aponta para vitamina E — lipossolúvel, muito vulnerável em procedimentos disabsortivos.",
+ dif:"As três causam cordão posterior. O que separa: <b>B12</b> tem macrocitose e MMA alto; <b>cobre</b> tem anemia com neutropenia; <b>vitamina E</b> tem hemograma normal, arreflexia marcante e <b>retinopatia pigmentar</b>.",
+ rx:"Vitamina E <b>100 a 400 UI/dia</b> (dose ótima não estabelecida), em formulação hidrossolúvel para melhorar a absorção. Profilaxia habitual: 15 mg/dia."},
+
+{n:18, g:"Lipossolúveis", axis:"vitamina K × hepatopatia", kind:"caso",
+ stem:"Homem de 49 anos, 5 anos após BPD/DS, com equimoses fáceis, gengivorragia e um episódio de melena. Nega hepatopatia, etilismo ou uso de anticoagulante.",
+ labs:[["TP / INR","2,4"],["TTPa","levemente alargado"],["Plaquetas","230 mil"],["Albumina","3,9 g/dL"],["Bilirrubinas","normais"],["Fator V","normal"]],
+ ask:"A causa mais provável e a conduta são, respectivamente:",
+ opts:["Hepatopatia crônica; transfundir plasma fresco","Deficiência de vitamina K; repor vitamina K parenteral","Coagulação intravascular disseminada; heparina","Deficiência de vitamina C; repor ácido ascórbico","Doença de von Willebrand adquirida; desmopressina"],
+ c:1,
+ why:"Alargamento de TP com <b>fator V normal</b> e função hepática preservada (albumina e bilirrubinas normais) isola os fatores <b>vitamina K-dependentes: II, VII, IX e X</b>. O VII é o de meia-vida mais curta, por isso o TP alarga primeiro.",
+ dif:"Na <b>hepatopatia</b>, o <b>fator V também cai</b>, porque é sintetizado no fígado mas não depende de vitamina K. Esse é o exame que separa as duas — e é exatamente o distrator da alternativa A.",
+ rx:"Má absorção aguda: <b>10 mg de vitamina K parenteral</b>. Crônica: 1-2 mg/dia VO ou 1-2 mg/semana parenteral. Profilaxia: 90-120 mcg/dia, subindo para <b>300 mcg/dia no BPD/DS</b>."},
+
+{n:19, g:"Cálcio, D e magnésio", axis:"vitamina D × PTH", kind:"caso",
+ stem:"Mulher de 52 anos, 3 anos após bypass, com dor difusa em quadris e coxas e dificuldade para levantar da cadeira. Sem suplementação regular.",
+ labs:[["Cálcio total","8,6 mg/dL"],["Fósforo","2,4 mg/dL"],["PTH","148 pg/mL"],["25-OH-vitamina D","11 ng/mL"],["Fosfatase alcalina","210 U/L"],["Cálcio urinário 24h","baixo"]],
+ ask:"O quadro corresponde a:",
+ opts:["Hiperparatireoidismo primário","Hiperparatireoidismo secundário à deficiência de vitamina D, com osteomalácia","Doença de Paget","Mieloma múltiplo","Hipoparatireoidismo pós-cirúrgico"],
+ c:1,
+ why:"<b>PTH alto com cálcio normal-baixo, fósforo baixo, fosfatase alcalina alta e 25-OH-D de 11</b> é hiperparatireoidismo <b>secundário</b>. A dor óssea proximal e a fraqueza traduzem osteomalácia.",
+ dif:"No hiperparatireoidismo <b>primário</b> o <b>cálcio estaria alto</b> e a calciúria elevada. Aqui o cálcio é 8,6 e a calciúria é baixa — o PTH está subindo <i>para</i> manter o cálcio, não <i>apesar</i> dele.",
+ rx:"<b>Vitamina D3 3.000-6.000 UI/dia</b> (ou D2 50.000 UI 1-3×/semana) até 25-OH-D acima de 30 ng/mL, associada a <b>citrato de cálcio</b> em doses divididas. Refratário: acrescentar calcitriol. DXA basal e em cerca de 2 anos."},
+
+{n:20, g:"Cálcio, D e magnésio", axis:"citrato × carbonato", kind:"direta",
+ stem:"Paciente pós-bypass em uso de omeprazol, com indicação de suplementação de cálcio.",
+ ask:"A forma e a dose mais apropriadas são:",
+ opts:["Carbonato de cálcio 500 mg/dia, em dose única","Citrato de cálcio 1.200-1.500 mg/dia de cálcio elementar, em doses divididas","Carbonato de cálcio 2.000 mg/dia, em dose única em jejum","Gluconato de cálcio endovenoso mensal","Citrato de cálcio 3.000 mg/dia em dose única noturna"],
+ c:1,
+ why:"O <b>carbonato depende de acidez gástrica</b> para se dissolver — depois do bypass, com bolsa pequena e IBP em uso, a absorção despenca. O <b>citrato absorve com ou sem alimento e sem depender do pH</b>.",
+ dif:"A dose também é cobrada: <b>1.200-1.500 mg/dia</b> após sleeve, bypass e banda; <b>1.800-2.400 mg/dia</b> no BPD/DS. Sempre <b>fracionada</b>, porque acima de 500-600 mg por tomada a absorção satura.",
+ rx:"Citrato de cálcio fracionado + vitamina D, e <b>nunca no mesmo horário do ferro</b>."},
+
+{n:21, g:"Cálcio, D e magnésio", axis:"cálcio × magnésio", kind:"caso",
+ stem:"Mulher de 46 anos, 4 anos após BPD/DS, internada com parestesias periorais e cãibras. Chvostek positivo. Recebeu <b>gluconato de cálcio endovenoso em duas ocasiões</b> e reposição oral, mas o cálcio iônico volta a cair em poucas horas.",
+ labs:[["Cálcio iônico","0,96 mmol/L"],["Magnésio","1,1 mg/dL"],["Potássio","2,9 mEq/L"],["PTH","baixo para o cálcio"],["25-OH-D","28 ng/mL"]],
+ ask:"A conduta que resolverá o quadro é:",
+ opts:["Aumentar a dose de cálcio endovenoso","Corrigir a hipomagnesemia","Iniciar calcitriol em dose alta","Iniciar teriparatida","Repor fósforo"],
+ c:1,
+ why:"A <b>hipomagnesemia bloqueia a secreção de PTH e induz resistência periférica ao PTH</b>. Enquanto o magnésio não subir, o cálcio não se sustenta — daí o PTH inapropriadamente baixo para uma hipocalcemia.",
+ dif:"A pista está no conjunto: <b>hipocalcemia refratária + hipopotassemia refratária + PTH baixo</b>. A hipopotassemia também não corrige sem magnésio (perda renal por ROMK desinibido).",
+ rx:"<b>Sulfato de magnésio endovenoso</b> primeiro, depois manutenção oral. Só então o cálcio e o potássio respondem."},
+
+{n:22, g:"Cálcio, D e magnésio", axis:"oxalato — contraintuitivo", kind:"conduta",
+ stem:"Homem de 41 anos, 5 anos após bypass, com o terceiro episódio de cólica renal em 18 meses. Análise do cálculo: <b>oxalato de cálcio</b>. Ele já reduziu por conta própria todos os laticínios da dieta.",
+ ask:"A orientação dietética correta é:",
+ opts:["Manter a restrição de cálcio e reduzir a ingestão de líquidos à noite","Ingerir cálcio junto às refeições, aumentar a hidratação e reduzir oxalato e gordura da dieta","Suspender totalmente o cálcio e iniciar alopurinol","Alcalinizar a urina com bicarbonato e restringir proteínas","Manter dieta livre e iniciar tansulosina profilática"],
+ c:1,
+ why:"É <b>hiperoxalúria entérica</b>: a gordura não absorvida quela o cálcio no lúmen, deixando o oxalato <b>livre para ser absorvido</b> no cólon e excretado na urina. Dar cálcio <b>junto às refeições</b> devolve ao oxalato o parceiro que o mantém insolúvel no intestino.",
+ dif:"A intuição de \"cálculo de cálcio, então corte o cálcio\" é exatamente o oposto do correto — e piora a hiperoxalúria. Restringir cálcio só funcionaria em hipercalciúria absortiva, que não é o caso aqui.",
+ rx:"Cálcio às refeições, hidratação para diurese acima de 2-2,5 L/dia, dieta pobre em oxalato, redução de gordura e <b>citrato de potássio</b>."},
+
+{n:23, g:"Proteína e selênio", axis:"proteína × edema", kind:"caso",
+ stem:"Homem de 38 anos, <b>18 meses</b> após derivação biliopancreática com duodenal switch, perdeu 55% do peso corporal total. Apresenta edema de membros inferiores, ascite leve, alopecia difusa, astenia intensa e 4 a 6 evacuações gordurosas por dia.",
+ labs:[["Albumina","2,4 g/dL"],["Pré-albumina","baixa"],["Linfócitos totais","900/mm³"],["Hb","10,4 g/dL"],["INR","1,5"]],
+ ask:"O diagnóstico principal e a conduta são:",
+ opts:["Cirrose hepática; investigar com biópsia","Desnutrição proteico-calórica grave; suporte nutricional intensivo e, se refratária, alongamento do canal comum","Síndrome nefrótica; iniciar corticoide","Insuficiência cardíaca; iniciar diurético","Enteropatia perdedora de proteína por doença celíaca; dieta sem glúten"],
+ c:1,
+ why:"É a complicação nutricional mais temida do BPD/DS: <b>hipoalbuminemia com edema, alopecia e esteatorreia</b> após perda ponderal excessiva. O INR alargado reflete a má absorção associada de vitamina K.",
+ dif:"A ausência de estigmas hepáticos, de proteinúria e de sinais cardíacos, somada à esteatorreia e ao antecedente cirúrgico, define a causa. Lembre que a diretriz recomenda <b>cautela com BPD/DS</b> justamente por isso.",
+ rx:"Proteína <b>mínima de 60 g/dia, chegando a 1,5 g/kg de peso ideal</b> (até 2,1 g/kg em casos selecionados); nutrição enteral ou parenteral se não houver resposta; em casos graves e refratários, <b>alongamento cirúrgico do canal comum</b>."},
+
+{n:24, g:"Prática", axis:"cronologia", kind:"direta",
+ stem:"A velocidade com que cada carência aparece depende do tamanho do estoque corporal.",
+ ask:"Qual deficiência é capaz de se manifestar já nas <b>primeiras semanas a poucos meses</b> de pós-operatório?",
+ opts:["Vitamina B12","Cobre","Tiamina","Vitamina A","Vitamina E"],
+ c:2,
+ why:"O estoque de <b>tiamina dura 2 a 4 semanas</b>. É a única carência que aparece em semanas, tipicamente no paciente com <b>vômitos persistentes</b> ou intolerância alimentar no pós-operatório precoce.",
+ dif:"<b>B12</b> demora anos (estoque hepático de 3-5 anos). <b>Cobre, vitaminas A e E</b> são carências tardias, de anos, e predominam nos procedimentos disabsortivos. <b>Ferro e folato</b> ficam no meio, meses a poucos anos.",
+ rx:"Por isso todo paciente com vômitos prolongados no pós-operatório recebe tiamina empiricamente, antes de qualquer soro glicosado."},
+
+{n:25, g:"Prática", axis:"risco por técnica", kind:"direta",
+ stem:"Comparação do risco nutricional entre os procedimentos.",
+ ask:"A ordem <b>decrescente</b> de risco de deficiências de micronutrientes é:",
+ opts:["Banda > sleeve > bypass > BPD/DS","BPD/DS > bypass > sleeve > banda","Bypass > BPD/DS > banda > sleeve","Sleeve > bypass > BPD/DS > banda","Todos apresentam risco equivalente"],
+ c:1,
+ why:"O risco é proporcional à <b>extensão de intestino delgado excluído</b> e à perda do ambiente ácido gástrico. O BPD/DS é o mais disabsortivo — deficiência de zinco em até 70%, de cobre em até 70%, de vitamina A frequente.",
+ dif:"O <b>sleeve</b> não é isento: reduz ácido e fator intrínseco e cursa com deficiência de B12, ferro e vitamina D, embora em frequência menor. A diretriz recomenda <b>cautela específica com BPD e BPD/DS</b> pelo risco nutricional.",
+ rx:"A suplementação escala junto: 2 polivitamínicos, cálcio 1.800-2.400 mg, vitamina A 10.000 UI e vitamina K 300 mcg/dia no BPD/DS."},
+
+{n:26, g:"Prática", axis:"profilaxia pós-bypass", kind:"direta",
+ stem:"Prescrição de alta de um paciente submetido a bypass gástrico em Y de Roux, sem deficiências prévias.",
+ ask:"A suplementação profilática mínima recomendada inclui:",
+ opts:["1 polivitamínico/dia, cálcio 600 mg, vitamina D 800 UI","2 polivitamínicos/dia, citrato de cálcio 1.200-1.500 mg, vitamina D 3.000 UI, ferro 45-60 mg, B12 350-500 mcg","Apenas vitamina B12 intramuscular mensal","Apenas ferro e ácido fólico","Nenhuma suplementação, apenas dieta rica em proteínas"],
+ c:1,
+ why:"São <b>dois</b> polivitamínicos com minerais ao dia (mastigáveis no início), cada um contendo ferro, ácido fólico e tiamina, mais cálcio, vitamina D, ferro e B12 conforme a tabela.",
+ dif:"Um único polivitamínico ao dia é o esquema da <b>banda gástrica</b> — a alternativa A é a pegadinha. A suplementação após bypass é <b>vitalícia</b>, e a diretriz manda incluir o custo dela no consentimento informado.",
+ rx:"Vitamina D titulada até 25-OH-D acima de 30 ng/mL; tiamina no mínimo 12 mg/dia; B12 350-500 mcg/dia VO ou 1.000 mcg IM mensal."},
+
+{n:27, g:"B12 e folato", axis:"por que falta B12", kind:"direta",
+ stem:"Mecanismo da deficiência de B12 após bypass gástrico.",
+ ask:"A explicação fisiopatológica principal é:",
+ opts:["Perda do sítio de absorção no jejuno proximal","Redução do ácido gástrico e do fator intrínseco, com perda da separação da B12 da proteína alimentar","Aumento do consumo bacteriano no cólon","Excreção renal aumentada de cobalamina","Competição com o ácido fólico suplementado"],
+ c:1,
+ why:"A B12 alimentar vem ligada a proteínas e precisa de <b>ácido e pepsina</b> para ser liberada, e depois de <b>fator intrínseco</b> (célula parietal) para ser absorvida no <b>íleo terminal</b>. O bypass exclui a maior parte do estômago e o sleeve reduz a massa parietal.",
+ dif:"O íleo terminal continua no trânsito — o problema não é o sítio de absorção, é a etapa gástrica. Por isso a B12 <b>cristalina</b> (dos suplementos), que já vem livre, é razoavelmente absorvida por via oral em doses altas.",
+ rx:"350-500 mcg/dia VO ou sublingual, ou 1.000 mcg IM mensal. Dosar <b>trimestralmente no primeiro ano</b> e depois anualmente, sobretudo em uso de IBP ou metformina."},
+
+{n:28, g:"Prática", axis:"monitorização", kind:"direta",
+ stem:"Seguimento laboratorial de rotina após bypass gástrico em Y de Roux.",
+ ask:"Assinale a associação <b>correta</b> entre nutriente e exame de escolha:",
+ opts:["Tiamina — dosagem sérica de piruvato","Cobre — apenas cobre sérico isolado","Vitamina B12 — B12 sérica associada ao ácido metilmalônico","Vitamina D — dosagem de 1,25-di-hidroxivitamina D","Zinco — zinco eritrocitário exclusivamente"],
+ c:2,
+ why:"A B12 sérica isolada tem zona cinzenta ampla; associá-la ao <b>MMA</b> (e à homocisteína) resolve os casos limítrofes.",
+ dif:"A <b>vitamina D</b> se avalia pela <b>25-OH</b>, não pela 1,25-di-hidroxi, que pode estar normal ou alta pelo estímulo do PTH e mascarar a deficiência. O <b>cobre</b> se dosa com <b>ceruloplasmina</b> junto (ambas são proteínas de fase aguda — cuidado na inflamação). A <b>tiamina</b> se dosa em sangue total ou pela transcetolase eritrocitária.",
+ rx:"Ferro aos 3 meses e a cada 3-6 meses no primeiro ano; B12 trimestral no primeiro ano; vitamina D, cálcio e PTH anuais; zinco, cobre e vitamina A anuais após bypass e BPD/DS."},
+
+{n:29, g:"Zinco", axis:"zinco × vitamina A (visão)", kind:"caso",
+ stem:"Paciente pós-BPD/DS com cegueira noturna. O retinol plasmático está no limite inferior, e a reposição de vitamina A por 4 semanas trouxe melhora apenas parcial. Ele também refere disgeusia e tem uma ferida operatória de má cicatrização.",
+ ask:"Além da vitamina A, a deficiência que também contribui diretamente para a cegueira noturna é:",
+ opts:["Selênio","Zinco","Magnésio","Vitamina K","Folato"],
+ c:1,
+ why:"O zinco é necessário para a síntese hepática da <b>RBP</b> e para a <b>álcool desidrogenase retinol-dependente</b>, que converte retinol em retinal na retina. Sem zinco, a vitamina A reposta não chega funcional ao fotorreceptor.",
+ dif:"Os sinais extraoculares fecham o caso: <b>disgeusia e má cicatrização</b> são do zinco, não da vitamina A. Quando os dois quadros coexistem, repor apenas A não resolve.",
+ rx:"Repor zinco (com cobre proporcional) junto à vitamina A. Reavaliar retinol e RBP em 4-8 semanas."},
+
+{n:30, g:"Prática", axis:"síntese", kind:"caso",
+ stem:"Cinco pacientes retornam à consulta pós-bariátrica no mesmo dia. Você tem de decidir de quem é a urgência.",
+ ask:"Qual deles exige tratamento <b>imediato, antes mesmo do resultado laboratorial</b>?",
+ opts:["Mulher com ferritina 9 ng/mL e Hb 10,5 g/dL, assintomática","Homem 3 meses pós-bypass com vômitos há 3 semanas, confuso e com nistagmo","Homem com 25-OH-D de 18 ng/mL e PTH 92 pg/mL","Mulher com zinco sérico 52 µg/dL e queda de cabelo","Homem com cobre sérico limítrofe e hemograma normal"],
+ c:1,
+ why:"Encefalopatia de Wernicke é <b>emergência neurológica</b>: sem tiamina imediata, evolui para a síndrome de Korsakoff, que é <b>irreversível</b>. Não se aguarda dosagem — trata-se pela suspeita.",
+ dif:"As demais são carências reais, mas de correção eletiva em dias a semanas. A hierarquia de urgência nas carências pós-bariátricas é: <b>tiamina sintomática > hipocalcemia sintomática > ceratomalácia por vitamina A > as demais</b>.",
+ rx:"Tiamina 200-500 mg IV imediatamente, antes de qualquer glicose, e magnésio associado."}
+];
+</script>
+<script>
+(function(){
+  const KEY = 'carencias-bariatrica-v1';
+  const stage = document.getElementById('stage');
+  const ticksEl = document.getElementById('ticks');
+  const curEl = document.getElementById('cur');
+  const hitsEl = document.getElementById('hits');
+  const LETTERS = ['A','B','C','D','E'];
+
+  let state = { i:0, answers:new Array(Q.length).fill(null), order:null, done:false, only:null };
+
+  function load(){
+    try{
+      const raw = localStorage.getItem(KEY);
+      if(raw){
+        const s = JSON.parse(raw);
+        if(s && Array.isArray(s.answers) && s.answers.length === Q.length && Array.isArray(s.order)){
+          state = Object.assign(state, s);
+          return;
+        }
+      }
+    }catch(e){}
+    newOrder();
+  }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){} }
+
+  function newOrder(){
+    state.order = Q.map(q=>{
+      const idx = q.opts.map((_,k)=>k);
+      for(let a=idx.length-1;a>0;a--){ const b=Math.floor(Math.random()*(a+1)); [idx[a],idx[b]]=[idx[b],idx[a]]; }
+      return idx;
+    });
+  }
+
+  const seq = () => state.only ? state.only : Q.map((_,k)=>k);
+
+  function hits(){ return state.answers.reduce((n,a,k)=> n + (a!==null && a===Q[k].c ? 1 : 0), 0); }
+
+  function buildTicks(){
+    ticksEl.innerHTML='';
+    Q.forEach((q,k)=>{
+      const t=document.createElement('span');
+      t.className='tick'; t.dataset.k=k;
+      t.title='Questão '+(k+1);
+      ticksEl.appendChild(t);
+    });
+  }
+  function paintTicks(){
+    const active = seq()[state.i];
+    [...ticksEl.children].forEach((t,k)=>{
+      const a = state.answers[k];
+      t.className = 'tick' + (k===active && !state.done ? ' now' : a===null ? '' : (a===Q[k].c ? ' ok' : ' bad'));
+    });
+    const total = seq().length;
+    const pos = state.done ? total : seq().indexOf(active)+1;
+    curEl.textContent = pos;
+    document.getElementById('total').textContent = total;
+    hitsEl.textContent = hits();
+  }
+
+  function renderQ(){
+    const list = seq();
+    const qi = list[state.i];
+    const q = Q[qi];
+    const ord = state.order[qi];
+    const answered = state.answers[qi] !== null;
+
+    const labs = q.labs ? '<div class="labs"><div class="labs-h">Exames</div><div class="labs-g">' +
+      q.labs.map(l=>'<dl class="lab"><dt>'+l[0]+'</dt><dd>'+l[1]+'</dd></dl>').join('') +
+      '</div></div>' : '';
+
+    const opts = ord.map((origIdx, pos)=>{
+      let cls='opt';
+      if(answered){
+        const picked = state.answers[qi];
+        if(origIdx === q.c) cls += (picked===q.c ? ' picked-ok' : ' reveal-ok');
+        else if(origIdx === picked) cls += ' picked-bad';
+        else cls += ' dim';
+      }
+      return '<li><button class="'+cls+'" data-orig="'+origIdx+'" '+(answered?'disabled':'')+'>'+
+             '<span class="k">'+LETTERS[pos]+'</span><span>'+q.opts[origIdx]+'</span></button></li>';
+    }).join('');
+
+    let exp='';
+    if(answered){
+      const ok = state.answers[qi]===q.c;
+      const letter = LETTERS[ord.indexOf(q.c)];
+      exp = '<div class="exp">'+
+        '<div class="verdict"><span class="'+(ok?'v-ok':'v-bad')+'">'+(ok?'✓ Correto':'✕ Incorreto')+'</span>'+
+        '<span class="ans">Resposta: '+letter+' — '+q.opts[q.c]+'</span></div>'+
+        '<div class="block"><h4>Por que</h4><p>'+q.why+'</p></div>'+
+        '<div class="block"><h4>Como diferenciar</h4><p>'+q.dif+'</p></div>'+
+        '<div class="block rx"><h4>Tratamento</h4><p>'+q.rx+'</p></div>'+
+      '</div>';
+    }
+
+    const last = state.i >= list.length-1;
+    const nav = '<div class="nav">'+
+      '<button class="btn ghost" id="prev" '+(state.i===0?'disabled':'')+'>Anterior</button>'+
+      '<button class="btn" id="next" '+(answered?'':'disabled')+'>'+(last?'Ver resultado':'Próxima')+'</button>'+
+      '<span class="hint">'+(answered?'Enter para seguir':'Teclas 1–'+q.opts.length+' respondem')+'</span>'+
+    '</div>';
+
+    stage.innerHTML = '<article class="card">'+
+      '<div class="card-top"><span class="qno">Q'+String(q.n).padStart(2,'0')+'</span>'+
+      '<span class="axis">'+q.axis+'</span><span class="kind">'+q.kind+'</span></div>'+
+      '<p class="stem">'+q.stem+'</p>'+ labs +
+      '<p class="ask">'+q.ask+'</p>'+
+      '<ul class="opts">'+opts+'</ul>'+ exp +
+    '</article>' + nav;
+
+    stage.querySelectorAll('.opt').forEach(b=>{
+      b.addEventListener('click', ()=>{
+        if(state.answers[qi]!==null) return;
+        state.answers[qi] = parseInt(b.dataset.orig,10);
+        save(); renderQ(); paintTicks();
+        const ex = stage.querySelector('.exp');
+        if(ex) ex.scrollIntoView({behavior:'smooth', block:'nearest'});
+      });
+    });
+    const nx = document.getElementById('next');
+    if(nx) nx.addEventListener('click', ()=>{
+      if(last){ state.done=true; save(); renderResult(); paintTicks(); window.scrollTo({top:0,behavior:'smooth'}); }
+      else { state.i++; save(); renderQ(); paintTicks(); window.scrollTo({top:document.getElementById('rail').offsetTop-8, behavior:'smooth'}); }
+    });
+    const pv = document.getElementById('prev');
+    if(pv) pv.addEventListener('click', ()=>{ if(state.i>0){ state.i--; save(); renderQ(); paintTicks(); } });
+
+    paintTicks();
+  }
+
+  function renderResult(){
+    const total = Q.length;
+    const n = hits();
+    const pct = Math.round(n/total*100);
+    const groups = {};
+    Q.forEach((q,k)=>{
+      groups[q.g] = groups[q.g] || {n:0,t:0};
+      groups[q.g].t++;
+      if(state.answers[k]===q.c) groups[q.g].n++;
+    });
+    const bars = Object.keys(groups).map(g=>{
+      const {n:a,t} = groups[g];
+      const p = Math.round(a/t*100);
+      const cls = p>=80?'good':p<60?'poor':'';
+      return '<div class="bar"><span class="nm">'+g+'</span>'+
+        '<span class="track"><span class="fill '+cls+'" style="width:'+p+'%"></span></span>'+
+        '<span class="n">'+a+'/'+t+'</span></div>';
+    }).join('');
+
+    const missed = Q.map((q,k)=>({q,k})).filter(o=>state.answers[o.k]!==o.q.c);
+    const missList = missed.length ? '<ul class="misses">'+missed.map(o=>
+      '<li class="miss"><span>Q'+String(o.q.n).padStart(2,'0')+' · '+o.q.axis+'</span><b>'+o.q.opts[o.q.c]+'</b></li>'
+    ).join('')+'</ul>' : '';
+
+    let line;
+    if(pct>=90) line = 'Domínio consolidado. Nesse patamar o ganho vem de manter — releia só a tabela de bolso na véspera.';
+    else if(pct>=70) line = 'Base sólida, com furos pontuais. Refaça apenas os erros: são eles que separam 70 de 90.';
+    else if(pct>=50) line = 'Você reconhece as carências, mas ainda escorrega na diferenciação. As barras abaixo mostram onde.';
+    else line = 'Vale começar pela tabela de bolso, ler as três colunas de cada linha, e refazer o teste em seguida.';
+
+    stage.innerHTML = '<section class="result">'+
+      '<div class="big">'+n+'<small> / '+total+'</small></div>'+
+      '<p class="verdict-line">'+line+'</p>'+
+      '<div class="bars">'+bars+'</div>'+
+      (missed.length ? '<h4 class="sect-h">O que escapou</h4>'+missList : '')+
+      '<div class="nav">'+
+        (missed.length ? '<button class="btn" id="redo-miss">Refazer só os '+missed.length+' erros</button>' : '')+
+        '<button class="btn '+(missed.length?'ghost':'')+'" id="restart">Recomeçar do zero</button>'+
+        '<button class="btn ghost" id="review">Revisar todas</button>'+
+      '</div>'+
+    '</section>';
+
+    const rm = document.getElementById('redo-miss');
+    if(rm) rm.addEventListener('click', ()=>{
+      const idxs = missed.map(o=>o.k);
+      idxs.forEach(k=>{ state.answers[k]=null; });
+      state.only = idxs; state.i=0; state.done=false; save(); renderQ();
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+    document.getElementById('restart').addEventListener('click', ()=>{
+      state = { i:0, answers:new Array(Q.length).fill(null), order:null, done:false, only:null };
+      newOrder(); save(); renderQ();
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+    document.getElementById('review').addEventListener('click', ()=>{
+      state.only=null; state.i=0; state.done=false; save(); renderQ();
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  }
+
+  document.addEventListener('keydown', e=>{
+    if(state.done) return;
+    if(e.target && /input|textarea|select/i.test(e.target.tagName)) return;
+    const list = seq(); const qi = list[state.i]; const q = Q[qi];
+    if(/^[1-5]$/.test(e.key)){
+      const pos = parseInt(e.key,10)-1;
+      const btns = stage.querySelectorAll('.opt');
+      if(btns[pos] && !btns[pos].disabled){ e.preventDefault(); btns[pos].click(); }
+    } else if(e.key==='Enter' || e.key==='ArrowRight'){
+      const nx=document.getElementById('next');
+      if(nx && !nx.disabled){ e.preventDefault(); nx.click(); }
+    } else if(e.key==='ArrowLeft'){
+      const pv=document.getElementById('prev');
+      if(pv && !pv.disabled){ e.preventDefault(); pv.click(); }
+    }
+  });
+
+  load();
+  if(!state.order) newOrder();
+  buildTicks();
+  if(state.done) { renderResult(); paintTicks(); } else renderQ();
+})();
+</script>
+
+</body></html>

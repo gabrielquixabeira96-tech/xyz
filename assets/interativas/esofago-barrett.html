@@ -1,0 +1,1383 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
+<title>Atlas do Esôfago de Barrett</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#F7F4F1; --surface:#FFFFFF; --surface-2:#F1ECE7; --line:#DED5CD; --line-soft:#EAE3DC;
+  --ink:#241D1B; --ink-2:#574C46; --ink-3:#8A7C74;
+  --accent:#14607A; --accent-soft:#DCEBF0; --accent-ink:#0D4B60;
+  --b:#0E7C6B; --b-soft:#DCF0EA;
+  --w:#A96D10; --w-soft:#F7EBD6;
+  --d:#B03528; --d-soft:#F8E3DF;
+  --m:#69479A; --m-soft:#EBE3F6;
+  --shadow:0 1px 2px rgba(36,29,27,.06), 0 8px 24px -12px rgba(36,29,27,.18);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15100F; --surface:#1E1817; --surface-2:#251E1C; --line:#3B302D; --line-soft:#2C2422;
+    --ink:#F2EBE6; --ink-2:#C4B7B0; --ink-3:#93847C;
+    --accent:#5FBEDA; --accent-soft:#123441; --accent-ink:#9BD8EC;
+    --b:#4ECFB4; --b-soft:#0F3129;
+    --w:#E5AC4E; --w-soft:#3A2A11;
+    --d:#F0806F; --d-soft:#3D1A15;
+    --m:#B694E8; --m-soft:#291C3D;
+    --shadow:0 1px 2px rgba(0,0,0,.5), 0 8px 24px -12px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15100F; --surface:#1E1817; --surface-2:#251E1C; --line:#3B302D; --line-soft:#2C2422;
+  --ink:#F2EBE6; --ink-2:#C4B7B0; --ink-3:#93847C;
+  --accent:#5FBEDA; --accent-soft:#123441; --accent-ink:#9BD8EC;
+  --b:#4ECFB4; --b-soft:#0F3129;
+  --w:#E5AC4E; --w-soft:#3A2A11;
+  --d:#F0806F; --d-soft:#3D1A15;
+  --m:#B694E8; --m-soft:#291C3D;
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 8px 24px -12px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px 96px}
+h1,h2,h3{font-family:"Fraunces","Iowan Old Style",Georgia,serif;text-wrap:balance;margin:0}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+
+/* ---- topo ---- */
+header.hero{max-width:1120px;margin:0 auto;padding:56px 24px 30px}
+.kicker{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-3)}
+h1{font-size:clamp(34px,5.2vw,58px);line-height:1.02;font-weight:600;margin:14px 0 0;letter-spacing:-.02em}
+h1 em{font-style:italic;color:var(--accent)}
+.lede{max-width:60ch;color:var(--ink-2);font-size:17.5px;margin:18px 0 0}
+.stem{margin:26px 0 0;padding:20px 22px;border-left:3px solid var(--accent);
+  background:var(--surface);border-radius:0 10px 10px 0;box-shadow:var(--shadow);max-width:74ch}
+.stem p{margin:0;font-size:15.5px;color:var(--ink-2)}
+.stem b{color:var(--ink)}
+.stem .src{display:block;margin-top:10px;font-family:"IBM Plex Mono",monospace;font-size:11px;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+
+/* ---- trilho ---- */
+nav.rail{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 92%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-top:34px}
+.rail-in{max-width:1120px;margin:0 auto;padding:9px 24px;display:flex;gap:6px;overflow-x:auto;
+  scrollbar-width:thin;align-items:center}
+.rail a{flex:none;font-size:12.5px;color:var(--ink-2);text-decoration:none;padding:6px 11px;
+  border-radius:999px;border:1px solid transparent;white-space:nowrap;transition:.15s}
+.rail a:hover{background:var(--surface-2);color:var(--ink)}
+.rail a .n{font-family:"IBM Plex Mono",monospace;color:var(--ink-3);margin-right:6px;font-size:11px}
+.rail button.tg{flex:none;margin-left:auto;font:inherit;font-size:12px;background:var(--surface);
+  border:1px solid var(--line);color:var(--ink-2);border-radius:999px;padding:5px 12px;cursor:pointer}
+
+/* ---- capítulo ---- */
+section.ch{padding-top:56px;scroll-margin-top:60px}
+.ch-head{display:flex;gap:16px;align-items:baseline;border-top:1px solid var(--line);padding-top:20px}
+.ch-num{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--accent);
+  letter-spacing:.1em;padding-top:6px}
+.ch-head h2{font-size:clamp(23px,3vw,31px);font-weight:600;letter-spacing:-.01em;line-height:1.15}
+.ch-sub{color:var(--ink-3);font-size:14.5px;margin:6px 0 0;max-width:70ch}
+.plate{display:grid;grid-template-columns:1.25fr .9fr;gap:26px;margin-top:24px;align-items:start}
+@media (max-width:880px){.plate{grid-template-columns:1fr}}
+.fig{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;
+  box-shadow:var(--shadow);overflow:hidden}
+.fig canvas,.fig svg{display:block;width:100%;height:auto;border-radius:8px}
+.figcap{font-size:12px;color:var(--ink-3);margin:10px 2px 0;line-height:1.5}
+.panel{display:flex;flex-direction:column;gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 17px;
+  box-shadow:var(--shadow)}
+.card h3{font-size:13px;font-family:"IBM Plex Mono",monospace;font-weight:500;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:12px}
+.prose{margin-top:22px;max-width:66ch;color:var(--ink-2);font-size:15.5px}
+.prose p{margin:0 0 12px}
+.prose strong{color:var(--ink);font-weight:600}
+
+/* ---- controles ---- */
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{font:inherit;font-size:12.5px;padding:6px 11px;border-radius:8px;cursor:pointer;
+  border:1px solid var(--line);background:var(--surface-2);color:var(--ink-2);transition:.15s}
+.seg button:hover{border-color:var(--accent);color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:root[data-theme="dark"] .seg button[aria-pressed="true"],
+.dk .seg button[aria-pressed="true"]{color:#0B1416}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .seg button[aria-pressed="true"]{color:#0B1416}}
+.sl{margin-top:12px}
+.sl label{display:flex;justify-content:space-between;gap:12px;font-size:12.5px;color:var(--ink-2);margin-bottom:5px}
+.sl label b{font-family:"IBM Plex Mono",monospace;color:var(--ink);font-weight:500}
+input[type=range]{width:100%;accent-color:var(--accent);height:22px}
+.chk{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink-2);cursor:pointer;padding:3px 0}
+.chk input{accent-color:var(--accent);width:15px;height:15px}
+button:focus-visible,a:focus-visible,input:focus-visible,[tabindex]:focus-visible{
+  outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+
+/* ---- veredito ---- */
+.verd{border-radius:12px;padding:13px 15px;border:1px solid;font-size:14px}
+.verd .t{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;display:block;margin-bottom:5px;opacity:.85}
+.verd .h{font-family:"Fraunces",Georgia,serif;font-size:18px;line-height:1.2;display:block;margin-bottom:6px}
+.v-b{background:var(--b-soft);border-color:color-mix(in srgb,var(--b) 40%,transparent);color:var(--b)}
+.v-w{background:var(--w-soft);border-color:color-mix(in srgb,var(--w) 40%,transparent);color:var(--w)}
+.v-d{background:var(--d-soft);border-color:color-mix(in srgb,var(--d) 40%,transparent);color:var(--d)}
+.v-m{background:var(--m-soft);border-color:color-mix(in srgb,var(--m) 40%,transparent);color:var(--m)}
+.verd p{margin:0;color:var(--ink-2)}
+.verd .h,.verd .t{color:inherit}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13px}
+.kv dt{color:var(--ink-3);font-family:"IBM Plex Mono",monospace;font-size:11.5px;
+  letter-spacing:.05em;text-transform:uppercase;padding-top:2px}
+.kv dd{margin:0;color:var(--ink)}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;padding:3px 8px;border-radius:999px;border:1px solid currentColor}
+.t-b{color:var(--b);background:var(--b-soft)} .t-w{color:var(--w);background:var(--w-soft)}
+.t-d{color:var(--d);background:var(--d-soft)} .t-m{color:var(--m);background:var(--m-soft)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
+.steps li{counter-increment:s;position:relative;padding-left:30px;font-size:13.5px;color:var(--ink-2)}
+.steps li::before{content:counter(s);position:absolute;left:0;top:1px;width:20px;height:20px;
+  border-radius:50%;background:var(--accent-soft);color:var(--accent-ink);
+  font-family:"IBM Plex Mono",monospace;font-size:11px;display:grid;place-items:center;font-weight:600}
+.forbid{margin-top:12px;padding:11px 13px;border-radius:10px;background:var(--d-soft);
+  border:1px dashed color-mix(in srgb,var(--d) 45%,transparent);font-size:13px;color:var(--ink-2)}
+.forbid b{color:var(--d)}
+.note{margin-top:12px;padding:11px 13px;border-radius:10px;background:var(--surface-2);
+  border:1px solid var(--line-soft);font-size:13px;color:var(--ink-2)}
+.note b{color:var(--ink)}
+mark{background:var(--w-soft);color:var(--w);padding:.5px 3px;border-radius:3px;font-weight:500}
+.card h3+h3{margin-top:14px}
+::selection{background:var(--accent-soft);color:var(--accent-ink)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<header class="hero">
+  <span class="kicker">ENARE R+ · Cirurgia Geral · Questão 35 · Esôfago</span>
+  <h1>Quatro centímetros de mucosa <em>salmão</em></h1>
+  <p class="lede">O paciente tem 57 anos, refluxo há décadas e um segmento colunar que a segunda
+  leitura confirmou como displasia de baixo grau. Nada de nódulo, nada de sintoma de alarme.
+  A decisão inteira cabe em três perguntas — e a banca planta um distrator para cada uma delas.</p>
+  <div class="stem">
+    <p><b>Questão 35.</b> Homem de 57 anos, com doença do refluxo de longa data, tem endoscopia com
+    segmento de mucosa cor salmão de <b>4 cm</b> acima da junção esofagogástrica, <b>sem nódulos ou
+    irregularidades</b>. As biópsias mostram metaplasia intestinal com <b>displasia de baixo grau,
+    confirmada por segundo patologista</b> experiente em patologia gastrointestinal. Em uso regular
+    de inibidor de bomba de prótons, sem sintomas de alarme.
+    <span class="src">A · mucosectomia de todo o segmento &nbsp;·&nbsp; B · Nissen &nbsp;·&nbsp;
+    C · ablação por radiofrequência + IBP &nbsp;·&nbsp; D · IBP e EDA a cada 3–5 anos &nbsp;·&nbsp;
+    E · esofagectomia subtotal</span></p>
+  </div>
+</header>
+
+<nav class="rail"><div class="rail-in">
+  <a href="#c1"><span class="n">01</span>A endoscopia</a>
+  <a href="#c2"><span class="n">02</span>Por que salmão</a>
+  <a href="#c3"><span class="n">03</span>A escada da displasia</a>
+  <a href="#c4"><span class="n">04</span>Máquina de decisão</a>
+  <a href="#c5"><span class="n">05</span>Profundidade</a>
+  <a href="#c6"><span class="n">06</span>Na mesa</a>
+  <a href="#c7"><span class="n">07</span>Forja</a>
+  <a href="#c8"><span class="n">08</span>Tabela-mãe</a>
+  <button class="tg" id="themeBtn" type="button">◐ tema</button>
+</div></nav>
+
+<div class="wrap">
+
+<!-- ============ 01 ============ -->
+<section class="ch" id="c1">
+  <div class="ch-head"><span class="ch-num">01</span><div>
+    <h2>A endoscopia que o médico viu</h2>
+    <p class="ch-sub">Vista de frente, aparelho em retirada, esôfago distal insuflado. O lúmen escuro
+    ao centro é o estômago. Mexa nos controles até reproduzir o caso da questão — e depois quebre-o.</p>
+  </div></div>
+
+  <div class="plate">
+    <div class="fig">
+      <canvas id="endo" width="660" height="520" role="img"
+        aria-label="Vista endoscópica simulada do esôfago distal com segmento colunar"></canvas>
+      <p class="figcap">Campo endoscópico simulado · a distância radial ao centro corresponde à
+      distância proximal a partir da junção esofagogástrica (topo das pregas gástricas).
+      Barra de escala em centímetros no canto inferior direito.</p>
+    </div>
+
+    <div class="panel">
+      <div class="card">
+        <h3>Cenário</h3>
+        <div class="seg" id="presets"></div>
+      </div>
+
+      <div class="card">
+        <h3>Classificação de Praga</h3>
+        <div class="sl"><label><span>C — extensão circunferencial</span> <b id="lC">0 cm</b></label>
+          <input type="range" id="rC" min="0" max="8" step="0.5" value="0"></div>
+        <div class="sl"><label><span>M — extensão máxima (línguas)</span> <b id="lM">4 cm</b></label>
+          <input type="range" id="rM" min="0" max="10" step="0.5" value="4"></div>
+        <label class="chk"><input type="checkbox" id="cNod"> Lesão visível elevada (Paris 0-IIa)</label>
+        <label class="chk"><input type="checkbox" id="cIsl"> Ilhas de mucosa colunar acima do segmento</label>
+        <label class="chk"><input type="checkbox" id="cNBI"> Cromoscopia digital (NBI)</label>
+        <label class="chk"><input type="checkbox" id="cSea"> Marcar biópsias do protocolo de Seattle</label>
+      </div>
+
+      <div class="verd" id="v1"></div>
+
+      <div class="card">
+        <h3>Leitura do laudo</h3>
+        <dl class="kv" id="kv1"></dl>
+      </div>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p>A junção esofagogástrica não é a linha Z. A JEG é o <strong>topo das pregas gástricas</strong>
+    com o órgão minimamente insuflado; a linha Z é onde o epitélio escamoso termina. Quando as duas
+    coincidem, não há Barrett. Quando a linha Z sobe acima do topo das pregas, o que fica entre elas
+    é epitélio colunar — e é essa distância, em centímetros, que a classificação de Praga mede: o
+    <strong>C</strong> até onde o colunar é circunferencial, o <strong>M</strong> até a ponta da
+    língua mais alta. Ilhas destacadas acima do segmento entram no laudo por escrito, nunca no M.</p>
+    <p>O segmento salmão sozinho não fecha diagnóstico. Barrett exige as duas coisas: mucosa colunar
+    visível <strong>acima</strong> da JEG e biópsia mostrando <strong>metaplasia intestinal com
+    células caliciformes</strong>. Uma linha Z irregular com menos de 1 cm de colunar não deve nem
+    ser biopsiada — biopsiar ali só gera um paciente rotulado e vigiado a vida toda por nada.</p>
+  </div>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="ch" id="c2">
+  <div class="ch-head"><span class="ch-num">02</span><div>
+    <h2>Por que a mucosa fica salmão</h2>
+    <p class="ch-sub">A cor não é pigmento. É a distância entre a superfície e o sangue.
+    Arraste os anos de refluxo e veja o epitélio trocar de arquitetura.</p>
+  </div></div>
+
+  <div class="plate">
+    <div class="fig">
+      <svg id="histo" viewBox="0 0 660 430" role="img"
+        aria-label="Corte histológico esquemático: epitélio escamoso à esquerda, colunar metaplásico à direita"></svg>
+      <p class="figcap">Corte perpendicular à mucosa, superfície voltada para cima (lúmen).
+      Aumento esquemático ≈ 100×. Cores de tecido fixas — não acompanham o tema da página.</p>
+    </div>
+    <div class="panel">
+      <div class="card">
+        <h3>Exposição ácida e biliar</h3>
+        <div class="sl"><label><span>Anos de refluxo não controlado</span> <b id="lY">18 anos</b></label>
+          <input type="range" id="rY" min="0" max="30" step="1" value="18"></div>
+        <div class="seg" id="hLayers"></div>
+      </div>
+      <div class="card">
+        <h3>Os dois fatos, separados</h3>
+        <dl class="kv">
+          <dt>Fato 1</dt><dd>O escamoso estratificado tem 20–25 camadas celulares sobre a lâmina
+            própria. O plexo capilar fica <b>longe</b> da superfície → luz branca volta pálida,
+            perolada.</dd>
+          <dt>Fato 2</dt><dd>O colunar tem <b>uma</b> camada de células sobre criptas rasas, com
+            capilares na lâmina própria a poucas dezenas de micrômetros. O vermelho da hemoglobina
+            atravessa → salmão.</dd>
+          <dt>Corolário</dt><dd>Por isso o NBI, que filtra em 415 nm (absorvido pela hemoglobina),
+            realça exatamente o padrão vascular e de criptas do segmento — e apaga o escamoso.</dd>
+        </dl>
+      </div>
+      <div class="verd v-w"><span class="t">o que a cor não diz</span>
+        <span class="h">Salmão ≠ Barrett</span>
+        <p>Mucosa colunar cárdica, gástrica deslocada e metaplasia intestinal são todas salmão à luz
+        branca. Só a <b>célula caliciforme</b> corada pelo alcian blue fecha o diagnóstico no Brasil
+        e nos EUA. (A escola britânica dispensa a caliciforme — guarde a divergência.)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p>A metaplasia é uma barganha. O escamoso é bom em resistir a atrito e ruim em resistir a pH 1
+    com sais biliares; o colunar intestinal produz muco e bicarbonato e tolera o refluxo. O epitélio
+    troca resistência mecânica por resistência química — e paga com <strong>instabilidade
+    genômica</strong>. A célula que agora se divide numa cripta, sob estímulo inflamatório crônico,
+    acumula perda de <em>CDKN2A</em>, depois de <em>TP53</em>, e é aí que a displasia aparece.</p>
+    <p>Guarde a consequência prática: <strong>o inibidor de bomba trata o refluxo, não o Barrett.</strong>
+    Ele reduz o estímulo, alivia sintoma, cicatriza esofagite e provavelmente diminui progressão —
+    mas não faz o colunar voltar a ser escamoso. Nenhuma droga faz. É por isso que a pergunta da
+    questão 35 não é "qual antissecretor", e sim "o que fazer com o epitélio que já está lá".</p>
+  </div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="ch" id="c3">
+  <div class="ch-head"><span class="ch-num">03</span><div>
+    <h2>A escada da displasia</h2>
+    <p class="ch-sub">Seis degraus. Cada um tem uma histologia, um risco anual e uma conduta
+    diferente. Clique no degrau para trocar tudo de uma vez.</p>
+  </div></div>
+
+  <div class="plate">
+    <div class="fig">
+      <svg id="stair" viewBox="0 0 660 470" role="img"
+        aria-label="Escada da progressão do esôfago de Barrett com histologia esquemática de cada degrau"></svg>
+      <p class="figcap">Altura do degrau proporcional ao risco anual de progressão. Inset histológico
+      à direita: superfície epitelial voltada para cima; núcleos em azul-hematoxilina.</p>
+    </div>
+    <div class="panel">
+      <div class="card"><h3>Degrau</h3><div class="seg" id="stairBtns"></div></div>
+      <div class="verd" id="v3"></div>
+      <div class="card"><h3>O que o patologista vê</h3><dl class="kv" id="kv3"></dl></div>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p>O degrau que a questão entrega — displasia de baixo grau — é o mais traiçoeiro da escada, e
+    não por causa do risco: por causa da <strong>reprodutibilidade</strong>. Concordância entre
+    patologistas gerais para "DBG" é sofrível; na revisão por painel de especialistas, algo entre
+    70% e 85% dos casos rotulados DBG são <strong>rebaixados</strong> para indefinido ou negativo
+    para displasia, porque inflamação regenerativa imita displasia com uma fidelidade cruel.</p>
+    <p>Por isso a segunda leitura não é preciosismo acadêmico — é o que separa duas condutas opostas.
+    Quando o DBG <strong>não</strong> se confirma, o paciente volta para vigilância de segmento sem
+    displasia. Quando se confirma, como no enunciado, o risco anual de progressão sobe para a faixa
+    de 1% a 2% ao ano, e a coorte holandesa do SURF mostrou o que isso significa em três anos:
+    <strong>26,5%</strong> de progressão para alto grau ou adenocarcinoma no braço de vigilância
+    contra <strong>1,5%</strong> no braço ablado. Esse número é a resposta da questão 35.</p>
+  </div>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="ch" id="c4">
+  <div class="ch-head"><span class="ch-num">04</span><div>
+    <h2>A máquina de decisão</h2>
+    <p class="ch-sub">Três perguntas, sempre na mesma ordem. Trocar a ordem é o erro clássico:
+    quem decide a ablação antes de olhar se há nódulo já perdeu o estadiamento.</p>
+  </div></div>
+
+  <div class="plate">
+    <div class="fig">
+      <svg id="mach" viewBox="0 0 660 420" role="img"
+        aria-label="Trilho de decisão em três perguntas para o esôfago de Barrett"></svg>
+      <p class="figcap">Trilho de decisão. O degrau aceso é o ponto em que a resposta se define;
+      degraus à direita dele deixam de ser perguntados.</p>
+    </div>
+    <div class="panel">
+      <div class="card"><h3>Presets de prova</h3><div class="seg" id="mPre"></div></div>
+      <div class="card">
+        <h3>Pergunta 1 — há lesão visível?</h3>
+        <div class="seg" id="q1"></div>
+        <h3 style="margin-top:14px">Pergunta 2 — qual o grau, confirmado?</h3>
+        <div class="seg" id="q2"></div>
+        <h3 style="margin-top:14px">Pergunta 3 — o segmento</h3>
+        <div class="seg" id="q3"></div>
+      </div>
+      <div class="verd" id="v4"></div>
+      <div class="card"><h3>Como se faz</h3><ol class="steps" id="st4"></ol>
+        <div class="forbid" id="fb4"></div>
+        <div class="note" id="nt4"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p>A pergunta 1 existe porque <strong>nódulo é estadiamento, não é alvo de ablação</strong>.
+    Radiofrequência queima e destrói — não devolve peça ao patologista. Se há lesão elevada ou
+    deprimida, ela sai por mucosectomia ou dissecção submucosa, e é essa peça que informa se havia
+    adenocarcinoma intramucoso escondido, se a invasão parou na muscular da mucosa, se há invasão
+    linfovascular. Só depois de o campo ficar plano é que se abla o resto do segmento.</p>
+    <p>A pergunta 3, no caso da questão, quase não pesa: 4 cm é segmento longo, e segmento longo
+    aumenta o risco de progressão e o número de sessões de ablação — mas não muda a indicação, que
+    já foi resolvida pela pergunta 2. Ela pesa muito no cenário <em>sem</em> displasia, onde a única
+    coisa que o comprimento decide é o intervalo da próxima endoscopia.</p>
+  </div>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="ch" id="c5">
+  <div class="ch-head"><span class="ch-num">05</span><div>
+    <h2>A profundidade que escolhe o instrumento</h2>
+    <p class="ch-sub">Toda a diferença entre ablar, ressecar e operar cabe em um milímetro de parede.
+    Escolha o instrumento e veja até onde ele vai.</p>
+  </div></div>
+
+  <div class="plate">
+    <div class="fig">
+      <svg id="wall" viewBox="0 0 660 440" role="img"
+        aria-label="Corte da parede esofágica em camadas com a profundidade alcançada por cada tratamento"></svg>
+      <p class="figcap">Corte perpendicular da parede esofágica distal, mucosa voltada para cima.
+      Escala vertical em micrômetros, comprimida acima de 1.500 µm. Cores de tecido fixas.</p>
+    </div>
+    <div class="panel">
+      <div class="card"><h3>Instrumento</h3><div class="seg" id="wBtns"></div>
+        <div class="sl" id="wSl"><label><span>Circunferência ressecada numa sessão</span> <b id="lW">30%</b></label>
+          <input type="range" id="rW" min="10" max="100" step="5" value="30"></div>
+      </div>
+      <div class="verd" id="v5"></div>
+      <div class="card"><h3>Ficha do instrumento</h3><dl class="kv" id="kv5"></dl></div>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p>A radiofrequência entrega energia numa lâmina de 500 a 700 µm — epitélio, lâmina própria e,
+    no limite, a muscular da mucosa. Ela para <strong>antes</strong> da submucosa, e é exatamente por
+    isso que cicatriza reepitelizando com escamoso em vez de fibrosar em anel: estenose fica na faixa
+    de 5% a 6%. A mucosectomia atravessa a muscular da mucosa e leva submucosa junto — dá peça,
+    dá profundidade de invasão, dá margem — e cobra o preço: ressecar mais da metade da circunferência
+    numa sessão leva a estenose em mais de dois terços dos casos. É o que torna a alternativa A da
+    questão não apenas desnecessária, mas iatrogênica.</p>
+    <p>Na outra ponta, a esofagectomia resolve o problema do linfonodo, que nenhuma terapia endoscópica
+    resolve. O gatilho para ela não é a displasia: é a <strong>invasão submucosa</strong>. Adenocarcinoma
+    intramucoso (T1a) bem diferenciado, sem invasão linfovascular, tem risco de metástase linfonodal
+    abaixo de 2% e é tratado por via endoscópica. Quando a invasão passa de 500 µm na submucosa (sm2/sm3),
+    ou há invasão linfovascular, ou o tumor é pouco diferenciado, o risco linfonodal salta para
+    20% a 25% — e aí a esofagectomia com linfadenectomia volta à mesa.</p>
+  </div>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="ch" id="c6">
+  <div class="ch-head"><span class="ch-num">06</span><div>
+    <h2>Na mesa — a junção que o enunciado mede</h2>
+    <p class="ch-sub">"Quatro centímetros acima da junção esofagogástrica" só tem sentido se você
+    souber de onde a fita começa a medir. Ela começa no topo das pregas gástricas.</p>
+  </div></div>
+
+  <div class="plate">
+    <div class="fig">
+      <svg viewBox="0 0 660 620" role="img"
+        aria-label="Prancha coronal da junção esofagogástrica com o segmento de Barrett de 4 cm">
+        <rect x="0" y="0" width="660" height="620" fill="#F7F3EC"/>
+        <!-- posterior: pilares diafragmáticos -->
+        <path d="M28 300 C 120 296 210 270 262 214 L262 262 C 214 314 126 340 32 344 Z"
+              fill="#C4685C" stroke="#8E4238" stroke-width="1.6"/>
+        <path d="M632 306 C 546 302 452 276 398 214 L398 262 C 452 320 546 346 628 350 Z"
+              fill="#C4685C" stroke="#8E4238" stroke-width="1.6"/>
+        <path d="M262 214 C 288 176 372 176 398 214 L398 262 C 372 226 288 226 262 262 Z"
+              fill="#B4574C" stroke="#8E4238" stroke-width="1.6"/>
+        <!-- ligamento frenoesofágico -->
+        <path d="M262 216 C 240 200 232 184 246 172 L288 186" fill="none" stroke="#D9C9A6" stroke-width="7" stroke-linecap="round"/>
+        <path d="M398 216 C 420 200 428 184 414 172 L372 186" fill="none" stroke="#D9C9A6" stroke-width="7" stroke-linecap="round"/>
+        <!-- estômago: fundo + corpo -->
+        <path d="M356 300 C 402 236 500 226 546 282 C 594 340 578 452 520 512
+                 C 470 564 372 566 322 520 C 292 492 286 430 300 372 Z"
+              fill="#C86A5A" stroke="#8E4238" stroke-width="2"/>
+        <path d="M362 308 C 402 252 490 244 532 294 C 574 346 560 446 508 500
+                 C 464 546 382 548 338 508 C 312 484 306 428 318 376 Z"
+              fill="#E4A28C" stroke="none"/>
+        <!-- rugas gástricas -->
+        <g stroke="#C4705E" stroke-width="5" fill="none" stroke-linecap="round" opacity=".95">
+          <path d="M340 318 C 356 372 358 442 348 500"/>
+          <path d="M378 306 C 392 366 396 444 388 508"/>
+          <path d="M416 302 C 428 366 432 446 424 510"/>
+          <path d="M454 306 C 466 368 468 444 460 502"/>
+          <path d="M492 320 C 502 376 502 442 494 488"/>
+        </g>
+        <!-- esofago: parede -->
+        <path d="M256 24 L256 306 L404 306 L404 24 Z" fill="#C4685C" stroke="#8E4238" stroke-width="2"/>
+        <!-- lumen mucosa escamosa -->
+        <rect x="272" y="24" width="116" height="282" fill="#EFE0D2"/>
+        <!-- segmento colunar 4 cm: 1 cm = 15 px, GEJ y=306 -->
+        <rect x="272" y="246" width="116" height="60" fill="#D9765C"/>
+        <!-- linha Z irregular em y=246 -->
+        <path d="M272 246 L284 238 L296 250 L308 234 L320 248 L332 240 L344 252 L356 236 L368 248 L380 242 L388 248"
+              fill="none" stroke="#A8442F" stroke-width="2.4"/>
+        <!-- topo das pregas gastricas = JEG, y=306 -->
+        <line x1="266" y1="306" x2="394" y2="306" stroke="#7A2F22" stroke-width="2.4" stroke-dasharray="7 5"/>
+        <!-- regua -->
+        <g stroke="#8A7C74" stroke-width="1.4" fill="none">
+          <line x1="228" y1="306" x2="228" y2="234"/>
+          <line x1="222" y1="306" x2="234" y2="306"/><line x1="222" y1="291" x2="234" y2="291"/>
+          <line x1="222" y1="276" x2="234" y2="276"/><line x1="222" y1="261" x2="234" y2="261"/>
+          <line x1="222" y1="246" x2="234" y2="246"/>
+        </g>
+        <g font-family="IBM Plex Mono, monospace" font-size="11" fill="#6B5C54" text-anchor="end">
+          <text x="216" y="310">0</text><text x="216" y="295">1</text><text x="216" y="280">2</text>
+          <text x="216" y="265">3</text><text x="216" y="250">4 cm</text>
+        </g>
+        <!-- linhas-guia sem ponta -->
+        <g stroke="#5B4E48" stroke-width="1.2" fill="none">
+          <line x1="330" y1="120" x2="470" y2="96"/>
+          <line x1="300" y1="243" x2="150" y2="200"/>
+          <line x1="330" y1="276" x2="486" y2="196"/>
+          <line x1="252" y1="186" x2="140" y2="150"/>
+          <line x1="286" y1="196" x2="120" y2="252"/>
+          <line x1="352" y1="306" x2="188" y2="378"/>
+          <line x1="372" y1="316" x2="252" y2="424"/>
+          <line x1="440" y1="420" x2="590" y2="440"/>
+        </g>
+        <!-- marcadores -->
+        <g font-family="IBM Plex Mono, monospace" font-size="13" font-weight="600" text-anchor="middle">
+          <circle cx="482" cy="94" r="13" fill="#FFFFFF" stroke="#5B4E48" stroke-width="1.4"/><text x="482" y="99" fill="#241D1B">1</text>
+          <circle cx="138" cy="198" r="13" fill="#FFFFFF" stroke="#5B4E48" stroke-width="1.4"/><text x="138" y="203" fill="#241D1B">2</text>
+          <circle cx="498" cy="192" r="13" fill="#FFFFFF" stroke="#5B4E48" stroke-width="1.4"/><text x="498" y="197" fill="#241D1B">3</text>
+          <circle cx="128" cy="146" r="13" fill="#FFFFFF" stroke="#5B4E48" stroke-width="1.4"/><text x="128" y="151" fill="#241D1B">4</text>
+          <circle cx="108" cy="256" r="13" fill="#FFFFFF" stroke="#5B4E48" stroke-width="1.4"/><text x="108" y="261" fill="#241D1B">5</text>
+          <circle cx="176" cy="382" r="13" fill="#FFFFFF" stroke="#5B4E48" stroke-width="1.4"/><text x="176" y="387" fill="#241D1B">6</text>
+          <circle cx="240" cy="430" r="13" fill="#FFFFFF" stroke="#5B4E48" stroke-width="1.4"/><text x="240" y="435" fill="#241D1B">7</text>
+          <circle cx="602" cy="444" r="13" fill="#FFFFFF" stroke="#5B4E48" stroke-width="1.4"/><text x="602" y="449" fill="#241D1B">8</text>
+        </g>
+        <!-- orientacao -->
+        <g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#6B5C54">
+          <text x="30" y="44">CRANIAL ↑</text>
+          <text x="30" y="60">← DIREITA DO PACIENTE</text>
+          <text x="500" y="600" text-anchor="end">ESQUERDA DO PACIENTE →</text>
+        </g>
+        <line x1="560" y1="576" x2="620" y2="576" stroke="#5B4E48" stroke-width="2"/>
+        <text x="590" y="596" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#6B5C54" text-anchor="middle">4 cm</text>
+      </svg>
+      <p class="figcap"><b>Contrato de vista</b> — Vista coronal anterior do hiato esofágico, com o
+      esôfago distal aberto em corte frontal. Paciente em decúbito dorsal horizontal; observador de
+      frente, ao lado direito da mesa. Cranial em cima, direita do paciente à esquerda da imagem.
+      Âncora fixa: o anel do hiato formado pelo pilar diafragmático direito. Calibres da parede e
+      espessura das rugas ampliados para leitura; os pilares foram desenhados antes do esôfago porque
+      passam <b>atrás</b> dele.</p>
+      <p class="figcap"><b>1</b> mucosa escamosa · <b>2</b> linha Z (limite escamocolunar) ·
+      <b>3</b> segmento colunar metaplásico, 4 cm · <b>4</b> ligamento frenoesofágico ·
+      <b>5</b> pilar diafragmático direito envolvendo o hiato · <b>6</b> junção esofagogástrica =
+      topo das pregas gástricas (linha tracejada) · <b>7</b> ângulo de His · <b>8</b> pregas gástricas.</p>
+    </div>
+
+    <div class="panel">
+      <div class="card"><h3>Por que a JEG é o topo das pregas</h3>
+        <dl class="kv">
+          <dt>Endoscopia</dt><dd>Com insuflação <b>mínima</b>. Insuflar demais achata as pregas,
+            empurra a JEG para baixo e <b>superestima</b> o comprimento do Barrett.</dd>
+          <dt>Hérnia hiatal</dt><dd>Separa o anel do hiato (pilar) do topo das pregas. Medir a partir
+            do pilar em vez das pregas é o erro que transforma hérnia de 3 cm em "Barrett longo".</dd>
+          <dt>Linha Z</dt><dd>É o limite do <b>epitélio</b>, não da anatomia. Entre a linha Z e a JEG
+            está o segmento a ser medido e biopsiado.</dd>
+          <dt>Consequência</dt><dd>Praga C0M4 no caso: nenhuma extensão circunferencial descrita,
+            língua máxima de 4 cm. Segmento <b>longo</b> (≥ 3 cm).</dd>
+        </dl>
+      </div>
+      <div class="verd v-m"><span class="t">variação anatômica de maior risco</span>
+        <span class="h">O pilar esquerdo e a artéria frênica inferior</span>
+        <p>Em cirurgia do hiato, a dissecção do pilar esquerdo é onde se rasga a pleura esquerda e
+        onde a artéria frênica inferior esquerda — que pode originar-se da aorta acima do tronco
+        celíaco ou do próprio tronco — sangra por retração. Não muda a conduta desta questão, mas é
+        o campo que você abre se algum dia esse paciente virar candidato a fundoplicatura.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 ============ -->
+<section class="ch" id="c7">
+  <div class="ch-head"><span class="ch-num">07</span><div>
+    <h2>A forja</h2>
+    <p class="ch-sub">A questão-mãe e oito pivôs. Em cada um, um único dado muda —
+    <mark>marcado assim</mark> — e a conduta vira. Responda antes de abrir o comentário.</p>
+  </div></div>
+  <div class="card" style="margin-top:22px">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap">
+      <div class="seg" id="fNav"></div>
+      <div class="mono" style="font-size:13px;color:var(--ink-2)" id="fScore"></div>
+    </div>
+    <div id="fBody" style="margin-top:18px"></div>
+  </div>
+</section>
+
+<!-- ============ 08 ============ -->
+<section class="ch" id="c8">
+  <div class="ch-head"><span class="ch-num">08</span><div>
+    <h2>A tabela-mãe</h2>
+    <p class="ch-sub">Um cartão por linha de conduta. A borda superior codifica a classe do
+    veredito. Se você lembrar só desta seção na véspera da prova, já resolve o tema.</p>
+  </div></div>
+  <div id="motherGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:14px;margin-top:22px"></div>
+  <div class="prose">
+    <p><strong>Divergência de banca.</strong> O American College of Gastroenterology (2022) coloca a
+    terapia endoscópica de erradicação como conduta <em>preferida</em> na displasia de baixo grau
+    confirmada, mas aceita vigilância anual como alternativa razoável para o paciente que a escolher
+    após decisão compartilhada. A European Society of Gastrointestinal Endoscopy é mais dura: DBG
+    confirmada por dois patologistas em duas endoscopias tem indicação de ablação, ponto. Quando a
+    questão faz questão de dizer <em>"confirmada por segundo patologista experiente"</em>, ela está
+    fechando a porta da vigilância — e a alternativa que sobra é a ablação. Repare também que o
+    distrator de vigilância nunca oferece o intervalo certo para DBG (6 a 12 meses): ele oferece
+    3 a 5 anos, que é o intervalo do Barrett <em>sem</em> displasia. É o mesmo truque de sempre —
+    trocar o grau e manter o intervalo.</p>
+    <p><strong>Sua armadilha.</strong> O padrão que aparece nos seus erros é resolver o diagnóstico
+    nomeado e não o modificador do cenário. Aqui o modificador é a segunda leitura do patologista.
+    Sem ela, esta mesma vinheta teria gabarito "otimizar IBP e repetir"; com ela, o gabarito é ablar.
+    Antes de marcar, procure a frase que qualifica o dado — <em>confirmada</em>, <em>sem nódulos</em>,
+    <em>em uso regular de IBP</em> — porque é ali que a banca escondeu a conduta.</p>
+  </div>
+</section>
+
+</div>
+<script>
+(function(){
+"use strict";
+var $=function(s){return document.querySelector(s)};
+var ce=function(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
+
+/* ---------- tema ---------- */
+$("#themeBtn").addEventListener("click",function(){
+  var r=document.documentElement, cur=r.getAttribute("data-theme");
+  if(!cur){var d=window.matchMedia("(prefers-color-scheme: dark)").matches;r.setAttribute("data-theme",d?"light":"dark");}
+  else r.setAttribute("data-theme",cur==="dark"?"light":"dark");
+});
+
+function segment(host,items,get,set){
+  host.innerHTML="";
+  items.forEach(function(it){
+    var b=ce("button",null,it.l);b.type="button";
+    b.setAttribute("aria-pressed",String(get()===it.v));
+    b.addEventListener("click",function(){set(it.v);
+      Array.prototype.forEach.call(host.children,function(c,i){c.setAttribute("aria-pressed",String(items[i].v===get()))});
+    });
+    host.appendChild(b);
+  });
+}
+
+/* ================= 01 · endoscopia ================= */
+var E={C:0,M:4,nod:false,isl:false,nbi:false,sea:false};
+var cv=$("#endo"),cx2=cv.getContext("2d");
+var CXc=330,CYc=258,rG=62,K=22;
+function rnd(s){var x=Math.sin(s*127.1+s*311.7)*43758.5453;return x-Math.floor(x);}
+var PAL={
+ wl:{sq:"#E9DAC9",sqd:"#D8C3B0",sal:"#D9765C",sald:"#BC5C46",gas:"#C77A61",lum:"#26100D",z:"#A03B27",pit:"#B85742"},
+ nbi:{sq:"#A9CCC6",sqd:"#8CB4AD",sal:"#7C7440",sald:"#5C5528",gas:"#6B6134",lum:"#07120F",z:"#3E3A16",pit:"#4A441C"}
+};
+function tongueR(a){
+  var base=rG+E.C*K, mx=rG+E.M*K;
+  if(mx<=base)return base;
+  var v=0;
+  for(var i=0;i<5;i++){
+    var ang=rnd(i+3)*Math.PI*2, w=0.30+rnd(i+9)*0.34, amp=0.45+rnd(i+17)*0.55;
+    var d=Math.abs(((a-ang+Math.PI*3)%(Math.PI*2))-Math.PI);
+    v=Math.max(v,amp*Math.exp(-(d*d)/(2*w*w)));
+  }
+  v=Math.max(v,0.16+0.10*Math.sin(a*7.0));
+  return base+(mx-base)*Math.min(1,v);
+}
+function drawEndo(){
+  var P=E.nbi?PAL.nbi:PAL.wl, W=cv.width,H=cv.height;
+  cx2.clearRect(0,0,W,H);
+  cx2.fillStyle=P.sq;cx2.fillRect(0,0,W,H);
+  // pregas longitudinais do esofago
+  cx2.save();cx2.translate(CXc,CYc);
+  for(var i=0;i<26;i++){
+    var a=i/26*Math.PI*2+0.11;
+    cx2.strokeStyle=P.sqd;cx2.globalAlpha=.55;cx2.lineWidth=6+rnd(i)*7;
+    cx2.beginPath();cx2.moveTo(Math.cos(a)*70,Math.sin(a)*70);
+    cx2.lineTo(Math.cos(a+0.05)*500,Math.sin(a+0.05)*500);cx2.stroke();
+  }
+  cx2.globalAlpha=1;cx2.restore();
+  // segmento colunar
+  var rmaxA=rG+E.M*K;
+  if(E.M>0.05){
+    cx2.save();cx2.translate(CXc,CYc);
+    cx2.beginPath();
+    for(var t=0;t<=360;t++){var a=t*Math.PI/180,r=tongueR(a);
+      var x=Math.cos(a)*r,y=Math.sin(a)*r; t?cx2.lineTo(x,y):cx2.moveTo(x,y);}
+    cx2.closePath();
+    var g=cx2.createRadialGradient(0,0,rG*0.7,0,0,Math.max(rmaxA,rG+8));
+    g.addColorStop(0,P.sald);g.addColorStop(1,P.sal);
+    cx2.fillStyle=g;cx2.fill();
+    // pit pattern
+    cx2.save();cx2.clip();cx2.globalAlpha=E.nbi?.5:.28;cx2.fillStyle=P.pit;
+    for(var k=0;k<620;k++){
+      var a2=rnd(k*1.7)*Math.PI*2, rr=rG+rnd(k*2.3)*(rmaxA-rG+6);
+      cx2.beginPath();cx2.arc(Math.cos(a2)*rr,Math.sin(a2)*rr,1.1+rnd(k*3.1)*1.5,0,6.3);cx2.fill();
+    }
+    cx2.restore();
+    // linha Z
+    cx2.beginPath();
+    for(var t2=0;t2<=360;t2++){var a3=t2*Math.PI/180,r3=tongueR(a3);
+      var x3=Math.cos(a3)*r3,y3=Math.sin(a3)*r3;t2?cx2.lineTo(x3,y3):cx2.moveTo(x3,y3);}
+    cx2.closePath();cx2.strokeStyle=P.z;cx2.lineWidth=2.2;cx2.stroke();
+    cx2.restore();
+  }
+  // ilhas
+  if(E.isl){cx2.save();cx2.translate(CXc,CYc);cx2.fillStyle=P.sal;
+    for(var j=0;j<7;j++){var aj=rnd(j*5.4)*Math.PI*2, rj=rmaxA+18+rnd(j*7.7)*70;
+      cx2.beginPath();cx2.ellipse(Math.cos(aj)*rj,Math.sin(aj)*rj,7+rnd(j*2)*7,5+rnd(j*4)*5,aj,0,6.3);cx2.fill();}
+    cx2.restore();}
+  // estomago / pregas gastricas
+  cx2.save();cx2.translate(CXc,CYc);
+  cx2.beginPath();cx2.arc(0,0,rG,0,6.3);cx2.fillStyle=P.gas;cx2.fill();
+  cx2.strokeStyle=P.sald;cx2.lineWidth=7;cx2.globalAlpha=.7;
+  for(var f=0;f<9;f++){var af=f/9*Math.PI*2+0.3;
+    cx2.beginPath();cx2.moveTo(Math.cos(af)*20,Math.sin(af)*20);
+    cx2.lineTo(Math.cos(af+0.12)*rG,Math.sin(af+0.12)*rG);cx2.stroke();}
+  cx2.globalAlpha=1;
+  var gl=cx2.createRadialGradient(0,0,2,0,0,30);
+  gl.addColorStop(0,P.lum);gl.addColorStop(1,"rgba(0,0,0,0)");
+  cx2.fillStyle=gl;cx2.beginPath();cx2.arc(0,0,30,0,6.3);cx2.fill();
+  cx2.restore();
+  // nodulo
+  if(E.nod){
+    var an=-0.9, rn=rG+Math.max(14,(E.M*K)*0.55);
+    var nx=CXc+Math.cos(an)*rn, ny=CYc+Math.sin(an)*rn;
+    cx2.save();
+    cx2.beginPath();cx2.ellipse(nx,ny,26,18,an,0,6.3);
+    var gn=cx2.createRadialGradient(nx-8,ny-7,2,nx,ny,28);
+    gn.addColorStop(0,E.nbi?"#9A8F4E":"#EE9E82");gn.addColorStop(1,P.sald);
+    cx2.fillStyle=gn;cx2.fill();
+    cx2.strokeStyle=P.z;cx2.lineWidth=1.6;cx2.stroke();
+    cx2.restore();
+    cx2.strokeStyle=E.nbi?"#EAF2EE":"#3A1C15";cx2.lineWidth=1.6;
+    cx2.beginPath();cx2.moveTo(nx+30,ny-22);cx2.lineTo(nx+86,ny-58);cx2.stroke();
+    cx2.fillStyle=E.nbi?"#EAF2EE":"#3A1C15";
+    cx2.font="600 13px 'IBM Plex Mono', monospace";cx2.textAlign="left";
+    cx2.fillText("Paris 0-IIa · 8 mm",nx+90,ny-56);
+  }
+  // biopsias de Seattle
+  if(E.sea&&E.M>=1){
+    var step=2;cx2.save();cx2.translate(CXc,CYc);
+    cx2.strokeStyle=E.nbi?"#E9F3EF":"#2F1712";cx2.lineWidth=1.7;
+    for(var cm=1;cm<=E.M;cm+=step){
+      var rr2=rG+cm*K;
+      for(var q=0;q<4;q++){var aq=q*Math.PI/2+0.4;
+        var px=Math.cos(aq)*rr2,py=Math.sin(aq)*rr2;
+        cx2.beginPath();cx2.moveTo(px-5,py-5);cx2.lineTo(px+5,py+5);
+        cx2.moveTo(px+5,py-5);cx2.lineTo(px-5,py+5);cx2.stroke();}
+    }
+    cx2.restore();
+  }
+  // brilho especular
+  var sp=cx2.createRadialGradient(CXc-150,CYc-120,10,CXc-150,CYc-120,240);
+  sp.addColorStop(0,"rgba(255,255,255,0.22)");sp.addColorStop(1,"rgba(255,255,255,0)");
+  cx2.fillStyle=sp;cx2.fillRect(0,0,cv.width,cv.height);
+  // vinheta (periferia mais iluminada, centro escuro)
+  var vg=cx2.createRadialGradient(CXc,CYc,40,CXc,CYc,430);
+  vg.addColorStop(0,"rgba(0,0,0,0.34)");vg.addColorStop(.35,"rgba(0,0,0,0.05)");
+  vg.addColorStop(1,"rgba(0,0,0,0)");
+  cx2.fillStyle=vg;cx2.fillRect(0,0,W,H);
+  // rotulos
+  cx2.font="500 12px 'IBM Plex Mono', monospace";cx2.textAlign="left";
+  cx2.fillStyle=E.nbi?"#DCEDE7":"#3A1C15";
+  cx2.fillText(E.nbi?"NBI · 415 nm":"LUZ BRANCA",16,26);
+  cx2.fillText("ESÔFAGO DISTAL · RETIRADA",16,44);
+  cx2.textAlign="right";
+  cx2.fillText("PRAGA  C"+E.C.toFixed(1).replace(".0","")+" M"+E.M.toFixed(1).replace(".0",""),W-16,26);
+  // barra de escala
+  cx2.strokeStyle=E.nbi?"#DCEDE7":"#3A1C15";cx2.lineWidth=2;
+  cx2.beginPath();cx2.moveTo(W-16-2*K,H-30);cx2.lineTo(W-16,H-30);cx2.stroke();
+  cx2.fillText("2 cm",W-16,H-38);
+  // JEG
+  cx2.setLineDash([6,5]);cx2.lineWidth=1.6;
+  cx2.strokeStyle=E.nbi?"#DCEDE7":"#48231B";
+  cx2.beginPath();cx2.arc(CXc,CYc,rG,0,6.3);cx2.stroke();cx2.setLineDash([]);
+  cx2.textAlign="left";cx2.font="500 11px 'IBM Plex Mono', monospace";
+  cx2.fillText("JEG · topo das pregas",CXc+rG+8,CYc+rG+4);
+}
+function verdict1(){
+  var v=$("#v1"),kv=$("#kv1"),cls,h,p,ext,nx;
+  if(E.M<1){cls="v-b";h="Isto não é Barrett";p="Menos de 1 cm de colunar acima da JEG é linha Z irregular. Não biopsie: rotular aqui gera vigilância vitalícia sem benefício.";ext="—";nx="Nenhum seguimento endoscópico por Barrett.";}
+  else if(E.nod){cls="v-d";h="Lesão visível — ela manda";p="Nódulo ou irregularidade interrompe qualquer plano de ablação. A lesão sai por ressecção endoscópica, que estadeia a profundidade de invasão.";ext=(E.M>=3?"longo":"curto");nx="EMR/ESD da lesão · depois ablar o segmento residual.";}
+  else if(E.M>=3){cls="v-w";h="Segmento longo (≥ 3 cm)";p="Maior superfície metaplásica, maior risco de progressão e mais sessões de ablação. O comprimento define o intervalo quando não há displasia.";ext="longo";nx="Biópsias de Seattle a cada 1–2 cm em 4 quadrantes.";}
+  else {cls="v-b";h="Segmento curto (1–3 cm)";p="Barrett de fato, mas de menor risco. O comprimento sozinho nunca indica tratamento — quem indica é a displasia.";ext="curto";nx="Biópsias de Seattle a cada 2 cm em 4 quadrantes.";}
+  v.className="verd "+cls;
+  v.innerHTML='<span class="t">leitura do campo</span><span class="h">'+h+'</span><p>'+p+'</p>';
+  kv.innerHTML="";
+  var rows=[["Praga","C"+E.C.toFixed(1).replace(".0","")+" M"+E.M.toFixed(1).replace(".0","")+"  ("+E.M.toFixed(1).replace(".0","")+" cm de extensão máxima)"],
+    ["Segmento",ext],
+    ["Ilhas",E.isl?"presentes acima do segmento — descrever, não somar ao M":"ausentes"],
+    ["Lesão",E.nod?"<b>elevada, Paris 0-IIa</b>":"nenhuma irregularidade"],
+    ["Próximo passo",nx]];
+  rows.forEach(function(r){kv.appendChild(ce("dt",null,r[0]));kv.appendChild(ce("dd",null,r[1]));});
+}
+function sync1(){
+  if(E.C>E.M)E.C=E.M;
+  $("#rC").max=String(Math.max(0,E.M));
+  $("#rC").value=String(E.C);$("#rM").value=String(E.M);
+  $("#lC").textContent=E.C.toFixed(1).replace(".0","")+" cm";
+  $("#lM").textContent=E.M.toFixed(1).replace(".0","")+" cm";
+  $("#cNod").checked=E.nod;$("#cIsl").checked=E.isl;$("#cNBI").checked=E.nbi;$("#cSea").checked=E.sea;
+  drawEndo();verdict1();
+}
+var PRE1=[{l:"Caso da questão",v:{C:0,M:4,nod:false,isl:false}},
+ {l:"Linha Z irregular",v:{C:0,M:0.5,nod:false,isl:false}},
+ {l:"Barrett curto",v:{C:1,M:2,nod:false,isl:false}},
+ {l:"Longo circunferencial",v:{C:6,M:8,nod:false,isl:false}},
+ {l:"Nódulo no segmento",v:{C:0,M:4,nod:true,isl:false}},
+ {l:"Ilhas pós-ablação",v:{C:0,M:0.5,nod:false,isl:true}}];
+(function(){var h=$("#presets");
+ PRE1.forEach(function(p){var b=ce("button",null,p.l);b.type="button";
+  b.addEventListener("click",function(){E.C=p.v.C;E.M=p.v.M;E.nod=p.v.nod;E.isl=p.v.isl;
+    Array.prototype.forEach.call(h.children,function(c){c.setAttribute("aria-pressed","false")});
+    b.setAttribute("aria-pressed","true");sync1();});
+  h.appendChild(b);});
+ h.children[0].setAttribute("aria-pressed","true");})();
+$("#rC").addEventListener("input",function(){E.C=parseFloat(this.value);sync1();});
+$("#rM").addEventListener("input",function(){E.M=parseFloat(this.value);sync1();});
+["cNod|nod","cIsl|isl","cNBI|nbi","cSea|sea"].forEach(function(s){
+  var p=s.split("|");$("#"+p[0]).addEventListener("change",function(){E[p[1]]=this.checked;sync1();});});
+sync1();
+
+/* ================= 02 · histologia ================= */
+var H={y:18,vasos:true,mucina:true,rot:true};
+function drawHisto(){
+  var bx=Math.round(612-H.y*14.4);
+  var s='';
+  s+='<rect x="0" y="0" width="660" height="430" fill="#F3EBE1"/>';
+  s+='<rect x="0" y="0" width="660" height="52" fill="#EDE2D6"/>';
+  s+='<text x="14" y="24" font-family="IBM Plex Mono, monospace" font-size="11" fill="#7A675C">LÚMEN · ácido + sais biliares</text>';
+  // lamina propria + muscular da mucosa
+  s+='<rect x="0" y="300" width="660" height="72" fill="#EBD6C6"/>';
+  s+='<rect x="0" y="372" width="660" height="18" fill="#C98F7A"/>';
+  s+='<rect x="0" y="390" width="660" height="40" fill="#F0DEC8"/>';
+  // escamoso
+  var rows=[{y:290,rx:7,ry:7,n:5.2},{y:266,rx:8,ry:6.4,n:4.6},{y:242,rx:9,ry:5.6,n:4.0},
+            {y:220,rx:10.5,ry:4.8,n:3.4},{y:198,rx:12,ry:4.2,n:3.0},{y:176,rx:13.5,ry:3.6,n:2.6},
+            {y:154,rx:15,ry:3.2,n:2.2},{y:132,rx:16.5,ry:2.8,n:2.0},{y:110,rx:18,ry:2.4,n:1.8},
+            {y:88,rx:19,ry:2.2,n:1.6},{y:68,rx:20,ry:2,n:1.5}];
+  s+='<g>';
+  rows.forEach(function(r,ri){
+    for(var x=16;x<bx-12;x+=r.rx*2+3){
+      s+='<ellipse cx="'+x+'" cy="'+r.y+'" rx="'+r.rx+'" ry="'+(r.ry+3)+'" fill="#F6E7DA" stroke="#D9BCA6" stroke-width="0.7"/>';
+      s+='<ellipse cx="'+x+'" cy="'+r.y+'" rx="'+r.n+'" ry="'+r.n*0.85+'" fill="#4C4A7C" opacity="'+(0.86-ri*0.05)+'"/>';
+    }
+  });
+  s+='</g>';
+  // colunar metaplasico: criptas
+  s+='<g>';
+  var cw=44,x0=bx+6;
+  for(var cxp=x0;cxp<652;cxp+=cw){
+    s+='<path d="M'+cxp+' 66 L'+cxp+' 250 Q'+(cxp+cw/2)+' 300 '+(cxp+cw-6)+' 250 L'+(cxp+cw-6)+' 66 Z" fill="#F7E3D2" stroke="#D2A98C" stroke-width="1.2"/>';
+    // celulas colunares nas duas paredes
+    for(var yy=76;yy<252;yy+=17){
+      s+='<rect x="'+(cxp+2)+'" y="'+yy+'" width="11" height="15" rx="3" fill="#F2D2BB" stroke="#D2A98C" stroke-width="0.6"/>';
+      s+='<circle cx="'+(cxp+7.5)+'" cy="'+(yy+11)+'" r="3.4" fill="#4C4A7C"/>';
+      s+='<rect x="'+(cxp+cw-19)+'" y="'+yy+'" width="11" height="15" rx="3" fill="#F2D2BB" stroke="#D2A98C" stroke-width="0.6"/>';
+      s+='<circle cx="'+(cxp+cw-13.5)+'" cy="'+(yy+11)+'" r="3.4" fill="#4C4A7C"/>';
+    }
+    if(H.mucina){
+      [110,168,220].forEach(function(gy,gi){
+        var gx=cxp+(gi%2?cw-14:8);
+        s+='<ellipse cx="'+gx+'" cy="'+gy+'" rx="7.5" ry="9.5" fill="#3D6FA8" opacity="0.82"/>';
+        s+='<ellipse cx="'+gx+'" cy="'+(gy-5)+'" rx="4" ry="4" fill="#7FA9D6" opacity="0.75"/>';
+      });
+    }
+  }
+  s+='</g>';
+  // capilares
+  if(H.vasos){
+    s+='<g stroke="#B23A2E" fill="none" stroke-width="3.4" stroke-linecap="round" opacity=".9">';
+    for(var vx=24;vx<bx-20;vx+=54){s+='<path d="M'+vx+' 340 q 14 -14 28 0 q 14 14 28 0"/>';}
+    for(var vx2=bx+10;vx2<646;vx2+=48){
+      s+='<path d="M'+vx2+' 340 q 12 -12 24 0"/>';
+      s+='<path d="M'+(vx2+10)+' 296 q 8 -30 16 -44" stroke-width="2.6"/>';
+    }
+    s+='</g>';
+  }
+  // divisor
+  s+='<line x1="'+bx+'" y1="52" x2="'+bx+'" y2="372" stroke="#8E5B3F" stroke-width="2" stroke-dasharray="8 5"/>';
+  if(H.rot){
+    s+='<g font-family="IBM Plex Mono, monospace" font-size="11.5" fill="#5B4438">';
+    s+='<text x="16" y="418">ESCAMOSO ESTRATIFICADO · ~25 camadas · capilar a ~600 µm</text>';
+    s+='<text x="646" y="418" text-anchor="end">COLUNAR INTESTINAL · 1 camada · capilar a ~100 µm</text>';
+    s+='<text x="'+(bx+8)+'" y="46">LINHA Z</text>';
+    s+='</g>';
+    s+='<g font-family="IBM Plex Sans, sans-serif" font-size="11.5" fill="#3D6FA8" font-weight="600">';
+    if(H.mucina)s+='<text x="'+(x0+2)+'" y="272">células caliciformes (alcian blue +)</text>';
+    s+='</g>';
+    s+='<text x="16" y="366" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#7A4A38">MUSCULAR DA MUCOSA</text>';
+  }
+  $("#histo").innerHTML=s;
+}
+(function(){
+  var host=$("#hLayers");
+  [["vasos","Capilares"],["mucina","Mucina / caliciformes"],["rot","Rótulos"]].forEach(function(p){
+    var b=ce("button",null,p[1]);b.type="button";b.setAttribute("aria-pressed","true");
+    b.addEventListener("click",function(){H[p[0]]=!H[p[0]];b.setAttribute("aria-pressed",String(H[p[0]]));drawHisto();});
+    host.appendChild(b);
+  });
+})();
+$("#rY").addEventListener("input",function(){H.y=parseInt(this.value,10);
+  $("#lY").textContent=H.y+(H.y===1?" ano":" anos");drawHisto();});
+drawHisto();
+
+/* ================= 03 · escada ================= */
+var STEPS=[
+ {k:"Sem displasia",risk:0.33,cls:"b",strat:0.15,atip:0.15,inv:0,
+  hist:["Núcleos basais, uniformes, alinhados na base da célula","Maturação preservada até a superfície","Caliciformes bem formadas, mucina abundante"],
+  cond:"IBP + vigilância endoscópica",int:"C&lt;3 cm: 5 anos · C≥3 cm: 3 anos",
+  txt:"O epitélio metaplásico sem displasia progride para adenocarcinoma em torno de 0,3% ao ano. Vigiar é suficiente — e o comprimento do segmento define o intervalo."},
+ {k:"Indefinido",risk:0.6,cls:"m",strat:0.35,atip:0.35,inv:0,
+  hist:["Atipia presente, mas em campo inflamado","Não se distingue regeneração de displasia verdadeira","Superfície frequentemente não avaliável"],
+  cond:"Otimizar IBP e repetir a endoscopia",int:"nova EDA em 3–6 meses",
+  txt:"Não é um grau — é uma declaração de incerteza do patologista. Some a inflamação com dose plena de IBP por 8 a 12 semanas e rebiopsie: a maioria volta como negativo para displasia."},
+ {k:"Baixo grau",risk:1.5,cls:"w",strat:0.62,atip:0.6,inv:0,
+  hist:["Núcleos alongados, hipercromáticos, estratificados","Estratificação limitada à metade basal da célula","Atipia <b>alcança a superfície</b> — é isso que separa de regeneração","Relação núcleo/citoplasma aumentada, mitoses presentes"],
+  cond:"Ablação por radiofrequência + IBP",int:"confirmar com 2º patologista antes de qualquer coisa",
+  txt:"O degrau da questão 35. Confirmado por segunda leitura especializada, o risco de progressão a três anos foi de 26,5% sob vigilância contra 1,5% após ablação (SURF, JAMA 2014)."},
+ {k:"Alto grau",risk:7,cls:"d",strat:0.9,atip:0.9,inv:0,
+  hist:["Perda completa da polaridade nuclear","Arquitetura glandular complexa: cribriforme, brotamentos","Núcleos volumosos, nucléolos evidentes, mitoses atípicas","Membrana basal ainda íntegra"],
+  cond:"Terapia endoscópica de erradicação",int:"pós-CRIM: 3, 6 e 12 meses, depois anual",
+  txt:"Risco de progressão de 6% a 10% ao ano, e em até 13% dos casos já existe adenocarcinoma oculto. Mesmo assim a conduta não é esofagectomia: é ablação, precedida de ressecção de qualquer lesão visível."},
+ {k:"T1a intramucoso",risk:10,cls:"d",strat:1,atip:1,inv:1,
+  hist:["Invasão da lâmina própria, contida pela muscular da mucosa","Glândulas irregulares infiltrando o estroma","Risco de metástase linfonodal &lt; 2% se bem diferenciado e sem invasão linfovascular"],
+  cond:"Ressecção endoscópica (EMR/ESD) + ablação do restante",int:"vigilância trimestral no 1º ano",
+  txt:"Ainda é doença de tratamento endoscópico. A peça da ressecção é que autoriza essa decisão — ela mostra que a invasão parou na muscular da mucosa."},
+ {k:"T1b submucoso",risk:22,cls:"d",strat:1,atip:1,inv:2,
+  hist:["Invasão além da muscular da mucosa, dentro da submucosa","sm1 superficial (&lt; 500 µm) pode ser individualizado","sm2/sm3, invasão linfovascular ou pouco diferenciado: risco linfonodal de 20% a 25%"],
+  cond:"Esofagectomia com linfadenectomia",int:"discutir neoadjuvância conforme estadiamento",
+  txt:"O plexo linfático da submucosa esofágica é rico e longitudinal. Uma vez atingido, nenhuma terapia local resolve o linfonodo — e é só aqui que a alternativa E da questão passa a ser a certa."}
+];
+function histInset(st){
+  var s='',x0=470,w=170;
+  s+='<rect x="'+x0+'" y="60" width="'+w+'" height="300" fill="#F3EBE1" stroke="#C9B6A6" stroke-width="1"/>';
+  s+='<rect x="'+x0+'" y="60" width="'+w+'" height="26" fill="#EDE2D6"/>';
+  s+='<text x="'+(x0+8)+'" y="78" font-family="IBM Plex Mono, monospace" font-size="10" fill="#7A675C">LÚMEN</text>';
+  s+='<line x1="'+x0+'" y1="286" x2="'+(x0+w)+'" y2="286" stroke="#C98F7A" stroke-width="6"/>';
+  s+='<text x="'+(x0+8)+'" y="306" font-family="IBM Plex Mono, monospace" font-size="9" fill="#8A6A58">MUSC. MUCOSA</text>';
+  s+='<rect x="'+x0+'" y="292" width="'+w+'" height="68" fill="#EBD6C6"/>';
+  for(var i=0;i<4;i++){
+    var cxp=x0+12+i*40;
+    s+='<path d="M'+cxp+' 92 L'+cxp+' 250 Q'+(cxp+14)+' 282 '+(cxp+28)+' 250 L'+(cxp+28)+' 92 Z" fill="#F7E3D2" stroke="#B98A6C" stroke-width="1.6"/>';
+    for(var yy=98;yy<252;yy+=16){
+      var frac=1-(yy-98)/154;
+      var top=st.strat>=frac?1:0;
+      var ny=yy+(top?4:11), r=3+st.atip*2.2;
+      s+='<circle cx="'+(cxp+6)+'" cy="'+ny+'" r="'+r.toFixed(1)+'" fill="#4C4A7C" opacity="'+(0.6+st.atip*0.4)+'"/>';
+      s+='<circle cx="'+(cxp+22)+'" cy="'+(ny+2)+'" r="'+r.toFixed(1)+'" fill="#4C4A7C" opacity="'+(0.6+st.atip*0.4)+'"/>';
+    }
+    if(st.atip<0.5){
+      s+='<ellipse cx="'+(cxp+14)+'" cy="160" rx="5.5" ry="7" fill="#3D6FA8" opacity="0.8"/>';
+    }
+  }
+  if(st.inv>0){
+    var iy=st.inv===1?270:330;
+    for(var g=0;g<3;g++){
+      s+='<ellipse cx="'+(x0+34+g*46)+'" cy="'+(iy+(g%2?10:0))+'" rx="15" ry="10" fill="#E2B49C" stroke="#A8442F" stroke-width="1.4"/>';
+      s+='<circle cx="'+(x0+28+g*46)+'" cy="'+(iy+(g%2?10:0))+'" r="3.4" fill="#4C4A7C"/>';
+      s+='<circle cx="'+(x0+40+g*46)+'" cy="'+(iy+(g%2?12:2))+'" r="3.4" fill="#4C4A7C"/>';
+    }
+    s+='<text x="'+(x0+8)+'" y="352" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#B03528">'+(st.inv===1?"INVASÃO NA LÂMINA PRÓPRIA":"INVASÃO NA SUBMUCOSA")+'</text>';
+  }
+  return s;
+}
+var stairIdx=2;
+var CLSHEX={b:"#0E7C6B",w:"#A96D10",d:"#B03528",m:"#69479A"};
+function drawStair(){
+  var s='',bx=40,by=396,sw=66;
+  s+='<rect x="0" y="0" width="660" height="470" fill="none"/>';
+  s+='<line x1="'+bx+'" y1="'+by+'" x2="440" y2="'+by+'" stroke="#8A7C74" stroke-width="1.4"/>';
+  STEPS.forEach(function(st,i){
+    var h=26+Math.min(st.risk,22)*11;
+    var x=bx+i*sw, y=by-h;
+    var on=i===stairIdx;
+    s+='<rect x="'+x+'" y="'+y+'" width="'+(sw-6)+'" height="'+h+'" rx="4" fill="'+CLSHEX[st.cls]+'" opacity="'+(on?1:0.5)+'" stroke="'+CLSHEX[st.cls]+'" stroke-width="1.2" style="cursor:pointer" data-i="'+i+'"/>';
+    s+='<text x="'+(x+(sw-6)/2)+'" y="'+(y-8)+'" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="'+CLSHEX[st.cls]+'" opacity="'+(on?1:0.55)+'">'+(st.risk>=10?"~"+st.risk+"%":st.risk+"%")+'</text>';
+    var lbl=st.k.split(" ");
+    s+='<text x="'+(x+(sw-6)/2)+'" y="'+(by+18)+'" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="'+(on?"currentColor":"#8A7C74")+'" style="pointer-events:none">'+lbl[0]+'</text>';
+    if(lbl[1])s+='<text x="'+(x+(sw-6)/2)+'" y="'+(by+31)+'" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="'+(on?"currentColor":"#8A7C74")+'" style="pointer-events:none">'+lbl.slice(1).join(" ")+'</text>';
+  });
+  s+='<text x="'+bx+'" y="446" font-family="IBM Plex Mono, monospace" font-size="10" fill="#8A7C74">ALTURA = RISCO ANUAL DE PROGRESSÃO</text>';
+  s+='<text x="470" y="46" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#8A7C74">HISTOLOGIA DO DEGRAU</text>';
+  s+=histInset(STEPS[stairIdx]);
+  var el=$("#stair");el.innerHTML=s;el.style.color="var(--ink)";
+  Array.prototype.forEach.call(el.querySelectorAll("[data-i]"),function(r){
+    r.addEventListener("click",function(){stairIdx=parseInt(r.getAttribute("data-i"),10);drawStair();panel3();syncStairBtns();});
+  });
+}
+function panel3(){
+  var st=STEPS[stairIdx];
+  $("#v3").className="verd v-"+st.cls;
+  $("#v3").innerHTML='<span class="t">conduta neste degrau</span><span class="h">'+st.cond+'</span><p>'+st.txt+'</p>';
+  var kv=$("#kv3");kv.innerHTML="";
+  st.hist.forEach(function(h,i){kv.appendChild(ce("dt",null,i===0?"Núcleos":i===1?"Maturação":i===2?"Chave":"Extra"));kv.appendChild(ce("dd",null,h));});
+  kv.appendChild(ce("dt",null,"Intervalo"));kv.appendChild(ce("dd",null,st.int));
+  kv.appendChild(ce("dt",null,"Risco/ano"));kv.appendChild(ce("dd",null,'<span class="mono">'+st.risk+"%</span>"));
+}
+function syncStairBtns(){
+  Array.prototype.forEach.call($("#stairBtns").children,function(c,i){c.setAttribute("aria-pressed",String(i===stairIdx));});
+}
+(function(){var h=$("#stairBtns");
+ STEPS.forEach(function(st,i){var b=ce("button",null,st.k);b.type="button";
+  b.addEventListener("click",function(){stairIdx=i;drawStair();panel3();syncStairBtns();});h.appendChild(b);});
+})();
+drawStair();panel3();syncStairBtns();
+
+/* ================= 04 · máquina de decisão ================= */
+var M4={q1:"nao",q2:"dbg",q3:"longo"};
+var Q1=[{l:"Sem lesão visível",v:"nao"},{l:"Nódulo / irregularidade",v:"sim"}];
+var Q2=[{l:"Sem displasia",v:"neg"},{l:"Indefinido",v:"ind"},{l:"DBG confirmada",v:"dbg"},
+        {l:"DBG rebaixada na 2ª leitura",v:"dbgn"},{l:"Alto grau",v:"dag"},
+        {l:"T1a intramucoso",v:"t1a"},{l:"T1b sm2 / LV+",v:"t1b"}];
+var Q3=[{l:"Curto (&lt; 3 cm)",v:"curto"},{l:"Longo (≥ 3 cm)",v:"longo"}];
+function decide(){
+  var s=M4;
+  if(s.q1==="sim")return{node:1,cls:"d",h:"Ressecar a lesão antes de qualquer ablação",
+    p:"Lesão visível é estadiamento. A radiofrequência destrói tecido e não devolve peça — ablar primeiro apaga a informação que decide todo o resto.",
+    steps:["Delimitar a lesão com cromoscopia e classificá-la por Paris","Ressecção endoscópica em bloco (EMR com cap/ligadura ou ESD)","Patologia da peça: profundidade de invasão, grau, invasão linfovascular, margem profunda","Se a invasão parou na mucosa: ablar o segmento residual por radiofrequência","Se invasão submucosa profunda ou LV+: encaminhar para esofagectomia"],
+    fb:"<b>Proibido:</b> ablar um segmento que contém nódulo. É o erro que transforma um T1 estadiável em um paciente sem peça, sem estadiamento e sem plano.",
+    nt:"<b>Na questão 35 isto foi bloqueado de propósito:</b> o enunciado diz <i>sem nódulos ou irregularidades</i>. Esse é o gatilho que elimina a alternativa A.",alt:"Elimina A"};
+  if(s.q2==="neg"||s.q2==="dbgn")return{node:s.q2==="dbgn"?2:3,cls:"b",
+    h:"IBP e vigilância — "+(s.q3==="longo"?"a cada 3 anos":"a cada 5 anos"),
+    p:(s.q2==="dbgn"?"A segunda leitura rebaixou o laudo. Entre 70% e 85% dos DBG lidos por patologista geral não se confirmam, e sem confirmação o paciente volta para a via da vigilância. ":"")+"Sem displasia, o risco anual fica em torno de 0,3% — abaixo do limiar em que ablar compensa.",
+    steps:["Manter IBP em dose que controle sintoma e esofagite","Endoscopia de vigilância com o protocolo de Seattle: 4 quadrantes a cada 2 cm","Biópsias dirigidas de qualquer irregularidade, em frasco separado","Intervalo de "+(s.q3==="longo"?"3 anos (segmento ≥ 3 cm)":"5 anos (segmento < 3 cm)")],
+    fb:"<b>Proibido:</b> indicar ablação por 'segmento longo'. Comprimento não é indicação de tratamento — é indicação de intervalo mais curto.",
+    nt:"<b>Aqui mora a alternativa D da questão 35.</b> O intervalo de 3 a 5 anos é verdadeiro — mas para o Barrett <i>sem</i> displasia. Aplicado a um DBG confirmado, é subtratamento.",alt:"É a resposta certa de outra vinheta — a alternativa D"};
+  if(s.q2==="ind")return{node:2,cls:"m",h:"Otimizar o IBP e repetir a endoscopia",
+    p:"'Indefinido para displasia' não é um grau, é uma declaração de incerteza: inflamação regenerativa imita displasia. Apague a inflamação e olhe de novo.",
+    steps:["IBP em dose dobrada por 8 a 12 semanas","Nova endoscopia com biópsias pelo protocolo de Seattle","Revisão por patologista com experiência em patologia gastrointestinal","Reclassificar: a maioria volta como negativo para displasia"],
+    fb:"<b>Proibido:</b> ablar sobre um laudo indefinido. Você trataria inflamação com energia térmica.",
+    nt:"Se após a otimização o laudo vier como DBG confirmada, a via muda inteira — passa a ser a da questão 35.",alt:"Não corresponde a nenhuma alternativa da questão-mãe"};
+  if(s.q2==="dbg")return{node:2,cls:"w",h:"Ablação por radiofrequência, mantendo o IBP",
+    p:"DBG confirmada por segunda leitura especializada, campo plano, sem lesão visível: é exatamente o cenário do SURF — 26,5% de progressão em três anos sob vigilância contra 1,5% após ablação.",
+    steps:["Confirmar o laudo com segundo patologista experiente (já feito no enunciado)","Endoscopia de alta definição com cromoscopia para excluir lesão visível","Radiofrequência circunferencial ou focal, 10–12 J/cm², sessões a cada 8–12 semanas","IBP em dose plena durante toda a fase de cicatrização, para reepitelizar com escamoso","Repetir até remissão completa da metaplasia intestinal (CRIM)","Vigilância pós-CRIM: endoscopia em 1 ano e em 3 anos"],
+    fb:"<b>Proibido:</b> parar o IBP após a ablação. Sem supressão ácida o campo reepiteliza de novo com colunar e a ablação se perde.",
+    nt:"<b>Esta é a alternativa C — o gabarito.</b> Repare que ela mantém o IBP: a ablação trata o epitélio, o IBP trata o refluxo que o criou. As duas coisas continuam.",alt:"Alternativa C — gabarito da questão 35"};
+  if(s.q2==="dag")return{node:2,cls:"d",h:"Terapia endoscópica de erradicação",
+    p:"Risco de 6% a 10% ao ano, com adenocarcinoma oculto em até 13%. Ainda assim a resposta não é esofagectomia: mortalidade de 2% a 5% e morbidade alta para uma doença que não passou da membrana basal.",
+    steps:["Endoscopia de alta definição com cromoscopia, procurando lesão visível","Ressecar toda lesão visível antes de ablar","Radiofrequência do segmento residual até CRIM","IBP em dose plena continuamente","Vigilância pós-CRIM em 3, 6 e 12 meses, depois anual"],
+    fb:"<b>Proibido:</b> indicar esofagectomia por displasia de alto grau isolada. Era a conduta dos anos 1990 e hoje é sobretratamento.",
+    nt:"O AIM Dysplasia mostrou erradicação da displasia em cerca de 90% dos pacientes com radiofrequência.",alt:"Ainda é a alternativa C, um degrau acima"};
+  if(s.q2==="t1a")return{node:2,cls:"d",h:"Ressecção endoscópica e depois ablação",
+    p:"Adenocarcinoma intramucoso bem diferenciado, sem invasão linfovascular, tem risco de metástase linfonodal abaixo de 2%. A peça da ressecção é o que autoriza tratar por via endoscópica.",
+    steps:["EMR ou ESD em bloco da área com carcinoma","Patologia: profundidade, grau, invasão linfovascular, margem profunda","Confirmado T1a de baixo risco: ablar o segmento metaplásico residual","Vigilância trimestral no primeiro ano"],
+    fb:"<b>Proibido:</b> ablar sem ressecar. Sem peça você não sabe se a invasão parou na muscular da mucosa.",
+    nt:"É o limite superior da terapia endoscópica. Um passo além dele, a conduta vira cirúrgica.",alt:"Corresponde à alternativa A, mas só quando há lesão a ressecar"};
+  return{node:2,cls:"d",h:"Esofagectomia com linfadenectomia",
+    p:"Invasão além da muscular da mucosa, além de 500 µm de submucosa, com invasão linfovascular. O plexo linfático submucoso do esôfago é rico e longitudinal: o risco linfonodal salta para 20% a 25%.",
+    steps:["Estadiamento completo: TC de tórax e abdome, PET-TC, ecoendoscopia","Avaliar neoadjuvância conforme o estadiamento clínico","Esofagectomia com linfadenectomia de dois campos em centro de volume","Reconstrução com tubo gástrico"],
+    fb:"<b>Proibido:</b> tentar terapia endoscópica com invasão submucosa profunda. Nenhuma ablação trata linfonodo.",
+    nt:"<b>Aqui mora a alternativa E da questão 35.</b> Ela é a conduta certa — de um paciente que a questão não descreveu.",alt:"É a resposta certa de outra vinheta — a alternativa E"};
+}
+function drawMach(){
+  var d=decide(),s='';
+  var SHORT={neg:"Sem displasia",ind:"Indefinido",dbg:"DBG confirmada",dbgn:"DBG rebaixada",
+             dag:"Alto grau",t1a:"T1a intramucoso",t1b:"T1b sm2 / LV+"};
+  var labels=[["1","Lesão visível?",M4.q1==="sim"?"Sim":"Não"],
+              ["2","Grau confirmado?",SHORT[M4.q2]],
+              ["3","Segmento?",M4.q3==="longo"?"Longo · ≥ 3 cm":"Curto · < 3 cm"]];
+  var hex={b:"#0E7C6B",w:"#A96D10",d:"#B03528",m:"#69479A"}[d.cls];
+  s+='<line x1="86" y1="120" x2="574" y2="120" stroke="#A99A92" stroke-width="1.4" stroke-dasharray="5 5"/>';
+  labels.forEach(function(L,i){
+    var x=40+i*208, on=(i+1)===d.node, dim=(i+1)>d.node;
+    s+='<rect x="'+x+'" y="66" width="180" height="108" rx="12" fill="'+(on?hex:"none")+'" opacity="'+(on?0.12:1)+'"/>';
+    s+='<rect x="'+x+'" y="66" width="180" height="108" rx="12" fill="none" stroke="'+(on?hex:"#B6A79F")+'" stroke-width="'+(on?2.2:1.2)+'" opacity="'+(dim?0.35:1)+'"/>';
+    s+='<circle cx="'+(x+22)+'" cy="'+90+'" r="12" fill="'+(on?hex:"#D6CAC2")+'"/>';
+    s+='<text x="'+(x+22)+'" y="'+95+'" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="'+(on?"#FFF":"#5B4E48")+'">'+L[0]+'</text>';
+    s+='<text x="'+(x+42)+'" y="'+95+'" font-family="IBM Plex Sans, sans-serif" font-size="12.5" fill="currentColor" opacity="'+(dim?0.4:0.75)+'">'+L[1]+'</text>';
+    s+='<text x="'+(x+16)+'" y="'+140+'" font-family="Fraunces, Georgia, serif" font-size="'+(L[2].length>15?14:17)+'" fill="'+(on?hex:"currentColor")+'" opacity="'+(dim?0.35:1)+'">'+L[2]+'</text>';
+    if(dim)s+='<text x="'+(x+16)+'" y="'+161+'" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="currentColor" opacity="0.4">JÁ NÃO É PERGUNTADA</text>';
+    if(on)s+='<text x="'+(x+16)+'" y="'+161+'" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="'+hex+'">DECIDE AQUI</text>';
+  });
+  s+='<rect x="40" y="216" width="580" height="150" rx="14" fill="'+hex+'" opacity="0.09"/>';
+  s+='<rect x="40" y="216" width="580" height="150" rx="14" fill="none" stroke="'+hex+'" stroke-width="1.6"/>';
+  s+='<text x="64" y="250" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.6" fill="'+hex+'">CONDUTA</text>';
+  var words=d.h.split(" "),ln=[],cur="";
+  words.forEach(function(w){if((cur+" "+w).trim().length>34){ln.push(cur);cur=w;}else cur=(cur+" "+w).trim();});
+  ln.push(cur);
+  ln.forEach(function(l,i){s+='<text x="64" y="'+(284+i*28)+'" font-family="Fraunces, Georgia, serif" font-size="23" fill="'+hex+'">'+l+'</text>';});
+  s+='<text x="64" y="'+(284+ln.length*28+14)+'" font-family="IBM Plex Mono, monospace" font-size="11" fill="currentColor" opacity="0.62">'+d.alt+'</text>';
+  var el=$("#mach");el.innerHTML=s;el.style.color="var(--ink)";
+  $("#v4").className="verd v-"+d.cls;
+  $("#v4").innerHTML='<span class="t">por quê</span><span class="h">'+d.h+'</span><p>'+d.p+'</p>';
+  var ol=$("#st4");ol.innerHTML="";d.steps.forEach(function(t){ol.appendChild(ce("li",null,t));});
+  $("#fb4").innerHTML=d.fb;$("#nt4").innerHTML=d.nt;
+}
+segment($("#q1"),Q1,function(){return M4.q1},function(v){M4.q1=v;drawMach();});
+segment($("#q2"),Q2,function(){return M4.q2},function(v){M4.q2=v;drawMach();});
+segment($("#q3"),Q3,function(){return M4.q3},function(v){M4.q3=v;drawMach();});
+(function(){var h=$("#mPre");
+ [["Questão 35",{q1:"nao",q2:"dbg",q3:"longo"}],["Com nódulo",{q1:"sim",q2:"dbg",q3:"longo"}],
+  ["Sem displasia, 4 cm",{q1:"nao",q2:"neg",q3:"longo"}],["Sem displasia, 2 cm",{q1:"nao",q2:"neg",q3:"curto"}],
+  ["Indefinido",{q1:"nao",q2:"ind",q3:"longo"}],["Alto grau",{q1:"nao",q2:"dag",q3:"longo"}],
+  ["T1b sm2",{q1:"nao",q2:"t1b",q3:"longo"}]].forEach(function(p){
+   var b=ce("button",null,p[0]);b.type="button";
+   b.addEventListener("click",function(){M4.q1=p[1].q1;M4.q2=p[1].q2;M4.q3=p[1].q3;
+     Array.prototype.forEach.call(h.children,function(c){c.setAttribute("aria-pressed","false")});
+     b.setAttribute("aria-pressed","true");
+     segment($("#q1"),Q1,function(){return M4.q1},function(v){M4.q1=v;drawMach();});
+     segment($("#q2"),Q2,function(){return M4.q2},function(v){M4.q2=v;drawMach();});
+     segment($("#q3"),Q3,function(){return M4.q3},function(v){M4.q3=v;drawMach();});
+     drawMach();});
+   h.appendChild(b);});
+ h.children[0].setAttribute("aria-pressed","true");})();
+drawMach();
+
+/* ================= 05 · profundidade ================= */
+var WALL=[{n:"Epitélio",a:0,b:300,c:"#F2D2BB"},{n:"Lâmina própria",a:300,b:500,c:"#EBD6C6"},
+ {n:"Muscular da mucosa",a:500,b:700,c:"#C98F7A"},{n:"Submucosa",a:700,b:1500,c:"#F0DEC8"},
+ {n:"Muscular própria",a:1500,b:3500,c:"#B8564A"},{n:"Adventícia",a:3500,b:4200,c:"#EFD79A"}];
+function yUM(u){return u<=1500?60+u*0.16:300+(u-1500)*0.035;}
+var INSTR=[
+ {k:"IBP",d:0,cls:"b",h:"Não toca no epitélio",
+  p:"Reduz o estímulo que criou a metaplasia e cicatriza esofagite. Nunca faz o colunar regredir a escamoso. É base de todo tratamento e tratamento de nenhum.",
+  f:[["Profundidade","zero — é farmacológico"],["Dá peça?","não"],["Estenose","—"],["Quando é a resposta","sempre associado; sozinho, só no Barrett sem displasia"]]},
+ {k:"Radiofrequência",d:650,cls:"w",h:"500 a 700 µm — para antes da submucosa",
+  p:"Energia bipolar em 10–12 J/cm² destrói epitélio, lâmina própria e no limite a muscular da mucosa. Como a submucosa fica íntegra, o campo reepiteliza com escamoso em vez de fibrosar em anel.",
+  f:[["Profundidade","500–700 µm"],["Dá peça?","<b>não</b> — destrói o tecido"],["Estenose","5% a 6%"],["Sessões","a cada 8–12 semanas até CRIM"],["Quando é a resposta","<b>displasia sem lesão visível</b> — o caso da questão 35"]]},
+ {k:"Crioablação",d:700,cls:"w",h:"Profundidade semelhante, mecanismo diferente",
+  p:"Nitrogênio líquido ou CO₂ a alta pressão causa necrose por congelamento. Alternativa quando há estenose, anatomia difícil ou falha da radiofrequência.",
+  f:[["Profundidade","~700 µm"],["Dá peça?","não"],["Estenose","comparável à RFA"],["Quando é a resposta","segunda linha ou anatomia hostil"]]},
+ {k:"Mucosectomia (EMR)",d:1500,cls:"d",h:"Atravessa a muscular da mucosa e leva submucosa",
+  p:"Ressecção com cap e alça ou com ligadura elástica. Dá peça: profundidade de invasão, grau, invasão linfovascular e margem profunda. É estadiamento e tratamento no mesmo gesto — para a <b>lesão</b>, não para o segmento inteiro.",
+  f:[["Profundidade","até ~1.500 µm"],["Dá peça?","<b>sim</b> — é o que estadeia"],["Quando é a resposta","toda lesão visível, antes de qualquer ablação"]],sl:true},
+ {k:"Dissecção (ESD)",d:1500,cls:"d",h:"Mesma profundidade, peça em bloco",
+  p:"Dissecção submucosa endoscópica. Ressecção em bloco de lesões maiores, com margem lateral avaliável — o que a EMR fragmentada não dá.",
+  f:[["Profundidade","até ~1.500 µm"],["Dá peça?","sim, em bloco"],["Quando é a resposta","lesão > 15 mm ou suspeita de invasão superficial"]],sl:true},
+ {k:"Esofagectomia",d:4200,cls:"d",h:"Toda a parede, mais os linfonodos",
+  p:"A única modalidade que trata o linfonodo. Mortalidade de 2% a 5% em centro de volume, morbidade alta e alteração permanente da deglutição — preço que só a invasão submucosa profunda justifica.",
+  f:[["Profundidade","parede completa + linfadenectomia"],["Dá peça?","sim, com linfonodos"],["Mortalidade","2% a 5%"],["Quando é a resposta","T1b sm2/sm3, invasão linfovascular, pouco diferenciado ou falha endoscópica"]]}
+];
+var wIdx=1,wPct=30;
+function drawWall(){
+  var ins=INSTR[wIdx],s='';
+  s+='<rect x="0" y="0" width="660" height="440" fill="#F7F3EC"/>';
+  s+='<rect x="0" y="20" width="660" height="40" fill="#EDE2D6"/>';
+  s+='<text x="16" y="44" font-family="IBM Plex Mono, monospace" font-size="11" fill="#7A675C">LÚMEN ESOFÁGICO</text>';
+  WALL.forEach(function(L){
+    var y1=yUM(L.a),y2=yUM(L.b);
+    s+='<rect x="0" y="'+y1+'" width="470" height="'+(y2-y1)+'" fill="'+L.c+'"/>';
+    s+='<line x1="0" y1="'+y2+'" x2="470" y2="'+y2+'" stroke="#B48C76" stroke-width="0.9"/>';
+    s+='<text x="12" y="'+((y1+y2)/2+4)+'" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#4A342A">'+L.n+'</text>';
+  });
+  // textura muscular
+  s+='<g stroke="#8E4238" stroke-width="1" opacity=".35">';
+  for(var mx=8;mx<466;mx+=13){s+='<line x1="'+mx+'" y1="'+yUM(1520)+'" x2="'+mx+'" y2="'+yUM(3480)+'"/>';}
+  s+='</g>';
+  // eixo de profundidade
+  s+='<line x1="482" y1="56" x2="482" y2="'+yUM(4200)+'" stroke="#8A7C74" stroke-width="1.2"/>';
+  [0,300,500,700,1500,3500].forEach(function(u){
+    s+='<line x1="478" y1="'+yUM(u)+'" x2="488" y2="'+yUM(u)+'" stroke="#8A7C74" stroke-width="1.2"/>';
+    s+='<text x="494" y="'+(yUM(u)+4)+'" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#7A675C">'+u+' µm</text>';
+  });
+  s+='<text x="494" y="'+(yUM(2400))+'" font-family="IBM Plex Mono, monospace" font-size="9" fill="#A0908A">escala comprimida</text>';
+  // profundidade alcancada
+  if(ins.d>0){
+    var yd=yUM(ins.d);
+    var hex={b:"#0E7C6B",w:"#A96D10",d:"#B03528"}[ins.cls];
+    var w=(ins.sl?Math.max(60,470*wPct/100):470);
+    s+='<rect x="0" y="'+yUM(0)+'" width="'+w+'" height="'+(yd-yUM(0))+'" fill="'+hex+'" opacity="0.34"/>';
+    s+='<line x1="0" y1="'+yd+'" x2="'+w+'" y2="'+yd+'" stroke="'+hex+'" stroke-width="3"/>';
+    var bw=(ins.d>=4000?150:112), bx2=(w+6+bw<470)?(w+6):(470-bw-8);
+    s+='<rect x="'+bx2+'" y="'+(yd-13)+'" width="'+bw+'" height="26" rx="6" fill="'+hex+'"/>';
+    s+='<text x="'+(bx2+10)+'" y="'+(yd+5)+'" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="#FFF">'+(ins.d>=4000?"PAREDE COMPLETA":ins.d+" µm")+'</text>';
+  }
+  s+='<text x="12" y="424" font-family="IBM Plex Mono, monospace" font-size="10" fill="#8A7C74">CORTE PERPENDICULAR · MUCOSA VOLTADA PARA CIMA</text>';
+  $("#wall").innerHTML=s;
+  var cls=ins.cls,extra="";
+  if(ins.sl){
+    var risk=wPct<=25?"&lt; 10%":wPct<=50?"15% a 25%":wPct<=75?"40% a 55%":"&gt; 70%";
+    cls=wPct>50?"d":"w";
+    extra="<p style='margin-top:8px'>Ressecar <b>"+wPct+"%</b> da circunferência numa sessão: risco de estenose <b>"+risk+"</b>. Acima de 50% da circunferência, a fibrose fecha o lúmen em anel.</p>";
+  }
+  $("#v5").className="verd v-"+cls;
+  $("#v5").innerHTML='<span class="t">'+ins.k+'</span><span class="h">'+ins.h+'</span><p>'+ins.p+'</p>'+extra;
+  var kv=$("#kv5");kv.innerHTML="";
+  ins.f.forEach(function(r){kv.appendChild(ce("dt",null,r[0]));kv.appendChild(ce("dd",null,r[1]));});
+  $("#wSl").style.display=ins.sl?"block":"none";
+}
+(function(){var h=$("#wBtns");
+ INSTR.forEach(function(ins,i){var b=ce("button",null,ins.k);b.type="button";
+  b.setAttribute("aria-pressed",String(i===wIdx));
+  b.addEventListener("click",function(){wIdx=i;
+   Array.prototype.forEach.call(h.children,function(c,j){c.setAttribute("aria-pressed",String(j===i))});drawWall();});
+  h.appendChild(b);});})();
+$("#rW").addEventListener("input",function(){wPct=parseInt(this.value,10);$("#lW").textContent=wPct+"%";drawWall();});
+drawWall();
+
+/* ================= 07 · forja ================= */
+var FQ=[
+{t:"Questão-mãe",
+ e:"Homem de 57 anos, com doença do refluxo de longa data, tem endoscopia com segmento de mucosa cor salmão de 4 cm acima da junção esofagogástrica, <mark>sem nódulos ou irregularidades</mark>. As biópsias mostram metaplasia intestinal com <mark>displasia de baixo grau, confirmada por segundo patologista</mark> experiente em patologia gastrointestinal. Está em uso regular de inibidor de bomba de prótons e sem sintomas de alarme.",
+ a:["Mucosectomia endoscópica de todo o segmento metaplásico, independentemente da presença de nódulo.",
+    "Fundoplicatura laparoscópica de Nissen, que promove a regressão da metaplasia e da displasia.",
+    "Ablação endoscópica por radiofrequência do segmento metaplásico, mantendo o inibidor de bomba.",
+    "Manter o inibidor de bomba de prótons e repetir endoscopia com biópsias a cada três a cinco anos.",
+    "Esofagectomia subtotal, pelo risco elevado de progressão para adenocarcinoma invasor."],
+ c:2,
+ x:"Dois dados fecham a conduta: <b>campo plano</b> e <b>DBG confirmada por segunda leitura</b>. Sem lesão visível, não há nada a estadiar — a ablação é o gesto certo. Com a confirmação, o risco de progressão a três anos é de 26,5% sob vigilância contra 1,5% após radiofrequência (SURF, JAMA 2014), e é isso que tira a vigilância da mesa. O IBP permanece porque a ablação trata o epitélio, não o refluxo que o gerou — e sem supressão ácida o campo reepiteliza com colunar.",
+ d:["<b>A</b> — mucosectomia é a conduta certa de <i>lesão visível</i>. Ressecar todo um segmento de 4 cm circunferencialmente leva a estenose em mais de 70% dos casos.",
+    "<b>B</b> — Nissen controla refluxo e sintoma, mas não faz regredir metaplasia nem displasia de forma confiável, e não dispensa a vigilância.",
+    "<b>D</b> — três a cinco anos é o intervalo do Barrett <i>sem</i> displasia. É a resposta certa de outra vinheta.",
+    "<b>E</b> — esofagectomia é a conduta da invasão submucosa profunda. Para displasia, é sobretratamento com mortalidade de 2% a 5%."]},
+
+{t:"Pivô 1 · aparece um nódulo",
+ e:"Mesmo paciente, mesmo segmento de 4 cm com displasia de baixo grau confirmada, mas a endoscopia de alta definição descreve agora <mark>uma lesão elevada de 8 mm, Paris 0-IIa</mark>, no terço médio do segmento.",
+ a:["Ressecção endoscópica em bloco da lesão para estadiamento, seguida de ablação do segmento residual.",
+    "Ablação por radiofrequência de todo o segmento, incluindo a área elevada, em sessões seriadas.",
+    "Biópsias seriadas da lesão e nova endoscopia em seis meses para avaliar crescimento.",
+    "Esofagectomia subtotal, pela presença de lesão macroscópica em segmento displásico.",
+    "Fundoplicatura associada a ablação, para reduzir a recidiva da metaplasia."],
+ c:0,
+ x:"O dado trocado inverte a ordem das perguntas. Lesão visível é <b>estadiamento</b>: a radiofrequência destrói o tecido e não devolve peça, então ablar aqui apagaria a informação que decide todo o resto — profundidade de invasão, grau, invasão linfovascular, margem profunda. Ressecar primeiro; ablar o campo plano depois.",
+ d:["<b>B</b> — é a conduta da questão-mãe, e é exatamente o que o nódulo proíbe.",
+    "<b>C</b> — biópsia de pinça em lesão elevada subestima a invasão; observar é perder a janela endoscópica.",
+    "<b>D</b> — a lesão pode ser T1a, tratável por via endoscópica. Operar antes da peça é operar sem estadiamento.",
+    "<b>E</b> — fundoplicatura não tem papel no algoritmo do Barrett displásico."]},
+
+{t:"Pivô 2 · sem displasia, segmento longo",
+ e:"Homem de 57 anos, refluxo de longa data, segmento salmão de 4 cm acima da junção esofagogástrica, sem nódulos. As biópsias mostram metaplasia intestinal <mark>sem displasia</mark>, em duas leituras independentes. Em uso regular de IBP.",
+ a:["Ablação por radiofrequência, pelo comprimento do segmento acima de três centímetros.",
+    "Mucosectomia endoscópica do segmento, para remover a mucosa metaplásica em risco.",
+    "Suspender o IBP e reavaliar sintomas em três meses antes de programar nova endoscopia.",
+    "Manter o IBP e repetir endoscopia com protocolo de Seattle em três anos.",
+    "Manter o IBP e repetir endoscopia com protocolo de Seattle em seis meses."],
+ c:3,
+ x:"Retirado o gatilho da displasia, a via muda inteira. Sem displasia o risco anual de progressão é de cerca de 0,3% — abaixo do limiar em que ablar compensa. O que resta é vigilância, e o único dado que define o intervalo é o <b>comprimento</b>: segmento ≥ 3 cm, três anos; &lt; 3 cm, cinco anos (ACG 2022).",
+ d:["<b>A</b> — comprimento não é indicação de tratamento, é indicação de intervalo mais curto.",
+    "<b>B</b> — ressecção extensa em campo sem displasia é morbidade pura.",
+    "<b>C</b> — suspender IBP em Barrett com refluxo de longa data é retirar o que reduz o estímulo metaplásico.",
+    "<b>E</b> — seis meses é intervalo de displasia de baixo grau em vigilância, não de segmento sem displasia."]},
+
+{t:"Pivô 3 · sem displasia, segmento curto",
+ e:"Mesmo cenário, biópsias sem displasia, mas o segmento colunar mede <mark>2 cm</mark> acima da junção esofagogástrica, com Praga C1M2.",
+ a:["Repetir endoscopia com biópsias em um ano, pela metaplasia intestinal confirmada.",
+    "Manter o IBP e repetir endoscopia com protocolo de Seattle em cinco anos.",
+    "Ablação por radiofrequência, por se tratar de segmento circunferencial.",
+    "Não realizar nova endoscopia, pois segmentos curtos não têm risco de progressão.",
+    "Repetir endoscopia em três anos, mesmo intervalo dos segmentos longos."],
+ c:1,
+ x:"O único dado que mudou foi o comprimento, e ele é justamente a variável que governa o intervalo quando não há displasia. Praga C1M2 é segmento <b>curto</b> — menos de 3 cm — e o intervalo passa a ser de cinco anos. Repare que a extensão circunferencial de 1 cm não muda nada: o que classifica curto ou longo é o <b>M</b>.",
+ d:["<b>A</b> — um ano é intervalo de displasia de baixo grau sob vigilância.",
+    "<b>C</b> — ser circunferencial não indica ablação; indicação é a displasia.",
+    "<b>D</b> — o risco é baixo, não nulo; o Barrett confirmado entra em vigilância.",
+    "<b>E</b> — três anos é o intervalo do segmento ≥ 3 cm."]},
+
+{t:"Pivô 4 · o laudo hesita",
+ e:"Mesmo paciente, segmento de 4 cm, sem nódulos. As biópsias mostram metaplasia intestinal com atipia epitelial, e o laudo conclui por <mark>&ldquo;indefinido para displasia&rdquo;</mark>. A endoscopia descreve também <mark>esofagite erosiva Los Angeles grau C</mark>. O paciente vinha usando IBP de forma irregular.",
+ a:["Ablação por radiofrequência, pois atipia em segmento longo implica risco elevado.",
+    "Encaminhar para esofagectomia, pela impossibilidade de excluir carcinoma.",
+    "Repetir a endoscopia em três anos, como em qualquer Barrett sem displasia definida.",
+    "Mucosectomia da área com atipia, para obter material adequado ao diagnóstico.",
+    "Otimizar o IBP em dose dobrada por oito a doze semanas e repetir a endoscopia com biópsias."],
+ c:4,
+ x:"&ldquo;Indefinido para displasia&rdquo; não é um degrau da escada — é uma declaração de incerteza do patologista, quase sempre porque a inflamação regenerativa imita displasia. O enunciado entrega a causa: esofagite LA grau C e IBP irregular. Apague a inflamação com dose plena por 8 a 12 semanas, rebiopsie e reclassifique; a maioria volta como negativo para displasia.",
+ d:["<b>A</b> — ablar sobre laudo indefinido é tratar inflamação com energia térmica.",
+    "<b>B</b> — não há nem displasia confirmada, quanto mais invasão.",
+    "<b>C</b> — três anos é o intervalo de quem já tem laudo definido como negativo.",
+    "<b>D</b> — não há lesão visível a ressecar; o problema é o campo inflamado, não a amostragem."]},
+
+{t:"Pivô 5 · sobe um degrau",
+ e:"Mesmo paciente, segmento de 4 cm, sem nódulos ou irregularidades à endoscopia de alta definição com cromoscopia. As biópsias mostram metaplasia intestinal com <mark>displasia de alto grau</mark>, confirmada por segundo patologista.",
+ a:["Ablação endoscópica por radiofrequência com IBP em dose plena e vigilância intensiva subsequente.",
+    "Esofagectomia subtotal com linfadenectomia, pelo risco de adenocarcinoma oculto.",
+    "Manter o IBP e repetir endoscopia com biópsias a cada seis meses.",
+    "Fundoplicatura de Nissen associada a vigilância endoscópica semestral.",
+    "Quimiorradioterapia definitiva, pela extensão do segmento acometido."],
+ c:0,
+ x:"O degrau mudou, a via não. Displasia de alto grau tem risco anual de progressão de 6% a 10% e adenocarcinoma oculto em até 13% dos casos — o que justifica <b>tratar</b>, não operar. Sem lesão visível, o tratamento continua sendo a erradicação endoscópica; o que muda em relação à questão-mãe é a intensidade da vigilância pós-CRIM: 3, 6 e 12 meses, depois anual.",
+ d:["<b>B</b> — a esofagectomia por alto grau isolado é conduta dos anos 1990; hoje é sobretratamento com mortalidade de 2% a 5%.",
+    "<b>C</b> — vigilância isolada em alto grau confirmado é subtratamento.",
+    "<b>D</b> — cirurgia antirrefluxo não trata displasia.",
+    "<b>E</b> — quimiorradioterapia é tratamento de doença invasora, não de displasia."]},
+
+{t:"Pivô 6 · a peça muda tudo",
+ e:"Após ressecção endoscópica de lesão elevada em segmento de Barrett, a patologia mostra adenocarcinoma <mark>invadindo a submucosa a 900 µm da muscular da mucosa (sm2)</mark>, pouco diferenciado, com <mark>invasão linfovascular</mark> e margem profunda livre. Estadiamento por TC e PET-TC sem doença a distância.",
+ a:["Ablação por radiofrequência do segmento residual e vigilância trimestral no primeiro ano.",
+    "Nova ressecção endoscópica ampliada, para obter margem profunda mais generosa.",
+    "Esofagectomia com linfadenectomia, após avaliar indicação de terapia neoadjuvante.",
+    "Manter vigilância endoscópica semestral, já que a margem profunda está livre.",
+    "Fundoplicatura para controle do refluxo e vigilância anual do segmento residual."],
+ c:2,
+ x:"Aqui a alternativa E da questão-mãe finalmente é a certa — e repare no que precisou mudar para isso. Não foi o grau de displasia: foi a <b>profundidade</b>. Passando de 500 µm na submucosa, somando invasão linfovascular e pouca diferenciação, o risco de metástase linfonodal salta para 20% a 25%. O plexo linfático submucoso do esôfago é rico e longitudinal, e nenhuma terapia local trata linfonodo.",
+ d:["<b>A</b> — ablar o residual sem tratar o linfonodo deixa a doença que importa.",
+    "<b>B</b> — margem profunda já está livre; o problema não é margem, é linfonodo.",
+    "<b>D</b> — margem livre não neutraliza risco linfonodal de 20% a 25%.",
+    "<b>E</b> — cirurgia antirrefluxo não tem papel oncológico."]},
+
+{t:"Pivô 7 · depois da ablação",
+ e:"O paciente da questão-mãe completou três sessões de radiofrequência. A endoscopia atual mostra <mark>reepitelização escamosa completa</mark>, sem mucosa colunar visível, e as biópsias das quatro paredes na antiga junção não mostram metaplasia intestinal nem displasia — <mark>remissão completa da metaplasia intestinal (CRIM)</mark>.",
+ a:["Suspender o inibidor de bomba de prótons e receber alta do seguimento endoscópico.",
+    "Manter o IBP e repetir endoscopia apenas se houver recidiva dos sintomas de refluxo.",
+    "Programar fundoplicatura de Nissen para consolidar o resultado da ablação.",
+    "Repetir endoscopia a cada três meses indefinidamente, pelo antecedente de displasia.",
+    "Manter o IBP e repetir endoscopia com biópsias em um ano e em três anos."],
+ c:4,
+ x:"CRIM não é alta. A metaplasia recorre em algo entre 8% e 10% ao ano, muitas vezes como ilhas subescamosas ou no cárdia, e por isso a vigilância continua — para quem teve <b>baixo grau</b>, endoscopia em 1 ano e em 3 anos; para quem teve alto grau, em 3, 6 e 12 meses e depois anual. O IBP também continua, porque é ele que mantém o campo reepitelizado com escamoso.",
+ d:["<b>A</b> — suspender IBP após ablação é o caminho mais rápido para a recidiva do colunar.",
+    "<b>B</b> — a recidiva da metaplasia é assintomática; sintoma não é sentinela.",
+    "<b>C</b> — nenhuma diretriz indica fundoplicatura para consolidar ablação.",
+    "<b>D</b> — trimestral indefinidamente é a vigilância de carcinoma tratado, não de DBG em CRIM."]},
+
+{t:"Pivô 8 · o paciente quer parar o remédio",
+ e:"Homem de 44 anos com Barrett de 3 cm, <mark>metaplasia intestinal sem displasia</mark>, sintomas de refluxo <mark>bem controlados com IBP</mark>. Ele não quer usar medicação por décadas e pergunta se a cirurgia antirrefluxo resolve o problema definitivamente. pHmetria e manometria são compatíveis com refluxo patológico e peristalse normal.",
+ a:["A fundoplicatura está contraindicada na presença de metaplasia intestinal do esôfago.",
+    "A fundoplicatura é opção válida para controle do refluxo, mas não elimina a metaplasia nem a necessidade de vigilância endoscópica.",
+    "A fundoplicatura promove regressão da metaplasia intestinal e permite encerrar a vigilância.",
+    "A fundoplicatura só deve ser indicada após ablação por radiofrequência do segmento metaplásico.",
+    "A fundoplicatura substitui o IBP e reduz o risco de adenocarcinoma a zero."],
+ c:1,
+ x:"É a alternativa B da questão-mãe examinada de frente. Cirurgia antirrefluxo é excelente <b>tratamento do refluxo</b> em paciente selecionado — refluxo patológico documentado, peristalse adequada, boa resposta prévia ao IBP. O que ela não é: tratamento do Barrett. Regressão da metaplasia após fundoplicatura é inconsistente e nunca foi demonstrada como redução de mortalidade por adenocarcinoma. A vigilância continua exatamente igual.",
+ d:["<b>A</b> — Barrett não contraindica fundoplicatura; ao contrário, esses pacientes costumam ter refluxo grave.",
+    "<b>C</b> — a regressão é inconsistente e não autoriza encerrar vigilância.",
+    "<b>D</b> — sem displasia não há indicação de ablação; a ordem proposta não existe.",
+    "<b>E</b> — nenhuma intervenção zera o risco; a vigilância existe por isso."]}
+];
+var LTR=["A","B","C","D","E"],fIdx=0,fAns=new Array(FQ.length).fill(null);
+function renderForge(){
+  var q=FQ[fIdx],b=$("#fBody");b.innerHTML="";
+  b.appendChild(ce("div","mono",'<span style="color:var(--accent);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase">'+q.t+'</span>'));
+  var p=ce("p",null,q.e);p.style.cssText="margin:12px 0 18px;font-size:15.5px;color:var(--ink);max-width:72ch";
+  b.appendChild(p);
+  var list=ce("div");list.style.cssText="display:flex;flex-direction:column;gap:8px;max-width:80ch";
+  q.a.forEach(function(txt,i){
+    var row=ce("button");row.type="button";
+    row.style.cssText="display:flex;gap:12px;text-align:left;font:inherit;font-size:14.5px;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink-2);cursor:pointer";
+    row.innerHTML='<b class="mono" style="color:var(--ink-3)">'+LTR[i]+'</b><span>'+txt+'</span>';
+    if(fAns[fIdx]!=null){
+      row.style.cursor="default";
+      if(i===q.c){row.style.background="var(--b-soft)";row.style.borderColor="var(--b)";row.style.color="var(--b)";}
+      else if(i===fAns[fIdx]){row.style.background="var(--d-soft)";row.style.borderColor="var(--d)";row.style.color="var(--d)";}
+    } else {
+      row.addEventListener("click",function(){fAns[fIdx]=i;renderForge();updScore();});
+    }
+    list.appendChild(row);
+  });
+  b.appendChild(list);
+  if(fAns[fIdx]!=null){
+    var ok=fAns[fIdx]===q.c;
+    var v=ce("div","verd "+(ok?"v-b":"v-d"));v.style.marginTop="16px";
+    v.innerHTML='<span class="t">'+(ok?"correta":"gabarito "+LTR[q.c])+'</span><span class="h">'+q.a[q.c].replace(/\.$/,"")+'</span><p>'+q.x+'</p>';
+    b.appendChild(v);
+    var dd=ce("div","card");dd.style.marginTop="12px";
+    dd.innerHTML='<h3>Por que cada distrator é a conduta de outra linha</h3>'+
+      '<ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--ink-2)">'+
+      q.d.map(function(t){return "<li>"+t+"</li>"}).join("")+'</ul>';
+    b.appendChild(dd);
+  }
+  var nav=ce("div");nav.style.cssText="display:flex;gap:8px;margin-top:18px";
+  var prev=ce("button",null,"← anterior");prev.type="button";
+  var next=ce("button",null,"próxima →");next.type="button";
+  [prev,next].forEach(function(x){x.style.cssText="font:inherit;font-size:13px;padding:7px 14px;border-radius:8px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink-2);cursor:pointer"});
+  prev.disabled=fIdx===0;next.disabled=fIdx===FQ.length-1;
+  if(prev.disabled)prev.style.opacity=".4";if(next.disabled)next.style.opacity=".4";
+  prev.addEventListener("click",function(){if(fIdx>0){fIdx--;renderForge();syncFNav();}});
+  next.addEventListener("click",function(){if(fIdx<FQ.length-1){fIdx++;renderForge();syncFNav();}});
+  var rst=ce("button",null,"recomeçar");rst.type="button";
+  rst.style.cssText="font:inherit;font-size:13px;padding:7px 14px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--ink-3);cursor:pointer;margin-left:auto";
+  rst.addEventListener("click",function(){fAns=new Array(FQ.length).fill(null);fIdx=0;renderForge();syncFNav();updScore();});
+  nav.appendChild(prev);nav.appendChild(next);nav.appendChild(rst);
+  b.appendChild(nav);
+}
+function updScore(){
+  var done=fAns.filter(function(a){return a!=null}).length;
+  var hit=fAns.filter(function(a,i){return a!=null&&a===FQ[i].c}).length;
+  $("#fScore").textContent=hit+" / "+done+" respondidas  ·  "+FQ.length+" questões";
+  syncFNav();
+}
+function syncFNav(){
+  Array.prototype.forEach.call($("#fNav").children,function(c,i){
+    c.setAttribute("aria-pressed",String(i===fIdx));
+    c.style.opacity=fAns[i]!=null?"1":"";
+    c.style.borderColor=fAns[i]==null?"":(fAns[i]===FQ[i].c?"var(--b)":"var(--d)");
+  });
+}
+(function(){var h=$("#fNav");
+ FQ.forEach(function(q,i){var b=ce("button",null,String(i+1));b.type="button";
+  b.addEventListener("click",function(){fIdx=i;renderForge();syncFNav();});h.appendChild(b);});})();
+renderForge();updScore();
+
+/* ================= 08 · tabela-mãe ================= */
+var MOTHER=[
+ ["b","Linha Z irregular &lt; 1 cm","Não é Barrett","Não biopsiar. Nenhum seguimento endoscópico por metaplasia."],
+ ["b","Metaplasia intestinal, sem displasia, &lt; 3 cm","Vigilância","IBP + EDA com Seattle a cada 5 anos."],
+ ["b","Metaplasia intestinal, sem displasia, ≥ 3 cm","Vigilância","IBP + EDA com Seattle a cada 3 anos."],
+ ["m","Indefinido para displasia","Reavaliar","IBP em dose dobrada por 8–12 semanas e repetir EDA com biópsias."],
+ ["w","DBG <b>não</b> confirmada na 2ª leitura","Rebaixar","Tratar como sem displasia; intervalo pelo comprimento."],
+ ["w","DBG confirmada por 2º patologista, campo plano","Ablar","<b>Radiofrequência + IBP</b> até CRIM. Gabarito da questão 35."],
+ ["d","Qualquer lesão visível no segmento","Ressecar primeiro","EMR/ESD em bloco para estadiamento; ablar o residual depois."],
+ ["d","Displasia de alto grau, campo plano","Ablar","Terapia endoscópica de erradicação. Não é indicação de esofagectomia."],
+ ["d","Adenocarcinoma T1a, bem diferenciado, LV−","Endoscópico","Ressecção endoscópica + ablação do residual. Risco linfonodal &lt; 2%."],
+ ["d","T1b sm2/sm3, LV+ ou pouco diferenciado","Operar","Esofagectomia com linfadenectomia. Risco linfonodal 20% a 25%."],
+ ["b","CRIM após DBG","Vigiar","EDA em 1 ano e em 3 anos. IBP mantido."],
+ ["w","CRIM após DAG","Vigiar de perto","EDA em 3, 6 e 12 meses, depois anual."],
+ ["m","Refluxo controlado, quer parar o IBP","Individualizar","Fundoplicatura é opção para o refluxo; não regride metaplasia nem encerra vigilância."]
+];
+(function(){
+  var g=$("#motherGrid");
+  MOTHER.forEach(function(r){
+    var c=ce("div","card");
+    c.style.borderTop="4px solid var(--"+r[0]+")";c.style.borderRadius="4px 4px 14px 14px";
+    c.innerHTML='<span class="tag t-'+r[0]+'">'+r[2]+'</span>'+
+      '<p style="margin:11px 0 8px;font-size:14.5px;color:var(--ink);font-weight:500">'+r[1]+'</p>'+
+      '<p style="margin:0;font-size:13.5px;color:var(--ink-2)">'+r[3]+'</p>';
+    g.appendChild(c);
+  });
+})();
+})();
+</script>
+
+</body></html>

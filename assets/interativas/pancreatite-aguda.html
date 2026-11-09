@@ -1,0 +1,595 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Atlas da Pancreatite Aguda</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"><style>:root{color-scheme:dark;
+  --bg:#121110;--bg-2:#0e0d0c;--surface:#171614;--surface-2:#1c1a18;--surface-3:#22201d;
+  --ink:#f6f4f2;--ink-strong:#faf8f6;--ink-body:rgba(243,242,242,.82);--ink-soft:rgba(243,242,242,.70);
+  --ink-meta:rgba(243,242,242,.58);--rule:rgba(243,242,242,.10);--rule-2:rgba(243,242,242,.16);--rule-3:rgba(243,242,242,.28);
+  --accent:#b68235;--a300:#facb8d;--a400:#e1ad66;--a600:#8d6428;--a700:#6b4c1e;
+  --t1:rgba(194,141,65,.10);--t2:rgba(194,141,65,.20);--t3:rgba(194,141,65,.36);--t4:rgba(194,141,65,.62);
+  --fh:"Cormorant Garamond",Georgia,"Times New Roman",serif;--fb:"Lora",Georgia,"Times New Roman",serif;
+  --shadow:0 1px 2px rgba(0,0,0,.45),0 10px 28px -14px rgba(0,0,0,.75)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink-body);font-family:var(--fb);font-size:15.5px;line-height:1.68;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--fh);font-weight:500;color:var(--ink-strong);margin:0;text-wrap:balance;letter-spacing:-.005em}
+b,strong{color:var(--ink);font-weight:600}
+a{color:var(--a300)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px 80px}
+::selection{background:var(--t3);color:var(--ink-strong)}
+:focus-visible{outline:2px solid var(--a400);outline-offset:2px;border-radius:3px}
+header.hero{max-width:1140px;margin:0 auto;padding:54px 24px 26px}
+.kicker{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-meta)}
+.kicker.g{color:var(--a300)}
+h1{font-size:clamp(36px,6vw,64px);line-height:1.02;margin:14px 0 0;font-weight:500}
+h1 em{font-style:italic;color:var(--a300)}
+.lede{max-width:62ch;color:var(--ink-soft);font-size:17px;margin:18px 0 0}
+.stem{margin:26px 0 0;padding:18px 22px;border-left:2px solid var(--accent);background:var(--surface);border-radius:0 8px 8px 0;max-width:76ch;box-shadow:var(--shadow)}
+.stem p{margin:0;font-size:15px;color:var(--ink-soft)}
+.stem .src{display:block;margin-top:10px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-meta)}
+nav.rail{position:sticky;top:0;z-index:40;background:rgba(14,13,12,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-top:30px}
+.rail-in{max-width:1140px;margin:0 auto;padding:8px 24px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.rail-in::-webkit-scrollbar{display:none}
+.rail a{flex:none;font-size:12.5px;color:var(--ink-soft);text-decoration:none;padding:5px 11px;border-radius:999px;border:1px solid transparent;white-space:nowrap;transition:.15s}
+.rail a:hover{color:var(--ink);background:var(--surface-2)}
+.rail a.on{color:var(--a300);border-color:var(--t3)}
+.rail a .n{color:var(--a400);margin-right:6px;font-size:11px;font-variant-numeric:tabular-nums}
+section.ch{padding-top:58px;scroll-margin-top:52px}
+.ch-head{display:flex;gap:18px;align-items:baseline;border-top:1px solid var(--rule-2);padding-top:20px}
+.ch-num{font-family:var(--fh);font-size:30px;color:var(--a400);line-height:1;font-style:italic;flex:none;min-width:34px}
+.ch-head h2{font-size:clamp(25px,3.4vw,34px);line-height:1.12}
+.ch-head p{color:var(--ink-meta);font-size:14.5px;margin:7px 0 0;max-width:72ch}
+.plate{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr);gap:24px;margin-top:24px;align-items:start}
+.plate.even{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+@media (max-width:880px){.plate,.plate.even{grid-template-columns:minmax(0,1fr)}}
+.fig{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:12px;box-shadow:var(--shadow);overflow:hidden;min-width:0}
+.fig svg{display:block;width:100%;height:auto;border-radius:5px}
+.figcap{font-size:12px;color:var(--ink-meta);margin:10px 2px 2px;line-height:1.55}
+.panel{display:flex;flex-direction:column;gap:14px;min-width:0}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:16px 17px;box-shadow:var(--shadow);min-width:0}
+.lbl{font-family:var(--fb);font-size:10.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-meta);margin-bottom:11px;display:block}
+.prose{margin-top:24px;max-width:68ch;color:var(--ink-soft);font-size:15.5px}
+.prose p{margin:0 0 13px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button,.btn{font:inherit;font-size:13px;padding:6px 12px;border-radius:4px;cursor:pointer;border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-soft);transition:.15s;line-height:1.35}
+.seg button:hover,.btn:hover{border-color:var(--a600);color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#16110a}
+.btn.pri{border-color:var(--a600);color:var(--a300)}
+.sl{margin-top:12px}
+.sl label{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--ink-soft);margin-bottom:4px}
+.sl label b{font-variant-numeric:tabular-nums;color:var(--a300);font-weight:500;white-space:nowrap}
+input[type=range]{width:100%;accent-color:var(--accent);height:22px;margin:0}
+.chk{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--ink-soft);cursor:pointer;padding:4px 0;line-height:1.45}
+.chk input{accent-color:var(--accent);width:16px;height:16px;flex:none;margin:2px 0 0}
+.chk:hover{color:var(--ink)}
+.chk small{display:block;color:var(--ink-meta);font-size:12px}
+.grp+.grp{margin-top:12px;padding-top:12px;border-top:1px solid var(--rule)}
+.grp .gt{font-family:var(--fh);font-size:18px;color:var(--a300);margin-bottom:4px;display:block}
+.verd{border-radius:6px;padding:13px 15px;border:1px solid var(--rule-3);font-size:14px;background:var(--surface-2)}
+.verd .t{font-size:10px;letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:4px;color:var(--ink-meta)}
+.verd .h{font-family:var(--fh);font-size:23px;line-height:1.15;display:block;margin-bottom:6px;color:var(--ink)}
+.verd p{margin:0;color:var(--ink-soft)}
+.verd p+p{margin-top:6px}
+.v-w{border-color:var(--a600);background:var(--t1)} .v-w .h{color:var(--a400)}
+.v-d{border:1.5px solid var(--a300);background:var(--t2)} .v-d .h{color:var(--a300)}
+.v-m{border:1px dashed var(--a400);background:transparent} .v-m .h{color:var(--a400);font-style:italic}
+.tag{display:inline-block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;border-radius:999px;border:1px solid var(--rule-3);color:var(--ink-soft);white-space:nowrap}
+.tag.w{border-color:var(--a600);color:var(--a400)} .tag.d{border-color:var(--a300);color:var(--a300);background:var(--t2)} .tag.m{border-style:dashed;border-color:var(--a400);color:var(--a400)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
+.steps li{counter-increment:s;position:relative;padding-left:30px;font-size:14px;color:var(--ink-soft)}
+.steps li::before{content:counter(s);position:absolute;left:0;top:1px;width:20px;height:20px;border-radius:50%;border:1px solid var(--a600);color:var(--a300);font-size:11px;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+.note{margin-top:12px;padding:11px 13px;border-radius:6px;background:var(--surface-2);border:1px solid var(--rule);font-size:13.5px;color:var(--ink-soft)}
+.diverg{margin-top:18px;padding:14px 16px;border-left:2px solid var(--a400);background:var(--t1);border-radius:0 6px 6px 0;font-size:14px;color:var(--ink-soft);max-width:76ch}
+.diverg .t{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--a400);margin-bottom:4px}
+mark{background:var(--t3);color:var(--ink-strong);padding:0 3px;border-radius:2px}
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:7px 14px;font-size:13.5px;margin:0}
+.kv dt{color:var(--ink-meta);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding-top:3px}
+.kv dd{margin:0;color:var(--ink-body)}
+.meter{display:flex;gap:4px;margin-top:8px}
+.meter i{flex:1;height:6px;border-radius:2px;background:var(--rule-2)}
+.meter i.on{background:var(--accent)}
+.big{font-family:var(--fh);font-size:46px;line-height:1;color:var(--a300);font-variant-numeric:tabular-nums}
+.tblw{overflow-x:auto;margin-top:18px;border:1px solid var(--rule);border-radius:8px;background:var(--surface);max-width:100%}
+table.t{border-collapse:collapse;width:100%;font-size:13.5px;min-width:540px}
+table.t th{font-weight:500;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--a400);text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule-2);background:var(--surface-2)}
+table.t td{padding:9px 12px;border-bottom:1px solid var(--rule);vertical-align:top;color:var(--ink-soft)}
+table.t tr:last-child td{border-bottom:0}
+table.t td:first-child{color:var(--ink);font-weight:500}
+table.t tr.hl td{background:var(--t2)}
+.traps{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-top:22px}
+.trap{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:15px 16px 14px;box-shadow:var(--shadow)}
+.trap .q{font-family:var(--fh);font-size:20px;color:var(--ink);line-height:1.2;margin-bottom:8px;display:block}
+.trap .q::before{content:"“";color:var(--a400);margin-right:2px}
+.trap .q::after{content:"”";color:var(--a400)}
+.trap p{margin:0;font-size:13.5px;color:var(--ink-soft)}
+.trap .x{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--a400);margin-bottom:6px}
+.flow{display:flex;flex-direction:column}
+.fnode{border:1px solid var(--rule-2);border-radius:6px;padding:10px 13px;background:var(--surface-2);font-size:13.5px;color:var(--ink-soft)}
+.fnode b{display:block;font-family:var(--fh);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:2px}
+.fnode.on{border-color:var(--a300);background:var(--t2);color:var(--ink-body)}
+.fnode.on b{color:var(--a300)}
+.farrow{height:20px;margin-left:22px;border-left:1px solid var(--a400)}
+.q-item{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:18px 19px;margin-top:16px;box-shadow:var(--shadow)}
+.q-item .qn{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--a400);display:block;margin-bottom:6px}
+.q-item .qs{margin:0 0 12px;color:var(--ink-body);font-size:15px}
+.alts{display:flex;flex-direction:column;gap:7px}
+.alt{display:flex;gap:10px;align-items:flex-start;text-align:left;font:inherit;font-size:14px;line-height:1.45;padding:9px 12px;border-radius:5px;border:1px solid var(--rule-2);background:var(--surface-2);color:var(--ink-soft);cursor:pointer;transition:.15s;width:100%}
+.alt:hover:not([disabled]){border-color:var(--a600);color:var(--ink)}
+.alt .L{flex:none;width:22px;height:22px;border-radius:50%;border:1px solid var(--rule-3);display:grid;place-items:center;font-size:11.5px;color:var(--ink-meta);margin-top:-1px}
+.alt[disabled]{cursor:default}
+.alt.ok{border:1.5px solid var(--a300);background:var(--t2);color:var(--ink)}
+.alt.ok .L{background:var(--a300);border-color:var(--a300);color:#16110a}
+.alt.ko{border-style:dashed;border-color:var(--rule-3);opacity:.8;text-decoration:line-through;text-decoration-color:var(--rule-3)}
+.alt.dim{opacity:.55}
+.expl{display:none;margin-top:12px;padding:12px 14px;border-left:2px solid var(--a400);background:var(--t1);border-radius:0 6px 6px 0;font-size:14px;color:var(--ink-soft)}
+.expl.show{display:block}
+.expl .res{display:block;font-family:var(--fh);font-size:20px;color:var(--a300);margin-bottom:4px}
+.expl ul{margin:8px 0 0;padding-left:18px}
+.expl li{margin:3px 0}
+.score{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:18px;padding:14px 17px;border:1px solid var(--rule-2);border-radius:8px;background:var(--surface-2)}
+.score .s{font-family:var(--fh);font-size:22px;color:var(--ink)}
+.score .s b{color:var(--a300);font-weight:500}
+.mother{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:16px}
+.cell{background:var(--surface);border:1px solid var(--rule);border-top:3px solid var(--rule-3);border-radius:6px;padding:14px 15px}
+.cell.w{border-top-color:var(--a600)} .cell.d{border-top-color:var(--a300)} .cell.m{border-top-style:dashed;border-top-color:var(--a400)}
+.cell h3{font-size:20px;line-height:1.2;margin-bottom:6px}
+.cell p{margin:0;font-size:13px;color:var(--ink-meta)}
+.cell .act{margin-top:9px;padding-top:9px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--ink-body)}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+footer{max-width:1140px;margin:0 auto;padding:26px 24px 50px;border-top:1px solid var(--rule);font-size:12.5px;color:var(--ink-meta);line-height:1.65}
+footer p{margin:0 0 8px;max-width:96ch}
+.hot{cursor:pointer}
+.hot circle.pin{fill:#16110a;stroke:#e1ad66;stroke-width:1.4;transition:.15s}
+.hot text{fill:#facb8d;font:600 12px var(--fb);text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.hot:hover circle.pin,.hot.on circle.pin{fill:#e1ad66}
+.hot:hover text,.hot.on text{fill:#16110a}
+.hot:focus{outline:none}.hot:focus-visible circle.pin{stroke-width:3}
+svg text{font-family:var(--fb)}
+@media (max-width:600px){
+  .wrap{padding:0 16px 60px} header.hero{padding:36px 16px 20px} .rail-in{padding:7px 16px}
+  footer{padding:22px 16px 40px} .ch-head{gap:12px} .ch-num{font-size:24px;min-width:26px}
+  .fig{padding:8px} .card{padding:14px} body{font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body><header class="hero">
+<span class="kicker g">Residência Max · Pâncreas · Aula-atlas</span>
+<h1>Pancreatite aguda <em>— diagnóstico e gravidade</em></h1>
+<p class="lede">O diagnóstico se fecha em minutos; a gravidade só se revela em 48 horas. Entre uma coisa e outra estão as decisões que a banca cobra: quanto hidratar, quando alimentar, quando não dar antibiótico e quando não operar.</p>
+<div class="stem"><p><b>Caso-índice.</b> Joana, 52 anos, dor epigástrica intensa em faixa, irradiada para o dorso, há 10 horas, com vômitos. Lipase oito vezes o limite superior. Ultrassom: colelitíase, colédoco de 5 mm. Bilirrubina normal, creatinina 1,1 mg/dL, saturação 96% em ar ambiente, PA 128 × 76 mmHg.</p><span class="src">Caso construído para a aula · Atlanta revisada 2012 · diretrizes AGA 2018 e ACG 2024</span></div>
+</header>
+<nav class="rail" aria-label="Capítulos"><div class="rail-in">
+<a href="#c1"><span class="n">1</span>Diagnóstico</a><a href="#c2"><span class="n">2</span>Fisiopatologia</a><a href="#c3"><span class="n">3</span>Atlanta</a><a href="#c4"><span class="n">4</span>Coleções</a><a href="#c5"><span class="n">5</span>Escores</a><a href="#c6"><span class="n">6</span>Conduta</a><a href="#c7"><span class="n">7</span>Na mesa</a><a href="#c8"><span class="n">8</span>Pegadinhas</a><a href="#c9"><span class="n">9</span>Forja</a><a href="#c10"><span class="n">10</span>Tabela-mãe</a>
+</div></nav>
+<main class="wrap">
+
+<section class="ch" id="c1">
+<div class="ch-head"><div class="ch-num">1</div><div><h2>Dois de três</h2><p>Dor típica, enzima três vezes acima do limite, imagem característica. Quaisquer dois fecham o diagnóstico.</p></div></div>
+<div class="plate even">
+<div class="card">
+<label class="chk"><input type="checkbox" id="d-dor" checked><span>Dor abdominal típica<small>epigástrica, contínua, intensa, frequentemente em faixa e irradiada para o dorso</small></span></label>
+<div class="sl"><label>Lipase (ou amilase), em múltiplos do limite superior <b id="o-lip">8,0 ×</b></label><input type="range" id="d-lip" min="0.5" max="20" step="0.5" value="8"></div>
+<div class="meter" id="d-lipm"></div>
+<label class="chk" style="margin-top:12px"><input type="checkbox" id="d-img"><span>Imagem característica<small>tomografia com contraste, ressonância ou ultrassom</small></span></label>
+</div>
+<div class="panel"><div class="verd" id="d-v"></div>
+<div class="card"><span class="lbl">O que a enzima não diz</span><p style="margin:0;font-size:14px">O valor da lipase ou da amilase não mede gravidade nem orienta alta. A lipase é mais específica e permanece elevada por mais tempo; a amilase normaliza em poucos dias e pode vir falsamente normal na hipertrigliceridemia.</p></div></div>
+</div>
+<div class="prose">
+<p>Com dor típica e lipase acima de três vezes, Joana já tem diagnóstico, e a tomografia não acrescenta nada agora. A tomografia com contraste na admissão serve à dúvida diagnóstica; para avaliar necrose, o momento é depois de 72 a 96 horas, porque a necrose demora a se demarcar e uma TC precoce subestima a lesão.</p>
+<p>O ultrassom, por outro lado, é obrigatório na admissão de todo paciente, não para diagnosticar a pancreatite, mas para procurar cálculo: a etiologia biliar muda a conduta das próximas semanas.</p>
+</div>
+</section>
+
+<section class="ch" id="c2">
+<div class="ch-head"><div class="ch-num">2</div><div><h2>Por que o pâncreas se digere</h2><p>A doença começa dentro da célula acinar: a tripsina se ativa no lugar errado. Avance pelos quadros.</p></div></div>
+<div class="plate">
+<div class="fig"><svg id="acin" viewBox="0 0 640 400" role="img" aria-label="Célula acinar esquemática mostrando grânulos de zimogênio, lisossomos e ativação intracelular da tripsina"></svg>
+<p class="figcap">Ácino esquemático: núcleo basal, grânulos de zimogênio no polo apical, lúmen do ducto acima. Em ouro vivo, enzima ativada.</p></div>
+<div class="panel">
+<div class="card"><span class="lbl">Quadro</span>
+<div class="seg" id="a-seg"><button data-v="0" aria-pressed="true">Normal</button><button data-v="1" aria-pressed="false">Secreção bloqueada</button><button data-v="2" aria-pressed="false">Ativação intracelular</button><button data-v="3" aria-pressed="false">Autodigestão e SIRS</button></div>
+<div id="a-txt" style="margin-top:12px;font-size:14px"></div></div>
+<div class="card"><span class="lbl">Etiologia: onde ela entra</span>
+<div class="seg" id="e-seg"><button data-v="bil" aria-pressed="true">Biliar</button><button data-v="alc" aria-pressed="false">Álcool</button><button data-v="tg" aria-pressed="false">Triglicerídeos</button><button data-v="cpre" aria-pressed="false">Pós-CPRE</button><button data-v="ca" aria-pressed="false">Hipercalcemia</button><button data-v="id" aria-pressed="false">Sem causa</button></div>
+<div id="e-txt" style="margin-top:12px;font-size:14px"></div></div>
+</div></div>
+<div class="prose"><p>O mecanismo final é comum: o tripsinogênio ativado dentro do ácino ativa as demais pró-enzimas (elastase, fosfolipase A₂), a célula se lesa e libera citocinas. A partir daí a doença deixa de ser do pâncreas: a resposta inflamatória sistêmica é o que causa falência orgânica nas primeiras duas semanas. A infecção da necrose é o problema da segunda fase.</p></div>
+</section>
+
+<section class="ch" id="c3">
+<div class="ch-head"><div class="ch-num">3</div><div><h2>Atlanta revisada: gravidade é falência orgânica e tempo</h2><p>Escore de Marshall modificado em três sistemas. Dois pontos em qualquer sistema é falência; a duração decide o resto.</p></div></div>
+<div class="plate even">
+<div class="card">
+<div class="sl"><label>Respiratório · PaO₂/FiO₂ <b id="o-pf">420</b></label><input type="range" id="i-pf" min="60" max="500" step="10" value="420"></div>
+<div class="sl"><label>Renal · creatinina sérica <b id="o-cr">1,1 mg/dL</b></label><input type="range" id="i-cr" min="0.5" max="6" step="0.1" value="1.1"></div>
+<span class="lbl" style="margin:14px 0 6px">Cardiovascular · PA sistólica</span>
+<div class="seg" id="i-cv"><button data-v="0" aria-pressed="true">&gt; 90</button><button data-v="1" aria-pressed="false">&lt; 90, responde a volume</button><button data-v="2" aria-pressed="false">&lt; 90, não responde</button><button data-v="3" aria-pressed="false">&lt; 90 e pH &lt; 7,3</button><button data-v="4" aria-pressed="false">&lt; 90 e pH &lt; 7,2</button></div>
+<span class="lbl" style="margin:14px 0 6px">Duração da falência</span>
+<div class="seg" id="i-dur"><button data-v="0" aria-pressed="true">Resolve em &lt; 48 h</button><button data-v="1" aria-pressed="false">Persiste &gt; 48 h</button></div>
+<label class="chk" style="margin-top:12px"><input type="checkbox" id="i-loc"><span>Complicação local (coleção, necrose) ou exacerbação de comorbidade</span></label>
+</div>
+<div class="panel">
+<div class="card"><span class="lbl">Marshall modificado</span><div id="mar" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;text-align:center"></div></div>
+<div class="verd" id="at-v"></div>
+</div></div>
+<div class="tblw"><table class="t"><thead><tr><th>Classe</th><th>Falência orgânica</th><th>Complicação local ou sistêmica</th></tr></thead><tbody>
+<tr id="r-l"><td>Leve</td><td>Ausente</td><td>Ausente</td></tr>
+<tr id="r-m"><td>Moderadamente grave</td><td>Transitória (&lt; 48 h) ou ausente</td><td>Pode estar presente</td></tr>
+<tr id="r-g"><td>Grave</td><td>Persistente (&gt; 48 h), de um ou mais sistemas</td><td>Geralmente presente</td></tr></tbody></table></div>
+<div class="prose"><p>Atlanta classifica gravidade por desfecho, e o desfecho só aparece com o tempo: a classe definitiva exige 48 horas de observação. Por isso os escores prognósticos do capítulo 5 existem, para prever na admissão quem vai cair na linha de baixo. E por isso a PaO₂/FiO₂ entra antes da creatinina na leitura do plantão: é a falência mais frequente.</p></div>
+</section>
+
+<section class="ch" id="c4">
+<div class="ch-head"><div class="ch-num">4</div><div><h2>As coleções: tempo e conteúdo</h2><p>Duas perguntas nomeiam qualquer coleção: houve necrose? Passaram-se quatro semanas?</p></div></div>
+<div class="plate">
+<div class="fig"><svg id="col" viewBox="0 0 640 420" role="img" aria-label="Corte axial esquemático do abdome superior com pâncreas e coleção peripancreática"></svg>
+<p class="figcap">Corte axial esquemático, como na tomografia: direita do paciente à esquerda da figura. Escala de cinzas aproximada à janela de partes moles.</p></div>
+<div class="panel">
+<div class="card"><span class="lbl">Morfologia</span>
+<div class="seg" id="c-mor"><button data-v="0" aria-pressed="true">Edematosa intersticial</button><button data-v="1" aria-pressed="false">Necrosante</button></div>
+<span class="lbl" style="margin:14px 0 6px">Tempo desde o início</span>
+<div class="seg" id="c-t"><button data-v="0" aria-pressed="true">&lt; 4 semanas</button><button data-v="1" aria-pressed="false">≥ 4 semanas</button></div>
+<label class="chk" style="margin-top:12px"><input type="checkbox" id="c-inf"><span>Gás na coleção ou piora clínica com suspeita de infecção</span></label>
+<label class="chk"><input type="checkbox" id="c-sx"><span>Sintomática (dor, obstrução gástrica ou biliar)</span></label></div>
+<div class="verd" id="c-v"></div>
+</div></div>
+<div class="tblw"><table class="t" id="c-tab"><thead><tr><th>Morfologia</th><th>&lt; 4 semanas</th><th>≥ 4 semanas, parede definida</th></tr></thead><tbody>
+<tr><td>Edematosa intersticial</td><td data-c="00">Coleção fluida peripancreática aguda</td><td data-c="01">Pseudocisto</td></tr>
+<tr><td>Necrosante</td><td data-c="10">Coleção necrótica aguda</td><td data-c="11">Necrose encapsulada (<i>walled-off necrosis</i>)</td></tr></tbody></table></div>
+<div class="diverg"><span class="t">Divergência de banca</span>A regra antiga de drenar pseudocisto com mais de 6 cm ou mais de 6 semanas ainda aparece em questões. As diretrizes atuais tratam pela clínica: coleção assintomática, de qualquer tamanho, é observada; drena-se a que causa sintoma, obstrui ou infecta. Se o enunciado traz um pseudocisto grande e assintomático e uma alternativa de observação, é ela.</div>
+</section>
+
+<section class="ch" id="c5">
+<div class="ch-head"><div class="ch-num">5</div><div><h2>Os escores que a banca pede</h2><p>Todos tentam prever, na admissão ou em 48 horas, quem será grave. Marque e veja o placar.</p></div></div>
+<div class="plate even">
+<div class="card"><span class="lbl">Ranson</span>
+<div class="seg" id="r-ver"><button data-v="n" aria-pressed="true">Não biliar</button><button data-v="b" aria-pressed="false">Biliar</button></div>
+<div id="r-list" style="margin-top:10px"></div></div>
+<div class="panel">
+<div class="card"><span class="lbl">BISAP · admissão</span>
+<label class="chk"><input type="checkbox" class="bis"><span>Ureia (BUN) &gt; 25 mg/dL</span></label>
+<label class="chk"><input type="checkbox" class="bis"><span>Alteração do estado mental</span></label>
+<label class="chk"><input type="checkbox" class="bis"><span>SIRS presente</span></label>
+<label class="chk"><input type="checkbox" class="bis"><span>Idade &gt; 60 anos</span></label>
+<label class="chk"><input type="checkbox" class="bis"><span>Derrame pleural</span></label>
+<div id="bis-o" style="margin-top:10px"></div></div>
+<div class="card"><span class="lbl">Índice de gravidade tomográfico (Balthazar + necrose)</span>
+<div class="seg" id="ct-b"><button data-v="0" aria-pressed="true">A</button><button data-v="1" aria-pressed="false">B</button><button data-v="2" aria-pressed="false">C</button><button data-v="3" aria-pressed="false">D</button><button data-v="4" aria-pressed="false">E</button></div>
+<p id="ct-bt" style="margin:8px 0 10px;font-size:13px;color:var(--ink-meta)"></p>
+<div class="seg" id="ct-n"><button data-v="0" aria-pressed="true">Sem necrose</button><button data-v="2" aria-pressed="false">≤ 30%</button><button data-v="4" aria-pressed="false">30–50%</button><button data-v="6" aria-pressed="false">&gt; 50%</button></div>
+<div id="ct-o" style="margin-top:10px"></div></div>
+</div></div>
+<div class="prose"><p>Ranson só fecha em 48 horas e vale uma vez; não serve para acompanhar. BISAP usa dados da admissão. APACHE II (≥ 8 indica gravidade) pode ser recalculado a cada dia. A PCR acima de 150 mg/L em 48 horas é o marcador laboratorial isolado mais citado. Nenhum deles substitui a reavaliação clínica: SIRS persistente nas primeiras 48 horas é, sozinha, um sinal de alerta.</p></div>
+</section>
+
+<section class="ch" id="c6">
+<div class="ch-head"><div class="ch-num">6</div><div><h2>A conduta, em linha do tempo</h2><p>As primeiras 72 horas são de suporte. A cirurgia e a endoscopia entram por indicações precisas, e quase sempre mais tarde do que o aluno imagina.</p></div></div>
+<div class="plate">
+<div class="card"><span class="lbl">Plano</span><div class="flow" id="pl"></div></div>
+<div class="panel"><div class="card">
+<span class="lbl">Etiologia</span><div class="seg" id="p-et"><button data-v="b" aria-pressed="true">Biliar</button><button data-v="o" aria-pressed="false">Outra</button></div>
+<span class="lbl" style="margin:14px 0 6px">Gravidade / morfologia</span><div class="seg" id="p-g"><button data-v="l" aria-pressed="true">Leve</button><button data-v="n" aria-pressed="false">Necrosante</button></div>
+<div style="margin-top:12px">
+<label class="chk"><input type="checkbox" id="p-col"><span>Colangite associada</span></label>
+<label class="chk"><input type="checkbox" id="p-obs"><span>Obstrução biliar persistente (icterícia progressiva, colédoco dilatado)</span></label>
+<label class="chk"><input type="checkbox" id="p-tol" checked><span>Tolera dieta oral</span></label>
+<label class="chk"><input type="checkbox" id="p-inf"><span>Suspeita de necrose infectada</span></label></div>
+<div class="sl"><label>Semanas desde o início <b id="o-sem">0</b></label><input type="range" id="p-sem" min="0" max="8" step="1" value="0"></div>
+</div></div></div>
+<div class="diverg"><span class="t">Divergência de banca</span>Livros mais antigos pedem hidratação agressiva (250 a 500 mL/h nas primeiras horas). O ensaio WATERFALL (2022) mostrou mais sobrecarga de volume com a estratégia agressiva, sem benefício; as diretrizes recentes recomendam ressuscitação moderada e guiada por metas, com Ringer lactato. Se a questão pergunta "hidratação vigorosa" sem outra alternativa melhor, é a resposta de livro antigo; se oferece "moderada, guiada por metas", é a atual.</div>
+</section>
+
+<section class="ch" id="c7">
+<div class="ch-head"><div class="ch-num">7</div><div><h2>Na mesa: o pâncreas e seus vizinhos</h2><p>Vista anterior esquemática, estômago e cólon transverso removidos. Clique nos números.</p></div></div>
+<div class="plate">
+<div class="fig"><svg id="anat" viewBox="0 0 680 460" role="img" aria-label="Prancha do pâncreas com duodeno, colédoco, ducto pancreático principal, vasos mesentéricos superiores, veia esplênica e baço"></svg>
+<p class="figcap">Convenção desta prancha: pâncreas em ocre, ductos em marfim, artérias em ouro vivo, veias em bronze escuro. Direita do paciente à esquerda da figura. Proporções reduzidas.</p></div>
+<div class="panel"><div class="card" id="an-box"></div></div></div>
+</section>
+
+<section class="ch" id="c8">
+<div class="ch-head"><div class="ch-num">8</div><div><h2>Pegadinhas de prova</h2><p>O dado trocado que vira a conduta.</p></div></div>
+<div class="traps">
+<div class="trap"><span class="x">Antibiótico</span><span class="q">Necrose de 50%: iniciar carbapenêmico</span><p>Não há indicação de antibiótico profilático, nem na necrose extensa. Antibiótico é para infecção documentada ou fortemente suspeita (gás na necrose, piora após a primeira semana), ou para infecção extrapancreática.</p></div>
+<div class="trap"><span class="x">Dieta</span><span class="q">Jejum até a lipase normalizar</span><p>Na leve, dieta oral assim que tolerar, idealmente nas primeiras 24 horas. Na grave, enteral (sonda gástrica ou jejunal) é preferível à parenteral. A nutrição parenteral fica para quem não tolera a enteral.</p></div>
+<div class="trap"><span class="x">CPRE</span><span class="q">Pancreatite biliar: CPRE de rotina</span><p>CPRE precoce só com colangite (em até 24 horas) ou obstrução biliar persistente. Pancreatite biliar sem colangite e sem obstrução não ganha nada com CPRE.</p></div>
+<div class="trap"><span class="x">Colecistectomia</span><span class="q">Leve biliar: operar após 6 semanas</span><p>Na leve, a colecistectomia é feita na mesma internação; esperar aumenta recidiva e readmissão. Na necrosante, adia-se até a resolução das coleções ou cerca de 6 semanas.</p></div>
+<div class="trap"><span class="x">Necrose infectada</span><span class="q">Gás na necrose: necrosectomia aberta já</span><p>O tratamento é escalonado: antibiótico, adiar a intervenção até a necrose se encapsular (cerca de 4 semanas) se o doente estiver estável, drenagem percutânea ou endoscópica e, se necessário, necrosectomia minimamente invasiva.</p></div>
+<div class="trap"><span class="x">PAAF</span><span class="q">Punção da necrose para cultura</span><p>Não é rotina. Gás na necrose à tomografia e a evolução clínica bastam para tratar como infectada.</p></div>
+<div class="trap"><span class="x">Sinais de pele</span><span class="q">Cullen e Grey Turner fecham o diagnóstico</span><p>Equimose periumbilical (Cullen) e em flancos (Grey Turner) indicam hemorragia retroperitoneal e são raros. Sugerem gravidade; não são critério diagnóstico.</p></div>
+<div class="trap"><span class="x">Trombose esplênica</span><span class="q">Varizes gástricas isoladas após pancreatite</span><p>A inflamação ao redor da cauda trombosa a veia esplênica: hipertensão portal segmentar (sinistra), com varizes de fundo gástrico e função hepática normal. Se sangram, a esplenectomia resolve.</p></div>
+</div>
+</section>
+
+<section class="ch" id="c9">
+<div class="ch-head"><div class="ch-num">9</div><div><h2>Forja: a mesma questão, cinco pivôs</h2><p>A questão-mãe é a Joana. Em cada pivô, o dado trocado está marcado.</p></div></div>
+<div id="forja-list"></div>
+<div class="score"><span class="s" id="forja-score"></span><button class="btn pri" id="forja-reset">Recomeçar</button></div>
+</section>
+
+<section class="ch" id="c10">
+<div class="ch-head"><div class="ch-num">10</div><div><h2>Tabela-mãe</h2><p>Gatilho do enunciado e a resposta que ele pede.</p></div></div>
+<div class="legend"><span class="tag">suporte</span><span class="tag w">alerta</span><span class="tag d">perigo</span><span class="tag m">individualizar</span></div>
+<div class="mother">
+<div class="cell"><h3>Leve, biliar</h3><p>Sem falência, sem complicação local, colelitíase</p><div class="act">Ringer lactato guiado por metas, dieta oral precoce, colecistectomia na mesma internação</div></div>
+<div class="cell w"><h3>Biliar com colangite</h3><p>Febre, icterícia, dor em QSD</p><div class="act">Antibiótico e CPRE em até 24 horas</div></div>
+<div class="cell w"><h3>Moderadamente grave</h3><p>Falência &lt; 48 h ou complicação local</p><div class="act">Suporte; não dar antibiótico profilático; enteral se não tolerar a via oral</div></div>
+<div class="cell d"><h3>Grave</h3><p>Falência orgânica &gt; 48 h</p><div class="act">UTI, suporte de órgãos, nutrição enteral, reavaliar necrose com TC após 72–96 h</div></div>
+<div class="cell d"><h3>Necrose infectada</h3><p>Gás na necrose ou piora após a 1ª semana</p><div class="act">Antibiótico com penetração na necrose; step-up, adiando a intervenção até a encapsulação se estável</div></div>
+<div class="cell"><h3>Pseudocisto assintomático</h3><p>Coleção encapsulada, sem necrose, ≥ 4 semanas</p><div class="act">Observação, independentemente do tamanho</div></div>
+<div class="cell m"><h3>Coleção sintomática</h3><p>Dor, obstrução gástrica ou biliar, infecção</p><div class="act">Drenagem, de preferência endoscópica transmural guiada por ecoendoscopia</div></div>
+<div class="cell m"><h3>Hipertrigliceridemia</h3><p>TG &gt; 1.000 mg/dL, soro lipêmico, amilase às vezes normal</p><div class="act">Suporte; insulina para baixar TG; plasmaférese em casos selecionados</div></div>
+</div>
+</section>
+</main>
+<footer>
+<p><b>Fontes.</b> Banks PA et al. Classification of acute pancreatitis — 2012: revision of the Atlanta classification and definitions by international consensus. Gut 2013;62:102–11 · Crockett SD et al. AGA Institute guideline on initial management of acute pancreatitis. Gastroenterology 2018;154:1096–101 · Tenner S et al. ACG guideline: management of acute pancreatitis. Am J Gastroenterol 2024;119:419–37 · de-Madaria E et al. Aggressive or moderate fluid resuscitation in acute pancreatitis (WATERFALL). N Engl J Med 2022;387:989–1000 · van Santvoort HC et al. A step-up approach or open necrosectomy for necrotizing pancreatitis (PANTER). N Engl J Med 2010;362:1491–502 · da Costa DW et al. Same-admission versus interval cholecystectomy for mild gallstone pancreatitis (PONCHO). Lancet 2015;386:1261–8 · Balthazar EJ et al. Radiology 1990;174:331–6 · Ranson JHC, 1974 e 1979 · Wu BU et al. BISAP. Gut 2008;57:1698–703 · Sabiston Textbook of Surgery, 21ª ed.</p>
+<p>Atlas produzido para o Residência Max. As figuras são esquemas didáticos, não imagens de pacientes.</p>
+</footer>
+<script>(function(){
+  var links=[].slice.call(document.querySelectorAll('.rail a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))}).filter(Boolean);
+  function spy(){var y=window.scrollY+90,cur=null;secs.forEach(function(s){if(s.offsetTop<=y)cur=s.id});
+    links.forEach(function(a){var on=a.getAttribute('href')==='#'+cur;if(on!==a.classList.contains('on')){a.classList.toggle('on',on);
+      if(on){var r=a.parentNode;r.scrollLeft=a.offsetLeft-r.clientWidth/2+a.clientWidth/2}}})}
+  window.addEventListener('scroll',spy,{passive:true});spy();
+  links.forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();window.scrollTo({top:t.offsetTop-44,behavior:'smooth'})}})});
+})();
+function $(s,r){return (r||document).querySelector(s)}
+function $$(s,r){return [].slice.call((r||document).querySelectorAll(s))}
+function br(n,d){return Number(n).toFixed(d||0).replace('.',',')}
+function seg(el,cb){var bs=$$('button',el);bs.forEach(function(b){b.addEventListener('click',function(){
+  bs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});cb(b.dataset.v,b)})});}
+function segVal(el){var b=$('button[aria-pressed="true"]',el);return b?b.dataset.v:null}
+function verd(el,cls,t,h,body){el.className='verd v-'+cls;el.innerHTML='<span class="t">'+t+'</span><span class="h">'+h+'</span>'+body}
+function rng(seed){var s=seed>>>0;return function(){s=(s*1664525+1013904223)>>>0;return s/4294967296}}
+/* prancha: <g class="hot" data-k>; INFO[k]={t,h,body} */
+function plate(svgSel,boxSel,INFO,first,onShow){
+  var hs=$$(svgSel+' .hot'),box=$(boxSel);
+  function show(k){hs.forEach(function(h){h.classList.toggle('on',h.dataset.k===k)});var o=INFO[k];
+    box.innerHTML='<span class="lbl">'+o.t+'</span><h3 style="font-size:24px;margin-bottom:6px;color:var(--a300)">'+o.h+'</h3>'+o.body;
+    if(onShow)onShow(k)}
+  hs.forEach(function(h){h.setAttribute('tabindex','0');h.setAttribute('role','button');h.setAttribute('aria-label',INFO[h.dataset.k].t);
+    h.addEventListener('click',function(){show(h.dataset.k)});
+    h.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();show(h.dataset.k)}})});
+  show(first||hs[0].dataset.k);
+}
+/* forja: [{s, a:[5], c, r, w:[5]}] */
+function forja(list,listSel,scoreSel,resetSel){
+  var root=$(listSel),done=0,hit=0,L='ABCDE';
+  function upd(){$(scoreSel).innerHTML=done?('<b>'+hit+'</b> de '+done+' certas · '+(list.length-done)+' por responder'):(list.length+' questões · nenhuma respondida')}
+  function render(){root.innerHTML='';done=0;hit=0;
+    list.forEach(function(q,i){var d=document.createElement('div');d.className='q-item';
+      d.innerHTML='<span class="qn">'+(i===0?'Questão-mãe':'Pivô '+i)+'</span><p class="qs">'+q.s+'</p><div class="alts">'+
+        q.a.map(function(a,j){return '<button class="alt" data-j="'+j+'"><span class="L">'+L[j]+'</span><span>'+a+'</span></button>'}).join('')+
+        '</div><div class="expl" aria-live="polite"><span class="res"></span><div class="why"></div></div>';
+      root.appendChild(d);
+      $$('.alt',d).forEach(function(b){b.addEventListener('click',function(){
+        var j=+b.dataset.j,ok=j===q.c;done++;if(ok)hit++;
+        $$('.alt',d).forEach(function(x){x.disabled=true;var k=+x.dataset.j;x.classList.add(k===q.c?'ok':(k===j?'ko':'dim'))});
+        var e=$('.expl',d);e.classList.add('show');
+        $('.res',e).textContent=(ok?'Certo — ':'Não — ')+'gabarito '+L[q.c]+'.';
+        $('.why',e).innerHTML='<p style="margin:0">'+q.r+'</p><ul>'+q.w.map(function(w,k){return k===q.c?'':'<li><b>'+L[k]+'</b> — '+w+'</li>'}).join('')+'</ul>';
+        upd()})})});upd()}
+  $(resetSel).addEventListener('click',function(){render();window.scrollTo({top:root.getBoundingClientRect().top+window.scrollY-60,behavior:'smooth'})});
+  render();
+}
+
+/* ---------- 1. dois de três ---------- */
+(function(){
+  function upd(){var l=+$('#d-lip').value,dor=$('#d-dor').checked,img=$('#d-img').checked,en=l>=3;
+    $('#o-lip').textContent=br(l,1)+' ×';
+    var m='';for(var i=1;i<=10;i++)m+='<i class="'+(l>=i*2?'on':'')+'" style="'+(i===2?'box-shadow:inset -2px 0 0 #facb8d':'')+'"></i>';$('#d-lipm').innerHTML=m;
+    var n=(dor?1:0)+(en?1:0)+(img?1:0),el=$('#d-v'),lst=[dor?'dor típica':'',en?'enzima ≥ 3×':'',img?'imagem':''].filter(Boolean).join(' + ');
+    if(n>=2) verd(el,'d','Atlanta 2012 · diagnóstico','Pancreatite aguda',''+'<p>'+lst+'. '+(img?'':'Não precisa de tomografia para fechar.')+'</p>');
+    else if(dor&&!en) verd(el,'m','Atlanta 2012 · diagnóstico','Falta um critério','<p>Dor típica com enzima abaixo de 3× ('+br(l,1)+'×). Se a suspeita persiste, a imagem é o segundo critério: tomografia com contraste.</p>');
+    else verd(el,'b','Atlanta 2012 · diagnóstico','Não fecha','<p>'+(n?lst+' apenas.':'Nenhum critério.')+' Hiperlipasemia isolada ocorre em insuficiência renal, doenças intestinais e outras condições.</p>');}
+  $('#d-lip').addEventListener('input',upd);['#d-dor','#d-img'].forEach(function(s){$(s).addEventListener('change',upd)});upd();
+})();
+
+/* ---------- 2. ácino ---------- */
+(function(){
+  var TX=['<b>Normal.</b> As enzimas saem do ácino como pró-enzimas inativas, empacotadas em grânulos de zimogênio, e só se ativam no duodeno (a enteroquinase ativa o tripsinogênio). O inibidor de tripsina (SPINK1) neutraliza pequenas ativações.',
+   '<b>Secreção bloqueada.</b> Obstrução do ducto, álcool ou hipercalcemia impedem a exocitose apical. Os grânulos se acumulam dentro da célula.',
+   '<b>Ativação intracelular.</b> Grânulos de zimogênio se fundem com lisossomos (colocalização); a catepsina B ativa o tripsinogênio. A tripsina ativa as outras pró-enzimas dentro da própria célula.',
+   '<b>Autodigestão e SIRS.</b> Elastase lesa vasos, fosfolipase A₂ lesa membranas, a célula morre e libera citocinas. Edema, hemorragia, necrose da gordura e resposta inflamatória sistêmica, que pode levar à falência orgânica.'];
+  var ET={bil:'<b>Biliar.</b> Causa mais comum. Cálculo migrando pela ampola obstrui transitoriamente o ducto pancreático. Pista: colelitíase no ultrassom, elevação de transaminases (ALT) no início. Muda a conduta: colecistectomia.',
+    alc:'<b>Álcool.</b> Efeito tóxico direto no ácino e aumento da viscosidade da secreção. Em geral após anos de consumo pesado; episódios repetidos levam à pancreatite crônica.',
+    tg:'<b>Hipertrigliceridemia.</b> Triglicerídeos acima de 1.000 mg/dL; a lipase libera ácidos graxos livres tóxicos no leito capilar pancreático. Soro lipêmico; a amilase pode vir falsamente normal.',
+    cpre:'<b>Pós-CPRE.</b> A complicação mais comum da CPRE. Prevenção: anti-inflamatório retal (indometacina ou diclofenaco), prótese pancreática em alto risco, hidratação com Ringer lactato.',
+    ca:'<b>Hipercalcemia.</b> O cálcio favorece a ativação do tripsinogênio. Pense em hiperparatireoidismo primário.',
+    id:'<b>Sem causa aparente.</b> Antes de chamar de idiopática: repetir ultrassom (microlitíase), dosar cálcio e triglicerídeos, rever medicamentos e, após o primeiro episódio sem causa, investigar com ecoendoscopia; em idosos, pensar em neoplasia obstruindo o ducto.'};
+  function draw(k){var r=rng(5),o='<rect width="640" height="400" fill="#efe6d6"/>';
+    /* ducto/lúmen */
+    o+='<path d="M250 0 L390 0 L360 92 Q320 104 280 92 Z" fill="#d9c49a"/><text x="320" y="30" text-anchor="middle" font-size="12" fill="#3a2a1a">lúmen do ducto</text>';
+    /* célula */
+    o+='<path d="M120 380 L210 110 Q320 70 430 110 L520 380 Z" fill="#e3cfa8" stroke="#6b4c1e" stroke-width="2"/>';
+    o+='<path d="M210 110 Q320 70 430 110" stroke="#6b4c1e" stroke-width="3" fill="none"/>';
+    /* núcleo e RER */
+    o+='<ellipse cx="320" cy="320" rx="60" ry="38" fill="#a8864f" stroke="#4a3420" stroke-width="2"/><text x="320" y="324" text-anchor="middle" font-size="12" fill="#1a130b">núcleo</text>';
+    for(var i=0;i<5;i++)o+='<path d="M'+(170+i*8)+' '+(300+i*14)+' q60 -16 120 0" stroke="#8d6428" stroke-width="1.6" fill="none" opacity=".6"/>';
+    o+='<text x="168" y="372" font-size="11.5" fill="#3a2a1a">retículo rugoso</text>';
+    /* grânulos */
+    var n=k===0?16:30;var gs=[];
+    for(i=0;i<n;i++){var x=230+r()*180,y=(k===0?130:125)+r()*(k===0?60:120);gs.push([x,y]);}
+    gs.forEach(function(g,i){var act=(k>=2&&i%3===0)||(k===3&&i%2===0);
+      o+='<circle cx="'+g[0]+'" cy="'+g[1]+'" r="'+(k===0?9:10)+'" fill="'+(act?'#facb8d':'#6b4c1e')+'" stroke="#2c2015" stroke-width="1"'+(act?' style="filter:drop-shadow(0 0 4px #e1ad66)"':'')+'/>';});
+    /* lisossomos */
+    var ls=[[250,230],[380,210],[300,250]];ls.forEach(function(l){o+='<circle cx="'+l[0]+'" cy="'+l[1]+'" r="12" fill="none" stroke="#3a2a1a" stroke-width="2" stroke-dasharray="3 2"/>'});
+    if(k>=2){o+='<ellipse cx="300" cy="200" rx="26" ry="18" fill="#facb8d" stroke="#3a2a1a" stroke-width="2" stroke-dasharray="3 2"/><text x="300" y="204" text-anchor="middle" font-size="10" fill="#1a130b">vacúolo</text>';
+      o+='<rect x="448" y="200" width="128" height="54" rx="3" fill="#efe6d6" stroke="#8d6428"/>'+'<text x="455" y="215" font-size="12" fill="#3a2a1a">colocalização:</text><text x="455" y="231" font-size="12" fill="#3a2a1a">catepsina B ativa</text><text x="455" y="247" font-size="12" fill="#3a2a1a">o tripsinogênio</text><path d="M448 220 L330 200" stroke="#3a2a1a" stroke-width="1"/>';}
+    if(k===0){for(i=0;i<5;i++)o+='<circle cx="'+(296+i*12)+'" cy="'+(70-i*10)+'" r="5" fill="#6b4c1e"/>';o+='<path d="M360 60 l26 -20" stroke="#3a2a1a" stroke-width="1.5"/><text x="390" y="38" font-size="12" fill="#3a2a1a">pró-enzimas saem inativas</text>';}
+    if(k===1){o+='<path d="M270 92 L370 92" stroke="#2c2015" stroke-width="6"/><text x="400" y="80" font-size="12" fill="#3a2a1a">exocitose apical bloqueada</text><path d="M396 76 L372 90" stroke="#3a2a1a"/>';}
+    if(k===3){o+='<path d="M120 380 L210 110" stroke="#facb8d" stroke-width="4" stroke-dasharray="10 8"/><path d="M520 380 L430 110" stroke="#facb8d" stroke-width="4" stroke-dasharray="10 8"/>';
+      for(i=0;i<26;i++){var sx=r()<.5?40+r()*90:520+r()*90,sy=120+r()*260;o+='<circle cx="'+sx+'" cy="'+sy+'" r="4" fill="#facb8d" stroke="#6b4c1e"/>';}
+      o+='<rect x="532" y="30" width="96" height="50" rx="4" fill="#1a130b"/><text x="580" y="52" text-anchor="middle" font-size="13" fill="#facb8d">citocinas</text><text x="580" y="69" text-anchor="middle" font-size="12" fill="#facb8d">→ SIRS</text>';
+      o+='<text x="20" y="104" font-size="12" fill="#3a2a1a">interstício: edema, necrose</text><text x="20" y="120" font-size="12" fill="#3a2a1a">da gordura, hemorragia</text>';}
+    $('#acin').innerHTML=o;$('#a-txt').innerHTML='<p style="margin:0">'+TX[k]+'</p>';}
+  seg($('#a-seg'),function(v){draw(+v)});draw(0);
+  function et(v){$('#e-txt').innerHTML='<p style="margin:0">'+ET[v]+'</p>'}seg($('#e-seg'),et);et('bil');
+})();
+
+/* ---------- 3. Atlanta / Marshall ---------- */
+(function(){
+  function pf(v){return v>400?0:v>300?1:v>200?2:v>101?3:4}
+  function cr(v){return v<1.4?0:v<=1.8?1:v<=3.6?2:v<=4.9?3:4}
+  function upd(){var p=+$('#i-pf').value,c=+$('#i-cr').value,cv=+segVal($('#i-cv')),dur=+segVal($('#i-dur')),loc=$('#i-loc').checked;
+    $('#o-pf').textContent=p;$('#o-cr').textContent=br(c,1)+' mg/dL';
+    var s=[pf(p),cr(c),cv],nm=['Respiratório','Renal','Cardiovascular'],h='';
+    s.forEach(function(v,i){h+='<div style="border:1px solid '+(v>=2?'var(--a300)':'var(--rule-2)')+';border-radius:6px;padding:10px 4px;background:'+(v>=2?'var(--t2)':'transparent')+'"><div class="big" style="font-size:38px;color:'+(v>=2?'var(--a300)':'var(--ink-soft)')+'">'+v+'</div><div style="font-size:11px;color:var(--ink-meta);letter-spacing:.08em;text-transform:uppercase">'+nm[i]+'</div></div>'});
+    $('#mar').innerHTML=h;var fo=s.filter(function(v){return v>=2}).length,el=$('#at-v');
+    ['#r-l','#r-m','#r-g'].forEach(function(x){$(x).classList.remove('hl')});
+    if(fo&&dur){verd(el,'d','Atlanta revisada','Grave','<p>Falência de '+fo+' sistema'+(fo>1?'s':'')+' persistindo além de 48 horas. Mortalidade alta; UTI.</p>');$('#r-g').classList.add('hl');}
+    else if(fo||loc){verd(el,'w','Atlanta revisada','Moderadamente grave','<p>'+(fo?'Falência transitória (resolve em menos de 48 h)':'Sem falência')+(loc?', com complicação local ou sistêmica':'')+'.</p>');$('#r-m').classList.add('hl');}
+    else{verd(el,'b','Atlanta revisada','Leve','<p>Nenhum sistema com 2 ou mais pontos e nenhuma complicação. Em geral, alta em poucos dias.</p>');$('#r-l').classList.add('hl');}}
+  ['#i-pf','#i-cr'].forEach(function(s){$(s).addEventListener('input',upd)});seg($('#i-cv'),upd);seg($('#i-dur'),upd);$('#i-loc').addEventListener('change',upd);upd();
+})();
+
+/* ---------- 4. coleções ---------- */
+(function(){
+  function draw(){var m=+segVal($('#c-mor')),t=+segVal($('#c-t')),inf=$('#c-inf').checked,sx=$('#c-sx').checked,r=rng(9);
+    var o='<defs><filter id="ctn"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" seed="2"/><feColorMatrix type="matrix" values="0 0 0 0 .8  0 0 0 0 .78  0 0 0 0 .74  1.2 0 0 0 -.45"/></filter></defs>';
+    o+='<rect width="640" height="420" fill="#0b0b0a"/><ellipse cx="320" cy="215" rx="300" ry="190" fill="#2e2c29"/><ellipse cx="320" cy="215" rx="290" ry="180" fill="#3d3a36"/>';
+    /* fígado (direita do paciente = esquerda da figura), baço, estômago */
+    o+='<path d="M40 210 C 40 110 120 50 230 52 C 250 90 230 140 200 170 C 170 200 160 250 170 300 C 110 300 50 270 40 210 Z" fill="#8b857b"/>';
+    o+='<path d="M560 150 C 600 180 606 250 580 290 C 560 300 540 280 540 250 C 545 210 545 180 560 150 Z" fill="#8f897f"/>';
+    o+='<path d="M330 60 C 420 50 510 80 530 130 C 520 160 470 160 430 150 C 390 140 350 120 330 60 Z" fill="#5d5952"/><text x="440" y="110" font-size="12" fill="#d8d2c6">estômago</text>';
+    /* coluna, aorta, cava, rins */
+    o+='<circle cx="320" cy="345" r="34" fill="#efe9de"/><circle cx="320" cy="345" r="20" fill="#bdb6aa"/><circle cx="340" cy="292" r="14" fill="#e9e3d6"/><ellipse cx="282" cy="290" rx="16" ry="11" fill="#cfc8bb"/>';
+    o+='<ellipse cx="210" cy="320" rx="34" ry="44" fill="#a59e92"/><ellipse cx="440" cy="320" rx="34" ry="44" fill="#a59e92"/>';
+    /* pâncreas */
+    var pan='M215 232 C 240 210 290 230 330 236 C 390 238 450 214 520 200 C 548 196 556 214 540 226 C 470 246 400 262 330 266 C 290 268 250 262 226 258 Z';
+    o+='<path d="'+pan+'" fill="#b1aa9c"/><circle cx="330" cy="262" r="7" fill="#efe9de"/><circle cx="310" cy="262" r="8" fill="#e3ddd0"/>';
+    o+='<path d="M200 200 C 190 220 190 250 205 270" stroke="#6f6a61" stroke-width="12" fill="none"/><text x="150" y="196" font-size="12" fill="#d8d2c6">duodeno</text>';
+    if(m===1) o+='<path d="M428 226 C 465 218 500 208 528 204 C 538 212 532 222 512 228 C 482 238 452 244 430 244 Z" fill="#45413c"/><path d="M470 238 L486 286" stroke="#d8d2c6" stroke-width="1"/><text x="420" y="300" font-size="12" fill="#d8d2c6">pâncreas sem realce (necrose)</text>';
+    /* coleção */
+    var cx=400,cy=170;
+    if(t===0){ /* sem parede, molda-se */
+      o+='<path d="M300 200 C 330 160 420 150 480 170 C 520 182 530 196 510 206 C 470 214 440 220 400 222 C 360 226 320 222 300 200 Z" fill="'+(m?'#56514a':'#4d4a45')+'"/>';
+      if(m)for(var i=0;i<26;i++)o+='<circle cx="'+(330+r()*170)+'" cy="'+(178+r()*36)+'" r="'+(2+r()*4)+'" fill="#7c766c"/>';}
+    else{o+='<ellipse cx="'+cx+'" cy="'+cy+'" rx="88" ry="56" fill="'+(m?'#56514a':'#4b4843')+'" stroke="#c9c2b4" stroke-width="5"/>';
+      if(m){for(i=0;i<30;i++)o+='<circle cx="'+(cx-60+r()*120)+'" cy="'+(cy-30+r()*60)+'" r="'+(2+r()*6)+'" fill="#857f74"/>';}}
+    if(inf){for(i=0;i<12;i++)o+='<circle cx="'+(t?cx-50+r()*100:340+r()*140)+'" cy="'+(t?cy-34+r()*30:182+r()*20)+'" r="'+(2+r()*3.5)+'" fill="#000"/>';}
+    o+='<text x="20" y="404" font-size="11" fill="#9a9488">D</text><text x="612" y="404" font-size="11" fill="#9a9488">E</text>';
+    $('#col').innerHTML=o;
+    var NM=[['Coleção fluida peripancreática aguda','Pseudocisto'],['Coleção necrótica aguda','Necrose encapsulada']][m][t];
+    $$('#c-tab td[data-c]').forEach(function(td){td.style.background=td.dataset.c===''+m+t?'var(--t2)':'';td.style.color=td.dataset.c===''+m+t?'var(--a300)':''});
+    var body='',cls='b';
+    if(inf){cls='d';body='<p>Infectada. Antibiótico com boa penetração na necrose (carbapenêmico, quinolona, metronidazol). '+(t?'Já encapsulada: drenagem percutânea ou endoscópica e, se não houver melhora, necrosectomia minimamente invasiva.':'Se estável, adiar a intervenção até a encapsulação (cerca de 4 semanas).')+'</p>';}
+    else if(sx){cls=t?'m':'w';body='<p>'+(t?'Sintomática e encapsulada: drenagem, de preferência endoscópica transmural guiada por ecoendoscopia.':'Antes de 4 semanas a coleção não tem parede: suporte e, se possível, esperar. Drenar cedo só por indicação forte.')+'</p>';}
+    else{cls=m?'w':'b';body='<p>'+(t?'Assintomática: observação, qualquer que seja o tamanho.':'Sem parede, a maioria se reabsorve. Sem intervenção.')+'</p>';}
+    verd($('#c-v'),cls,(m?'Necrosante':'Edematosa')+' · '+(t?'≥ 4 semanas':'< 4 semanas'),NM+(inf?' infectada':''),body);}
+  seg($('#c-mor'),draw);seg($('#c-t'),draw);$('#c-inf').addEventListener('change',draw);$('#c-sx').addEventListener('change',draw);draw();
+})();
+
+/* ---------- 5. escores ---------- */
+(function(){
+  var R={n:[['Admissão','Idade > 55 anos'],['Admissão','Leucócitos > 16.000/mm³'],['Admissão','Glicemia > 200 mg/dL'],['Admissão','LDH > 350 UI/L'],['Admissão','AST > 250 UI/L'],
+     ['48 horas','Queda do hematócrito > 10 pontos'],['48 horas','Aumento da ureia (BUN) > 5 mg/dL'],['48 horas','Cálcio < 8 mg/dL'],['48 horas','PaO₂ < 60 mmHg'],['48 horas','Déficit de bases > 4 mEq/L'],['48 horas','Sequestro de líquido > 6 L']],
+    b:[['Admissão','Idade > 70 anos'],['Admissão','Leucócitos > 18.000/mm³'],['Admissão','Glicemia > 220 mg/dL'],['Admissão','LDH > 400 UI/L'],['Admissão','AST > 250 UI/L'],
+     ['48 horas','Queda do hematócrito > 10 pontos'],['48 horas','Aumento da ureia (BUN) > 2 mg/dL'],['48 horas','Cálcio < 8 mg/dL'],['48 horas','Déficit de bases > 5 mEq/L'],['48 horas','Sequestro de líquido > 4 L']]};
+  function rr(){var v=segVal($('#r-ver')),h='',last='';R[v].forEach(function(it,i){if(it[0]!==last){h+='<span class="gt" style="font-family:var(--fh);font-size:18px;color:var(--a300);display:block;margin-top:'+(i?10:0)+'px">'+it[0]+'</span>';last=it[0]}
+      h+='<label class="chk"><input type="checkbox" class="rs">'+it[1]+'</label>'});h+='<div id="r-o" style="margin-top:10px"></div>';$('#r-list').innerHTML=h;
+    $$('.rs').forEach(function(c){c.addEventListener('change',ro)});ro();}
+  function ro(){var n=$$('.rs').filter(function(c){return c.checked}).length;var d=document.createElement('div');verd(d,n>=3?'d':'b','Ranson',n+' ponto'+(n===1?'':'s'),'<p>'+(n>=3?'≥ 3: pancreatite grave prevista.':'< 3: baixo risco previsto.')+'</p>');$('#r-o').innerHTML='';$('#r-o').appendChild(d);}
+  seg($('#r-ver'),rr);rr();
+  function bi(){var n=$$('.bis').filter(function(c){return c.checked}).length;var d=document.createElement('div');verd(d,n>=3?'d':'b','BISAP',n+' de 5','<p>'+(n>=3?'≥ 3: risco aumentado de mortalidade.':'Baixo risco.')+'</p>');$('#bis-o').innerHTML='';$('#bis-o').appendChild(d);}
+  $$('.bis').forEach(function(c){c.addEventListener('change',bi)});bi();
+  var BT=['A · pâncreas normal (0)','B · aumento focal ou difuso (1)','C · alteração da glândula com inflamação peripancreática (2)','D · uma coleção líquida (3)','E · duas ou mais coleções e/ou gás (4)'];
+  function ct(){var b=+segVal($('#ct-b')),n=+segVal($('#ct-n')),s=b+n;$('#ct-bt').textContent='Balthazar '+BT[b];
+    var d=document.createElement('div');verd(d,s>=7?'d':s>=4?'w':'b','CTSI',s+' de 10','<p>'+(s>=7?'7–10: grave.':s>=4?'4–6: moderada.':'0–3: leve.')+' Balthazar '+b+' + necrose '+n+'.</p>');$('#ct-o').innerHTML='';$('#ct-o').appendChild(d);}
+  seg($('#ct-b'),ct);seg($('#ct-n'),ct);ct();
+})();
+
+/* ---------- 6. plano ---------- */
+(function(){
+  function run(){var bil=segVal($('#p-et'))==='b',nec=segVal($('#p-g'))==='n',col=$('#p-col').checked,obs=$('#p-obs').checked,tol=$('#p-tol').checked,inf=$('#p-inf').checked,w=+$('#p-sem').value;
+    $('#o-sem').textContent=w===0?'admissão':w+(w===1?' semana':' semanas');
+    var N=[];
+    N.push([0,0,'Ressuscitação moderada guiada por metas','Ringer lactato; metas de diurese, frequência cardíaca, PA, ureia e hematócrito. Evitar sobrecarga.']);
+    N.push([0,0,'Analgesia','Opioides são permitidos.']);
+    N.push([0,1,tol?'Dieta oral precoce':'Nutrição enteral',tol?'Assim que tolerar, idealmente nas primeiras 24 horas; não esperar a lipase normalizar.':'Sonda gástrica ou jejunal; parenteral só se a enteral não for possível.']);
+    N.push([0,8,inf?'Antibiótico terapêutico':'Sem antibiótico profilático',inf?'Para necrose infectada: carbapenêmico, quinolona ou metronidazol.':'Mesmo com necrose extensa.']);
+    if(bil&&col) N.push([0,0,'CPRE em até 24 horas','Colangite associada: drenagem biliar urgente e antibiótico.']);
+    else if(bil&&obs) N.push([0,1,'CPRE pela obstrução persistente','Colangio-RM ou ecoendoscopia se a obstrução for duvidosa.']);
+    if(nec) N.push([0,1,'Tomografia com contraste após 72–96 h','Para delimitar necrose, ou antes se houver piora.']);
+    if(inf){N.push([1,3,'Adiar a intervenção','Se estável, esperar a necrose encapsular (cerca de 4 semanas).']);
+      N.push([4,8,'Step-up','Drenagem percutânea ou endoscópica transmural; necrosectomia minimamente invasiva se não melhorar.']);}
+    if(bil) N.push(nec?[6,8,'Colecistectomia adiada','Após resolução das coleções ou cerca de 6 semanas.']:[0,1,'Colecistectomia na mesma internação','Reduz recidiva e readmissão (ensaio PONCHO).']);
+    var h='';N.forEach(function(n,i){var on=w>=n[0]&&w<=n[1];if(i)h+='<div class="farrow"></div>';
+      h+='<div class="fnode'+(on?' on':'')+'"><b>'+n[2]+'</b>'+n[3]+'<span style="display:block;font-size:11px;color:var(--ink-meta);margin-top:3px;letter-spacing:.06em">'+(n[0]===n[1]?(n[0]===0?'admissão / primeiras 72 h':'semana '+n[0]):'semanas '+n[0]+'–'+n[1])+'</span></div>'});
+    $('#pl').innerHTML=h;}
+  seg($('#p-et'),run);seg($('#p-g'),run);['#p-col','#p-obs','#p-tol','#p-inf'].forEach(function(s){$(s).addEventListener('change',run)});$('#p-sem').addEventListener('input',run);run();
+})();
+
+/* ---------- 7. prancha ---------- */
+(function(){
+  var s='<defs><pattern id="lob" width="9" height="9" patternUnits="userSpaceOnUse"><path d="M0 4.5 Q2.2 0 4.5 4.5 T9 4.5" stroke="#6b4c1e" stroke-width=".8" fill="none" opacity=".55"/></pattern></defs>'+
+  '<rect width="680" height="460" fill="#1a1612"/>'+
+  '<path class="rg" data-reg="esp" d="M120 120 H640 V400 H120 Z" fill="#facb8d" opacity="0"/>'+
+  /* baço */
+  '<path d="M600 100 C 650 110 668 180 650 230 C 630 250 600 236 596 210 C 592 170 586 130 600 100 Z" fill="#4a3420" stroke="#2c2015"/><text x="612" y="270" font-size="12" fill="#d8c7a8">baço</text>'+
+  /* duodeno */
+  '<path d="M300 140 C 240 136 186 140 168 170 C 150 200 148 280 160 330 C 172 372 220 384 300 384 C 360 384 410 380 446 360 C 456 350 456 330 450 318" stroke="#6a5038" stroke-width="40" fill="none" stroke-linecap="round"/>'+
+  '<path d="M300 140 C 240 136 186 140 168 170 C 150 200 148 280 160 330 C 172 372 220 384 300 384 C 360 384 410 380 446 360 C 456 350 456 330 450 318" stroke="#8a6b4a" stroke-width="2" fill="none" stroke-dasharray="2 6"/>'+
+  /* veias: porta, VMS, esplênica */
+  '<path d="M322 452 C 322 380 322 300 324 248 C 318 200 300 160 286 110" stroke="#5a4026" stroke-width="16" fill="none" stroke-linecap="round"/>'+
+  '<path class="rg" data-reg="esp_v" d="M324 248 C 400 236 500 214 604 188" stroke="#5a4026" stroke-width="12" fill="none" stroke-linecap="round"/>'+
+  /* AMS */
+  '<path d="M350 452 C 350 380 350 300 352 236" stroke="#e1ad66" stroke-width="8" fill="none" stroke-linecap="round"/>'+
+  /* pâncreas */
+  '<path d="M190 190 C 200 170 250 168 290 186 C 320 200 340 210 380 208 C 450 200 520 176 590 170 C 610 170 612 196 596 204 C 530 222 460 240 400 252 C 370 258 352 262 346 280 C 346 310 330 340 300 346 C 260 352 214 342 196 310 C 184 280 182 220 190 190 Z" fill="#a8864f"/>'+
+  '<path d="M190 190 C 200 170 250 168 290 186 C 320 200 340 210 380 208 C 450 200 520 176 590 170 C 610 170 612 196 596 204 C 530 222 460 240 400 252 C 370 258 352 262 346 280 C 346 310 330 340 300 346 C 260 352 214 342 196 310 C 184 280 182 220 190 190 Z" fill="url(#lob)" stroke="#4a3420" stroke-width="1.5"/>'+
+'<g fill="#facb8d" style="pointer-events:none"><ellipse class="rg ov" opacity="0" data-reg="cab" cx="236" cy="240" rx="46" ry="62"/><ellipse class="rg ov" opacity="0" data-reg="unc" cx="300" cy="318" rx="40" ry="24"/><ellipse class="rg ov" opacity="0" data-reg="col" cx="340" cy="222" rx="30" ry="22"/><ellipse class="rg ov" opacity="0" data-reg="corp" cx="455" cy="218" rx="72" ry="22" transform="rotate(-11 455 218)"/><ellipse class="rg ov" opacity="0" data-reg="cau" cx="566" cy="188" rx="40" ry="18" transform="rotate(-8 566 188)"/></g>'+
+  /* veia esplênica atrás do corpo (tracejado) */
+  '<path d="M330 244 C 400 234 500 212 600 188" stroke="#2c2015" stroke-width="3" fill="none" stroke-dasharray="6 5" opacity=".7"/>'+
+  /* colédoco e Wirsung */
+  '<path class="rg" data-reg="cbd" d="M250 60 C 252 120 246 200 230 250 C 222 268 210 278 194 282" stroke="#efe6d6" stroke-width="9" fill="none" stroke-linecap="round"/>'+
+  '<path class="rg" data-reg="wir" d="M590 186 C 520 196 450 216 390 226 C 340 234 300 240 270 256 C 240 270 214 280 194 282" stroke="#efe6d6" stroke-width="5" fill="none" stroke-linecap="round"/>'+
+  '<path d="M268 254 C 240 246 214 244 194 244" stroke="#efe6d6" stroke-width="3" fill="none" stroke-dasharray="4 3"/>'+
+  '<circle class="rg" data-reg="pap" cx="190" cy="283" r="7" fill="#facb8d" stroke="#2c2015"/><circle cx="192" cy="244" r="4" fill="#efe6d6"/>'+
+  '<text x="230" y="44" font-size="12" fill="#d8c7a8">do hilo hepático</text><text x="456" y="416" font-size="12" fill="#d8c7a8">duodeno (3ª e 4ª porções)</text>';
+  var pins=[['cab',230,210,'1'],['unc',300,320,'2'],['col',340,226,'3'],['corp',460,216,'4'],['cau',566,186,'5'],['wir',420,238,'6'],['cbd',262,138,'7'],['pap',190,306,'8'],['vms',336,420,'9'],['esp_v',520,236,'10'],['esp',150,410,'11']];
+  var p='';pins.forEach(function(q){p+='<g class="hot" data-k="'+q[0]+'"><circle class="pin" cx="'+q[1]+'" cy="'+q[2]+'" r="11"/><text x="'+q[1]+'" y="'+q[2]+'">'+q[3]+'</text></g>'});
+  $('#anat').innerHTML=s+p;
+  var I={cab:{t:'1 · Cabeça',h:'Dentro da alça duodenal',body:'<p style="margin:0;font-size:14px">Envolvida pelo duodeno, atravessada pelo colédoco intrapancreático. Edema da cabeça pode comprimir o colédoco e dar icterícia sem cálculo.</p>'},
+   unc:{t:'2 · Processo uncinado',h:'Atrás dos vasos mesentéricos',body:'<p style="margin:0;font-size:14px">Projeção da cabeça que passa por trás da veia mesentérica superior.</p>'},
+   col:{t:'3 · Colo',h:'Sobre a confluência portal',body:'<p style="margin:0;font-size:14px">Anterior à confluência da veia mesentérica superior com a esplênica, origem da veia porta.</p>'},
+   corp:{t:'4 · Corpo',h:'Sobre a coluna e a aorta',body:'<p style="margin:0;font-size:14px">Cruza a coluna; é onde o trauma fechado em guidão secciona o pâncreas. Anterior a ele, a retrocavidade dos epíplons, onde se acumulam coleções.</p>'},
+   cau:{t:'5 · Cauda',h:'No hilo esplênico',body:'<p style="margin:0;font-size:14px">Intraperitoneal no ligamento esplenorrenal, junto aos vasos esplênicos.</p>'},
+   wir:{t:'6 · Ducto pancreático principal',h:'Wirsung',body:'<p style="margin:0;font-size:14px">Corre da cauda à cabeça e se une ao colédoco na ampola (papila maior). O ducto acessório (Santorini, tracejado) drena na papila menor, acima. A obstrução transitória dessa saída comum é o modelo da pancreatite biliar.</p>'},
+   cbd:{t:'7 · Colédoco',h:'Porção intrapancreática',body:'<p style="margin:0;font-size:14px">Desce por trás do duodeno e dentro da cabeça. Um cálculo que passa por aqui e trava na ampola obstrui os dois ductos ao mesmo tempo.</p>'},
+   pap:{t:'8 · Papila maior',h:'Ampola de Vater',body:'<p style="margin:0;font-size:14px">Na parede medial da segunda porção do duodeno. É onde a CPRE canula e onde o cálculo impacta.</p>'},
+   vms:{t:'9 · Vasos mesentéricos superiores',h:'Veia à direita, artéria à esquerda',body:'<p style="margin:0;font-size:14px">A veia (bronze) fica à direita da artéria (ouro). A inflamação pode trombosar a veia mesentérica superior e a porta.</p>'},
+   esp_v:{t:'10 · Veia esplênica',h:'Na face posterior do corpo',body:'<p style="margin:0;font-size:14px">Corre colada ao pâncreas. A inflamação peripancreática a trombosa: hipertensão portal segmentar (sinistra), varizes gástricas isoladas com fígado normal.</p>'},
+   esp:{t:'11 · Retroperitônio',h:'Espaço pararrenal anterior',body:'<p style="margin:0;font-size:14px">O pâncreas, o duodeno e os cólons ascendente e descendente estão nele. O exsudato se espalha por esse espaço; o sangue que disseca até o flanco dá o sinal de Grey Turner, e até a região periumbilical (pelo ligamento falciforme), o de Cullen.</p>'}};
+  plate('#anat','#an-box',I,'cab',function(k){$$('#anat .rg').forEach(function(r){var on=r.dataset.reg.split(' ').indexOf(k)>=0;
+     if(r.dataset.reg==='esp')r.setAttribute('opacity',on?'.12':'0');else if(r.classList.contains('ov'))r.setAttribute('opacity',on?'.32':'0');else r.style.filter=on?'drop-shadow(0 0 6px #facb8d)':''})});
+})();
+
+/* ---------- 9. forja ---------- */
+forja([
+ {s:'Joana, 52 anos, dor epigástrica em faixa há 10 horas, lipase 8 vezes o limite superior, ultrassom com colelitíase e colédoco de 5 mm, bilirrubina normal, sem disfunção orgânica. Qual o conjunto de condutas correto?',
+  a:['Tomografia com contraste imediata para confirmar o diagnóstico','Carbapenêmico profilático','Ringer lactato guiado por metas, analgesia, dieta oral precoce e colecistectomia na mesma internação','CPRE nas primeiras 24 horas','Jejum até normalizar a lipase'],c:2,
+  r:'Diagnóstico fechado por dor e enzima; etiologia biliar; leve até aqui. Suporte com ressuscitação moderada, dieta assim que tolerar e colecistectomia antes da alta.',
+  w:['Dois critérios já fecham o diagnóstico; TC precoce subestima necrose.','Não há indicação de antibiótico profilático.','','Sem colangite e sem obstrução persistente, CPRE não ajuda.','Dieta oral precoce é segura e reduz complicações; a lipase não guia a dieta.']},
+ {s:'Mesma Joana, mas no segundo dia apresenta <mark>febre de 39 °C, icterícia (bilirrubina 5 mg/dL) e dor no hipocôndrio direito</mark>. Qual a conduta?',
+  a:['Antibiótico e CPRE em até 24 horas','Colecistectomia de urgência com exploração de vias biliares','Colangio-RM e reavaliar em 72 horas','Antibiótico isolado por 7 dias','Drenagem percutânea da vesícula'],c:0,
+  r:'Pancreatite biliar com colangite: drenagem biliar urgente por CPRE, em até 24 horas, com antibiótico.',
+  w:['','Operar a via biliar na fase aguda e com colangite é a opção de maior risco.','A colangite já indica drenagem; esperar 72 h é atrasar.','Antibiótico sem drenagem não trata a obstrução.','A vesícula não é o problema; a via biliar é.']},
+ {s:'Mesma Joana, mas no primeiro dia a <mark>PaO₂/FiO₂ cai para 250 e normaliza em 36 horas</mark>, sem coleções na tomografia. Pela classificação de Atlanta revisada, a pancreatite é:',
+  a:['Leve, porque não há complicação local','Grave, porque houve falência respiratória','Grave, porque o escore de Marshall chegou a 2','Leve, porque a lipase caiu','Moderadamente grave, porque a falência foi transitória'],c:4,
+  r:'PaO₂/FiO₂ entre 201 e 300 vale 2 no Marshall: falência orgânica. Durou menos de 48 horas: transitória. Falência transitória define a moderadamente grave.',
+  w:['A leve não tem falência alguma.','A grave exige falência persistente, acima de 48 horas.','Marshall 2 define falência; a duração define a classe.','A enzima não entra na classificação.','']},
+ {s:'Mesma Joana, <mark>cinco semanas depois</mark>, assintomática e se alimentando. A tomografia mostra <mark>coleção de 7 cm encapsulada, com conteúdo heterogêneo e debris</mark> junto ao corpo do pâncreas. Qual o diagnóstico e a conduta?',
+  a:['Pseudocisto; drenagem endoscópica por ter mais de 6 cm','Necrose encapsulada; observação','Coleção fluida aguda; drenagem percutânea','Necrose infectada; necrosectomia aberta','Pseudocisto; cistojejunostomia'],c:1,
+  r:'Mais de 4 semanas, parede definida e conteúdo sólido: necrose encapsulada (o pseudocisto tem conteúdo líquido homogêneo). Assintomática e sem infecção: observação, independentemente do tamanho.',
+  w:['O conteúdo heterogêneo indica necrose; e o critério de tamanho isolado não indica drenagem.','','Coleção aguda é antes de 4 semanas e sem parede.','Não há sinal de infecção, e a necrosectomia aberta não é primeira linha.','Diagnóstico errado e cirurgia sem indicação.']},
+ {s:'Paciente com pancreatite necrosante evolui, <mark>na terceira semana, com febre, piora clínica e gás na necrose</mark> à tomografia. Está hemodinamicamente estável. Qual a conduta?',
+  a:['Necrosectomia aberta imediata','Punção aspirativa da necrose antes de qualquer antibiótico','Observação sem antibiótico até a quarta semana','Nutrição parenteral e jejum absoluto','Antibiótico com penetração na necrose e, se possível, adiar a drenagem até a encapsulação'],c:4,
+  r:'Gás na necrose é infecção. No doente estável, antibiótico e adiamento da intervenção até a necrose se encapsular; depois, step-up: drenagem e necrosectomia minimamente invasiva se necessário.',
+  w:['Necrosectomia aberta precoce tem mais complicações e mortalidade que o step-up.','A punção não é rotina; o gás já define infecção.','Infecção exige antibiótico.','Enteral continua preferível.','']},
+ {s:'Homem de 38 anos, diabético mal controlado, com pancreatite aguda: lipase 5 vezes o limite, <mark>amilase normal, soro lipêmico, triglicerídeos de 2.400 mg/dL</mark>, ultrassom sem cálculos, nega álcool. O que explica o quadro?',
+  a:['Pancreatite alcoólica oculta; a amilase normal afasta pancreatite','Pancreatite por hipertrigliceridemia; a amilase pode vir falsamente normal','Pancreatite biliar por microlitíase; triglicerídeos são consequência','Erro laboratorial; repetir após jejum antes de qualquer conduta','Pancreatite autoimune'],c:1,
+  r:'Triglicerídeos acima de 1.000 mg/dL causam pancreatite, e o soro lipêmico interfere na dosagem da amilase. O tratamento inclui suporte, insulina para baixar os triglicerídeos e, em casos selecionados, plasmaférese.',
+  w:['A amilase normal não afasta pancreatite, e não há história de álcool.','','Triglicerídeos de 2.400 mg/dL bastam como causa.','O valor é causal e muda a conduta.','Não há dado que sugira autoimunidade.']}
+],'#forja-list','#forja-score','#forja-reset');
+</script></body></html>
