@@ -176,29 +176,58 @@
       'stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' +
       d.map(function (p) { return '<path d="' + p + '"/>'; }).join("") + "</svg>";
   }
-  /* glifo característico por matéria — dá identidade ao ícone da matéria */
-  var GLIFO_AREA = {
-    coloproctologia: "alvo", perioperatorio: "relogio", "vias-biliares": "bisturi",
-    "estomago-duodeno": "alvo", oncologia: "alvo", pancreas: "bisturi", trauma: "alvo",
-    hernias: "bisturi", esofago: "bisturi", "apendice-delgado": "bisturi", figado: "alvo",
-    etica: "livro", urologia: "bisturi", "endocrino-cp": "alvo", "anestesia-via-aerea": "relogio",
-    "baco-transplante": "bisturi", vascular: "alvo", toracica: "bisturi",
-    "pele-sarcomas": "bisturi", videolaparoscopia: "alvo", bariatrica: "bisturi",
-    pediatrica: "alvo", mama: "alvo", anatomia: "livro", transversais: "livro"
-  };
 
-  /* ── ladrilho ────────────────────────────────────────────────────────── */
+  /* ── quadros ────────────────────────────────────────────────────────────
+     Uma pintura de estilo renascentista por matéria, em
+     assets/img/quadros/<slug>.webp. Os temas usam a pintura da matéria,
+     cada um num recorte de detalhe diferente. Se o arquivo não existir, a
+     <img> volta sozinha para a placa antiga (data-fb). No pacote de arquivo
+     único (dist/) só entra o quadro que o empacotador tiver embutido. */
+  var IMG_EMBUTIDAS = window.RM_IMG || null;
+  function caminhoQuadro(slug) {
+    if (!slug) return "";
+    var c = "assets/img/quadros/" + slug + ".webp";
+    if (IMG_EMBUTIDAS) return IMG_EMBUTIDAS[c] || "";
+    return c;
+  }
+  function imgArea(a) {
+    a = a || D.areas[0];
+    var q = caminhoQuadro(a.slug);
+    return { src: q || a.img, fb: a.img, quadro: !!q };
+  }
+  function imgTema(t) {
+    if (!t) return imgArea();
+    var a = porArea[t.areaSlug], q = a ? caminhoQuadro(a.slug) : "";
+    return { src: q || t.img, fb: t.img, quadro: !!q };
+  }
+  var DETALHES = ["50% 30%", "20% 24%", "80% 22%", "28% 72%", "74% 70%", "50% 58%", "14% 48%", "86% 50%"];
+  function tagImg(im, o) {
+    o = o || {};
+    var det = o.detalhe != null && o.detalhe >= 0 && im.quadro ? DETALHES[o.detalhe % DETALHES.length] : "";
+    return '<img src="' + esc(im.src) + '" alt="' + esc(o.alt || "") + '"' + (o.lazy === false ? "" : ' loading="lazy"') +
+      (im.fb && im.fb !== im.src ? ' data-fb="' + esc(im.fb) + '"' : "") +
+      ' class="' + (im.quadro ? "pintura" : "placa") + (det ? " detalhe" : "") + '"' +
+      (det ? ' style="--foco:' + det + '"' : "") + ">";
+  }
+  /* moldura dourada, com selo e plaqueta de latão opcionais */
+  function quadro(im, o) {
+    o = o || {};
+    return '<span class="quadro' + (o.cls ? " " + o.cls : "") + '"><span class="quadro-tela">' + tagImg(im, o) + "</span>" +
+      (o.selo || "") + "</span>" +
+      (o.placa ? '<span class="placa-latao">' + o.placa + "</span>" : "");
+  }
+  function seloAtlas(txt, cls) {
+    return '<span class="selo' + (cls ? " " + cls : "") + '">' + icone("atlas", 12) + esc(txt) + "</span>";
+  }
+
+  /* ── ladrilho: uma obra pendurada na galeria ───────────────────────────── */
   function ladrilho(o) {
     var pr = Math.round((o.progresso || 0) * 100);
     var rotulo = o.titulo + (o.dica ? " — " + o.dica : "") + (pr ? " — " + pr + "% visto" : "");
-    return '<a class="tile" href="' + esc(o.href) + '" aria-label="' + esc(rotulo) + '" title="' + esc(rotulo) + '">' +
-      '<img class="tile-img" src="' + esc(o.img) + '" alt="" loading="lazy">' +
-      '<span class="tile-scrim"></span>' +
-      (o.glifo ? '<span class="tile-glyph">' + icone(o.glifo, 18) + "</span>" : "") +
-      (o.selo ? '<span class="selo selo-tile">' + icone("atlas", 12) + esc(o.selo) + "</span>" : "") +
-      '<span class="tile-body">' +
-      (o.legenda ? '<span class="tile-cap">' + esc(o.legenda) + (pr ? ' <span class="tile-pct num">· ' + pr + "%</span>" : "") + "</span>" : "") +
-      '<span class="tile-title">' + esc(o.titulo) + "</span></span>" +
+    return '<a class="tile obra" href="' + esc(o.href) + '" aria-label="' + esc(rotulo) + '" title="' + esc(rotulo) + '">' +
+      quadro(o.img, { detalhe: o.detalhe, selo: o.selo ? seloAtlas(o.selo, "selo-tile") : "" }) +
+      '<span class="placa-latao"><span class="tile-title">' + esc(o.titulo) + "</span></span>" +
+      '<span class="tile-cap">' + esc(o.legenda || "") + (pr ? ' · <span class="tile-pct num">' + pr + "% visto</span>" : "") + "</span>" +
       '<span class="tile-rail"><i style="width:' + pr + '%"></i></span></a>';
   }
 
@@ -273,8 +302,7 @@
     var t = porTema[au.temaId], a = porArea[au.areaSlug] || (t && porArea[t.areaSlug]) || {};
     var visto = !!P.aulas[au.id];
     return '<a class="atlas-card' + (compacto ? " atlas-card-c" : "") + '" href="#/aula/' + esc(au.id) + '">' +
-      '<span class="atlas-img"><img src="' + esc(t ? t.img : a.img) + '" alt="" loading="lazy"><span class="tile-scrim"></span>' +
-      '<span class="selo">' + icone("atlas", 12) + "Atlas</span></span>" +
+      '<span class="atlas-img">' + quadro(t ? imgTema(t) : imgArea(a), { detalhe: ATLAS.indexOf(au), selo: seloAtlas("Atlas") }) + "</span>" +
       '<span class="atlas-body">' +
       '<span class="kicker kicker-gold">' + esc(a.nome || "") + "</span>" +
       '<span class="atlas-t">' + esc(au.titulo) + "</span>" +
@@ -302,9 +330,21 @@
 
   /* ── shell ───────────────────────────────────────────────────────────── */
   var raiz = document.getElementById("app") || document.body;
-  var MARCA = '<span class="brand-mark">' +
-    '<svg width="11" height="12" viewBox="0 0 11 12" fill="#131211" aria-hidden="true"><path d="M1 1.2v9.6a.6.6 0 0 0 .92.5l7.6-4.8a.6.6 0 0 0 0-1L1.92.7A.6.6 0 0 0 1 1.2Z"/></svg>' +
-    '</span><span class="brand-name">Residência<span>Max</span></span>';
+  /* a marca é uma placa de latão gravada: monograma e nome em versalete */
+  var MARCA = '<span class="brand-mark" aria-hidden="true">RM</span>' +
+    '<span class="brand-name">Residência<span>Max</span></span>';
+  /* lustre do saguão — traço fino em latão, chamas em âmbar */
+  var LUSTRE = '<svg class="lustre" viewBox="0 0 160 96" width="160" height="96" aria-hidden="true" focusable="false" fill="none" stroke="#B08D57" stroke-width="1.1" stroke-linecap="round">' +
+    '<path d="M80 0v16"/><path d="M74 16h12l-2 5h-8z"/><path d="M80 21v30"/><ellipse cx="80" cy="54" rx="10" ry="4.5"/>' +
+    '<path d="M80 58v10l-3 4h6l-3-4"/>' +
+    '<path d="M71 53C58 68 34 66 22 50"/><path d="M89 53c13 15 37 13 49-3"/>' +
+    '<path d="M74 55C66 72 52 70 46 58"/><path d="M86 55c8 17 22 15 28 3"/>' +
+    '<path d="M17 50h10M41 58h10M109 58h10M133 50h10"/>' +
+    '<path d="M19 50v-9M23 50v-9h-4M43 58v-9h4v9M111 58v-9h4v9M137 50v-9h4v9"/>' +
+    '<path d="M22 50l-3 9M22 50l3 9M138 50l-3 9M138 50l3 9" stroke-opacity=".55"/>' +
+    '<g fill="#E2B66E" stroke="none"><path d="M21 33c-2 3-2 6 0 7 2-1 2-4 0-7z"/><path d="M45 41c-2 3-2 6 0 7 2-1 2-4 0-7z"/>' +
+    '<path d="M113 41c-2 3-2 6 0 7 2-1 2-4 0-7z"/><path d="M139 33c-2 3-2 6 0 7 2-1 2-4 0-7z"/></g>' +
+    '<g fill="#B08D57" stroke="none"><path d="M80 76l2 4-2 4-2-4z"/><circle cx="19" cy="61" r="1.2"/><circle cx="25" cy="61" r="1.2"/><circle cx="135" cy="61" r="1.2"/><circle cx="141" cy="61" r="1.2"/></g></svg>';
 
   function montarShell() {
     raiz.innerHTML =
@@ -382,27 +422,27 @@
      assim o registro salvo fica pequeno e progresso antigo continua válido */
   function resolverUltimo(u) {
     if (!u || !u.href) return null;
-    var out = { href: u.href, titulo: u.titulo, meta: u.meta, img: u.img };
+    var out = { href: u.href, titulo: u.titulo, meta: u.meta, im: u.img ? { src: u.img, fb: "" } : null };
     var m;
     if ((m = u.href.match(/^#\/aula\/([^?]+)/))) {
       var au = aulaPorId[decodeURIComponent(m[1])];
       if (!au) return null;
       var t = porTema[au.temaId], a = porArea[au.areaSlug];
       out.titulo = au.titulo; out.meta = rotuloFormato(au) + (a ? " · " + a.nome : "");
-      out.img = t ? t.img : a ? a.img : out.img; out.atlas = ehAtlas(au);
+      out.im = t ? imgTema(t) : a ? imgArea(a) : out.im; out.atlas = ehAtlas(au);
     } else if ((m = u.href.match(/[?&]q=([^&]+)/)) && qPorId[decodeURIComponent(m[1])]) {
       var q = qPorId[decodeURIComponent(m[1])], tq = porTema[q.temaId];
-      out.img = tq ? tq.img : (porArea[q.areaSlug] || {}).img || out.img;
+      out.im = tq ? imgTema(tq) : porArea[q.areaSlug] ? imgArea(porArea[q.areaSlug]) : out.im;
     } else if ((m = u.href.match(/^#\/tema\/([^?]+)/)) && porTema[decodeURIComponent(m[1])]) {
-      out.img = porTema[decodeURIComponent(m[1])].img;
+      out.im = imgTema(porTema[decodeURIComponent(m[1])]);
     } else if ((m = u.href.match(/^#\/materia\/([^?]+)/)) && porArea[m[1]]) {
-      out.img = porArea[m[1]].img;
+      out.im = imgArea(porArea[m[1]]);
     } else if ((m = u.href.match(/[?&]tema=([^&]+)/)) && porTema[decodeURIComponent(m[1])]) {
-      out.img = porTema[decodeURIComponent(m[1])].img;
+      out.im = imgTema(porTema[decodeURIComponent(m[1])]);
     } else if ((m = u.href.match(/[?&]area=([^&]+)/)) && porArea[decodeURIComponent(m[1])]) {
-      out.img = porArea[decodeURIComponent(m[1])].img;
+      out.im = imgArea(porArea[decodeURIComponent(m[1])]);
     }
-    if (!out.img) out.img = D.areas[0].img;
+    if (!out.im) out.im = imgArea();
     return out;
   }
 
@@ -421,7 +461,7 @@
     if (!u || aqui || secaoAtual === "painel" || secaoAtual === "pratica" || secaoAtual === "cartoes") { mini.innerHTML = ""; }
     else {
       mini.innerHTML = '<a class="miniplayer" href="' + esc(u.href) + '" aria-label="Continuar: ' + esc(u.titulo) + '">' +
-        '<img src="' + esc(u.img) + '" alt="">' +
+        '<span class="mini-quadro">' + tagImg(u.im, { lazy: false }) + "</span>" +
         '<span class="mp-t"><b>' + esc(u.titulo) + "</b><span>" + esc(u.meta || "") + "</span></span>" +
         '<span class="mp-play">' + icone("play", 17) + "</span></a>";
     }
@@ -470,44 +510,47 @@
     /* atlas: os ainda não abertos primeiro, depois na ordem de leitura */
     var atlasPainel = ATLAS.slice().sort(function (x, y) { return (P.aulas[x.id] ? 1 : 0) - (P.aulas[y.id] ? 1 : 0); }).slice(0, 4);
 
+    var hoje = new Date().toLocaleDateString("pt-BR", { weekday: "long", day: "numeric", month: "long" });
     var html =
-      '<section class="split">' +
-      "<div>" +
-      '<h1 class="display">' + saudacao() + ", Gabriel.</h1>" +
-      '<p class="prose narrow" style="margin-top:var(--s4)">Todo o material que você produziu está reunido aqui: ' +
+      '<section class="saguao">' + LUSTRE +
+      '<span class="kicker kicker-gold">Recepção · ' + esc(hoje) + "</span>" +
+      '<h1 class="display letreiro">' + saudacao() + ", Gabriel.</h1>" +
+      '<span class="orn" aria-hidden="true"></span>' +
+      '<p class="prose saguao-prose">Todo o material que você produziu está reunido aqui: ' +
       TOTAL.aulas + " aulas — do ebook, das suas apresentações e " + plural(ATLAS.length, "aula-atlas interativa", "aulas-atlas interativas") + " —, " +
       TOTAL.questoes + " questões comentadas e " + TOTAL.cards + " cartões de repetição espaçada, " +
       "distribuídos em " + TOTAL.areas + " matérias e " + TOTAL.temas +
       " temas. A ordem das matérias segue o peso previsto para a prova de 2027 pela sua própria análise de padrões 2021–2026.</p>" +
       (u ? '<a class="continuar" href="' + esc(u.href) + '">' +
-        '<img src="' + esc(u.img) + '" alt="" loading="lazy">' +
+        '<span class="mini-quadro">' + tagImg(u.im) + "</span>" +
         '<span class="continuar-t"><span class="kicker kicker-gold">Continuar de onde parei' + (u.atlas ? " · atlas" : "") + "</span>" +
         "<b>" + esc(u.titulo) + "</b>" +
         '<span class="meta italic">' + esc(u.meta || "") + "</span></span>" +
         '<span class="continuar-play">' + icone("play", 18) + "</span></a>" : "") +
-      '<div class="acoes" style="margin-top:var(--s5)">' +
+      '<div class="acoes saguao-acoes">' +
       '<a class="btn btn-primary" href="#/pratica">Iniciar sessão de prática</a>' +
       '<a class="btn" href="#/materias">Ver as matérias</a>' +
-      (ATLAS.length ? '<a class="btn" href="#/atlas">' + icone("atlas", 16) + "Atlas interativos</a>" : "") + "</div></div>" +
+      (ATLAS.length ? '<a class="btn" href="#/atlas">' + icone("atlas", 16) + "Atlas interativos</a>" : "") + "</div></section>" +
 
-      '<div class="split-aside">' +
-      '<span class="kicker">O que a prova pede</span>' +
-      '<div style="margin-top:var(--s3)">' +
-      D.areas.slice(0, 4).map(function (a, i) {
-        return '<a class="peso-linha" href="#/materia/' + a.slug + '">' +
-          '<span><span class="peso-nome">' + esc(a.nome) + "</span>" +
-          '<span class="meta italic">' + esc(a.subtitulo) + "</span></span>" +
-          '<b class="num peso-n' + (i === 0 ? " gold" : "") + '">' + a.peso + "</b></a>";
-      }).join("") +
-      '<p class="meta italic" style="margin-top:var(--s3)">Questões esperadas em 80, pela análise de padrões 2021–2026.</p>' +
-      "</div></div></section>" +
+      '<section class="split recepcao">' +
+      '<div class="diretorio moldura">' +
+      '<span class="kicker">Diretório da prova</span>' +
+      '<h2 class="diretorio-t">O que a prova pede</h2>' +
+      '<ol class="dir-lista">' +
+      D.areas.slice(0, 6).map(function (a, i) {
+        return '<li><a class="dir-linha" href="#/materia/' + a.slug + '">' +
+          '<span class="dir-nome">' + esc(a.nome) + '<span class="meta italic">' + esc(a.subtitulo) + "</span></span>" +
+          '<span class="dir-pontos" aria-hidden="true"></span>' +
+          '<b class="num dir-n' + (i === 0 ? " gold" : "") + '">' + a.peso + "</b></a></li>";
+      }).join("") + "</ol>" +
+      '<p class="meta italic">Questões esperadas em 80, pela análise de padrões 2021–2026.</p></div>' +
 
-      '<section class="statstrip" style="margin-top:var(--s7)" aria-label="Seus números">' +
+      '<section class="statstrip statstrip-q" aria-label="Seus números">' +
       stat("Questões respondidas", respondidas, TOTAL.questoes + " no banco", respondidas > 0) +
       stat("Taxa de acerto", respondidas ? taxa + "%" : "—", respondidas ? "em " + respondidas + " questões" : "responda para medir", taxa >= 70) +
       stat("Aulas vistas", lidas, "de " + TOTAL.aulas + " — ebook, slides e atlas", lidas > 0) +
       stat("Cartões devidos", devidos, devidos ? "prontos para revisar agora" : "nada vencido hoje", devidos > 0) +
-      "</section>" +
+      "</section></section>" +
 
       (ATLAS.length ?
         '<section style="margin-top:var(--s7)" aria-labelledby="h-atlas">' +
@@ -523,9 +566,9 @@
       '<div class="tiles tiles-3">' + recomendados.map(function (a) {
         var na = atlasDaArea(a).length;
         return ladrilho({
-          href: "#/materia/" + a.slug, img: a.img, titulo: a.nome,
+          href: "#/materia/" + a.slug, img: imgArea(a), titulo: a.nome,
           legenda: plural(a.temas.length, "tema", "temas"), selo: na ? plural(na, "atlas", "atlas") : "",
-          progresso: progressoArea(a), glifo: GLIFO_AREA[a.slug]
+          progresso: progressoArea(a)
         });
       }).join("") + "</div></div>" +
 
@@ -567,7 +610,7 @@
       '<div class="section-head"><h3>Próximos passos</h3></div>' +
       '<div class="grid-cards">' + proximosPassos().map(function (c) {
         return '<a class="card card-link card-img" href="' + esc(c.href) + '">' +
-          '<img src="' + esc(c.img) + '" alt="" loading="lazy">' +
+          quadro(c.im, { detalhe: c.det }) +
           '<span class="card-pad">' +
           '<span class="kicker kicker-gold">' + esc(c.kicker) + "</span>" +
           '<span class="card-t">' + esc(c.titulo) + "</span>" +
@@ -589,7 +632,7 @@
     if (devidos.length) {
       var a1 = porArea[devidos[0].areaSlug];
       out.push({
-        href: "#/cartoes", img: a1 ? a1.img : D.areas[0].img, kicker: "Repetição espaçada",
+        href: "#/cartoes", im: imgArea(a1), det: 0, kicker: "Repetição espaçada",
         titulo: plural(devidos.length, "cartão devido", "cartões devidos"),
         corpo: "A fila de revisão usa as cinco caixas de Leitner: 1, 3, 7, 16 e 35 dias."
       });
@@ -598,7 +641,7 @@
     if (naoLida) {
       var ta = porTema[naoLida.temaId];
       out.push({
-        href: "#/aula/" + naoLida.id, img: ta ? ta.img : D.areas[0].img, kicker: ehAtlas(naoLida) ? "Atlas ainda não aberto" : "Continuar a leitura",
+        href: "#/aula/" + naoLida.id, im: imgTema(ta), det: 1, kicker: ehAtlas(naoLida) ? "Atlas ainda não aberto" : "Continuar a leitura",
         titulo: naoLida.titulo, corpo: rotuloFormato(naoLida) + " — " + (porArea[naoLida.areaSlug] || {}).nome
       });
     }
@@ -606,7 +649,7 @@
     if (naoResp) {
       var t2 = porTema[naoResp.temaId];
       out.push({
-        href: "#/pratica?q=" + encodeURIComponent(naoResp.id), img: t2 ? t2.img : D.areas[0].img,
+        href: "#/pratica?q=" + encodeURIComponent(naoResp.id), im: imgTema(t2), det: 2,
         kicker: naoResp.colecao || "Questões comentadas",
         titulo: "Questão " + naoResp.n + " — " + rotuloQuestao(naoResp),
         corpo: "Gabarito comentado, análise dos distratores e a lacuna que a questão testa."
@@ -648,9 +691,9 @@
       '<div class="tiles tiles-6">' + lista.map(function (a) {
         var na = atlasDaArea(a).length;
         return ladrilho({
-          href: "#/materia/" + a.slug, img: a.img, titulo: a.nome,
+          href: "#/materia/" + a.slug, img: imgArea(a), titulo: a.nome,
           legenda: plural(a.temas.length, "tema", "temas"), selo: na ? plural(na, "atlas", "atlas") : "",
-          dica: a.subtitulo, progresso: progressoArea(a), glifo: GLIFO_AREA[a.slug]
+          dica: a.subtitulo, progresso: progressoArea(a)
         });
       }).join("") + "</div>";
   }
@@ -665,14 +708,16 @@
     var i = D.areas.indexOf(a), ant = D.areas[i - 1], prox = D.areas[i + 1];
 
     return migalhas([{ r: "Matérias", h: "#/materias" }, { r: a.nome }]) +
-      '<div class="section-head cab-pagina"><div>' +
+      '<header class="materia-cab">' +
+      '<figure class="obra obra-cab">' + quadro(imgArea(a), { cls: "quadro-grande", lazy: false, placa: '<span class="tile-title">' + esc(a.nome) + "</span>" }) + "</figure>" +
+      '<div class="materia-cab-txt">' +
       '<span class="kicker">' + esc(a.sigla) + " · " + esc(a.subtitulo) + "</span>" +
       '<h1 class="h-pagina h-grande">' + esc(a.nome) + "</h1>" +
-      '<span class="meta italic">' + Math.round(progressoArea(a) * 100) + "% do material visto</span></div>" +
+      '<span class="meta italic">' + Math.round(progressoArea(a) * 100) + "% do material visto</span>" +
       '<div class="acoes">' +
       (a.nQuestoes ? '<a class="btn btn-sm btn-primary" href="#/pratica?area=' + a.slug + '">Praticar esta matéria</a>' : "") +
       (a.nCards ? '<a class="btn btn-sm" href="#/cartoes?area=' + a.slug + '">Revisar os cartões</a>' : "") +
-      "</div></div>" +
+      "</div></div></header>" +
       '<div class="statstrip" style="margin-bottom:var(--s6)">' +
       stat("Temas", a.temas.length, "nesta matéria", false) +
       stat("Aulas", a.nAulas, atlas.length ? "incluindo " + plural(atlas.length, "atlas", "atlas") : "ebook e apresentações", atlas.length > 0) +
@@ -688,10 +733,9 @@
       '<div class="tiles tiles-4">' + temas.map(function (t) {
         var c = contar(t);
         return ladrilho({
-          href: "#/tema/" + t.id, img: t.img, titulo: t.nome,
+          href: "#/tema/" + t.id, img: imgTema(t), detalhe: a.temas.indexOf(t.id), titulo: t.nome,
           legenda: legendaTema(t), dica: contagemTema(t), progresso: progressoTema(t),
-          selo: c.atlas ? "Atlas" : "",
-          glifo: c.aulas ? "livro" : c.questoes ? "pratica" : c.cards ? "cartoes" : "atlas"
+          selo: c.atlas ? "Atlas" : ""
         });
       }).join("") + "</div>" +
       paginador(ant && { h: "#/materia/" + ant.slug, k: "matéria", t: ant.nome },
@@ -724,7 +768,7 @@
 
     var html = migalhas([{ r: "Matérias", h: "#/materias" }, { r: a.nome, h: "#/materia/" + a.slug }, { r: t.nome }]) +
       '<header class="tema-cab">' +
-      '<img class="tema-cab-img" src="' + esc(t.img) + '" alt="">' +
+      '<span class="tema-cab-img">' + quadro(imgTema(t), { lazy: false, detalhe: (porArea[t.areaSlug] || { temas: [] }).temas.indexOf(t.id) }) + "</span>" +
       '<div class="tema-cab-txt">' +
       '<span class="kicker">' + esc(a.nome) + "</span>" +
       '<h1 class="h-pagina h-grande">' + esc(t.nome) + "</h1>" +
@@ -750,8 +794,8 @@
         atlas.map(function (au) {
           var visto = !!P.aulas[au.id];
           return '<div class="atlas-destaque">' +
-            '<a class="atlas-destaque-img" href="#/aula/' + esc(au.id) + '" tabindex="-1" aria-hidden="true"><img src="' + esc(t.img) + '" alt="" loading="lazy"><span class="tile-scrim"></span>' +
-            '<span class="selo">' + icone("atlas", 12) + "Atlas</span></a>" +
+            '<a class="atlas-destaque-img" href="#/aula/' + esc(au.id) + '" tabindex="-1" aria-hidden="true">' +
+            quadro(imgTema(t), { detalhe: ATLAS.indexOf(au), selo: seloAtlas("Atlas") }) + "</a>" +
             '<div class="atlas-destaque-txt">' +
             '<span class="kicker kicker-gold">' + esc(rotuloFormato(au)) + (visto ? " · aberto" : " · novo") + "</span>" +
             '<a class="atlas-t" href="#/aula/' + esc(au.id) + '">' + esc(au.titulo) + "</a>" +
@@ -1480,6 +1524,16 @@
     }
     document.addEventListener("fullscreenchange", sairNativo);
     document.addEventListener("webkitfullscreenchange", sairNativo);
+
+    document.addEventListener("error", function (ev) {
+      var im = ev.target;
+      if (!im || im.tagName !== "IMG" || !im.getAttribute("data-fb")) return;
+      var fb = im.getAttribute("data-fb");
+      im.removeAttribute("data-fb");
+      im.classList.remove("pintura", "detalhe");
+      im.classList.add("placa");
+      im.src = fb;
+    }, true);
 
     window.addEventListener("hashchange", function () {
       if (location.hash && location.hash.indexOf("#/") !== 0) return;

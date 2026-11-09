@@ -31,6 +31,18 @@ for nome in sorted(os.listdir(img_dir)):
         uri = "data:image/png;base64," + base64.b64encode(f.read()).decode()
     tabela.append('"assets/img/%s":"%s"' % (nome, uri))
 
+# Os quadros (uma pintura por matéria) também entram na tabela. A aplicação
+# procura a chave assets/img/quadros/<slug>.webp em RM_IMG; o que faltar cai
+# na placa antiga da matéria.
+quadros_dir = os.path.join(img_dir, "quadros")
+if os.path.isdir(quadros_dir):
+    for nome in sorted(os.listdir(quadros_dir)):
+        if not nome.endswith(".webp"):
+            continue
+        with open(os.path.join(quadros_dir, nome), "rb") as f:
+            uri = "data:image/webp;base64," + base64.b64encode(f.read()).decode()
+        tabela.append('"assets/img/quadros/%s":"%s"' % (nome, uri))
+
 rehidratar = (
     "window.RM_IMG={" + ",".join(tabela) + "};\n"
     "(function(){var m=window.RM_IMG,d=window.RM_DADOS;\n"
@@ -46,7 +58,9 @@ with open(saida, "w", encoding="utf-8") as f:
         "<title>Residência Max</title>\n"
         '<link rel="preconnect" href="https://fonts.googleapis.com">\n'
         '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
-        '<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400'
+        '<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..500'
+        '&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400'
+        '&amp;family=Cormorant+SC:wght@500;600;700'
         '&amp;family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">\n'
         "<style>\n" + css + "\n</style>\n"
         '<div id="app"></div>\n'
